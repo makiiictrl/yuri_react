@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default Sidebar = () => {
   return (
     <div className="sidebar-wrapper" data-sidebar-layout="stroke-svg">
       <div>
         <div className="logo-wrapper">
-          <a href="index.html">
+          <Link to="/dashboard">
             <img
               className="img-fluid"
               src="../assets/images/logo/cathay-wh.png"
               alt=""
             />
-          </a>
+          </Link>
           <div className="back-btn">
             <i className="fa fa-angle-left"></i>
           </div>
@@ -25,14 +26,14 @@ export default Sidebar = () => {
           </div>
         </div>
         <div className="logo-icon-wrapper">
-          <a href="index.html">
+          <Link to="/dashboard">
             <img
               className="img-fluid"
               src="../assets/images/logo/cathay-wh.png"
               alt=""
               style={{ width: "30px" }}
             />
-          </a>
+          </Link>
         </div>
         <div className="profile-section sidebar-search">
           <div className="profile-wrapper">
@@ -81,13 +82,13 @@ export default Sidebar = () => {
           <div id="sidebar-menu">
             <ul className="sidebar-links" id="simple-bar">
               <li className="back-btn">
-                <a href="index.html">
+                <Link to="/">
                   <img
                     className="img-fluid"
                     src="../assets/images/logo/logo-icon.png"
                     alt=""
                   />
-                </a>
+                </Link>
                 <div className="mobile-back text-end">
                   <span>Back</span>
                   <i className="fa fa-angle-right ps-2" aria-hidden="true"></i>
@@ -105,25 +106,27 @@ export default Sidebar = () => {
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
-                <a
+                <Link
                   className="sidebar-link sidebar-title link-nav"
-                  href="/"
+                  to="/dashboard"
                 >
-                  <i></i>
+                  <svg className="stroke-icon">
+                    <use href="../assets/svg/icon-sprite.svg#stroke-home"></use>
+                  </svg>
                   <span>Dashboard</span>
-                </a>
+                </Link>
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
-                <a
+                <Link
                   className="sidebar-link sidebar-title link-nav"
-                  href="/agent-user-menus"
+                  to="/agent_user_menus"
                 >
                   <svg className="stroke-icon">
                     <use href="../assets/svg/icon-sprite.svg#stroke-task"></use>
                   </svg>
                   <span>Agent User Menus</span>
-                </a>
+                </Link>
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
