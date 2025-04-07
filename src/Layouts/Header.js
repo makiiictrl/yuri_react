@@ -96,7 +96,13 @@ export default Header = () => {
                       <span className="status status-success"></span>
                     </div>
                     <div className="sidebar-content">
-                      <h4>Michael Medina</h4>
+                    <h4>{loading ? (
+                      "Loading..."
+                    ) : agent ? (
+                      <>
+                        {agent?.first_name} {agent?.last_name}
+                      </>
+                    ) : "Sign In"}</h4>
                       <span className="f-12 f-w-600 f-light">Junior Web and SQL Developer</span>
                     </div>
                   </div>
