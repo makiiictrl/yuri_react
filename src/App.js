@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Dashboard from "./Layouts/Dashboard";
 import AgentUserMenuIndex from "./Components/AgentUserMenu/Index";
-import AgentUserMenuNew from "./Components/AgentUserMenu/New";
+import AgentUserMenuNew from "./Components/AgentUserMenu/NewModal";
 import LoginForm from "./Login/LoginForm";
 import ProtectedRoute from "./Login/ProtectedRoute";
 import MainLayout from "./Layouts/MainLayout";

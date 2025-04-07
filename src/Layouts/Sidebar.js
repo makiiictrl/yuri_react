@@ -55,7 +55,7 @@ export default Sidebar = () => {
               <>
                 {agent?.first_name} {agent?.last_name}
               </>
-            ) : "No Agent Available"}</h4>
+            ) : "Sign In"}</h4>
               <span>Junior Web and SQL Developer</span>
             </div>
           </div>
