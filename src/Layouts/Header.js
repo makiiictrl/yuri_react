@@ -11,11 +11,7 @@ export default Header = () => {
           <div className="header-logo-wrapper p-0 left-header">
             <div className="logo-wrapper">
               <a href="/">
-                <img
-                  className="img-fluid"
-                  src=""
-                  alt=""
-                />
+                
               </a>
             </div>
           </div>
@@ -75,184 +71,11 @@ export default Header = () => {
                 <li>
                   {" "}
                   <span className="header-search">
-                    <svg>
-                      <use href="../assets/svg/icon-sprite.svg#search"></use>
-                    </svg>
+                    {/* <svg>
+                      <use href="../assets/svg/icon-sprite.svg#stroke-job-search"></use>
+                    </svg> */}
+                    <i className="icofont icofont-search"></i>
                   </span>
-                </li>
-                <li className="onhover-dropdown">
-                  <div className="notification-box onhover-click">
-                    <svg>
-                      <use href="../assets/svg/icon-sprite.svg#notification"></use>
-                    </svg>
-                    <span className="badge rounded-pill badge-success">3 </span>
-                  </div>
-                  <div className="onhover-show-div notification-dropdown">
-                    <h6 className="f-18 mb-0 dropdown-title">Notifications </h6>
-                    <ul>
-                      <li className="d-flex">
-                        <div className="notification-image">
-                          {" "}
-                          <img
-                            className="img-fluid"
-                            src="../assets/images/avtar/3.jpg"
-                            alt="user"
-                          />
-                          <div className="notification-icon bg-danger">
-                            <i className="fa fa-heart"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <p>
-                            <span className="f-w-500 me-1">Emay Walter </span>
-                            liked your post{" "}
-                          </p>
-                          <span className="f-light">10 minutes ago</span>
-                        </div>
-                      </li>
-                      <li className="d-flex">
-                        <div className="notification-image">
-                          {" "}
-                          <img
-                            className="img-fluid"
-                            src="../assets/images/avtar/4.jpg"
-                            alt="user"
-                          />
-                          <div className="notification-icon bg-info">
-                            <i className="fa fa-share-alt"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <p>
-                            <span className="f-w-500 me-1">Allie Grater</span>
-                            shared your post{" "}
-                          </p>
-                          <span className="f-light">5 hours ago</span>
-                        </div>
-                      </li>
-                      <li className="d-flex">
-                        <div className="notification-image">
-                          {" "}
-                          <img
-                            className="img-fluid"
-                            src="../assets/images/avtar/7.jpg"
-                            alt="user"
-                          />
-                          <div className="notification-icon bg-success">
-                            <i className="fa fa-wechat"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <p>
-                            <span className="f-w-500 me-1">Colin Sik</span>
-                            commented on your post
-                          </p>
-                          <span className="f-light">yesterday</span>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="f-w-700" href="#!">
-                          Check all
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className="cart-nav onhover-dropdown">
-                  <div className="cart-box onhover-click">
-                    <svg>
-                      <use href="../assets/svg/icon-sprite.svg#email"></use>
-                    </svg>
-                    <span className="badge rounded-pill badge-danger">2</span>
-                  </div>
-                  <div className="onhover-show-div chat-dropdown">
-                    <div className="dropdown-title">
-                      <div className="d-flex align-items-center">
-                        {" "}
-                        <img
-                          className="img-fluid img-40 rounded-circle"
-                          src="../assets/images/dashboard/user/1.jpg"
-                          alt="user"
-                        />
-                        <div>
-                          <h6 className="f-18 mb-0">Jane Cooper</h6>
-                          <p className="mb-0">
-                            {" "}
-                            <span className="status status-success me-1"></span>
-                            <span>active</span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <ul>
-                      <li className="send-msg">
-                        <div>
-                          {" "}
-                          <img
-                            className="img-fluid img-30 rounded-circle"
-                            src="../assets/images/dashboard/user/1.jpg"
-                            alt="user"
-                          />
-                          <div>
-                            <p>Hello.how are you?</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="reply-msg">
-                        <div>
-                          {" "}
-                          <img
-                            className="img-fluid img-30 rounded-circle"
-                            src="../assets/images/dashboard/user/3.jpg"
-                            alt="user"
-                          />
-                          <div>
-                            <p>Hi, i'm fine.what about you?</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="send-msg">
-                        <div>
-                          {" "}
-                          <img
-                            className="img-fluid img-30 rounded-circle"
-                            src="../assets/images/dashboard/user/1.jpg"
-                            alt="user"
-                          />
-                          <div>
-                            <p>I am facing js issue can you help me?</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="reply-msg">
-                        <div>
-                          {" "}
-                          <img
-                            className="img-fluid img-30 rounded-circle"
-                            src="../assets/images/dashboard/user/3.jpg"
-                            alt="user"
-                          />
-                          <div>
-                            <p>Sure, i will help you.</p>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                    <div className="chat-input">
-                      <div className="input-group">
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Type message here..."
-                        />
-                        <span className="input-group-text bg-primary">
-                          <svg>
-                            <use href="../assets/svg/icon-sprite.svg#send"></use>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
                 </li>
                 <li>
                   <div className="mode">
@@ -264,107 +87,7 @@ export default Header = () => {
                     </svg>
                   </div>
                 </li>
-                <li className="cart-nav onhover-dropdown">
-                  <div className="cart-box onhover-click">
-                    <svg>
-                      <use href="../assets/svg/icon-sprite.svg#stroke-ecommerce"></use>
-                    </svg>
-                    <span className="badge rounded-pill badge-primary">2</span>
-                  </div>
-                  <div className="cart-dropdown onhover-show-div">
-                    <h6 className="f-18 mb-0 dropdown-title">Cart</h6>
-                    <ul className="cart-main-wrapper">
-                      <li className="cart-product">
-                        <div className="d-flex">
-                          <img
-                            className="img-fluid b-r-5 me-3 img-60"
-                            src="../assets/images/other-images/cart-img2.jpg"
-                            alt="cosmetic"
-                          />
-                          <div className="flex-grow-1">
-                            <span className="f-w-500">Beauty cosmetic</span>
-                            <div className="qty-box">
-                              <div className="touchspin-wrapper">
-                                <button className="decrement-touchspin btn-touchspin">
-                                  <i className="fa fa-minus text-gray"></i>
-                                </button>
-                                {/* <input className="input-touchspin" id="inputData" type="number" value="2"/> */}
-                                <button className="increment-touchspin btn-touchspin">
-                                  <i className="fa fa-plus text-gray"></i>
-                                </button>
-                              </div>
-                              <h6 className="font-primary">$20 </h6>
-                            </div>
-                          </div>
-                          <div className="close-circle">
-                            <a href="#">
-                              <i data-feather="trash-2"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="cart-product">
-                        <div className="d-flex">
-                          <img
-                            className="img-fluid b-r-5 me-3 img-60"
-                            src="../assets/images/other-images/cart-img-1.jpg"
-                            alt="shoes"
-                          />
-                          <div className="flex-grow-1">
-                            <span className="f-w-500">Simple shoes</span>
-                            <div className="qty-box">
-                              <div className="touchspin-wrapper">
-                                <button className="decrement-touchspin btn-touchspin">
-                                  <i className="fa fa-minus text-gray"></i>
-                                </button>
-                                {/* <input className="input-touchspin" id="inputData1" type="number" value="1"/> */}
-                                <button className="increment-touchspin btn-touchspin">
-                                  <i className="fa fa-plus text-gray"></i>
-                                </button>
-                              </div>
-                              <h6 className="font-primary">$30 </h6>
-                            </div>
-                          </div>
-                          <div className="close-circle">
-                            <a href="#">
-                              <i data-feather="trash-2"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="total">
-                        <h6 className="mb-0">
-                          Order Total : <span className="f-right">$70.00</span>
-                        </h6>
-                      </li>
-                      <li className="text-center">
-                        <a
-                          className="d-block mb-3 view-cart f-w-700"
-                          href="cart.html"
-                        >
-                          Go to your cart
-                        </a>
-                        <a
-                          className="btn btn-primary view-checkout w-100"
-                          href="checkout.html"
-                        >
-                          Checkout
-                        </a>
-                      </li>
-                    </ul>
-                    <div className="cart-empty">
-                      <div className="cart-image">
-                        {" "}
-                        <img
-                          className="img-fluid"
-                          src="../assets/images/product/order-trash.gif"
-                          alt="empty"
-                        />
-                      </div>
-                      <h5>Oops! Your cart empty!!!</h5>
-                    </div>
-                  </div>
-                </li>
+                
                 <li className="profile-nav onhover-dropdown">
                   <div className="onhover-click">
                     <div className="sidebar-image">
@@ -373,8 +96,8 @@ export default Header = () => {
                       <span className="status status-success"></span>
                     </div>
                     <div className="sidebar-content">
-                      <h4>Wade Warren</h4>
-                      <span className="f-12 f-w-600 f-light">UI Designer</span>
+                      <h4>Michael Medina</h4>
+                      <span className="f-12 f-w-600 f-light">Junior Web and SQL Developer</span>
                     </div>
                   </div>
                   <ul className="profile-dropdown onhover-show-div">
