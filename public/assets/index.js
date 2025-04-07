@@ -27216,13 +27216,21 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           /* @__PURE__ */ import_react2.default.createElement("i", { className: "icon-trash text-danger" })
         )),
         ignoreRowClick: true,
-        allowOverflow: true,
         button: true
       }
     ];
     if (loading) return /* @__PURE__ */ import_react2.default.createElement("p", null, "Loading...");
     if (error) return /* @__PURE__ */ import_react2.default.createElement("p", null, "Error loading data");
-    return /* @__PURE__ */ import_react2.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react2.default.createElement("h2", null, /* @__PURE__ */ import_react2.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Agent User Menus")), /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react2.default.createElement(
+    return /* @__PURE__ */ import_react2.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react2.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react2.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Agent User Menus"), /* @__PURE__ */ import_react2.default.createElement(
+      "button",
+      {
+        className: "btn btn-outline-primary btn-sm",
+        type: "button",
+        "data-bs-toggle": "modal",
+        "data-bs-target": "#newModal"
+      },
+      "New Agent User Menu"
+    )), /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react2.default.createElement(
       import_react_data_table_component.default,
       {
         columns,
@@ -27237,10 +27245,71 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     )))));
   };
 
-  // src/Components/AgentUserMenu/New.js
+  // src/Components/AgentUserMenu/NewModal.js
   var import_react3 = __toESM(require_react());
-  var New_default = New = () => {
-    return /* @__PURE__ */ import_react3.default.createElement("div", { class: "container nifty-container mt-3" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "row justify-content-center" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "col-md-4" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "alert alert-primary d-flex align-items-center m-2", role: "alert" }, /* @__PURE__ */ import_react3.default.createElement("p", { class: "mb-0 text-center text-success" }, "Placeholder: Notice")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card m-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-header bg-primary text-white" }, /* @__PURE__ */ import_react3.default.createElement("h4", { class: "mb-0 text-white", id: "card-title" }, "New Agent User Menu")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-body" }, /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react3.default.createElement("h5", { class: "mb-3 border-bottom pb-2" }, "Agent User Menu Details"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "pli-notepad" })), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-control", tabIndex: 1, list: "menu", autoComplete: false, required: true }))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "pli-male-2" })), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-control", tabIndex: 1, list: "agent", autoComplete: false, required: true }))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Create"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Read"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Update"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Delete"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Print"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" }))))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "d-flex justify-content-between" }, /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/agent_user_menus", className: "btn btn-secondary" }, "Back"), /* @__PURE__ */ import_react3.default.createElement(Link, { className: "btn btn-success" }, "Save")))))));
+  var NewModal_default = New = () => {
+    return /* @__PURE__ */ import_react3.default.createElement(
+      "div",
+      {
+        className: "modal fade",
+        id: "newModal",
+        tabIndex: "-1",
+        "aria-labelledby": "mdModalLabel",
+        "aria-hidden": "true"
+      },
+      /* @__PURE__ */ import_react3.default.createElement("div", { className: "modal-dialog modal-fullscreen-md-down" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "modal-content" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "modal-header" }, /* @__PURE__ */ import_react3.default.createElement("h1", { className: "modal-title fs-5", id: "mdModalLabel" }, "New Agent User Menu"), /* @__PURE__ */ import_react3.default.createElement(
+        "button",
+        {
+          className: "btn-close py-0",
+          type: "button",
+          "data-bs-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      )), /* @__PURE__ */ import_react3.default.createElement("div", { className: "modal-body dark-modal" }, /* @__PURE__ */ import_react3.default.createElement(
+        "div",
+        {
+          class: "alert alert-light-secondary light alert-dismissible fade show text-dark border-left-wrapper",
+          role: "alert"
+        },
+        /* @__PURE__ */ import_react3.default.createElement("i", { "data-feather": "help-circle" }),
+        /* @__PURE__ */ import_react3.default.createElement("p", null, "You can check in on some of those fields below."),
+        /* @__PURE__ */ import_react3.default.createElement(
+          "button",
+          {
+            class: "btn-close",
+            type: "button",
+            "data-bs-dismiss": "alert",
+            "aria-label": "Close"
+          }
+        )
+      ), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card title-line" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-header" }, /* @__PURE__ */ import_react3.default.createElement("h4", { className: "mt-1" }, "Agent User Menu Details")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-body" }, /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "icofont icofont-license" })), /* @__PURE__ */ import_react3.default.createElement(
+        "input",
+        {
+          className: "form-control",
+          tabIndex: 1,
+          list: "menu",
+          autoComplete: false,
+          required: true
+        }
+      ))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "icofont icofont-user-alt-4" })), /* @__PURE__ */ import_react3.default.createElement(
+        "input",
+        {
+          className: "form-control",
+          tabIndex: 1,
+          list: "agent",
+          autoComplete: false,
+          required: true
+        }
+      ))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement("input", { class: "form-check-input", id: "userCreate", type: "checkbox", value: "" }), /* @__PURE__ */ import_react3.default.createElement("label", { class: "form-check-label", for: "userCreate" }, "User Create")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement("input", { class: "form-check-input", id: "userRead", type: "checkbox", value: "" }), /* @__PURE__ */ import_react3.default.createElement("label", { class: "form-check-label", for: "userRead" }, "User Read")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement("input", { class: "form-check-input", id: "userUpdate", type: "checkbox", value: "" }), /* @__PURE__ */ import_react3.default.createElement("label", { class: "form-check-label", for: "userUpdate" }, "User Update")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement("input", { class: "form-check-input", id: "userDelete", type: "checkbox", value: "" }), /* @__PURE__ */ import_react3.default.createElement("label", { class: "form-check-label", for: "userDelete" }, "User Delete")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement("input", { class: "form-check-input", id: "userPrint", type: "checkbox", value: "" }), /* @__PURE__ */ import_react3.default.createElement("label", { class: "form-check-label", for: "userPrint" }, "User Print")))))))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "modal-footer justify-content-between" }, /* @__PURE__ */ import_react3.default.createElement(
+        "button",
+        {
+          className: "btn btn-secondary btn-sm",
+          type: "button",
+          "data-bs-dismiss": "modal"
+        },
+        "Close"
+      ), /* @__PURE__ */ import_react3.default.createElement("button", { className: "btn btn-primary btn-sm", type: "button" }, "Save changes"))))
+    );
   };
 
   // src/Login/LoginForm.js
@@ -27451,7 +27520,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         src: "../assets/images/user.png",
         alt: "user"
       }
-    ), /* @__PURE__ */ import_react8.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h4", null, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "No Agent Available"), /* @__PURE__ */ import_react8.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react8.default.createElement(
+    ), /* @__PURE__ */ import_react8.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h4", null, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Sign In"), /* @__PURE__ */ import_react8.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react8.default.createElement(
       "input",
       {
         className: "form-control",
@@ -27572,7 +27641,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       /* @__PURE__ */ import_react11.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react11.default.createElement(Dashboard_default, null) }),
       /* @__PURE__ */ import_react11.default.createElement(Route, { path: "dashboard", element: /* @__PURE__ */ import_react11.default.createElement(Dashboard_default, null) }),
       /* @__PURE__ */ import_react11.default.createElement(Route, { path: "agent_user_menus", element: /* @__PURE__ */ import_react11.default.createElement(Index_default, null) }),
-      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react11.default.createElement(New_default, null) })
+      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react11.default.createElement(NewModal_default, null) })
     ));
   };
   var App_default = App;
