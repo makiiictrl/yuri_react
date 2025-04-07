@@ -24650,197 +24650,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // src/Components/AgentUserMenu/Index.js
   var import_react2 = __toESM(require_react());
   var import_react_data_table_component = __toESM(require_index_cjs());
-  var Index_default = Index = () => {
-    const [isShowOpen, setIsShowOpen] = (0, import_react2.useState)(false);
-    const columns = [
-      {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Agent ID"),
-        selector: (row) => row.agentId,
-        sortable: true
-      },
-      {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Menu ID"),
-        selector: (row) => row.menuId,
-        sortable: true
-      },
-      {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Menu Description"),
-        selector: (row) => row.menuDescription
-      },
-      {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Create"),
-        selector: (row) => row.create
-      },
-      {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Read"),
-        selector: (row) => row.read
-      },
-      {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Update"),
-        selector: (row) => row.update
-      },
-      {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Delete"),
-        selector: (row) => row.delete
-      },
-      {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Print"),
-        selector: (row) => row.print
-      },
-      {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Actions"),
-        cell: (row) => /* @__PURE__ */ import_react2.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react2.default.createElement("a", { href: "#" }, /* @__PURE__ */ import_react2.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react2.default.createElement("a", { href: "#" }, /* @__PURE__ */ import_react2.default.createElement("i", { className: "icon-trash text-danger" }))),
-        ignoreRowClick: true,
-        allowOverflow: true,
-        button: true
-      }
-    ];
-    const data2 = [
-      {
-        id: 1,
-        agentId: "3723",
-        menuId: "1",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 2,
-        agentId: "3723",
-        menuId: "2",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 3,
-        agentId: "3723",
-        menuId: "3",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 4,
-        agentId: "3723",
-        menuId: "4",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 5,
-        agentId: "3723",
-        menuId: "5",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 6,
-        agentId: "3723",
-        menuId: "6",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 7,
-        agentId: "3723",
-        menuId: "7",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 8,
-        agentId: "3723",
-        menuId: "8",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 9,
-        agentId: "3723",
-        menuId: "9",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 10,
-        agentId: "3723",
-        menuId: "10",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      },
-      {
-        id: 11,
-        agentId: "3723",
-        menuId: "11",
-        menuDescription: "Transfer Slip",
-        create: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        read: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        delete: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-close" }))),
-        update: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" }))),
-        print: /* @__PURE__ */ import_react2.default.createElement("span", { class: "action-box large complete-btn", title: "Mark Complete" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon" }, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icon-check" })))
-      }
-    ];
-    return /* @__PURE__ */ import_react2.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react2.default.createElement("h2", null, /* @__PURE__ */ import_react2.default.createElement("i", { class: "icofont icofont-id-card me-2" }), "Agent User Menus")), /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react2.default.createElement(
-      import_react_data_table_component.default,
-      {
-        columns,
-        data: data2,
-        pagination: true,
-        responsive: true,
-        striped: true,
-        bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
-        highlightOnHover: true
-      }
-    )))));
-  };
-
-  // src/Components/AgentUserMenu/New.js
-  var import_react3 = __toESM(require_react());
-  var New_default = New = () => {
-    return /* @__PURE__ */ import_react3.default.createElement("div", { class: "container nifty-container mt-3" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "row justify-content-center" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "col-md-4" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "alert alert-primary d-flex align-items-center m-2", role: "alert" }, /* @__PURE__ */ import_react3.default.createElement("p", { class: "mb-0 text-center text-success" }, "Placeholder: Notice")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card m-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-header bg-primary text-white" }, /* @__PURE__ */ import_react3.default.createElement("h4", { class: "mb-0 text-white", id: "card-title" }, "New Agent User Menu")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-body" }, /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react3.default.createElement("h5", { class: "mb-3 border-bottom pb-2" }, "Agent User Menu Details"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "pli-notepad" })), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-control", tabIndex: 1, list: "menu", autoComplete: false, required: true }))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "pli-male-2" })), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-control", tabIndex: 1, list: "agent", autoComplete: false, required: true }))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Create"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Read"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Update"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Delete"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Print"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" }))))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "d-flex justify-content-between" }, /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/agent_user_menus", className: "btn btn-secondary" }, "Back"), /* @__PURE__ */ import_react3.default.createElement(Link, { className: "btn btn-success" }, "Save")))))));
-  };
-
-  // src/Login/LoginForm.js
-  var import_react4 = __toESM(require_react());
 
   // node_modules/axios/lib/helpers/bind.js
   function bind(fn, thisArg) {
@@ -27327,6 +27136,115 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     getAdapter,
     mergeConfig: mergeConfig2
   } = axios_default;
+
+  // src/Services/AgentUserMenusServices.js
+  var getAgentUserMenus = async () => {
+    return axios_default.get("http://localhost:3000/agent_user_menus");
+  };
+  var deleteAgentUserMenu = async (id) => {
+    return axios_default.delete(`http://localhost:3000/agent_user_menus/${id}`);
+  };
+
+  // src/Components/AgentUserMenu/Index.js
+  var Index_default = Index = () => {
+    const [data2, setData] = (0, import_react2.useState)([]);
+    const [loading, setLoading] = (0, import_react2.useState)(true);
+    const [error, setError] = (0, import_react2.useState)(null);
+    (0, import_react2.useEffect)(() => {
+      getAgentUserMenus().then((response) => {
+        setData(response.data);
+        setLoading(false);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+        setError(err);
+        setLoading(false);
+      });
+    }, []);
+    const handleDelete = (id) => {
+      if (window.confirm("Are you sure you want to delete this record?")) {
+        deleteAgentUserMenu(id).then(() => {
+          window.location.reload();
+          alert("Record deleted successfully");
+        }).catch((err) => {
+          console.error("Error deleting record", err);
+        });
+      }
+    };
+    const columns = [
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Agent ID"),
+        selector: (row) => row.agent_id,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Menu ID"),
+        selector: (row) => row.agent_menu_id,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Menu Description"),
+        selector: (row) => row.menu
+      },
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Create"),
+        selector: (row) => row.user_create
+      },
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Read"),
+        selector: (row) => row.user_read
+      },
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Update"),
+        selector: (row) => row.user_update
+      },
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Delete"),
+        selector: (row) => row.user_delete
+      },
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Print"),
+        selector: (row) => row.user_print
+      },
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Actions"),
+        cell: (row) => /* @__PURE__ */ import_react2.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react2.default.createElement(Link, { to: `/edit/${row.id}` }, /* @__PURE__ */ import_react2.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react2.default.createElement(
+          "button",
+          {
+            onClick: () => handleDelete(row.agent_user_menus_id),
+            style: { background: "none", border: "none", cursor: "pointer" }
+          },
+          /* @__PURE__ */ import_react2.default.createElement("i", { className: "icon-trash text-danger" })
+        )),
+        ignoreRowClick: true,
+        allowOverflow: true,
+        button: true
+      }
+    ];
+    if (loading) return /* @__PURE__ */ import_react2.default.createElement("p", null, "Loading...");
+    if (error) return /* @__PURE__ */ import_react2.default.createElement("p", null, "Error loading data");
+    return /* @__PURE__ */ import_react2.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react2.default.createElement("h2", null, /* @__PURE__ */ import_react2.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Agent User Menus")), /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react2.default.createElement(
+      import_react_data_table_component.default,
+      {
+        columns,
+        data: data2,
+        pagination: true,
+        responsive: true,
+        striped: true,
+        bordered: true,
+        noDataComponent: "No Records of Agent User Menu",
+        highlightOnHover: true
+      }
+    )))));
+  };
+
+  // src/Components/AgentUserMenu/New.js
+  var import_react3 = __toESM(require_react());
+  var New_default = New = () => {
+    return /* @__PURE__ */ import_react3.default.createElement("div", { class: "container nifty-container mt-3" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "row justify-content-center" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "col-md-4" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "alert alert-primary d-flex align-items-center m-2", role: "alert" }, /* @__PURE__ */ import_react3.default.createElement("p", { class: "mb-0 text-center text-success" }, "Placeholder: Notice")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card m-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-header bg-primary text-white" }, /* @__PURE__ */ import_react3.default.createElement("h4", { class: "mb-0 text-white", id: "card-title" }, "New Agent User Menu")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-body" }, /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react3.default.createElement("h5", { class: "mb-3 border-bottom pb-2" }, "Agent User Menu Details"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "pli-notepad" })), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-control", tabIndex: 1, list: "menu", autoComplete: false, required: true }))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "pli-male-2" })), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-control", tabIndex: 1, list: "agent", autoComplete: false, required: true }))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Create"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Read"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Update"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Delete"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Print"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" }))))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "d-flex justify-content-between" }, /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/agent_user_menus", className: "btn btn-secondary" }, "Back"), /* @__PURE__ */ import_react3.default.createElement(Link, { className: "btn btn-success" }, "Save")))))));
+  };
+
+  // src/Login/LoginForm.js
+  var import_react4 = __toESM(require_react());
 
   // src/Login/ApiLogin.js
   var ApiLogin_default = () => {
