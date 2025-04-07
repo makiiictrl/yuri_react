@@ -1,8 +1,10 @@
 import React from "react";
+import UseCurrentAgent  from "../Login/UseCurrentAgent";
 
 export default Header = () => {
+  const { agent, loading } = UseCurrentAgent();
     return(
-        
+         
       <div className="page-header row">
         {/* <!-- Page Header Start--> */}
         <div className="col-auto header-left-wrapper">
@@ -454,7 +456,15 @@ export default Header = () => {
                 </div>
                 <div className="ProfileCard-details">
                   <div className="ProfileCard-realName">
-                    Michael Angelo Medina
+                  {loading ? (
+              "Loading..."
+            ) : agent ? (
+              <>
+                {agent?.first_name} {agent?.last_name}
+              </>
+            ) : (
+              "Guest"
+            )}
                   </div>
                 </div>
               </div>

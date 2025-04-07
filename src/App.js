@@ -1,38 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Header from "./Layouts/Header";
-import Loader from "./Layouts/Loader";
-import Sidebar from "./Layouts/Sidebar";
-import Footer from "./Layouts/Footer";
 import Dashboard from "./Layouts/Dashboard";
+import AgentUserMenuIndex from "./Components/AgentUserMenu/Index";
+import AgentUserMenuNew from "./Components/AgentUserMenu/New";
+import LoginForm from "./Login/LoginForm";
+import ProtectedRoute from "./Login/ProtectedRoute";
+import MainLayout from "./Layouts/MainLayout";
 
-import AgentUserMenuIndex from "./components/AgentUserMenu/Index";
-import AgentUserMenuNew from "./components/AgentUserMenu/New";
-
-
-
-export default App = () => {
+const App = () => {
   return (
-    <>
-        {/* <Loader /> */}
-        <div className="page-wrapper compact-wrapper" id="pageWrapper">
-            <Header />
-            <div className="page-body-wrapper">
-                <Sidebar />
-                <Routes>
-                    <Route path="/dashboard" element={<Dashboard />} />
-
-                    {/* Agent User Menu */}
-                    <Route path="/agent_user_menus" element={<AgentUserMenuIndex/>} />
-                    <Route path="/agent_user_menus/new" element={<AgentUserMenuNew/>} />
-                    {/* <Route path="/agent_user_menus/edit" element={<AgentUserMenuEdit/>} /> */}
-                
-                </Routes>
-                <Footer/>
-            </div>
-        </div>
-        
-    </>
+    <Routes>
+      <Route path="/login" element={<LoginForm />} />
+      
+      {/* Protected routes wrapped in MainLayout */}
+      <Route
+        element={
+          <ProtectedRoute>
+            <MainLayout />
+          </ProtectedRoute>
+        }
+      >
+        {/* Index route for "/" - shows Dashboard if logged in */}
+        <Route index element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="agent_user_menus" element={<AgentUserMenuIndex />} />
+        <Route path="agent_user_menus/new" element={<AgentUserMenuNew />} />
+      </Route>
+    </Routes>
   );
 };
+
+export default App;

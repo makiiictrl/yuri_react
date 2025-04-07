@@ -8,6 +8,10 @@
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
+  var __export = (target, all3) => {
+    for (var name in all3)
+      __defProp(target, name, { get: all3[name], enumerable: true });
+  };
   var __copyProps = (to, from, except, desc) => {
     if (from && typeof from === "object" || typeof from === "function") {
       for (let key of __getOwnPropNames(from))
@@ -157,7 +161,7 @@
           return Error("react-stack-top-frame");
         }
         function hasValidKey(config) {
-          if (hasOwnProperty.call(config, "key")) {
+          if (hasOwnProperty2.call(config, "key")) {
             var getter = Object.getOwnPropertyDescriptor(config, "key").get;
             if (getter && getter.isReactWarning) return false;
           }
@@ -184,8 +188,8 @@
           componentName = this.props.ref;
           return void 0 !== componentName ? componentName : null;
         }
-        function ReactElement(type, key, self, source, owner, props, debugStack, debugTask) {
-          self = props.ref;
+        function ReactElement(type, key, self2, source, owner, props, debugStack, debugTask) {
+          self2 = props.ref;
           type = {
             $$typeof: REACT_ELEMENT_TYPE,
             type,
@@ -193,7 +197,7 @@
             props,
             _owner: owner
           };
-          null !== (void 0 !== self ? self : null) ? Object.defineProperty(type, "ref", {
+          null !== (void 0 !== self2 ? self2 : null) ? Object.defineProperty(type, "ref", {
             enumerable: false,
             get: elementRefGetterWithDeprecationWarning
           }) : Object.defineProperty(type, "ref", { enumerable: false, value: null });
@@ -398,7 +402,7 @@
           );
           return dispatcher;
         }
-        function noop() {
+        function noop2() {
         }
         function enqueueTask(task) {
           if (null === enqueueTaskImpl)
@@ -532,7 +536,7 @@
           thrownErrors: [],
           getCurrentStack: null,
           recentlyCreatedOwnerStacks: 0
-        }, hasOwnProperty = Object.prototype.hasOwnProperty, createTask = console.createTask ? console.createTask : function() {
+        }, hasOwnProperty2 = Object.prototype.hasOwnProperty, createTask = console.createTask ? console.createTask : function() {
           return null;
         };
         deprecatedAPIs = {
@@ -703,7 +707,7 @@
           if (null != config) {
             var JSCompiler_inline_result;
             a: {
-              if (hasOwnProperty.call(config, "ref") && (JSCompiler_inline_result = Object.getOwnPropertyDescriptor(
+              if (hasOwnProperty2.call(config, "ref") && (JSCompiler_inline_result = Object.getOwnPropertyDescriptor(
                 config,
                 "ref"
               ).get) && JSCompiler_inline_result.isReactWarning) {
@@ -715,7 +719,7 @@
             JSCompiler_inline_result && (owner = getOwner());
             hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key);
             for (propName in config)
-              !hasOwnProperty.call(config, propName) || "key" === propName || "__self" === propName || "__source" === propName || "ref" === propName && void 0 === config.ref || (props[propName] = config[propName]);
+              !hasOwnProperty2.call(config, propName) || "key" === propName || "__self" === propName || "__source" === propName || "ref" === propName && void 0 === config.ref || (props[propName] = config[propName]);
           }
           var propName = arguments.length - 2;
           if (1 === propName) props.children = children;
@@ -768,7 +772,7 @@
             for (propName in didWarnAboutOldJSXRuntime || !("__self" in config) || "key" in config || (didWarnAboutOldJSXRuntime = true, console.warn(
               "Your app (or one of its dependencies) is using an outdated JSX transform. Update to the modern JSX transform for faster performance: https://react.dev/link/new-jsx-transform"
             )), hasValidKey(config) && (checkKeyStringCoercion(config.key), node = "" + config.key), config)
-              hasOwnProperty.call(config, propName) && "key" !== propName && "__self" !== propName && "__source" !== propName && (i[propName] = config[propName]);
+              hasOwnProperty2.call(config, propName) && "key" !== propName && "__self" !== propName && "__source" !== propName && (i[propName] = config[propName]);
           var childrenLength = arguments.length - 2;
           if (1 === childrenLength) i.children = children;
           else if (1 < childrenLength) {
@@ -867,7 +871,7 @@
           try {
             var returnValue = scope(), onStartTransitionFinish = ReactSharedInternals.S;
             null !== onStartTransitionFinish && onStartTransitionFinish(currentTransition, returnValue);
-            "object" === typeof returnValue && null !== returnValue && "function" === typeof returnValue.then && returnValue.then(noop, reportGlobalError);
+            "object" === typeof returnValue && null !== returnValue && "function" === typeof returnValue.then && returnValue.then(noop2, reportGlobalError);
           } catch (error) {
             reportGlobalError(error);
           } finally {
@@ -1253,7 +1257,7 @@
     "node_modules/react-dom/cjs/react-dom.development.js"(exports) {
       "use strict";
       (function() {
-        function noop() {
+        function noop2() {
         }
         function testStringCoercion(value) {
           return "" + value;
@@ -1297,25 +1301,25 @@
           return dispatcher;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React23 = require_react(), Internals = {
+        var React25 = require_react(), Internals = {
           d: {
-            f: noop,
+            f: noop2,
             r: function() {
               throw Error(
                 "Invalid form element. requestFormReset must be passed a form that was rendered by React."
               );
             },
-            D: noop,
-            C: noop,
-            L: noop,
-            m: noop,
-            X: noop,
-            S: noop,
-            M: noop
+            D: noop2,
+            C: noop2,
+            L: noop2,
+            m: noop2,
+            X: noop2,
+            S: noop2,
+            M: noop2
           },
           p: 0,
           findDOMNode: null
-        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React23.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React25.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
         "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
           "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
@@ -2336,9 +2340,9 @@
           );
         }
         function isAttributeNameSafe(attributeName) {
-          if (hasOwnProperty.call(validatedAttributeNameCache, attributeName))
+          if (hasOwnProperty2.call(validatedAttributeNameCache, attributeName))
             return true;
-          if (hasOwnProperty.call(illegalAttributeNameCache, attributeName))
+          if (hasOwnProperty2.call(illegalAttributeNameCache, attributeName))
             return false;
           if (VALID_ATTRIBUTE_NAME_REGEX.test(attributeName))
             return validatedAttributeNameCache[attributeName] = true;
@@ -2857,7 +2861,7 @@
           "number" === type && getActiveElement(node.ownerDocument) === node || node.defaultValue === "" + value || (node.defaultValue = "" + value);
         }
         function validateOptionProps(element, props) {
-          null == props.value && ("object" === typeof props.children && null !== props.children ? React23.Children.forEach(props.children, function(child) {
+          null == props.value && ("object" === typeof props.children && null !== props.children ? React25.Children.forEach(props.children, function(child) {
             null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
               "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
             ));
@@ -3526,7 +3530,7 @@
           return aliases.get(name) || name;
         }
         function validateProperty$1(tagName, name) {
-          if (hasOwnProperty.call(warnedProperties$1, name) && warnedProperties$1[name])
+          if (hasOwnProperty2.call(warnedProperties$1, name) && warnedProperties$1[name])
             return true;
           if (rARIACamel$1.test(name)) {
             tagName = "aria-" + name.slice(4).toLowerCase();
@@ -3573,7 +3577,7 @@
           );
         }
         function validateProperty(tagName, name, value, eventRegistry) {
-          if (hasOwnProperty.call(warnedProperties, name) && warnedProperties[name])
+          if (hasOwnProperty2.call(warnedProperties, name) && warnedProperties[name])
             return true;
           var lowerCasedName = name.toLowerCase();
           if ("onfocusin" === lowerCasedName || "onfocusout" === lowerCasedName)
@@ -4072,7 +4076,7 @@
           if (keysA.length !== keysB.length) return false;
           for (keysB = 0; keysB < keysA.length; keysB++) {
             var currentKey = keysA[keysB];
-            if (!hasOwnProperty.call(objB, currentKey) || !objectIs(objA[currentKey], objB[currentKey]))
+            if (!hasOwnProperty2.call(objB, currentKey) || !objectIs(objA[currentKey], objB[currentKey]))
               return false;
           }
           return true;
@@ -7484,7 +7488,7 @@
               resetStyle
             );
             error.unshift(console);
-            JSCompiler_inline_result = bind.apply(console.error, error);
+            JSCompiler_inline_result = bind2.apply(console.error, error);
             JSCompiler_inline_result();
           } else
             console.error(
@@ -9375,7 +9379,7 @@
                           }) : current2.createElement(renderLanes2), -1 === renderLanes2.indexOf("-") && (renderLanes2 !== renderLanes2.toLowerCase() && console.error(
                             "<%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.",
                             renderLanes2
-                          ), "[object HTMLUnknownElement]" !== Object.prototype.toString.call(current2) || hasOwnProperty.call(
+                          ), "[object HTMLUnknownElement]" !== Object.prototype.toString.call(current2) || hasOwnProperty2.call(
                             warnedUnknownTags,
                             renderLanes2
                           ) || (warnedUnknownTags[renderLanes2] = true, console.error(
@@ -11707,7 +11711,7 @@
           root3.timeoutHandle = noTimeout;
           suspendedCommitReason = finishedWork.subtreeFlags;
           if (suspendedCommitReason & 8192 || 16785408 === (suspendedCommitReason & 16785408)) {
-            if (suspendedState = { stylesheets: null, count: 0, unsuspend: noop }, accumulateSuspenseyCommitOnFiber(finishedWork), suspendedCommitReason = waitForCommitToBeReady(), null !== suspendedCommitReason) {
+            if (suspendedState = { stylesheets: null, count: 0, unsuspend: noop2 }, accumulateSuspenseyCommitOnFiber(finishedWork), suspendedCommitReason = waitForCommitToBeReady(), null !== suspendedCommitReason) {
               root3.cancelPendingCommit = suspendedCommitReason(
                 commitRoot.bind(
                   null,
@@ -15542,9 +15546,9 @@
         }
         function describeLinkForResourceErrorDEV(props) {
           var describedProps = 0, description = "<link";
-          "string" === typeof props.rel ? (describedProps++, description += ' rel="' + props.rel + '"') : hasOwnProperty.call(props, "rel") && (describedProps++, description += ' rel="' + (null === props.rel ? "null" : "invalid type " + typeof props.rel) + '"');
-          "string" === typeof props.href ? (describedProps++, description += ' href="' + props.href + '"') : hasOwnProperty.call(props, "href") && (describedProps++, description += ' href="' + (null === props.href ? "null" : "invalid type " + typeof props.href) + '"');
-          "string" === typeof props.precedence ? (describedProps++, description += ' precedence="' + props.precedence + '"') : hasOwnProperty.call(props, "precedence") && (describedProps++, description += " precedence={" + (null === props.precedence ? "null" : "invalid type " + typeof props.precedence) + "}");
+          "string" === typeof props.rel ? (describedProps++, description += ' rel="' + props.rel + '"') : hasOwnProperty2.call(props, "rel") && (describedProps++, description += ' rel="' + (null === props.rel ? "null" : "invalid type " + typeof props.rel) + '"');
+          "string" === typeof props.href ? (describedProps++, description += ' href="' + props.href + '"') : hasOwnProperty2.call(props, "href") && (describedProps++, description += ' href="' + (null === props.href ? "null" : "invalid type " + typeof props.href) + '"');
+          "string" === typeof props.precedence ? (describedProps++, description += ' precedence="' + props.precedence + '"') : hasOwnProperty2.call(props, "precedence") && (describedProps++, description += " precedence={" + (null === props.precedence ? "null" : "invalid type " + typeof props.precedence) + "}");
           Object.getOwnPropertyNames(props).length > describedProps && (description += " ...");
           return description + " />";
         }
@@ -15769,7 +15773,7 @@
         function preloadResource(resource) {
           return "stylesheet" === resource.type && (resource.state.loading & Settled) === NotLoaded ? false : true;
         }
-        function noop() {
+        function noop2() {
         }
         function suspendResource(hoistableRoot, resource, props) {
           if (null === suspendedState)
@@ -16439,21 +16443,21 @@
           ));
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var Scheduler = require_scheduler(), React23 = require_react(), ReactDOM2 = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+        var Scheduler = require_scheduler(), React25 = require_react(), ReactDOM2 = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
         Symbol.for("react.scope");
         var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
         Symbol.for("react.legacy_hidden");
         Symbol.for("react.tracing_marker");
         var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
         Symbol.for("react.view_transition");
-        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React23.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM2.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React25.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM2.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
           pending: false,
           data: null,
           method: null,
           action: null
         }), valueStack = [];
         var fiberStack = [];
-        var index$jscomp$0 = -1, contextStackCursor = createCursor(null), contextFiberStackCursor = createCursor(null), rootInstanceStackCursor = createCursor(null), hostTransitionProviderCursor = createCursor(null), hasOwnProperty = Object.prototype.hasOwnProperty, scheduleCallback$3 = Scheduler.unstable_scheduleCallback, cancelCallback$1 = Scheduler.unstable_cancelCallback, shouldYield = Scheduler.unstable_shouldYield, requestPaint = Scheduler.unstable_requestPaint, now$1 = Scheduler.unstable_now, getCurrentPriorityLevel = Scheduler.unstable_getCurrentPriorityLevel, ImmediatePriority = Scheduler.unstable_ImmediatePriority, UserBlockingPriority = Scheduler.unstable_UserBlockingPriority, NormalPriority$1 = Scheduler.unstable_NormalPriority, LowPriority = Scheduler.unstable_LowPriority, IdlePriority = Scheduler.unstable_IdlePriority, log$1 = Scheduler.log, unstable_setDisableYieldValue = Scheduler.unstable_setDisableYieldValue, rendererID = null, injectedHook = null, injectedProfilingHooks = null, hasLoggedError = false, isDevToolsPresent = "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__, clz32 = Math.clz32 ? Math.clz32 : clz32Fallback, log = Math.log, LN2 = Math.LN2, nextTransitionLane = 256, nextRetryLane = 4194304, DiscreteEventPriority = 2, ContinuousEventPriority = 8, DefaultEventPriority = 32, IdleEventPriority = 268435456, randomKey = Math.random().toString(36).slice(2), internalInstanceKey = "__reactFiber$" + randomKey, internalPropsKey = "__reactProps$" + randomKey, internalContainerInstanceKey = "__reactContainer$" + randomKey, internalEventHandlersKey = "__reactEvents$" + randomKey, internalEventHandlerListenersKey = "__reactListeners$" + randomKey, internalEventHandlesSetKey = "__reactHandles$" + randomKey, internalRootNodeResourcesKey = "__reactResources$" + randomKey, internalHoistableMarker = "__reactMarker$" + randomKey, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {}, hasReadOnlyValue = {
+        var index$jscomp$0 = -1, contextStackCursor = createCursor(null), contextFiberStackCursor = createCursor(null), rootInstanceStackCursor = createCursor(null), hostTransitionProviderCursor = createCursor(null), hasOwnProperty2 = Object.prototype.hasOwnProperty, scheduleCallback$3 = Scheduler.unstable_scheduleCallback, cancelCallback$1 = Scheduler.unstable_cancelCallback, shouldYield = Scheduler.unstable_shouldYield, requestPaint = Scheduler.unstable_requestPaint, now$1 = Scheduler.unstable_now, getCurrentPriorityLevel = Scheduler.unstable_getCurrentPriorityLevel, ImmediatePriority = Scheduler.unstable_ImmediatePriority, UserBlockingPriority = Scheduler.unstable_UserBlockingPriority, NormalPriority$1 = Scheduler.unstable_NormalPriority, LowPriority = Scheduler.unstable_LowPriority, IdlePriority = Scheduler.unstable_IdlePriority, log$1 = Scheduler.log, unstable_setDisableYieldValue = Scheduler.unstable_setDisableYieldValue, rendererID = null, injectedHook = null, injectedProfilingHooks = null, hasLoggedError = false, isDevToolsPresent = "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__, clz32 = Math.clz32 ? Math.clz32 : clz32Fallback, log = Math.log, LN2 = Math.LN2, nextTransitionLane = 256, nextRetryLane = 4194304, DiscreteEventPriority = 2, ContinuousEventPriority = 8, DefaultEventPriority = 32, IdleEventPriority = 268435456, randomKey = Math.random().toString(36).slice(2), internalInstanceKey = "__reactFiber$" + randomKey, internalPropsKey = "__reactProps$" + randomKey, internalContainerInstanceKey = "__reactContainer$" + randomKey, internalEventHandlersKey = "__reactEvents$" + randomKey, internalEventHandlerListenersKey = "__reactListeners$" + randomKey, internalEventHandlesSetKey = "__reactHandles$" + randomKey, internalRootNodeResourcesKey = "__reactResources$" + randomKey, internalHoistableMarker = "__reactMarker$" + randomKey, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {}, hasReadOnlyValue = {
           button: true,
           checkbox: true,
           image: true,
@@ -19068,7 +19072,7 @@
           _currentValue: NotPendingTransition,
           _currentValue2: NotPendingTransition,
           _threadCount: 0
-        }, badgeFormat = "%c%s%c ", badgeStyle = "background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px", resetStyle = "", pad = " ", bind = Function.prototype.bind;
+        }, badgeFormat = "%c%s%c ", badgeStyle = "background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px", resetStyle = "", pad = " ", bind2 = Function.prototype.bind;
         var didWarnAboutNestedUpdates = false;
         var overrideHookState = null, overrideHookStateDeletePath = null, overrideHookStateRenamePath = null, overrideProps = null, overridePropsDeletePath = null, overridePropsRenamePath = null, scheduleUpdate = null, setErrorHandler = null, setSuspenseHandler = null;
         overrideHookState = function(fiber, id, path, value) {
@@ -19160,7 +19164,7 @@
           }
         };
         (function() {
-          var isomorphicReactPackageVersion = React23.version;
+          var isomorphicReactPackageVersion = React25.version;
           if ("19.1.0" !== isomorphicReactPackageVersion)
             throw Error(
               'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.1.0\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -19395,7 +19399,7 @@
           str += "; Path=" + options.path;
         }
         if (options.expires) {
-          if (!isDate(options.expires) || !Number.isFinite(options.expires.valueOf())) {
+          if (!isDate2(options.expires) || !Number.isFinite(options.expires.valueOf())) {
             throw new TypeError(`option expires is invalid: ${options.expires}`);
           }
           str += "; Expires=" + options.expires.toUTCString();
@@ -19453,18 +19457,18 @@
           return str;
         }
       }
-      function isDate(val) {
+      function isDate2(val) {
         return __toString.call(val) === "[object Date]";
       }
     }
   });
 
   // src/index.js
-  var import_react9 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // src/App.js
-  var import_react8 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
 
   // node_modules/react-router/dist/development/chunk-XJI4KG32.mjs
   var React3 = __toESM(require_react(), 1);
@@ -20197,6 +20201,13 @@
     return navigate;
   }
   var OutletContext = React2.createContext(null);
+  function useOutlet(context) {
+    let outlet = React2.useContext(RouteContext).outlet;
+    if (outlet) {
+      return /* @__PURE__ */ React2.createElement(OutletContext.Provider, { value: context }, outlet);
+    }
+    return outlet;
+  }
   function useResolvedPath(to, { relative } = {}) {
     let { matches } = React2.useContext(RouteContext);
     let { pathname: locationPathname } = useLocation();
@@ -20601,6 +20612,41 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }) {
     return useRoutesImpl(routes, void 0, state, future);
   }
+  function Navigate({
+    to,
+    replace: replace2,
+    state,
+    relative
+  }) {
+    invariant(
+      useInRouterContext(),
+      // TODO: This error is probably because they somehow have 2 versions of
+      // the router loaded. We can help them understand how to avoid that.
+      `<Navigate> may be used only in the context of a <Router> component.`
+    );
+    let { static: isStatic } = React3.useContext(NavigationContext);
+    warning(
+      !isStatic,
+      `<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change.`
+    );
+    let { matches } = React3.useContext(RouteContext);
+    let { pathname: locationPathname } = useLocation();
+    let navigate = useNavigate();
+    let path = resolveTo(
+      to,
+      getResolveToMatches(matches),
+      locationPathname,
+      relative === "path"
+    );
+    let jsonPath = JSON.stringify(path);
+    React3.useEffect(() => {
+      navigate(JSON.parse(jsonPath), { replace: replace2, state, relative });
+    }, [navigate, jsonPath, relative, replace2, state]);
+    return null;
+  }
+  function Outlet(props) {
+    return useOutlet(props.context);
+  }
   function Route(_props) {
     invariant(
       false,
@@ -20963,10 +21009,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }
     return sorted;
   }
-  function dedupeLinkDescriptors(descriptors, preloads) {
+  function dedupeLinkDescriptors(descriptors2, preloads) {
     let set = /* @__PURE__ */ new Set();
     let preloadsSet = new Set(preloads);
-    return descriptors.reduce((deduped, descriptor) => {
+    return descriptors2.reduce((deduped, descriptor) => {
       let alreadyModulePreload = preloads && !isPageLinkDescriptor(descriptor) && descriptor.as === "script" && descriptor.href && preloadsSet.has(descriptor.href);
       if (alreadyModulePreload) {
         return deduped;
@@ -21790,326 +21836,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
   var encoder = new TextEncoder();
 
-  // src/Layouts/Header.js
-  var import_react = __toESM(require_react());
-  var Header_default = Header = () => {
-    return /* @__PURE__ */ import_react.default.createElement("div", { className: "page-header row" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "col-auto header-left-wrapper" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "header-logo-wrapper p-0 left-header" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react.default.createElement("a", { href: "/" }, /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "",
-        alt: ""
-      }
-    )))), /* @__PURE__ */ import_react.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react.default.createElement("svg", { className: "status_toggle sidebar-toggle" }, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#collapse-sidebar" })))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-auto header-right-wrapper page-title" }, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h2", null, "Default"), /* @__PURE__ */ import_react.default.createElement("nav", null, /* @__PURE__ */ import_react.default.createElement("ol", { className: "breadcrumb justify-content-sm-start align-items-center mb-0" }, /* @__PURE__ */ import_react.default.createElement("li", { className: "breadcrumb-item" }, /* @__PURE__ */ import_react.default.createElement("a", { href: "index.html" }, "Home")), /* @__PURE__ */ import_react.default.createElement("li", { className: "breadcrumb-item f-w-500" }, "Dashboard"), /* @__PURE__ */ import_react.default.createElement("li", { className: "breadcrumb-item f-w-500 active" }, "Default"))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col header-wrapper m-0 header-right-wrapper" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "row m-0" }, /* @__PURE__ */ import_react.default.createElement(
-      "form",
-      {
-        className: "form-inline search-full col",
-        action: "#",
-        method: "get"
-      },
-      /* @__PURE__ */ import_react.default.createElement("div", { className: "form-group w-100" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "Typeahead Typeahead--twitterUsers" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "u-posRelative" }, /* @__PURE__ */ import_react.default.createElement(
-        "input",
-        {
-          className: "demo-input Typeahead-input form-control-plaintext w-100",
-          type: "text",
-          placeholder: "Search anything ..",
-          name: "q",
-          title: "",
-          autoFocus: true
-        }
-      ), /* @__PURE__ */ import_react.default.createElement(
-        "div",
-        {
-          className: "spinner-border Typeahead-spinner",
-          role: "status"
-        },
-        /* @__PURE__ */ import_react.default.createElement("span", { className: "sr-only" }, "Loading...")
-      ), /* @__PURE__ */ import_react.default.createElement("i", { className: "close-search", "data-feather": "x" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "Typeahead-menu" })))
-    ), /* @__PURE__ */ import_react.default.createElement("div", { className: "header-logo-wrapper col-auto p-0 left-header" }), /* @__PURE__ */ import_react.default.createElement("div", { className: "nav-right col-auto pull-right right-header p-0 ms-auto" }, /* @__PURE__ */ import_react.default.createElement("ul", { className: "nav-menus" }, /* @__PURE__ */ import_react.default.createElement("li", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "header-search" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" })))), /* @__PURE__ */ import_react.default.createElement("li", { className: "onhover-dropdown" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "notification-box onhover-click" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#notification" })), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge rounded-pill badge-success" }, "3 ")), /* @__PURE__ */ import_react.default.createElement("div", { className: "onhover-show-div notification-dropdown" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-18 mb-0 dropdown-title" }, "Notifications "), /* @__PURE__ */ import_react.default.createElement("ul", null, /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "notification-image" }, " ", /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/avtar/3.jpg",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", { className: "notification-icon bg-danger" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "fa fa-heart" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("p", null, /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 me-1" }, "Emay Walter "), "liked your post", " "), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light" }, "10 minutes ago"))), /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "notification-image" }, " ", /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/avtar/4.jpg",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", { className: "notification-icon bg-info" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "fa fa-share-alt" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("p", null, /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 me-1" }, "Allie Grater"), "shared your post", " "), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light" }, "5 hours ago"))), /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "notification-image" }, " ", /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/avtar/7.jpg",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", { className: "notification-icon bg-success" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "fa fa-wechat" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("p", null, /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 me-1" }, "Colin Sik"), "commented on your post"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light" }, "yesterday"))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("a", { className: "f-w-700", href: "#!" }, "Check all"))))), /* @__PURE__ */ import_react.default.createElement("li", { className: "cart-nav onhover-dropdown" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "cart-box onhover-click" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#email" })), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge rounded-pill badge-danger" }, "2")), /* @__PURE__ */ import_react.default.createElement("div", { className: "onhover-show-div chat-dropdown" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-title" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex align-items-center" }, " ", /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid img-40 rounded-circle",
-        src: "../assets/images/dashboard/user/1.jpg",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-18 mb-0" }, "Jane Cooper"), /* @__PURE__ */ import_react.default.createElement("p", { className: "mb-0" }, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "status status-success me-1" }), /* @__PURE__ */ import_react.default.createElement("span", null, "active"))))), /* @__PURE__ */ import_react.default.createElement("ul", null, /* @__PURE__ */ import_react.default.createElement("li", { className: "send-msg" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid img-30 rounded-circle",
-        src: "../assets/images/dashboard/user/1.jpg",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("p", null, "Hello.how are you?")))), /* @__PURE__ */ import_react.default.createElement("li", { className: "reply-msg" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid img-30 rounded-circle",
-        src: "../assets/images/dashboard/user/3.jpg",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("p", null, "Hi, i'm fine.what about you?")))), /* @__PURE__ */ import_react.default.createElement("li", { className: "send-msg" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid img-30 rounded-circle",
-        src: "../assets/images/dashboard/user/1.jpg",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("p", null, "I am facing js issue can you help me?")))), /* @__PURE__ */ import_react.default.createElement("li", { className: "reply-msg" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid img-30 rounded-circle",
-        src: "../assets/images/dashboard/user/3.jpg",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("p", null, "Sure, i will help you."))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "chat-input" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react.default.createElement(
-      "input",
-      {
-        className: "form-control",
-        type: "text",
-        placeholder: "Type message here..."
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("span", { className: "input-group-text bg-primary" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#send" }))))))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "mode" }, /* @__PURE__ */ import_react.default.createElement("svg", { className: "moon-icon" }, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#moon" })), /* @__PURE__ */ import_react.default.createElement("svg", { className: "sun-icon" }, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#sun" })))), /* @__PURE__ */ import_react.default.createElement("li", { className: "cart-nav onhover-dropdown" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "cart-box onhover-click" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-ecommerce" })), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge rounded-pill badge-primary" }, "2")), /* @__PURE__ */ import_react.default.createElement("div", { className: "cart-dropdown onhover-show-div" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-18 mb-0 dropdown-title" }, "Cart"), /* @__PURE__ */ import_react.default.createElement("ul", { className: "cart-main-wrapper" }, /* @__PURE__ */ import_react.default.createElement("li", { className: "cart-product" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex" }, /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid b-r-5 me-3 img-60",
-        src: "../assets/images/other-images/cart-img2.jpg",
-        alt: "cosmetic"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", { className: "flex-grow-1" }, /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500" }, "Beauty cosmetic"), /* @__PURE__ */ import_react.default.createElement("div", { className: "qty-box" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "touchspin-wrapper" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "decrement-touchspin btn-touchspin" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "fa fa-minus text-gray" })), /* @__PURE__ */ import_react.default.createElement("button", { className: "increment-touchspin btn-touchspin" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "fa fa-plus text-gray" }))), /* @__PURE__ */ import_react.default.createElement("h6", { className: "font-primary" }, "$20 "))), /* @__PURE__ */ import_react.default.createElement("div", { className: "close-circle" }, /* @__PURE__ */ import_react.default.createElement("a", { href: "#" }, /* @__PURE__ */ import_react.default.createElement("i", { "data-feather": "trash-2" }))))), /* @__PURE__ */ import_react.default.createElement("li", { className: "cart-product" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex" }, /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid b-r-5 me-3 img-60",
-        src: "../assets/images/other-images/cart-img-1.jpg",
-        alt: "shoes"
-      }
-    ), /* @__PURE__ */ import_react.default.createElement("div", { className: "flex-grow-1" }, /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500" }, "Simple shoes"), /* @__PURE__ */ import_react.default.createElement("div", { className: "qty-box" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "touchspin-wrapper" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "decrement-touchspin btn-touchspin" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "fa fa-minus text-gray" })), /* @__PURE__ */ import_react.default.createElement("button", { className: "increment-touchspin btn-touchspin" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "fa fa-plus text-gray" }))), /* @__PURE__ */ import_react.default.createElement("h6", { className: "font-primary" }, "$30 "))), /* @__PURE__ */ import_react.default.createElement("div", { className: "close-circle" }, /* @__PURE__ */ import_react.default.createElement("a", { href: "#" }, /* @__PURE__ */ import_react.default.createElement("i", { "data-feather": "trash-2" }))))), /* @__PURE__ */ import_react.default.createElement("li", { className: "total" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "mb-0" }, "Order Total : ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-right" }, "$70.00"))), /* @__PURE__ */ import_react.default.createElement("li", { className: "text-center" }, /* @__PURE__ */ import_react.default.createElement(
-      "a",
-      {
-        className: "d-block mb-3 view-cart f-w-700",
-        href: "cart.html"
-      },
-      "Go to your cart"
-    ), /* @__PURE__ */ import_react.default.createElement(
-      "a",
-      {
-        className: "btn btn-primary view-checkout w-100",
-        href: "checkout.html"
-      },
-      "Checkout"
-    ))), /* @__PURE__ */ import_react.default.createElement("div", { className: "cart-empty" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "cart-image" }, " ", /* @__PURE__ */ import_react.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/product/order-trash.gif",
-        alt: "empty"
-      }
-    )), /* @__PURE__ */ import_react.default.createElement("h5", null, "Oops! Your cart empty!!!")))), /* @__PURE__ */ import_react.default.createElement("li", { className: "profile-nav onhover-dropdown" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "onhover-click" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "sidebar-image" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/user.png", alt: "profile" }), /* @__PURE__ */ import_react.default.createElement("span", { className: "status status-success" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "sidebar-content" }, /* @__PURE__ */ import_react.default.createElement("h4", null, "Wade Warren"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-600 f-light" }, "UI Designer"))), /* @__PURE__ */ import_react.default.createElement("ul", { className: "profile-dropdown onhover-show-div" }, /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("a", { href: "sign-up.html" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#user" }))), /* @__PURE__ */ import_react.default.createElement("span", null, "Account "))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("a", { href: "letter-box.html" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-email" }))), /* @__PURE__ */ import_react.default.createElement("span", null, "Inbox"))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("a", { href: "task.html" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#notepad" }))), /* @__PURE__ */ import_react.default.createElement("span", null, "Taskboard"))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("a", { href: "edit-profile.html" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#settings" }))), /* @__PURE__ */ import_react.default.createElement("span", null, "Settings"))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("a", { href: "login.html" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#login" }))), /* @__PURE__ */ import_react.default.createElement("span", null, "Log out"))))))), /* @__PURE__ */ import_react.default.createElement(
-      "script",
-      {
-        className: "result-template",
-        type: "text/x-handlebars-template"
-      },
-      /* @__PURE__ */ import_react.default.createElement("div", { className: "ProfileCard u-cf" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "ProfileCard-avatar" }, /* @__PURE__ */ import_react.default.createElement(
-        "svg",
-        {
-          xmlns: "http://www.w3.org/2000/svg",
-          width: "24",
-          height: "24",
-          viewBox: "0 0 24 24",
-          fill: "none",
-          stroke: "currentColor",
-          strokeWidth: "2",
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-          className: "feather feather-airplay m-0"
-        },
-        /* @__PURE__ */ import_react.default.createElement("path", { d: "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" }),
-        /* @__PURE__ */ import_react.default.createElement("polygon", { points: "12 15 17 21 7 21 12 15" })
-      )), /* @__PURE__ */ import_react.default.createElement("div", { className: "ProfileCard-details" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "ProfileCard-realName" }, "Michael Angelo Medina")))
-    ), /* @__PURE__ */ import_react.default.createElement(
-      "script",
-      {
-        className: "empty-template",
-        type: "text/x-handlebars-template"
-      },
-      /* @__PURE__ */ import_react.default.createElement("div", { className: "EmptyMessage" }, "Your search turned up 0 results. This most likely means the backend is down, yikes!")
-    ))));
-  };
-
-  // src/Layouts/Loader.js
-  var import_react2 = __toESM(require_react());
-  var Loader_default = Loader = () => {
-    return /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement("div", { class: "loader-wrapper" }, /* @__PURE__ */ import_react2.default.createElement("div", { class: "loader" })), /* @__PURE__ */ import_react2.default.createElement("div", { class: "tap-top" }, /* @__PURE__ */ import_react2.default.createElement("i", { "data-feather": "chevrons-up" })));
-  };
-
-  // src/Layouts/Sidebar.js
-  var import_react3 = __toESM(require_react());
-  var Sidebar_default = Sidebar = () => {
-    return /* @__PURE__ */ import_react3.default.createElement("div", { className: "sidebar-wrapper", "data-sidebar-layout": "stroke-svg" }, /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react3.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/logo/cathay-wh.png",
-        alt: ""
-      }
-    )), /* @__PURE__ */ import_react3.default.createElement("div", { className: "back-btn" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-angle-left" })), /* @__PURE__ */ import_react3.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react3.default.createElement(
-      "i",
-      {
-        className: "status_toggle middle sidebar-toggle",
-        "data-feather": "grid"
-      },
-      " "
-    ))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "logo-icon-wrapper" }, /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react3.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/logo/cathay-wh.png",
-        alt: "",
-        style: { width: "30px" }
-      }
-    ))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "profile-section sidebar-search" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "profile-wrapper" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "active-profile" }, " ", /* @__PURE__ */ import_react3.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/user.png",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react3.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("h4", null, "Michael Medina"), /* @__PURE__ */ import_react3.default.createElement("span", null, "Junior Web and SQL Developer"))), /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("svg", null, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#profile-setting" })))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react3.default.createElement("svg", null, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react3.default.createElement(
-      "input",
-      {
-        className: "form-control",
-        type: "text",
-        placeholder: "Quick search",
-        "aria-label": "Username",
-        "aria-describedby": "sidebar-search"
-      }
-    ))), /* @__PURE__ */ import_react3.default.createElement("nav", { className: "sidebar-main" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "left-arrow", id: "left-arrow" }, /* @__PURE__ */ import_react3.default.createElement("i", { "data-feather": "arrow-left" })), /* @__PURE__ */ import_react3.default.createElement("div", { id: "sidebar-menu" }, /* @__PURE__ */ import_react3.default.createElement("ul", { className: "sidebar-links", id: "simple-bar" }, /* @__PURE__ */ import_react3.default.createElement("li", { className: "back-btn" }, /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/" }, /* @__PURE__ */ import_react3.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/logo/logo-icon.png",
-        alt: ""
-      }
-    )), /* @__PURE__ */ import_react3.default.createElement("div", { className: "mobile-back text-end" }, /* @__PURE__ */ import_react3.default.createElement("span", null, "Back"), /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-angle-right ps-2", "aria-hidden": "true" }))), /* @__PURE__ */ import_react3.default.createElement("li", { className: "pin-title sidebar-main-title" }, /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("h6", null, "- Pinned"))), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-main-title" }, /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("h6", { className: "lan-1" }, "- Navigation"))), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      Link,
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        to: "/dashboard"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Dashboard")
-    )), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      Link,
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        to: "/agent_user_menus"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-task" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Agent User Menus")
-    )), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-charts" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Marketing")
-    )), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#send" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Transfer Slip")
-    )), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-file" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Request Slip")
-    )), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#profile-check" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Issue Slip")
-    )), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Inventory Entry")
-    )), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Inventory Listing")
-    )), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Item Master")
-    )), /* @__PURE__ */ import_react3.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react3.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react3.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react3.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
-      /* @__PURE__ */ import_react3.default.createElement("span", null, "Packing List")
-    )))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react3.default.createElement("i", { "data-feather": "arrow-right" })))));
-  };
-
-  // src/Layouts/Footer.js
-  var import_react4 = __toESM(require_react());
-  var Footer_default = Footer = () => {
-    return /* @__PURE__ */ import_react4.default.createElement("footer", { className: "footer" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "container-fluid" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "row gy-1 justify-content-center text-center" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "col-lg-6 col-md-7 footer-copyright" }, /* @__PURE__ */ import_react4.default.createElement("p", { className: "mb-0 f-light f-w-500" }, "Copyright 2024 \xA9 The Cathay Drug Company Inc.")))));
-  };
-
   // src/Layouts/Dashboard.js
-  var import_react5 = __toESM(require_react());
+  var import_react = __toESM(require_react());
   var Dashboard_default = Dashboard = () => {
-    return /* @__PURE__ */ import_react5.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "container-fluid default-dashboard" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "row size-column" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-9 col-xl-100 box-col-12" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 box-col-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card title-line upgrade-card overflow-hidden" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "row align-items-end" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-sm-8 col-11" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Hi, Welcome back ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "txt-primary" }, "Wade! ")), /* @__PURE__ */ import_react5.default.createElement("p", { className: "mt-2 f-light" }, "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. "), /* @__PURE__ */ import_react5.default.createElement("a", { className: "btn btn-primary btn-hover-effect btn-sm f-w-500", href: "pricing.html" }, "Upgrade Plan", /* @__PURE__ */ import_react5.default.createElement("svg", { className: "svg-sprite" }, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#logout" }, " ")))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "cartoon-image" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { className: "img-fluid", src: "../assets/images/dashboard/welcome.png", alt: "vector" })), /* @__PURE__ */ import_react5.default.createElement("img", { className: "img-fluid pattern-image", src: "../assets/images/dashboard/bg-1.png", alt: "vector pattern" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 box-col-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "row tread-cards" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card widget-1" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body common-box" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "widget-icon primary widget-round" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#crown" }, " "))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h3", { className: "f-w-600" }, "User Profile"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Consectetur adipiscing "))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card widget-1" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body common-box" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "widget-icon success widget-round" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#flash" }, " "))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h3", { className: "f-w-600" }, "Latest Trends"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Minim veniam"))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card widget-1" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body common-box" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "widget-icon warning widget-round" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#blend-2" }, " "))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h3", { className: "f-w-600" }, "New Arrivals"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Excepteur sint"))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card widget-1" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body common-box" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "widget-icon secondary widget-round" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#color-filter" }, " "))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h3", { className: "f-w-600" }, "Best Referrals"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Quis nostrud exercitation"))))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "row small-charts" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card title-line widget-1" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Revenue"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light mt-0" }, "Today Revenue ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "txt-primary" }, "30% OFF"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "revenue-chart-container" }, /* @__PURE__ */ import_react5.default.createElement("div", { id: "revenue-chart" }))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card title-line widget-1 sales-pipeline" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Sales Pipeline"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light mt-0" }, "Special Discount ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "txt-primary" }, "60% OFF"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "pipeline-chart-container" }, /* @__PURE__ */ import_react5.default.createElement("div", { id: "pipeline-chart" }))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-sm-6 rate-column" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card title-line widget-1" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Satisfaction Rate")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card satisfaction-box common-box" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "widget-icon primary widget-round" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#like-shape" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h2", null, "89,786(82%)"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12" }, "Vote by Consumer")))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-sm-6 revenue-column col-xxl-100 box-col-12" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card title-line widget-1" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Revenue by Industry")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "revenue-slider-wrapper" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "swiper revenue-swiper" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "swiper-wrapper" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "swiper-slide" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card satisfaction-box progrees-widget" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("span", { className: "social-content" }, /* @__PURE__ */ import_react5.default.createElement("i", { className: "txt-primary fa fa-facebook-square me-1" }), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-light" }, "Facebook")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "45%")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress progress-stripe-primary with-light-background mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "45%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" })))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "swiper-slide" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card satisfaction-box progrees-widget" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("span", { className: "social-content" }, /* @__PURE__ */ import_react5.default.createElement("i", { className: "txt-secondary fa fa-instagram me-1" }), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-light" }, "Instagram")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "70%")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress progress-stripe-secondary with-light-background mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "70%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" })))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "swiper-slide" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card satisfaction-box progrees-widget" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("span", { className: "social-content" }, /* @__PURE__ */ import_react5.default.createElement("i", { className: "txt-success fa fa-twitter me-1" }), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-light" }, "Twitter ")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "30%")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress progress-stripe-success with-light-background mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "30%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "swiper-pagination" })))))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-md-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card height-equal title-line" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Total Profit", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 d-block f-w-500" }, "Special Discount ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "txt-primary" }, "60% OFF"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "overviewButton", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, "Weekly"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "overviewButton" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Monthly"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "weekly"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "yearly")))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "profit-data" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "$15,087", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12" }, "(Another ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "txt-primary me-1" }, "$35,098  "), "to Goal) "))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "profit-chart-container" }, /* @__PURE__ */ import_react5.default.createElement("div", { id: "profit_chart" }, " "))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Earning Reports", /* @__PURE__ */ import_react5.default.createElement("span", { className: "d-block f-w-500 f-light f-12" }, "Weekly Earning Overview"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "earning-avg", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "earning-avg" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Today"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Tomorrow"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Yesterday")))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "report-chart-container" }, /* @__PURE__ */ import_react5.default.createElement("div", { id: "earning-chart" }, " ")), /* @__PURE__ */ import_react5.default.createElement("ul", { className: "report-list" }, /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card report-icon" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#status-up" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "Profit"), /* @__PURE__ */ import_react5.default.createElement("h4", { className: "mt-1 f-w-600" }, "$98.50", /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-primary ms-1" }, /* @__PURE__ */ import_react5.default.createElement("i", { className: "me-1", "data-feather": "trending-up" }), "13.5%")))), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card report-icon" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#expense" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "Expense"), /* @__PURE__ */ import_react5.default.createElement("h4", { className: "mt-1 f-w-600" }, "$109.90", /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-warning ms-1" }, /* @__PURE__ */ import_react5.default.createElement("i", { className: "me-1", "data-feather": "trending-down" }), "1.05%")))))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-md-6 order-md-i" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border transaction-header" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Upcoming Transaction", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 d-block f-w-500" }, "Special Discount ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "txt-primary" }, "60% OFF"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "overviewButton1", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, "Weekly"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "overviewButton1" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Monthly"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "weekly"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "yearly")))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body pt-0 transaction-list" }, /* @__PURE__ */ import_react5.default.createElement("ul", null, /* @__PURE__ */ import_react5.default.createElement("li", { className: "transaction-title" }, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Today")), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-content" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-icon bg-light-primary" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#bill" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-right-content" }, /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "list-wish.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", null, "Water Bill")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-400" }, "Unsuccessfully")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "txt-danger f-w-500" }, "-$120")))), /* @__PURE__ */ import_react5.default.createElement("li", { className: "transaction-title" }, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Tomorrow")), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-content" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-icon bg-light-success" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#payment" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-right-content" }, /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "list-wish.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", null, "Income : Salary Oct")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-400" }, "Successfully")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500" }, "+$1200")))), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-content" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-icon bg-light-warning" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#invoice" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-right-content" }, /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "list-wish.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", null, "Electric Bill")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-400" }, "Successfully")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 txt-danger" }, "-$191")))), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-content" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-icon bg-light-secondary" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#transfer" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "transaction-right-content pb-0" }, /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "list-wish.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", null, "Income : Jane transfers")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-400" }, "Successfully")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500" }, "+$540")))))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 order-md-iii" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card title-line overflow-hidden member-wrapper" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Members Statistics", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500 f-light d-block" }, "Over 10k members")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "link-with-icon", href: "#!" }, "+ Add New Member")))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "ard-body member-datatable p-0" }, /* @__PURE__ */ import_react5.default.createElement("table", { className: "table", id: "member-table" }, /* @__PURE__ */ import_react5.default.createElement("thead", null, /* @__PURE__ */ import_react5.default.createElement("tr", null, /* @__PURE__ */ import_react5.default.createElement("th", null), /* @__PURE__ */ import_react5.default.createElement("th", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-600" }, "Authors")), /* @__PURE__ */ import_react5.default.createElement("th", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-600" }, "Company")), /* @__PURE__ */ import_react5.default.createElement("th", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-600" }, "Progress")), /* @__PURE__ */ import_react5.default.createElement("th", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-600" }, "Action")))), /* @__PURE__ */ import_react5.default.createElement("tbody", null, /* @__PURE__ */ import_react5.default.createElement("tr", null, /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "checkbox-2", type: "checkbox", value: "" })))), /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex gap-2" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/user/2.jpg", alt: "user" }), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "f-w-500" }, "Jerome Bell")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "UX designer")))), /* @__PURE__ */ import_react5.default.createElement("td", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "f-w-500" }, "Louis")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "UX designer")), /* @__PURE__ */ import_react5.default.createElement("td", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "70%"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress progress-stripe-primary mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "70%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex action-buttons" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#edit-2" }))), /* @__PURE__ */ import_react5.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#trash-fill" })))))), /* @__PURE__ */ import_react5.default.createElement("tr", null, /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "checkbox-3", type: "checkbox", value: "" })))), /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex gap-2" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/user/4.jpg", alt: "user" }), /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "f-w-500" }, "Ralph Edwa")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Web, Laravel")))), /* @__PURE__ */ import_react5.default.createElement("td", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "f-w-500" }, "IBM")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Development")), /* @__PURE__ */ import_react5.default.createElement("td", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "50%"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress progress-stripe-success mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "50%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex action-buttons" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#edit-2" }))), /* @__PURE__ */ import_react5.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#trash-fill" })))))), /* @__PURE__ */ import_react5.default.createElement("tr", null, /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "checkbox-4", type: "checkbox", value: "" })))), /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex gap-2" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/user/5.jpg", alt: "user" }), /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "f-w-500" }, "Esther Kit")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Laravel")))), /* @__PURE__ */ import_react5.default.createElement("td", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "f-w-500" }, "Johnson")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Unity Game")), /* @__PURE__ */ import_react5.default.createElement("td", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "83%"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress progress-stripe-secondary mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "83%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex action-buttons" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#edit-2" }))), /* @__PURE__ */ import_react5.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#trash-fill" })))))), /* @__PURE__ */ import_react5.default.createElement("tr", null, /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "checkbox-5", type: "checkbox", value: "" })))), /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex gap-2" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/user/1.png", alt: "user" }), /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "f-w-500" }, "Leslie Jolly")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Designer")))), /* @__PURE__ */ import_react5.default.createElement("td", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "f-w-500" }, "Card")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Marketing ")), /* @__PURE__ */ import_react5.default.createElement("td", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "79%"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress progress-stripe-warning mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "79%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react5.default.createElement("td", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex action-buttons" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#edit-2" }))), /* @__PURE__ */ import_react5.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#trash-fill" }))))))))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-6 col-md-6 order-md-ii" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border report-option" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Top Referrals Pages", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 d-block f-w-500" }, "Up to $100 per referral")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "referralButton", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, "Generate Report"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "referralButton" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Monthly"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "weekly"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "yearly")))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "referral-content" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "referral-left-details" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex gap-1" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "129,900"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-warning" }, " ", /* @__PURE__ */ import_react5.default.createElement("i", { className: "me-1", "data-feather": "trending-up" }), "4.5%")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "vs. previous month")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "referral-image" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/1.png", alt: "vector" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-stacked referral-progress" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment one", "aria-valuenow": "40", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "30%" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar bg-primary" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment two", "aria-valuenow": "20", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "20%" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar bg-success" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment three", "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "15%" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar bg-warning" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment three", "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "15%" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar bg-secondary" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment three", "aria-valuenow": "20", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "20%" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar bg-info" }))), /* @__PURE__ */ import_react5.default.createElement("ul", { className: "referral-list" }, /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-primary" }), /* @__PURE__ */ import_react5.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.google.com"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500" }, "35.89%")), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-success" }), /* @__PURE__ */ import_react5.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.youtube.com"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500" }, "19.12%")), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-warning" }), /* @__PURE__ */ import_react5.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.media.com"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500" }, "14.75%")), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-secondary" }), /* @__PURE__ */ import_react5.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.pixelstrap.com"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500" }, "19.76%")), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-secondary" }), /* @__PURE__ */ import_react5.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.facebook.com"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-w-500" }, "18.98%")))))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-3 col-xl-100" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-12 col-xl-40 col-sm-6 order-xl-ii discount-report" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Total Transactions", /* @__PURE__ */ import_react5.default.createElement("span", { className: "d-block f-w-500 f-light f-12" }, "Special Discount ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "txt-primary" }, "60% OFF")))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "earning-avg1", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "earning-avg1" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Today"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Tomorrow"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Yesterday")))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body transaction-report" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "total-transaction-wrapper" }, /* @__PURE__ */ import_react5.default.createElement("div", { id: "total-transaction-chart" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "report-content" }, /* @__PURE__ */ import_react5.default.createElement("h5", null, "Report"), /* @__PURE__ */ import_react5.default.createElement("ul", null, /* @__PURE__ */ import_react5.default.createElement("li", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-light f-w-500" }, "This Week"), /* @__PURE__ */ import_react5.default.createElement("h6", null, "+78.32 %"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress progress-stripe-primary with-light-background", style: { height: "5px" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "70%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react5.default.createElement("li", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-12 f-light f-w-500" }, "This Week"), /* @__PURE__ */ import_react5.default.createElement("h6", null, "-34.52 %"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress progress-stripe-success with-light-background", style: { height: "5px" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "70%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "report-button" }, /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h5", { className: "f-w-600" }, "+95.62 % ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Performance"))), /* @__PURE__ */ import_react5.default.createElement("a", { className: "btn btn-primary f-w-500 f-12", href: "#!" }, "New report", /* @__PURE__ */ import_react5.default.createElement("svg", { className: "svg-sprite" }, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#logout" })))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-xl-12 col-xl-30 col-sm-6 order-xl-ii customer-order" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header-top order-lists" }, /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Recent Orders", /* @__PURE__ */ import_react5.default.createElement("span", { className: "d-block f-w-500 f-light f-12" }, "80 Orders in a December"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "recent-button", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, "All Orders"), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "recent-button" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Pending"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Success"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Deliver")))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body transaction-list recent-orders" }, /* @__PURE__ */ import_react5.default.createElement("ul", { className: "order-list mb-0" }, /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/product/1.png", alt: "TV" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "mb-1" }, " Apple PC")), /* @__PURE__ */ import_react5.default.createElement("span", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-primary" }, "#10988"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "3 Item"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "order-1", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-1" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$5,098")))), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/product/2.png", alt: "T-shirt" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "mb-1" }, "T-Shirts")), /* @__PURE__ */ import_react5.default.createElement("span", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-primary" }, "#10980"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "2 Item"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "order-2", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-2" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$6,010")))), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/product/3.png", alt: "Macbook air M2" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "mb-1" }, "Macbook")), /* @__PURE__ */ import_react5.default.createElement("span", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-primary" }, "#101098"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "5 Item"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "order-3", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-3" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$12,000")))), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/product/4.png", alt: "Shoes" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "mb-1" }, "Shoes")), /* @__PURE__ */ import_react5.default.createElement("span", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-primary" }, "#101098"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "3 Item"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "order-4", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-4" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$2,000")))), /* @__PURE__ */ import_react5.default.createElement("li", null, /* @__PURE__ */ import_react5.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react5.default.createElement("img", { src: "../assets/images/dashboard/product/5.png", alt: "watch" })), /* @__PURE__ */ import_react5.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react5.default.createElement("div", null, " ", /* @__PURE__ */ import_react5.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react5.default.createElement("h6", { className: "mb-1" }, "Wall Watch")), /* @__PURE__ */ import_react5.default.createElement("span", null, " ", /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-primary" }, "#101098"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "1 Item"))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn dropdown-toggle", id: "order-5", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react5.default.createElement("svg", null, /* @__PURE__ */ import_react5.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-5" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react5.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$2,000"))))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-12 col-xl-100 order-xl-i" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "offer-banner" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "offer-content" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "20% Off Themes"), /* @__PURE__ */ import_react5.default.createElement("p", { className: "f-w-500 f-12" }, "Get all the latest wordpress theme and plugin coupon in this board.")), /* @__PURE__ */ import_react5.default.createElement("img", { className: "img-fluid", src: "../assets/images/dashboard/banner.png", alt: "vector" }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "col-12 col-xl-30 order-xl-ii todo-wrapper" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header card-no-border order-lists" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "To do List", /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-light f-12 d-block f-w-500" }, "80 Orders in a December")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react5.default.createElement("a", { className: "link-with-icon", href: "#" }, "+ Create")))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "card-body notification to-do-list" }, /* @__PURE__ */ import_react5.default.createElement("ul", { className: "custom-scrollbar" }, /* @__PURE__ */ import_react5.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-primary" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "list-1", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h6", null, "Products"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Today 2:00pm Clock")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-primary ms-auto" }, "In Progress"))), /* @__PURE__ */ import_react5.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-warning" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "list-2", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h6", null, "Web developing.."), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 4 Days")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-warning ms-auto" }, "Pending"))), /* @__PURE__ */ import_react5.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-success" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "list-3", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h6", null, "UI/UX Design"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 3 Days")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-success ms-auto" }, "Completed"))), /* @__PURE__ */ import_react5.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-primary" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "list-4", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h6", null, "Client Meeting .."), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Today 1:00pm Clock")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-primary ms-auto" }, "In Progress"))), /* @__PURE__ */ import_react5.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-success" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "list-5", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h6", null, "Wed layout"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 10 Days")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-success ms-auto" }, "Completed"))), /* @__PURE__ */ import_react5.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-warning" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "list-6", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h6", null, "Web developing.."), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 4 Days")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-warning ms-auto" }, "Pending"))), /* @__PURE__ */ import_react5.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "activity-dot-success" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react5.default.createElement("input", { className: "form-check-input", id: "list-7", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement("h6", null, "UI/UX Design"), /* @__PURE__ */ import_react5.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 3 Days")), /* @__PURE__ */ import_react5.default.createElement("span", { className: "badge badge-light-success ms-auto" }, "Completed"))))))))))));
+    return /* @__PURE__ */ import_react.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "container-fluid default-dashboard" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "row size-column" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-9 col-xl-100 box-col-12" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 box-col-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card title-line upgrade-card overflow-hidden" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "row align-items-end" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "col-sm-8 col-11" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "Hi, Welcome back ", /* @__PURE__ */ import_react.default.createElement("span", { className: "txt-primary" }, "Wade! ")), /* @__PURE__ */ import_react.default.createElement("p", { className: "mt-2 f-light" }, "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. "), /* @__PURE__ */ import_react.default.createElement("a", { className: "btn btn-primary btn-hover-effect btn-sm f-w-500", href: "pricing.html" }, "Upgrade Plan", /* @__PURE__ */ import_react.default.createElement("svg", { className: "svg-sprite" }, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#logout" }, " ")))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "cartoon-image" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { className: "img-fluid", src: "../assets/images/dashboard/welcome.png", alt: "vector" })), /* @__PURE__ */ import_react.default.createElement("img", { className: "img-fluid pattern-image", src: "../assets/images/dashboard/bg-1.png", alt: "vector pattern" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 box-col-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "row tread-cards" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card widget-1" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body common-box" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "widget-icon primary widget-round" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#crown" }, " "))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h3", { className: "f-w-600" }, "User Profile"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Consectetur adipiscing "))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card widget-1" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body common-box" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "widget-icon success widget-round" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#flash" }, " "))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h3", { className: "f-w-600" }, "Latest Trends"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Minim veniam"))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card widget-1" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body common-box" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "widget-icon warning widget-round" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#blend-2" }, " "))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h3", { className: "f-w-600" }, "New Arrivals"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Excepteur sint"))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card widget-1" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body common-box" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "widget-icon secondary widget-round" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#color-filter" }, " "))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h3", { className: "f-w-600" }, "Best Referrals"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Quis nostrud exercitation"))))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "row small-charts" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card title-line widget-1" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "Revenue"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light mt-0" }, "Today Revenue ", /* @__PURE__ */ import_react.default.createElement("span", { className: "txt-primary" }, "30% OFF"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "revenue-chart-container" }, /* @__PURE__ */ import_react.default.createElement("div", { id: "revenue-chart" }))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-sm-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card title-line widget-1 sales-pipeline" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "Sales Pipeline"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light mt-0" }, "Special Discount ", /* @__PURE__ */ import_react.default.createElement("span", { className: "txt-primary" }, "60% OFF"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "pipeline-chart-container" }, /* @__PURE__ */ import_react.default.createElement("div", { id: "pipeline-chart" }))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-sm-6 rate-column" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card title-line widget-1" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "Satisfaction Rate")), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card satisfaction-box common-box" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "widget-icon primary widget-round" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#like-shape" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h2", null, "89,786(82%)"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12" }, "Vote by Consumer")))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-sm-6 revenue-column col-xxl-100 box-col-12" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card title-line widget-1" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "Revenue by Industry")), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "revenue-slider-wrapper" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "swiper revenue-swiper" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "swiper-wrapper" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "swiper-slide" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card satisfaction-box progrees-widget" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react.default.createElement("span", { className: "social-content" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "txt-primary fa fa-facebook-square me-1" }), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-light" }, "Facebook")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "45%")), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress progress-stripe-primary with-light-background mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "45%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" })))), /* @__PURE__ */ import_react.default.createElement("div", { className: "swiper-slide" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card satisfaction-box progrees-widget" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react.default.createElement("span", { className: "social-content" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "txt-secondary fa fa-instagram me-1" }), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-light" }, "Instagram")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "70%")), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress progress-stripe-secondary with-light-background mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "70%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" })))), /* @__PURE__ */ import_react.default.createElement("div", { className: "swiper-slide" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card satisfaction-box progrees-widget" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react.default.createElement("span", { className: "social-content" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "txt-success fa fa-twitter me-1" }), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-light" }, "Twitter ")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "30%")), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress progress-stripe-success with-light-background mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "30%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "swiper-pagination" })))))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-md-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card height-equal title-line" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "Total Profit", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 d-block f-w-500" }, "Special Discount ", /* @__PURE__ */ import_react.default.createElement("span", { className: "txt-primary" }, "60% OFF"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "overviewButton", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, "Weekly"), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "overviewButton" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Monthly"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "weekly"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "yearly")))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "profit-data" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "$15,087", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12" }, "(Another ", /* @__PURE__ */ import_react.default.createElement("span", { className: "txt-primary me-1" }, "$35,098  "), "to Goal) "))), /* @__PURE__ */ import_react.default.createElement("div", { className: "profit-chart-container" }, /* @__PURE__ */ import_react.default.createElement("div", { id: "profit_chart" }, " "))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h2", null, "Earning Reports", /* @__PURE__ */ import_react.default.createElement("span", { className: "d-block f-w-500 f-light f-12" }, "Weekly Earning Overview"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "earning-avg", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "earning-avg" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Today"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Tomorrow"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Yesterday")))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "report-chart-container" }, /* @__PURE__ */ import_react.default.createElement("div", { id: "earning-chart" }, " ")), /* @__PURE__ */ import_react.default.createElement("ul", { className: "report-list" }, /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card report-icon" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#status-up" }))), /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "Profit"), /* @__PURE__ */ import_react.default.createElement("h4", { className: "mt-1 f-w-600" }, "$98.50", /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-primary ms-1" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "me-1", "data-feather": "trending-up" }), "13.5%")))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card report-icon" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#expense" }))), /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500 f-light" }, "Expense"), /* @__PURE__ */ import_react.default.createElement("h4", { className: "mt-1 f-w-600" }, "$109.90", /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-warning ms-1" }, /* @__PURE__ */ import_react.default.createElement("i", { className: "me-1", "data-feather": "trending-down" }), "1.05%")))))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-md-6 order-md-i" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border transaction-header" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "Upcoming Transaction", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 d-block f-w-500" }, "Special Discount ", /* @__PURE__ */ import_react.default.createElement("span", { className: "txt-primary" }, "60% OFF"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "overviewButton1", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, "Weekly"), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "overviewButton1" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Monthly"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "weekly"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "yearly")))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body pt-0 transaction-list" }, /* @__PURE__ */ import_react.default.createElement("ul", null, /* @__PURE__ */ import_react.default.createElement("li", { className: "transaction-title" }, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Today")), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-content" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-icon bg-light-primary" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#bill" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-right-content" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "list-wish.html" }, /* @__PURE__ */ import_react.default.createElement("h6", null, "Water Bill")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-400" }, "Unsuccessfully")), /* @__PURE__ */ import_react.default.createElement("span", { className: "txt-danger f-w-500" }, "-$120")))), /* @__PURE__ */ import_react.default.createElement("li", { className: "transaction-title" }, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-light f-12" }, "Tomorrow")), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-content" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-icon bg-light-success" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#payment" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-right-content" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "list-wish.html" }, /* @__PURE__ */ import_react.default.createElement("h6", null, "Income : Salary Oct")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-400" }, "Successfully")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500" }, "+$1200")))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-content" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-icon bg-light-warning" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#invoice" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-right-content" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "list-wish.html" }, /* @__PURE__ */ import_react.default.createElement("h6", null, "Electric Bill")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-400" }, "Successfully")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 txt-danger" }, "-$191")))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-content" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-icon bg-light-secondary" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#transfer" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "transaction-right-content pb-0" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "list-wish.html" }, /* @__PURE__ */ import_react.default.createElement("h6", null, "Income : Jane transfers")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-400" }, "Successfully")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500" }, "+$540")))))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 order-md-iii" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card title-line overflow-hidden member-wrapper" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "Members Statistics", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500 f-light d-block" }, "Over 10k members")), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "link-with-icon", href: "#!" }, "+ Add New Member")))), /* @__PURE__ */ import_react.default.createElement("div", { className: "ard-body member-datatable p-0" }, /* @__PURE__ */ import_react.default.createElement("table", { className: "table", id: "member-table" }, /* @__PURE__ */ import_react.default.createElement("thead", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("th", null), /* @__PURE__ */ import_react.default.createElement("th", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-600" }, "Authors")), /* @__PURE__ */ import_react.default.createElement("th", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-600" }, "Company")), /* @__PURE__ */ import_react.default.createElement("th", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-600" }, "Progress")), /* @__PURE__ */ import_react.default.createElement("th", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-600" }, "Action")))), /* @__PURE__ */ import_react.default.createElement("tbody", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "checkbox-2", type: "checkbox", value: "" })))), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex gap-2" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/user/2.jpg", alt: "user" }), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-w-500" }, "Jerome Bell")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "UX designer")))), /* @__PURE__ */ import_react.default.createElement("td", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-w-500" }, "Louis")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "UX designer")), /* @__PURE__ */ import_react.default.createElement("td", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "70%"), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress progress-stripe-primary mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "70%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex action-buttons" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#edit-2" }))), /* @__PURE__ */ import_react.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#trash-fill" })))))), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "checkbox-3", type: "checkbox", value: "" })))), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex gap-2" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/user/4.jpg", alt: "user" }), /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-w-500" }, "Ralph Edwa")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Web, Laravel")))), /* @__PURE__ */ import_react.default.createElement("td", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-w-500" }, "IBM")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Development")), /* @__PURE__ */ import_react.default.createElement("td", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "50%"), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress progress-stripe-success mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "50%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex action-buttons" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#edit-2" }))), /* @__PURE__ */ import_react.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#trash-fill" })))))), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "checkbox-4", type: "checkbox", value: "" })))), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex gap-2" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/user/5.jpg", alt: "user" }), /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-w-500" }, "Esther Kit")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Laravel")))), /* @__PURE__ */ import_react.default.createElement("td", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-w-500" }, "Johnson")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Unity Game")), /* @__PURE__ */ import_react.default.createElement("td", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "83%"), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress progress-stripe-secondary mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "83%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex action-buttons" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#edit-2" }))), /* @__PURE__ */ import_react.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#trash-fill" })))))), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "checkbox-5", type: "checkbox", value: "" })))), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex gap-2" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/user/1.png", alt: "user" }), /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-w-500" }, "Leslie Jolly")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Designer")))), /* @__PURE__ */ import_react.default.createElement("td", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "user-profile.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "f-w-500" }, "Card")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Marketing ")), /* @__PURE__ */ import_react.default.createElement("td", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "79%"), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress progress-stripe-warning mt-2", style: { height: "5px" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "79%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex action-buttons" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#edit-2" }))), /* @__PURE__ */ import_react.default.createElement("a", { className: "light-card", href: "#!" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#trash-fill" }))))))))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-6 col-md-6 order-md-ii" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border report-option" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "Top Referrals Pages", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 d-block f-w-500" }, "Up to $100 per referral")), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "referralButton", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, "Generate Report"), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "referralButton" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Monthly"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "weekly"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "yearly")))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body pt-0" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "referral-content" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "referral-left-details" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex gap-1" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "129,900"), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-warning" }, " ", /* @__PURE__ */ import_react.default.createElement("i", { className: "me-1", "data-feather": "trending-up" }), "4.5%")), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "vs. previous month")), /* @__PURE__ */ import_react.default.createElement("div", { className: "referral-image" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/1.png", alt: "vector" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-stacked referral-progress" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment one", "aria-valuenow": "40", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "30%" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar bg-primary" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment two", "aria-valuenow": "20", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "20%" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar bg-success" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment three", "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "15%" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar bg-warning" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment three", "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "15%" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar bg-secondary" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress", role: "progressbar", "aria-label": "Segment three", "aria-valuenow": "20", "aria-valuemin": "0", "aria-valuemax": "100", style: { width: "20%" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar bg-info" }))), /* @__PURE__ */ import_react.default.createElement("ul", { className: "referral-list" }, /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-primary" }), /* @__PURE__ */ import_react.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.google.com"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500" }, "35.89%")), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-success" }), /* @__PURE__ */ import_react.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.youtube.com"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500" }, "19.12%")), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-warning" }), /* @__PURE__ */ import_react.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.media.com"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500" }, "14.75%")), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-secondary" }), /* @__PURE__ */ import_react.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.pixelstrap.com"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500" }, "19.76%")), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-secondary" }), /* @__PURE__ */ import_react.default.createElement("a", { className: "f-light f-w-500", href: "search.html" }, "www.facebook.com"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-w-500" }, "18.98%")))))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-3 col-xl-100" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-12 col-xl-40 col-sm-6 order-xl-ii discount-report" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h2", null, "Total Transactions", /* @__PURE__ */ import_react.default.createElement("span", { className: "d-block f-w-500 f-light f-12" }, "Special Discount ", /* @__PURE__ */ import_react.default.createElement("span", { className: "txt-primary" }, "60% OFF")))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "earning-avg1", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "earning-avg1" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Today"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Tomorrow"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Yesterday")))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body transaction-report" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "total-transaction-wrapper" }, /* @__PURE__ */ import_react.default.createElement("div", { id: "total-transaction-chart" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "report-content" }, /* @__PURE__ */ import_react.default.createElement("h5", null, "Report"), /* @__PURE__ */ import_react.default.createElement("ul", null, /* @__PURE__ */ import_react.default.createElement("li", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-light f-w-500" }, "This Week"), /* @__PURE__ */ import_react.default.createElement("h6", null, "+78.32 %"), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress progress-stripe-primary with-light-background", style: { height: "5px" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "70%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))), /* @__PURE__ */ import_react.default.createElement("li", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-12 f-light f-w-500" }, "This Week"), /* @__PURE__ */ import_react.default.createElement("h6", null, "-34.52 %"), /* @__PURE__ */ import_react.default.createElement("div", { className: "progress progress-stripe-success with-light-background", style: { height: "5px" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "progress-bar-animated progress-bar-striped", role: "progressbar", style: { width: "70%" }, "aria-valuenow": "10", "aria-valuemin": "0", "aria-valuemax": "100" }))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "report-button" }, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h5", { className: "f-w-600" }, "+95.62 % ", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 f-w-500" }, "Performance"))), /* @__PURE__ */ import_react.default.createElement("a", { className: "btn btn-primary f-w-500 f-12", href: "#!" }, "New report", /* @__PURE__ */ import_react.default.createElement("svg", { className: "svg-sprite" }, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#logout" })))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-xl-12 col-xl-30 col-sm-6 order-xl-ii customer-order" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "header-top order-lists" }, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h2", null, "Recent Orders", /* @__PURE__ */ import_react.default.createElement("span", { className: "d-block f-w-500 f-light f-12" }, "80 Orders in a December"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "recent-button", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, "All Orders"), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "recent-button" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Pending"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Success"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Deliver")))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body transaction-list recent-orders" }, /* @__PURE__ */ import_react.default.createElement("ul", { className: "order-list mb-0" }, /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/product/1.png", alt: "TV" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "mb-1" }, " Apple PC")), /* @__PURE__ */ import_react.default.createElement("span", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-primary" }, "#10988"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "3 Item"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "order-1", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-1" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$5,098")))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/product/2.png", alt: "T-shirt" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "mb-1" }, "T-Shirts")), /* @__PURE__ */ import_react.default.createElement("span", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-primary" }, "#10980"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "2 Item"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "order-2", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-2" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$6,010")))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/product/3.png", alt: "Macbook air M2" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "mb-1" }, "Macbook")), /* @__PURE__ */ import_react.default.createElement("span", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-primary" }, "#101098"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "5 Item"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "order-3", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-3" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$12,000")))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/product/4.png", alt: "Shoes" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "mb-1" }, "Shoes")), /* @__PURE__ */ import_react.default.createElement("span", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-primary" }, "#101098"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "3 Item"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "order-4", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-4" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$2,000")))), /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "light-card" }, " ", /* @__PURE__ */ import_react.default.createElement("img", { src: "../assets/images/dashboard/product/5.png", alt: "watch" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "order-content" }, /* @__PURE__ */ import_react.default.createElement("div", null, " ", /* @__PURE__ */ import_react.default.createElement("a", { href: "order-history.html" }, /* @__PURE__ */ import_react.default.createElement("h6", { className: "mb-1" }, "Wall Watch")), /* @__PURE__ */ import_react.default.createElement("span", null, " ", /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-primary" }, "#101098"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12 ms-2" }, "1 Item"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "text-end" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown icon-dropdown" }, /* @__PURE__ */ import_react.default.createElement("button", { className: "btn dropdown-toggle", id: "order-5", type: "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" }, /* @__PURE__ */ import_react.default.createElement("svg", null, /* @__PURE__ */ import_react.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#more-horizontal" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "dropdown-menu dropdown-menu-end", "aria-labelledby": "order-5" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "cart.html" }, "Add to cart"), /* @__PURE__ */ import_react.default.createElement("a", { className: "dropdown-item", href: "#" }, "Cancel"))), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-w-500 f-12" }, "$2,000"))))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-12 col-xl-100 order-xl-i" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "offer-banner" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "offer-content" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "20% Off Themes"), /* @__PURE__ */ import_react.default.createElement("p", { className: "f-w-500 f-12" }, "Get all the latest wordpress theme and plugin coupon in this board.")), /* @__PURE__ */ import_react.default.createElement("img", { className: "img-fluid", src: "../assets/images/dashboard/banner.png", alt: "vector" }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "col-12 col-xl-30 order-xl-ii todo-wrapper" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header card-no-border order-lists" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "header-top" }, /* @__PURE__ */ import_react.default.createElement("h2", null, "To do List", /* @__PURE__ */ import_react.default.createElement("span", { className: "f-light f-12 d-block f-w-500" }, "80 Orders in a December")), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-header-right-icon" }, /* @__PURE__ */ import_react.default.createElement("a", { className: "link-with-icon", href: "#" }, "+ Create")))), /* @__PURE__ */ import_react.default.createElement("div", { className: "card-body notification to-do-list" }, /* @__PURE__ */ import_react.default.createElement("ul", { className: "custom-scrollbar" }, /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-primary" }), /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "list-1", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h6", null, "Products"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Today 2:00pm Clock")), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-primary ms-auto" }, "In Progress"))), /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-warning" }), /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "list-2", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h6", null, "Web developing.."), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 4 Days")), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-warning ms-auto" }, "Pending"))), /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-success" }), /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "list-3", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h6", null, "UI/UX Design"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 3 Days")), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-success ms-auto" }, "Completed"))), /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-primary" }), /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "list-4", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h6", null, "Client Meeting .."), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Today 1:00pm Clock")), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-primary ms-auto" }, "In Progress"))), /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-success" }), /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "list-5", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h6", null, "Wed layout"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 10 Days")), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-success ms-auto" }, "Completed"))), /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-warning" }), /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "list-6", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h6", null, "Web developing.."), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 4 Days")), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-warning ms-auto" }, "Pending"))), /* @__PURE__ */ import_react.default.createElement("li", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "activity-dot-success" }), /* @__PURE__ */ import_react.default.createElement("div", { className: "d-flex w-100 align-items-center" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "checkbox-checked" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "form-check" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-check-input", id: "list-7", type: "checkbox", value: "" }))), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h6", null, "UI/UX Design"), /* @__PURE__ */ import_react.default.createElement("span", { className: "f-w-500 f-12 f-light" }, "Due in 3 Days")), /* @__PURE__ */ import_react.default.createElement("span", { className: "badge badge-light-success ms-auto" }, "Completed"))))))))))));
   };
 
-  // src/components/AgentUserMenu/Index.js
-  var import_react6 = __toESM(require_react());
+  // src/Components/AgentUserMenu/Index.js
+  var import_react2 = __toESM(require_react());
   var Index_default = Index = () => {
-    const [isShowOpen, setIsShowOpen] = (0, import_react6.useState)(false);
-    return /* @__PURE__ */ import_react6.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "card m-3 p-3" }, /* @__PURE__ */ import_react6.default.createElement("h1", { className: "" }, "Listing of Agent User Menu"), /* @__PURE__ */ import_react6.default.createElement("form", { method: "get", action: "/agent_user_menus", className: "mb-4" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "col-md-2" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "form-group" }, /* @__PURE__ */ import_react6.default.createElement("label", { htmlFor: "agent_id" }, "Agent ID:"), /* @__PURE__ */ import_react6.default.createElement(
+    const [isShowOpen, setIsShowOpen] = (0, import_react2.useState)(false);
+    return /* @__PURE__ */ import_react2.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card m-3 p-3" }, /* @__PURE__ */ import_react2.default.createElement("h1", { className: "" }, "Listing of Agent User Menu"), /* @__PURE__ */ import_react2.default.createElement("form", { method: "get", action: "/agent_user_menus", className: "mb-4" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "col-md-2" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "form-group" }, /* @__PURE__ */ import_react2.default.createElement("label", { htmlFor: "agent_id" }, "Agent ID:"), /* @__PURE__ */ import_react2.default.createElement(
       "input",
       {
         id: "agent_id",
@@ -22117,7 +21854,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         type: "text",
         className: "form-control"
       }
-    ))), /* @__PURE__ */ import_react6.default.createElement("div", { className: "col-md-2" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "form-group" }, /* @__PURE__ */ import_react6.default.createElement("label", { htmlFor: "menu_description" }, "Menu Description:"), /* @__PURE__ */ import_react6.default.createElement(
+    ))), /* @__PURE__ */ import_react2.default.createElement("div", { className: "col-md-2" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "form-group" }, /* @__PURE__ */ import_react2.default.createElement("label", { htmlFor: "menu_description" }, "Menu Description:"), /* @__PURE__ */ import_react2.default.createElement(
       "input",
       {
         id: "menu_description",
@@ -22125,14 +21862,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         type: "text",
         className: "form-control"
       }
-    ))), /* @__PURE__ */ import_react6.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "form-group mt-4 d-flex align-items-center" }, /* @__PURE__ */ import_react6.default.createElement(
+    ))), /* @__PURE__ */ import_react2.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "form-group mt-4 d-flex align-items-center" }, /* @__PURE__ */ import_react2.default.createElement(
       "button",
       {
         type: "submit",
         className: "btn btn-primary text-nowrap me-2"
       },
       "Show Agent User Menu"
-    ), /* @__PURE__ */ import_react6.default.createElement(
+    ), /* @__PURE__ */ import_react2.default.createElement(
       "button",
       {
         id: "clear_filter",
@@ -22140,7 +21877,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         className: "btn btn-secondary ml-3 text-nowrap"
       },
       "Clear Filter"
-    ))))), /* @__PURE__ */ import_react6.default.createElement("div", { className: "card" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "card-header bg-primary d-flex align-items-center justify-content-between py-2 px-3" }, /* @__PURE__ */ import_react6.default.createElement("h5", { className: "mb-0 text-white" }, "Agent User"), /* @__PURE__ */ import_react6.default.createElement("div", { className: "d-flex align-items-center ms-auto gap-2" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "btn-group" }, /* @__PURE__ */ import_react6.default.createElement(
+    ))))), /* @__PURE__ */ import_react2.default.createElement("div", { className: "card" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-header bg-primary d-flex align-items-center justify-content-between py-2 px-3" }, /* @__PURE__ */ import_react2.default.createElement("h5", { className: "mb-0 text-white" }, "Agent User"), /* @__PURE__ */ import_react2.default.createElement("div", { className: "d-flex align-items-center ms-auto gap-2" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "btn-group" }, /* @__PURE__ */ import_react2.default.createElement(
       "button",
       {
         type: "button",
@@ -22150,7 +21887,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         "aria-expanded": isShowOpen
       },
       "Show only"
-    ), /* @__PURE__ */ import_react6.default.createElement(
+    ), /* @__PURE__ */ import_react2.default.createElement(
       "ul",
       {
         className: `dropdown-menu ${isShowOpen ? "show" : ""}`,
@@ -22166,35 +21903,2955 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         },
         "data-popper-placement": "bottom-start"
       },
-      /* @__PURE__ */ import_react6.default.createElement("li", { className: "dropdown-item" }, "10"),
-      /* @__PURE__ */ import_react6.default.createElement("li", { className: "dropdown-item" }, "30"),
-      /* @__PURE__ */ import_react6.default.createElement("li", { className: "dropdown-item" }, "50")
-    )), /* @__PURE__ */ import_react6.default.createElement(Link, { to: "/agent_user_menus/new", className: "btn btn-success btn-md" }, "New Agent User Menu"))), /* @__PURE__ */ import_react6.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react6.default.createElement("div", { class: "table-responsive user-datatable custom-scrollbar" }, /* @__PURE__ */ import_react6.default.createElement("table", { class: "table-hover table-border-horizontal border-solid", id: "basic-12" }, /* @__PURE__ */ import_react6.default.createElement("thead", null, /* @__PURE__ */ import_react6.default.createElement("tr", null, /* @__PURE__ */ import_react6.default.createElement("th", null, "Agent ID"), /* @__PURE__ */ import_react6.default.createElement("th", null, "Menu ID"), /* @__PURE__ */ import_react6.default.createElement("th", null, "Menu Description"), /* @__PURE__ */ import_react6.default.createElement("th", null, "Create"), /* @__PURE__ */ import_react6.default.createElement("th", null, "Read"), /* @__PURE__ */ import_react6.default.createElement("th", null, "Update"), /* @__PURE__ */ import_react6.default.createElement("th", null, "Delete"), /* @__PURE__ */ import_react6.default.createElement("th", null, "Print"), /* @__PURE__ */ import_react6.default.createElement("th", null, "Actions"))), /* @__PURE__ */ import_react6.default.createElement("tbody", null, /* @__PURE__ */ import_react6.default.createElement("tr", null, /* @__PURE__ */ import_react6.default.createElement("td", null, "agent_id"), /* @__PURE__ */ import_react6.default.createElement("td", null, "agent_menu_id"), /* @__PURE__ */ import_react6.default.createElement("td", null, "menu"), /* @__PURE__ */ import_react6.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react6.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react6.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react6.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react6.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react6.default.createElement("td", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react6.default.createElement(
+      /* @__PURE__ */ import_react2.default.createElement("li", { className: "dropdown-item" }, "10"),
+      /* @__PURE__ */ import_react2.default.createElement("li", { className: "dropdown-item" }, "30"),
+      /* @__PURE__ */ import_react2.default.createElement("li", { className: "dropdown-item" }, "50")
+    )), /* @__PURE__ */ import_react2.default.createElement(Link, { to: "/agent_user_menus/new", className: "btn btn-success btn-md" }, "New Agent User Menu"))), /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react2.default.createElement("div", { class: "table-responsive user-datatable custom-scrollbar" }, /* @__PURE__ */ import_react2.default.createElement("table", { class: "table-hover table-border-horizontal border-solid", id: "basic-12" }, /* @__PURE__ */ import_react2.default.createElement("thead", null, /* @__PURE__ */ import_react2.default.createElement("tr", null, /* @__PURE__ */ import_react2.default.createElement("th", null, "Agent ID"), /* @__PURE__ */ import_react2.default.createElement("th", null, "Menu ID"), /* @__PURE__ */ import_react2.default.createElement("th", null, "Menu Description"), /* @__PURE__ */ import_react2.default.createElement("th", null, "Create"), /* @__PURE__ */ import_react2.default.createElement("th", null, "Read"), /* @__PURE__ */ import_react2.default.createElement("th", null, "Update"), /* @__PURE__ */ import_react2.default.createElement("th", null, "Delete"), /* @__PURE__ */ import_react2.default.createElement("th", null, "Print"), /* @__PURE__ */ import_react2.default.createElement("th", null, "Actions"))), /* @__PURE__ */ import_react2.default.createElement("tbody", null, /* @__PURE__ */ import_react2.default.createElement("tr", null, /* @__PURE__ */ import_react2.default.createElement("td", null, "agent_id"), /* @__PURE__ */ import_react2.default.createElement("td", null, "agent_menu_id"), /* @__PURE__ */ import_react2.default.createElement("td", null, "menu"), /* @__PURE__ */ import_react2.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react2.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react2.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react2.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react2.default.createElement("td", null, "YES/NO"), /* @__PURE__ */ import_react2.default.createElement("td", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react2.default.createElement(
       Link,
       {
         to: "/agent_user_menus/edit",
         className: "btn btn-warning me-2 btn-sm"
       },
       "Edit"
-    ), /* @__PURE__ */ import_react6.default.createElement("button", { className: "btn btn-danger me-2 btn-sm" }, "Destroy")))))))), /* @__PURE__ */ import_react6.default.createElement("nav", { className: "d-flex justify-content-center mt-4" })));
+    ), /* @__PURE__ */ import_react2.default.createElement("button", { className: "btn btn-danger me-2 btn-sm" }, "Destroy")))))))), /* @__PURE__ */ import_react2.default.createElement("nav", { className: "d-flex justify-content-center mt-4" })));
   };
 
-  // src/components/AgentUserMenu/New.js
-  var import_react7 = __toESM(require_react());
+  // src/Components/AgentUserMenu/New.js
+  var import_react3 = __toESM(require_react());
   var New_default = New = () => {
-    return /* @__PURE__ */ import_react7.default.createElement("div", { class: "container nifty-container mt-3" }, /* @__PURE__ */ import_react7.default.createElement("div", { class: "row justify-content-center" }, /* @__PURE__ */ import_react7.default.createElement("div", { class: "col-md-4" }, /* @__PURE__ */ import_react7.default.createElement("div", { class: "alert alert-primary d-flex align-items-center m-2", role: "alert" }, /* @__PURE__ */ import_react7.default.createElement("p", { class: "mb-0 text-center text-success" }, "Placeholder: Notice")), /* @__PURE__ */ import_react7.default.createElement("div", { class: "card m-2" }, /* @__PURE__ */ import_react7.default.createElement("div", { class: "card-header bg-primary text-white" }, /* @__PURE__ */ import_react7.default.createElement("h4", { class: "mb-0 text-white", id: "card-title" }, "New Agent User Menu")), /* @__PURE__ */ import_react7.default.createElement("div", { class: "card-body" }, /* @__PURE__ */ import_react7.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react7.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react7.default.createElement("h5", { class: "mb-3 border-bottom pb-2" }, "Agent User Menu Details"), /* @__PURE__ */ import_react7.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react7.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react7.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react7.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react7.default.createElement("i", { class: "pli-notepad" })), /* @__PURE__ */ import_react7.default.createElement("input", { className: "form-control", tabIndex: 1, list: "menu", autoComplete: false, required: true }))), /* @__PURE__ */ import_react7.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react7.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react7.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react7.default.createElement("i", { class: "pli-male-2" })), /* @__PURE__ */ import_react7.default.createElement("input", { className: "form-control", tabIndex: 1, list: "agent", autoComplete: false, required: true }))), /* @__PURE__ */ import_react7.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react7.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react7.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react7.default.createElement("div", { class: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react7.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react7.default.createElement("label", null, "User Create"), /* @__PURE__ */ import_react7.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react7.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react7.default.createElement("label", null, "User Read"), /* @__PURE__ */ import_react7.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react7.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react7.default.createElement("label", null, "User Update"), /* @__PURE__ */ import_react7.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react7.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react7.default.createElement("label", null, "User Delete"), /* @__PURE__ */ import_react7.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react7.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react7.default.createElement("label", null, "User Print"), /* @__PURE__ */ import_react7.default.createElement("input", { className: "form-check-input" }))))), /* @__PURE__ */ import_react7.default.createElement("div", { class: "d-flex justify-content-between" }, /* @__PURE__ */ import_react7.default.createElement(Link, { to: "/agent_user_menus", className: "btn btn-secondary" }, "Back"), /* @__PURE__ */ import_react7.default.createElement(Link, { className: "btn btn-success" }, "Save")))))));
+    return /* @__PURE__ */ import_react3.default.createElement("div", { class: "container nifty-container mt-3" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "row justify-content-center" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "col-md-4" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "alert alert-primary d-flex align-items-center m-2", role: "alert" }, /* @__PURE__ */ import_react3.default.createElement("p", { class: "mb-0 text-center text-success" }, "Placeholder: Notice")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card m-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-header bg-primary text-white" }, /* @__PURE__ */ import_react3.default.createElement("h4", { class: "mb-0 text-white", id: "card-title" }, "New Agent User Menu")), /* @__PURE__ */ import_react3.default.createElement("div", { class: "card-body" }, /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react3.default.createElement("h5", { class: "mb-3 border-bottom pb-2" }, "Agent User Menu Details"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "pli-notepad" })), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-control", tabIndex: 1, list: "menu", autoComplete: false, required: true }))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { class: "pli-male-2" })), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-control", tabIndex: 1, list: "agent", autoComplete: false, required: true }))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react3.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Create"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Read"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Update"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Delete"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" })), /* @__PURE__ */ import_react3.default.createElement("div", { class: "form-check mb-2" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "User Print"), /* @__PURE__ */ import_react3.default.createElement("input", { className: "form-check-input" }))))), /* @__PURE__ */ import_react3.default.createElement("div", { class: "d-flex justify-content-between" }, /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/agent_user_menus", className: "btn btn-secondary" }, "Back"), /* @__PURE__ */ import_react3.default.createElement(Link, { className: "btn btn-success" }, "Save")))))));
   };
+
+  // src/Login/LoginForm.js
+  var import_react4 = __toESM(require_react());
+
+  // node_modules/axios/lib/helpers/bind.js
+  function bind(fn, thisArg) {
+    return function wrap() {
+      return fn.apply(thisArg, arguments);
+    };
+  }
+
+  // node_modules/axios/lib/utils.js
+  var { toString } = Object.prototype;
+  var { getPrototypeOf } = Object;
+  var kindOf = /* @__PURE__ */ ((cache) => (thing) => {
+    const str = toString.call(thing);
+    return cache[str] || (cache[str] = str.slice(8, -1).toLowerCase());
+  })(/* @__PURE__ */ Object.create(null));
+  var kindOfTest = (type) => {
+    type = type.toLowerCase();
+    return (thing) => kindOf(thing) === type;
+  };
+  var typeOfTest = (type) => (thing) => typeof thing === type;
+  var { isArray } = Array;
+  var isUndefined = typeOfTest("undefined");
+  function isBuffer(val) {
+    return val !== null && !isUndefined(val) && val.constructor !== null && !isUndefined(val.constructor) && isFunction(val.constructor.isBuffer) && val.constructor.isBuffer(val);
+  }
+  var isArrayBuffer = kindOfTest("ArrayBuffer");
+  function isArrayBufferView(val) {
+    let result;
+    if (typeof ArrayBuffer !== "undefined" && ArrayBuffer.isView) {
+      result = ArrayBuffer.isView(val);
+    } else {
+      result = val && val.buffer && isArrayBuffer(val.buffer);
+    }
+    return result;
+  }
+  var isString = typeOfTest("string");
+  var isFunction = typeOfTest("function");
+  var isNumber = typeOfTest("number");
+  var isObject = (thing) => thing !== null && typeof thing === "object";
+  var isBoolean = (thing) => thing === true || thing === false;
+  var isPlainObject = (val) => {
+    if (kindOf(val) !== "object") {
+      return false;
+    }
+    const prototype3 = getPrototypeOf(val);
+    return (prototype3 === null || prototype3 === Object.prototype || Object.getPrototypeOf(prototype3) === null) && !(Symbol.toStringTag in val) && !(Symbol.iterator in val);
+  };
+  var isDate = kindOfTest("Date");
+  var isFile = kindOfTest("File");
+  var isBlob = kindOfTest("Blob");
+  var isFileList = kindOfTest("FileList");
+  var isStream = (val) => isObject(val) && isFunction(val.pipe);
+  var isFormData = (thing) => {
+    let kind;
+    return thing && (typeof FormData === "function" && thing instanceof FormData || isFunction(thing.append) && ((kind = kindOf(thing)) === "formdata" || // detect form-data instance
+    kind === "object" && isFunction(thing.toString) && thing.toString() === "[object FormData]"));
+  };
+  var isURLSearchParams = kindOfTest("URLSearchParams");
+  var [isReadableStream, isRequest, isResponse, isHeaders] = ["ReadableStream", "Request", "Response", "Headers"].map(kindOfTest);
+  var trim = (str) => str.trim ? str.trim() : str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
+  function forEach(obj, fn, { allOwnKeys = false } = {}) {
+    if (obj === null || typeof obj === "undefined") {
+      return;
+    }
+    let i;
+    let l;
+    if (typeof obj !== "object") {
+      obj = [obj];
+    }
+    if (isArray(obj)) {
+      for (i = 0, l = obj.length; i < l; i++) {
+        fn.call(null, obj[i], i, obj);
+      }
+    } else {
+      const keys = allOwnKeys ? Object.getOwnPropertyNames(obj) : Object.keys(obj);
+      const len = keys.length;
+      let key;
+      for (i = 0; i < len; i++) {
+        key = keys[i];
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+  function findKey(obj, key) {
+    key = key.toLowerCase();
+    const keys = Object.keys(obj);
+    let i = keys.length;
+    let _key;
+    while (i-- > 0) {
+      _key = keys[i];
+      if (key === _key.toLowerCase()) {
+        return _key;
+      }
+    }
+    return null;
+  }
+  var _global = (() => {
+    if (typeof globalThis !== "undefined") return globalThis;
+    return typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : global;
+  })();
+  var isContextDefined = (context) => !isUndefined(context) && context !== _global;
+  function merge() {
+    const { caseless } = isContextDefined(this) && this || {};
+    const result = {};
+    const assignValue = (val, key) => {
+      const targetKey = caseless && findKey(result, key) || key;
+      if (isPlainObject(result[targetKey]) && isPlainObject(val)) {
+        result[targetKey] = merge(result[targetKey], val);
+      } else if (isPlainObject(val)) {
+        result[targetKey] = merge({}, val);
+      } else if (isArray(val)) {
+        result[targetKey] = val.slice();
+      } else {
+        result[targetKey] = val;
+      }
+    };
+    for (let i = 0, l = arguments.length; i < l; i++) {
+      arguments[i] && forEach(arguments[i], assignValue);
+    }
+    return result;
+  }
+  var extend = (a, b, thisArg, { allOwnKeys } = {}) => {
+    forEach(b, (val, key) => {
+      if (thisArg && isFunction(val)) {
+        a[key] = bind(val, thisArg);
+      } else {
+        a[key] = val;
+      }
+    }, { allOwnKeys });
+    return a;
+  };
+  var stripBOM = (content) => {
+    if (content.charCodeAt(0) === 65279) {
+      content = content.slice(1);
+    }
+    return content;
+  };
+  var inherits = (constructor, superConstructor, props, descriptors2) => {
+    constructor.prototype = Object.create(superConstructor.prototype, descriptors2);
+    constructor.prototype.constructor = constructor;
+    Object.defineProperty(constructor, "super", {
+      value: superConstructor.prototype
+    });
+    props && Object.assign(constructor.prototype, props);
+  };
+  var toFlatObject = (sourceObj, destObj, filter2, propFilter) => {
+    let props;
+    let i;
+    let prop;
+    const merged = {};
+    destObj = destObj || {};
+    if (sourceObj == null) return destObj;
+    do {
+      props = Object.getOwnPropertyNames(sourceObj);
+      i = props.length;
+      while (i-- > 0) {
+        prop = props[i];
+        if ((!propFilter || propFilter(prop, sourceObj, destObj)) && !merged[prop]) {
+          destObj[prop] = sourceObj[prop];
+          merged[prop] = true;
+        }
+      }
+      sourceObj = filter2 !== false && getPrototypeOf(sourceObj);
+    } while (sourceObj && (!filter2 || filter2(sourceObj, destObj)) && sourceObj !== Object.prototype);
+    return destObj;
+  };
+  var endsWith = (str, searchString, position) => {
+    str = String(str);
+    if (position === void 0 || position > str.length) {
+      position = str.length;
+    }
+    position -= searchString.length;
+    const lastIndex = str.indexOf(searchString, position);
+    return lastIndex !== -1 && lastIndex === position;
+  };
+  var toArray = (thing) => {
+    if (!thing) return null;
+    if (isArray(thing)) return thing;
+    let i = thing.length;
+    if (!isNumber(i)) return null;
+    const arr = new Array(i);
+    while (i-- > 0) {
+      arr[i] = thing[i];
+    }
+    return arr;
+  };
+  var isTypedArray = /* @__PURE__ */ ((TypedArray) => {
+    return (thing) => {
+      return TypedArray && thing instanceof TypedArray;
+    };
+  })(typeof Uint8Array !== "undefined" && getPrototypeOf(Uint8Array));
+  var forEachEntry = (obj, fn) => {
+    const generator = obj && obj[Symbol.iterator];
+    const iterator = generator.call(obj);
+    let result;
+    while ((result = iterator.next()) && !result.done) {
+      const pair = result.value;
+      fn.call(obj, pair[0], pair[1]);
+    }
+  };
+  var matchAll = (regExp, str) => {
+    let matches;
+    const arr = [];
+    while ((matches = regExp.exec(str)) !== null) {
+      arr.push(matches);
+    }
+    return arr;
+  };
+  var isHTMLForm = kindOfTest("HTMLFormElement");
+  var toCamelCase = (str) => {
+    return str.toLowerCase().replace(
+      /[-_\s]([a-z\d])(\w*)/g,
+      function replacer(m, p1, p2) {
+        return p1.toUpperCase() + p2;
+      }
+    );
+  };
+  var hasOwnProperty = (({ hasOwnProperty: hasOwnProperty2 }) => (obj, prop) => hasOwnProperty2.call(obj, prop))(Object.prototype);
+  var isRegExp = kindOfTest("RegExp");
+  var reduceDescriptors = (obj, reducer) => {
+    const descriptors2 = Object.getOwnPropertyDescriptors(obj);
+    const reducedDescriptors = {};
+    forEach(descriptors2, (descriptor, name) => {
+      let ret;
+      if ((ret = reducer(descriptor, name, obj)) !== false) {
+        reducedDescriptors[name] = ret || descriptor;
+      }
+    });
+    Object.defineProperties(obj, reducedDescriptors);
+  };
+  var freezeMethods = (obj) => {
+    reduceDescriptors(obj, (descriptor, name) => {
+      if (isFunction(obj) && ["arguments", "caller", "callee"].indexOf(name) !== -1) {
+        return false;
+      }
+      const value = obj[name];
+      if (!isFunction(value)) return;
+      descriptor.enumerable = false;
+      if ("writable" in descriptor) {
+        descriptor.writable = false;
+        return;
+      }
+      if (!descriptor.set) {
+        descriptor.set = () => {
+          throw Error("Can not rewrite read-only method '" + name + "'");
+        };
+      }
+    });
+  };
+  var toObjectSet = (arrayOrString, delimiter) => {
+    const obj = {};
+    const define = (arr) => {
+      arr.forEach((value) => {
+        obj[value] = true;
+      });
+    };
+    isArray(arrayOrString) ? define(arrayOrString) : define(String(arrayOrString).split(delimiter));
+    return obj;
+  };
+  var noop = () => {
+  };
+  var toFiniteNumber = (value, defaultValue) => {
+    return value != null && Number.isFinite(value = +value) ? value : defaultValue;
+  };
+  function isSpecCompliantForm(thing) {
+    return !!(thing && isFunction(thing.append) && thing[Symbol.toStringTag] === "FormData" && thing[Symbol.iterator]);
+  }
+  var toJSONObject = (obj) => {
+    const stack = new Array(10);
+    const visit = (source, i) => {
+      if (isObject(source)) {
+        if (stack.indexOf(source) >= 0) {
+          return;
+        }
+        if (!("toJSON" in source)) {
+          stack[i] = source;
+          const target = isArray(source) ? [] : {};
+          forEach(source, (value, key) => {
+            const reducedValue = visit(value, i + 1);
+            !isUndefined(reducedValue) && (target[key] = reducedValue);
+          });
+          stack[i] = void 0;
+          return target;
+        }
+      }
+      return source;
+    };
+    return visit(obj, 0);
+  };
+  var isAsyncFn = kindOfTest("AsyncFunction");
+  var isThenable = (thing) => thing && (isObject(thing) || isFunction(thing)) && isFunction(thing.then) && isFunction(thing.catch);
+  var _setImmediate = ((setImmediateSupported, postMessageSupported) => {
+    if (setImmediateSupported) {
+      return setImmediate;
+    }
+    return postMessageSupported ? ((token, callbacks) => {
+      _global.addEventListener("message", ({ source, data: data2 }) => {
+        if (source === _global && data2 === token) {
+          callbacks.length && callbacks.shift()();
+        }
+      }, false);
+      return (cb) => {
+        callbacks.push(cb);
+        _global.postMessage(token, "*");
+      };
+    })(`axios@${Math.random()}`, []) : (cb) => setTimeout(cb);
+  })(
+    typeof setImmediate === "function",
+    isFunction(_global.postMessage)
+  );
+  var asap = typeof queueMicrotask !== "undefined" ? queueMicrotask.bind(_global) : typeof process !== "undefined" && process.nextTick || _setImmediate;
+  var utils_default = {
+    isArray,
+    isArrayBuffer,
+    isBuffer,
+    isFormData,
+    isArrayBufferView,
+    isString,
+    isNumber,
+    isBoolean,
+    isObject,
+    isPlainObject,
+    isReadableStream,
+    isRequest,
+    isResponse,
+    isHeaders,
+    isUndefined,
+    isDate,
+    isFile,
+    isBlob,
+    isRegExp,
+    isFunction,
+    isStream,
+    isURLSearchParams,
+    isTypedArray,
+    isFileList,
+    forEach,
+    merge,
+    extend,
+    trim,
+    stripBOM,
+    inherits,
+    toFlatObject,
+    kindOf,
+    kindOfTest,
+    endsWith,
+    toArray,
+    forEachEntry,
+    matchAll,
+    isHTMLForm,
+    hasOwnProperty,
+    hasOwnProp: hasOwnProperty,
+    // an alias to avoid ESLint no-prototype-builtins detection
+    reduceDescriptors,
+    freezeMethods,
+    toObjectSet,
+    toCamelCase,
+    noop,
+    toFiniteNumber,
+    findKey,
+    global: _global,
+    isContextDefined,
+    isSpecCompliantForm,
+    toJSONObject,
+    isAsyncFn,
+    isThenable,
+    setImmediate: _setImmediate,
+    asap
+  };
+
+  // node_modules/axios/lib/core/AxiosError.js
+  function AxiosError(message, code, config, request, response) {
+    Error.call(this);
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, this.constructor);
+    } else {
+      this.stack = new Error().stack;
+    }
+    this.message = message;
+    this.name = "AxiosError";
+    code && (this.code = code);
+    config && (this.config = config);
+    request && (this.request = request);
+    if (response) {
+      this.response = response;
+      this.status = response.status ? response.status : null;
+    }
+  }
+  utils_default.inherits(AxiosError, Error, {
+    toJSON: function toJSON() {
+      return {
+        // Standard
+        message: this.message,
+        name: this.name,
+        // Microsoft
+        description: this.description,
+        number: this.number,
+        // Mozilla
+        fileName: this.fileName,
+        lineNumber: this.lineNumber,
+        columnNumber: this.columnNumber,
+        stack: this.stack,
+        // Axios
+        config: utils_default.toJSONObject(this.config),
+        code: this.code,
+        status: this.status
+      };
+    }
+  });
+  var prototype = AxiosError.prototype;
+  var descriptors = {};
+  [
+    "ERR_BAD_OPTION_VALUE",
+    "ERR_BAD_OPTION",
+    "ECONNABORTED",
+    "ETIMEDOUT",
+    "ERR_NETWORK",
+    "ERR_FR_TOO_MANY_REDIRECTS",
+    "ERR_DEPRECATED",
+    "ERR_BAD_RESPONSE",
+    "ERR_BAD_REQUEST",
+    "ERR_CANCELED",
+    "ERR_NOT_SUPPORT",
+    "ERR_INVALID_URL"
+    // eslint-disable-next-line func-names
+  ].forEach((code) => {
+    descriptors[code] = { value: code };
+  });
+  Object.defineProperties(AxiosError, descriptors);
+  Object.defineProperty(prototype, "isAxiosError", { value: true });
+  AxiosError.from = (error, code, config, request, response, customProps) => {
+    const axiosError = Object.create(prototype);
+    utils_default.toFlatObject(error, axiosError, function filter2(obj) {
+      return obj !== Error.prototype;
+    }, (prop) => {
+      return prop !== "isAxiosError";
+    });
+    AxiosError.call(axiosError, error.message, code, config, request, response);
+    axiosError.cause = error;
+    axiosError.name = error.name;
+    customProps && Object.assign(axiosError, customProps);
+    return axiosError;
+  };
+  var AxiosError_default = AxiosError;
+
+  // node_modules/axios/lib/helpers/null.js
+  var null_default = null;
+
+  // node_modules/axios/lib/helpers/toFormData.js
+  function isVisitable(thing) {
+    return utils_default.isPlainObject(thing) || utils_default.isArray(thing);
+  }
+  function removeBrackets(key) {
+    return utils_default.endsWith(key, "[]") ? key.slice(0, -2) : key;
+  }
+  function renderKey(path, key, dots) {
+    if (!path) return key;
+    return path.concat(key).map(function each(token, i) {
+      token = removeBrackets(token);
+      return !dots && i ? "[" + token + "]" : token;
+    }).join(dots ? "." : "");
+  }
+  function isFlatArray(arr) {
+    return utils_default.isArray(arr) && !arr.some(isVisitable);
+  }
+  var predicates = utils_default.toFlatObject(utils_default, {}, null, function filter(prop) {
+    return /^is[A-Z]/.test(prop);
+  });
+  function toFormData(obj, formData, options) {
+    if (!utils_default.isObject(obj)) {
+      throw new TypeError("target must be an object");
+    }
+    formData = formData || new (null_default || FormData)();
+    options = utils_default.toFlatObject(options, {
+      metaTokens: true,
+      dots: false,
+      indexes: false
+    }, false, function defined(option, source) {
+      return !utils_default.isUndefined(source[option]);
+    });
+    const metaTokens = options.metaTokens;
+    const visitor = options.visitor || defaultVisitor;
+    const dots = options.dots;
+    const indexes = options.indexes;
+    const _Blob = options.Blob || typeof Blob !== "undefined" && Blob;
+    const useBlob = _Blob && utils_default.isSpecCompliantForm(formData);
+    if (!utils_default.isFunction(visitor)) {
+      throw new TypeError("visitor must be a function");
+    }
+    function convertValue(value) {
+      if (value === null) return "";
+      if (utils_default.isDate(value)) {
+        return value.toISOString();
+      }
+      if (!useBlob && utils_default.isBlob(value)) {
+        throw new AxiosError_default("Blob is not supported. Use a Buffer instead.");
+      }
+      if (utils_default.isArrayBuffer(value) || utils_default.isTypedArray(value)) {
+        return useBlob && typeof Blob === "function" ? new Blob([value]) : Buffer.from(value);
+      }
+      return value;
+    }
+    function defaultVisitor(value, key, path) {
+      let arr = value;
+      if (value && !path && typeof value === "object") {
+        if (utils_default.endsWith(key, "{}")) {
+          key = metaTokens ? key : key.slice(0, -2);
+          value = JSON.stringify(value);
+        } else if (utils_default.isArray(value) && isFlatArray(value) || (utils_default.isFileList(value) || utils_default.endsWith(key, "[]")) && (arr = utils_default.toArray(value))) {
+          key = removeBrackets(key);
+          arr.forEach(function each(el, index) {
+            !(utils_default.isUndefined(el) || el === null) && formData.append(
+              // eslint-disable-next-line no-nested-ternary
+              indexes === true ? renderKey([key], index, dots) : indexes === null ? key : key + "[]",
+              convertValue(el)
+            );
+          });
+          return false;
+        }
+      }
+      if (isVisitable(value)) {
+        return true;
+      }
+      formData.append(renderKey(path, key, dots), convertValue(value));
+      return false;
+    }
+    const stack = [];
+    const exposedHelpers = Object.assign(predicates, {
+      defaultVisitor,
+      convertValue,
+      isVisitable
+    });
+    function build(value, path) {
+      if (utils_default.isUndefined(value)) return;
+      if (stack.indexOf(value) !== -1) {
+        throw Error("Circular reference detected in " + path.join("."));
+      }
+      stack.push(value);
+      utils_default.forEach(value, function each(el, key) {
+        const result = !(utils_default.isUndefined(el) || el === null) && visitor.call(
+          formData,
+          el,
+          utils_default.isString(key) ? key.trim() : key,
+          path,
+          exposedHelpers
+        );
+        if (result === true) {
+          build(el, path ? path.concat(key) : [key]);
+        }
+      });
+      stack.pop();
+    }
+    if (!utils_default.isObject(obj)) {
+      throw new TypeError("data must be an object");
+    }
+    build(obj);
+    return formData;
+  }
+  var toFormData_default = toFormData;
+
+  // node_modules/axios/lib/helpers/AxiosURLSearchParams.js
+  function encode(str) {
+    const charMap = {
+      "!": "%21",
+      "'": "%27",
+      "(": "%28",
+      ")": "%29",
+      "~": "%7E",
+      "%20": "+",
+      "%00": "\0"
+    };
+    return encodeURIComponent(str).replace(/[!'()~]|%20|%00/g, function replacer(match) {
+      return charMap[match];
+    });
+  }
+  function AxiosURLSearchParams(params, options) {
+    this._pairs = [];
+    params && toFormData_default(params, this, options);
+  }
+  var prototype2 = AxiosURLSearchParams.prototype;
+  prototype2.append = function append(name, value) {
+    this._pairs.push([name, value]);
+  };
+  prototype2.toString = function toString2(encoder2) {
+    const _encode = encoder2 ? function(value) {
+      return encoder2.call(this, value, encode);
+    } : encode;
+    return this._pairs.map(function each(pair) {
+      return _encode(pair[0]) + "=" + _encode(pair[1]);
+    }, "").join("&");
+  };
+  var AxiosURLSearchParams_default = AxiosURLSearchParams;
+
+  // node_modules/axios/lib/helpers/buildURL.js
+  function encode2(val) {
+    return encodeURIComponent(val).replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+").replace(/%5B/gi, "[").replace(/%5D/gi, "]");
+  }
+  function buildURL(url, params, options) {
+    if (!params) {
+      return url;
+    }
+    const _encode = options && options.encode || encode2;
+    if (utils_default.isFunction(options)) {
+      options = {
+        serialize: options
+      };
+    }
+    const serializeFn = options && options.serialize;
+    let serializedParams;
+    if (serializeFn) {
+      serializedParams = serializeFn(params, options);
+    } else {
+      serializedParams = utils_default.isURLSearchParams(params) ? params.toString() : new AxiosURLSearchParams_default(params, options).toString(_encode);
+    }
+    if (serializedParams) {
+      const hashmarkIndex = url.indexOf("#");
+      if (hashmarkIndex !== -1) {
+        url = url.slice(0, hashmarkIndex);
+      }
+      url += (url.indexOf("?") === -1 ? "?" : "&") + serializedParams;
+    }
+    return url;
+  }
+
+  // node_modules/axios/lib/core/InterceptorManager.js
+  var InterceptorManager = class {
+    constructor() {
+      this.handlers = [];
+    }
+    /**
+     * Add a new interceptor to the stack
+     *
+     * @param {Function} fulfilled The function to handle `then` for a `Promise`
+     * @param {Function} rejected The function to handle `reject` for a `Promise`
+     *
+     * @return {Number} An ID used to remove interceptor later
+     */
+    use(fulfilled, rejected, options) {
+      this.handlers.push({
+        fulfilled,
+        rejected,
+        synchronous: options ? options.synchronous : false,
+        runWhen: options ? options.runWhen : null
+      });
+      return this.handlers.length - 1;
+    }
+    /**
+     * Remove an interceptor from the stack
+     *
+     * @param {Number} id The ID that was returned by `use`
+     *
+     * @returns {Boolean} `true` if the interceptor was removed, `false` otherwise
+     */
+    eject(id) {
+      if (this.handlers[id]) {
+        this.handlers[id] = null;
+      }
+    }
+    /**
+     * Clear all interceptors from the stack
+     *
+     * @returns {void}
+     */
+    clear() {
+      if (this.handlers) {
+        this.handlers = [];
+      }
+    }
+    /**
+     * Iterate over all the registered interceptors
+     *
+     * This method is particularly useful for skipping over any
+     * interceptors that may have become `null` calling `eject`.
+     *
+     * @param {Function} fn The function to call for each interceptor
+     *
+     * @returns {void}
+     */
+    forEach(fn) {
+      utils_default.forEach(this.handlers, function forEachHandler(h) {
+        if (h !== null) {
+          fn(h);
+        }
+      });
+    }
+  };
+  var InterceptorManager_default = InterceptorManager;
+
+  // node_modules/axios/lib/defaults/transitional.js
+  var transitional_default = {
+    silentJSONParsing: true,
+    forcedJSONParsing: true,
+    clarifyTimeoutError: false
+  };
+
+  // node_modules/axios/lib/platform/browser/classes/URLSearchParams.js
+  var URLSearchParams_default = typeof URLSearchParams !== "undefined" ? URLSearchParams : AxiosURLSearchParams_default;
+
+  // node_modules/axios/lib/platform/browser/classes/FormData.js
+  var FormData_default = typeof FormData !== "undefined" ? FormData : null;
+
+  // node_modules/axios/lib/platform/browser/classes/Blob.js
+  var Blob_default = typeof Blob !== "undefined" ? Blob : null;
+
+  // node_modules/axios/lib/platform/browser/index.js
+  var browser_default = {
+    isBrowser: true,
+    classes: {
+      URLSearchParams: URLSearchParams_default,
+      FormData: FormData_default,
+      Blob: Blob_default
+    },
+    protocols: ["http", "https", "file", "blob", "url", "data"]
+  };
+
+  // node_modules/axios/lib/platform/common/utils.js
+  var utils_exports = {};
+  __export(utils_exports, {
+    hasBrowserEnv: () => hasBrowserEnv,
+    hasStandardBrowserEnv: () => hasStandardBrowserEnv,
+    hasStandardBrowserWebWorkerEnv: () => hasStandardBrowserWebWorkerEnv,
+    navigator: () => _navigator,
+    origin: () => origin
+  });
+  var hasBrowserEnv = typeof window !== "undefined" && typeof document !== "undefined";
+  var _navigator = typeof navigator === "object" && navigator || void 0;
+  var hasStandardBrowserEnv = hasBrowserEnv && (!_navigator || ["ReactNative", "NativeScript", "NS"].indexOf(_navigator.product) < 0);
+  var hasStandardBrowserWebWorkerEnv = (() => {
+    return typeof WorkerGlobalScope !== "undefined" && // eslint-disable-next-line no-undef
+    self instanceof WorkerGlobalScope && typeof self.importScripts === "function";
+  })();
+  var origin = hasBrowserEnv && window.location.href || "http://localhost";
+
+  // node_modules/axios/lib/platform/index.js
+  var platform_default = {
+    ...utils_exports,
+    ...browser_default
+  };
+
+  // node_modules/axios/lib/helpers/toURLEncodedForm.js
+  function toURLEncodedForm(data2, options) {
+    return toFormData_default(data2, new platform_default.classes.URLSearchParams(), Object.assign({
+      visitor: function(value, key, path, helpers) {
+        if (platform_default.isNode && utils_default.isBuffer(value)) {
+          this.append(key, value.toString("base64"));
+          return false;
+        }
+        return helpers.defaultVisitor.apply(this, arguments);
+      }
+    }, options));
+  }
+
+  // node_modules/axios/lib/helpers/formDataToJSON.js
+  function parsePropPath(name) {
+    return utils_default.matchAll(/\w+|\[(\w*)]/g, name).map((match) => {
+      return match[0] === "[]" ? "" : match[1] || match[0];
+    });
+  }
+  function arrayToObject(arr) {
+    const obj = {};
+    const keys = Object.keys(arr);
+    let i;
+    const len = keys.length;
+    let key;
+    for (i = 0; i < len; i++) {
+      key = keys[i];
+      obj[key] = arr[key];
+    }
+    return obj;
+  }
+  function formDataToJSON(formData) {
+    function buildPath(path, value, target, index) {
+      let name = path[index++];
+      if (name === "__proto__") return true;
+      const isNumericKey = Number.isFinite(+name);
+      const isLast = index >= path.length;
+      name = !name && utils_default.isArray(target) ? target.length : name;
+      if (isLast) {
+        if (utils_default.hasOwnProp(target, name)) {
+          target[name] = [target[name], value];
+        } else {
+          target[name] = value;
+        }
+        return !isNumericKey;
+      }
+      if (!target[name] || !utils_default.isObject(target[name])) {
+        target[name] = [];
+      }
+      const result = buildPath(path, value, target[name], index);
+      if (result && utils_default.isArray(target[name])) {
+        target[name] = arrayToObject(target[name]);
+      }
+      return !isNumericKey;
+    }
+    if (utils_default.isFormData(formData) && utils_default.isFunction(formData.entries)) {
+      const obj = {};
+      utils_default.forEachEntry(formData, (name, value) => {
+        buildPath(parsePropPath(name), value, obj, 0);
+      });
+      return obj;
+    }
+    return null;
+  }
+  var formDataToJSON_default = formDataToJSON;
+
+  // node_modules/axios/lib/defaults/index.js
+  function stringifySafely(rawValue, parser, encoder2) {
+    if (utils_default.isString(rawValue)) {
+      try {
+        (parser || JSON.parse)(rawValue);
+        return utils_default.trim(rawValue);
+      } catch (e) {
+        if (e.name !== "SyntaxError") {
+          throw e;
+        }
+      }
+    }
+    return (encoder2 || JSON.stringify)(rawValue);
+  }
+  var defaults = {
+    transitional: transitional_default,
+    adapter: ["xhr", "http", "fetch"],
+    transformRequest: [function transformRequest(data2, headers) {
+      const contentType = headers.getContentType() || "";
+      const hasJSONContentType = contentType.indexOf("application/json") > -1;
+      const isObjectPayload = utils_default.isObject(data2);
+      if (isObjectPayload && utils_default.isHTMLForm(data2)) {
+        data2 = new FormData(data2);
+      }
+      const isFormData2 = utils_default.isFormData(data2);
+      if (isFormData2) {
+        return hasJSONContentType ? JSON.stringify(formDataToJSON_default(data2)) : data2;
+      }
+      if (utils_default.isArrayBuffer(data2) || utils_default.isBuffer(data2) || utils_default.isStream(data2) || utils_default.isFile(data2) || utils_default.isBlob(data2) || utils_default.isReadableStream(data2)) {
+        return data2;
+      }
+      if (utils_default.isArrayBufferView(data2)) {
+        return data2.buffer;
+      }
+      if (utils_default.isURLSearchParams(data2)) {
+        headers.setContentType("application/x-www-form-urlencoded;charset=utf-8", false);
+        return data2.toString();
+      }
+      let isFileList2;
+      if (isObjectPayload) {
+        if (contentType.indexOf("application/x-www-form-urlencoded") > -1) {
+          return toURLEncodedForm(data2, this.formSerializer).toString();
+        }
+        if ((isFileList2 = utils_default.isFileList(data2)) || contentType.indexOf("multipart/form-data") > -1) {
+          const _FormData = this.env && this.env.FormData;
+          return toFormData_default(
+            isFileList2 ? { "files[]": data2 } : data2,
+            _FormData && new _FormData(),
+            this.formSerializer
+          );
+        }
+      }
+      if (isObjectPayload || hasJSONContentType) {
+        headers.setContentType("application/json", false);
+        return stringifySafely(data2);
+      }
+      return data2;
+    }],
+    transformResponse: [function transformResponse(data2) {
+      const transitional2 = this.transitional || defaults.transitional;
+      const forcedJSONParsing = transitional2 && transitional2.forcedJSONParsing;
+      const JSONRequested = this.responseType === "json";
+      if (utils_default.isResponse(data2) || utils_default.isReadableStream(data2)) {
+        return data2;
+      }
+      if (data2 && utils_default.isString(data2) && (forcedJSONParsing && !this.responseType || JSONRequested)) {
+        const silentJSONParsing = transitional2 && transitional2.silentJSONParsing;
+        const strictJSONParsing = !silentJSONParsing && JSONRequested;
+        try {
+          return JSON.parse(data2);
+        } catch (e) {
+          if (strictJSONParsing) {
+            if (e.name === "SyntaxError") {
+              throw AxiosError_default.from(e, AxiosError_default.ERR_BAD_RESPONSE, this, null, this.response);
+            }
+            throw e;
+          }
+        }
+      }
+      return data2;
+    }],
+    /**
+     * A timeout in milliseconds to abort a request. If set to 0 (default) a
+     * timeout is not created.
+     */
+    timeout: 0,
+    xsrfCookieName: "XSRF-TOKEN",
+    xsrfHeaderName: "X-XSRF-TOKEN",
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: {
+      FormData: platform_default.classes.FormData,
+      Blob: platform_default.classes.Blob
+    },
+    validateStatus: function validateStatus(status) {
+      return status >= 200 && status < 300;
+    },
+    headers: {
+      common: {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": void 0
+      }
+    }
+  };
+  utils_default.forEach(["delete", "get", "head", "post", "put", "patch"], (method) => {
+    defaults.headers[method] = {};
+  });
+  var defaults_default = defaults;
+
+  // node_modules/axios/lib/helpers/parseHeaders.js
+  var ignoreDuplicateOf = utils_default.toObjectSet([
+    "age",
+    "authorization",
+    "content-length",
+    "content-type",
+    "etag",
+    "expires",
+    "from",
+    "host",
+    "if-modified-since",
+    "if-unmodified-since",
+    "last-modified",
+    "location",
+    "max-forwards",
+    "proxy-authorization",
+    "referer",
+    "retry-after",
+    "user-agent"
+  ]);
+  var parseHeaders_default = (rawHeaders) => {
+    const parsed = {};
+    let key;
+    let val;
+    let i;
+    rawHeaders && rawHeaders.split("\n").forEach(function parser(line) {
+      i = line.indexOf(":");
+      key = line.substring(0, i).trim().toLowerCase();
+      val = line.substring(i + 1).trim();
+      if (!key || parsed[key] && ignoreDuplicateOf[key]) {
+        return;
+      }
+      if (key === "set-cookie") {
+        if (parsed[key]) {
+          parsed[key].push(val);
+        } else {
+          parsed[key] = [val];
+        }
+      } else {
+        parsed[key] = parsed[key] ? parsed[key] + ", " + val : val;
+      }
+    });
+    return parsed;
+  };
+
+  // node_modules/axios/lib/core/AxiosHeaders.js
+  var $internals = Symbol("internals");
+  function normalizeHeader(header) {
+    return header && String(header).trim().toLowerCase();
+  }
+  function normalizeValue(value) {
+    if (value === false || value == null) {
+      return value;
+    }
+    return utils_default.isArray(value) ? value.map(normalizeValue) : String(value);
+  }
+  function parseTokens(str) {
+    const tokens = /* @__PURE__ */ Object.create(null);
+    const tokensRE = /([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;
+    let match;
+    while (match = tokensRE.exec(str)) {
+      tokens[match[1]] = match[2];
+    }
+    return tokens;
+  }
+  var isValidHeaderName = (str) => /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(str.trim());
+  function matchHeaderValue(context, value, header, filter2, isHeaderNameFilter) {
+    if (utils_default.isFunction(filter2)) {
+      return filter2.call(this, value, header);
+    }
+    if (isHeaderNameFilter) {
+      value = header;
+    }
+    if (!utils_default.isString(value)) return;
+    if (utils_default.isString(filter2)) {
+      return value.indexOf(filter2) !== -1;
+    }
+    if (utils_default.isRegExp(filter2)) {
+      return filter2.test(value);
+    }
+  }
+  function formatHeader(header) {
+    return header.trim().toLowerCase().replace(/([a-z\d])(\w*)/g, (w, char, str) => {
+      return char.toUpperCase() + str;
+    });
+  }
+  function buildAccessors(obj, header) {
+    const accessorName = utils_default.toCamelCase(" " + header);
+    ["get", "set", "has"].forEach((methodName) => {
+      Object.defineProperty(obj, methodName + accessorName, {
+        value: function(arg1, arg2, arg3) {
+          return this[methodName].call(this, header, arg1, arg2, arg3);
+        },
+        configurable: true
+      });
+    });
+  }
+  var AxiosHeaders = class {
+    constructor(headers) {
+      headers && this.set(headers);
+    }
+    set(header, valueOrRewrite, rewrite) {
+      const self2 = this;
+      function setHeader(_value, _header, _rewrite) {
+        const lHeader = normalizeHeader(_header);
+        if (!lHeader) {
+          throw new Error("header name must be a non-empty string");
+        }
+        const key = utils_default.findKey(self2, lHeader);
+        if (!key || self2[key] === void 0 || _rewrite === true || _rewrite === void 0 && self2[key] !== false) {
+          self2[key || _header] = normalizeValue(_value);
+        }
+      }
+      const setHeaders = (headers, _rewrite) => utils_default.forEach(headers, (_value, _header) => setHeader(_value, _header, _rewrite));
+      if (utils_default.isPlainObject(header) || header instanceof this.constructor) {
+        setHeaders(header, valueOrRewrite);
+      } else if (utils_default.isString(header) && (header = header.trim()) && !isValidHeaderName(header)) {
+        setHeaders(parseHeaders_default(header), valueOrRewrite);
+      } else if (utils_default.isHeaders(header)) {
+        for (const [key, value] of header.entries()) {
+          setHeader(value, key, rewrite);
+        }
+      } else {
+        header != null && setHeader(valueOrRewrite, header, rewrite);
+      }
+      return this;
+    }
+    get(header, parser) {
+      header = normalizeHeader(header);
+      if (header) {
+        const key = utils_default.findKey(this, header);
+        if (key) {
+          const value = this[key];
+          if (!parser) {
+            return value;
+          }
+          if (parser === true) {
+            return parseTokens(value);
+          }
+          if (utils_default.isFunction(parser)) {
+            return parser.call(this, value, key);
+          }
+          if (utils_default.isRegExp(parser)) {
+            return parser.exec(value);
+          }
+          throw new TypeError("parser must be boolean|regexp|function");
+        }
+      }
+    }
+    has(header, matcher) {
+      header = normalizeHeader(header);
+      if (header) {
+        const key = utils_default.findKey(this, header);
+        return !!(key && this[key] !== void 0 && (!matcher || matchHeaderValue(this, this[key], key, matcher)));
+      }
+      return false;
+    }
+    delete(header, matcher) {
+      const self2 = this;
+      let deleted = false;
+      function deleteHeader(_header) {
+        _header = normalizeHeader(_header);
+        if (_header) {
+          const key = utils_default.findKey(self2, _header);
+          if (key && (!matcher || matchHeaderValue(self2, self2[key], key, matcher))) {
+            delete self2[key];
+            deleted = true;
+          }
+        }
+      }
+      if (utils_default.isArray(header)) {
+        header.forEach(deleteHeader);
+      } else {
+        deleteHeader(header);
+      }
+      return deleted;
+    }
+    clear(matcher) {
+      const keys = Object.keys(this);
+      let i = keys.length;
+      let deleted = false;
+      while (i--) {
+        const key = keys[i];
+        if (!matcher || matchHeaderValue(this, this[key], key, matcher, true)) {
+          delete this[key];
+          deleted = true;
+        }
+      }
+      return deleted;
+    }
+    normalize(format) {
+      const self2 = this;
+      const headers = {};
+      utils_default.forEach(this, (value, header) => {
+        const key = utils_default.findKey(headers, header);
+        if (key) {
+          self2[key] = normalizeValue(value);
+          delete self2[header];
+          return;
+        }
+        const normalized = format ? formatHeader(header) : String(header).trim();
+        if (normalized !== header) {
+          delete self2[header];
+        }
+        self2[normalized] = normalizeValue(value);
+        headers[normalized] = true;
+      });
+      return this;
+    }
+    concat(...targets) {
+      return this.constructor.concat(this, ...targets);
+    }
+    toJSON(asStrings) {
+      const obj = /* @__PURE__ */ Object.create(null);
+      utils_default.forEach(this, (value, header) => {
+        value != null && value !== false && (obj[header] = asStrings && utils_default.isArray(value) ? value.join(", ") : value);
+      });
+      return obj;
+    }
+    [Symbol.iterator]() {
+      return Object.entries(this.toJSON())[Symbol.iterator]();
+    }
+    toString() {
+      return Object.entries(this.toJSON()).map(([header, value]) => header + ": " + value).join("\n");
+    }
+    get [Symbol.toStringTag]() {
+      return "AxiosHeaders";
+    }
+    static from(thing) {
+      return thing instanceof this ? thing : new this(thing);
+    }
+    static concat(first, ...targets) {
+      const computed = new this(first);
+      targets.forEach((target) => computed.set(target));
+      return computed;
+    }
+    static accessor(header) {
+      const internals = this[$internals] = this[$internals] = {
+        accessors: {}
+      };
+      const accessors = internals.accessors;
+      const prototype3 = this.prototype;
+      function defineAccessor(_header) {
+        const lHeader = normalizeHeader(_header);
+        if (!accessors[lHeader]) {
+          buildAccessors(prototype3, _header);
+          accessors[lHeader] = true;
+        }
+      }
+      utils_default.isArray(header) ? header.forEach(defineAccessor) : defineAccessor(header);
+      return this;
+    }
+  };
+  AxiosHeaders.accessor(["Content-Type", "Content-Length", "Accept", "Accept-Encoding", "User-Agent", "Authorization"]);
+  utils_default.reduceDescriptors(AxiosHeaders.prototype, ({ value }, key) => {
+    let mapped = key[0].toUpperCase() + key.slice(1);
+    return {
+      get: () => value,
+      set(headerValue) {
+        this[mapped] = headerValue;
+      }
+    };
+  });
+  utils_default.freezeMethods(AxiosHeaders);
+  var AxiosHeaders_default = AxiosHeaders;
+
+  // node_modules/axios/lib/core/transformData.js
+  function transformData(fns, response) {
+    const config = this || defaults_default;
+    const context = response || config;
+    const headers = AxiosHeaders_default.from(context.headers);
+    let data2 = context.data;
+    utils_default.forEach(fns, function transform(fn) {
+      data2 = fn.call(config, data2, headers.normalize(), response ? response.status : void 0);
+    });
+    headers.normalize();
+    return data2;
+  }
+
+  // node_modules/axios/lib/cancel/isCancel.js
+  function isCancel(value) {
+    return !!(value && value.__CANCEL__);
+  }
+
+  // node_modules/axios/lib/cancel/CanceledError.js
+  function CanceledError(message, config, request) {
+    AxiosError_default.call(this, message == null ? "canceled" : message, AxiosError_default.ERR_CANCELED, config, request);
+    this.name = "CanceledError";
+  }
+  utils_default.inherits(CanceledError, AxiosError_default, {
+    __CANCEL__: true
+  });
+  var CanceledError_default = CanceledError;
+
+  // node_modules/axios/lib/core/settle.js
+  function settle(resolve, reject, response) {
+    const validateStatus2 = response.config.validateStatus;
+    if (!response.status || !validateStatus2 || validateStatus2(response.status)) {
+      resolve(response);
+    } else {
+      reject(new AxiosError_default(
+        "Request failed with status code " + response.status,
+        [AxiosError_default.ERR_BAD_REQUEST, AxiosError_default.ERR_BAD_RESPONSE][Math.floor(response.status / 100) - 4],
+        response.config,
+        response.request,
+        response
+      ));
+    }
+  }
+
+  // node_modules/axios/lib/helpers/parseProtocol.js
+  function parseProtocol(url) {
+    const match = /^([-+\w]{1,25})(:?\/\/|:)/.exec(url);
+    return match && match[1] || "";
+  }
+
+  // node_modules/axios/lib/helpers/speedometer.js
+  function speedometer(samplesCount, min) {
+    samplesCount = samplesCount || 10;
+    const bytes = new Array(samplesCount);
+    const timestamps = new Array(samplesCount);
+    let head = 0;
+    let tail = 0;
+    let firstSampleTS;
+    min = min !== void 0 ? min : 1e3;
+    return function push(chunkLength) {
+      const now = Date.now();
+      const startedAt = timestamps[tail];
+      if (!firstSampleTS) {
+        firstSampleTS = now;
+      }
+      bytes[head] = chunkLength;
+      timestamps[head] = now;
+      let i = tail;
+      let bytesCount = 0;
+      while (i !== head) {
+        bytesCount += bytes[i++];
+        i = i % samplesCount;
+      }
+      head = (head + 1) % samplesCount;
+      if (head === tail) {
+        tail = (tail + 1) % samplesCount;
+      }
+      if (now - firstSampleTS < min) {
+        return;
+      }
+      const passed = startedAt && now - startedAt;
+      return passed ? Math.round(bytesCount * 1e3 / passed) : void 0;
+    };
+  }
+  var speedometer_default = speedometer;
+
+  // node_modules/axios/lib/helpers/throttle.js
+  function throttle(fn, freq) {
+    let timestamp = 0;
+    let threshold = 1e3 / freq;
+    let lastArgs;
+    let timer;
+    const invoke = (args, now = Date.now()) => {
+      timestamp = now;
+      lastArgs = null;
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
+      fn.apply(null, args);
+    };
+    const throttled = (...args) => {
+      const now = Date.now();
+      const passed = now - timestamp;
+      if (passed >= threshold) {
+        invoke(args, now);
+      } else {
+        lastArgs = args;
+        if (!timer) {
+          timer = setTimeout(() => {
+            timer = null;
+            invoke(lastArgs);
+          }, threshold - passed);
+        }
+      }
+    };
+    const flush = () => lastArgs && invoke(lastArgs);
+    return [throttled, flush];
+  }
+  var throttle_default = throttle;
+
+  // node_modules/axios/lib/helpers/progressEventReducer.js
+  var progressEventReducer = (listener, isDownloadStream, freq = 3) => {
+    let bytesNotified = 0;
+    const _speedometer = speedometer_default(50, 250);
+    return throttle_default((e) => {
+      const loaded = e.loaded;
+      const total = e.lengthComputable ? e.total : void 0;
+      const progressBytes = loaded - bytesNotified;
+      const rate = _speedometer(progressBytes);
+      const inRange = loaded <= total;
+      bytesNotified = loaded;
+      const data2 = {
+        loaded,
+        total,
+        progress: total ? loaded / total : void 0,
+        bytes: progressBytes,
+        rate: rate ? rate : void 0,
+        estimated: rate && total && inRange ? (total - loaded) / rate : void 0,
+        event: e,
+        lengthComputable: total != null,
+        [isDownloadStream ? "download" : "upload"]: true
+      };
+      listener(data2);
+    }, freq);
+  };
+  var progressEventDecorator = (total, throttled) => {
+    const lengthComputable = total != null;
+    return [(loaded) => throttled[0]({
+      lengthComputable,
+      total,
+      loaded
+    }), throttled[1]];
+  };
+  var asyncDecorator = (fn) => (...args) => utils_default.asap(() => fn(...args));
+
+  // node_modules/axios/lib/helpers/isURLSameOrigin.js
+  var isURLSameOrigin_default = platform_default.hasStandardBrowserEnv ? /* @__PURE__ */ ((origin2, isMSIE) => (url) => {
+    url = new URL(url, platform_default.origin);
+    return origin2.protocol === url.protocol && origin2.host === url.host && (isMSIE || origin2.port === url.port);
+  })(
+    new URL(platform_default.origin),
+    platform_default.navigator && /(msie|trident)/i.test(platform_default.navigator.userAgent)
+  ) : () => true;
+
+  // node_modules/axios/lib/helpers/cookies.js
+  var cookies_default = platform_default.hasStandardBrowserEnv ? (
+    // Standard browser envs support document.cookie
+    {
+      write(name, value, expires, path, domain, secure) {
+        const cookie = [name + "=" + encodeURIComponent(value)];
+        utils_default.isNumber(expires) && cookie.push("expires=" + new Date(expires).toGMTString());
+        utils_default.isString(path) && cookie.push("path=" + path);
+        utils_default.isString(domain) && cookie.push("domain=" + domain);
+        secure === true && cookie.push("secure");
+        document.cookie = cookie.join("; ");
+      },
+      read(name) {
+        const match = document.cookie.match(new RegExp("(^|;\\s*)(" + name + ")=([^;]*)"));
+        return match ? decodeURIComponent(match[3]) : null;
+      },
+      remove(name) {
+        this.write(name, "", Date.now() - 864e5);
+      }
+    }
+  ) : (
+    // Non-standard browser env (web workers, react-native) lack needed support.
+    {
+      write() {
+      },
+      read() {
+        return null;
+      },
+      remove() {
+      }
+    }
+  );
+
+  // node_modules/axios/lib/helpers/isAbsoluteURL.js
+  function isAbsoluteURL(url) {
+    return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(url);
+  }
+
+  // node_modules/axios/lib/helpers/combineURLs.js
+  function combineURLs(baseURL, relativeURL) {
+    return relativeURL ? baseURL.replace(/\/?\/$/, "") + "/" + relativeURL.replace(/^\/+/, "") : baseURL;
+  }
+
+  // node_modules/axios/lib/core/buildFullPath.js
+  function buildFullPath(baseURL, requestedURL, allowAbsoluteUrls) {
+    let isRelativeUrl = !isAbsoluteURL(requestedURL);
+    if (baseURL && (isRelativeUrl || allowAbsoluteUrls == false)) {
+      return combineURLs(baseURL, requestedURL);
+    }
+    return requestedURL;
+  }
+
+  // node_modules/axios/lib/core/mergeConfig.js
+  var headersToObject = (thing) => thing instanceof AxiosHeaders_default ? { ...thing } : thing;
+  function mergeConfig(config1, config2) {
+    config2 = config2 || {};
+    const config = {};
+    function getMergedValue(target, source, prop, caseless) {
+      if (utils_default.isPlainObject(target) && utils_default.isPlainObject(source)) {
+        return utils_default.merge.call({ caseless }, target, source);
+      } else if (utils_default.isPlainObject(source)) {
+        return utils_default.merge({}, source);
+      } else if (utils_default.isArray(source)) {
+        return source.slice();
+      }
+      return source;
+    }
+    function mergeDeepProperties(a, b, prop, caseless) {
+      if (!utils_default.isUndefined(b)) {
+        return getMergedValue(a, b, prop, caseless);
+      } else if (!utils_default.isUndefined(a)) {
+        return getMergedValue(void 0, a, prop, caseless);
+      }
+    }
+    function valueFromConfig2(a, b) {
+      if (!utils_default.isUndefined(b)) {
+        return getMergedValue(void 0, b);
+      }
+    }
+    function defaultToConfig2(a, b) {
+      if (!utils_default.isUndefined(b)) {
+        return getMergedValue(void 0, b);
+      } else if (!utils_default.isUndefined(a)) {
+        return getMergedValue(void 0, a);
+      }
+    }
+    function mergeDirectKeys(a, b, prop) {
+      if (prop in config2) {
+        return getMergedValue(a, b);
+      } else if (prop in config1) {
+        return getMergedValue(void 0, a);
+      }
+    }
+    const mergeMap = {
+      url: valueFromConfig2,
+      method: valueFromConfig2,
+      data: valueFromConfig2,
+      baseURL: defaultToConfig2,
+      transformRequest: defaultToConfig2,
+      transformResponse: defaultToConfig2,
+      paramsSerializer: defaultToConfig2,
+      timeout: defaultToConfig2,
+      timeoutMessage: defaultToConfig2,
+      withCredentials: defaultToConfig2,
+      withXSRFToken: defaultToConfig2,
+      adapter: defaultToConfig2,
+      responseType: defaultToConfig2,
+      xsrfCookieName: defaultToConfig2,
+      xsrfHeaderName: defaultToConfig2,
+      onUploadProgress: defaultToConfig2,
+      onDownloadProgress: defaultToConfig2,
+      decompress: defaultToConfig2,
+      maxContentLength: defaultToConfig2,
+      maxBodyLength: defaultToConfig2,
+      beforeRedirect: defaultToConfig2,
+      transport: defaultToConfig2,
+      httpAgent: defaultToConfig2,
+      httpsAgent: defaultToConfig2,
+      cancelToken: defaultToConfig2,
+      socketPath: defaultToConfig2,
+      responseEncoding: defaultToConfig2,
+      validateStatus: mergeDirectKeys,
+      headers: (a, b, prop) => mergeDeepProperties(headersToObject(a), headersToObject(b), prop, true)
+    };
+    utils_default.forEach(Object.keys(Object.assign({}, config1, config2)), function computeConfigValue(prop) {
+      const merge2 = mergeMap[prop] || mergeDeepProperties;
+      const configValue = merge2(config1[prop], config2[prop], prop);
+      utils_default.isUndefined(configValue) && merge2 !== mergeDirectKeys || (config[prop] = configValue);
+    });
+    return config;
+  }
+
+  // node_modules/axios/lib/helpers/resolveConfig.js
+  var resolveConfig_default = (config) => {
+    const newConfig = mergeConfig({}, config);
+    let { data: data2, withXSRFToken, xsrfHeaderName, xsrfCookieName, headers, auth } = newConfig;
+    newConfig.headers = headers = AxiosHeaders_default.from(headers);
+    newConfig.url = buildURL(buildFullPath(newConfig.baseURL, newConfig.url, newConfig.allowAbsoluteUrls), config.params, config.paramsSerializer);
+    if (auth) {
+      headers.set(
+        "Authorization",
+        "Basic " + btoa((auth.username || "") + ":" + (auth.password ? unescape(encodeURIComponent(auth.password)) : ""))
+      );
+    }
+    let contentType;
+    if (utils_default.isFormData(data2)) {
+      if (platform_default.hasStandardBrowserEnv || platform_default.hasStandardBrowserWebWorkerEnv) {
+        headers.setContentType(void 0);
+      } else if ((contentType = headers.getContentType()) !== false) {
+        const [type, ...tokens] = contentType ? contentType.split(";").map((token) => token.trim()).filter(Boolean) : [];
+        headers.setContentType([type || "multipart/form-data", ...tokens].join("; "));
+      }
+    }
+    if (platform_default.hasStandardBrowserEnv) {
+      withXSRFToken && utils_default.isFunction(withXSRFToken) && (withXSRFToken = withXSRFToken(newConfig));
+      if (withXSRFToken || withXSRFToken !== false && isURLSameOrigin_default(newConfig.url)) {
+        const xsrfValue = xsrfHeaderName && xsrfCookieName && cookies_default.read(xsrfCookieName);
+        if (xsrfValue) {
+          headers.set(xsrfHeaderName, xsrfValue);
+        }
+      }
+    }
+    return newConfig;
+  };
+
+  // node_modules/axios/lib/adapters/xhr.js
+  var isXHRAdapterSupported = typeof XMLHttpRequest !== "undefined";
+  var xhr_default = isXHRAdapterSupported && function(config) {
+    return new Promise(function dispatchXhrRequest(resolve, reject) {
+      const _config = resolveConfig_default(config);
+      let requestData = _config.data;
+      const requestHeaders = AxiosHeaders_default.from(_config.headers).normalize();
+      let { responseType, onUploadProgress, onDownloadProgress } = _config;
+      let onCanceled;
+      let uploadThrottled, downloadThrottled;
+      let flushUpload, flushDownload;
+      function done() {
+        flushUpload && flushUpload();
+        flushDownload && flushDownload();
+        _config.cancelToken && _config.cancelToken.unsubscribe(onCanceled);
+        _config.signal && _config.signal.removeEventListener("abort", onCanceled);
+      }
+      let request = new XMLHttpRequest();
+      request.open(_config.method.toUpperCase(), _config.url, true);
+      request.timeout = _config.timeout;
+      function onloadend() {
+        if (!request) {
+          return;
+        }
+        const responseHeaders = AxiosHeaders_default.from(
+          "getAllResponseHeaders" in request && request.getAllResponseHeaders()
+        );
+        const responseData = !responseType || responseType === "text" || responseType === "json" ? request.responseText : request.response;
+        const response = {
+          data: responseData,
+          status: request.status,
+          statusText: request.statusText,
+          headers: responseHeaders,
+          config,
+          request
+        };
+        settle(function _resolve(value) {
+          resolve(value);
+          done();
+        }, function _reject(err) {
+          reject(err);
+          done();
+        }, response);
+        request = null;
+      }
+      if ("onloadend" in request) {
+        request.onloadend = onloadend;
+      } else {
+        request.onreadystatechange = function handleLoad() {
+          if (!request || request.readyState !== 4) {
+            return;
+          }
+          if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf("file:") === 0)) {
+            return;
+          }
+          setTimeout(onloadend);
+        };
+      }
+      request.onabort = function handleAbort() {
+        if (!request) {
+          return;
+        }
+        reject(new AxiosError_default("Request aborted", AxiosError_default.ECONNABORTED, config, request));
+        request = null;
+      };
+      request.onerror = function handleError() {
+        reject(new AxiosError_default("Network Error", AxiosError_default.ERR_NETWORK, config, request));
+        request = null;
+      };
+      request.ontimeout = function handleTimeout() {
+        let timeoutErrorMessage = _config.timeout ? "timeout of " + _config.timeout + "ms exceeded" : "timeout exceeded";
+        const transitional2 = _config.transitional || transitional_default;
+        if (_config.timeoutErrorMessage) {
+          timeoutErrorMessage = _config.timeoutErrorMessage;
+        }
+        reject(new AxiosError_default(
+          timeoutErrorMessage,
+          transitional2.clarifyTimeoutError ? AxiosError_default.ETIMEDOUT : AxiosError_default.ECONNABORTED,
+          config,
+          request
+        ));
+        request = null;
+      };
+      requestData === void 0 && requestHeaders.setContentType(null);
+      if ("setRequestHeader" in request) {
+        utils_default.forEach(requestHeaders.toJSON(), function setRequestHeader(val, key) {
+          request.setRequestHeader(key, val);
+        });
+      }
+      if (!utils_default.isUndefined(_config.withCredentials)) {
+        request.withCredentials = !!_config.withCredentials;
+      }
+      if (responseType && responseType !== "json") {
+        request.responseType = _config.responseType;
+      }
+      if (onDownloadProgress) {
+        [downloadThrottled, flushDownload] = progressEventReducer(onDownloadProgress, true);
+        request.addEventListener("progress", downloadThrottled);
+      }
+      if (onUploadProgress && request.upload) {
+        [uploadThrottled, flushUpload] = progressEventReducer(onUploadProgress);
+        request.upload.addEventListener("progress", uploadThrottled);
+        request.upload.addEventListener("loadend", flushUpload);
+      }
+      if (_config.cancelToken || _config.signal) {
+        onCanceled = (cancel) => {
+          if (!request) {
+            return;
+          }
+          reject(!cancel || cancel.type ? new CanceledError_default(null, config, request) : cancel);
+          request.abort();
+          request = null;
+        };
+        _config.cancelToken && _config.cancelToken.subscribe(onCanceled);
+        if (_config.signal) {
+          _config.signal.aborted ? onCanceled() : _config.signal.addEventListener("abort", onCanceled);
+        }
+      }
+      const protocol = parseProtocol(_config.url);
+      if (protocol && platform_default.protocols.indexOf(protocol) === -1) {
+        reject(new AxiosError_default("Unsupported protocol " + protocol + ":", AxiosError_default.ERR_BAD_REQUEST, config));
+        return;
+      }
+      request.send(requestData || null);
+    });
+  };
+
+  // node_modules/axios/lib/helpers/composeSignals.js
+  var composeSignals = (signals, timeout) => {
+    const { length } = signals = signals ? signals.filter(Boolean) : [];
+    if (timeout || length) {
+      let controller = new AbortController();
+      let aborted;
+      const onabort = function(reason) {
+        if (!aborted) {
+          aborted = true;
+          unsubscribe();
+          const err = reason instanceof Error ? reason : this.reason;
+          controller.abort(err instanceof AxiosError_default ? err : new CanceledError_default(err instanceof Error ? err.message : err));
+        }
+      };
+      let timer = timeout && setTimeout(() => {
+        timer = null;
+        onabort(new AxiosError_default(`timeout ${timeout} of ms exceeded`, AxiosError_default.ETIMEDOUT));
+      }, timeout);
+      const unsubscribe = () => {
+        if (signals) {
+          timer && clearTimeout(timer);
+          timer = null;
+          signals.forEach((signal2) => {
+            signal2.unsubscribe ? signal2.unsubscribe(onabort) : signal2.removeEventListener("abort", onabort);
+          });
+          signals = null;
+        }
+      };
+      signals.forEach((signal2) => signal2.addEventListener("abort", onabort));
+      const { signal } = controller;
+      signal.unsubscribe = () => utils_default.asap(unsubscribe);
+      return signal;
+    }
+  };
+  var composeSignals_default = composeSignals;
+
+  // node_modules/axios/lib/helpers/trackStream.js
+  var streamChunk = function* (chunk, chunkSize) {
+    let len = chunk.byteLength;
+    if (!chunkSize || len < chunkSize) {
+      yield chunk;
+      return;
+    }
+    let pos = 0;
+    let end;
+    while (pos < len) {
+      end = pos + chunkSize;
+      yield chunk.slice(pos, end);
+      pos = end;
+    }
+  };
+  var readBytes = async function* (iterable, chunkSize) {
+    for await (const chunk of readStream(iterable)) {
+      yield* streamChunk(chunk, chunkSize);
+    }
+  };
+  var readStream = async function* (stream) {
+    if (stream[Symbol.asyncIterator]) {
+      yield* stream;
+      return;
+    }
+    const reader = stream.getReader();
+    try {
+      for (; ; ) {
+        const { done, value } = await reader.read();
+        if (done) {
+          break;
+        }
+        yield value;
+      }
+    } finally {
+      await reader.cancel();
+    }
+  };
+  var trackStream = (stream, chunkSize, onProgress, onFinish) => {
+    const iterator = readBytes(stream, chunkSize);
+    let bytes = 0;
+    let done;
+    let _onFinish = (e) => {
+      if (!done) {
+        done = true;
+        onFinish && onFinish(e);
+      }
+    };
+    return new ReadableStream({
+      async pull(controller) {
+        try {
+          const { done: done2, value } = await iterator.next();
+          if (done2) {
+            _onFinish();
+            controller.close();
+            return;
+          }
+          let len = value.byteLength;
+          if (onProgress) {
+            let loadedBytes = bytes += len;
+            onProgress(loadedBytes);
+          }
+          controller.enqueue(new Uint8Array(value));
+        } catch (err) {
+          _onFinish(err);
+          throw err;
+        }
+      },
+      cancel(reason) {
+        _onFinish(reason);
+        return iterator.return();
+      }
+    }, {
+      highWaterMark: 2
+    });
+  };
+
+  // node_modules/axios/lib/adapters/fetch.js
+  var isFetchSupported = typeof fetch === "function" && typeof Request === "function" && typeof Response === "function";
+  var isReadableStreamSupported = isFetchSupported && typeof ReadableStream === "function";
+  var encodeText = isFetchSupported && (typeof TextEncoder === "function" ? /* @__PURE__ */ ((encoder2) => (str) => encoder2.encode(str))(new TextEncoder()) : async (str) => new Uint8Array(await new Response(str).arrayBuffer()));
+  var test = (fn, ...args) => {
+    try {
+      return !!fn(...args);
+    } catch (e) {
+      return false;
+    }
+  };
+  var supportsRequestStream = isReadableStreamSupported && test(() => {
+    let duplexAccessed = false;
+    const hasContentType = new Request(platform_default.origin, {
+      body: new ReadableStream(),
+      method: "POST",
+      get duplex() {
+        duplexAccessed = true;
+        return "half";
+      }
+    }).headers.has("Content-Type");
+    return duplexAccessed && !hasContentType;
+  });
+  var DEFAULT_CHUNK_SIZE = 64 * 1024;
+  var supportsResponseStream = isReadableStreamSupported && test(() => utils_default.isReadableStream(new Response("").body));
+  var resolvers = {
+    stream: supportsResponseStream && ((res) => res.body)
+  };
+  isFetchSupported && ((res) => {
+    ["text", "arrayBuffer", "blob", "formData", "stream"].forEach((type) => {
+      !resolvers[type] && (resolvers[type] = utils_default.isFunction(res[type]) ? (res2) => res2[type]() : (_, config) => {
+        throw new AxiosError_default(`Response type '${type}' is not supported`, AxiosError_default.ERR_NOT_SUPPORT, config);
+      });
+    });
+  })(new Response());
+  var getBodyLength = async (body) => {
+    if (body == null) {
+      return 0;
+    }
+    if (utils_default.isBlob(body)) {
+      return body.size;
+    }
+    if (utils_default.isSpecCompliantForm(body)) {
+      const _request = new Request(platform_default.origin, {
+        method: "POST",
+        body
+      });
+      return (await _request.arrayBuffer()).byteLength;
+    }
+    if (utils_default.isArrayBufferView(body) || utils_default.isArrayBuffer(body)) {
+      return body.byteLength;
+    }
+    if (utils_default.isURLSearchParams(body)) {
+      body = body + "";
+    }
+    if (utils_default.isString(body)) {
+      return (await encodeText(body)).byteLength;
+    }
+  };
+  var resolveBodyLength = async (headers, body) => {
+    const length = utils_default.toFiniteNumber(headers.getContentLength());
+    return length == null ? getBodyLength(body) : length;
+  };
+  var fetch_default = isFetchSupported && (async (config) => {
+    let {
+      url,
+      method,
+      data: data2,
+      signal,
+      cancelToken,
+      timeout,
+      onDownloadProgress,
+      onUploadProgress,
+      responseType,
+      headers,
+      withCredentials = "same-origin",
+      fetchOptions
+    } = resolveConfig_default(config);
+    responseType = responseType ? (responseType + "").toLowerCase() : "text";
+    let composedSignal = composeSignals_default([signal, cancelToken && cancelToken.toAbortSignal()], timeout);
+    let request;
+    const unsubscribe = composedSignal && composedSignal.unsubscribe && (() => {
+      composedSignal.unsubscribe();
+    });
+    let requestContentLength;
+    try {
+      if (onUploadProgress && supportsRequestStream && method !== "get" && method !== "head" && (requestContentLength = await resolveBodyLength(headers, data2)) !== 0) {
+        let _request = new Request(url, {
+          method: "POST",
+          body: data2,
+          duplex: "half"
+        });
+        let contentTypeHeader;
+        if (utils_default.isFormData(data2) && (contentTypeHeader = _request.headers.get("content-type"))) {
+          headers.setContentType(contentTypeHeader);
+        }
+        if (_request.body) {
+          const [onProgress, flush] = progressEventDecorator(
+            requestContentLength,
+            progressEventReducer(asyncDecorator(onUploadProgress))
+          );
+          data2 = trackStream(_request.body, DEFAULT_CHUNK_SIZE, onProgress, flush);
+        }
+      }
+      if (!utils_default.isString(withCredentials)) {
+        withCredentials = withCredentials ? "include" : "omit";
+      }
+      const isCredentialsSupported = "credentials" in Request.prototype;
+      request = new Request(url, {
+        ...fetchOptions,
+        signal: composedSignal,
+        method: method.toUpperCase(),
+        headers: headers.normalize().toJSON(),
+        body: data2,
+        duplex: "half",
+        credentials: isCredentialsSupported ? withCredentials : void 0
+      });
+      let response = await fetch(request);
+      const isStreamResponse = supportsResponseStream && (responseType === "stream" || responseType === "response");
+      if (supportsResponseStream && (onDownloadProgress || isStreamResponse && unsubscribe)) {
+        const options = {};
+        ["status", "statusText", "headers"].forEach((prop) => {
+          options[prop] = response[prop];
+        });
+        const responseContentLength = utils_default.toFiniteNumber(response.headers.get("content-length"));
+        const [onProgress, flush] = onDownloadProgress && progressEventDecorator(
+          responseContentLength,
+          progressEventReducer(asyncDecorator(onDownloadProgress), true)
+        ) || [];
+        response = new Response(
+          trackStream(response.body, DEFAULT_CHUNK_SIZE, onProgress, () => {
+            flush && flush();
+            unsubscribe && unsubscribe();
+          }),
+          options
+        );
+      }
+      responseType = responseType || "text";
+      let responseData = await resolvers[utils_default.findKey(resolvers, responseType) || "text"](response, config);
+      !isStreamResponse && unsubscribe && unsubscribe();
+      return await new Promise((resolve, reject) => {
+        settle(resolve, reject, {
+          data: responseData,
+          headers: AxiosHeaders_default.from(response.headers),
+          status: response.status,
+          statusText: response.statusText,
+          config,
+          request
+        });
+      });
+    } catch (err) {
+      unsubscribe && unsubscribe();
+      if (err && err.name === "TypeError" && /fetch/i.test(err.message)) {
+        throw Object.assign(
+          new AxiosError_default("Network Error", AxiosError_default.ERR_NETWORK, config, request),
+          {
+            cause: err.cause || err
+          }
+        );
+      }
+      throw AxiosError_default.from(err, err && err.code, config, request);
+    }
+  });
+
+  // node_modules/axios/lib/adapters/adapters.js
+  var knownAdapters = {
+    http: null_default,
+    xhr: xhr_default,
+    fetch: fetch_default
+  };
+  utils_default.forEach(knownAdapters, (fn, value) => {
+    if (fn) {
+      try {
+        Object.defineProperty(fn, "name", { value });
+      } catch (e) {
+      }
+      Object.defineProperty(fn, "adapterName", { value });
+    }
+  });
+  var renderReason = (reason) => `- ${reason}`;
+  var isResolvedHandle = (adapter) => utils_default.isFunction(adapter) || adapter === null || adapter === false;
+  var adapters_default = {
+    getAdapter: (adapters) => {
+      adapters = utils_default.isArray(adapters) ? adapters : [adapters];
+      const { length } = adapters;
+      let nameOrAdapter;
+      let adapter;
+      const rejectedReasons = {};
+      for (let i = 0; i < length; i++) {
+        nameOrAdapter = adapters[i];
+        let id;
+        adapter = nameOrAdapter;
+        if (!isResolvedHandle(nameOrAdapter)) {
+          adapter = knownAdapters[(id = String(nameOrAdapter)).toLowerCase()];
+          if (adapter === void 0) {
+            throw new AxiosError_default(`Unknown adapter '${id}'`);
+          }
+        }
+        if (adapter) {
+          break;
+        }
+        rejectedReasons[id || "#" + i] = adapter;
+      }
+      if (!adapter) {
+        const reasons = Object.entries(rejectedReasons).map(
+          ([id, state]) => `adapter ${id} ` + (state === false ? "is not supported by the environment" : "is not available in the build")
+        );
+        let s = length ? reasons.length > 1 ? "since :\n" + reasons.map(renderReason).join("\n") : " " + renderReason(reasons[0]) : "as no adapter specified";
+        throw new AxiosError_default(
+          `There is no suitable adapter to dispatch the request ` + s,
+          "ERR_NOT_SUPPORT"
+        );
+      }
+      return adapter;
+    },
+    adapters: knownAdapters
+  };
+
+  // node_modules/axios/lib/core/dispatchRequest.js
+  function throwIfCancellationRequested(config) {
+    if (config.cancelToken) {
+      config.cancelToken.throwIfRequested();
+    }
+    if (config.signal && config.signal.aborted) {
+      throw new CanceledError_default(null, config);
+    }
+  }
+  function dispatchRequest(config) {
+    throwIfCancellationRequested(config);
+    config.headers = AxiosHeaders_default.from(config.headers);
+    config.data = transformData.call(
+      config,
+      config.transformRequest
+    );
+    if (["post", "put", "patch"].indexOf(config.method) !== -1) {
+      config.headers.setContentType("application/x-www-form-urlencoded", false);
+    }
+    const adapter = adapters_default.getAdapter(config.adapter || defaults_default.adapter);
+    return adapter(config).then(function onAdapterResolution(response) {
+      throwIfCancellationRequested(config);
+      response.data = transformData.call(
+        config,
+        config.transformResponse,
+        response
+      );
+      response.headers = AxiosHeaders_default.from(response.headers);
+      return response;
+    }, function onAdapterRejection(reason) {
+      if (!isCancel(reason)) {
+        throwIfCancellationRequested(config);
+        if (reason && reason.response) {
+          reason.response.data = transformData.call(
+            config,
+            config.transformResponse,
+            reason.response
+          );
+          reason.response.headers = AxiosHeaders_default.from(reason.response.headers);
+        }
+      }
+      return Promise.reject(reason);
+    });
+  }
+
+  // node_modules/axios/lib/env/data.js
+  var VERSION = "1.8.4";
+
+  // node_modules/axios/lib/helpers/validator.js
+  var validators = {};
+  ["object", "boolean", "number", "function", "string", "symbol"].forEach((type, i) => {
+    validators[type] = function validator(thing) {
+      return typeof thing === type || "a" + (i < 1 ? "n " : " ") + type;
+    };
+  });
+  var deprecatedWarnings = {};
+  validators.transitional = function transitional(validator, version, message) {
+    function formatMessage(opt, desc) {
+      return "[Axios v" + VERSION + "] Transitional option '" + opt + "'" + desc + (message ? ". " + message : "");
+    }
+    return (value, opt, opts) => {
+      if (validator === false) {
+        throw new AxiosError_default(
+          formatMessage(opt, " has been removed" + (version ? " in " + version : "")),
+          AxiosError_default.ERR_DEPRECATED
+        );
+      }
+      if (version && !deprecatedWarnings[opt]) {
+        deprecatedWarnings[opt] = true;
+        console.warn(
+          formatMessage(
+            opt,
+            " has been deprecated since v" + version + " and will be removed in the near future"
+          )
+        );
+      }
+      return validator ? validator(value, opt, opts) : true;
+    };
+  };
+  validators.spelling = function spelling(correctSpelling) {
+    return (value, opt) => {
+      console.warn(`${opt} is likely a misspelling of ${correctSpelling}`);
+      return true;
+    };
+  };
+  function assertOptions(options, schema, allowUnknown) {
+    if (typeof options !== "object") {
+      throw new AxiosError_default("options must be an object", AxiosError_default.ERR_BAD_OPTION_VALUE);
+    }
+    const keys = Object.keys(options);
+    let i = keys.length;
+    while (i-- > 0) {
+      const opt = keys[i];
+      const validator = schema[opt];
+      if (validator) {
+        const value = options[opt];
+        const result = value === void 0 || validator(value, opt, options);
+        if (result !== true) {
+          throw new AxiosError_default("option " + opt + " must be " + result, AxiosError_default.ERR_BAD_OPTION_VALUE);
+        }
+        continue;
+      }
+      if (allowUnknown !== true) {
+        throw new AxiosError_default("Unknown option " + opt, AxiosError_default.ERR_BAD_OPTION);
+      }
+    }
+  }
+  var validator_default = {
+    assertOptions,
+    validators
+  };
+
+  // node_modules/axios/lib/core/Axios.js
+  var validators2 = validator_default.validators;
+  var Axios = class {
+    constructor(instanceConfig) {
+      this.defaults = instanceConfig;
+      this.interceptors = {
+        request: new InterceptorManager_default(),
+        response: new InterceptorManager_default()
+      };
+    }
+    /**
+     * Dispatch a request
+     *
+     * @param {String|Object} configOrUrl The config specific for this request (merged with this.defaults)
+     * @param {?Object} config
+     *
+     * @returns {Promise} The Promise to be fulfilled
+     */
+    async request(configOrUrl, config) {
+      try {
+        return await this._request(configOrUrl, config);
+      } catch (err) {
+        if (err instanceof Error) {
+          let dummy = {};
+          Error.captureStackTrace ? Error.captureStackTrace(dummy) : dummy = new Error();
+          const stack = dummy.stack ? dummy.stack.replace(/^.+\n/, "") : "";
+          try {
+            if (!err.stack) {
+              err.stack = stack;
+            } else if (stack && !String(err.stack).endsWith(stack.replace(/^.+\n.+\n/, ""))) {
+              err.stack += "\n" + stack;
+            }
+          } catch (e) {
+          }
+        }
+        throw err;
+      }
+    }
+    _request(configOrUrl, config) {
+      if (typeof configOrUrl === "string") {
+        config = config || {};
+        config.url = configOrUrl;
+      } else {
+        config = configOrUrl || {};
+      }
+      config = mergeConfig(this.defaults, config);
+      const { transitional: transitional2, paramsSerializer, headers } = config;
+      if (transitional2 !== void 0) {
+        validator_default.assertOptions(transitional2, {
+          silentJSONParsing: validators2.transitional(validators2.boolean),
+          forcedJSONParsing: validators2.transitional(validators2.boolean),
+          clarifyTimeoutError: validators2.transitional(validators2.boolean)
+        }, false);
+      }
+      if (paramsSerializer != null) {
+        if (utils_default.isFunction(paramsSerializer)) {
+          config.paramsSerializer = {
+            serialize: paramsSerializer
+          };
+        } else {
+          validator_default.assertOptions(paramsSerializer, {
+            encode: validators2.function,
+            serialize: validators2.function
+          }, true);
+        }
+      }
+      if (config.allowAbsoluteUrls !== void 0) {
+      } else if (this.defaults.allowAbsoluteUrls !== void 0) {
+        config.allowAbsoluteUrls = this.defaults.allowAbsoluteUrls;
+      } else {
+        config.allowAbsoluteUrls = true;
+      }
+      validator_default.assertOptions(config, {
+        baseUrl: validators2.spelling("baseURL"),
+        withXsrfToken: validators2.spelling("withXSRFToken")
+      }, true);
+      config.method = (config.method || this.defaults.method || "get").toLowerCase();
+      let contextHeaders = headers && utils_default.merge(
+        headers.common,
+        headers[config.method]
+      );
+      headers && utils_default.forEach(
+        ["delete", "get", "head", "post", "put", "patch", "common"],
+        (method) => {
+          delete headers[method];
+        }
+      );
+      config.headers = AxiosHeaders_default.concat(contextHeaders, headers);
+      const requestInterceptorChain = [];
+      let synchronousRequestInterceptors = true;
+      this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+        if (typeof interceptor.runWhen === "function" && interceptor.runWhen(config) === false) {
+          return;
+        }
+        synchronousRequestInterceptors = synchronousRequestInterceptors && interceptor.synchronous;
+        requestInterceptorChain.unshift(interceptor.fulfilled, interceptor.rejected);
+      });
+      const responseInterceptorChain = [];
+      this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+        responseInterceptorChain.push(interceptor.fulfilled, interceptor.rejected);
+      });
+      let promise;
+      let i = 0;
+      let len;
+      if (!synchronousRequestInterceptors) {
+        const chain = [dispatchRequest.bind(this), void 0];
+        chain.unshift.apply(chain, requestInterceptorChain);
+        chain.push.apply(chain, responseInterceptorChain);
+        len = chain.length;
+        promise = Promise.resolve(config);
+        while (i < len) {
+          promise = promise.then(chain[i++], chain[i++]);
+        }
+        return promise;
+      }
+      len = requestInterceptorChain.length;
+      let newConfig = config;
+      i = 0;
+      while (i < len) {
+        const onFulfilled = requestInterceptorChain[i++];
+        const onRejected = requestInterceptorChain[i++];
+        try {
+          newConfig = onFulfilled(newConfig);
+        } catch (error) {
+          onRejected.call(this, error);
+          break;
+        }
+      }
+      try {
+        promise = dispatchRequest.call(this, newConfig);
+      } catch (error) {
+        return Promise.reject(error);
+      }
+      i = 0;
+      len = responseInterceptorChain.length;
+      while (i < len) {
+        promise = promise.then(responseInterceptorChain[i++], responseInterceptorChain[i++]);
+      }
+      return promise;
+    }
+    getUri(config) {
+      config = mergeConfig(this.defaults, config);
+      const fullPath = buildFullPath(config.baseURL, config.url, config.allowAbsoluteUrls);
+      return buildURL(fullPath, config.params, config.paramsSerializer);
+    }
+  };
+  utils_default.forEach(["delete", "get", "head", "options"], function forEachMethodNoData(method) {
+    Axios.prototype[method] = function(url, config) {
+      return this.request(mergeConfig(config || {}, {
+        method,
+        url,
+        data: (config || {}).data
+      }));
+    };
+  });
+  utils_default.forEach(["post", "put", "patch"], function forEachMethodWithData(method) {
+    function generateHTTPMethod(isForm) {
+      return function httpMethod(url, data2, config) {
+        return this.request(mergeConfig(config || {}, {
+          method,
+          headers: isForm ? {
+            "Content-Type": "multipart/form-data"
+          } : {},
+          url,
+          data: data2
+        }));
+      };
+    }
+    Axios.prototype[method] = generateHTTPMethod();
+    Axios.prototype[method + "Form"] = generateHTTPMethod(true);
+  });
+  var Axios_default = Axios;
+
+  // node_modules/axios/lib/cancel/CancelToken.js
+  var CancelToken = class _CancelToken {
+    constructor(executor) {
+      if (typeof executor !== "function") {
+        throw new TypeError("executor must be a function.");
+      }
+      let resolvePromise;
+      this.promise = new Promise(function promiseExecutor(resolve) {
+        resolvePromise = resolve;
+      });
+      const token = this;
+      this.promise.then((cancel) => {
+        if (!token._listeners) return;
+        let i = token._listeners.length;
+        while (i-- > 0) {
+          token._listeners[i](cancel);
+        }
+        token._listeners = null;
+      });
+      this.promise.then = (onfulfilled) => {
+        let _resolve;
+        const promise = new Promise((resolve) => {
+          token.subscribe(resolve);
+          _resolve = resolve;
+        }).then(onfulfilled);
+        promise.cancel = function reject() {
+          token.unsubscribe(_resolve);
+        };
+        return promise;
+      };
+      executor(function cancel(message, config, request) {
+        if (token.reason) {
+          return;
+        }
+        token.reason = new CanceledError_default(message, config, request);
+        resolvePromise(token.reason);
+      });
+    }
+    /**
+     * Throws a `CanceledError` if cancellation has been requested.
+     */
+    throwIfRequested() {
+      if (this.reason) {
+        throw this.reason;
+      }
+    }
+    /**
+     * Subscribe to the cancel signal
+     */
+    subscribe(listener) {
+      if (this.reason) {
+        listener(this.reason);
+        return;
+      }
+      if (this._listeners) {
+        this._listeners.push(listener);
+      } else {
+        this._listeners = [listener];
+      }
+    }
+    /**
+     * Unsubscribe from the cancel signal
+     */
+    unsubscribe(listener) {
+      if (!this._listeners) {
+        return;
+      }
+      const index = this._listeners.indexOf(listener);
+      if (index !== -1) {
+        this._listeners.splice(index, 1);
+      }
+    }
+    toAbortSignal() {
+      const controller = new AbortController();
+      const abort = (err) => {
+        controller.abort(err);
+      };
+      this.subscribe(abort);
+      controller.signal.unsubscribe = () => this.unsubscribe(abort);
+      return controller.signal;
+    }
+    /**
+     * Returns an object that contains a new `CancelToken` and a function that, when called,
+     * cancels the `CancelToken`.
+     */
+    static source() {
+      let cancel;
+      const token = new _CancelToken(function executor(c) {
+        cancel = c;
+      });
+      return {
+        token,
+        cancel
+      };
+    }
+  };
+  var CancelToken_default = CancelToken;
+
+  // node_modules/axios/lib/helpers/spread.js
+  function spread(callback) {
+    return function wrap(arr) {
+      return callback.apply(null, arr);
+    };
+  }
+
+  // node_modules/axios/lib/helpers/isAxiosError.js
+  function isAxiosError(payload) {
+    return utils_default.isObject(payload) && payload.isAxiosError === true;
+  }
+
+  // node_modules/axios/lib/helpers/HttpStatusCode.js
+  var HttpStatusCode = {
+    Continue: 100,
+    SwitchingProtocols: 101,
+    Processing: 102,
+    EarlyHints: 103,
+    Ok: 200,
+    Created: 201,
+    Accepted: 202,
+    NonAuthoritativeInformation: 203,
+    NoContent: 204,
+    ResetContent: 205,
+    PartialContent: 206,
+    MultiStatus: 207,
+    AlreadyReported: 208,
+    ImUsed: 226,
+    MultipleChoices: 300,
+    MovedPermanently: 301,
+    Found: 302,
+    SeeOther: 303,
+    NotModified: 304,
+    UseProxy: 305,
+    Unused: 306,
+    TemporaryRedirect: 307,
+    PermanentRedirect: 308,
+    BadRequest: 400,
+    Unauthorized: 401,
+    PaymentRequired: 402,
+    Forbidden: 403,
+    NotFound: 404,
+    MethodNotAllowed: 405,
+    NotAcceptable: 406,
+    ProxyAuthenticationRequired: 407,
+    RequestTimeout: 408,
+    Conflict: 409,
+    Gone: 410,
+    LengthRequired: 411,
+    PreconditionFailed: 412,
+    PayloadTooLarge: 413,
+    UriTooLong: 414,
+    UnsupportedMediaType: 415,
+    RangeNotSatisfiable: 416,
+    ExpectationFailed: 417,
+    ImATeapot: 418,
+    MisdirectedRequest: 421,
+    UnprocessableEntity: 422,
+    Locked: 423,
+    FailedDependency: 424,
+    TooEarly: 425,
+    UpgradeRequired: 426,
+    PreconditionRequired: 428,
+    TooManyRequests: 429,
+    RequestHeaderFieldsTooLarge: 431,
+    UnavailableForLegalReasons: 451,
+    InternalServerError: 500,
+    NotImplemented: 501,
+    BadGateway: 502,
+    ServiceUnavailable: 503,
+    GatewayTimeout: 504,
+    HttpVersionNotSupported: 505,
+    VariantAlsoNegotiates: 506,
+    InsufficientStorage: 507,
+    LoopDetected: 508,
+    NotExtended: 510,
+    NetworkAuthenticationRequired: 511
+  };
+  Object.entries(HttpStatusCode).forEach(([key, value]) => {
+    HttpStatusCode[value] = key;
+  });
+  var HttpStatusCode_default = HttpStatusCode;
+
+  // node_modules/axios/lib/axios.js
+  function createInstance(defaultConfig) {
+    const context = new Axios_default(defaultConfig);
+    const instance = bind(Axios_default.prototype.request, context);
+    utils_default.extend(instance, Axios_default.prototype, context, { allOwnKeys: true });
+    utils_default.extend(instance, context, null, { allOwnKeys: true });
+    instance.create = function create(instanceConfig) {
+      return createInstance(mergeConfig(defaultConfig, instanceConfig));
+    };
+    return instance;
+  }
+  var axios = createInstance(defaults_default);
+  axios.Axios = Axios_default;
+  axios.CanceledError = CanceledError_default;
+  axios.CancelToken = CancelToken_default;
+  axios.isCancel = isCancel;
+  axios.VERSION = VERSION;
+  axios.toFormData = toFormData_default;
+  axios.AxiosError = AxiosError_default;
+  axios.Cancel = axios.CanceledError;
+  axios.all = function all(promises) {
+    return Promise.all(promises);
+  };
+  axios.spread = spread;
+  axios.isAxiosError = isAxiosError;
+  axios.mergeConfig = mergeConfig;
+  axios.AxiosHeaders = AxiosHeaders_default;
+  axios.formToJSON = (thing) => formDataToJSON_default(utils_default.isHTMLForm(thing) ? new FormData(thing) : thing);
+  axios.getAdapter = adapters_default.getAdapter;
+  axios.HttpStatusCode = HttpStatusCode_default;
+  axios.default = axios;
+  var axios_default = axios;
+
+  // node_modules/axios/index.js
+  var {
+    Axios: Axios2,
+    AxiosError: AxiosError2,
+    CanceledError: CanceledError2,
+    isCancel: isCancel2,
+    CancelToken: CancelToken2,
+    VERSION: VERSION2,
+    all: all2,
+    Cancel,
+    isAxiosError: isAxiosError2,
+    spread: spread2,
+    toFormData: toFormData2,
+    AxiosHeaders: AxiosHeaders2,
+    HttpStatusCode: HttpStatusCode2,
+    formToJSON,
+    getAdapter,
+    mergeConfig: mergeConfig2
+  } = axios_default;
+
+  // src/Login/ApiLogin.js
+  var ApiLogin_default = () => {
+    const instance = axios_default.create({
+      baseURL: "http://localhost:3000"
+    });
+    instance.interceptors.request.use(
+      (config) => {
+        const token = localStorage.getItem("token");
+        if (token) {
+          config.headers["Authorization"] = token;
+          config.headers["Accept"] = "application/json";
+          config.headers["Content-Type"] = "application/json";
+        }
+        return config;
+      },
+      (error) => Promise.reject(error)
+    );
+    return instance;
+  };
+
+  // src/Login/LoginForm.js
+  var LoginForm_default = LoginForm = () => {
+    const [email, setEmail] = (0, import_react4.useState)("");
+    const [password, setPassword] = (0, import_react4.useState)("");
+    const [flashMessage, setFlashMessage] = (0, import_react4.useState)("");
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/agent_user_menus";
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      try {
+        const api = ApiLogin_default();
+        const response = await api.post("/agents/sign_in", {
+          agent: { email, password }
+        });
+        const token = response.data.token;
+        if (token) {
+          const cleanToken = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
+          localStorage.setItem("token", cleanToken);
+          window.location.hash = from;
+          setTimeout(() => {
+            window.location.reload();
+          }, 100);
+        } else {
+          setFlashMessage("Login failed.");
+        }
+      } catch (error) {
+        setFlashMessage("Login failed: " + error.message);
+      }
+    };
+    return /* @__PURE__ */ import_react4.default.createElement("main", { className: "container mt-5" }, /* @__PURE__ */ import_react4.default.createElement("h2", { className: "text-center text-primary" }, "Log in"), flashMessage && /* @__PURE__ */ import_react4.default.createElement("div", { className: "alert alert-warning text-center" }, flashMessage), /* @__PURE__ */ import_react4.default.createElement("div", { className: "d-flex justify-content-center" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "card p-4 shadow-lg", style: { maxWidth: "400px", width: "100%" } }, /* @__PURE__ */ import_react4.default.createElement("form", { onSubmit: handleLogin }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react4.default.createElement("label", { className: "form-label" }, "Email"), /* @__PURE__ */ import_react4.default.createElement(
+      "input",
+      {
+        type: "email",
+        className: "form-control",
+        value: email,
+        onChange: (e) => setEmail(e.target.value),
+        required: true
+      }
+    )), /* @__PURE__ */ import_react4.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react4.default.createElement("label", { className: "form-label" }, "Password"), /* @__PURE__ */ import_react4.default.createElement(
+      "input",
+      {
+        type: "password",
+        className: "form-control",
+        value: password,
+        onChange: (e) => setPassword(e.target.value),
+        required: true
+      }
+    )), /* @__PURE__ */ import_react4.default.createElement("div", { className: "d-grid" }, /* @__PURE__ */ import_react4.default.createElement("button", { type: "submit", className: "btn btn-primary" }, "Log in"))))));
+  };
+
+  // src/Login/ProtectedRoute.js
+  var import_react5 = __toESM(require_react());
+  var ProtectedRoute_default = ProtectedRoute = ({ children }) => {
+    const location = useLocation();
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return /* @__PURE__ */ import_react5.default.createElement(Navigate, { to: "/login", state: { from: location }, replace: true });
+    }
+    return children;
+  };
+
+  // src/Layouts/MainLayout.js
+  var import_react10 = __toESM(require_react());
+
+  // src/Layouts/Header.js
+  var import_react7 = __toESM(require_react());
+
+  // src/Login/UseCurrentAgent.js
+  var import_react6 = __toESM(require_react());
+  var UseCurrentAgent_default = UseCurrentAgent = () => {
+    const [agent, setAgent] = (0, import_react6.useState)(null);
+    const [loading, setLoading] = (0, import_react6.useState)(true);
+    (0, import_react6.useEffect)(() => {
+      const fetchAgent = async () => {
+        try {
+          const api = ApiLogin_default();
+          const response = await api.get("/current_agent");
+          setAgent(response.data);
+        } catch (error) {
+          console.error("Error fetching agent:", error);
+          setAgent(null);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchAgent();
+    }, []);
+    return { agent, loading };
+  };
+
+  // src/Layouts/Header.js
+  var Header_default = Header = () => {
+    const { agent, loading } = UseCurrentAgent_default();
+    return /* @__PURE__ */ import_react7.default.createElement("div", { className: "page-header row" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "col-auto header-left-wrapper" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "header-logo-wrapper p-0 left-header" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react7.default.createElement("a", { href: "/" }, /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "",
+        alt: ""
+      }
+    )))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react7.default.createElement("svg", { className: "status_toggle sidebar-toggle" }, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#collapse-sidebar" })))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "col-auto header-right-wrapper page-title" }, /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("h2", null, "Default"), /* @__PURE__ */ import_react7.default.createElement("nav", null, /* @__PURE__ */ import_react7.default.createElement("ol", { className: "breadcrumb justify-content-sm-start align-items-center mb-0" }, /* @__PURE__ */ import_react7.default.createElement("li", { className: "breadcrumb-item" }, /* @__PURE__ */ import_react7.default.createElement("a", { href: "index.html" }, "Home")), /* @__PURE__ */ import_react7.default.createElement("li", { className: "breadcrumb-item f-w-500" }, "Dashboard"), /* @__PURE__ */ import_react7.default.createElement("li", { className: "breadcrumb-item f-w-500 active" }, "Default"))))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "col header-wrapper m-0 header-right-wrapper" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "row m-0" }, /* @__PURE__ */ import_react7.default.createElement(
+      "form",
+      {
+        className: "form-inline search-full col",
+        action: "#",
+        method: "get"
+      },
+      /* @__PURE__ */ import_react7.default.createElement("div", { className: "form-group w-100" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "Typeahead Typeahead--twitterUsers" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "u-posRelative" }, /* @__PURE__ */ import_react7.default.createElement(
+        "input",
+        {
+          className: "demo-input Typeahead-input form-control-plaintext w-100",
+          type: "text",
+          placeholder: "Search anything ..",
+          name: "q",
+          title: "",
+          autoFocus: true
+        }
+      ), /* @__PURE__ */ import_react7.default.createElement(
+        "div",
+        {
+          className: "spinner-border Typeahead-spinner",
+          role: "status"
+        },
+        /* @__PURE__ */ import_react7.default.createElement("span", { className: "sr-only" }, "Loading...")
+      ), /* @__PURE__ */ import_react7.default.createElement("i", { className: "close-search", "data-feather": "x" })), /* @__PURE__ */ import_react7.default.createElement("div", { className: "Typeahead-menu" })))
+    ), /* @__PURE__ */ import_react7.default.createElement("div", { className: "header-logo-wrapper col-auto p-0 left-header" }), /* @__PURE__ */ import_react7.default.createElement("div", { className: "nav-right col-auto pull-right right-header p-0 ms-auto" }, /* @__PURE__ */ import_react7.default.createElement("ul", { className: "nav-menus" }, /* @__PURE__ */ import_react7.default.createElement("li", null, " ", /* @__PURE__ */ import_react7.default.createElement("span", { className: "header-search" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" })))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "onhover-dropdown" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "notification-box onhover-click" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#notification" })), /* @__PURE__ */ import_react7.default.createElement("span", { className: "badge rounded-pill badge-success" }, "3 ")), /* @__PURE__ */ import_react7.default.createElement("div", { className: "onhover-show-div notification-dropdown" }, /* @__PURE__ */ import_react7.default.createElement("h6", { className: "f-18 mb-0 dropdown-title" }, "Notifications "), /* @__PURE__ */ import_react7.default.createElement("ul", null, /* @__PURE__ */ import_react7.default.createElement("li", { className: "d-flex" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "notification-image" }, " ", /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/avtar/3.jpg",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", { className: "notification-icon bg-danger" }, /* @__PURE__ */ import_react7.default.createElement("i", { className: "fa fa-heart" }))), /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("p", null, /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-w-500 me-1" }, "Emay Walter "), "liked your post", " "), /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-light" }, "10 minutes ago"))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "d-flex" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "notification-image" }, " ", /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/avtar/4.jpg",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", { className: "notification-icon bg-info" }, /* @__PURE__ */ import_react7.default.createElement("i", { className: "fa fa-share-alt" }))), /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("p", null, /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-w-500 me-1" }, "Allie Grater"), "shared your post", " "), /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-light" }, "5 hours ago"))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "d-flex" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "notification-image" }, " ", /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/avtar/7.jpg",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", { className: "notification-icon bg-success" }, /* @__PURE__ */ import_react7.default.createElement("i", { className: "fa fa-wechat" }))), /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("p", null, /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-w-500 me-1" }, "Colin Sik"), "commented on your post"), /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-light" }, "yesterday"))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { className: "f-w-700", href: "#!" }, "Check all"))))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "cart-nav onhover-dropdown" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "cart-box onhover-click" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#email" })), /* @__PURE__ */ import_react7.default.createElement("span", { className: "badge rounded-pill badge-danger" }, "2")), /* @__PURE__ */ import_react7.default.createElement("div", { className: "onhover-show-div chat-dropdown" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "dropdown-title" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "d-flex align-items-center" }, " ", /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid img-40 rounded-circle",
+        src: "../assets/images/dashboard/user/1.jpg",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("h6", { className: "f-18 mb-0" }, "Jane Cooper"), /* @__PURE__ */ import_react7.default.createElement("p", { className: "mb-0" }, " ", /* @__PURE__ */ import_react7.default.createElement("span", { className: "status status-success me-1" }), /* @__PURE__ */ import_react7.default.createElement("span", null, "active"))))), /* @__PURE__ */ import_react7.default.createElement("ul", null, /* @__PURE__ */ import_react7.default.createElement("li", { className: "send-msg" }, /* @__PURE__ */ import_react7.default.createElement("div", null, " ", /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid img-30 rounded-circle",
+        src: "../assets/images/dashboard/user/1.jpg",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("p", null, "Hello.how are you?")))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "reply-msg" }, /* @__PURE__ */ import_react7.default.createElement("div", null, " ", /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid img-30 rounded-circle",
+        src: "../assets/images/dashboard/user/3.jpg",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("p", null, "Hi, i'm fine.what about you?")))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "send-msg" }, /* @__PURE__ */ import_react7.default.createElement("div", null, " ", /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid img-30 rounded-circle",
+        src: "../assets/images/dashboard/user/1.jpg",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("p", null, "I am facing js issue can you help me?")))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "reply-msg" }, /* @__PURE__ */ import_react7.default.createElement("div", null, " ", /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid img-30 rounded-circle",
+        src: "../assets/images/dashboard/user/3.jpg",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("p", null, "Sure, i will help you."))))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "chat-input" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react7.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "text",
+        placeholder: "Type message here..."
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("span", { className: "input-group-text bg-primary" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#send" }))))))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("div", { className: "mode" }, /* @__PURE__ */ import_react7.default.createElement("svg", { className: "moon-icon" }, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#moon" })), /* @__PURE__ */ import_react7.default.createElement("svg", { className: "sun-icon" }, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#sun" })))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "cart-nav onhover-dropdown" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "cart-box onhover-click" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-ecommerce" })), /* @__PURE__ */ import_react7.default.createElement("span", { className: "badge rounded-pill badge-primary" }, "2")), /* @__PURE__ */ import_react7.default.createElement("div", { className: "cart-dropdown onhover-show-div" }, /* @__PURE__ */ import_react7.default.createElement("h6", { className: "f-18 mb-0 dropdown-title" }, "Cart"), /* @__PURE__ */ import_react7.default.createElement("ul", { className: "cart-main-wrapper" }, /* @__PURE__ */ import_react7.default.createElement("li", { className: "cart-product" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "d-flex" }, /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid b-r-5 me-3 img-60",
+        src: "../assets/images/other-images/cart-img2.jpg",
+        alt: "cosmetic"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", { className: "flex-grow-1" }, /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-w-500" }, "Beauty cosmetic"), /* @__PURE__ */ import_react7.default.createElement("div", { className: "qty-box" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "touchspin-wrapper" }, /* @__PURE__ */ import_react7.default.createElement("button", { className: "decrement-touchspin btn-touchspin" }, /* @__PURE__ */ import_react7.default.createElement("i", { className: "fa fa-minus text-gray" })), /* @__PURE__ */ import_react7.default.createElement("button", { className: "increment-touchspin btn-touchspin" }, /* @__PURE__ */ import_react7.default.createElement("i", { className: "fa fa-plus text-gray" }))), /* @__PURE__ */ import_react7.default.createElement("h6", { className: "font-primary" }, "$20 "))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "close-circle" }, /* @__PURE__ */ import_react7.default.createElement("a", { href: "#" }, /* @__PURE__ */ import_react7.default.createElement("i", { "data-feather": "trash-2" }))))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "cart-product" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "d-flex" }, /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid b-r-5 me-3 img-60",
+        src: "../assets/images/other-images/cart-img-1.jpg",
+        alt: "shoes"
+      }
+    ), /* @__PURE__ */ import_react7.default.createElement("div", { className: "flex-grow-1" }, /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-w-500" }, "Simple shoes"), /* @__PURE__ */ import_react7.default.createElement("div", { className: "qty-box" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "touchspin-wrapper" }, /* @__PURE__ */ import_react7.default.createElement("button", { className: "decrement-touchspin btn-touchspin" }, /* @__PURE__ */ import_react7.default.createElement("i", { className: "fa fa-minus text-gray" })), /* @__PURE__ */ import_react7.default.createElement("button", { className: "increment-touchspin btn-touchspin" }, /* @__PURE__ */ import_react7.default.createElement("i", { className: "fa fa-plus text-gray" }))), /* @__PURE__ */ import_react7.default.createElement("h6", { className: "font-primary" }, "$30 "))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "close-circle" }, /* @__PURE__ */ import_react7.default.createElement("a", { href: "#" }, /* @__PURE__ */ import_react7.default.createElement("i", { "data-feather": "trash-2" }))))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "total" }, /* @__PURE__ */ import_react7.default.createElement("h6", { className: "mb-0" }, "Order Total : ", /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-right" }, "$70.00"))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "text-center" }, /* @__PURE__ */ import_react7.default.createElement(
+      "a",
+      {
+        className: "d-block mb-3 view-cart f-w-700",
+        href: "cart.html"
+      },
+      "Go to your cart"
+    ), /* @__PURE__ */ import_react7.default.createElement(
+      "a",
+      {
+        className: "btn btn-primary view-checkout w-100",
+        href: "checkout.html"
+      },
+      "Checkout"
+    ))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "cart-empty" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "cart-image" }, " ", /* @__PURE__ */ import_react7.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/product/order-trash.gif",
+        alt: "empty"
+      }
+    )), /* @__PURE__ */ import_react7.default.createElement("h5", null, "Oops! Your cart empty!!!")))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "profile-nav onhover-dropdown" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "onhover-click" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "sidebar-image" }, " ", /* @__PURE__ */ import_react7.default.createElement("img", { src: "../assets/images/user.png", alt: "profile" }), /* @__PURE__ */ import_react7.default.createElement("span", { className: "status status-success" })), /* @__PURE__ */ import_react7.default.createElement("div", { className: "sidebar-content" }, /* @__PURE__ */ import_react7.default.createElement("h4", null, "Wade Warren"), /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-12 f-w-600 f-light" }, "UI Designer"))), /* @__PURE__ */ import_react7.default.createElement("ul", { className: "profile-dropdown onhover-show-div" }, /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "sign-up.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#user" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Account "))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "letter-box.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-email" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Inbox"))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "task.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#notepad" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Taskboard"))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "edit-profile.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#settings" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Settings"))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "login.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#login" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Log out"))))))), /* @__PURE__ */ import_react7.default.createElement(
+      "script",
+      {
+        className: "result-template",
+        type: "text/x-handlebars-template"
+      },
+      /* @__PURE__ */ import_react7.default.createElement("div", { className: "ProfileCard u-cf" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "ProfileCard-avatar" }, /* @__PURE__ */ import_react7.default.createElement(
+        "svg",
+        {
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "24",
+          height: "24",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          className: "feather feather-airplay m-0"
+        },
+        /* @__PURE__ */ import_react7.default.createElement("path", { d: "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" }),
+        /* @__PURE__ */ import_react7.default.createElement("polygon", { points: "12 15 17 21 7 21 12 15" })
+      )), /* @__PURE__ */ import_react7.default.createElement("div", { className: "ProfileCard-details" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "ProfileCard-realName" }, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Guest")))
+    ), /* @__PURE__ */ import_react7.default.createElement(
+      "script",
+      {
+        className: "empty-template",
+        type: "text/x-handlebars-template"
+      },
+      /* @__PURE__ */ import_react7.default.createElement("div", { className: "EmptyMessage" }, "Your search turned up 0 results. This most likely means the backend is down, yikes!")
+    ))));
+  };
+
+  // src/Layouts/Sidebar.js
+  var import_react8 = __toESM(require_react());
+  var Sidebar_default = Sidebar = () => {
+    const { agent, loading } = UseCurrentAgent_default();
+    return /* @__PURE__ */ import_react8.default.createElement("div", { className: "sidebar-wrapper", "data-sidebar-layout": "stroke-svg" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react8.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react8.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/logo/cathay-wh.png",
+        alt: ""
+      }
+    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "back-btn" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-angle-left" })), /* @__PURE__ */ import_react8.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react8.default.createElement(
+      "i",
+      {
+        className: "status_toggle middle sidebar-toggle",
+        "data-feather": "grid"
+      },
+      " "
+    ))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "logo-icon-wrapper" }, /* @__PURE__ */ import_react8.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react8.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/logo/cathay-wh.png",
+        alt: "",
+        style: { width: "30px" }
+      }
+    ))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "profile-section sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "profile-wrapper" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "active-profile" }, " ", /* @__PURE__ */ import_react8.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/user.png",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react8.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h4", null, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "No Agent Available"), /* @__PURE__ */ import_react8.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react8.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "text",
+        placeholder: "Quick search",
+        "aria-label": "Username",
+        "aria-describedby": "sidebar-search"
+      }
+    ))), /* @__PURE__ */ import_react8.default.createElement("nav", { className: "sidebar-main" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "left-arrow", id: "left-arrow" }, /* @__PURE__ */ import_react8.default.createElement("i", { "data-feather": "arrow-left" })), /* @__PURE__ */ import_react8.default.createElement("div", { id: "sidebar-menu" }, /* @__PURE__ */ import_react8.default.createElement("ul", { className: "sidebar-links", id: "simple-bar" }, /* @__PURE__ */ import_react8.default.createElement("li", { className: "back-btn" }, /* @__PURE__ */ import_react8.default.createElement(Link, { to: "/" }, /* @__PURE__ */ import_react8.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/logo/logo-icon.png",
+        alt: ""
+      }
+    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mobile-back text-end" }, /* @__PURE__ */ import_react8.default.createElement("span", null, "Back"), /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-angle-right ps-2", "aria-hidden": "true" }))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "pin-title sidebar-main-title" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h6", null, "- Pinned"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-main-title" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h6", { className: "lan-1" }, "- Navigation"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      Link,
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        to: "/dashboard"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Dashboard")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      Link,
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        to: "/agent_user_menus"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-task" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Agent User Menus")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-charts" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Marketing")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#send" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Transfer Slip")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-file" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Request Slip")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#profile-check" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Issue Slip")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Entry")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Listing")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Item Master")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Packing List")
+    )))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react8.default.createElement("i", { "data-feather": "arrow-right" })))));
+  };
+
+  // src/Layouts/Footer.js
+  var import_react9 = __toESM(require_react());
+  var Footer_default = Footer = () => {
+    return /* @__PURE__ */ import_react9.default.createElement("footer", { className: "footer" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "container-fluid" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "row gy-1 justify-content-center text-center" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "col-lg-6 col-md-7 footer-copyright" }, /* @__PURE__ */ import_react9.default.createElement("p", { className: "mb-0 f-light f-w-500" }, "Copyright 2024 \xA9 The Cathay Drug Company Inc.")))));
+  };
+
+  // src/Layouts/MainLayout.js
+  var MainLayout = () => {
+    return /* @__PURE__ */ import_react10.default.createElement("div", { className: "page-wrapper compact-wrapper", id: "pageWrapper" }, /* @__PURE__ */ import_react10.default.createElement(Header_default, null), /* @__PURE__ */ import_react10.default.createElement("div", { className: "page-body-wrapper" }, /* @__PURE__ */ import_react10.default.createElement(Sidebar_default, null), /* @__PURE__ */ import_react10.default.createElement(Outlet, null), /* @__PURE__ */ import_react10.default.createElement(Footer_default, null)));
+  };
+  var MainLayout_default = MainLayout;
 
   // src/App.js
-  var App_default = App = () => {
-    return /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement("div", { className: "page-wrapper compact-wrapper", id: "pageWrapper" }, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement("div", { className: "page-body-wrapper" }, /* @__PURE__ */ import_react8.default.createElement(Sidebar_default, null), /* @__PURE__ */ import_react8.default.createElement(Routes, null, /* @__PURE__ */ import_react8.default.createElement(Route, { path: "/dashboard", element: /* @__PURE__ */ import_react8.default.createElement(Dashboard_default, null) }), /* @__PURE__ */ import_react8.default.createElement(Route, { path: "/agent_user_menus", element: /* @__PURE__ */ import_react8.default.createElement(Index_default, null) }), /* @__PURE__ */ import_react8.default.createElement(Route, { path: "/agent_user_menus/new", element: /* @__PURE__ */ import_react8.default.createElement(New_default, null) })), /* @__PURE__ */ import_react8.default.createElement(Footer_default, null))));
+  var App = () => {
+    return /* @__PURE__ */ import_react11.default.createElement(Routes, null, /* @__PURE__ */ import_react11.default.createElement(Route, { path: "/login", element: /* @__PURE__ */ import_react11.default.createElement(LoginForm_default, null) }), /* @__PURE__ */ import_react11.default.createElement(
+      Route,
+      {
+        element: /* @__PURE__ */ import_react11.default.createElement(ProtectedRoute_default, null, /* @__PURE__ */ import_react11.default.createElement(MainLayout_default, null))
+      },
+      /* @__PURE__ */ import_react11.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react11.default.createElement(Dashboard_default, null) }),
+      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "dashboard", element: /* @__PURE__ */ import_react11.default.createElement(Dashboard_default, null) }),
+      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "agent_user_menus", element: /* @__PURE__ */ import_react11.default.createElement(Index_default, null) }),
+      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react11.default.createElement(New_default, null) })
+    ));
   };
+  var App_default = App;
 
   // src/index.js
   var container = document.getElementById("root");
   var root = import_client.default.createRoot(container);
   root.render(
-    /* @__PURE__ */ import_react9.default.createElement(HashRouter, null, /* @__PURE__ */ import_react9.default.createElement(App_default, null))
+    /* @__PURE__ */ import_react12.default.createElement(HashRouter, null, /* @__PURE__ */ import_react12.default.createElement(App_default, null))
   );
 })();
 /*! Bundled license information:

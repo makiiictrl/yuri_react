@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import UseCurrentAgent from "../Login/UseCurrentAgent";
 
 export default Sidebar = () => {
+  const { agent, loading } = UseCurrentAgent();
   return (
     <div className="sidebar-wrapper" data-sidebar-layout="stroke-svg">
       <div>
@@ -47,14 +49,15 @@ export default Sidebar = () => {
               <div className="status bg-success"> </div>
             </div>
             <div>
-              <h4>Michael Medina</h4>
+              <h4>{loading ? (
+              "Loading..."
+            ) : agent ? (
+              <>
+                {agent?.first_name} {agent?.last_name}
+              </>
+            ) : "No Agent Available"}</h4>
               <span>Junior Web and SQL Developer</span>
             </div>
-          </div>
-          <div>
-            <svg>
-              <use href="../assets/svg/icon-sprite.svg#profile-setting"></use>
-            </svg>
           </div>
         </div>
 
