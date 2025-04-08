@@ -1305,7 +1305,7 @@
           return dispatcher;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React25 = require_react(), Internals = {
+        var React26 = require_react(), Internals = {
           d: {
             f: noop2,
             r: function() {
@@ -1323,7 +1323,7 @@
           },
           p: 0,
           findDOMNode: null
-        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React25.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React26.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
         "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
           "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
@@ -2865,7 +2865,7 @@
           "number" === type && getActiveElement(node.ownerDocument) === node || node.defaultValue === "" + value || (node.defaultValue = "" + value);
         }
         function validateOptionProps(element, props) {
-          null == props.value && ("object" === typeof props.children && null !== props.children ? React25.Children.forEach(props.children, function(child) {
+          null == props.value && ("object" === typeof props.children && null !== props.children ? React26.Children.forEach(props.children, function(child) {
             null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
               "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
             ));
@@ -16447,14 +16447,14 @@
           ));
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var Scheduler = require_scheduler(), React25 = require_react(), ReactDOM2 = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+        var Scheduler = require_scheduler(), React26 = require_react(), ReactDOM2 = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
         Symbol.for("react.scope");
         var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
         Symbol.for("react.legacy_hidden");
         Symbol.for("react.tracing_marker");
         var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
         Symbol.for("react.view_transition");
-        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React25.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM2.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React26.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM2.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
           pending: false,
           data: null,
           method: null,
@@ -19168,7 +19168,7 @@
           }
         };
         (function() {
-          var isomorphicReactPackageVersion = React25.version;
+          var isomorphicReactPackageVersion = React26.version;
           if ("19.1.0" !== isomorphicReactPackageVersion)
             throw Error(
               'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.1.0\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -22269,11 +22269,11 @@
   });
 
   // src/index.js
-  var import_react12 = __toESM(require_react());
+  var import_react13 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // src/App.js
-  var import_react11 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
 
   // node_modules/react-router/dist/development/chunk-XJI4KG32.mjs
   var React3 = __toESM(require_react(), 1);
@@ -27582,7 +27582,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       },
       /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-users me-2 text-white" }),
       /* @__PURE__ */ import_react8.default.createElement("span", null, "Agent User Menus")
-    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-growth me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Marketing"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Transfer Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Request Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-paper me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Issue Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-mail me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Entry"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-list me-3 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Listing"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-papers me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Item Master"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-package me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Packing List"))))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react8.default.createElement("i", { "data-feather": "arrow-right" })))));
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-growth me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Marketing"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+      Link,
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        to: "/transfer_slips"
+      },
+      /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-white" }),
+      /* @__PURE__ */ import_react8.default.createElement("span", null, "Transfer Slip")
+    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Request Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-paper me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Issue Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-mail me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Entry"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-list me-3 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Listing"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-papers me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Item Master"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-package me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Packing List"))))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react8.default.createElement("i", { "data-feather": "arrow-right" })))));
   };
 
   // src/Layouts/Footer.js
@@ -27597,17 +27605,90 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
   var MainLayout_default = MainLayout;
 
+  // src/Components/TransferSlips/Index.js
+  var import_react11 = __toESM(require_react());
+  var Index_default2 = Index = () => {
+    const [isShowOpen, setIsShowOpen] = (0, import_react11.useState)(false);
+    return /* @__PURE__ */ import_react11.default.createElement("div", { class: "card m-3 p-3" }, /* @__PURE__ */ import_react11.default.createElement("h3", { class: "text-primary" }, "Listing Transfer Slip"), /* @__PURE__ */ import_react11.default.createElement("form", { method: "get", action: "/transfer_slips", class: "mb-4" }, /* @__PURE__ */ import_react11.default.createElement("div", { class: "row" }, /* @__PURE__ */ import_react11.default.createElement("div", { class: "col-md-2" }, /* @__PURE__ */ import_react11.default.createElement("div", { class: "form-group" }, /* @__PURE__ */ import_react11.default.createElement("label", null, "Company Code :"), /* @__PURE__ */ import_react11.default.createElement("select", { className: "form-select" }, /* @__PURE__ */ import_react11.default.createElement("option", { value: "" }, "Please select..."), /* @__PURE__ */ import_react11.default.createElement("option", { value: "1" }, "CDCI"), /* @__PURE__ */ import_react11.default.createElement("option", { value: "5" }, "CYDC"), /* @__PURE__ */ import_react11.default.createElement("option", { value: "2" }, "YSS")))), /* @__PURE__ */ import_react11.default.createElement("div", { class: "col-md-2" }, /* @__PURE__ */ import_react11.default.createElement("div", { class: "form-group" }, /* @__PURE__ */ import_react11.default.createElement("label", null, "TS Number:"), /* @__PURE__ */ import_react11.default.createElement(
+      "input",
+      {
+        id: "ts_number",
+        name: "ts_number",
+        type: "text",
+        value: "",
+        class: "form-control"
+      }
+    ))), /* @__PURE__ */ import_react11.default.createElement("div", { class: "col-md-2" }, /* @__PURE__ */ import_react11.default.createElement("div", { class: "form-group" }, /* @__PURE__ */ import_react11.default.createElement("label", null, "TS Type:"), /* @__PURE__ */ import_react11.default.createElement("select", { className: "form-select" }, /* @__PURE__ */ import_react11.default.createElement("option", { value: "" }, "Please select..."), /* @__PURE__ */ import_react11.default.createElement("option", { value: "Commercial" }, "Commercial"), /* @__PURE__ */ import_react11.default.createElement("option", { value: "Sample" }, "Sample"), /* @__PURE__ */ import_react11.default.createElement("option", { value: "Other" }, "Other")))), /* @__PURE__ */ import_react11.default.createElement("div", { class: "col-md-2" }, /* @__PURE__ */ import_react11.default.createElement("div", { class: "form-group" }, /* @__PURE__ */ import_react11.default.createElement("label", null, "Lot Number:"), /* @__PURE__ */ import_react11.default.createElement(
+      "input",
+      {
+        id: "transfer_slip_lot_number",
+        name: "transfer_slip_lot_number",
+        type: "text",
+        value: "",
+        class: "form-control"
+      }
+    ))), /* @__PURE__ */ import_react11.default.createElement("div", { class: "col-md-2" }, /* @__PURE__ */ import_react11.default.createElement("div", { class: "form-group mt-3 d-flex align-items-center" }, /* @__PURE__ */ import_react11.default.createElement("button", { type: "submit", class: "btn btn-primary text-nowrap me-2" }, "Show Transfer slips"), /* @__PURE__ */ import_react11.default.createElement(
+      "button",
+      {
+        id: "clear_filter",
+        type: "button",
+        class: "btn btn-secondary text-nowrap ml-3"
+      },
+      "Clear Filter"
+    )))), /* @__PURE__ */ import_react11.default.createElement("div", null)), /* @__PURE__ */ import_react11.default.createElement("div", { class: "card" }, /* @__PURE__ */ import_react11.default.createElement("div", { class: "card-header bg-primary text-white d-flex align-items-center justify-content-between py-2 px-3" }, /* @__PURE__ */ import_react11.default.createElement("h5", { class: "mb-0 text-white" }, "Transfer Slip"), /* @__PURE__ */ import_react11.default.createElement("div", { class: "d-flex align-items-center ms-auto gap-2" }, /* @__PURE__ */ import_react11.default.createElement("div", { className: "btn-group" }, /* @__PURE__ */ import_react11.default.createElement(
+      "button",
+      {
+        type: "button",
+        className: `btn btn-light dropdown-toggle btn-md ${isShowOpen ? "show" : ""}`,
+        onClick: () => setIsShowOpen((prev) => !prev),
+        onBlur: () => setIsShowOpen((prev) => !prev),
+        "aria-expanded": isShowOpen
+      },
+      "Show only"
+    ), /* @__PURE__ */ import_react11.default.createElement(
+      "ul",
+      {
+        className: `dropdown-menu ${isShowOpen ? "show" : ""}`,
+        style: {
+          position: "absolute",
+          inset: "40px auto auto 0px",
+          margin: "0px",
+          // width: 'fit-content',
+          minWidth: "105px",
+          transform: isShowOpen ? "translateY(0px)" : "translateY(20px)",
+          opacity: isShowOpen ? 1 : 0,
+          transition: "opacity 0.3s ease, transform 0.3s ease"
+        },
+        "data-popper-placement": "bottom-start"
+      },
+      /* @__PURE__ */ import_react11.default.createElement("li", { className: "dropdown-item" }, "10"),
+      /* @__PURE__ */ import_react11.default.createElement("li", { className: "dropdown-item" }, "30"),
+      /* @__PURE__ */ import_react11.default.createElement("li", { className: "dropdown-item" }, "50")
+    )), /* @__PURE__ */ import_react11.default.createElement("div", { class: "d-flex align-items-center" }, /* @__PURE__ */ import_react11.default.createElement(
+      "button",
+      {
+        class: "btn btn-light",
+        type: "button",
+        id: "print_transfer_slips_blank",
+        title: "Print Blank Transfer Slip"
+      },
+      /* @__PURE__ */ import_react11.default.createElement("i", { class: "psi-printer", "aria-hidden": "true" }),
+      /* @__PURE__ */ import_react11.default.createElement("span", { class: "visually-hidden" }, "Manage")
+    )))), /* @__PURE__ */ import_react11.default.createElement("div", { class: "card-body" }, /* @__PURE__ */ import_react11.default.createElement("table", { class: "table table-striped table-bordered table-hover" }, /* @__PURE__ */ import_react11.default.createElement("thead", null, /* @__PURE__ */ import_react11.default.createElement("tr", null, /* @__PURE__ */ import_react11.default.createElement("th", null, "Comp"), /* @__PURE__ */ import_react11.default.createElement("th", null, "TS Number"), /* @__PURE__ */ import_react11.default.createElement("th", null, "TS Type"), /* @__PURE__ */ import_react11.default.createElement("th", null, "To"), /* @__PURE__ */ import_react11.default.createElement("th", null, "Transferred"), /* @__PURE__ */ import_react11.default.createElement("th", null, "Transferred Date"), /* @__PURE__ */ import_react11.default.createElement("th", null, "Received"), /* @__PURE__ */ import_react11.default.createElement("th", null, "Received Date"), /* @__PURE__ */ import_react11.default.createElement("th", null, "Actions"))), /* @__PURE__ */ import_react11.default.createElement("tbody", null, /* @__PURE__ */ import_react11.default.createElement("tr", null, /* @__PURE__ */ import_react11.default.createElement("td", null, "company_code"), /* @__PURE__ */ import_react11.default.createElement("td", null, "transfer_slip_number"), /* @__PURE__ */ import_react11.default.createElement("td", null, "transfer_slip_type"), /* @__PURE__ */ import_react11.default.createElement("td", null, "transfer_to"), /* @__PURE__ */ import_react11.default.createElement("td", null, "transfer_by"), /* @__PURE__ */ import_react11.default.createElement("td", null, "transfer_by_date"), /* @__PURE__ */ import_react11.default.createElement("td", null, "received_by"), /* @__PURE__ */ import_react11.default.createElement("td", null, "received_by_date"), /* @__PURE__ */ import_react11.default.createElement("td", { class: "d-flex align-items-center" }, /* @__PURE__ */ import_react11.default.createElement(Link, { to: "/transfer_slips/show", className: "btn btn-info me-1 btn-sm" }, "Show"), /* @__PURE__ */ import_react11.default.createElement(Link, { to: "/transfer_slips/edit", className: "btn btn-warning me-1 btn-sm" }, "Edit"), /* @__PURE__ */ import_react11.default.createElement(Link, { to: "/transfer_slips/print", className: "btn btn-light me-1 btn-sm" }, "Print"), /* @__PURE__ */ import_react11.default.createElement(Link, { className: "btn btn-danger btn-sm" }, "Delete"))))))), /* @__PURE__ */ import_react11.default.createElement("nav", { class: "d-flex justify-content-center mt-4" }));
+  };
+
   // src/App.js
   var App = () => {
-    return /* @__PURE__ */ import_react11.default.createElement(Routes, null, /* @__PURE__ */ import_react11.default.createElement(Route, { path: "/login", element: /* @__PURE__ */ import_react11.default.createElement(LoginForm_default, null) }), /* @__PURE__ */ import_react11.default.createElement(
+    return /* @__PURE__ */ import_react12.default.createElement(Routes, null, /* @__PURE__ */ import_react12.default.createElement(Route, { path: "/login", element: /* @__PURE__ */ import_react12.default.createElement(LoginForm_default, null) }), /* @__PURE__ */ import_react12.default.createElement(
       Route,
       {
-        element: /* @__PURE__ */ import_react11.default.createElement(ProtectedRoute_default, null, /* @__PURE__ */ import_react11.default.createElement(MainLayout_default, null))
+        element: /* @__PURE__ */ import_react12.default.createElement(ProtectedRoute_default, null, /* @__PURE__ */ import_react12.default.createElement(MainLayout_default, null))
       },
-      /* @__PURE__ */ import_react11.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react11.default.createElement(Dashboard_default, null) }),
-      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "dashboard", element: /* @__PURE__ */ import_react11.default.createElement(Dashboard_default, null) }),
-      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "agent_user_menus", element: /* @__PURE__ */ import_react11.default.createElement(Index_default, null) }),
-      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react11.default.createElement(NewModal_default, null) })
+      /* @__PURE__ */ import_react12.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react12.default.createElement(Dashboard_default, null) }),
+      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "dashboard", element: /* @__PURE__ */ import_react12.default.createElement(Dashboard_default, null) }),
+      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "agent_user_menus", element: /* @__PURE__ */ import_react12.default.createElement(Index_default, null) }),
+      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react12.default.createElement(NewModal_default, null) }),
+      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "transfer_slips", element: /* @__PURE__ */ import_react12.default.createElement(Index_default2, null) })
     ));
   };
   var App_default = App;
@@ -27616,7 +27697,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var container = document.getElementById("root");
   var root = import_client.default.createRoot(container);
   root.render(
-    /* @__PURE__ */ import_react12.default.createElement(HashRouter, null, /* @__PURE__ */ import_react12.default.createElement(App_default, null))
+    /* @__PURE__ */ import_react13.default.createElement(HashRouter, null, /* @__PURE__ */ import_react13.default.createElement(App_default, null))
   );
 })();
 /*! Bundled license information:
