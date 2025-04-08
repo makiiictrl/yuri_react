@@ -27134,7 +27134,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   } = axios_default;
 
   // src/Login/ApiLogin.js
-  var ApiLogin_default = () => {
+  var axiosInstance = () => {
     const instance = axios_default.create({
       baseURL: "http://localhost:3000"
     });
@@ -27150,8 +27150,19 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       },
       (error) => Promise.reject(error)
     );
+    instance.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        if (error.response?.status === 401) {
+          localStorage.removeItem("token");
+          window.location.href = "/#/login";
+        }
+        return Promise.reject(error);
+      }
+    );
     return instance;
   };
+  var ApiLogin_default = axiosInstance;
 
   // src/Login/UseCurrentAgent.js
   var UseCurrentAgent_default = UseCurrentAgent = () => {
