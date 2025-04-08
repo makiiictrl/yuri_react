@@ -8,6 +8,7 @@ import AgentUserMenuNew from "./Components/AgentUserMenu/New";
 import LoginForm from "./Login/LoginForm";
 import ProtectedRoute from "./Login/ProtectedRoute";
 import MainLayout from "./Layouts/MainLayout";
+import TrasferSlipsIndex from "./Components/TransferSlips/Index"; 
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="agent_user_menus" element={<AgentUserMenuIndex />} />
         <Route path="agent_user_menus/edit/:id" element={<AgentUserMenuEdit />} />
         <Route path="agent_user_menus/new" element={<AgentUserMenuNew />} />
+        <Route path="transfer_slips" element={<TrasferSlipsIndex/>} />
       </Route>
     </Routes>
   );

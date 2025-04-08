@@ -132,10 +132,13 @@ export default Sidebar = () => {
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
-                <a className="sidebar-link sidebar-title link-nav" href="/">
+                <Link
+                  className="sidebar-link sidebar-title link-nav"
+                  to="/transfer_slips"
+                >
                 <i className="icofont icofont-paper-plane me-2 text-white"></i>
                   <span>Transfer Slip</span>
-                </a>
+                </Link>
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
