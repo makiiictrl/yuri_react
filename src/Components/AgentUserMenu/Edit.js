@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { showAgentUserMenus } from "../../Services/AgentUserMenusServices";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default Edit = ({ ModalId }) => {
   const [data, setData] = useState([]);
   const [showAlert, setShowAlert] = useState(true);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
+  const {
+    id
+} = useParams();
 
   useEffect(() => {
-    showAgentUserMenus(ModalId)
-        .then(response => {
-          setData(response.data);
-          console.log(response.data);
-          setLoading(false);
-        })
-        .catch(err => {
-          console.error("Error fetching data", err);
-          setError(err);
-          setLoading(false);
-        });
-    }, [ModalId]);
+  showAgentUserMenus(id)
+      .then(response => {
+        setData(response.data);
+        console.log("Data fetched successfully", response.data);
+      })
+      .catch(err => {
+        console.error("Error fetching data", err);
+      });
+  }, [id]);
 
   return (
     <div className="page-body">
@@ -47,7 +45,7 @@ export default Edit = ({ ModalId }) => {
 
           <div className="card title-line">
             <div className="card-header">
-              <h4 className="mt-1">Agent User Menu Details {data.agent_id}</h4>
+              <h4 className="mt-1">Agent User Menu Details</h4>
             </div>
 
             <div className="card-body">
@@ -65,6 +63,7 @@ export default Edit = ({ ModalId }) => {
                     tabIndex={1}
                     list="menu"
                     autoComplete="off"
+                    value={data.menu_id}
                     required
                   />
                 </div>
@@ -81,6 +80,7 @@ export default Edit = ({ ModalId }) => {
                     tabIndex={1}
                     list="agent"
                     autoComplete="off"
+                    value={data.agent_id}
                     required
                   />
                 </div>
@@ -95,7 +95,7 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userCreate"
                         type="checkbox"
-                        value=""
+                        checked={data.create === 1}
                       />
                       <label className="form-check-label" htmlFor="userCreate">
                         User Create
@@ -106,7 +106,7 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userRead"
                         type="checkbox"
-                        value=""
+                        checked={data.read === 1}
                       />
                       <label className="form-check-label" htmlFor="userRead">
                         User Read
@@ -117,7 +117,7 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userUpdate"
                         type="checkbox"
-                        value=""
+                        checked={data.update === 1}
                       />
                       <label className="form-check-label" htmlFor="userUpdate">
                         User Update
@@ -128,7 +128,7 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userDelete"
                         type="checkbox"
-                        value=""
+                        checked={data.delete === 1}
                       />
                       <label className="form-check-label" htmlFor="userDelete">
                         User Delete
@@ -139,7 +139,7 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userPrint"
                         type="checkbox"
-                        value=""
+                        checked={data.print === 1}
                       />
                       <label className="form-check-label" htmlFor="userPrint">
                         User Print

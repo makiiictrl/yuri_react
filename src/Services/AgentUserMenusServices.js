@@ -6,12 +6,12 @@ export const getAgentUserMenus = async () => {
 
 export const showAgentUserMenus = (id) => {
     return axios.get(
-    `http://localhost:3000/agent_user_menus/edit/${id}`
+    `http://localhost:3000/agent_user_menus/${id}`
     );
 }
 
 export const editAgentUserMenu = async (id, data) => {
-    return axios.put(`/agent_user_menus/${id}`, data);
+    return axios.put(`/agent_user_menus/edit/${id}`, data);
 }
 
 export const deleteAgentUserMenu = async (id) => {

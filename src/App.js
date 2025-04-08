@@ -27,7 +27,7 @@ const App = () => {
         <Route index element={<Dashboard />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="agent_user_menus" element={<AgentUserMenuIndex />} />
-        <Route path="agent_user_menus/edit/:id" element={<AgentUserMenuEdit />} />
+        <Route path="agent_user_menus/:id" element={<AgentUserMenuEdit />} />
         <Route path="agent_user_menus/new" element={<AgentUserMenuNew />} />
       </Route>
     </Routes>

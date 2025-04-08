@@ -23013,6 +23013,11 @@
     }
     return outlet;
   }
+  function useParams() {
+    let { matches } = React2.useContext(RouteContext);
+    let routeMatch = matches[matches.length - 1];
+    return routeMatch ? routeMatch.params : {};
+  }
   function useResolvedPath(to, { relative } = {}) {
     let { matches } = React2.useContext(RouteContext);
     let { pathname: locationPathname } = useLocation();
@@ -27220,7 +27225,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
   var showAgentUserMenus = (id) => {
     return axios_default.get(
-      `http://localhost:3000/agent_user_menus/edit/${id}`
+      `http://localhost:3000/agent_user_menus/${id}`
     );
   };
   var deleteAgentUserMenu = async (id) => {
@@ -27229,19 +27234,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // src/Components/AgentUserMenu/Index.js
   var Index_default = Index = () => {
-<<<<<<< HEAD
     const [data2, setData] = (0, import_react3.useState)([]);
     const [loading, setLoading] = (0, import_react3.useState)(true);
     const [error, setError] = (0, import_react3.useState)(null);
+    const [editModalId, setEditModalId] = (0, import_react3.useState)(null);
+    const [deleteModalId, setDeleteModalId] = (0, import_react3.useState)();
     (0, import_react3.useEffect)(() => {
-=======
-    const [data2, setData] = (0, import_react2.useState)([]);
-    const [loading, setLoading] = (0, import_react2.useState)(true);
-    const [error, setError] = (0, import_react2.useState)(null);
-    const [editModalId, setEditModalId] = (0, import_react2.useState)(null);
-    const [deleteModalId, setDeleteModalId] = (0, import_react2.useState)();
-    (0, import_react2.useEffect)(() => {
->>>>>>> d00b4be0 (Update Edit Page AUM)
       getAgentUserMenus().then((response) => {
         setData(response.data);
         setLoading(false);
@@ -27263,17 +27261,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     };
     const columns = [
       {
-<<<<<<< HEAD
-        name: /* @__PURE__ */ import_react3.default.createElement("b", null, "Agent ID"),
-=======
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "ID"),
+        name: /* @__PURE__ */ import_react3.default.createElement("b", null, "ID"),
         selector: (row) => row.agent_user_menus_id,
         omit: true
         // this hides the column from the table view
       },
       {
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Agent ID"),
->>>>>>> d00b4be0 (Update Edit Page AUM)
+        name: /* @__PURE__ */ import_react3.default.createElement("b", null, "Agent ID"),
         selector: (row) => row.agent_id,
         sortable: true
       },
@@ -27307,23 +27301,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         selector: (row) => row.user_print
       },
       {
-<<<<<<< HEAD
         name: /* @__PURE__ */ import_react3.default.createElement("b", null, "Actions"),
-        cell: (row) => /* @__PURE__ */ import_react3.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react3.default.createElement(Link, { to: `/edit/${row.id}` }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react3.default.createElement(
-=======
-        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Actions"),
-        cell: (row) => /* @__PURE__ */ import_react2.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react2.default.createElement(
+        cell: (row) => /* @__PURE__ */ import_react3.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react3.default.createElement(
           Link,
           {
-            to: `/agent_user_menus/edit/${row.agent_user_menus_id}`,
-            onClick: () => {
-              const rowUniqueID = row.agent_user_menus_id;
-              setEditModalId(rowUniqueID);
-            }
+            to: `/agent_user_menus/${row.agent_user_menus_id}`
           },
-          /* @__PURE__ */ import_react2.default.createElement("i", { className: "icon-pencil-alt text-info" })
-        ), /* @__PURE__ */ import_react2.default.createElement(
->>>>>>> d00b4be0 (Update Edit Page AUM)
+          /* @__PURE__ */ import_react3.default.createElement("i", { className: "icon-pencil-alt text-info" })
+        ), /* @__PURE__ */ import_react3.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.agent_user_menus_id),
@@ -27335,14 +27320,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         button: true
       }
     ];
-<<<<<<< HEAD
     if (loading) return /* @__PURE__ */ import_react3.default.createElement("p", null, "Loading...");
     if (error) return /* @__PURE__ */ import_react3.default.createElement("p", null, "Error loading data");
-    return /* @__PURE__ */ import_react3.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react3.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Agent User Menus"), /* @__PURE__ */ import_react3.default.createElement(
-=======
-    if (loading) return /* @__PURE__ */ import_react2.default.createElement("p", null, "Loading...");
-    if (error) return /* @__PURE__ */ import_react2.default.createElement("p", null, "Error loading data");
-    return /* @__PURE__ */ import_react2.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react2.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react2.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Agent User Menus"), /* @__PURE__ */ import_react2.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react2.default.createElement(
+    return /* @__PURE__ */ import_react3.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react3.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Agent User Menus"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react3.default.createElement(
       "input",
       {
         className: "form-control form-control-sm",
@@ -27350,15 +27330,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         placeholder: "Agent ID",
         "aria-label": "Agent ID"
       }
-    ), /* @__PURE__ */ import_react2.default.createElement(
->>>>>>> d00b4be0 (Update Edit Page AUM)
+    ), /* @__PURE__ */ import_react3.default.createElement(
       "button",
       {
         className: "btn btn-outline-primary btn-sm",
         type: "button"
       },
-      /* @__PURE__ */ import_react2.default.createElement("i", { className: "icofont icofont-search-alt-1" })
-    )), /* @__PURE__ */ import_react2.default.createElement(
+      /* @__PURE__ */ import_react3.default.createElement("i", { className: "icofont icofont-search-alt-1" })
+    )), /* @__PURE__ */ import_react3.default.createElement(
       "button",
       {
         className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
@@ -27367,11 +27346,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         "data-bs-target": "#newModal"
       },
       "New Agent User Menu"
-<<<<<<< HEAD
-    )), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react3.default.createElement(
-=======
-    ))), /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react2.default.createElement(
->>>>>>> d00b4be0 (Update Edit Page AUM)
+    ))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react3.default.createElement(
       import_react_data_table_component.default,
       {
         columns,
@@ -27386,38 +27361,31 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     )))));
   };
 
-<<<<<<< HEAD
-  // src/Components/AgentUserMenu/NewModal.js
-  var import_react4 = __toESM(require_react());
-  var NewModal_default = New = () => {
-=======
   // src/Components/AgentUserMenu/Edit.js
-  var import_react3 = __toESM(require_react());
+  var import_react4 = __toESM(require_react());
   var Edit_default = Edit = ({ ModalId }) => {
-    const [data2, setData] = (0, import_react3.useState)([]);
-    const [showAlert, setShowAlert] = (0, import_react3.useState)(true);
-    const [loading, setLoading] = (0, import_react3.useState)(true);
-    const [error, setError] = (0, import_react3.useState)(null);
-    (0, import_react3.useEffect)(() => {
-      showAgentUserMenus(ModalId).then((response) => {
+    const [data2, setData] = (0, import_react4.useState)([]);
+    const [showAlert, setShowAlert] = (0, import_react4.useState)(true);
+    const {
+      id
+    } = useParams();
+    (0, import_react4.useEffect)(() => {
+      showAgentUserMenus(id).then((response) => {
         setData(response.data);
-        console.log(response.data);
-        setLoading(false);
+        console.log("Data fetched successfully", response.data);
       }).catch((err) => {
         console.error("Error fetching data", err);
-        setError(err);
-        setLoading(false);
       });
-    }, [ModalId]);
-    return /* @__PURE__ */ import_react3.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "row justify-content-center" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-md-4" }, showAlert && /* @__PURE__ */ import_react3.default.createElement(
+    }, [id]);
+    return /* @__PURE__ */ import_react4.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "row justify-content-center" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "col-md-4" }, showAlert && /* @__PURE__ */ import_react4.default.createElement(
       "div",
       {
         className: "alert alert-light-secondary alert-dismissible fade show text-dark border-left-wrapper",
         role: "alert"
       },
-      /* @__PURE__ */ import_react3.default.createElement("i", { "data-feather": "help-circle" }),
-      /* @__PURE__ */ import_react3.default.createElement("p", null, "You can check in on some of those fields below."),
-      /* @__PURE__ */ import_react3.default.createElement(
+      /* @__PURE__ */ import_react4.default.createElement("i", { "data-feather": "help-circle" }),
+      /* @__PURE__ */ import_react4.default.createElement("p", null, "You can check in on some of those fields below."),
+      /* @__PURE__ */ import_react4.default.createElement(
         "button",
         {
           className: "btn-close",
@@ -27427,79 +27395,80 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           onClick: () => setShowAlert(false)
         }
       )
-    ), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react3.default.createElement("h4", { className: "mt-1" }, "Agent User Menu Details ", data2.agent_id)), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "icofont icofont-license" })), /* @__PURE__ */ import_react3.default.createElement(
+    ), /* @__PURE__ */ import_react4.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react4.default.createElement("h4", { className: "mt-1" }, "Agent User Menu Details")), /* @__PURE__ */ import_react4.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react4.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react4.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react4.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react4.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react4.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react4.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react4.default.createElement("i", { className: "icofont icofont-license" })), /* @__PURE__ */ import_react4.default.createElement(
       "input",
       {
         className: "form-control",
         tabIndex: 1,
         list: "menu",
         autoComplete: "off",
+        value: data2.menu_id,
         required: true
       }
-    ))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "icofont icofont-user-alt-4" })), /* @__PURE__ */ import_react3.default.createElement(
+    ))), /* @__PURE__ */ import_react4.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react4.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react4.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react4.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react4.default.createElement("i", { className: "icofont icofont-user-alt-4" })), /* @__PURE__ */ import_react4.default.createElement(
       "input",
       {
         className: "form-control",
         tabIndex: 1,
         list: "agent",
         autoComplete: "off",
+        value: data2.agent_id,
         required: true
       }
-    ))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+    ))), /* @__PURE__ */ import_react4.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react4.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react4.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement(
       "input",
       {
         className: "form-check-input",
         id: "userCreate",
         type: "checkbox",
-        value: ""
+        checked: data2.create === 1
       }
-    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userCreate" }, "User Create")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+    ), /* @__PURE__ */ import_react4.default.createElement("label", { className: "form-check-label", htmlFor: "userCreate" }, "User Create")), /* @__PURE__ */ import_react4.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement(
       "input",
       {
         className: "form-check-input",
         id: "userRead",
         type: "checkbox",
-        value: ""
+        checked: data2.read === 1
       }
-    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userRead" }, "User Read")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+    ), /* @__PURE__ */ import_react4.default.createElement("label", { className: "form-check-label", htmlFor: "userRead" }, "User Read")), /* @__PURE__ */ import_react4.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement(
       "input",
       {
         className: "form-check-input",
         id: "userUpdate",
         type: "checkbox",
-        value: ""
+        checked: data2.update === 1
       }
-    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userUpdate" }, "User Update")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+    ), /* @__PURE__ */ import_react4.default.createElement("label", { className: "form-check-label", htmlFor: "userUpdate" }, "User Update")), /* @__PURE__ */ import_react4.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement(
       "input",
       {
         className: "form-check-input",
         id: "userDelete",
         type: "checkbox",
-        value: ""
+        checked: data2.delete === 1
       }
-    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userDelete" }, "User Delete")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+    ), /* @__PURE__ */ import_react4.default.createElement("label", { className: "form-check-label", htmlFor: "userDelete" }, "User Delete")), /* @__PURE__ */ import_react4.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement(
       "input",
       {
         className: "form-check-input",
         id: "userPrint",
         type: "checkbox",
-        value: ""
+        checked: data2.print === 1
       }
-    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userPrint" }, "User Print")))))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-footer" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react3.default.createElement(
+    ), /* @__PURE__ */ import_react4.default.createElement("label", { className: "form-check-label", htmlFor: "userPrint" }, "User Print")))))), /* @__PURE__ */ import_react4.default.createElement("div", { className: "card-footer" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react4.default.createElement(
       Link,
       {
         className: "btn btn-secondary btn-sm",
         to: "/agent_user_menus"
       },
       "Back"
-    ), /* @__PURE__ */ import_react3.default.createElement("button", { className: "btn btn-primary btn-sm", type: "button" }, "Save Changes")))))));
+    ), /* @__PURE__ */ import_react4.default.createElement("button", { className: "btn btn-primary btn-sm", type: "button" }, "Save Changes")))))));
   };
 
   // src/Components/AgentUserMenu/New.js
-  var import_react4 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
   var New_default = New = () => {
->>>>>>> d00b4be0 (Update Edit Page AUM)
-    return /* @__PURE__ */ import_react4.default.createElement(
+    return /* @__PURE__ */ import_react5.default.createElement(
       "div",
       {
         className: "modal fade",
@@ -27508,7 +27477,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         "aria-labelledby": "mdModalLabel",
         "aria-hidden": "true"
       },
-      /* @__PURE__ */ import_react4.default.createElement("div", { className: "modal-dialog modal-fullscreen-md-down" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "modal-content" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "modal-header" }, /* @__PURE__ */ import_react4.default.createElement("h1", { className: "modal-title fs-5", id: "mdModalLabel" }, "New Agent User Menu"), /* @__PURE__ */ import_react4.default.createElement(
+      /* @__PURE__ */ import_react5.default.createElement("div", { className: "modal-dialog modal-fullscreen-md-down" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "modal-content" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "modal-header" }, /* @__PURE__ */ import_react5.default.createElement("h1", { className: "modal-title fs-5", id: "mdModalLabel" }, "New Agent User Menu"), /* @__PURE__ */ import_react5.default.createElement(
         "button",
         {
           className: "btn-close py-0",
@@ -27516,15 +27485,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           "data-bs-dismiss": "modal",
           "aria-label": "Close"
         }
-      )), /* @__PURE__ */ import_react4.default.createElement("div", { className: "modal-body dark-modal" }, /* @__PURE__ */ import_react4.default.createElement(
+      )), /* @__PURE__ */ import_react5.default.createElement("div", { className: "modal-body dark-modal" }, /* @__PURE__ */ import_react5.default.createElement(
         "div",
         {
           class: "alert alert-light-secondary light alert-dismissible fade show text-dark border-left-wrapper",
           role: "alert"
         },
-        /* @__PURE__ */ import_react4.default.createElement("i", { "data-feather": "help-circle" }),
-        /* @__PURE__ */ import_react4.default.createElement("p", null, "You can check in on some of those fields below."),
-        /* @__PURE__ */ import_react4.default.createElement(
+        /* @__PURE__ */ import_react5.default.createElement("i", { "data-feather": "help-circle" }),
+        /* @__PURE__ */ import_react5.default.createElement("p", null, "You can check in on some of those fields below."),
+        /* @__PURE__ */ import_react5.default.createElement(
           "button",
           {
             class: "btn-close",
@@ -27533,7 +27502,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             "aria-label": "Close"
           }
         )
-      ), /* @__PURE__ */ import_react4.default.createElement("div", { class: "card title-line" }, /* @__PURE__ */ import_react4.default.createElement("div", { class: "card-header" }, /* @__PURE__ */ import_react4.default.createElement("h4", { className: "mt-1" }, "Agent User Menu Details")), /* @__PURE__ */ import_react4.default.createElement("div", { class: "card-body" }, /* @__PURE__ */ import_react4.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react4.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react4.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react4.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react4.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react4.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react4.default.createElement("i", { class: "icofont icofont-license" })), /* @__PURE__ */ import_react4.default.createElement(
+      ), /* @__PURE__ */ import_react5.default.createElement("div", { class: "card title-line" }, /* @__PURE__ */ import_react5.default.createElement("div", { class: "card-header" }, /* @__PURE__ */ import_react5.default.createElement("h4", { className: "mt-1" }, "Agent User Menu Details")), /* @__PURE__ */ import_react5.default.createElement("div", { class: "card-body" }, /* @__PURE__ */ import_react5.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react5.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react5.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react5.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react5.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react5.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react5.default.createElement("i", { class: "icofont icofont-license" })), /* @__PURE__ */ import_react5.default.createElement(
         "input",
         {
           className: "form-control",
@@ -27542,7 +27511,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           autoComplete: false,
           required: true
         }
-      ))), /* @__PURE__ */ import_react4.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react4.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react4.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react4.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react4.default.createElement("i", { class: "icofont icofont-user-alt-4" })), /* @__PURE__ */ import_react4.default.createElement(
+      ))), /* @__PURE__ */ import_react5.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react5.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react5.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react5.default.createElement("span", { class: "input-group-text" }, /* @__PURE__ */ import_react5.default.createElement("i", { class: "icofont icofont-user-alt-4" })), /* @__PURE__ */ import_react5.default.createElement(
         "input",
         {
           className: "form-control",
@@ -27551,7 +27520,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           autoComplete: false,
           required: true
         }
-      ))), /* @__PURE__ */ import_react4.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react4.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react4.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react4.default.createElement("div", { class: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react4.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement("input", { class: "form-check-input", id: "userCreate", type: "checkbox", value: "" }), /* @__PURE__ */ import_react4.default.createElement("label", { class: "form-check-label", for: "userCreate" }, "User Create")), /* @__PURE__ */ import_react4.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement("input", { class: "form-check-input", id: "userRead", type: "checkbox", value: "" }), /* @__PURE__ */ import_react4.default.createElement("label", { class: "form-check-label", for: "userRead" }, "User Read")), /* @__PURE__ */ import_react4.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement("input", { class: "form-check-input", id: "userUpdate", type: "checkbox", value: "" }), /* @__PURE__ */ import_react4.default.createElement("label", { class: "form-check-label", for: "userUpdate" }, "User Update")), /* @__PURE__ */ import_react4.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement("input", { class: "form-check-input", id: "userDelete", type: "checkbox", value: "" }), /* @__PURE__ */ import_react4.default.createElement("label", { class: "form-check-label", for: "userDelete" }, "User Delete")), /* @__PURE__ */ import_react4.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react4.default.createElement("input", { class: "form-check-input", id: "userPrint", type: "checkbox", value: "" }), /* @__PURE__ */ import_react4.default.createElement("label", { class: "form-check-label", for: "userPrint" }, "User Print")))))))), /* @__PURE__ */ import_react4.default.createElement("div", { className: "modal-footer justify-content-between" }, /* @__PURE__ */ import_react4.default.createElement(
+      ))), /* @__PURE__ */ import_react5.default.createElement("div", { class: "form-group mb-3" }, /* @__PURE__ */ import_react5.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react5.default.createElement("div", { class: "input-group" }, /* @__PURE__ */ import_react5.default.createElement("div", { class: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react5.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react5.default.createElement("input", { class: "form-check-input", id: "userCreate", type: "checkbox", value: "" }), /* @__PURE__ */ import_react5.default.createElement("label", { class: "form-check-label", for: "userCreate" }, "User Create")), /* @__PURE__ */ import_react5.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react5.default.createElement("input", { class: "form-check-input", id: "userRead", type: "checkbox", value: "" }), /* @__PURE__ */ import_react5.default.createElement("label", { class: "form-check-label", for: "userRead" }, "User Read")), /* @__PURE__ */ import_react5.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react5.default.createElement("input", { class: "form-check-input", id: "userUpdate", type: "checkbox", value: "" }), /* @__PURE__ */ import_react5.default.createElement("label", { class: "form-check-label", for: "userUpdate" }, "User Update")), /* @__PURE__ */ import_react5.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react5.default.createElement("input", { class: "form-check-input", id: "userDelete", type: "checkbox", value: "" }), /* @__PURE__ */ import_react5.default.createElement("label", { class: "form-check-label", for: "userDelete" }, "User Delete")), /* @__PURE__ */ import_react5.default.createElement("div", { class: "form-check mb-1" }, /* @__PURE__ */ import_react5.default.createElement("input", { class: "form-check-input", id: "userPrint", type: "checkbox", value: "" }), /* @__PURE__ */ import_react5.default.createElement("label", { class: "form-check-label", for: "userPrint" }, "User Print")))))))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "modal-footer justify-content-between" }, /* @__PURE__ */ import_react5.default.createElement(
         "button",
         {
           className: "btn btn-secondary btn-sm",
@@ -27559,41 +27528,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           "data-bs-dismiss": "modal"
         },
         "Close"
-      ), /* @__PURE__ */ import_react4.default.createElement("button", { className: "btn btn-primary btn-sm", type: "button" }, "Save changes"))))
+      ), /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn btn-primary btn-sm", type: "button" }, "Save changes"))))
     );
   };
 
   // src/Login/LoginForm.js
-  var import_react5 = __toESM(require_react());
-<<<<<<< HEAD
-=======
-
-  // src/Login/ApiLogin.js
-  var ApiLogin_default = () => {
-    const instance = axios_default.create({
-      baseURL: "http://localhost:3000"
-    });
-    instance.interceptors.request.use(
-      (config) => {
-        const token = localStorage.getItem("token");
-        if (token) {
-          config.headers["Authorization"] = token;
-          config.headers["Accept"] = "application/json";
-          config.headers["Content-Type"] = "application/json";
-        }
-        return config;
-      },
-      (error) => Promise.reject(error)
-    );
-    return instance;
-  };
-
-  // src/Login/LoginForm.js
->>>>>>> d00b4be0 (Update Edit Page AUM)
+  var import_react6 = __toESM(require_react());
   var LoginForm_default = LoginForm = () => {
-    const [email, setEmail] = (0, import_react5.useState)("");
-    const [password, setPassword] = (0, import_react5.useState)("");
-    const [flashMessage, setFlashMessage] = (0, import_react5.useState)("");
+    const [email, setEmail] = (0, import_react6.useState)("");
+    const [password, setPassword] = (0, import_react6.useState)("");
+    const [flashMessage, setFlashMessage] = (0, import_react6.useState)("");
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/agent_user_menus";
@@ -27619,7 +27563,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         setFlashMessage("Login failed: " + error.message);
       }
     };
-    return /* @__PURE__ */ import_react5.default.createElement("main", { className: "container mt-5" }, /* @__PURE__ */ import_react5.default.createElement("h2", { className: "text-center text-primary" }, "Log in"), flashMessage && /* @__PURE__ */ import_react5.default.createElement("div", { className: "alert alert-warning text-center" }, flashMessage), /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-flex justify-content-center" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "card p-4 shadow-lg", style: { maxWidth: "400px", width: "100%" } }, /* @__PURE__ */ import_react5.default.createElement("form", { onSubmit: handleLogin }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react5.default.createElement("label", { className: "form-label" }, "Email"), /* @__PURE__ */ import_react5.default.createElement(
+    return /* @__PURE__ */ import_react6.default.createElement("main", { className: "container mt-5" }, /* @__PURE__ */ import_react6.default.createElement("h2", { className: "text-center text-primary" }, "Log in"), flashMessage && /* @__PURE__ */ import_react6.default.createElement("div", { className: "alert alert-warning text-center" }, flashMessage), /* @__PURE__ */ import_react6.default.createElement("div", { className: "d-flex justify-content-center" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "card p-4 shadow-lg", style: { maxWidth: "400px", width: "100%" } }, /* @__PURE__ */ import_react6.default.createElement("form", { onSubmit: handleLogin }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react6.default.createElement("label", { className: "form-label" }, "Email"), /* @__PURE__ */ import_react6.default.createElement(
       "input",
       {
         type: "email",
@@ -27628,7 +27572,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         onChange: (e) => setEmail(e.target.value),
         required: true
       }
-    )), /* @__PURE__ */ import_react5.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react5.default.createElement("label", { className: "form-label" }, "Password"), /* @__PURE__ */ import_react5.default.createElement(
+    )), /* @__PURE__ */ import_react6.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react6.default.createElement("label", { className: "form-label" }, "Password"), /* @__PURE__ */ import_react6.default.createElement(
       "input",
       {
         type: "password",
@@ -27637,16 +27581,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         onChange: (e) => setPassword(e.target.value),
         required: true
       }
-    )), /* @__PURE__ */ import_react5.default.createElement("div", { className: "d-grid" }, /* @__PURE__ */ import_react5.default.createElement("button", { type: "submit", className: "btn btn-primary" }, "Log in"))))));
+    )), /* @__PURE__ */ import_react6.default.createElement("div", { className: "d-grid" }, /* @__PURE__ */ import_react6.default.createElement("button", { type: "submit", className: "btn btn-primary" }, "Log in"))))));
   };
 
   // src/Login/ProtectedRoute.js
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
   var ProtectedRoute_default = ProtectedRoute = ({ children }) => {
     const location = useLocation();
     const token = localStorage.getItem("token");
     if (!token) {
-      return /* @__PURE__ */ import_react6.default.createElement(Navigate, { to: "/login", state: { from: location }, replace: true });
+      return /* @__PURE__ */ import_react7.default.createElement(Navigate, { to: "/login", state: { from: location }, replace: true });
     }
     return children;
   };
@@ -27655,36 +27599,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react11 = __toESM(require_react());
 
   // src/Layouts/Header.js
-<<<<<<< HEAD
-  var import_react7 = __toESM(require_react());
-=======
   var import_react8 = __toESM(require_react());
-
-  // src/Login/UseCurrentAgent.js
-  var import_react7 = __toESM(require_react());
-  var UseCurrentAgent_default = UseCurrentAgent = () => {
-    const [agent, setAgent] = (0, import_react7.useState)(null);
-    const [loading, setLoading] = (0, import_react7.useState)(true);
-    (0, import_react7.useEffect)(() => {
-      const fetchAgent = async () => {
-        try {
-          const api = ApiLogin_default();
-          const response = await api.get("/current_agent");
-          setAgent(response.data);
-        } catch (error) {
-          console.error("Error fetching agent:", error);
-          setAgent(null);
-        } finally {
-          setLoading(false);
-        }
-      };
-      fetchAgent();
-    }, []);
-    return { agent, loading };
-  };
-
-  // src/Layouts/Header.js
->>>>>>> d00b4be0 (Update Edit Page AUM)
   var Header_default = Header = () => {
     const { agent, loading } = UseCurrentAgent_default();
     return /* @__PURE__ */ import_react8.default.createElement("div", { className: "page-header row" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "col-auto header-left-wrapper" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "header-logo-wrapper p-0 left-header" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react8.default.createElement("a", { href: "/" }))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react8.default.createElement("svg", { className: "status_toggle sidebar-toggle" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#collapse-sidebar" })))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "col-auto header-right-wrapper page-title" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h2", null, "Default"), /* @__PURE__ */ import_react8.default.createElement("nav", null, /* @__PURE__ */ import_react8.default.createElement("ol", { className: "breadcrumb justify-content-sm-start align-items-center mb-0" }, /* @__PURE__ */ import_react8.default.createElement("li", { className: "breadcrumb-item" }, /* @__PURE__ */ import_react8.default.createElement("a", { href: "index.html" }, "Home")), /* @__PURE__ */ import_react8.default.createElement("li", { className: "breadcrumb-item f-w-500" }, "Dashboard"), /* @__PURE__ */ import_react8.default.createElement("li", { className: "breadcrumb-item f-w-500 active" }, "Default"))))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "col header-wrapper m-0 header-right-wrapper" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "row m-0" }, /* @__PURE__ */ import_react8.default.createElement(
@@ -27778,11 +27693,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         src: "../assets/images/user.png",
         alt: "user"
       }
-<<<<<<< HEAD
-    ), /* @__PURE__ */ import_react8.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h4", null, agent?.first_name, " ", agent?.last_name), /* @__PURE__ */ import_react8.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react8.default.createElement(
-=======
-    ), /* @__PURE__ */ import_react9.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("h4", null, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Sign In"), /* @__PURE__ */ import_react9.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react9.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react9.default.createElement("svg", null, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react9.default.createElement(
->>>>>>> d00b4be0 (Update Edit Page AUM)
+    ), /* @__PURE__ */ import_react9.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("h4", null, agent?.first_name, " ", agent?.last_name), /* @__PURE__ */ import_react9.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react9.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react9.default.createElement("svg", null, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react9.default.createElement(
       "input",
       {
         className: "form-control",
@@ -27804,93 +27715,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         className: "sidebar-link sidebar-title link-nav",
         to: "/dashboard"
       },
-<<<<<<< HEAD
-      /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-user-alt-7 me-2 text-white" }),
-      /* @__PURE__ */ import_react8.default.createElement("span", null, "Dashboard")
-    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
-=======
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-user-alt-7 me-2 text-white" }),
       /* @__PURE__ */ import_react9.default.createElement("span", null, "Dashboard")
     )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
->>>>>>> d00b4be0 (Update Edit Page AUM)
       Link,
       {
         className: "sidebar-link sidebar-title link-nav",
         to: "/agent_user_menus"
       },
-<<<<<<< HEAD
-      /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-users me-2 text-white" }),
-      /* @__PURE__ */ import_react8.default.createElement("span", null, "Agent User Menus")
-    )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-growth me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Marketing"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Transfer Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Request Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-paper me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Issue Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-mail me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Entry"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-list me-3 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Listing"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-papers me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Item Master"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-package me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Packing List"))))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react8.default.createElement("i", { "data-feather": "arrow-right" })))));
-=======
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-task" })),
+      /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-users me-2 text-white" }),
       /* @__PURE__ */ import_react9.default.createElement("span", null, "Agent User Menus")
-    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-charts" })),
-      /* @__PURE__ */ import_react9.default.createElement("span", null, "Marketing")
-    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#send" })),
-      /* @__PURE__ */ import_react9.default.createElement("span", null, "Transfer Slip")
-    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-file" })),
-      /* @__PURE__ */ import_react9.default.createElement("span", null, "Request Slip")
-    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#profile-check" })),
-      /* @__PURE__ */ import_react9.default.createElement("span", null, "Issue Slip")
-    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
-      /* @__PURE__ */ import_react9.default.createElement("span", null, "Inventory Entry")
-    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
-      /* @__PURE__ */ import_react9.default.createElement("span", null, "Inventory Listing")
-    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
-      /* @__PURE__ */ import_react9.default.createElement("span", null, "Item Master")
-    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
-      "a",
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        href: "/"
-      },
-      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
-      /* @__PURE__ */ import_react9.default.createElement("span", null, "Packing List")
-    )))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react9.default.createElement("i", { "data-feather": "arrow-right" })))));
->>>>>>> d00b4be0 (Update Edit Page AUM)
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-growth me-2 text-white" }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Marketing"))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-white" }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Transfer Slip"))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-white" }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Request Slip"))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-paper me-2 text-white" }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Issue Slip"))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-mail me-2 text-white" }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Inventory Entry"))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-list me-3 text-white" }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Inventory Listing"))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-papers me-2 text-white" }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Item Master"))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "icofont icofont-package me-2 text-white" }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Packing List"))))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react9.default.createElement("i", { "data-feather": "arrow-right" })))));
   };
 
   // src/Layouts/Footer.js
@@ -27915,7 +27750,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       /* @__PURE__ */ import_react12.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react12.default.createElement(Dashboard_default, null) }),
       /* @__PURE__ */ import_react12.default.createElement(Route, { path: "dashboard", element: /* @__PURE__ */ import_react12.default.createElement(Dashboard_default, null) }),
       /* @__PURE__ */ import_react12.default.createElement(Route, { path: "agent_user_menus", element: /* @__PURE__ */ import_react12.default.createElement(Index_default, null) }),
-      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "agent_user_menus/edit/:id", element: /* @__PURE__ */ import_react12.default.createElement(Edit_default, null) }),
+      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "agent_user_menus/:id", element: /* @__PURE__ */ import_react12.default.createElement(Edit_default, null) }),
       /* @__PURE__ */ import_react12.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react12.default.createElement(New_default, null) })
     ));
   };

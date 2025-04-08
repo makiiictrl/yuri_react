@@ -88,13 +88,9 @@ export default Index = () => {
       cell: (row) => (
         <div className="action">
           <Link
-            to={`/agent_user_menus/edit/${row.agent_user_menus_id}`}
-            onClick={() => {
-              const rowUniqueID = row.agent_user_menus_id;
-              setEditModalId(rowUniqueID);
-            }}
+            to={`/agent_user_menus/${row.agent_user_menus_id}`}
           >
-            <i className="icon-pencil-alt text-info"></i>
+          <i className="icon-pencil-alt text-info"></i>
           </Link>
           <button
             onClick={() => handleDelete(row.agent_user_menus_id)}
