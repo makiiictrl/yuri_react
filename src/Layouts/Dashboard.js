@@ -80,7 +80,6 @@ const Dashboard = () => {
   // Sample data for the DataTable
   const data = [
     {
-      
     },
   ];
 
