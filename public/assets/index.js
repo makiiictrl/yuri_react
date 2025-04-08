@@ -1305,7 +1305,7 @@
           return dispatcher;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React25 = require_react(), Internals = {
+        var React26 = require_react(), Internals = {
           d: {
             f: noop2,
             r: function() {
@@ -1323,7 +1323,7 @@
           },
           p: 0,
           findDOMNode: null
-        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React25.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React26.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
         "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
           "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
@@ -2865,7 +2865,7 @@
           "number" === type && getActiveElement(node.ownerDocument) === node || node.defaultValue === "" + value || (node.defaultValue = "" + value);
         }
         function validateOptionProps(element, props) {
-          null == props.value && ("object" === typeof props.children && null !== props.children ? React25.Children.forEach(props.children, function(child) {
+          null == props.value && ("object" === typeof props.children && null !== props.children ? React26.Children.forEach(props.children, function(child) {
             null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
               "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
             ));
@@ -16447,14 +16447,14 @@
           ));
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var Scheduler = require_scheduler(), React25 = require_react(), ReactDOM2 = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+        var Scheduler = require_scheduler(), React26 = require_react(), ReactDOM2 = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
         Symbol.for("react.scope");
         var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
         Symbol.for("react.legacy_hidden");
         Symbol.for("react.tracing_marker");
         var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
         Symbol.for("react.view_transition");
-        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React25.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM2.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React26.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM2.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
           pending: false,
           data: null,
           method: null,
@@ -19168,7 +19168,7 @@
           }
         };
         (function() {
-          var isomorphicReactPackageVersion = React25.version;
+          var isomorphicReactPackageVersion = React26.version;
           if ("19.1.0" !== isomorphicReactPackageVersion)
             throw Error(
               'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.1.0\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -22269,11 +22269,11 @@
   });
 
   // src/index.js
-  var import_react12 = __toESM(require_react());
+  var import_react13 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // src/App.js
-  var import_react11 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
 
   // node_modules/react-router/dist/development/chunk-XJI4KG32.mjs
   var React3 = __toESM(require_react(), 1);
@@ -27218,16 +27218,30 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var getAgentUserMenus = async () => {
     return axios_default.get("http://localhost:3000/agent_user_menus");
   };
+  var showAgentUserMenus = (id) => {
+    return axios_default.get(
+      `http://localhost:3000/agent_user_menus/edit/${id}`
+    );
+  };
   var deleteAgentUserMenu = async (id) => {
     return axios_default.delete(`http://localhost:3000/agent_user_menus/${id}`);
   };
 
   // src/Components/AgentUserMenu/Index.js
   var Index_default = Index = () => {
+<<<<<<< HEAD
     const [data2, setData] = (0, import_react3.useState)([]);
     const [loading, setLoading] = (0, import_react3.useState)(true);
     const [error, setError] = (0, import_react3.useState)(null);
     (0, import_react3.useEffect)(() => {
+=======
+    const [data2, setData] = (0, import_react2.useState)([]);
+    const [loading, setLoading] = (0, import_react2.useState)(true);
+    const [error, setError] = (0, import_react2.useState)(null);
+    const [editModalId, setEditModalId] = (0, import_react2.useState)(null);
+    const [deleteModalId, setDeleteModalId] = (0, import_react2.useState)();
+    (0, import_react2.useEffect)(() => {
+>>>>>>> d00b4be0 (Update Edit Page AUM)
       getAgentUserMenus().then((response) => {
         setData(response.data);
         setLoading(false);
@@ -27249,7 +27263,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     };
     const columns = [
       {
+<<<<<<< HEAD
         name: /* @__PURE__ */ import_react3.default.createElement("b", null, "Agent ID"),
+=======
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "ID"),
+        selector: (row) => row.agent_user_menus_id,
+        omit: true
+        // this hides the column from the table view
+      },
+      {
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Agent ID"),
+>>>>>>> d00b4be0 (Update Edit Page AUM)
         selector: (row) => row.agent_id,
         sortable: true
       },
@@ -27283,8 +27307,23 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         selector: (row) => row.user_print
       },
       {
+<<<<<<< HEAD
         name: /* @__PURE__ */ import_react3.default.createElement("b", null, "Actions"),
         cell: (row) => /* @__PURE__ */ import_react3.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react3.default.createElement(Link, { to: `/edit/${row.id}` }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react3.default.createElement(
+=======
+        name: /* @__PURE__ */ import_react2.default.createElement("b", null, "Actions"),
+        cell: (row) => /* @__PURE__ */ import_react2.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react2.default.createElement(
+          Link,
+          {
+            to: `/agent_user_menus/edit/${row.agent_user_menus_id}`,
+            onClick: () => {
+              const rowUniqueID = row.agent_user_menus_id;
+              setEditModalId(rowUniqueID);
+            }
+          },
+          /* @__PURE__ */ import_react2.default.createElement("i", { className: "icon-pencil-alt text-info" })
+        ), /* @__PURE__ */ import_react2.default.createElement(
+>>>>>>> d00b4be0 (Update Edit Page AUM)
           "button",
           {
             onClick: () => handleDelete(row.agent_user_menus_id),
@@ -27296,18 +27335,43 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         button: true
       }
     ];
+<<<<<<< HEAD
     if (loading) return /* @__PURE__ */ import_react3.default.createElement("p", null, "Loading...");
     if (error) return /* @__PURE__ */ import_react3.default.createElement("p", null, "Error loading data");
     return /* @__PURE__ */ import_react3.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react3.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Agent User Menus"), /* @__PURE__ */ import_react3.default.createElement(
+=======
+    if (loading) return /* @__PURE__ */ import_react2.default.createElement("p", null, "Loading...");
+    if (error) return /* @__PURE__ */ import_react2.default.createElement("p", null, "Error loading data");
+    return /* @__PURE__ */ import_react2.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react2.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react2.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Agent User Menus"), /* @__PURE__ */ import_react2.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react2.default.createElement(
+      "input",
+      {
+        className: "form-control form-control-sm",
+        type: "number",
+        placeholder: "Agent ID",
+        "aria-label": "Agent ID"
+      }
+    ), /* @__PURE__ */ import_react2.default.createElement(
+>>>>>>> d00b4be0 (Update Edit Page AUM)
       "button",
       {
         className: "btn btn-outline-primary btn-sm",
+        type: "button"
+      },
+      /* @__PURE__ */ import_react2.default.createElement("i", { className: "icofont icofont-search-alt-1" })
+    )), /* @__PURE__ */ import_react2.default.createElement(
+      "button",
+      {
+        className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
         type: "button",
         "data-bs-toggle": "modal",
         "data-bs-target": "#newModal"
       },
       "New Agent User Menu"
+<<<<<<< HEAD
     )), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react3.default.createElement(
+=======
+    ))), /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react2.default.createElement(
+>>>>>>> d00b4be0 (Update Edit Page AUM)
       import_react_data_table_component.default,
       {
         columns,
@@ -27322,9 +27386,119 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     )))));
   };
 
+<<<<<<< HEAD
   // src/Components/AgentUserMenu/NewModal.js
   var import_react4 = __toESM(require_react());
   var NewModal_default = New = () => {
+=======
+  // src/Components/AgentUserMenu/Edit.js
+  var import_react3 = __toESM(require_react());
+  var Edit_default = Edit = ({ ModalId }) => {
+    const [data2, setData] = (0, import_react3.useState)([]);
+    const [showAlert, setShowAlert] = (0, import_react3.useState)(true);
+    const [loading, setLoading] = (0, import_react3.useState)(true);
+    const [error, setError] = (0, import_react3.useState)(null);
+    (0, import_react3.useEffect)(() => {
+      showAgentUserMenus(ModalId).then((response) => {
+        setData(response.data);
+        console.log(response.data);
+        setLoading(false);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+        setError(err);
+        setLoading(false);
+      });
+    }, [ModalId]);
+    return /* @__PURE__ */ import_react3.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "row justify-content-center" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-md-4" }, showAlert && /* @__PURE__ */ import_react3.default.createElement(
+      "div",
+      {
+        className: "alert alert-light-secondary alert-dismissible fade show text-dark border-left-wrapper",
+        role: "alert"
+      },
+      /* @__PURE__ */ import_react3.default.createElement("i", { "data-feather": "help-circle" }),
+      /* @__PURE__ */ import_react3.default.createElement("p", null, "You can check in on some of those fields below."),
+      /* @__PURE__ */ import_react3.default.createElement(
+        "button",
+        {
+          className: "btn-close",
+          type: "button",
+          "data-bs-dismiss": "alert",
+          "aria-label": "Close",
+          onClick: () => setShowAlert(false)
+        }
+      )
+    ), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react3.default.createElement("h4", { className: "mt-1" }, "Agent User Menu Details ", data2.agent_id)), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "menu" }), /* @__PURE__ */ import_react3.default.createElement("datalist", { id: "agent" }), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "icofont icofont-license" })), /* @__PURE__ */ import_react3.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        tabIndex: 1,
+        list: "menu",
+        autoComplete: "off",
+        required: true
+      }
+    ))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react3.default.createElement("i", { className: "icofont icofont-user-alt-4" })), /* @__PURE__ */ import_react3.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        tabIndex: 1,
+        list: "agent",
+        autoComplete: "off",
+        required: true
+      }
+    ))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react3.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userCreate",
+        type: "checkbox",
+        value: ""
+      }
+    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userCreate" }, "User Create")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userRead",
+        type: "checkbox",
+        value: ""
+      }
+    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userRead" }, "User Read")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userUpdate",
+        type: "checkbox",
+        value: ""
+      }
+    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userUpdate" }, "User Update")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userDelete",
+        type: "checkbox",
+        value: ""
+      }
+    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userDelete" }, "User Delete")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react3.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userPrint",
+        type: "checkbox",
+        value: ""
+      }
+    ), /* @__PURE__ */ import_react3.default.createElement("label", { className: "form-check-label", htmlFor: "userPrint" }, "User Print")))))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-footer" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react3.default.createElement(
+      Link,
+      {
+        className: "btn btn-secondary btn-sm",
+        to: "/agent_user_menus"
+      },
+      "Back"
+    ), /* @__PURE__ */ import_react3.default.createElement("button", { className: "btn btn-primary btn-sm", type: "button" }, "Save Changes")))))));
+  };
+
+  // src/Components/AgentUserMenu/New.js
+  var import_react4 = __toESM(require_react());
+  var New_default = New = () => {
+>>>>>>> d00b4be0 (Update Edit Page AUM)
     return /* @__PURE__ */ import_react4.default.createElement(
       "div",
       {
@@ -27391,6 +27565,31 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // src/Login/LoginForm.js
   var import_react5 = __toESM(require_react());
+<<<<<<< HEAD
+=======
+
+  // src/Login/ApiLogin.js
+  var ApiLogin_default = () => {
+    const instance = axios_default.create({
+      baseURL: "http://localhost:3000"
+    });
+    instance.interceptors.request.use(
+      (config) => {
+        const token = localStorage.getItem("token");
+        if (token) {
+          config.headers["Authorization"] = token;
+          config.headers["Accept"] = "application/json";
+          config.headers["Content-Type"] = "application/json";
+        }
+        return config;
+      },
+      (error) => Promise.reject(error)
+    );
+    return instance;
+  };
+
+  // src/Login/LoginForm.js
+>>>>>>> d00b4be0 (Update Edit Page AUM)
   var LoginForm_default = LoginForm = () => {
     const [email, setEmail] = (0, import_react5.useState)("");
     const [password, setPassword] = (0, import_react5.useState)("");
@@ -27453,20 +27652,49 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
 
   // src/Layouts/MainLayout.js
-  var import_react10 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
 
   // src/Layouts/Header.js
+<<<<<<< HEAD
   var import_react7 = __toESM(require_react());
+=======
+  var import_react8 = __toESM(require_react());
+
+  // src/Login/UseCurrentAgent.js
+  var import_react7 = __toESM(require_react());
+  var UseCurrentAgent_default = UseCurrentAgent = () => {
+    const [agent, setAgent] = (0, import_react7.useState)(null);
+    const [loading, setLoading] = (0, import_react7.useState)(true);
+    (0, import_react7.useEffect)(() => {
+      const fetchAgent = async () => {
+        try {
+          const api = ApiLogin_default();
+          const response = await api.get("/current_agent");
+          setAgent(response.data);
+        } catch (error) {
+          console.error("Error fetching agent:", error);
+          setAgent(null);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchAgent();
+    }, []);
+    return { agent, loading };
+  };
+
+  // src/Layouts/Header.js
+>>>>>>> d00b4be0 (Update Edit Page AUM)
   var Header_default = Header = () => {
     const { agent, loading } = UseCurrentAgent_default();
-    return /* @__PURE__ */ import_react7.default.createElement("div", { className: "page-header row" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "col-auto header-left-wrapper" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "header-logo-wrapper p-0 left-header" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react7.default.createElement("a", { href: "/" }))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react7.default.createElement("svg", { className: "status_toggle sidebar-toggle" }, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#collapse-sidebar" })))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "col-auto header-right-wrapper page-title" }, /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("h2", null, "Default"), /* @__PURE__ */ import_react7.default.createElement("nav", null, /* @__PURE__ */ import_react7.default.createElement("ol", { className: "breadcrumb justify-content-sm-start align-items-center mb-0" }, /* @__PURE__ */ import_react7.default.createElement("li", { className: "breadcrumb-item" }, /* @__PURE__ */ import_react7.default.createElement("a", { href: "index.html" }, "Home")), /* @__PURE__ */ import_react7.default.createElement("li", { className: "breadcrumb-item f-w-500" }, "Dashboard"), /* @__PURE__ */ import_react7.default.createElement("li", { className: "breadcrumb-item f-w-500 active" }, "Default"))))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "col header-wrapper m-0 header-right-wrapper" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "row m-0" }, /* @__PURE__ */ import_react7.default.createElement(
+    return /* @__PURE__ */ import_react8.default.createElement("div", { className: "page-header row" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "col-auto header-left-wrapper" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "header-logo-wrapper p-0 left-header" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react8.default.createElement("a", { href: "/" }))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react8.default.createElement("svg", { className: "status_toggle sidebar-toggle" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#collapse-sidebar" })))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "col-auto header-right-wrapper page-title" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h2", null, "Default"), /* @__PURE__ */ import_react8.default.createElement("nav", null, /* @__PURE__ */ import_react8.default.createElement("ol", { className: "breadcrumb justify-content-sm-start align-items-center mb-0" }, /* @__PURE__ */ import_react8.default.createElement("li", { className: "breadcrumb-item" }, /* @__PURE__ */ import_react8.default.createElement("a", { href: "index.html" }, "Home")), /* @__PURE__ */ import_react8.default.createElement("li", { className: "breadcrumb-item f-w-500" }, "Dashboard"), /* @__PURE__ */ import_react8.default.createElement("li", { className: "breadcrumb-item f-w-500 active" }, "Default"))))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "col header-wrapper m-0 header-right-wrapper" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "row m-0" }, /* @__PURE__ */ import_react8.default.createElement(
       "form",
       {
         className: "form-inline search-full col",
         action: "#",
         method: "get"
       },
-      /* @__PURE__ */ import_react7.default.createElement("div", { className: "form-group w-100" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "Typeahead Typeahead--twitterUsers" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "u-posRelative" }, /* @__PURE__ */ import_react7.default.createElement(
+      /* @__PURE__ */ import_react8.default.createElement("div", { className: "form-group w-100" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "Typeahead Typeahead--twitterUsers" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "u-posRelative" }, /* @__PURE__ */ import_react8.default.createElement(
         "input",
         {
           className: "demo-input Typeahead-input form-control-plaintext w-100",
@@ -27476,21 +27704,21 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           title: "",
           autoFocus: true
         }
-      ), /* @__PURE__ */ import_react7.default.createElement(
+      ), /* @__PURE__ */ import_react8.default.createElement(
         "div",
         {
           className: "spinner-border Typeahead-spinner",
           role: "status"
         },
-        /* @__PURE__ */ import_react7.default.createElement("span", { className: "sr-only" }, "Loading...")
-      ), /* @__PURE__ */ import_react7.default.createElement("i", { className: "close-search", "data-feather": "x" })), /* @__PURE__ */ import_react7.default.createElement("div", { className: "Typeahead-menu" })))
-    ), /* @__PURE__ */ import_react7.default.createElement("div", { className: "header-logo-wrapper col-auto p-0 left-header" }), /* @__PURE__ */ import_react7.default.createElement("div", { className: "nav-right col-auto pull-right right-header p-0 ms-auto" }, /* @__PURE__ */ import_react7.default.createElement("ul", { className: "nav-menus" }, /* @__PURE__ */ import_react7.default.createElement("li", null, " ", /* @__PURE__ */ import_react7.default.createElement("span", { className: "header-search" }, /* @__PURE__ */ import_react7.default.createElement("i", { className: "icofont icofont-search" }))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("div", { className: "mode" }, /* @__PURE__ */ import_react7.default.createElement("svg", { className: "moon-icon" }, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#moon" })), /* @__PURE__ */ import_react7.default.createElement("svg", { className: "sun-icon" }, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#sun" })))), /* @__PURE__ */ import_react7.default.createElement("li", { className: "profile-nav onhover-dropdown" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "onhover-click" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "sidebar-image" }, " ", /* @__PURE__ */ import_react7.default.createElement("img", { src: "../assets/images/user.png", alt: "profile" }), /* @__PURE__ */ import_react7.default.createElement("span", { className: "status status-success" })), /* @__PURE__ */ import_react7.default.createElement("div", { className: "sidebar-content" }, /* @__PURE__ */ import_react7.default.createElement("h4", null, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Sign In"), /* @__PURE__ */ import_react7.default.createElement("span", { className: "f-12 f-w-600 f-light" }, "Junior Web and SQL Developer"))), /* @__PURE__ */ import_react7.default.createElement("ul", { className: "profile-dropdown onhover-show-div" }, /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "sign-up.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#user" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Account "))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "letter-box.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-email" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Inbox"))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "task.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#notepad" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Taskboard"))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "edit-profile.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#settings" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Settings"))), /* @__PURE__ */ import_react7.default.createElement("li", null, /* @__PURE__ */ import_react7.default.createElement("a", { href: "login.html" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react7.default.createElement("svg", null, /* @__PURE__ */ import_react7.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#login" }))), /* @__PURE__ */ import_react7.default.createElement("span", null, "Log out"))))))), /* @__PURE__ */ import_react7.default.createElement(
+        /* @__PURE__ */ import_react8.default.createElement("span", { className: "sr-only" }, "Loading...")
+      ), /* @__PURE__ */ import_react8.default.createElement("i", { className: "close-search", "data-feather": "x" })), /* @__PURE__ */ import_react8.default.createElement("div", { className: "Typeahead-menu" })))
+    ), /* @__PURE__ */ import_react8.default.createElement("div", { className: "header-logo-wrapper col-auto p-0 left-header" }), /* @__PURE__ */ import_react8.default.createElement("div", { className: "nav-right col-auto pull-right right-header p-0 ms-auto" }, /* @__PURE__ */ import_react8.default.createElement("ul", { className: "nav-menus" }, /* @__PURE__ */ import_react8.default.createElement("li", null, " ", /* @__PURE__ */ import_react8.default.createElement("span", { className: "header-search" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-search" }))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("div", { className: "mode" }, /* @__PURE__ */ import_react8.default.createElement("svg", { className: "moon-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#moon" })), /* @__PURE__ */ import_react8.default.createElement("svg", { className: "sun-icon" }, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#sun" })))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "profile-nav onhover-dropdown" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "onhover-click" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "sidebar-image" }, " ", /* @__PURE__ */ import_react8.default.createElement("img", { src: "../assets/images/user.png", alt: "profile" }), /* @__PURE__ */ import_react8.default.createElement("span", { className: "status status-success" })), /* @__PURE__ */ import_react8.default.createElement("div", { className: "sidebar-content" }, /* @__PURE__ */ import_react8.default.createElement("h4", null, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Sign In"), /* @__PURE__ */ import_react8.default.createElement("span", { className: "f-12 f-w-600 f-light" }, "Junior Web and SQL Developer"))), /* @__PURE__ */ import_react8.default.createElement("ul", { className: "profile-dropdown onhover-show-div" }, /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", { href: "sign-up.html" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#user" }))), /* @__PURE__ */ import_react8.default.createElement("span", null, "Account "))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", { href: "letter-box.html" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-email" }))), /* @__PURE__ */ import_react8.default.createElement("span", null, "Inbox"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", { href: "task.html" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#notepad" }))), /* @__PURE__ */ import_react8.default.createElement("span", null, "Taskboard"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", { href: "edit-profile.html" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#settings" }))), /* @__PURE__ */ import_react8.default.createElement("span", null, "Settings"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", { href: "login.html" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#login" }))), /* @__PURE__ */ import_react8.default.createElement("span", null, "Log out"))))))), /* @__PURE__ */ import_react8.default.createElement(
       "script",
       {
         className: "result-template",
         type: "text/x-handlebars-template"
       },
-      /* @__PURE__ */ import_react7.default.createElement("div", { className: "ProfileCard u-cf" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "ProfileCard-avatar" }, /* @__PURE__ */ import_react7.default.createElement(
+      /* @__PURE__ */ import_react8.default.createElement("div", { className: "ProfileCard u-cf" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "ProfileCard-avatar" }, /* @__PURE__ */ import_react8.default.createElement(
         "svg",
         {
           xmlns: "http://www.w3.org/2000/svg",
@@ -27504,38 +27732,38 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           strokeLinejoin: "round",
           className: "feather feather-airplay m-0"
         },
-        /* @__PURE__ */ import_react7.default.createElement("path", { d: "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" }),
-        /* @__PURE__ */ import_react7.default.createElement("polygon", { points: "12 15 17 21 7 21 12 15" })
-      )), /* @__PURE__ */ import_react7.default.createElement("div", { className: "ProfileCard-details" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "ProfileCard-realName" }, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Guest")))
-    ), /* @__PURE__ */ import_react7.default.createElement(
+        /* @__PURE__ */ import_react8.default.createElement("path", { d: "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" }),
+        /* @__PURE__ */ import_react8.default.createElement("polygon", { points: "12 15 17 21 7 21 12 15" })
+      )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "ProfileCard-details" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "ProfileCard-realName" }, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Guest")))
+    ), /* @__PURE__ */ import_react8.default.createElement(
       "script",
       {
         className: "empty-template",
         type: "text/x-handlebars-template"
       },
-      /* @__PURE__ */ import_react7.default.createElement("div", { className: "EmptyMessage" }, "Your search turned up 0 results. This most likely means the backend is down, yikes!")
+      /* @__PURE__ */ import_react8.default.createElement("div", { className: "EmptyMessage" }, "Your search turned up 0 results. This most likely means the backend is down, yikes!")
     ))));
   };
 
   // src/Layouts/Sidebar.js
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
   var Sidebar_default = Sidebar = () => {
     const { agent, loading } = UseCurrentAgent_default();
-    return /* @__PURE__ */ import_react8.default.createElement("div", { className: "sidebar-wrapper", "data-sidebar-layout": "stroke-svg" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react8.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react8.default.createElement(
+    return /* @__PURE__ */ import_react9.default.createElement("div", { className: "sidebar-wrapper", "data-sidebar-layout": "stroke-svg" }, /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react9.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react9.default.createElement(
       "img",
       {
         className: "img-fluid",
         src: "../assets/images/logo/cathay-wh.png",
         alt: ""
       }
-    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "back-btn" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-angle-left" })), /* @__PURE__ */ import_react8.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react8.default.createElement(
+    )), /* @__PURE__ */ import_react9.default.createElement("div", { className: "back-btn" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-angle-left" })), /* @__PURE__ */ import_react9.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react9.default.createElement(
       "i",
       {
         className: "status_toggle middle sidebar-toggle",
         "data-feather": "grid"
       },
       " "
-    ))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "logo-icon-wrapper" }, /* @__PURE__ */ import_react8.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react8.default.createElement(
+    ))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "logo-icon-wrapper" }, /* @__PURE__ */ import_react9.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react9.default.createElement(
       "img",
       {
         className: "img-fluid",
@@ -27543,14 +27771,18 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         alt: "",
         style: { width: "30px" }
       }
-    ))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "profile-section sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "profile-wrapper" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "active-profile" }, " ", /* @__PURE__ */ import_react8.default.createElement(
+    ))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "profile-section sidebar-search" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "profile-wrapper" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "active-profile" }, " ", /* @__PURE__ */ import_react9.default.createElement(
       "img",
       {
         className: "img-fluid",
         src: "../assets/images/user.png",
         alt: "user"
       }
+<<<<<<< HEAD
     ), /* @__PURE__ */ import_react8.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h4", null, agent?.first_name, " ", agent?.last_name), /* @__PURE__ */ import_react8.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react8.default.createElement("svg", null, /* @__PURE__ */ import_react8.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react8.default.createElement(
+=======
+    ), /* @__PURE__ */ import_react9.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("h4", null, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Sign In"), /* @__PURE__ */ import_react9.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react9.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react9.default.createElement("svg", null, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react9.default.createElement(
+>>>>>>> d00b4be0 (Update Edit Page AUM)
       "input",
       {
         className: "form-control",
@@ -27559,55 +27791,132 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         "aria-label": "Username",
         "aria-describedby": "sidebar-search"
       }
-    ))), /* @__PURE__ */ import_react8.default.createElement("nav", { className: "sidebar-main" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "left-arrow", id: "left-arrow" }, /* @__PURE__ */ import_react8.default.createElement("i", { "data-feather": "arrow-left" })), /* @__PURE__ */ import_react8.default.createElement("div", { id: "sidebar-menu" }, /* @__PURE__ */ import_react8.default.createElement("ul", { className: "sidebar-links", id: "simple-bar" }, /* @__PURE__ */ import_react8.default.createElement("li", { className: "back-btn" }, /* @__PURE__ */ import_react8.default.createElement(Link, { to: "/" }, /* @__PURE__ */ import_react8.default.createElement(
+    ))), /* @__PURE__ */ import_react9.default.createElement("nav", { className: "sidebar-main" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "left-arrow", id: "left-arrow" }, /* @__PURE__ */ import_react9.default.createElement("i", { "data-feather": "arrow-left" })), /* @__PURE__ */ import_react9.default.createElement("div", { id: "sidebar-menu" }, /* @__PURE__ */ import_react9.default.createElement("ul", { className: "sidebar-links", id: "simple-bar" }, /* @__PURE__ */ import_react9.default.createElement("li", { className: "back-btn" }, /* @__PURE__ */ import_react9.default.createElement(Link, { to: "/" }, /* @__PURE__ */ import_react9.default.createElement(
       "img",
       {
         className: "img-fluid",
         src: "../assets/images/logo/logo-icon.png",
         alt: ""
       }
-    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mobile-back text-end" }, /* @__PURE__ */ import_react8.default.createElement("span", null, "Back"), /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-angle-right ps-2", "aria-hidden": "true" }))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "pin-title sidebar-main-title" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h6", null, "- Pinned"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-main-title" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h6", { className: "lan-1" }, "- Navigation"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+    )), /* @__PURE__ */ import_react9.default.createElement("div", { className: "mobile-back text-end" }, /* @__PURE__ */ import_react9.default.createElement("span", null, "Back"), /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-angle-right ps-2", "aria-hidden": "true" }))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "pin-title sidebar-main-title" }, /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("h6", null, "- Pinned"))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-main-title" }, /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("h6", { className: "lan-1" }, "- Navigation"))), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
       Link,
       {
         className: "sidebar-link sidebar-title link-nav",
         to: "/dashboard"
       },
+<<<<<<< HEAD
       /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-user-alt-7 me-2 text-white" }),
       /* @__PURE__ */ import_react8.default.createElement("span", null, "Dashboard")
     )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement(
+=======
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Dashboard")
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
+>>>>>>> d00b4be0 (Update Edit Page AUM)
       Link,
       {
         className: "sidebar-link sidebar-title link-nav",
         to: "/agent_user_menus"
       },
+<<<<<<< HEAD
       /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-users me-2 text-white" }),
       /* @__PURE__ */ import_react8.default.createElement("span", null, "Agent User Menus")
     )), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-growth me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Marketing"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Transfer Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Request Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-paper me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Issue Slip"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-mail me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Entry"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-list me-3 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Inventory Listing"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-papers me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Item Master"))), /* @__PURE__ */ import_react8.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react8.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react8.default.createElement("i", { className: "icofont icofont-package me-2 text-white" }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Packing List"))))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react8.default.createElement("i", { "data-feather": "arrow-right" })))));
+=======
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-task" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Agent User Menus")
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-charts" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Marketing")
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#send" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Transfer Slip")
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-file" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Request Slip")
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#profile-check" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Issue Slip")
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Inventory Entry")
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Inventory Listing")
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Item Master")
+    )), /* @__PURE__ */ import_react9.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react9.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react9.default.createElement(
+      "a",
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        href: "/"
+      },
+      /* @__PURE__ */ import_react9.default.createElement("svg", { className: "stroke-icon" }, /* @__PURE__ */ import_react9.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#stroke-home" })),
+      /* @__PURE__ */ import_react9.default.createElement("span", null, "Packing List")
+    )))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react9.default.createElement("i", { "data-feather": "arrow-right" })))));
+>>>>>>> d00b4be0 (Update Edit Page AUM)
   };
 
   // src/Layouts/Footer.js
-  var import_react9 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
   var Footer_default = Footer = () => {
-    return /* @__PURE__ */ import_react9.default.createElement("footer", { className: "footer" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "container-fluid" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "row gy-1 justify-content-center text-center" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "col-lg-6 col-md-7 footer-copyright" }, /* @__PURE__ */ import_react9.default.createElement("p", { className: "mb-0 f-light f-w-500" }, "Copyright 2024 \xA9 The Cathay Drug Company Inc.")))));
+    return /* @__PURE__ */ import_react10.default.createElement("footer", { className: "footer" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "container-fluid" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "row gy-1 justify-content-center text-center" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "col-lg-6 col-md-7 footer-copyright" }, /* @__PURE__ */ import_react10.default.createElement("p", { className: "mb-0 f-light f-w-500" }, "Copyright 2024 \xA9 The Cathay Drug Company Inc.")))));
   };
 
   // src/Layouts/MainLayout.js
   var MainLayout = () => {
-    return /* @__PURE__ */ import_react10.default.createElement("div", { className: "page-wrapper compact-wrapper", id: "pageWrapper" }, /* @__PURE__ */ import_react10.default.createElement(Header_default, null), /* @__PURE__ */ import_react10.default.createElement("div", { className: "page-body-wrapper" }, /* @__PURE__ */ import_react10.default.createElement(Sidebar_default, null), /* @__PURE__ */ import_react10.default.createElement(Outlet, null), /* @__PURE__ */ import_react10.default.createElement(Footer_default, null)));
+    return /* @__PURE__ */ import_react11.default.createElement("div", { className: "page-wrapper compact-wrapper", id: "pageWrapper" }, /* @__PURE__ */ import_react11.default.createElement(Header_default, null), /* @__PURE__ */ import_react11.default.createElement("div", { className: "page-body-wrapper" }, /* @__PURE__ */ import_react11.default.createElement(Sidebar_default, null), /* @__PURE__ */ import_react11.default.createElement(Outlet, null), /* @__PURE__ */ import_react11.default.createElement(Footer_default, null)));
   };
   var MainLayout_default = MainLayout;
 
   // src/App.js
   var App = () => {
-    return /* @__PURE__ */ import_react11.default.createElement(Routes, null, /* @__PURE__ */ import_react11.default.createElement(Route, { path: "/login", element: /* @__PURE__ */ import_react11.default.createElement(LoginForm_default, null) }), /* @__PURE__ */ import_react11.default.createElement(
+    return /* @__PURE__ */ import_react12.default.createElement(Routes, null, /* @__PURE__ */ import_react12.default.createElement(Route, { path: "/login", element: /* @__PURE__ */ import_react12.default.createElement(LoginForm_default, null) }), /* @__PURE__ */ import_react12.default.createElement(
       Route,
       {
-        element: /* @__PURE__ */ import_react11.default.createElement(ProtectedRoute_default, null, /* @__PURE__ */ import_react11.default.createElement(MainLayout_default, null))
+        element: /* @__PURE__ */ import_react12.default.createElement(ProtectedRoute_default, null, /* @__PURE__ */ import_react12.default.createElement(MainLayout_default, null))
       },
-      /* @__PURE__ */ import_react11.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react11.default.createElement(Dashboard_default, null) }),
-      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "dashboard", element: /* @__PURE__ */ import_react11.default.createElement(Dashboard_default, null) }),
-      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "agent_user_menus", element: /* @__PURE__ */ import_react11.default.createElement(Index_default, null) }),
-      /* @__PURE__ */ import_react11.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react11.default.createElement(NewModal_default, null) })
+      /* @__PURE__ */ import_react12.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react12.default.createElement(Dashboard_default, null) }),
+      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "dashboard", element: /* @__PURE__ */ import_react12.default.createElement(Dashboard_default, null) }),
+      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "agent_user_menus", element: /* @__PURE__ */ import_react12.default.createElement(Index_default, null) }),
+      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "agent_user_menus/edit/:id", element: /* @__PURE__ */ import_react12.default.createElement(Edit_default, null) }),
+      /* @__PURE__ */ import_react12.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react12.default.createElement(New_default, null) })
     ));
   };
   var App_default = App;
@@ -27616,7 +27925,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var container = document.getElementById("root");
   var root = import_client.default.createRoot(container);
   root.render(
-    /* @__PURE__ */ import_react12.default.createElement(HashRouter, null, /* @__PURE__ */ import_react12.default.createElement(App_default, null))
+    /* @__PURE__ */ import_react13.default.createElement(HashRouter, null, /* @__PURE__ */ import_react13.default.createElement(App_default, null))
   );
 })();
 /*! Bundled license information:

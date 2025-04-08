@@ -5,11 +5,15 @@ import DataTable from 'react-data-table-component';
 import axios from "axios";
 import { getAgentUserMenus, deleteAgentUserMenu } from "../../Services/AgentUserMenusServices";
 
-
 export default Index = () => {
   const [data, setData] = useState([]);  
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null); 
+
+  const [editModalId, setEditModalId] = useState(null);
+  const [deleteModalId, setDeleteModalId] = useState();
+
+
   useEffect(() => {
     getAgentUserMenus()
       .then(response => {
@@ -38,6 +42,12 @@ export default Index = () => {
     }
   };  
   const columns = [
+
+    {
+      name: <b>ID</b>,
+      selector: row => row.agent_user_menus_id,
+      omit: true, // this hides the column from the table view
+    },
     {
       name: <b>Agent ID</b>,
       selector: row => row.agent_id,
@@ -77,20 +87,26 @@ export default Index = () => {
       name: <b>Actions</b>,
       cell: (row) => (
         <div className="action">
-
-          <Link to={`/edit/${row.id}`}><i className="icon-pencil-alt text-info"></i></Link>
+          <Link
+            to={`/agent_user_menus/edit/${row.agent_user_menus_id}`}
+            onClick={() => {
+              const rowUniqueID = row.agent_user_menus_id;
+              setEditModalId(rowUniqueID);
+            }}
+          >
+            <i className="icon-pencil-alt text-info"></i>
+          </Link>
           <button
-        onClick={() => handleDelete(row.agent_user_menus_id)}
-        style={{ background: "none", border: "none", cursor: "pointer" }}
-      >
-        <i className="icon-trash text-danger"></i>
-      </button>
-
+            onClick={() => handleDelete(row.agent_user_menus_id)}
+            style={{ background: "none", border: "none", cursor: "pointer" }}
+          >
+            <i className="icon-trash text-danger"></i>
+          </button>
         </div>
       ),
       ignoreRowClick: true,
       button: true,
-    },
+    }
   ];
 
 
@@ -100,20 +116,30 @@ export default Index = () => {
 
   return (
     <div className="page-body">
-      {/* <NewModal />
-      <EditModal />
-      <DeleteModal /> */}
       <div className="col-sm-12">
         <div className="card title-line">
-
-          <div className="card-header d-flex justify-content-between align-items-center">
-            <h2 className="mb-0">
-
-              <i className="icofont icofont-id-card me-2"></i>
-              Agent User Menus
-            </h2>
+        <div className="card-header d-flex justify-content-between align-items-center">
+          <h2 className="mb-0">
+            <i className="icofont icofont-id-card me-2"></i>
+            Agent User Menus
+          </h2>
+          <div className="d-flex align-items-center">
+            <div className="input-group me-2">
+              <input 
+                className="form-control form-control-sm" 
+                type="number" 
+                placeholder="Agent ID" 
+                aria-label="Agent ID" 
+              />
+              <button 
+                className="btn btn-outline-primary btn-sm" 
+                type="button"
+              >
+                <i className="icofont icofont-search-alt-1"></i>
+              </button>
+            </div>
             <button
-              className="btn btn-outline-primary btn-sm"
+              className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
               type="button"
               data-bs-toggle="modal"
               data-bs-target="#newModal"
@@ -121,6 +147,8 @@ export default Index = () => {
               New Agent User Menu
             </button>
           </div>
+        </div>
+
 
           <div className="card-body">
             <DataTable
