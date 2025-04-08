@@ -1,15 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { showAgentUserMenus } from "../../Services/AgentUserMenusServices";
+import { newAgentUserMenus } from '../../Helpers/Models';
+import { saveItem, showAgentUserMenus } from '../../Services/AgentUserMenusServices'
 import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export default Edit = ({ ModalId }) => {
-  const [data, setData] = useState([]);
-  const [showAlert, setShowAlert] = useState(true);
+export default Form = ({ ModalId }) => {
+  const [data, setData] = useState([newAgentUserMenus]);
+  const navigate = useNavigate();
 
   const {
     id
-} = useParams();
+  } = useParams();
 
+  // For saving 
+  const handleSave = () => {
+    saveItem(data)
+    .then((response) => {
+      navigate("/agent_user_menus")        
+    })
+    .catch((response) => {
+        alert("Error");
+        console.log(response);
+    });
+  };
+
+  // For existing data fetching for edit
   useEffect(() => {
   showAgentUserMenus(id)
       .then(response => {
@@ -23,26 +38,8 @@ export default Edit = ({ ModalId }) => {
 
   return (
     <div className="page-body">
-    <div className="row justify-content-center">
-        {/* Using a Bootstrap grid column to fix the width */}
+      <div className="row justify-content-center">
         <div className="col-md-4">
-          {showAlert && (
-            <div 
-              className="alert alert-light-secondary alert-dismissible fade show text-dark border-left-wrapper"
-              role="alert"
-            >
-              <i data-feather="help-circle"></i>
-              <p>You can check in on some of those fields below.</p>
-              <button
-                className="btn-close"
-                type="button"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-                onClick={() => setShowAlert(false)}
-              ></button>
-            </div>
-          )}
-
           <div className="card title-line">
             <div className="card-header">
               <h4 className="mt-1">Agent User Menu Details</h4>
@@ -64,11 +61,10 @@ export default Edit = ({ ModalId }) => {
                     tabIndex={1}
                     list="menu"
                     autoComplete="off"
-                    value={data.menu_id}
+                    value={data.agent_menu_id}
                     onChange={(e) => {
-                      setData({ ...data, menu_id: e.target.value });
+                      setData({ ...data, agent_menu_id: e.target.value });
                     }}
-                      
                     required
                   />
                 </div>
@@ -82,6 +78,7 @@ export default Edit = ({ ModalId }) => {
                   </span>
                   <input
                     className="form-control"
+                    type="number"
                     tabIndex={1}
                     list="agent"
                     autoComplete="off"
@@ -103,9 +100,9 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userCreate"
                         type="checkbox"
-                        checked={data.create === 1}
+                        checked={data.user_create === 1}
                         onChange={(e) =>
-                          setData({ ...data, create: e.target.checked ? 1 : 0 })
+                          setData({ ...data, user_create: e.target.checked ? 1 : 0 })
                         }
                       />
                       <label className="form-check-label" htmlFor="userCreate">
@@ -117,9 +114,9 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userRead"
                         type="checkbox"
-                        checked={data.read === 1}
+                        checked={data.user_read === 1}
                         onChange={(e) =>
-                          setData({ ...data, read: e.target.checked ? 1 : 0 })
+                          setData({ ...data, user_read: e.target.checked ? 1 : 0 })
                         }
                       />
                       <label className="form-check-label" htmlFor="userRead">
@@ -131,9 +128,9 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userUpdate"
                         type="checkbox"
-                        checked={data.update === 1}
+                        checked={data.user_update === 1}
                         onChange={(e) =>
-                          setData({ ...data, update: e.target.checked ? 1 : 0 })
+                          setData({ ...data, user_update: e.target.checked ? 1 : 0 })
                         }
                       />
                       <label className="form-check-label" htmlFor="userUpdate">
@@ -145,9 +142,9 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userDelete"
                         type="checkbox"
-                        checked={data.delete === 1}
+                        checked={data.user_delete === 1}
                         onChange={(e) =>
-                          setData({ ...data, delete: e.target.checked ? 1 : 0 })
+                          setData({ ...data, user_delete: e.target.checked ? 1 : 0 })
                         }
                       />
                       <label className="form-check-label" htmlFor="userDelete">
@@ -159,9 +156,9 @@ export default Edit = ({ ModalId }) => {
                         className="form-check-input"
                         id="userPrint"
                         type="checkbox"
-                        checked={data.print === 1}
+                        checked={data.user_print === 1}
                         onChange={(e) =>
-                          setData({ ...data, print: e.target.checked ? 1 : 0 })
+                          setData({ ...data, user_print: e.target.checked ? 1 : 0 })
                         }
                       />
                       <label className="form-check-label" htmlFor="userPrint">
@@ -181,8 +178,12 @@ export default Edit = ({ ModalId }) => {
                 >
                   Back
                 </Link>
-                <button className="btn btn-primary btn-sm" type="button">
-                  Save Changes
+                <button 
+                className="btn btn-primary btn-sm" 
+                type="button"
+                onClick={handleSave}
+                >
+                  Save
                 </button>
               </div>
             </div>

@@ -3,16 +3,28 @@ import { Link } from "react-router-dom";
 
 import DataTable from 'react-data-table-component';
 import axios from "axios";
-import { getAgentUserMenus, deleteAgentUserMenu } from "../../Services/AgentUserMenusServices";
+import { getAgentUserMenus, deleteAgentUserMenu, getItems } from "../../Services/AgentUserMenusServices";
 
 export default Index = () => {
   const [data, setData] = useState([]);  
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null); 
 
-  const [editModalId, setEditModalId] = useState(null);
-  const [deleteModalId, setDeleteModalId] = useState();
+  const [args, setArgs] = useState({});
 
+  const refreshItems = () => {
+    getItems(args).then((response) => {
+        console.log(response.data);
+        setData(response.data);
+    }).catch((response) => {
+        alert("Error in fetching data.");
+        console.log(response);
+    });
+  }
+
+  useEffect(() => {
+      refreshItems();
+  }, [args]);
 
   useEffect(() => {
     getAgentUserMenus()
@@ -64,31 +76,35 @@ export default Index = () => {
     },
     {
       name: <b>Create</b>,
-      selector: row => row.user_create,
+      selector: row => row.user_create === 1? <i className="icofont icofont-ui-check text-success"></i> : <i className="icofont icofont-ui-close text-danger"></i>,
+      center: true
     },
     {
       name: <b>Read</b>,
-      selector: row => row.user_read,
+      selector: row => row.user_read === 1? <i className="icofont icofont-ui-check text-success"></i> : <i className="icofont icofont-ui-close text-danger"></i>,
+      center: true
     },
     {
       name: <b>Update</b>,
-      selector: row => row.user_update,
+      selector: row => row.user_update === 1? <i className="icofont icofont-ui-check text-success"></i> : <i className="icofont icofont-ui-close text-danger"></i>,
+      center: true
     },
     {
       name: <b>Delete</b>,
-      selector: row => row.user_delete,
+      selector: row => row.user_delete === 1? <i className="icofont icofont-ui-check text-success"></i> : <i className="icofont icofont-ui-close text-danger"></i>,
+      center: true
     },
     {
       name: <b>Print</b>,
-      selector: row => row.user_print,
-
+      selector: row => row.user_print === 1? <i className="icofont icofont-ui-check text-success"></i> : <i className="icofont icofont-ui-close text-danger"></i>,
+      center: true
     },
     {
       name: <b>Actions</b>,
       cell: (row) => (
         <div className="action">
           <Link
-            to={`/agent_user_menus/${row.agent_user_menus_id}`}
+            to={`/agent_user_menus/edit/${row.agent_user_menus_id}`}
           >
           <i className="icon-pencil-alt text-info"></i>
           </Link>
@@ -125,7 +141,12 @@ export default Index = () => {
                 className="form-control form-control-sm" 
                 type="number" 
                 placeholder="Agent ID" 
-                aria-label="Agent ID" 
+                aria-label="Agent ID"
+                onInput={(e) => {
+                setArgs({...args,
+                    agent_id: e.target.value
+                })
+              }} 
               />
               <button 
                 className="btn btn-outline-primary btn-sm" 
@@ -134,18 +155,15 @@ export default Index = () => {
                 <i className="icofont icofont-search-alt-1"></i>
               </button>
             </div>
-            <button
+            <Link
               className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#newModal"
+              to="/agent_user_menus/new"
+              
             >
               New Agent User Menu
-            </button>
+            </Link>
           </div>
         </div>
-
-
           <div className="card-body">
             <DataTable
               columns={columns}
