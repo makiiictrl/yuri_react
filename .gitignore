@@ -3,7 +3,10 @@
 /public/assets/index.js.map
 
 # Ignore all other files in public/assets
-/public/assets/styles/index.css.map
+public/assets/index.css
+public/assets/index.css.map
+public/assets/styles/
+
 
 # Ignore node_modules
 /node_modules
