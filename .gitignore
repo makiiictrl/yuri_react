@@ -1,0 +1,14 @@
+# Ignore only public/assets/index.js
+/public/assets/index.js
+/public/assets/index.js.map
+
+# Ignore all other files in public/assets
+/public/assets/styles/index.css.map
+
+# Ignore node_modules
+/node_modules
+
+#Ignore OS generated files
+.DS_Store
+Thumbs.db
+
