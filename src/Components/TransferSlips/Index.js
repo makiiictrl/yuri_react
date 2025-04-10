@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 import DataTable from "react-data-table-component";
 // import NewModal from "./NewModal";
 // import EditModal from "./EditModal";
@@ -193,3 +194,4 @@ export default Index = () => {
     </div>
   );
 };
+

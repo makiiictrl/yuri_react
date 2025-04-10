@@ -15,6 +15,13 @@ export const getItems = (args) => {
 );
 }
 
+<<<<<<< HEAD
+=======
+export const menuIdLookUp = () => {
+  return axios.get("http://localhost:3000/agent_user_menus/menu_id_lookup");
+};
+
+>>>>>>> a8e6c390dbf5ad78b16c8817d1906ffe261b6c02
 // For Edit
 export const showAgentUserMenus = (id) => {
   return axios.get(`http://localhost:3000/agent_user_menus/${id}`);
@@ -41,4 +48,8 @@ export const saveItem = (data) => {
   } else {
     return axios.post(`http://localhost:3000/agent_user_menus`, data);
   }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> a8e6c390dbf5ad78b16c8817d1906ffe261b6c02
