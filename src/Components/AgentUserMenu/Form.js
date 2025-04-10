@@ -1,37 +1,55 @@
 import React, { useState, useEffect } from "react";
-import { newAgentUserMenus } from '../../Helpers/Models';
-import { saveItem, showAgentUserMenus } from '../../Services/AgentUserMenusServices'
+import { newAgentUserMenus } from "../../Helpers/Models";
+import { Typeahead } from "react-bootstrap-typeahead";
+
+import {
+  saveItem,
+  showAgentUserMenus,
+  menuIdLookUp,
+} from "../../Services/AgentUserMenusServices";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export default Form = ({ ModalId }) => {
   const [data, setData] = useState([newAgentUserMenus]);
   const navigate = useNavigate();
+  const [menuOptions, setMenuOptions] = useState([]);
 
-  const {
-    id
-  } = useParams();
+  useEffect(() => {
+    menuIdLookUp()
+      .then((response) => {
+        console.log("Success!");
+        console.log(response.data);
+        setMenuOptions(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching!");
+        console.error(error);
+      });
+  }, []);
 
-  // For saving 
+  const { id } = useParams();
+
+  // For saving
   const handleSave = () => {
     saveItem(data)
-    .then((response) => {
-      navigate("/agent_user_menus")        
-    })
-    .catch((response) => {
+      .then((response) => {
+        navigate("/agent_user_menus");
+      })
+      .catch((response) => {
         alert("Error");
         console.log(response);
-    });
+      });
   };
 
   // For existing data fetching for edit
   useEffect(() => {
-  showAgentUserMenus(id)
-      .then(response => {
+    showAgentUserMenus(id)
+      .then((response) => {
         setData(response.data);
         console.log("Data fetched successfully", response.data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("Error fetching data", err);
       });
   }, [id]);
@@ -46,27 +64,41 @@ export default Form = ({ ModalId }) => {
             </div>
 
             <div className="card-body">
-              <datalist id="menu"></datalist>
-              <datalist id="agent"></datalist>
-
               <div className="form-group mb-3">
                 <label>Menu ID</label>
                 <div className="input-group">
                   <span className="input-group-text">
                     <i className="icofont icofont-license"></i>
                   </span>
-                  <input
-                    className="form-control"
-                    type="number"
-                    tabIndex={1}
-                    list="menu"
-                    autoComplete="off"
-                    value={data.agent_menu_id}
-                    onChange={(e) => {
-                      setData({ ...data, agent_menu_id: e.target.value });
-                    }}
-                    required
-                  />
+                  {/* Wrap the Typeahead in the ErrorBoundary */}
+                  
+                  {menuOptions.length > 0 && (
+                    <Typeahead
+                      onChange={(selected) => {
+                        if (selected.length > 0) {
+                          // Split the selected value into agent_menu_id and menu
+                          const selectedValue = selected[0].split(" - ");
+                          const agentMenuId = selectedValue[0];  // Extract the number (ID)
+                          const menu = selectedValue[1];  // Extract the menu name
+                          setData({ ...data, agent_menu_id: agentMenuId, menu: menu });
+                        }
+                      }}
+                      options={menuOptions}
+                      // Show the selected value in the format 'ID - Menu'
+                      selected={data.agent_menu_id ? [`${data.agent_menu_id}`] : []}
+                      onInputChange={(input) => {
+                        // When the user types into the input, update the agent_menu_id
+                        const agentMenuId = input.split(" - ")[0]; // Extract ID part from input
+                        const menu = input.split(" - ")[1] || ''; // Extract the menu name (if present)
+                        setData({ ...data, agent_menu_id: agentMenuId, menu: menu }); // Update both values
+                      }}
+                      placeholder="Menu ID"
+                    />
+                  )}
+
+
+                  
+
                 </div>
               </div>
 
@@ -82,10 +114,11 @@ export default Form = ({ ModalId }) => {
                     tabIndex={1}
                     list="agent"
                     autoComplete="off"
-                    value={data.agent_id}
+                    value={data.agent_id || ""}
                     onChange={(e) => {
                       setData({ ...data, agent_id: e.target.value });
                     }}
+                    placeholder="Agent ID"
                     required
                   />
                 </div>
@@ -102,7 +135,10 @@ export default Form = ({ ModalId }) => {
                         type="checkbox"
                         checked={data.user_create === 1}
                         onChange={(e) =>
-                          setData({ ...data, user_create: e.target.checked ? 1 : 0 })
+                          setData({
+                            ...data,
+                            user_create: e.target.checked ? 1 : 0,
+                          })
                         }
                       />
                       <label className="form-check-label" htmlFor="userCreate">
@@ -116,7 +152,10 @@ export default Form = ({ ModalId }) => {
                         type="checkbox"
                         checked={data.user_read === 1}
                         onChange={(e) =>
-                          setData({ ...data, user_read: e.target.checked ? 1 : 0 })
+                          setData({
+                            ...data,
+                            user_read: e.target.checked ? 1 : 0,
+                          })
                         }
                       />
                       <label className="form-check-label" htmlFor="userRead">
@@ -130,7 +169,10 @@ export default Form = ({ ModalId }) => {
                         type="checkbox"
                         checked={data.user_update === 1}
                         onChange={(e) =>
-                          setData({ ...data, user_update: e.target.checked ? 1 : 0 })
+                          setData({
+                            ...data,
+                            user_update: e.target.checked ? 1 : 0,
+                          })
                         }
                       />
                       <label className="form-check-label" htmlFor="userUpdate">
@@ -144,7 +186,10 @@ export default Form = ({ ModalId }) => {
                         type="checkbox"
                         checked={data.user_delete === 1}
                         onChange={(e) =>
-                          setData({ ...data, user_delete: e.target.checked ? 1 : 0 })
+                          setData({
+                            ...data,
+                            user_delete: e.target.checked ? 1 : 0,
+                          })
                         }
                       />
                       <label className="form-check-label" htmlFor="userDelete">
@@ -158,7 +203,10 @@ export default Form = ({ ModalId }) => {
                         type="checkbox"
                         checked={data.user_print === 1}
                         onChange={(e) =>
-                          setData({ ...data, user_print: e.target.checked ? 1 : 0 })
+                          setData({
+                            ...data,
+                            user_print: e.target.checked ? 1 : 0,
+                          })
                         }
                       />
                       <label className="form-check-label" htmlFor="userPrint">
@@ -178,10 +226,10 @@ export default Form = ({ ModalId }) => {
                 >
                   Back
                 </Link>
-                <button 
-                className="btn btn-primary btn-sm" 
-                type="button"
-                onClick={handleSave}
+                <button
+                  className="btn btn-primary btn-sm"
+                  type="button"
+                  onClick={handleSave}
                 >
                   Save
                 </button>

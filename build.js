@@ -9,6 +9,7 @@ const args = process.argv.slice(2);
 const watch = args.includes("--watch");
 const dev = args.includes("--dev");
 
+
 const watchPlugin = {
   name: 'watch-plugin',
   setup(build) {
