@@ -1,8 +1,9 @@
+// LoginForm.js
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axiosInstance from './ApiLogin';
 
-export default LoginForm = () => {
+const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [flashMessage, setFlashMessage] = useState('');
@@ -21,34 +22,49 @@ export default LoginForm = () => {
         agent: { email, password },
       });
 
+      // Log the full response for debugging
+      console.log("Login response data:", response.data);
+
       const token = response.data.token;
 
       if (token) {
         // Ensure token is prefixed with "Bearer "
-        const cleanToken = token.startsWith('Bearer ') ? token : `Bearer ${token}`;
+        const cleanToken =
+          token.startsWith('Bearer ') ? token : `Bearer ${token}`;
         localStorage.setItem('token', cleanToken);
 
-        // Store the agent info (including the admin boolean) as JSON
-        const agent = response.data.agent;
-        localStorage.setItem('agent', JSON.stringify(agent));
+        // Extract agent from the response:
+        // Since your agent data is inside `data` property, use that.
+        let agent =
+          response.data.data ||
+          response.data.agent ||
+          response.data.user;
+          
+        // If agent data is still missing, throw an error.
+        if (!agent) {
+          throw new Error('Agent data not found in response. Check the API response structure.');
+        }
 
-        // Determine whether the agent is admin.
-        // Assuming agent.admin is 1 for admin and 0 for non-admin.
-        const isAdmin = agent && agent.admin === 1;
+        // Transform the agent properties into a roles array.
+        const roles = [];
+        if (agent.admin === 1) roles.push('admin');
+        if (agent.super_admin === 1) roles.push('super_admin');
+        if (agent.yss === 1) roles.push('yss');
+        if (agent.credit === 1) roles.push('credit');
 
-        // Set the default routes:
-        // - Admin users: '/admin_dashboard'
-        // - Non-admin users: '/dashboard'
+        const transformedAgent = { ...agent, roles };
+
+        // Save the transformed agent into local storage.
+        localStorage.setItem('agent', JSON.stringify(transformedAgent));
+
+        // Determine default redirect based on roles.
+        const isAdmin = roles.includes('admin') || roles.includes('super_admin');
         const defaultRedirect = isAdmin ? '/admin_dashboard' : '/dashboard';
 
-        // If there was a requested route, use it,
-        // but if it's '/admin_dashboard' and the agent is not admin, use the non-admin default.
-        const redirectRoute =
-          requestedRoute
-            ? (requestedRoute === '/admin_dashboard' && !isAdmin ? defaultRedirect : requestedRoute)
-            : defaultRedirect;
+        // Use the requested route if available, otherwise fallback to defaultRedirect.
+        const redirectRoute = requestedRoute || defaultRedirect;
 
-        // For hash-based routing, update the hash route then force a full reload.
+        // For hash-based routing, update the hash and reload.
         window.location.hash = redirectRoute;
         setTimeout(() => {
           window.location.reload();
@@ -57,6 +73,7 @@ export default LoginForm = () => {
         setFlashMessage('Login failed.');
       }
     } catch (error) {
+      console.error('Login error:', error);
       setFlashMessage('Login failed: ' + error.message);
     }
   };
@@ -64,7 +81,9 @@ export default LoginForm = () => {
   return (
     <main className="container mt-5">
       <h2 className="text-center text-primary">Log in</h2>
-      {flashMessage && <div className="alert alert-warning text-center">{flashMessage}</div>}
+      {flashMessage && (
+        <div className="alert alert-warning text-center">{flashMessage}</div>
+      )}
       <div className="d-flex justify-content-center">
         <div className="card p-4 shadow-lg" style={{ maxWidth: '400px', width: '100%' }}>
           <form onSubmit={handleLogin}>
@@ -89,7 +108,9 @@ export default LoginForm = () => {
               />
             </div>
             <div className="d-grid">
-              <button type="submit" className="btn btn-primary">Log in</button>
+              <button type="submit" className="btn btn-primary">
+                Log in
+              </button>
             </div>
           </form>
         </div>
@@ -97,3 +118,5 @@ export default LoginForm = () => {
     </main>
   );
 };
+
+export default LoginForm;
