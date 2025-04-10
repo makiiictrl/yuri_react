@@ -4,6 +4,7 @@ import UseCurrentAgent from "../Login/UseCurrentAgent";
 
 export default Sidebar = () => {
   const { agent, loading } = UseCurrentAgent();
+  
   return (
     <div className="sidebar-wrapper" data-sidebar-layout="stroke-svg">
       <div>
