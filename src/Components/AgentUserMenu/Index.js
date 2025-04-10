@@ -7,7 +7,7 @@ import { getAgentUserMenus, deleteAgentUserMenu, getItems } from "../../Services
 
 export default Index = () => {
   const [data, setData] = useState([]);  
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true); ``
   const [error, setError] = useState(null); 
 
   const [args, setArgs] = useState({});
@@ -64,6 +64,15 @@ export default Index = () => {
       name: <b>Agent ID</b>,
       selector: row => row.agent_id,
       sortable: true,
+    },
+    {
+      name: <b>Agent Name</b>,
+      selector: row => row.first_name + ' ' + row.last_name,
+      sortable: true,
+      style: {
+        width: '300px', // Set the desired width here (e.g., 200px)
+        whiteSpace: 'nowrap', // Optional: To prevent text from wrapping within the column
+      }
     },
     {
       name: <b>Menu ID</b>,
@@ -158,10 +167,9 @@ export default Index = () => {
             <Link
               className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
               to="/agent_user_menus/new"
-              
             >
               New Agent User Menu
-            </Link>
+                    </Link>
           </div>
         </div>
           <div className="card-body">

@@ -15,6 +15,10 @@ export const getItems = (args) => {
 );
 }
 
+export const menuIdLookUp = () => {
+  return axios.get("http://localhost:3000/agent_user_menus/menu_id_lookup");
+};
+
 // For Edit
 export const showAgentUserMenus = (id) => {
   return axios.get(`http://localhost:3000/agent_user_menus/${id}`);
