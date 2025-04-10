@@ -73,28 +73,28 @@ export default Form = ({ ModalId }) => {
                   {/* Wrap the Typeahead in the ErrorBoundary */}
                   <ErrorBoundary>
                   {menuOptions.length > 0 && (
-                  <Typeahead
-                    onChange={(selected) => {
-                      if (selected.length > 0) {
-                        // Split the selected value into agent_menu_id and menu
-                        const selectedValue = selected[0].split(" - ");
-                        const agentMenuId = selectedValue[0];  // Extract the number (ID)
-                        const menu = selectedValue[1];  // Extract the menu name
-                        setData({ ...data, agent_menu_id: agentMenuId, menu: menu });
-                      }
-                    }}
-                    options={menuOptions}
-                    // Show the selected value in the format 'ID - Menu'
-                    selected={data.agent_menu_id && data.menu ? [`${data.agent_menu_id} - ${data.menu}`] : []}
-                    onInputChange={(input) => {
-                      // When the user types into the input, update the agent_menu_id
-                      const agentMenuId = input.split(" - ")[0]; // Extract ID part from input
-                      const menu = input.split(" - ")[1] || ''; // Extract the menu name (if present)
-                      setData({ ...data, agent_menu_id: agentMenuId, menu: menu }); // Update both values
-                    }}
-                    placeholder="Menu ID"
-                  />
-                )}
+                    <Typeahead
+                      onChange={(selected) => {
+                        if (selected.length > 0) {
+                          // Split the selected value into agent_menu_id and menu
+                          const selectedValue = selected[0].split(" - ");
+                          const agentMenuId = selectedValue[0];  // Extract the number (ID)
+                          const menu = selectedValue[1];  // Extract the menu name
+                          setData({ ...data, agent_menu_id: agentMenuId, menu: menu });
+                        }
+                      }}
+                      options={menuOptions}
+                      // Show the selected value in the format 'ID - Menu'
+                      selected={data.agent_menu_id ? [`${data.agent_menu_id}`] : []}
+                      onInputChange={(input) => {
+                        // When the user types into the input, update the agent_menu_id
+                        const agentMenuId = input.split(" - ")[0]; // Extract ID part from input
+                        const menu = input.split(" - ")[1] || ''; // Extract the menu name (if present)
+                        setData({ ...data, agent_menu_id: agentMenuId, menu: menu }); // Update both values
+                      }}
+                      placeholder="Menu ID"
+                    />
+                  )}
 
 
                   </ErrorBoundary>
