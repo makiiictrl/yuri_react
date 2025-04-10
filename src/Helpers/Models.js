@@ -7,3 +7,15 @@ export const newAgentUserMenus = {
     user_delete: 0,
     user_print: 0
 }
+
+export const newAgents = {
+    first_name: '',
+    initials: '',
+    last_name: '',
+    email: '',
+    password: '',
+    admin: false,
+    super_admin: false,
+    yss: false,
+    credit: false,
+}    
