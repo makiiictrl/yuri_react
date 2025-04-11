@@ -11,6 +11,7 @@ import MainLayout from "./Layouts/MainLayout";
 
 import AgentUserMenuIndex from "./Components/AgentUserMenu/Index";
 import AgentUserMenuForm from "./Components/AgentUserMenu/Form";
+import TransferSlips from "./Components/TransferSlips/Index";
 
 // import AgentUserMenuShow from "./Components/AgentUserMenu/";
 
@@ -30,14 +31,16 @@ const App = () => {
         }
       >
 
-        <Route index element={<DefaultDashboard />} />
-        <Route path="/dashboard" element={<DefaultDashboard />} />
+        
 
         {/* Index route for "/" - shows Dashboard if logged in */}
-       
+        <Route index element={<DefaultDashboard />} />
+        <Route path="/dashboard" element={<DefaultDashboard />} />
         <Route path="agent_user_menus" element={<AgentUserMenuIndex />} />
         <Route path="agent_user_menus/new" element={<AgentUserMenuForm />} />
         <Route path="agent_user_menus/edit/:id" element={<AgentUserMenuForm />} />
+        <Route path="transfer_slips" element={<TransferSlips />} />
+
         {/* <Route path="agent_user_menus/:id" element={<AgentUserMenuShow />} /> */}
       </Route>
     </Routes>
