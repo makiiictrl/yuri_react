@@ -167,9 +167,12 @@ export default Index = () => {
             <Link
               className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
               to="/agent_user_menus/new"
+
+              
             >
               New Agent User Menu
-                    </Link>
+            </Link>
+            
           </div>
         </div>
           <div className="card-body">

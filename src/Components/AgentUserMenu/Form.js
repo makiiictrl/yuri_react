@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { newAgentUserMenus } from "../../Helpers/Models";
 import { Typeahead } from "react-bootstrap-typeahead";
-
+import ErrorBoundary from "../ErrorBoundary";
 import {
   saveItem,
   showAgentUserMenus,
@@ -71,7 +71,7 @@ export default Form = ({ ModalId }) => {
                     <i className="icofont icofont-license"></i>
                   </span>
                   {/* Wrap the Typeahead in the ErrorBoundary */}
-                  
+                  <ErrorBoundary>
                   {menuOptions.length > 0 && (
                     <Typeahead
                       onChange={(selected) => {
@@ -97,7 +97,7 @@ export default Form = ({ ModalId }) => {
                   )}
 
 
-                  
+                  </ErrorBoundary>
 
                 </div>
               </div>
