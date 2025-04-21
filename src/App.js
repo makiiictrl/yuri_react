@@ -12,6 +12,9 @@ import MainLayout from "./Layouts/MainLayout";
 import AgentUserMenuIndex from "./Components/AgentUserMenu/Index";
 import AgentUserMenuForm from "./Components/AgentUserMenu/Form";
 
+import RequestSlipIndex from "./Components/RequestSips/Index"
+import RequestSlipForm from "./Components/RequestSips/Form"
+
 // import AgentUserMenuShow from "./Components/AgentUserMenu/";
 
 
@@ -35,10 +38,16 @@ const App = () => {
 
         {/* Index route for "/" - shows Dashboard if logged in */}
        
+        {/* Agent User Menus */}
         <Route path="agent_user_menus" element={<AgentUserMenuIndex />} />
         <Route path="agent_user_menus/new" element={<AgentUserMenuForm />} />
         <Route path="agent_user_menus/edit/:id" element={<AgentUserMenuForm />} />
         {/* <Route path="agent_user_menus/:id" element={<AgentUserMenuShow />} /> */}
+
+        {/* Request Slips */}
+        <Route path="request_slips" element={<RequestSlipIndex/>}/>
+        <Route path="request_slips/new" element={<RequestSlipForm/>}/>
+        <Route path="request_slips/edit/:id" element={<RequestSlipForm/>}/>
       </Route>
     </Routes>
   );

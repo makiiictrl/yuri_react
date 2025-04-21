@@ -1305,7 +1305,7 @@
           return dispatcher;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React51 = require_react(), Internals = {
+        var React53 = require_react(), Internals = {
           d: {
             f: noop5,
             r: function() {
@@ -1323,7 +1323,7 @@
           },
           p: 0,
           findDOMNode: null
-        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React51.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React53.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
         "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
           "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
@@ -2865,7 +2865,7 @@
           "number" === type && getActiveElement(node.ownerDocument) === node || node.defaultValue === "" + value || (node.defaultValue = "" + value);
         }
         function validateOptionProps(element, props) {
-          null == props.value && ("object" === typeof props.children && null !== props.children ? React51.Children.forEach(props.children, function(child) {
+          null == props.value && ("object" === typeof props.children && null !== props.children ? React53.Children.forEach(props.children, function(child) {
             null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
               "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
             ));
@@ -16447,14 +16447,14 @@
           ));
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var Scheduler = require_scheduler(), React51 = require_react(), ReactDOM3 = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+        var Scheduler = require_scheduler(), React53 = require_react(), ReactDOM3 = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
         Symbol.for("react.scope");
         var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
         Symbol.for("react.legacy_hidden");
         Symbol.for("react.tracing_marker");
         var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
         Symbol.for("react.view_transition");
-        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React51.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM3.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React53.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM3.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
           pending: false,
           data: null,
           method: null,
@@ -19168,7 +19168,7 @@
           }
         };
         (function() {
-          var isomorphicReactPackageVersion = React51.version;
+          var isomorphicReactPackageVersion = React53.version;
           if ("19.1.0" !== isomorphicReactPackageVersion)
             throw Error(
               'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.1.0\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -23355,11 +23355,11 @@
   });
 
   // src/index.js
-  var import_react46 = __toESM(require_react());
+  var import_react48 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // src/App.js
-  var import_react45 = __toESM(require_react());
+  var import_react47 = __toESM(require_react());
 
   // node_modules/react-router/dist/development/chunk-XJI4KG32.mjs
   var React3 = __toESM(require_react(), 1);
@@ -29024,7 +29024,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       },
       /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-white" }),
       /* @__PURE__ */ import_react11.default.createElement("span", null, "Transfer Slip")
-    )), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Request Slip"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-paper me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Issue Slip"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-mail me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Inventory Entry"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-list me-3 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Inventory Listing"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-papers me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Item Master"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-package me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Packing List"))))), /* @__PURE__ */ import_react11.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react11.default.createElement("i", { "data-feather": "arrow-right" })))));
+    )), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/request_slips" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Request Slip"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-paper me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Issue Slip"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-mail me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Inventory Entry"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-list me-3 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Inventory Listing"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-papers me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Item Master"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-package me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Packing List"))))), /* @__PURE__ */ import_react11.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react11.default.createElement("i", { "data-feather": "arrow-right" })))));
   };
 
   // src/Layouts/Footer.js
@@ -29130,12 +29130,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Agent Name"),
         selector: (row) => row.first_name + " " + row.last_name,
         sortable: true,
-        style: {
-          width: "300px",
-          // Set the desired width here (e.g., 200px)
-          whiteSpace: "nowrap"
-          // Optional: To prevent text from wrapping within the column
-        }
+        minWidth: "250px",
+        whiteSpace: "nowrap"
       },
       {
         name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Menu ID"),
@@ -33711,27 +33707,37 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         console.error("Error fetching data", err);
       });
     }, [id]);
-    return /* @__PURE__ */ import_react44.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "row justify-content-center" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react44.default.createElement("h4", { className: "mt-1" }, "Agent User Menu Details")), /* @__PURE__ */ import_react44.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react44.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react44.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react44.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react44.default.createElement("i", { className: "icofont icofont-license" })), /* @__PURE__ */ import_react44.default.createElement(ErrorBoundary_default, null, menuOptions.length > 0 && /* @__PURE__ */ import_react44.default.createElement(
+    return /* @__PURE__ */ import_react44.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "row justify-content-center" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react44.default.createElement("h4", { className: "mt-1" }, "Agent User Menu Details")), /* @__PURE__ */ import_react44.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react44.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react44.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react44.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react44.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react44.default.createElement("i", { className: "icofont icofont-license" })), /* @__PURE__ */ import_react44.default.createElement("div", { style: { flex: "1 1 auto" } }, /* @__PURE__ */ import_react44.default.createElement(ErrorBoundary_default, null, menuOptions.length > 0 && /* @__PURE__ */ import_react44.default.createElement(
       Typeahead_default2,
       {
+        inputProps: { className: "form-control" },
+        placeholder: "Menu ID",
         onChange: (selected) => {
           if (selected.length > 0) {
             const selectedValue = selected[0].split(" - ");
             const agentMenuId = selectedValue[0];
-            const menu = selectedValue[1];
-            setData({ ...data2, agent_menu_id: agentMenuId, menu });
+            const menu = selectedValue.slice(1).join(" - ");
+            setData({
+              ...data2,
+              agent_menu_id: agentMenuId,
+              menu
+            });
           }
         },
         options: menuOptions,
         selected: data2.agent_menu_id ? [`${data2.agent_menu_id}`] : [],
         onInputChange: (input) => {
-          const agentMenuId = input.split(" - ")[0];
-          const menu = input.split(" - ")[1] || "";
-          setData({ ...data2, agent_menu_id: agentMenuId, menu });
-        },
-        placeholder: "Menu ID"
+          const parts = input.split(" - ");
+          const agentMenuId = parts[0];
+          const menu = parts.slice(1).join(" - ") || "";
+          setData({
+            ...data2,
+            agent_menu_id: agentMenuId,
+            menu
+          });
+        }
       }
-    )))), /* @__PURE__ */ import_react44.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react44.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react44.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react44.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react44.default.createElement("i", { className: "icofont icofont-user-alt-4" })), /* @__PURE__ */ import_react44.default.createElement(
+    ))))), /* @__PURE__ */ import_react44.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react44.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react44.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react44.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react44.default.createElement("i", { className: "icofont icofont-user-alt-4" })), /* @__PURE__ */ import_react44.default.createElement(
       "input",
       {
         className: "form-control",
@@ -33824,18 +33830,1119 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     )))))));
   };
 
+  // src/Components/RequestSips/Index.js
+  var import_react45 = __toESM(require_react());
+  var import_react_data_table_component3 = __toESM(require_index_cjs());
+
+  // src/Services/RequestSlipsServices.js
+  var getRequestSlips = async () => {
+    return axios_default.get("http://localhost:3000/request_slips");
+  };
+  var getItems2 = (args) => {
+    return axios_default.get(
+      `http://localhost:3000/request_slips`,
+      {
+        params: args
+      }
+    );
+  };
+  var employeeNameLookUp = () => {
+    return axios_default.get("http://localhost:3000/request_slips/employee_name_look_up");
+  };
+  var customerNameLookUp = () => {
+    return axios_default.get("http://localhost:3000/request_slips/customer_name_look_up");
+  };
+  var productDescriptionLookUp = () => {
+    return axios_default.get("http://localhost:3000/api/sample_inventory_lookup_sample_item_master");
+  };
+  var employeeAutoFilled = async (id) => {
+    return axios_default.get("http://localhost:3000/request_slips/employee_auto_filled?", { params: { id } });
+  };
+  var customerAutoFilled = async (customer_code) => {
+    return axios_default.get(`http://localhost:3000/api/customers_index/${customer_code}`);
+  };
+  var fetchTerritories = (employeeNumber) => {
+    return axios_default.get(`http://localhost:3000/api/sarf_details_territory_code/${employeeNumber}`);
+  };
+  var fetchTeam = (employeeNumber) => {
+    return axios_default.get(`http://localhost:3000/api/sarf_details_employee_team/${employeeNumber}`);
+  };
+  var saveItem2 = (data2) => {
+    if (data2.id) {
+      return axios_default.put(
+        `http://localhost:3000/request_slips/${data2.id}`,
+        data2
+      );
+    } else {
+      return axios_default.post(`http://localhost:3000/request_slips`, data2);
+    }
+  };
+  var deleteRequestSlip = async (id) => {
+    return axios_default.delete(`http://localhost:3000/request_slips/${id}`);
+  };
+  var showRequestSlip = (id) => {
+    return axios_default.get(`http://localhost:3000/request_slips/${id}`);
+  };
+
+  // src/Components/RequestSips/Index.js
+  var Index_default3 = Index = () => {
+    const [data2, setData] = (0, import_react45.useState)([]);
+    const [loading, setLoading] = (0, import_react45.useState)(true);
+    const [error, setError] = (0, import_react45.useState)(null);
+    const [args, setArgs] = (0, import_react45.useState)({});
+    const refreshItems = () => {
+      getItems2(args).then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      }).catch((response) => {
+        alert("Error in fetching data.");
+        console.log(response);
+      });
+    };
+    (0, import_react45.useEffect)(() => {
+      refreshItems();
+    }, [args]);
+    (0, import_react45.useEffect)(() => {
+      getRequestSlips().then((response) => {
+        console.log(response.data);
+        setData(response.data);
+        setLoading(false);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+        setError(err);
+        setLoading(false);
+      });
+    }, []);
+    const handleDelete = (id) => {
+      if (window.confirm("Are you sure you want to delete this record?")) {
+        deleteRequestSlip(id).then(() => {
+          alert("Record deleted successfully");
+          window.location.reload();
+        }).catch((err) => {
+          console.error("Error deleting record", err);
+        });
+      }
+    };
+    const columns = [
+      {
+        name: /* @__PURE__ */ import_react45.default.createElement("b", null, "ID"),
+        selector: (row) => row.id,
+        omit: true
+        // this hides the column from the table view
+      },
+      {
+        name: /* @__PURE__ */ import_react45.default.createElement("b", null, "Company"),
+        selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC",
+        width: "125px",
+        whiteSpace: "nowrap",
+        center: true
+      },
+      {
+        name: /* @__PURE__ */ import_react45.default.createElement("b", null, "Request Number"),
+        selector: (row) => row.request_number,
+        sortable: true,
+        width: "160px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react45.default.createElement("b", null, "Request Date"),
+        selector: (row) => row.request_date,
+        sortable: true,
+        width: "140px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react45.default.createElement("b", null, "Employee Name"),
+        selector: (row) => row.employee_name,
+        sortable: true,
+        width: "250px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react45.default.createElement("b", null, "Address"),
+        selector: (row) => row.address,
+        width: "520px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react45.default.createElement("b", null, "Purpose of Request"),
+        selector: (row) => row.type_of_request === "Others" ? `${row.type_of_request} (${row.sub_type_of_request})` : row.type_of_request,
+        width: "250px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react45.default.createElement("b", null, "Actions"),
+        cell: (row) => /* @__PURE__ */ import_react45.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react45.default.createElement(
+          Link,
+          {
+            to: `/request_slips/edit/${row.id}`
+          },
+          /* @__PURE__ */ import_react45.default.createElement("i", { className: "icon-pencil-alt text-info" })
+        ), /* @__PURE__ */ import_react45.default.createElement(
+          "button",
+          {
+            onClick: () => handleDelete(row.id),
+            style: { background: "none", border: "none", cursor: "pointer" }
+          },
+          /* @__PURE__ */ import_react45.default.createElement("i", { className: "icon-trash text-danger" })
+        )),
+        ignoreRowClick: true,
+        button: true
+      }
+    ];
+    if (loading) return /* @__PURE__ */ import_react45.default.createElement("p", null, "Loading...");
+    if (error) return /* @__PURE__ */ import_react45.default.createElement("p", null, "Error loading data");
+    return /* @__PURE__ */ import_react45.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react45.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react45.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Request Slips"), /* @__PURE__ */ import_react45.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react45.default.createElement(
+      "input",
+      {
+        className: "form-control form-control-sm",
+        type: "text",
+        placeholder: "Search...",
+        "aria-label": "Request Number",
+        onInput: (e3) => {
+          setArgs({
+            ...args,
+            request_number: e3.target.value
+          });
+        }
+      }
+    ), /* @__PURE__ */ import_react45.default.createElement(
+      "button",
+      {
+        className: "btn btn-outline-primary btn-sm",
+        type: "button"
+      },
+      /* @__PURE__ */ import_react45.default.createElement("i", { className: "icofont icofont-search-alt-1" })
+    )), /* @__PURE__ */ import_react45.default.createElement(
+      Link,
+      {
+        className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
+        to: "/request_slips/new"
+      },
+      "New Request Slip"
+    ))), /* @__PURE__ */ import_react45.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react45.default.createElement(
+      import_react_data_table_component3.default,
+      {
+        columns,
+        data: data2,
+        pagination: true,
+        responsive: true,
+        striped: true,
+        bordered: true,
+        noDataComponent: "No Records of Agent User Menu",
+        highlightOnHover: true
+      }
+    )))));
+  };
+
+  // src/Components/RequestSips/Form.js
+  var import_react46 = __toESM(require_react());
+  var import_react_data_table_component4 = __toESM(require_index_cjs());
+  var Form_default2 = Form = () => {
+    const [data2, setData] = (0, import_react46.useState)([]);
+    const navigate = useNavigate();
+    const [customerOptions, setcustomerOptions] = (0, import_react46.useState)([]);
+    const [employeeOptions, setemployeeOptions] = (0, import_react46.useState)([]);
+    const [formData, setFormData] = (0, import_react46.useState)({});
+    const [recommendedByOptions, setRecommendedByOptions] = (0, import_react46.useState)([]);
+    const [showOtherOption, setOtherOption] = (0, import_react46.useState)(false);
+    const [productSampleDescription, setSampleProductDescription] = (0, import_react46.useState)([]);
+    const [productPromatsDescription, setPromatsProductDescription] = (0, import_react46.useState)([]);
+    const [productPackmatsDescription, setPackmatsProductDescription] = (0, import_react46.useState)([]);
+    const [productCommercialDescription, setCommercialProductDescription] = (0, import_react46.useState)([]);
+    const { id } = useParams();
+    (0, import_react46.useEffect)(() => {
+      if (window.location.hash.includes("request_slips/new")) {
+        axios_default.get("http://localhost:3000/request_slips/new.json").then((response) => {
+          setFormData(response.data);
+          setRecommendedByOptions(response.data.recommended_by || {});
+        }).catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+      }
+    }, []);
+    (0, import_react46.useEffect)(() => {
+      if (window.location.hash.includes(`request_slips/edit`)) {
+        axios_default.get(`http://localhost:3000/request_slips/edit/${id}.json`).then((response) => {
+          setRecommendedByOptions(response.data || {});
+        }).catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+      }
+    }, []);
+    const handleSave = () => {
+      const details = [
+        ...sampleRows.map((r2) => ({
+          product_description: r2.product_description,
+          request_quantity: r2.request_quantity,
+          issue_slip_type: "Sample"
+        })),
+        ...promatsRows.map((r2) => ({
+          product_description: r2.product_description,
+          request_quantity: r2.request_quantity,
+          issue_slip_type: "Promats"
+        })),
+        ...packmatsRows.map((r2) => ({
+          product_description: r2.product_description,
+          request_quantity: r2.request_quantity,
+          issue_slip_type: "Packmats"
+        })),
+        ...commercialRows.map((r2) => ({
+          product_description: r2.product_description,
+          request_quantity: r2.request_quantity,
+          issue_slip_type: "Commercial"
+        }))
+      ];
+      const body = {
+        ...data2,
+        sample_slip_request_details_attributes: details
+      };
+      saveItem2(body).then((response) => {
+        navigate("/request_slips");
+        console.log("saved!");
+      }).catch((response) => {
+        alert("Error");
+        console.log(response);
+      });
+      console.log("Saving:", body);
+    };
+    (0, import_react46.useEffect)(() => {
+      employeeNameLookUp().then((response) => {
+        console.log("Success!");
+        console.log(response.data);
+        setemployeeOptions(response.data);
+      }).catch((error) => {
+        console.log("Error fetching!");
+        console.error(error);
+      });
+    }, []);
+    (0, import_react46.useEffect)(() => {
+      customerNameLookUp().then((response) => {
+        console.log("Success!");
+        console.log(response.data);
+        setcustomerOptions(response.data);
+      }).catch((error) => {
+        console.log("Error fetching!");
+        console.error(error);
+      });
+    }, []);
+    (0, import_react46.useEffect)(() => {
+      if (!id) return;
+      showRequestSlip(id).then((response) => {
+        const requestSlip = response.data;
+        setData(requestSlip);
+        if (requestSlip.type_of_request === "Others") {
+          setOtherOption(true);
+        }
+        const details = requestSlip.sample_slip_request_details || [];
+        console.log(details);
+        setSampleRows(
+          details.filter((d) => d.issue_slip_type === "Sample").map((d) => ({
+            id: Date.now() + Math.random(),
+            // unique id for DataTable row
+            product_description: d.product_description,
+            request_quantity: d.request_quantity || d.quantity
+          }))
+        );
+        setPromatsRows(
+          details.filter((d) => d.issue_slip_type === "Promats").map((d) => ({
+            id: Date.now() + Math.random(),
+            product_description: d.product_description,
+            request_quantity: d.request_quantity || d.quantity
+          }))
+        );
+        setPackmatsRows(
+          details.filter((d) => d.issue_slip_type === "Packmats").map((d) => ({
+            id: Date.now() + Math.random(),
+            product_description: d.product_description,
+            request_quantity: d.request_quantity || d.quantity
+          }))
+        );
+        setCommercialRows(
+          details.filter((d) => d.issue_slip_type === "Commercial").map((d) => ({
+            id: Date.now() + Math.random(),
+            product_description: d.product_description,
+            request_quantity: d.request_quantity || d.quantity
+          }))
+        );
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+      });
+    }, [id]);
+    (0, import_react46.useEffect)(() => {
+      productDescriptionLookUp().then((response) => {
+        setSampleProductDescription(response.data);
+        console.log("Data fetched successfully", response.data);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+      });
+    }, []);
+    const [sampleRows, setSampleRows] = (0, import_react46.useState)([]);
+    const [promatsRows, setPromatsRows] = (0, import_react46.useState)([]);
+    const [packmatsRows, setPackmatsRows] = (0, import_react46.useState)([]);
+    const [commercialRows, setCommercialRows] = (0, import_react46.useState)([]);
+    const handleSampleAddRow = () => {
+      setSampleRows((prev) => [
+        ...prev,
+        { id: Date.now(), product_description: "", request_quantity: "" }
+      ]);
+    };
+    const handlePromatsAddRow = () => {
+      setPromatsRows((prev) => [
+        ...prev,
+        { id: Date.now(), product_description: "", request_quantity: "" }
+      ]);
+    };
+    const handlePackmatsAddRow = () => {
+      setPackmatsRows((prev) => [
+        ...prev,
+        { id: Date.now(), product_description: "", request_quantity: "" }
+      ]);
+    };
+    const handleCommercialAddRow = () => {
+      setCommercialRows((prev) => [
+        ...prev,
+        { id: Date.now(), product_description: "", request_quantity: "" }
+      ]);
+    };
+    const handleSampleRowChange = (id2, field, value) => {
+      setSampleRows(
+        (prev) => prev.map(
+          (r2) => r2.id === id2 ? {
+            ...r2,
+            [field]: value
+          } : r2
+        )
+      );
+    };
+    const handlePromatsRowChange = (id2, field, value) => {
+      setPromatsRows(
+        (prev) => prev.map(
+          (r2) => r2.id === id2 ? {
+            ...r2,
+            [field]: value
+          } : r2
+        )
+      );
+    };
+    const handlePackmatsRowChange = (id2, field, value) => {
+      setPackmatsRows(
+        (prev) => prev.map(
+          (r2) => r2.id === id2 ? {
+            ...r2,
+            [field]: value
+          } : r2
+        )
+      );
+    };
+    const handleCommercialRowChange = (id2, field, value) => {
+      setCommercialRows(
+        (prev) => prev.map(
+          (r2) => r2.id === id2 ? {
+            ...r2,
+            [field]: value
+          } : r2
+        )
+      );
+    };
+    const handleSampleDeleteRow = (id2) => {
+      setSampleRows((prev) => prev.filter((r2) => r2.id !== id2));
+    };
+    const handlePromatsDeleteRow = (id2) => {
+      setPromatsRows((prev) => prev.filter((r2) => r2.id !== id2));
+    };
+    const handlePackmatsDeleteRow = (id2) => {
+      setPackmatsRows((prev) => prev.filter((r2) => r2.id !== id2));
+    };
+    const handleCommercialDeleteRow = (id2) => {
+      setCommercialRows((prev) => prev.filter((r2) => r2.id !== id2));
+    };
+    const sampleColumns = [
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Product Description"),
+        width: "50%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          Typeahead_default2,
+          {
+            className: "w-100",
+            positionFixed: true,
+            options: productSampleDescription,
+            placeholder: "Product Description",
+            selected: row.product_description ? [row.product_description] : [],
+            onChange: (selected) => handleSampleRowChange(
+              row.id,
+              "product_description",
+              selected[0] || ""
+            )
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Quantity"),
+        width: "30%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control",
+            placeholder: "Quantity",
+            value: row.request_quantity || "",
+            onChange: (e3) => handleSampleRowChange(row.id, "request_quantity", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Actions"),
+        width: "10%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handleSampleDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react46.default.createElement("i", { className: "icon-trash text-white icon-xl" })
+        )
+      }
+    ];
+    const promatsColumns = [
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Product Description"),
+        width: "50%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          Typeahead_default2,
+          {
+            className: "w-100",
+            positionFixed: true,
+            options: productSampleDescription,
+            placeholder: "Product Description",
+            selected: row.product_description ? [row.product_description] : [],
+            onChange: (selected) => handlePromatsRowChange(
+              row.id,
+              "product_description",
+              selected[0] || ""
+            )
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Quantity"),
+        width: "30%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control",
+            placeholder: "Quantity",
+            value: row.request_quantity || "",
+            onChange: (e3) => handlePromatsRowChange(row.id, "request_quantity", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Actions"),
+        width: "10%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handlePromatsDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react46.default.createElement("i", { className: "icon-trash text-white icon-xl" })
+        )
+      }
+    ];
+    const packmatsColumns = [
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Product Description"),
+        width: "50%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          Typeahead_default2,
+          {
+            className: "w-100",
+            positionFixed: true,
+            options: productSampleDescription,
+            placeholder: "Product Description",
+            selected: row.product_description ? [row.product_description] : [],
+            onChange: (selected) => handlePackmatsRowChange(
+              row.id,
+              "product_description",
+              selected[0] || ""
+            )
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Quantity"),
+        width: "30%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control",
+            placeholder: "Quantity",
+            value: row.request_quantity || "",
+            onChange: (e3) => handlePackmatsRowChange(row.id, "request_quantity", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Actions"),
+        width: "10%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handlePackmatsDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react46.default.createElement("i", { className: "icon-trash text-white icon-xl" })
+        )
+      }
+    ];
+    const commercialColumns = [
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Product Description"),
+        width: "50%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          Typeahead_default2,
+          {
+            className: "w-100",
+            positionFixed: true,
+            options: productSampleDescription,
+            placeholder: "Product Description",
+            selected: row.product_description ? [row.product_description] : [],
+            onChange: (selected) => handleCommercialRowChange(
+              row.id,
+              "product_description",
+              selected[0] || ""
+            )
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Quantity"),
+        width: "30%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control",
+            placeholder: "Quantity",
+            value: row.request_quantity || "",
+            onChange: (e3) => handleCommercialRowChange(row.id, "request_quantity", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react46.default.createElement("b", null, "Actions"),
+        width: "10%",
+        cell: (row) => /* @__PURE__ */ import_react46.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handleCommercialDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react46.default.createElement("i", { className: "icon-trash text-white icon-xl" })
+        )
+      }
+    ];
+    return /* @__PURE__ */ import_react46.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "card-header " }, /* @__PURE__ */ import_react46.default.createElement("h1", null, "New Request Slip")), /* @__PURE__ */ import_react46.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react46.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Request Details"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Company Code"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react46.default.createElement("i", { className: "icofont icofont-building-alt" })), /* @__PURE__ */ import_react46.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        onChange: (selected) => {
+          const company_code = selected.target.value;
+          setData({
+            ...data2,
+            company_code
+          });
+        },
+        value: data2.company_code
+      },
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "" }, "Please select..."),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "1" }, "CDCI"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "2" }, "YSS"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "5" }, "CYDC")
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Purpose of Request"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react46.default.createElement("i", { className: "icofont icofont-document-folder" })), /* @__PURE__ */ import_react46.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        onChange: (selected) => {
+          const type_of_request = selected.target.value;
+          setData({
+            ...data2,
+            type_of_request
+          });
+          if (selected.target.value == "Others") {
+            setOtherOption(true);
+          } else {
+            setOtherOption(false);
+          }
+        },
+        value: data2.type_of_request
+      },
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "", selected: true }, "Please select..."),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Stock for Accreditation" }, "Stock for Accreditation"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "MD Starter Dose/Sampling" }, "MD Starter Dose/Sampling"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Free Clinic" }, "Free Clinic"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Medical Mission" }, "Medical Mission"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Booth Convention/Post Grad" }, "Booth Convention/Post Grad"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Additional Sample Allocation" }, "Additional Sample Allocation"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "MD Personal Use" }, "MD Personal Use"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Others" }, "Others")
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, showOtherOption == true && /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Others"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react46.default.createElement("i", { className: "icofont icofont-ebook" })), /* @__PURE__ */ import_react46.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        onChange: (selected) => {
+          const sub_type_of_request = selected.target.value;
+          setData({
+            ...data2,
+            sub_type_of_request
+          });
+        },
+        value: data2.sub_type_of_request,
+        required: showOtherOption ? true : false
+      },
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "", selected: true }, "Please select..."),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Personal Use" }, "Personal Use"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Clinic Office Use" }, "Clinic Office Use"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Monthly Sample Allocation Use" }, "Monthly Sample Allocation Use"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "FDA Compliance" }, "FDA Compliance"),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "Replacement" }, "Replacement")
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Customer"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      Typeahead_default2,
+      {
+        options: customerOptions,
+        className: "w-100",
+        placeholder: "Customer Name",
+        selected: data2.customer_name ? [`${data2.customer_name}`] : [],
+        onChange: (selected) => {
+          `    `;
+          if (selected.length > 0) {
+            const parts = selected[0].split(" - ");
+            const customerId = parts[0];
+            const customerName = parts[1];
+            setData((prevData) => ({
+              ...prevData,
+              customer_code: customerId,
+              customer_name: customerName
+            }));
+            console.log(customerName);
+            customerAutoFilled(customerId).then((response) => {
+              console.log("API call successful");
+              console.log(response.data);
+              const { billing_address } = response.data;
+              const fullAddress = [
+                billing_address.address_1,
+                billing_address.address_2,
+                billing_address.address_3,
+                billing_address.address_4,
+                billing_address.address_5
+              ].filter((part) => part && part.trim() !== "").join(", ");
+              setData((prevData) => ({
+                ...prevData,
+                address: fullAddress
+              }));
+            }).catch((error) => {
+              alert(
+                "Error occurred while autofilling customer data"
+              );
+              console.error(error);
+            });
+          }
+        },
+        onInputChange: (input) => {
+          const parts = input.split(" - ");
+          const customer_code = parts[0];
+          const customer_name = parts.slice(1).join(" - ") || "";
+          setData({
+            ...data2,
+            customer_code,
+            customer_name
+          });
+        }
+      }
+    ))))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Employee Name"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      Typeahead_default2,
+      {
+        allowNew: true,
+        options: employeeOptions,
+        className: "w-100",
+        placeholder: "Employee Name",
+        selected: data2.employee_name ? [`${data2.employee_name}`] : [],
+        onChange: (selected) => {
+          if (selected.length > 0) {
+            const selectedValue = selected[0].split(" - ");
+            const employeeId = selectedValue[0];
+            const employeeName = selectedValue[1];
+            console.log(employeeName);
+            console.log(employeeId);
+            employeeAutoFilled(employeeId).then((response) => {
+              console.log("success! wow");
+              console.log(response.data.infotxt_mpn);
+              console.log(response.data);
+              setData((prevData) => ({
+                ...prevData,
+                contact_no: response.data.infotxt_mpn,
+                contact_person: response.data.employee_name,
+                designation: response.data.position,
+                employee_number: response.data.employee_number,
+                employee_name: response.data.employee_name
+              }));
+              fetchTerritories(response.data.employee_number).then((result) => {
+                console.log("success! wow1111");
+                setData((prevData) => ({
+                  ...prevData,
+                  territory_code: result.data
+                }));
+                fetchTeam(response.data.employee_number).then((output) => {
+                  console.log("success! wow1111222");
+                  console.log(output.data);
+                  setData((prevData) => ({
+                    ...prevData,
+                    team: output.data
+                  }));
+                }).catch((error) => {
+                  alert("Error fetching territories");
+                  console.log(error);
+                });
+              }).catch((error) => {
+                alert("Error fetching territories");
+                console.log(error);
+              });
+            }).catch((error) => {
+              alert("Error fetching employee details");
+              console.log(error);
+            });
+          }
+        },
+        onInputChange: (input) => {
+          const parts = input.split(" - ");
+          const customer_code = parts[0];
+          const customer_name = parts.slice(1).join(" - ") || "";
+          setData({
+            ...data2,
+            employee_number: customer_code,
+            employee_name: customer_name
+          });
+        }
+      }
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Contact No."), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "number",
+        placeholder: "Contact No.",
+        onChange: (selected) => {
+          setData((prevData) => ({
+            ...prevData,
+            contact_no: selected.target.value
+          }));
+        },
+        value: data2.contact_no
+      }
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Request Description"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      "textarea",
+      {
+        className: "form-control",
+        type: "text",
+        placeholder: "Request Description",
+        rows: 1,
+        onChange: (selected) => {
+          const request_slip_description = selected.target.value;
+          setData({
+            ...data2,
+            request_slip_description
+          });
+        },
+        value: data2.request_slip_description
+      }
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Address"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "text",
+        placeholder: "Address",
+        onChange: (selected) => {
+          setData((prevData) => ({
+            ...prevData,
+            address: selected.target.value
+          }));
+        },
+        value: data2.address
+      }
+    ))))), /* @__PURE__ */ import_react46.default.createElement("h5", { className: "mb-3 border-bottom pb-2 mt-4" }, "Approval Details"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Recommended by"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        value: data2.recommended_by,
+        onChange: (selected) => {
+          const recommended_by = selected.target.value;
+          setData({
+            ...data2,
+            recommended_by
+          });
+        }
+      },
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "" }, "Please select..."),
+      Object.entries(recommendedByOptions).map(([name, id2]) => /* @__PURE__ */ import_react46.default.createElement("option", { key: id2, value: id2 }, name))
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Approved by"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        value: data2.approved_by,
+        onChange: (selected) => {
+          const approved_by = selected.target.value;
+          setData({
+            ...data2,
+            approved_by
+          });
+        }
+      },
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "" }, "Please select..."),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "GAN, STEPHEN Y." }, "GAN, STEPHEN Y.")
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Endorsed by"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        value: data2.endorsed_by,
+        onChange: (selected) => {
+          const endorsed_by = selected.target.value;
+          console.log(endorsed_by);
+          setData((prevData) => ({
+            ...prevData,
+            endorsed_by
+          }));
+        }
+      },
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "" }, "Please select..."),
+      /* @__PURE__ */ import_react46.default.createElement("option", { value: "GARCIA, ROGELIO JR. MD" }, "GARCIA, ROGELIO JR. MD")
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Prepared by"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "name",
+        readOnly: true,
+        value: data2.prepared_by,
+        onBlur: (selected) => {
+          const prepared_by = selected.target.value;
+          setData({
+            ...data2,
+            prepared_by
+          });
+        }
+      }
+    ))))), /* @__PURE__ */ import_react46.default.createElement("h5", { className: "mb-3 border-bottom pb-2 mt-4" }, "Contact Details"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Contact Person"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control",
+        placeholder: "Contact Person",
+        value: data2.contact_person
+      }
+    )))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react46.default.createElement("label", null, "Designation"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react46.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control",
+        placeholder: "Designation",
+        value: data2.designation
+      }
+    ))))), /* @__PURE__ */ import_react46.default.createElement("h5", { className: "mb-4 border-bottom pb-2 mt-4" }, "Product Details"), /* @__PURE__ */ import_react46.default.createElement("div", { className: "horizontal-wizard-wrapper" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "row g-3" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-12 main-horizontal-header" }, /* @__PURE__ */ import_react46.default.createElement(
+      "div",
+      {
+        className: "nav nav-pills horizontal-options",
+        id: "horizontal-wizard-tab",
+        role: "tablist",
+        "aria-orientation": "vertical"
+      },
+      /* @__PURE__ */ import_react46.default.createElement(
+        "a",
+        {
+          className: "nav-link active",
+          id: "sample-tab",
+          "data-bs-toggle": "pill",
+          href: "#sample-info",
+          role: "tab",
+          "aria-controls": "sample-info",
+          "aria-selected": "true"
+        },
+        /* @__PURE__ */ import_react46.default.createElement("div", { className: "horizontal-wizard" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "stroke-icon-wizard" }, /* @__PURE__ */ import_react46.default.createElement("i", { className: "icofont icofont-pills" })), /* @__PURE__ */ import_react46.default.createElement("div", { className: "horizontal-wizard-content" }, /* @__PURE__ */ import_react46.default.createElement("h6", null, "Sample")))
+      ),
+      /* @__PURE__ */ import_react46.default.createElement(
+        "a",
+        {
+          className: "nav-link",
+          id: "promats-tab",
+          "data-bs-toggle": "pill",
+          href: "#promats-info",
+          role: "tab",
+          "aria-controls": "promats-info",
+          "aria-selected": "false"
+        },
+        /* @__PURE__ */ import_react46.default.createElement("div", { className: "horizontal-wizard" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "stroke-icon-wizard" }, /* @__PURE__ */ import_react46.default.createElement("i", { className: "icofont icofont-clip" })), /* @__PURE__ */ import_react46.default.createElement("div", { className: "horizontal-wizard-content" }, /* @__PURE__ */ import_react46.default.createElement("h6", null, "Promats")))
+      ),
+      /* @__PURE__ */ import_react46.default.createElement(
+        "a",
+        {
+          className: "nav-link",
+          id: "packmats-tab",
+          "data-bs-toggle": "pill",
+          href: "#packmats-info",
+          role: "tab",
+          "aria-controls": "packmats-info",
+          "aria-selected": "false"
+        },
+        /* @__PURE__ */ import_react46.default.createElement("div", { className: "horizontal-wizard" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "stroke-icon-wizard" }, /* @__PURE__ */ import_react46.default.createElement("i", { className: "icofont icofont-package" })), /* @__PURE__ */ import_react46.default.createElement("div", { className: "horizontal-wizard-content" }, /* @__PURE__ */ import_react46.default.createElement("h6", null, "Packmats")))
+      ),
+      /* @__PURE__ */ import_react46.default.createElement(
+        "a",
+        {
+          className: "nav-link",
+          id: "commercial-tab",
+          "data-bs-toggle": "pill",
+          href: "#commercial-info",
+          role: "tab",
+          "aria-controls": "commercial-info",
+          "aria-selected": "false"
+        },
+        /* @__PURE__ */ import_react46.default.createElement("div", { className: "horizontal-wizard" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "stroke-icon-wizard" }, /* @__PURE__ */ import_react46.default.createElement("i", { className: "icofont icofont-medical-sign-alt" })), /* @__PURE__ */ import_react46.default.createElement("div", { className: "horizontal-wizard-content" }, /* @__PURE__ */ import_react46.default.createElement("h6", null, "Commercial")))
+      )
+    )), /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-12" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "tab-content dark-field", id: "horizontal-wizard-tabContent" }, /* @__PURE__ */ import_react46.default.createElement(
+      "div",
+      {
+        className: "tab-pane fade show active",
+        id: "sample-info",
+        role: "tabpanel",
+        "aria-labelledby": "sample-tab"
+      },
+      /* @__PURE__ */ import_react46.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react46.default.createElement(
+        import_react_data_table_component4.default,
+        {
+          columns: sampleColumns,
+          data: sampleRows,
+          responsive: true,
+          striped: true,
+          bordered: true,
+          noDataComponent: "No Records of Agent User Menu",
+          highlightOnHover: true
+        }
+      )),
+      /* @__PURE__ */ import_react46.default.createElement(
+        "button",
+        {
+          className: "btn btn-primary btn-sm mt-3",
+          onClick: handleSampleAddRow
+        },
+        "Add Row"
+      )
+    ), /* @__PURE__ */ import_react46.default.createElement(
+      "div",
+      {
+        className: "tab-pane fade",
+        id: "promats-info",
+        role: "tabpanel",
+        "aria-labelledby": "promats-tab"
+      },
+      /* @__PURE__ */ import_react46.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react46.default.createElement(
+        import_react_data_table_component4.default,
+        {
+          columns: promatsColumns,
+          data: promatsRows,
+          responsive: true,
+          striped: true,
+          bordered: true,
+          noDataComponent: "No Records of Agent User Menu",
+          highlightOnHover: true
+        }
+      )),
+      /* @__PURE__ */ import_react46.default.createElement(
+        "button",
+        {
+          className: "btn btn-primary btn-sm mt-3",
+          onClick: handlePromatsAddRow
+        },
+        "Add Row"
+      )
+    ), /* @__PURE__ */ import_react46.default.createElement(
+      "div",
+      {
+        className: "tab-pane fade",
+        id: "packmats-info",
+        role: "tabpanel",
+        "aria-labelledby": "packmats-tab"
+      },
+      /* @__PURE__ */ import_react46.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react46.default.createElement(
+        import_react_data_table_component4.default,
+        {
+          columns: packmatsColumns,
+          data: packmatsRows,
+          responsive: true,
+          striped: true,
+          bordered: true,
+          noDataComponent: "No Records of Agent User Menu",
+          highlightOnHover: true
+        }
+      )),
+      /* @__PURE__ */ import_react46.default.createElement(
+        "button",
+        {
+          className: "btn btn-primary btn-sm mt-3",
+          onClick: handlePackmatsAddRow
+        },
+        "Add Row"
+      )
+    ), /* @__PURE__ */ import_react46.default.createElement(
+      "div",
+      {
+        className: "tab-pane fade",
+        id: "commercial-info",
+        role: "tabpanel",
+        "aria-labelledby": "commercial-tab"
+      },
+      /* @__PURE__ */ import_react46.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react46.default.createElement(
+        import_react_data_table_component4.default,
+        {
+          columns: commercialColumns,
+          data: commercialRows,
+          responsive: true,
+          striped: true,
+          bordered: true,
+          noDataComponent: "No Records of Agent User Menu",
+          highlightOnHover: true
+        }
+      )),
+      /* @__PURE__ */ import_react46.default.createElement(
+        "button",
+        {
+          className: "btn btn-primary btn-sm mt-3",
+          onClick: handleCommercialAddRow
+        },
+        "Add Row"
+      )
+    )))))), /* @__PURE__ */ import_react46.default.createElement("div", { className: "card-footer" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react46.default.createElement(Link, { to: "/request_slips", className: "btn btn-secondary btn-sm" }, "Back"), /* @__PURE__ */ import_react46.default.createElement("button", { className: "btn btn-primary btn-sm", onClick: handleSave }, "Save")))));
+  };
+
   // src/App.js
   var App = () => {
-    return /* @__PURE__ */ import_react45.default.createElement(Routes, null, /* @__PURE__ */ import_react45.default.createElement(Route, { path: "/login", element: /* @__PURE__ */ import_react45.default.createElement(LoginForm_default, null) }), /* @__PURE__ */ import_react45.default.createElement(
+    return /* @__PURE__ */ import_react47.default.createElement(Routes, null, /* @__PURE__ */ import_react47.default.createElement(Route, { path: "/login", element: /* @__PURE__ */ import_react47.default.createElement(LoginForm_default, null) }), /* @__PURE__ */ import_react47.default.createElement(
       Route,
       {
-        element: /* @__PURE__ */ import_react45.default.createElement(ProtectedRoute_default, null, /* @__PURE__ */ import_react45.default.createElement(MainLayout_default, null))
+        element: /* @__PURE__ */ import_react47.default.createElement(ProtectedRoute_default, null, /* @__PURE__ */ import_react47.default.createElement(MainLayout_default, null))
       },
-      /* @__PURE__ */ import_react45.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react45.default.createElement(DefaultDashboard_default, null) }),
-      /* @__PURE__ */ import_react45.default.createElement(Route, { path: "/dashboard", element: /* @__PURE__ */ import_react45.default.createElement(DefaultDashboard_default, null) }),
-      /* @__PURE__ */ import_react45.default.createElement(Route, { path: "agent_user_menus", element: /* @__PURE__ */ import_react45.default.createElement(Index_default2, null) }),
-      /* @__PURE__ */ import_react45.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react45.default.createElement(Form_default, null) }),
-      /* @__PURE__ */ import_react45.default.createElement(Route, { path: "agent_user_menus/edit/:id", element: /* @__PURE__ */ import_react45.default.createElement(Form_default, null) })
+      /* @__PURE__ */ import_react47.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react47.default.createElement(DefaultDashboard_default, null) }),
+      /* @__PURE__ */ import_react47.default.createElement(Route, { path: "/dashboard", element: /* @__PURE__ */ import_react47.default.createElement(DefaultDashboard_default, null) }),
+      /* @__PURE__ */ import_react47.default.createElement(Route, { path: "agent_user_menus", element: /* @__PURE__ */ import_react47.default.createElement(Index_default2, null) }),
+      /* @__PURE__ */ import_react47.default.createElement(Route, { path: "agent_user_menus/new", element: /* @__PURE__ */ import_react47.default.createElement(Form_default, null) }),
+      /* @__PURE__ */ import_react47.default.createElement(Route, { path: "agent_user_menus/edit/:id", element: /* @__PURE__ */ import_react47.default.createElement(Form_default, null) }),
+      /* @__PURE__ */ import_react47.default.createElement(Route, { path: "request_slips", element: /* @__PURE__ */ import_react47.default.createElement(Index_default3, null) }),
+      /* @__PURE__ */ import_react47.default.createElement(Route, { path: "request_slips/new", element: /* @__PURE__ */ import_react47.default.createElement(Form_default2, null) }),
+      /* @__PURE__ */ import_react47.default.createElement(Route, { path: "request_slips/edit/:id", element: /* @__PURE__ */ import_react47.default.createElement(Form_default2, null) })
     ));
   };
   var App_default = App;
@@ -33844,7 +34951,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var container = document.getElementById("root");
   var root = import_client.default.createRoot(container);
   root.render(
-    /* @__PURE__ */ import_react46.default.createElement(HashRouter, null, /* @__PURE__ */ import_react46.default.createElement(App_default, null))
+    /* @__PURE__ */ import_react48.default.createElement(HashRouter, null, /* @__PURE__ */ import_react48.default.createElement(App_default, null))
   );
 })();
 /*! Bundled license information:
