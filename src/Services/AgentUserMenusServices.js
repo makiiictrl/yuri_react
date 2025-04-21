@@ -45,4 +45,4 @@ export const saveItem = (data) => {
   } else {
     return axios.post(`http://localhost:3000/agent_user_menus`, data);
   }
-};
+}
