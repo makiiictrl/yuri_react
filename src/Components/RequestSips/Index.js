@@ -94,7 +94,7 @@ export default Index = () => {
     {
       name: <b>Address</b>,
       selector: row => row.address,
-      width: '520px',
+      width: '175px',
       whiteSpace: 'nowrap',
     },
     {
@@ -102,7 +102,7 @@ export default Index = () => {
       selector: row => row.type_of_request === 'Others'
         ? `${row.type_of_request} (${row.sub_type_of_request})`
         : row.type_of_request,
-      width: '250px',
+      width: '225px',
       whiteSpace: 'nowrap',
     },
     {
@@ -138,7 +138,7 @@ export default Index = () => {
         <div className="card title-line">
         <div className="card-header d-flex justify-content-between align-items-center">
           <h2 className="mb-0">
-            <i className="icofont icofont-id-card me-2"></i>
+          <i className="icofont icofont-document-folder me-2 text-dark"></i> 
             Request Slips
           </h2>
           <div className="d-flex align-items-center">

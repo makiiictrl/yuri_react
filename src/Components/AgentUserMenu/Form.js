@@ -59,8 +59,9 @@ export default Form = ({ ModalId }) => {
       <div className="row justify-content-center">
         <div className="col-md-4">
           <div className="card title-line">
-            <div className="card-header">
-              <h4 className="mt-1">Agent User Menu Details</h4>
+            <div className="card-header d-flex align-items-center">
+              <i className="icofont icofont-users me-2 text-dark"></i>
+              <h4 className="mb-0">Agent User Menu Details</h4>
             </div>
 
             <div className="card-body">
@@ -117,7 +118,7 @@ export default Form = ({ ModalId }) => {
                 <label>Agent ID</label>
                 <div className="input-group">
                   <span className="input-group-text">
-                    <i className="icofont icofont-user-alt-4"></i>
+                    <i className="icofont icofont-users me-2 text-dark"></i>
                   </span>
                   <input
                     className="form-control"

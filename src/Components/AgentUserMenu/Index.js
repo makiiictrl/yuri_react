@@ -139,7 +139,7 @@ export default Index = () => {
         <div className="card title-line">
         <div className="card-header d-flex justify-content-between align-items-center">
           <h2 className="mb-0">
-            <i className="icofont icofont-id-card me-2"></i>
+            <i className="icofont icofont-users me-2 text-dark"></i>
             Agent User Menus
           </h2>
           <div className="d-flex align-items-center">

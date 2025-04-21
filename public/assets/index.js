@@ -28410,20 +28410,20 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // src/Services/DashboardServices.js
   var getAgents = (args) => {
     return axios_default.get(
-      `${API_BASE_URL}/agents`,
+      `${"http://localhost:3000"}/agents`,
       {
         params: args
       }
     );
   };
   var saveAgent = (agent) => {
-    return axios_default.post(`${API_BASE_URL}/agents`, { agent });
+    return axios_default.post(`${"http://localhost:3000"}/agents`, { agent });
   };
   var deleteAgent = (id) => {
-    return axios_default.delete(`${API_BASE_URL}/agents/${id}`);
+    return axios_default.delete(`${"http://localhost:3000"}/agents/${id}`);
   };
   var updateAgent = (id, agentData) => {
-    return axios_default.patch(`${API_BASE_URL}/agents/${id}`, { agent: agentData });
+    return axios_default.patch(`${"http://localhost:3000"}/agents/${id}`, { agent: agentData });
   };
 
   // src/Components/AdminDashboard/NewAgentModal.js
@@ -29080,33 +29080,33 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // src/Services/AgentUserMenusServices.js
   var getAgentUserMenus = async () => {
-    return axios_default.get(`${API_BASE_URL}/agent_user_menus`);
+    return axios_default.get(`${"http://localhost:3000"}/agent_user_menus`);
   };
   var getItems = (args) => {
     return axios_default.get(
-      `${API_BASE_URL}/agent_user_menus`,
+      `${"http://localhost:3000"}/agent_user_menus`,
       {
         params: args
       }
     );
   };
   var menuIdLookUp = () => {
-    return axios_default.get(`${API_BASE_URL}/agent_user_menus/menu_id_lookup`);
+    return axios_default.get(`${"http://localhost:3000"}/agent_user_menus/menu_id_lookup`);
   };
   var showAgentUserMenus = (id) => {
-    return axios_default.get(`${API_BASE_URL}/agent_user_menus/${id}`);
+    return axios_default.get(`${"http://localhost:3000"}/agent_user_menus/${id}`);
   };
   var deleteAgentUserMenu = async (id) => {
-    return axios_default.delete(`${API_BASE_URL}/agent_user_menus/${id}`);
+    return axios_default.delete(`${"http://localhost:3000"}/agent_user_menus/${id}`);
   };
   var saveItem = (data2) => {
     if (data2.id) {
       return axios_default.put(
-        `${API_BASE_URL}/agent_user_menus/${data2.id}`,
+        `${"http://localhost:3000"}/agent_user_menus/${data2.id}`,
         data2
       );
     } else {
-      return axios_default.post(`${API_BASE_URL}/agent_user_menus`, data2);
+      return axios_default.post(`${"http://localhost:3000"}/agent_user_menus`, data2);
     }
   };
 
@@ -29224,7 +29224,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ];
     if (loading) return /* @__PURE__ */ import_react15.default.createElement("p", null, "Loading...");
     if (error) return /* @__PURE__ */ import_react15.default.createElement("p", null, "Error loading data");
-    return /* @__PURE__ */ import_react15.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react15.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react15.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Agent User Menus"), /* @__PURE__ */ import_react15.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react15.default.createElement(
+    return /* @__PURE__ */ import_react15.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react15.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react15.default.createElement("i", { className: "icofont icofont-users me-2 text-dark" }), "Agent User Menus"), /* @__PURE__ */ import_react15.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react15.default.createElement(
       "input",
       {
         className: "form-control form-control-sm",
@@ -33742,7 +33742,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         console.error("Error fetching data", err);
       });
     }, [id]);
-    return /* @__PURE__ */ import_react45.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "row justify-content-center" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "card-header" }, /* @__PURE__ */ import_react45.default.createElement("h4", { className: "mt-1" }, "Agent User Menu Details")), /* @__PURE__ */ import_react45.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react45.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react45.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react45.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react45.default.createElement("i", { className: "icofont icofont-license" })), /* @__PURE__ */ import_react45.default.createElement("div", { style: { flex: "1 1 auto" } }, /* @__PURE__ */ import_react45.default.createElement(ErrorBoundary_default, null, menuOptions.length > 0 && /* @__PURE__ */ import_react45.default.createElement(
+    return /* @__PURE__ */ import_react45.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "row justify-content-center" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "card-header d-flex align-items-center" }, /* @__PURE__ */ import_react45.default.createElement("i", { className: "icofont icofont-users me-2 text-dark" }), /* @__PURE__ */ import_react45.default.createElement("h4", { className: "mb-0" }, "Agent User Menu Details")), /* @__PURE__ */ import_react45.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react45.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react45.default.createElement("label", null, "Menu ID"), /* @__PURE__ */ import_react45.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react45.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react45.default.createElement("i", { className: "icofont icofont-license" })), /* @__PURE__ */ import_react45.default.createElement("div", { style: { flex: "1 1 auto" } }, /* @__PURE__ */ import_react45.default.createElement(ErrorBoundary_default, null, menuOptions.length > 0 && /* @__PURE__ */ import_react45.default.createElement(
       Typeahead_default2,
       {
         inputProps: { className: "form-control" },
@@ -33772,7 +33772,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           });
         }
       }
-    ))))), /* @__PURE__ */ import_react45.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react45.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react45.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react45.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react45.default.createElement("i", { className: "icofont icofont-user-alt-4" })), /* @__PURE__ */ import_react45.default.createElement(
+    ))))), /* @__PURE__ */ import_react45.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react45.default.createElement("label", null, "Agent ID"), /* @__PURE__ */ import_react45.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react45.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react45.default.createElement("i", { className: "icofont icofont-users me-2 text-dark" })), /* @__PURE__ */ import_react45.default.createElement(
       "input",
       {
         className: "form-control",
@@ -33872,7 +33872,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // src/Services/TransferSlipsServices.js
   var getTransferSlips = (args) => {
     return axios_default.get(
-      `${API_BASE_URL}/transfer_slips`,
+      `${"http://localhost:3000"}/transfer_slips`,
       {
         params: args
       }
@@ -33880,65 +33880,65 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
   var updateTransferSlip = (id, data2) => {
     return axios_default.put(
-      `${API_BASE_URL}/transfer_slips/${id}`,
+      `${"http://localhost:3000"}/transfer_slips/${id}`,
       data2
     );
   };
   var showTransferSlip = (id) => {
     return axios_default.get(
-      `${API_BASE_URL}/transfer_slips/${id}`
+      `${"http://localhost:3000"}/transfer_slips/${id}`
     );
   };
   var saveTransferSlips = (data2) => {
     return axios_default.post(
-      `${API_BASE_URL}/transfer_slips`,
+      `${"http://localhost:3000"}/transfer_slips`,
       data2
     );
   };
   async function fetchWarehousePersonnels() {
     const res = await axios_default.get(
-      `${API_BASE_URL}/api/warehouse_personnels`,
+      `${"http://localhost:3000"}/api/warehouse_personnels`,
       { params: { format: "json" } }
     );
     return res.data;
   }
   async function fetchLotNumberOptions() {
     const res = await axios_default.get(
-      `${API_BASE_URL}/api/lookups_inventorytransaction`,
+      `${"http://localhost:3000"}/api/lookups_inventorytransaction`,
       { params: { format: "json" } }
     );
     return res.data;
   }
   async function fetchProductDescriptionOptions() {
     const res = await axios_default.get(
-      `${API_BASE_URL}/api/products`,
+      `${"http://localhost:3000"}/api/products`,
       { params: { format: "json", company_filter: false } }
     );
     return res.data;
   }
   async function fetchProductByLot(lotNumber) {
     const res = await axios_default.get(
-      `${API_BASE_URL}/api/lookups_inventorytransaction`,
+      `${"http://localhost:3000"}/api/lookups_inventorytransaction`,
       { params: { lot_number: lotNumber } }
     );
     return res.data;
   }
   async function fetchDatesByLotAndSku(lotNumber, productSku) {
     const res = await axios_default.get(
-      `${API_BASE_URL}/api/lookups_inventorytransaction`,
+      `${"http://localhost:3000"}/api/lookups_inventorytransaction`,
       { params: { lot_number: lotNumber, product_sku: productSku } }
     );
     return res.data;
   }
   async function fetchNextSlipNumbers() {
     const res = await axios_default.get(
-      `${API_BASE_URL}/api/lookups_next_slip_numbers`,
+      `${"http://localhost:3000"}/api/lookups_next_slip_numbers`,
       { params: { format: "json" } }
     );
     return res.data.next_slip_numbers;
   }
   function fetchTransferSlip(id) {
-    return axios_default.get(`${API_BASE_URL}/transfer_slips/${id}`, {
+    return axios_default.get(`${"http://localhost:3000"}/transfer_slips/${id}`, {
       params: { format: "json" }
     });
   }
@@ -34019,7 +34019,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         }
       }
     };
-    return /* @__PURE__ */ import_react46.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react46.default.createElement("h4", { className: "mb-0" }, "Transfer Slip Information")), /* @__PURE__ */ import_react46.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react46.default.createElement(
+    return /* @__PURE__ */ import_react46.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react46.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react46.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react46.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-dark" }), "Transfer Slip Information")), /* @__PURE__ */ import_react46.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react46.default.createElement(
       import_react_data_table_component3.default,
       {
         columns: infoColumns,
@@ -34040,7 +34040,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         highlightOnHover: true,
         dense: true
       }
-    ), /* @__PURE__ */ import_react46.default.createElement("div", { className: "d-flex justify-content-between mt-3" }, /* @__PURE__ */ import_react46.default.createElement(Link, { to: "/transfer_slips", className: "btn btn-secondary" }, "Back"), /* @__PURE__ */ import_react46.default.createElement(Link, { to: `/transfer_slips/edit/${id}`, className: "btn btn-warning" }, "Edit"))))));
+    ), /* @__PURE__ */ import_react46.default.createElement("div", { className: "d-flex justify-content-between mt-3" }, /* @__PURE__ */ import_react46.default.createElement(Link, { to: "/transfer_slips", className: "btn btn-secondary btn-sm" }, "Back"), /* @__PURE__ */ import_react46.default.createElement(Link, { to: `/transfer_slips/edit/${id}`, className: "btn btn-warning btn-sm" }, "Edit"))))));
   }
 
   // src/Components/TransferSlips/Index.js
@@ -34107,14 +34107,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       },
       {
         name: /* @__PURE__ */ import_react47.default.createElement("b", null, "Actions"),
-        cell: (row) => /* @__PURE__ */ import_react47.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react47.default.createElement(Link, { to: `/transfer_slips/${row.id}`, title: "View" }, /* @__PURE__ */ import_react47.default.createElement("i", { className: "icon-eye text-warning me-1" })), /* @__PURE__ */ import_react47.default.createElement(
+        cell: (row) => /* @__PURE__ */ import_react47.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react47.default.createElement(Link, { to: `/transfer_slips/${row.id}`, title: "View" }, /* @__PURE__ */ import_react47.default.createElement("i", { className: "icon-eye text-primary me-1" })), /* @__PURE__ */ import_react47.default.createElement(
           Link,
           {
             to: `/transfer_slips/edit/${row.id}`,
             title: "Edit",
             className: "text-info me-1"
           },
-          /* @__PURE__ */ import_react47.default.createElement("i", { className: "icon-pencil-alt" })
+          /* @__PURE__ */ import_react47.default.createElement("i", { className: "icon-pencil-alt text-info" })
         ), /* @__PURE__ */ import_react47.default.createElement(
           Link,
           {
@@ -34136,7 +34136,25 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         button: true
       }
     ];
-    return /* @__PURE__ */ import_react47.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react47.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react47.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react47.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react47.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react47.default.createElement("i", { className: "icofont icofont-copy-black me-2" }), "Transfer Slips"), /* @__PURE__ */ import_react47.default.createElement(Link, { to: "/transfer_slips/new" }, /* @__PURE__ */ import_react47.default.createElement("button", { className: "btn btn-outline-primary btn-sm" }, "New Transfer Slip"))), /* @__PURE__ */ import_react47.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react47.default.createElement(
+    return /* @__PURE__ */ import_react47.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react47.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react47.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react47.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react47.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react47.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-dark" }), "Transfer Slips"), /* @__PURE__ */ import_react47.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react47.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react47.default.createElement(
+      "input",
+      {
+        className: "form-control form-control-sm",
+        type: "text",
+        placeholder: "Search...",
+        "aria-label": "Request Number",
+        onInput: (e3) => {
+          setArgs({ ...args, transfer_slip_number: e3.target.value });
+        }
+      }
+    ), /* @__PURE__ */ import_react47.default.createElement("button", { className: "btn btn-outline-primary btn-sm", type: "button" }, /* @__PURE__ */ import_react47.default.createElement("i", { className: "icofont icofont-search-alt-1" }))), /* @__PURE__ */ import_react47.default.createElement(
+      Link,
+      {
+        className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
+        to: "/request_slips/new"
+      },
+      "New Request Slip"
+    ))), /* @__PURE__ */ import_react47.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react47.default.createElement(
       import_react_data_table_component4.default,
       {
         columns,
@@ -34402,7 +34420,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         setErrorMessage("An error occurred while saving the transfer slip.");
       }
     };
-    return /* @__PURE__ */ import_react48.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react48.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react48.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Transfer Slip")), /* @__PURE__ */ import_react48.default.createElement("div", { className: "card-body" }, message && /* @__PURE__ */ import_react48.default.createElement("div", { className: "alert alert-success" }, message), errorMessage && /* @__PURE__ */ import_react48.default.createElement("div", { className: "alert alert-danger" }, errorMessage), /* @__PURE__ */ import_react48.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react48.default.createElement("label", null, "Company"), /* @__PURE__ */ import_react48.default.createElement(
+    return /* @__PURE__ */ import_react48.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react48.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react48.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-dark" }), "Transfer Slip")), /* @__PURE__ */ import_react48.default.createElement("div", { className: "card-body" }, message && /* @__PURE__ */ import_react48.default.createElement("div", { className: "alert alert-success" }, message), errorMessage && /* @__PURE__ */ import_react48.default.createElement("div", { className: "alert alert-danger" }, errorMessage), /* @__PURE__ */ import_react48.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react48.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react48.default.createElement("label", null, "Company"), /* @__PURE__ */ import_react48.default.createElement(
       Typeahead_default2,
       {
         id: "companyCode",
@@ -34541,7 +34559,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         onClick: handleDetailAddRow
       },
       "Add Row"
-    )), /* @__PURE__ */ import_react48.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react48.default.createElement(Link, { to: "/transfer_slips", className: "btn btn-secondary" }, "Back"), /* @__PURE__ */ import_react48.default.createElement("button", { type: "submit", className: "btn btn-success" }, "Save Transfer Slip")))))));
+    )), /* @__PURE__ */ import_react48.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react48.default.createElement(Link, { to: "/transfer_slips", className: "btn btn-secondary btn-sm" }, "Back"), /* @__PURE__ */ import_react48.default.createElement("button", { type: "submit", className: "btn btn-success btn-sm" }, "Save")))))));
   }
 
   // src/Components/TransferSlips/Edit.js
@@ -34692,7 +34710,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             selected: row.lot_number ? [row.lot_number] : [],
             placeholder: "LOT NO.",
             onChange: (sel) => handleDetailLotChange(row.id, sel[0] || ""),
-            className: "form-control form-control-sm"
+            inputProps: { className: "form-control-sm" }
           }
         )
       },
@@ -34706,7 +34724,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             selected: row.product_description ? [row.product_description] : [],
             placeholder: "ITEMS",
             onChange: (sel) => handleDetailFieldChange(row.id, "product_description", sel[0] || ""),
-            className: "form-control form-control-sm"
+            inputProps: { className: "form-control-sm" }
           }
         )
       },
@@ -34820,7 +34838,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         );
       }
     };
-    return /* @__PURE__ */ import_react49.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "card-header d-flex justify-content-between" }, /* @__PURE__ */ import_react49.default.createElement("h2", null, /* @__PURE__ */ import_react49.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Edit Transfer Slip")), /* @__PURE__ */ import_react49.default.createElement("div", { className: "card-body" }, message && /* @__PURE__ */ import_react49.default.createElement("div", { className: "alert alert-success" }, message), errorMessage && /* @__PURE__ */ import_react49.default.createElement("div", { className: "alert alert-danger" }, errorMessage), /* @__PURE__ */ import_react49.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react49.default.createElement("label", null, "Company"), /* @__PURE__ */ import_react49.default.createElement(
+    return /* @__PURE__ */ import_react49.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "card-header d-flex justify-content-between" }, /* @__PURE__ */ import_react49.default.createElement("h2", null, /* @__PURE__ */ import_react49.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-dark" }), "Edit Transfer Slip")), /* @__PURE__ */ import_react49.default.createElement("div", { className: "card-body" }, message && /* @__PURE__ */ import_react49.default.createElement("div", { className: "alert alert-success" }, message), errorMessage && /* @__PURE__ */ import_react49.default.createElement("div", { className: "alert alert-danger" }, errorMessage), /* @__PURE__ */ import_react49.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react49.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react49.default.createElement("label", null, "Company"), /* @__PURE__ */ import_react49.default.createElement(
       Typeahead_default2,
       {
         id: "companyCode",
@@ -34925,7 +34943,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         customStyles: detailTableStyles,
         noDataComponent: "No details added yet"
       }
-    ), /* @__PURE__ */ import_react49.default.createElement("button", { type: "button", className: "btn btn-info btn-sm mt-3", onClick: handleDetailAddRow }, "Add Row")), /* @__PURE__ */ import_react49.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react49.default.createElement(Link, { to: "/transfer_slips", className: "btn btn-secondary" }, "Back"), /* @__PURE__ */ import_react49.default.createElement("button", { type: "submit", className: "btn btn-success" }, "Update Transfer Slip")))))));
+    ), /* @__PURE__ */ import_react49.default.createElement("button", { type: "button", className: "btn btn-info btn-sm mt-3", onClick: handleDetailAddRow }, "Add Row")), /* @__PURE__ */ import_react49.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react49.default.createElement(Link, { to: "/transfer_slips", className: "btn btn-secondary btn-sm" }, "Back"), /* @__PURE__ */ import_react49.default.createElement("button", { type: "submit", className: "btn btn-success btn-sm" }, "Update")))))));
   }
 
   // src/Components/RequestSips/Index.js
@@ -35059,13 +35077,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       {
         name: /* @__PURE__ */ import_react50.default.createElement("b", null, "Address"),
         selector: (row) => row.address,
-        width: "520px",
+        width: "175px",
         whiteSpace: "nowrap"
       },
       {
         name: /* @__PURE__ */ import_react50.default.createElement("b", null, "Purpose of Request"),
         selector: (row) => row.type_of_request === "Others" ? `${row.type_of_request} (${row.sub_type_of_request})` : row.type_of_request,
-        width: "250px",
+        width: "225px",
         whiteSpace: "nowrap"
       },
       {
@@ -35090,7 +35108,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ];
     if (loading) return /* @__PURE__ */ import_react50.default.createElement("p", null, "Loading...");
     if (error) return /* @__PURE__ */ import_react50.default.createElement("p", null, "Error loading data");
-    return /* @__PURE__ */ import_react50.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react50.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react50.default.createElement("i", { className: "icofont icofont-id-card me-2" }), "Request Slips"), /* @__PURE__ */ import_react50.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react50.default.createElement(
+    return /* @__PURE__ */ import_react50.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react50.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react50.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-dark" }), "Request Slips"), /* @__PURE__ */ import_react50.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react50.default.createElement(
       "input",
       {
         className: "form-control form-control-sm",
@@ -35543,7 +35561,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         )
       }
     ];
-    return /* @__PURE__ */ import_react51.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react51.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react51.default.createElement("div", { className: "card-header " }, /* @__PURE__ */ import_react51.default.createElement("h1", null, "New Request Slip")), /* @__PURE__ */ import_react51.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react51.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Request Details"), /* @__PURE__ */ import_react51.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react51.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react51.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react51.default.createElement("label", null, "Company Code"), /* @__PURE__ */ import_react51.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react51.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react51.default.createElement("i", { className: "icofont icofont-building-alt" })), /* @__PURE__ */ import_react51.default.createElement(
+    return /* @__PURE__ */ import_react51.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react51.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react51.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react51.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react51.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-dark" }), "Request Slip")), /* @__PURE__ */ import_react51.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react51.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Request Details"), /* @__PURE__ */ import_react51.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react51.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react51.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react51.default.createElement("label", null, "Company Code"), /* @__PURE__ */ import_react51.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react51.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react51.default.createElement("i", { className: "icofont icofont-building-alt" })), /* @__PURE__ */ import_react51.default.createElement(
       "select",
       {
         className: "form-select",

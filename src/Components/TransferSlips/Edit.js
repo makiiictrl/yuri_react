@@ -187,7 +187,7 @@ export default function TransferSlipEditForm() {
           selected={row.lot_number ? [row.lot_number] : []}
           placeholder="LOT NO."
           onChange={(sel) => handleDetailLotChange(row.id, sel[0] || "")}
-          className="form-control form-control-sm"
+          inputProps={{ className: "form-control-sm" }}
         />
       ),
     },
@@ -202,7 +202,7 @@ export default function TransferSlipEditForm() {
           onChange={(sel) =>
             handleDetailFieldChange(row.id, "product_description", sel[0] || "")
           }
-          className="form-control form-control-sm"
+          inputProps={{ className: "form-control-sm" }}
         />
       ),
     },
@@ -332,7 +332,7 @@ export default function TransferSlipEditForm() {
         <div className="card title-line">
           <div className="card-header d-flex justify-content-between">
             <h2>
-              <i className="icofont icofont-id-card me-2" />
+            <i className="icofont icofont-paper-plane me-2 text-dark"></i>
               Edit Transfer Slip
             </h2>
           </div>
@@ -472,8 +472,8 @@ export default function TransferSlipEditForm() {
               </div>
 
               <div className="d-flex justify-content-between">
-                <Link to="/transfer_slips" className="btn btn-secondary">Back</Link>
-                <button type="submit" className="btn btn-success">Update Transfer Slip</button>
+                <Link to="/transfer_slips" className="btn btn-secondary btn-sm">Back</Link>
+                <button type="submit" className="btn btn-success btn-sm">Update</button>
               </div>
             </form>
           </div>
