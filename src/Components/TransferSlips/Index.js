@@ -83,14 +83,14 @@ export default function Index() {
       cell: (row) => (
         <div className="action">
           <Link to={`/transfer_slips/${row.id}`} title="View">
-            <i className="icon-eye text-warning me-1"></i>
+            <i className="icon-eye text-primary me-1"></i>
           </Link>
           <Link
             to={`/transfer_slips/edit/${row.id}`}
             title="Edit"
             className="text-info me-1"
           >
-            <i className="icon-pencil-alt"></i>
+            <i className="icon-pencil-alt text-info"></i>
           </Link>
           <Link
             title="Print"
@@ -117,16 +117,36 @@ export default function Index() {
     <div className="page-body">
       <div className="col-sm-12">
         <div className="card title-line">
+          
+
           <div className="card-header d-flex justify-content-between align-items-center">
             <h2 className="mb-0">
-              <i className="icofont icofont-copy-black me-2"></i>
+              <i className="icofont icofont-paper-plane me-2 text-dark"></i>
               Transfer Slips
             </h2>
-            <Link to="/transfer_slips/new">
-              <button className="btn btn-outline-primary btn-sm">
-                New Transfer Slip
+
+            <div className="d-flex align-items-center">
+            <div className="input-group me-2">
+              <input
+                className="form-control form-control-sm"
+                type="text"
+                placeholder="Search..."
+                aria-label="Request Number"
+                onInput={(e) => {
+                  setArgs({ ...args, transfer_slip_number: e.target.value });
+                }}
+              />
+              <button className="btn btn-outline-primary btn-sm" type="button">
+                <i className="icofont icofont-search-alt-1"></i>
               </button>
+            </div>
+            <Link
+              className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
+              to="/request_slips/new"
+            >
+              New Request Slip
             </Link>
+          </div>
           </div>
           <div className="card-body">
             <DataTable

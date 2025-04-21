@@ -312,7 +312,7 @@ export default function TransferSlipForm() {
         <div className="card title-line">
           <div className="card-header d-flex justify-content-between align-items-center">
             <h2 className="mb-0">
-              <i className="icofont icofont-id-card me-2" />
+              <i className="icofont icofont-paper-plane me-2 text-dark"></i>
               Transfer Slip
             </h2>
           </div>
@@ -520,11 +520,11 @@ export default function TransferSlipForm() {
 
               {/* Actions */}
               <div className="d-flex justify-content-between">
-                <Link to="/transfer_slips" className="btn btn-secondary">
+                <Link to="/transfer_slips" className="btn btn-secondary btn-sm">
                   Back
                 </Link>
-                <button type="submit" className="btn btn-success">
-                  Save Transfer Slip
+                <button type="submit" className="btn btn-success btn-sm">
+                  Save
                 </button>
               </div>
             </form>

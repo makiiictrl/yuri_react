@@ -88,7 +88,10 @@ export default function TransferSlipInfo() {
       <div className="col-sm-12">
         <div className="card title-line">
           <div className="card-header d-flex justify-content-between align-items-center">
-            <h4 className="mb-0">Transfer Slip Information</h4>
+            <h2 className="mb-0">
+              <i className="icofont icofont-paper-plane me-2 text-dark"></i>
+              Transfer Slip Information
+            </h2>
           </div>
           <div className="card-body">
             <DataTable
@@ -112,8 +115,8 @@ export default function TransferSlipInfo() {
             />
 
             <div className="d-flex justify-content-between mt-3">
-              <Link to="/transfer_slips" className="btn btn-secondary">Back</Link>
-              <Link to={`/transfer_slips/edit/${id}`} className="btn btn-warning">Edit</Link>
+              <Link to="/transfer_slips" className="btn btn-secondary btn-sm">Back</Link>
+              <Link to={`/transfer_slips/edit/${id}`} className="btn btn-warning btn-sm">Edit</Link>
             </div>
           </div>
         </div>

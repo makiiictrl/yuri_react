@@ -520,9 +520,12 @@ export default Form = () => {
   return (
     <div className="page-body">
       <div className="card title-line">
-        <div className="card-header ">
-          <h1>New Request Slip</h1>
-        </div>
+        <div className="card-header d-flex justify-content-between align-items-center">
+            <h2 className="mb-0">
+              <i className="icofont icofont-document-folder me-2 text-dark"></i>
+              Request Slip
+            </h2>
+          </div>
         <div className="card-body">
           <h5 className="mb-3 border-bottom pb-2">Request Details</h5>
           <div className="row">
