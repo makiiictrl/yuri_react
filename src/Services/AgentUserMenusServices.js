@@ -1,14 +1,16 @@
-import axios from "axios";
+import axios from `axios`;
+
+
 
 //For Index
 export const getAgentUserMenus = async () => {
-  return axios.get("http://localhost:3000/agent_user_menus");
+  return axios.get(`${API_BASE_URL}/agent_user_menus`);
 };
 
 // For Search in Index
 export const getItems = (args) => {
     return axios.get(
-    `http://localhost:3000/agent_user_menus`,
+    `${API_BASE_URL}/agent_user_menus`,
     {
         params: args
     }
@@ -16,12 +18,12 @@ export const getItems = (args) => {
 }
 
 export const menuIdLookUp = () => {
-  return axios.get("http://localhost:3000/agent_user_menus/menu_id_lookup");
+  return axios.get(`${API_BASE_URL}/agent_user_menus/menu_id_lookup`);
 };
 
 // For Edit
 export const showAgentUserMenus = (id) => {
-  return axios.get(`http://localhost:3000/agent_user_menus/${id}`);
+  return axios.get(`${API_BASE_URL}/agent_user_menus/${id}`);
 };
 
 export const editAgentUserMenu = async (id, data) => {
@@ -29,20 +31,20 @@ export const editAgentUserMenu = async (id, data) => {
 };
 
 export const deleteAgentUserMenu = async (id) => {
-  return axios.delete(`http://localhost:3000/agent_user_menus/${id}`);
+  return axios.delete(`${API_BASE_URL}/agent_user_menus/${id}`);
 };
 
 export const createAgentUserMenu = async (data) => {
-  return axios.post("/agent_user_menus", data);
+  return axios.post(`/agent_user_menus`, data);
 };
 
 export const saveItem = (data) => {
   if (data.id) {
     return axios.put(
-      `http://localhost:3000/agent_user_menus/${data.id}`,
+      `${API_BASE_URL}/agent_user_menus/${data.id}`,
       data
     );
   } else {
-    return axios.post(`http://localhost:3000/agent_user_menus`, data);
+    return axios.post(`${API_BASE_URL}/agent_user_menus`, data);
   }
 }

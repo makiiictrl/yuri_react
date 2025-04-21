@@ -1,10 +1,9 @@
-// File: src/components/TransferSlipEditForm.jsx
+// File: src/components/TransferSlipForm.jsx
 import React, { useState, useEffect, useMemo } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DataTable from "react-data-table-component";
+import { saveTransferSlips } from "../../Services/TransferSlipsServices";
 import {
-  fetchTransferSlip,
-  updateTransferSlip,
   fetchWarehousePersonnels,
   fetchLotNumberOptions,
   fetchProductDescriptionOptions,
@@ -16,11 +15,10 @@ import { LOAD_COMPANY_CODE_SELECT } from "../../Config/CompanyCodes";
 import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 
-export default function TransferSlipEditForm() {
-  const { id } = useParams();
+export default function TransferSlipForm() {
   const navigate = useNavigate();
 
-  // header
+  // Header state
   const [header, setHeader] = useState({
     companyCode: "",
     transferSlipNumber: "",
@@ -33,10 +31,10 @@ export default function TransferSlipEditForm() {
     receivedDate: "",
   });
 
-  // detail rows
+  // Detail rows for DataTable
   const [detailRows, setDetailRows] = useState([]);
 
-  // lookups
+  // Lookup options & next‑slip numbers
   const [lotNumberOptions, setLotNumberOptions] = useState([]);
   const [productDescriptionOptions, setProductDescriptionOptions] = useState([]);
   const [personnels, setPersonnels] = useState({});
@@ -44,67 +42,33 @@ export default function TransferSlipEditForm() {
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  // build typeahead lists
+  // Build Typeahead lists
   const companyOptions = useMemo(
     () =>
       Object.entries(LOAD_COMPANY_CODE_SELECT).map(([value, label]) => ({
-        value,
         label,
+        value,
       })),
     []
   );
   const transferToOptions = companyOptions;
   const personnelOptions = useMemo(
-    () => Object.entries(personnels).map(([value, label]) => ({ value, label })),
+    () =>
+      Object.entries(personnels).map(([value, label]) => ({ label, value })),
     [personnels]
   );
 
-  const isValidDate = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d);
+  const isValidDate = (dateStr) => /^\d{4}-\d{2}-\d{2}$/.test(dateStr);
 
-  // initial load
+  // Fetch initial lookup & next‑slip data
   useEffect(() => {
     fetchWarehousePersonnels().then(setPersonnels).catch(console.error);
     fetchLotNumberOptions().then(setLotNumberOptions).catch(console.error);
     fetchProductDescriptionOptions().then(setProductDescriptionOptions).catch(console.error);
     fetchNextSlipNumbers().then(setNextSlipNumbers).catch(console.error);
+  }, []);
 
-    if (id) {
-      fetchTransferSlip(id)
-        .then(({ data }) => {
-          const slip = data.transfer_slip;
-          const details = data.details || [];
-          setHeader({
-            companyCode: slip.company_code?.toString() || "",
-            transferSlipNumber: slip.transfer_slip_number || "",
-            transferTo: slip.transfer_to?.toString() || "",
-            receivedBy: slip.received_by || "",
-            transferSlipType: slip.transfer_slip_type || "",
-            transferSlipTypeOther: slip.transfer_slip_type_other || "",
-            transferredBy: slip.transferred_by?.toString() || "",
-            transferredByDate: slip.transferred_by_date || "",
-            receivedDate: slip.received_by_date || "",
-          });
-          setDetailRows(
-            details.map((d, i) => ({
-              id: Date.now() + i,
-              lot_number: d.lot_number,
-              product_description: d.product_description,
-              manufacturing_date: d.manufacturing_date,
-              expiry_date: d.expiry_date,
-              quantity: d.quantity,
-              job_order_number: d.job_order_number,
-              remarks: d.remarks,
-            }))
-          );
-        })
-        .catch((err) => {
-          console.error("Failed to load slip:", err);
-          setErrorMessage("Could not load transfer slip for editing.");
-        });
-    }
-  }, [id]);
-
-  // detail row handlers
+  // Add a blank detail row
   const handleDetailAddRow = () => {
     setDetailRows((prev) => [
       ...prev,
@@ -120,13 +84,18 @@ export default function TransferSlipEditForm() {
       },
     ]);
   };
-  const handleDetailDeleteRow = (rid) =>
-    setDetailRows((prev) => prev.filter((r) => r.id !== rid));
 
-  const handleDetailLotChange = async (rid, value) => {
+  // Remove a detail row
+  const handleDetailDeleteRow = (id) => {
+    setDetailRows((prev) => prev.filter((r) => r.id !== id));
+  };
+
+  // When user selects a lot number: clear then fetch new values
+  const handleDetailLotChange = async (id, value) => {
+    // clear existing values in that row
     setDetailRows((prev) =>
       prev.map((r) =>
-        r.id === rid
+        r.id === id
           ? {
               ...r,
               lot_number: value,
@@ -138,22 +107,27 @@ export default function TransferSlipEditForm() {
       )
     );
     if (!value) return;
+
     try {
+      // fetch product description
       const prodVal = await fetchProductByLot(value);
       if (prodVal) {
         setDetailRows((prev) =>
           prev.map((r) =>
-            r.id === rid ? { ...r, product_description: String(prodVal) } : r
+            r.id === id
+              ? { ...r, product_description: String(prodVal) }
+              : r
           )
         );
       }
-      const sku = String(prodVal).split(" ")[0] || "";
-      const dates = await fetchDatesByLotAndSku(value, sku);
+      // fetch dates
+      const prodKey = String(prodVal).split(" ")[0] || "";
+      const dates = await fetchDatesByLotAndSku(value, prodKey);
       if (dates?.[0]) {
         const [mfg, exp] = String(dates[0]).split(" ");
         setDetailRows((prev) =>
           prev.map((r) =>
-            r.id === rid
+            r.id === id
               ? {
                   ...r,
                   manufacturing_date: isValidDate(mfg) ? mfg : "",
@@ -163,20 +137,30 @@ export default function TransferSlipEditForm() {
           )
         );
       }
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.error(err);
     }
   };
 
-  const handleDetailFieldChange = (rid, field, v) =>
+  // Generic field change for detail rows
+  const handleDetailFieldChange = (id, field, value) => {
     setDetailRows((prev) =>
-      prev.map((r) => (r.id === rid ? { ...r, [field]: v } : r))
+      prev.map((r) =>
+        r.id === id ? { ...r, [field]: value } : r
+      )
     );
-
-  const detailTableStyles = {
-    rows: { style: { marginBottom: "12px" } },
   };
 
+  // Add vertical spacing between DataTable rows
+  const detailTableStyles = {
+    rows: {
+      style: {
+        marginBottom: "12px",
+      },
+    },
+  };
+
+  // DataTable column definitions
   const detailColumns = [
     {
       name: <b>LOT NO.</b>,
@@ -187,7 +171,7 @@ export default function TransferSlipEditForm() {
           selected={row.lot_number ? [row.lot_number] : []}
           placeholder="LOT NO."
           onChange={(sel) => handleDetailLotChange(row.id, sel[0] || "")}
-          className="form-control form-control-sm"
+          className="w-100"
         />
       ),
     },
@@ -202,7 +186,7 @@ export default function TransferSlipEditForm() {
           onChange={(sel) =>
             handleDetailFieldChange(row.id, "product_description", sel[0] || "")
           }
-          className="form-control form-control-sm"
+          className="w-100"
         />
       ),
     },
@@ -211,7 +195,7 @@ export default function TransferSlipEditForm() {
       cell: (row) => (
         <input
           type="date"
-          className="form-control form-control-sm text-center"
+          className="form-control"
           value={row.manufacturing_date}
           onChange={(e) =>
             handleDetailFieldChange(row.id, "manufacturing_date", e.target.value)
@@ -224,7 +208,7 @@ export default function TransferSlipEditForm() {
       cell: (row) => (
         <input
           type="date"
-          className="form-control form-control-sm text-center"
+          className="form-control"
           value={row.expiry_date}
           onChange={(e) =>
             handleDetailFieldChange(row.id, "expiry_date", e.target.value)
@@ -237,7 +221,7 @@ export default function TransferSlipEditForm() {
       cell: (row) => (
         <input
           type="number"
-          className="form-control form-control-sm"
+          className="form-control"
           value={row.quantity}
           onChange={(e) =>
             handleDetailFieldChange(row.id, "quantity", e.target.value)
@@ -250,7 +234,7 @@ export default function TransferSlipEditForm() {
       cell: (row) => (
         <input
           type="text"
-          className="form-control form-control-sm"
+          className="form-control"
           value={row.job_order_number}
           onChange={(e) =>
             handleDetailFieldChange(row.id, "job_order_number", e.target.value)
@@ -263,7 +247,7 @@ export default function TransferSlipEditForm() {
       cell: (row) => (
         <input
           type="text"
-          className="form-control form-control-sm"
+          className="form-control"
           value={row.remarks}
           onChange={(e) =>
             handleDetailFieldChange(row.id, "remarks", e.target.value)
@@ -278,7 +262,7 @@ export default function TransferSlipEditForm() {
           className="btn btn-danger btn-sm"
           onClick={() => handleDetailDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white" />
+          <i className="icon-trash text-white"></i>
         </button>
       ),
       ignoreRowClick: true,
@@ -286,7 +270,7 @@ export default function TransferSlipEditForm() {
     },
   ];
 
-  // submit
+  // Form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
@@ -313,16 +297,12 @@ export default function TransferSlipEditForm() {
         remarks: d.remarks,
       })),
     };
-
     try {
-      const res = await updateTransferSlip(id, payload);
-      navigate(`/transfer_slips/${res.data.transfer_slip.id}`);
+      const response = await saveTransferSlips(payload);
+      navigate(`/transfer_slips/${response.data.id}`);
     } catch (err) {
-      console.error(err);
-      setErrorMessage(
-        err.response?.data?.errors?.join(", ") ||
-          "An error occurred while updating."
-      );
+      console.error("Error saving transfer slip:", err);
+      setErrorMessage("An error occurred while saving the transfer slip.");
     }
   };
 
@@ -330,32 +310,44 @@ export default function TransferSlipEditForm() {
     <div className="page-body">
       <div className="col-sm-12">
         <div className="card title-line">
-          <div className="card-header d-flex justify-content-between">
-            <h2>
+          <div className="card-header d-flex justify-content-between align-items-center">
+            <h2 className="mb-0">
               <i className="icofont icofont-id-card me-2" />
-              Edit Transfer Slip
+              Transfer Slip
             </h2>
           </div>
           <div className="card-body">
             {message && <div className="alert alert-success">{message}</div>}
-            {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+            {errorMessage && (
+              <div className="alert alert-danger">{errorMessage}</div>
+            )}
 
             <form onSubmit={handleSubmit}>
+              {/* Header Fields */}
               <div className="row">
                 <div className="col-md-6">
+                  {/* Company & TS Number */}
                   <div className="mb-3">
                     <label>Company</label>
                     <Typeahead
                       id="companyCode"
                       labelKey="label"
                       options={companyOptions}
-                      selected={header.companyCode ? [companyOptions.find(o => o.value === header.companyCode)] : []}
-                      onChange={sel => {
+                      selected={
+                        header.companyCode
+                          ? [
+                              companyOptions.find(
+                                (o) => o.value === header.companyCode
+                              ),
+                            ]
+                          : []
+                      }
+                      onChange={(sel) => {
                         const code = sel[0]?.value || "";
-                        setHeader(h => ({
+                        setHeader((h) => ({
                           ...h,
                           companyCode: code,
-                          transferSlipNumber: nextSlipNumbers[code] || h.transferSlipNumber
+                          transferSlipNumber: nextSlipNumbers[code] || "",
                         }));
                       }}
                       placeholder="Select company..."
@@ -367,17 +359,37 @@ export default function TransferSlipEditForm() {
                       type="text"
                       className="form-control"
                       value={header.transferSlipNumber}
-                      onChange={e => setHeader(h => ({ ...h, transferSlipNumber: e.target.value }))}
+                      onChange={(e) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferSlipNumber: e.target.value,
+                        }))
+                      }
                     />
                   </div>
+
+                  {/* Transfer To & Received By */}
                   <div className="mb-3">
                     <label>To</label>
                     <Typeahead
                       id="transferTo"
                       labelKey="label"
                       options={transferToOptions}
-                      selected={header.transferTo ? [transferToOptions.find(o => o.value === header.transferTo)] : []}
-                      onChange={sel => setHeader(h => ({ ...h, transferTo: sel[0]?.value || "" }))}
+                      selected={
+                        header.transferTo
+                          ? [
+                              transferToOptions.find(
+                                (o) => o.value === header.transferTo
+                              ),
+                            ]
+                          : []
+                      }
+                      onChange={(sel) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferTo: sel[0]?.value || "",
+                        }))
+                      }
                       placeholder="Select destination..."
                     />
                   </div>
@@ -387,27 +399,35 @@ export default function TransferSlipEditForm() {
                       type="text"
                       className="form-control"
                       value={header.receivedBy}
-                      onChange={e => setHeader(h => ({ ...h, receivedBy: e.target.value }))}
+                      onChange={(e) =>
+                        setHeader((h) => ({ ...h, receivedBy: e.target.value }))
+                      }
                     />
                   </div>
                 </div>
                 <div className="col-md-6">
+                  {/* Slip Type */}
                   <div className="mb-3">
                     <label>Transfer Slip Type</label>
                     <Typeahead
                       id="transferSlipType"
                       labelKey="label"
                       options={[
-                        { value: "Commercial", label: "Commercial" },
-                        { value: "Sample",       label: "Sample" },
-                        { value: "Other",        label: "Other" }
+                        { label: "Commercial", value: "Commercial" },
+                        { label: "Sample", value: "Sample" },
+                        { label: "Other", value: "Other" },
                       ]}
                       selected={
                         header.transferSlipType
-                          ? [{ value: header.transferSlipType, label: header.transferSlipType }]
+                          ? [{ label: header.transferSlipType, value: header.transferSlipType }]
                           : []
                       }
-                      onChange={sel => setHeader(h => ({ ...h, transferSlipType: sel[0]?.value || "" }))}
+                      onChange={(sel) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferSlipType: sel[0]?.value || "",
+                        }))
+                      }
                       placeholder="Select slip type..."
                     />
                     {header.transferSlipType === "Other" && (
@@ -416,18 +436,34 @@ export default function TransferSlipEditForm() {
                         className="form-control mt-2"
                         placeholder="Specify other type"
                         value={header.transferSlipTypeOther}
-                        onChange={e => setHeader(h => ({ ...h, transferSlipTypeOther: e.target.value }))}
+                        onChange={(e) =>
+                          setHeader((h) => ({
+                            ...h,
+                            transferSlipTypeOther: e.target.value,
+                          }))
+                        }
                       />
                     )}
                   </div>
+
+                  {/* Transferred By & Dates */}
                   <div className="mb-3">
                     <label>Transferred By</label>
                     <Typeahead
                       id="transferredBy"
                       labelKey="label"
                       options={personnelOptions}
-                      selected={header.transferredBy ? [personnelOptions.find(o => o.value === header.transferredBy)] : []}
-                      onChange={sel => setHeader(h => ({ ...h, transferredBy: sel[0]?.value || "" }))}
+                      selected={
+                        header.transferredBy
+                          ? [{ label: header.transferredBy, value: header.transferredBy }]
+                          : []
+                      }
+                      onChange={(sel) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferredBy: sel[0]?.value || "",
+                        }))
+                      }
                       placeholder="Select person..."
                     />
                   </div>
@@ -437,7 +473,12 @@ export default function TransferSlipEditForm() {
                       type="date"
                       className="form-control"
                       value={header.transferredByDate}
-                      onChange={e => setHeader(h => ({ ...h, transferredByDate: e.target.value }))}
+                      onChange={(e) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferredByDate: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                   <div className="mb-3">
@@ -446,12 +487,15 @@ export default function TransferSlipEditForm() {
                       type="date"
                       className="form-control"
                       value={header.receivedDate}
-                      onChange={e => setHeader(h => ({ ...h, receivedDate: e.target.value }))}
+                      onChange={(e) =>
+                        setHeader((h) => ({ ...h, receivedDate: e.target.value }))
+                      }
                     />
                   </div>
                 </div>
               </div>
 
+              {/* Items Details DataTable */}
               <div className="mb-4">
                 <h5 className="mb-3 border-bottom pb-2">Items Details</h5>
                 <DataTable
@@ -460,19 +504,28 @@ export default function TransferSlipEditForm() {
                   responsive
                   striped
                   bordered
+                  noDataComponent="No details added yet"
                   highlightOnHover
                   dense
                   customStyles={detailTableStyles}
-                  noDataComponent="No details added yet"
                 />
-                <button type="button" className="btn btn-info btn-sm mt-3" onClick={handleDetailAddRow}>
+                <button
+                  type="button"
+                  className="btn btn-info btn-sm mt-3"
+                  onClick={handleDetailAddRow}
+                >
                   Add Row
                 </button>
               </div>
 
+              {/* Actions */}
               <div className="d-flex justify-content-between">
-                <Link to="/transfer_slips" className="btn btn-secondary">Back</Link>
-                <button type="submit" className="btn btn-success">Update Transfer Slip</button>
+                <Link to="/transfer_slips" className="btn btn-secondary">
+                  Back
+                </Link>
+                <button type="submit" className="btn btn-success">
+                  Save Transfer Slip
+                </button>
               </div>
             </form>
           </div>

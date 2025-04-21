@@ -5,6 +5,7 @@ import NewAgentListModal from "./NewAgentModal";
 import { Link } from "react-router-dom";
 import { getAgents, deleteAgent } from "../../Services/DashboardServices";
 import EditAgentModal from "./EditAgentModal";
+import EditAccount from "../../Layouts/EditAccount";
 
 function formatName(fullName = "") {
   return fullName
@@ -163,6 +164,15 @@ export default AdminDashboard = () => {
                         <span className="txt-primary">
                           {formatName(fullName)}
                         </span>
+                        <button
+                          className="btn btn-outline-primary btn-sm ms-2"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editAccountModal"
+                        >
+                          <i className="icofont icofont-ui-edit"></i> Edit
+                        </button>
+                        <EditAccount />
                       </h1>
                     </div>
                     <div className="image-section">
@@ -196,20 +206,39 @@ export default AdminDashboard = () => {
                     <i className="icofont icofont-users-social"></i> {"  "}
                     Agents List
                   </h2>
+                  <div className="d-flex align-items-center">
+                    <div className="input-group me-2">
+                      <input
+                        className="form-control form-control-sm"
+                        type="text"
+                        placeholder="Search..."
+                        aria-label="Search..."
+                        onInput={(e) => {
+                          setArgs({ ...args, search: e.target.value });
+                        }}
+                      />
+                      <button
+                        className="btn btn-outline-primary btn-sm"
+                        type="button"
+                      >
+                        <i className="icofont icofont-search-alt-1"></i>
+                      </button>
+                    </div>
 
-                  {/* Button that triggers the modal */}
-                  <button
-                    className="btn btn-outline-primary btn-sm"
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#largeModal" // Must match the id from your modal component
-                  >
-                    New Agent List
-                  </button>
-                  <EditAgentModal agentToEdit={currentAgent} />
+                    {/* Button that triggers the modal */}
+                    <button
+                      className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#largeModal"
+                    >
+                      New Agent
+                    </button>
+                    <EditAgentModal agentToEdit={currentAgent} />
 
-                  {/* Import and include the separate modal component */}
-                  <NewAgentListModal />
+                    {/* Import and include the separate modal component */}
+                    <NewAgentListModal />
+                  </div>
                 </div>
                 <div className="card-body">
                   <DataTable
