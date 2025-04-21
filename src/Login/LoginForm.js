@@ -107,7 +107,7 @@ const LoginForm = () => {
                 required
               />
             </div>
-            <div className="d-grid">
+            <div className="d-flex">
               <button type="submit" className="btn btn-primary">
                 Log in
               </button>

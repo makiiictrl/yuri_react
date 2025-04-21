@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-
 import DataTable from "react-data-table-component";
-import { getTransferSlips,  } from "../../Services/TransferSlipsServices";
-// import NewModal from "./NewModal";
-// import EditModal from "./EditModal";
-// import DeleteModal from "./DeleteModal";
+import { getTransferSlips } from "../../Services/TransferSlipsServices";
+import { LOAD_COMPANY_CODE_SELECT } from "../../Config/CompanyCodes";
+import Show from "./Show";
 
-export default Index = () => {
+export default function Index() {
   const [isShowOpen, setIsShowOpen] = useState(false);
   const [args, setArgs] = useState({});
   const [data, setData] = useState([]);
@@ -18,14 +15,13 @@ export default Index = () => {
   const refreshItems = () => {
     getTransferSlips(args)
       .then((response) => {
-        console.log(response.data);
         setData(response.data);
       })
-      .catch((response) => {
+      .catch(() => {
         alert("Error in fetching data.");
-        console.log(response);
       });
   };
+
   useEffect(() => {
     refreshItems();
   }, [args]);
@@ -42,28 +38,13 @@ export default Index = () => {
         setLoading(false);
       });
   }, []);
-  // Handler for deleting a record.
-  const handleDelete = (id) => { 
-    if (window.confirm("Are you sure you want to delete this record?")) {
-      deleteAgentUserMenu(id)
-        .then(() => {
-          window.location.reload();
-          alert("Record deleted successfully");
-        }
-        )
-        .catch((err) => {
-          console.error("Error deleting record", err);
-        });
-    }
-  };
-  
 
-
-  // Define the columns for your table
   const columns = [
     {
       name: <b>Company</b>,
-      selector: (row) => row.company_code,
+      selector: (row) =>
+        LOAD_COMPANY_CODE_SELECT[row.company_code?.toString()] ||
+        row.company_code,
       sortable: true,
     },
     {
@@ -77,10 +58,12 @@ export default Index = () => {
     },
     {
       name: <b>To</b>,
-      selector: (row) => row.transfer_to,
+      selector: (row) =>
+        LOAD_COMPANY_CODE_SELECT[row.transfer_to?.toString()] ||
+        row.transfer_to,
     },
     {
-      name: <b>Transferred by</b>,
+      name: <b>Transferred By</b>,
       selector: (row) => row.transferred_by,
     },
     {
@@ -99,41 +82,30 @@ export default Index = () => {
       name: <b>Actions</b>,
       cell: (row) => (
         <div className="action">
-          <Link
-          type="button"
-          title="Show"
-          data-bs-toggle="modal"
-          data-bs-target="#showModal"
-          >
+          <Link to={`/transfer_slips/${row.id}`} title="View">
             <i className="icon-eye text-warning me-1"></i>
           </Link>
-          <Link 
-          type="button"
-          title="Edit"
-          data-bs-toggle="modal"
-          data-bs-target="#editModal"
-          >
-            <i className="icon-pencil-alt text-info me-1"></i>
-          </Link>
-
           <Link
-          type="button"
-          title="Print"
-          data-bs-toggle="modal"
-          data-bs-target="#printModal"
+            to={`/transfer_slips/edit/${row.id}`}
+            title="Edit"
+            className="text-info me-1"
+          >
+            <i className="icon-pencil-alt"></i>
+          </Link>
+          <Link
+            title="Print"
+            data-bs-toggle="modal"
+            data-bs-target="#printModal"
           >
             <i className="icon-printer text-secondary"></i>
           </Link>
-          
           <Link
-          type="button"
-          title="Delete"
-          data-bs-toggle="modal"
-          data-bs-target="#deleteModal"
+            title="Delete"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteModal"
           >
             <i className="icon-trash text-danger"></i>
           </Link>
-
         </div>
       ),
       ignoreRowClick: true,
@@ -143,24 +115,19 @@ export default Index = () => {
 
   return (
     <div className="page-body">
-      
       <div className="col-sm-12">
         <div className="card title-line">
           <div className="card-header d-flex justify-content-between align-items-center">
             <h2 className="mb-0">
-              <i className="icofont icofont-id-card me-2"></i>
+              <i className="icofont icofont-copy-black me-2"></i>
               Transfer Slips
             </h2>
-            <button
-              className="btn btn-outline-primary btn-sm"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#newModal"
-            >
-              New Transfer Slip
-            </button>
+            <Link to="/transfer_slips/new">
+              <button className="btn btn-outline-primary btn-sm">
+                New Transfer Slip
+              </button>
+            </Link>
           </div>
-
           <div className="card-body">
             <DataTable
               columns={columns}
@@ -169,13 +136,12 @@ export default Index = () => {
               responsive
               striped
               bordered
-              noDataComponent="No Records of Agent User Menu"
               highlightOnHover
+              noDataComponent="No Transfer Slips"
             />
           </div>
         </div>
       </div>
     </div>
   );
-};
-
+}

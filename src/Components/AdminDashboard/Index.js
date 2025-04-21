@@ -5,6 +5,7 @@ import NewAgentListModal from "./NewAgentModal";
 import { Link } from "react-router-dom";
 import { getAgents, deleteAgent } from "../../Services/DashboardServices";
 import EditAgentModal from "./EditAgentModal";
+import EditAccount from "../../Layouts/EditAccount";
 
 function formatName(fullName = "") {
   return fullName
@@ -163,6 +164,15 @@ export default AdminDashboard = () => {
                         <span className="txt-primary">
                           {formatName(fullName)}
                         </span>
+                        <button
+                          className="btn btn-outline-primary btn-sm ms-2"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editAccountModal"
+                        >
+                          <i className="icofont icofont-ui-edit"></i> Edit
+                        </button>
+                        <EditAccount />
                       </h1>
                     </div>
                     <div className="image-section">
