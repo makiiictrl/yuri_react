@@ -1,104 +1,123 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import DataTable from 'react-data-table-component';
+import { showTransferSlip } from "../../Services/TransferSlipsServices";
+import { LOAD_COMPANY_CODE_SELECT } from "../../Config/CompanyCodes";
 
-export default Show = () => {
-    return(
-        <div class="container">
-        <div class="card mt-4">
-          <div class="card-header bg-primary text-white">
-            <h4 class="mb-0 text-white">Transfer Slip Information</h4>
+const formatDate = (dateStr) => {
+  if (!dateStr) return "";
+  const d = new Date(dateStr);
+  return isNaN(d) ? "" : d.toLocaleDateString("en-US");
+};
+
+const formatNumber = (num) => {
+  if (num == null) return "";
+  return Number(num).toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+};
+
+export default function TransferSlipInfo() {
+  const { id } = useParams();
+  const [transferSlip, setTransferSlip] = useState(null);
+  const [details, setDetails] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (!id) {
+      setError("No Transfer Slip ID provided");
+      setLoading(false);
+      return;
+    }
+
+    showTransferSlip(id)
+      .then((response) => {
+        const data = response.data;
+        setTransferSlip(data.transfer_slip);
+        setDetails(data.details || []);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+        setError("Failed to load transfer slip");
+        setLoading(false);
+      });
+  }, [id]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+  if (!transferSlip) return <div>No transfer slip found</div>;
+
+  const infoData = [
+    { field: 'Company', value: LOAD_COMPANY_CODE_SELECT[transferSlip.company_code?.toString()] },
+    { field: 'TS Number', value: transferSlip.transfer_slip_number },
+    { field: 'TS Type', value: transferSlip.transfer_slip_type },
+    { field: 'TO', value: LOAD_COMPANY_CODE_SELECT[transferSlip.transfer_to?.toString()] },
+    { field: 'Transferred', value: `${transferSlip.transferred_by} : ${formatDate(transferSlip.transferred_by_date)}` },
+    { field: 'Received', value: `${transferSlip.received_by} : ${formatDate(transferSlip.received_by_date)}` },
+  ];
+
+  const infoColumns = [
+    { name: 'Field', selector: row => row.field, sortable: false },
+    { name: 'Value', selector: row => row.value, sortable: false },
+  ];
+
+  const detailColumns = [
+    { name: 'ITEMS', selector: row => row.product_description, sortable: true },
+    { name: 'LOT NUMBER', selector: row => row.lot_number, sortable: true },
+    { name: 'MFG. DATE', selector: row => formatDate(row.manufacturing_date), sortable: true },
+    { name: 'EXP DATE', selector: row => formatDate(row.expiry_date), sortable: true },
+    { name: 'QUANTITY', selector: row => formatNumber(row.quantity), right: true, sortable: true },
+    { name: 'J.O. NO.', selector: row => row.job_order_number, sortable: true },
+    { name: 'REMARKS', selector: row => row.remarks, sortable: false },
+  ];
+
+  // Custom styles to hide the column header row for the info DataTable
+  const infoStyles = {
+    headRow: {
+      style: {
+        display: 'none',
+      },
+    },
+  };
+
+  return (
+    <div className="page-body">
+      <div className="col-sm-12">
+        <div className="card title-line">
+          <div className="card-header d-flex justify-content-between align-items-center">
+            <h4 className="mb-0">Transfer Slip Information</h4>
           </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-striped table-bordered">
-                <tbody>
-                <tr>
-                  <th>Company</th>
-                  {/* <td><%= LOAD_COMPANY_CODE_SELECT[@transfer_slip.company_code.to_s] %></td> */}
-                  <td>company_code</td>
-                </tr>
-                <tr>
-                  <th>TS Number</th>
-                  {/* <td><%= @transfer_slip.transfer_slip_number %></td> */}
-                  <td>transfer_slip_number</td>
-                </tr>
-                <tr>
-                  <th>TS Type</th>
-                  {/* <td><%= @transfer_slip.transfer_slip_type %></td> */}
-                  <td>transfer_slip_type</td>
-                </tr>
-                <tr>
-                  <th>TO</th>
-                  {/* <td><%= LOAD_COMPANY_CODE_SELECT[@transfer_slip.transfer_to.to_s] %></td> */}
-                    <td>transfer_to</td>
-                </tr>
-                <tr>
-                  {/* <% transferred_date = @transfer_slip.transferred_by_date.present? ? Date.parse(@transfer_slip.transferred_by_date.to_s).strftime("%m/%d/%Y") : "" %> */}
-                  <th>Transferred</th>
-                  {/* <td><%= @transfer_slip.transferred_by %> : <%= transferred_date %></td> */}
-                    <td>transferred_date</td>
-                </tr>
-                <tr>
-                  {/* <% received_date  = @transfer_slip.received_by_date.present? ? Date.parse(@transfer_slip.received_by_date.to_s).strftime("%m/%d/%Y") : "" %> */}
-                  <th>Received</th>
-                  {/* <td><%= @transfer_slip.received_by %> : <%= received_date %></td> */}
-                    <td>received_date</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-    
-            <div class="table-responsive">
-              <table class="table table-bordered table-hover">
-                <thead class="thead-light">
-                  <tr>
-                    <th>ITEMS</th>
-                    <th>LOT NUMBER</th>
-                    <th>MFG. DATE</th>
-                    <th>EXP DATE</th>
-                    <th class="text-right">QUANTITY</th>
-                    <th nowrap>J.O. NO.</th>
-                    <th>REMARKS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {/* <% if @transfer_slip_details.any? %>
-                    <% @transfer_slip_details.each do |detail| %>
-                      <% mfg_date  = detail["manufacturing_date"].present? ? Date.parse(detail["manufacturing_date"].to_s).strftime("%m/%d/%Y") : "" %>
-                      <% exp_date  = detail["expiry_date"].present? ? Date.parse(detail["expiry_date"].to_s).strftime("%m/%d/%Y") : "" %> */}
-                      <tr>
-                        {/* <td><%= detail["product_description"] %></td>
-                        <td><%= detail["lot_number"] %></td>
-                        <td><%= mfg_date %></td>
-                        <td><%= exp_date %></td>
-                        <td class="text-right"><%= number_with_precision(detail["quantity"], precision: 2, separator: '.', delimiter: ',') %></td>
-                        <td nowrap><%= detail["job_order_number"] %></td>
-                        <td><%= detail["remarks"] %></td> */}
+          <div className="card-body">
+            <DataTable
+              columns={infoColumns}
+              data={infoData}
+              noHeader
+              pagination={false}
+              highlightOnHover
+              dense
+              customStyles={infoStyles}
+            />
 
-                        <td>product_description</td>
-                        <td>lot_number</td>
-                        <td>mfg_date</td>
-                        <td>exp_date</td>
-                        <td>quantity</td>
-                        <td>job_order_number</td>
-                        <td>remarks</td>
-                      </tr>
-                    {/* <% end %>
-                  <% end %> */}
-                </tbody>
-              </table>
-            </div>
-            <div className="d-flex justify-content-between">
-                <div>
-                    <Link to="/transfer_slips" className="btn btn-secondary">Back</Link>
-                </div>
-                <div>
-                    <Link to="" className="btn btn-primary me-2">Print</Link>
-                    <Link to="/transfer_slips/edit" className="btn btn-warning">Edit</Link>
-                </div>
+            <h5 className="mt-4">Details</h5>
+            <DataTable
+              columns={detailColumns}
+              data={details}
+              defaultSortField="product_description"
+              pagination={false}
+              highlightOnHover
+              dense
+            />
+
+            <div className="d-flex justify-content-between mt-3">
+              <Link to="/transfer_slips" className="btn btn-secondary">Back</Link>
+              <Link to={`/transfer_slips/edit/${id}`} className="btn btn-warning">Edit</Link>
             </div>
           </div>
         </div>
       </div>
-    )
+    </div>
+  );
 }
