@@ -70,35 +70,46 @@ export default Form = ({ ModalId }) => {
                   <span className="input-group-text">
                     <i className="icofont icofont-license"></i>
                   </span>
-                  {/* Wrap the Typeahead in the ErrorBoundary */}
-                  <ErrorBoundary>
-                  {menuOptions.length > 0 && (
-                    <Typeahead
-                      onChange={(selected) => {
-                        if (selected.length > 0) {
-                          // Split the selected value into agent_menu_id and menu
-                          const selectedValue = selected[0].split(" - ");
-                          const agentMenuId = selectedValue[0];  // Extract the number (ID)
-                          const menu = selectedValue[1];  // Extract the menu name
-                          setData({ ...data, agent_menu_id: agentMenuId, menu: menu });
-                        }
-                      }}
-                      options={menuOptions}
-                      // Show the selected value in the format 'ID - Menu'
-                      selected={data.agent_menu_id ? [`${data.agent_menu_id}`] : []}
-                      onInputChange={(input) => {
-                        // When the user types into the input, update the agent_menu_id
-                        const agentMenuId = input.split(" - ")[0]; // Extract ID part from input
-                        const menu = input.split(" - ")[1] || ''; // Extract the menu name (if present)
-                        setData({ ...data, agent_menu_id: agentMenuId, menu: menu }); // Update both values
-                      }}
-                      placeholder="Menu ID"
-                    />
-                  )}
-
-
-                  </ErrorBoundary>
-
+                  {/* Wrap the Typeahead in a flex container */}
+                  <div style={{ flex: "1 1 auto" }}>
+                    <ErrorBoundary>
+                      {menuOptions.length > 0 && (
+                        <Typeahead
+                          // Remove fixed width classes so it inherits width from its flex container.
+                          // Use inputProps to force the inner input to have the form-control styling.
+                          inputProps={{ className: "form-control" }}
+                          placeholder="Menu ID"
+                          onChange={(selected) => {
+                            if (selected.length > 0) {
+                              const selectedValue = selected[0].split(" - ");
+                              const agentMenuId = selectedValue[0]; // Extract ID.
+                              const menu = selectedValue.slice(1).join(" - "); // In case there are extra dashes.
+                              setData({
+                                ...data,
+                                agent_menu_id: agentMenuId,
+                                menu: menu,
+                              });
+                            }
+                          }}
+                          options={menuOptions}
+                          // Show the selected value using your desired logic.
+                          selected={
+                            data.agent_menu_id ? [`${data.agent_menu_id}`] : []
+                          }
+                          onInputChange={(input) => {
+                            const parts = input.split(" - ");
+                            const agentMenuId = parts[0];
+                            const menu = parts.slice(1).join(" - ") || "";
+                            setData({
+                              ...data,
+                              agent_menu_id: agentMenuId,
+                              menu: menu,
+                            });
+                          }}
+                        />
+                      )}
+                    </ErrorBoundary>
+                  </div>
                 </div>
               </div>
 

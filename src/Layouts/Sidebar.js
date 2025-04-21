@@ -143,10 +143,10 @@ export default Sidebar = () => {
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
-                <a className="sidebar-link sidebar-title link-nav" href="/">
+                <Link className="sidebar-link sidebar-title link-nav" to="/request_slips">
                 <i className="icofont icofont-document-folder me-2 text-white"></i>
                   <span>Request Slip</span>
-                </a>
+                </Link>
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>

@@ -69,10 +69,8 @@ export default Index = () => {
       name: <b>Agent Name</b>,
       selector: row => row.first_name + ' ' + row.last_name,
       sortable: true,
-      style: {
-        width: '300px', // Set the desired width here (e.g., 200px)
-        whiteSpace: 'nowrap', // Optional: To prevent text from wrapping within the column
-      }
+      minWidth: '250px',
+      whiteSpace: 'nowrap',
     },
     {
       name: <b>Menu ID</b>,

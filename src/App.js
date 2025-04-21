@@ -16,6 +16,9 @@ import Show from "./Components/TransferSlips/Show";
 import Form from "./Components/TransferSlips/Form";
 import Edit from "./Components/TransferSlips/Edit"
 
+import RequestSlipIndex from "./Components/RequestSips/Index"
+import RequestSlipForm from "./Components/RequestSips/Form"
+
 // import AgentUserMenuShow from "./Components/AgentUserMenu/";
 
 
@@ -33,21 +36,25 @@ const App = () => {
           </ProtectedRoute>
         }
       >
-
         
-
-        {/* Index route for "/" - shows Dashboard if logged in */}
         <Route index element={<DefaultDashboard />} />
         <Route path="/dashboard" element={<DefaultDashboard />} />
+
+        {/* Agent User Menus */}
         <Route path="agent_user_menus" element={<AgentUserMenuIndex />} />
         <Route path="agent_user_menus/new" element={<AgentUserMenuForm />} />
         <Route path="agent_user_menus/edit/:id" element={<AgentUserMenuForm />} />
+
+        {/* Transfer Slips */}
         <Route path="transfer_slips" element={<TransferSlips />} />
         <Route path="transfer_slips/:id" element={<Show/>} />
         <Route path="transfer_slips/new" element={<Form/>} />
         <Route path="transfer_slips/edit/:id" element={<Edit/>}/>
 
-        {/* <Route path="agent_user_menus/:id" element={<AgentUserMenuShow />} /> */}
+        {/* Request Slips */}
+        <Route path="request_slips" element={<RequestSlipIndex/>}/>
+        <Route path="request_slips/new" element={<RequestSlipForm/>}/>
+        <Route path="request_slips/edit/:id" element={<RequestSlipForm/>}/>
       </Route>
     </Routes>
   );

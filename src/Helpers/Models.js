@@ -22,3 +22,22 @@ export const newAgents = {
     yss: false,
     credit: false,
 }  
+
+// export const newRequestSlip = {
+//     company_code: 0,
+//     type_of_request: "",
+//     sub_type_of_request: "",
+//     // customer_name: "",
+//     customer_code: 0,
+//     address: "",
+//     employee_name: "",
+//     employee_number: 0,
+//     contact_no: 0,
+//     request_slip_description: "",
+//     recommended_by: "",
+//     endorsed_by: "",
+//     prepared_by: "",
+//     approved_by: "",
+//     contact_person: "",
+//     designation: "",
+// }
