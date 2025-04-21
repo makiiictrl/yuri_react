@@ -380,6 +380,7 @@ export default function TransferSlipEditForm() {
                       onChange={sel => setHeader(h => ({ ...h, transferTo: sel[0]?.value || "" }))}
                       placeholder="Select destination..."
                     />
+                    
                   </div>
                   <div className="mb-3">
                     <label>Received By</label>
