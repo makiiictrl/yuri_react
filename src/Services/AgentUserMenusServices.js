@@ -21,6 +21,10 @@ export const menuIdLookUp = () => {
   return axios.get(`${API_BASE_URL}/agent_user_menus/menu_id_lookup`);
 };
 
+export const agentIdLookUp = () => {
+  return axios.get(`${API_BASE_URL}/agent_user_menus/agent_id_lookup`);
+};
+
 // For Edit
 export const showAgentUserMenus = (id) => {
   return axios.get(`${API_BASE_URL}/agent_user_menus/${id}`);

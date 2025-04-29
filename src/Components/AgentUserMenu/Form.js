@@ -6,6 +6,7 @@ import {
   saveItem,
   showAgentUserMenus,
   menuIdLookUp,
+  agentIdLookUp,
 } from "../../Services/AgentUserMenusServices";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +15,7 @@ export default Form = ({ ModalId }) => {
   const [data, setData] = useState([newAgentUserMenus]);
   const navigate = useNavigate();
   const [menuOptions, setMenuOptions] = useState([]);
+  const [agentOptions, setAgentOptions] = useState([]);
 
   useEffect(() => {
     menuIdLookUp()
@@ -27,6 +29,21 @@ export default Form = ({ ModalId }) => {
         console.error(error);
       });
   }, []);
+
+  useEffect(() => {
+    agentIdLookUp()
+      .then((response) => {
+        console.log("Success! agents");
+        console.log(response.data);
+        setAgentOptions(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching!");
+        console.error(error);
+      });
+  }, []);
+
+
 
   const { id } = useParams();
 
@@ -66,7 +83,9 @@ export default Form = ({ ModalId }) => {
 
             <div className="card-body">
               <div className="form-group mb-3">
-                <label>Menu ID</label>
+                <label>
+                  Menu ID <span className="text-danger">*</span>
+                </label>
                 <div className="input-group">
                   <span className="input-group-text">
                     <i className="icofont icofont-license"></i>
@@ -115,24 +134,47 @@ export default Form = ({ ModalId }) => {
               </div>
 
               <div className="form-group mb-3">
-                <label>Agent ID</label>
+                <label>
+                  Agent ID <span className="text-danger">*</span>
+                </label>
                 <div className="input-group">
                   <span className="input-group-text">
                     <i className="icofont icofont-users me-2 text-dark"></i>
                   </span>
-                  <input
-                    className="form-control"
-                    type="number"
-                    tabIndex={1}
-                    list="agent"
-                    autoComplete="off"
-                    value={data.agent_id || ""}
-                    onChange={(e) => {
-                      setData({ ...data, agent_id: e.target.value });
-                    }}
-                    placeholder="Agent ID"
-                    required
-                  />
+                  <div style={{ flex: "1 1 auto" }}>
+                    <Typeahead
+                      inputProps={{ className: "form-control" }}
+                      type="number"
+                      options={agentOptions}
+                      placeholder="Agent ID"
+                      required
+                      onChange={(selected) => {
+                        if (selected.length > 0) {
+                          const selectedValue = selected[0].split(" - ");
+                          const agentId = selectedValue[0]; // Extract ID.
+                          // const agentName = selectedValue.slice(1).join(" - "); // In case there are extra dashes.
+                          setData({
+                            ...data,
+                            agent_id: agentId,
+                            // agent_name: meagentNamenu,
+                          });
+                        }
+                      }}
+                      selected={
+                        data.agent_id ? [`${data.agent_id}`] : []
+                      }
+                      onInputChange={(input) => {
+                        const parts = input.split(" - ");
+                        const agentId = parts[0];
+                        // const menu = parts.slice(1).join(" - ") || "";
+                        setData({
+                          ...data,
+                          agent_id: agentId,
+                          // menu: menu,
+                        });
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
 

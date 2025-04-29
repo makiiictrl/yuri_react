@@ -183,6 +183,7 @@ export default Index = () => {
               bordered
               noDataComponent="No Records of Agent User Menu"
               highlightOnHover
+              paginationRowsPerPageOptions={[10, 50, 100, 500, 1000]}
             />
           </div>
         </div>

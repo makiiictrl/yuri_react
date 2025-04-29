@@ -150,10 +150,10 @@ export default Sidebar = () => {
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
-                <a className="sidebar-link sidebar-title link-nav" href="/">
-                <i className="icofont icofont-paper me-2 text-white"></i>
+                <Link className="sidebar-link sidebar-title link-nav" to="/issue_slips">
+                  <i className="icofont icofont-paper me-2 text-white"></i>
                   <span>Issue Slip</span>
-                </a>
+                </Link>
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
@@ -164,17 +164,17 @@ export default Sidebar = () => {
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
-                <a className="sidebar-link sidebar-title link-nav" href="/">
+                <Link className="sidebar-link sidebar-title link-nav" to="/inventories">
                 <i className="icofont icofont-list me-3 text-white"></i>
                   <span>Inventory Listing</span>
-                </a>
+                </Link>
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
-                <a className="sidebar-link sidebar-title link-nav" href="/">
+                <Link className="sidebar-link sidebar-title link-nav" to="/item_masters">
                 <i className="icofont icofont-papers me-2 text-white"></i>
                   <span>Item Master</span>
-                </a>
+                </Link>
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
