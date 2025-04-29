@@ -140,16 +140,6 @@ export default function Index() {
                 New Transfer Slip
               </Link>
             </div>
-<<<<<<< HEAD:src/Components/TransferSlip/Index.js
-            <Link
-              className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
-              to="/transfer_slips/new"
-            >
-              New Transfer Slip
-            </Link>
-          </div>
-=======
->>>>>>> adf12aa53759f4b4bf3dbe813b90c00fc1f41494:src/Components/TransferSlips/Index.js
           </div>
           <div className="card-body">
             <DataTable
@@ -161,7 +151,6 @@ export default function Index() {
               bordered
               highlightOnHover
               noDataComponent="No Transfer Slips"
-              paginationRowsPerPageOptions={[10, 50, 100, 500, 1000]}
             />
           </div>
         </div>

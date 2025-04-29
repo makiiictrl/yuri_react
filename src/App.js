@@ -10,30 +10,21 @@ import MainLayout from "./Layouts/MainLayout";
 
 import AgentUserMenuIndex from "./Components/AgentUserMenu/Index";
 import AgentUserMenuForm from "./Components/AgentUserMenu/Form";
-<<<<<<< HEAD
-import TransferSlips from "./Components/TransferSlip/Index";
-import Show from "./Components/TransferSlip/Show";
-import Form from "./Components/TransferSlip/Form";
-import Edit from "./Components/TransferSlip/Edit"
-=======
 
-import TransferSlips from "./Components/TransferSlips/Index";
-import TransferSlipsShow from "./Components/TransferSlips/Show";
-import TransferSlipsForm from "./Components/TransferSlips/Form";
-import TransferSlipsEdit from "./Components/TransferSlips/Edit"
->>>>>>> adf12aa53759f4b4bf3dbe813b90c00fc1f41494
+import TransferSlips from "./Components/TransferSlip/Index";
+import TransferSlipsShow from "./Components/TransferSlip/Show";
+import TransferSlipsForm from "./Components/TransferSlip/Form";
+import TransferSlipsEdit from "./Components/TransferSlip/Edit"
 
 import RequestSlipIndex from "./Components/RequestSlip/Index"
 import RequestSlipForm from "./Components/RequestSlip/Form"
 
-<<<<<<< HEAD
 import IssueSlipIndex from "./Components/IssueSlip/Index";
 import IssueSlipForm from "./Components/IssueSlip/Form";
-=======
+
 import InventoriesForm from "./Components/InventoryEntries/Form"
 
 // import AgentUserMenuShow from "./Components/AgentUserMenu/";
->>>>>>> adf12aa53759f4b4bf3dbe813b90c00fc1f41494
 
 import InventoriesIndex from "./Components/InventoryListing/Index";
 // import InventoriesForm from "./Components/InventoryListing/Form";
@@ -75,7 +66,6 @@ const App = () => {
         <Route path="request_slips/new" element={<RequestSlipForm/>}/>
         <Route path="request_slips/edit/:id" element={<RequestSlipForm/>}/>
 
-<<<<<<< HEAD
         {/* Issue Slips */}
         <Route path="issue_slips" element={<IssueSlipIndex/>}/>
         <Route path="issue_slips/new" element={<IssueSlipForm/>}/>
@@ -88,11 +78,9 @@ const App = () => {
         <Route path="item_masters" element={<ItemMasterIndex/>}/>
         <Route path="item_masters/new" element={<ItemMasterForm/>}/>
         <Route path="item_masters/edit/:id" element={<ItemMasterForm/>}/>
-=======
         {/* Inventories */}
         <Route path="inventories/new" element={<InventoriesForm/>}/>
-        
->>>>>>> adf12aa53759f4b4bf3dbe813b90c00fc1f41494
+      
       </Route>
     </Routes>
   );
