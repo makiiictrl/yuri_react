@@ -354,7 +354,7 @@ export default function TransferSlipForm() {
                     />
                   </div>
                   <div className="mb-3">
-                    <label>TS Number</label>
+                    <label>Transfer Slip Number</label>
                     <input
                       type="text"
                       className="form-control"
