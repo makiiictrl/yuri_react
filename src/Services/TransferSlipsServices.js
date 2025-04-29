@@ -87,3 +87,40 @@ export async function fetchWarehousePersonnels() {
       params: { format: 'json' }
     });
   }
+
+  export function getTransferSlipByIdPrint(id) {
+    return axios.get(`${API_BASE_URL}/transfer_slips/${id}.json`);
+  }
+
+  export function getTransferSlipsPrint(params = {}) {
+    return axios.get(`${API_BASE_URL}/transfer_slips.json`, { params });
+  }
+
+  export function getBlankTransferSlipPdf(companyCode) {
+    return axios.get(
+      `${API_BASE_URL}/transfer_slips/print.pdf`,
+      {
+        params: {
+          transfer_slips_type: "blank",
+          choose_company_code: companyCode,
+        },
+        responseType: "blob",
+        headers: {
+          // tell Rails “give me PDF, not HTML”
+          Accept: "application/pdf",
+        },
+      }
+    );
+  }
+  
+  export function getTransferSlipPdfById(transferSlipId) {
+    return axios.get(
+      `${API_BASE_URL}/transfer_slips/${transferSlipId}/print.pdf`,
+      {
+        responseType: "blob",
+        headers: {
+          Accept: "application/pdf",
+        },
+      }
+    );
+  }

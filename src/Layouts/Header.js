@@ -1,6 +1,12 @@
 import React from "react";
+<<<<<<< HEAD
 import { Link, useLocation } from "react-router-dom";
 import UseCurrentAgent from "../Login/UseCurrentAgent";
+=======
+import { useNavigate } from "react-router-dom";
+import UseCurrentAgent from "../Login/UseCurrentAgent";
+import axiosInstance from "../Login/ApiLogin"; // adjust the path as needed
+>>>>>>> adf12aa53759f4b4bf3dbe813b90c00fc1f41494
 
 function toProperCase(str) {
   return str
@@ -11,6 +17,7 @@ function toProperCase(str) {
 
 export default function Header() {
   const { agent, loading } = UseCurrentAgent();
+<<<<<<< HEAD
   const location = useLocation();
 
   // 1. Split path into segments
@@ -33,6 +40,22 @@ export default function Header() {
         toProperCase(pathnames[pathnames.length - 1])
       : "Home";
 
+=======
+  const navigate = useNavigate();
+
+  const logout = async (e) => {
+    e.preventDefault();
+    try {
+      await axiosInstance().delete("/agent/sign_out"); // Devise JWT logout endpoint
+    } catch (err) {
+      console.warn("Logout error, likely already logged out:", err);
+    } finally {
+      localStorage.removeItem("token");
+      navigate("/#/login");
+    }
+  };
+
+>>>>>>> adf12aa53759f4b4bf3dbe813b90c00fc1f41494
   return (
     <div className="page-header row">
       {/* <!-- Page Header Start--> */}
@@ -46,6 +69,7 @@ export default function Header() {
           <svg className="status_toggle sidebar-toggle">
             <use href="../assets/svg/icon-sprite.svg#collapse-sidebar"></use>
           </svg>
+<<<<<<< HEAD
         </div>
       </div>
       <div className="col-auto header-right-wrapper page-title">
@@ -80,6 +104,24 @@ export default function Header() {
           </nav>
         </div>
       </div>
+=======
+        </div>
+      </div>
+      <div className="col-auto header-right-wrapper page-title">
+        <div>
+          <h2>Default</h2>
+          <nav>
+            <ol className="breadcrumb justify-content-sm-start align-items-center mb-0">
+              <li className="breadcrumb-item">
+                <a href="index.html">Home</a>
+              </li>
+              <li className="breadcrumb-item f-w-500">Dashboard</li>
+              <li className="breadcrumb-item f-w-500 active">Default</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+>>>>>>> adf12aa53759f4b4bf3dbe813b90c00fc1f41494
       <div className="col header-wrapper m-0 header-right-wrapper">
         <div className="row m-0">
           <form className="form-inline search-full col" action="#" method="get">
@@ -155,6 +197,7 @@ export default function Header() {
                 </div>
                 <ul className="profile-dropdown onhover-show-div">
                   <li>
+<<<<<<< HEAD
                     <a href="sign-up.html">
                       <div className="profile-icon">
                         <svg>
@@ -196,6 +239,9 @@ export default function Header() {
                   </li>
                   <li>
                     <a href="login.html">
+=======
+                    <a href="#" onClick={logout}>
+>>>>>>> adf12aa53759f4b4bf3dbe813b90c00fc1f41494
                       <div className="profile-icon">
                         <svg>
                           <use href="../assets/svg/icon-sprite.svg#login"></use>
@@ -253,4 +299,8 @@ export default function Header() {
       {/* <!-- Page Header Ends--> */}
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> adf12aa53759f4b4bf3dbe813b90c00fc1f41494
