@@ -171,8 +171,8 @@ export default Index = () => {
           </div>
           <div className="card-body">
             <DataTable
-              // columns={columns}
-              // data={data}
+              columns={columns}
+              data={data}
               pagination
               responsive
               striped
