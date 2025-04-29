@@ -13,9 +13,5 @@ public/assets/styles/
 
 #Ignore OS generated files
 .DS_Store
-<<<<<<< HEAD
-Thumbs.db
-=======
 Thumbs.db
 
->>>>>>> a8e6c390dbf5ad78b16c8817d1906ffe261b6c02

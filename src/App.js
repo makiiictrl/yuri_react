@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 
 import LoginForm from "./Login/LoginForm";
 import ProtectedRoute from "./Login/ProtectedRoute";
-import RoleProtectedRoute from "./Login/RoleProtectedRoute";
 
 import DefaultDashboard from "./Login/DefaultDashboard";
 import MainLayout from "./Layouts/MainLayout";
@@ -11,13 +10,16 @@ import MainLayout from "./Layouts/MainLayout";
 
 import AgentUserMenuIndex from "./Components/AgentUserMenu/Index";
 import AgentUserMenuForm from "./Components/AgentUserMenu/Form";
+
 import TransferSlips from "./Components/TransferSlips/Index";
-import Show from "./Components/TransferSlips/Show";
-import Form from "./Components/TransferSlips/Form";
-import Edit from "./Components/TransferSlips/Edit"
+import TransferSlipsShow from "./Components/TransferSlips/Show";
+import TransferSlipsForm from "./Components/TransferSlips/Form";
+import TransferSlipsEdit from "./Components/TransferSlips/Edit"
 
 import RequestSlipIndex from "./Components/RequestSips/Index"
 import RequestSlipForm from "./Components/RequestSips/Form"
+
+import InventoriesForm from "./Components/InventoryEntries/Form"
 
 // import AgentUserMenuShow from "./Components/AgentUserMenu/";
 
@@ -47,14 +49,18 @@ const App = () => {
 
         {/* Transfer Slips */}
         <Route path="transfer_slips" element={<TransferSlips />} />
-        <Route path="transfer_slips/:id" element={<Show/>} />
-        <Route path="transfer_slips/new" element={<Form/>} />
-        <Route path="transfer_slips/edit/:id" element={<Edit/>}/>
+        <Route path="transfer_slips/:id" element={<TransferSlipsShow/>} />
+        <Route path="transfer_slips/new" element={<TransferSlipsForm/>} />
+        <Route path="transfer_slips/edit/:id" element={<TransferSlipsEdit/>}/>
 
         {/* Request Slips */}
         <Route path="request_slips" element={<RequestSlipIndex/>}/>
         <Route path="request_slips/new" element={<RequestSlipForm/>}/>
         <Route path="request_slips/edit/:id" element={<RequestSlipForm/>}/>
+
+        {/* Inventories */}
+        <Route path="inventories/new" element={<InventoriesForm/>}/>
+        
       </Route>
     </Routes>
   );
