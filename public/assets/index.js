@@ -26029,15 +26029,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     if (setImmediateSupported) {
       return setImmediate;
     }
-    return postMessageSupported ? ((token, callbacks) => {
+    return postMessageSupported ? ((token2, callbacks) => {
       _global.addEventListener("message", ({ source, data: data2 }) => {
-        if (source === _global && data2 === token) {
+        if (source === _global && data2 === token2) {
           callbacks.length && callbacks.shift()();
         }
       }, false);
       return (cb) => {
         callbacks.push(cb);
-        _global.postMessage(token, "*");
+        _global.postMessage(token2, "*");
       };
     })(`axios@${Math.random()}`, []) : (cb) => setTimeout(cb);
   })(
@@ -26191,9 +26191,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
   function renderKey(path, key, dots) {
     if (!path) return key;
-    return path.concat(key).map(function each(token, i) {
-      token = removeBrackets(token);
-      return !dots && i ? "[" + token + "]" : token;
+    return path.concat(key).map(function each(token2, i) {
+      token2 = removeBrackets(token2);
+      return !dots && i ? "[" + token2 + "]" : token2;
     }).join(dots ? "." : "");
   }
   function isFlatArray(arr) {
@@ -27228,7 +27228,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       if (platform_default.hasStandardBrowserEnv || platform_default.hasStandardBrowserWebWorkerEnv) {
         headers.setContentType(void 0);
       } else if ((contentType = headers.getContentType()) !== false) {
-        const [type, ...tokens] = contentType ? contentType.split(";").map((token) => token.trim()).filter(Boolean) : [];
+        const [type, ...tokens] = contentType ? contentType.split(";").map((token2) => token2.trim()).filter(Boolean) : [];
         headers.setContentType([type || "multipart/form-data", ...tokens].join("; "));
       }
     }
@@ -27997,32 +27997,32 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       this.promise = new Promise(function promiseExecutor(resolve) {
         resolvePromise = resolve;
       });
-      const token = this;
+      const token2 = this;
       this.promise.then((cancel) => {
-        if (!token._listeners) return;
-        let i = token._listeners.length;
+        if (!token2._listeners) return;
+        let i = token2._listeners.length;
         while (i-- > 0) {
-          token._listeners[i](cancel);
+          token2._listeners[i](cancel);
         }
-        token._listeners = null;
+        token2._listeners = null;
       });
       this.promise.then = (onfulfilled) => {
         let _resolve;
         const promise = new Promise((resolve) => {
-          token.subscribe(resolve);
+          token2.subscribe(resolve);
           _resolve = resolve;
         }).then(onfulfilled);
         promise.cancel = function reject() {
-          token.unsubscribe(_resolve);
+          token2.unsubscribe(_resolve);
         };
         return promise;
       };
       executor(function cancel(message, config, request) {
-        if (token.reason) {
+        if (token2.reason) {
           return;
         }
-        token.reason = new CanceledError_default(message, config, request);
-        resolvePromise(token.reason);
+        token2.reason = new CanceledError_default(message, config, request);
+        resolvePromise(token2.reason);
       });
     }
     /**
@@ -28074,11 +28074,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
      */
     static source() {
       let cancel;
-      const token = new _CancelToken(function executor(c) {
+      const token2 = new _CancelToken(function executor(c) {
         cancel = c;
       });
       return {
-        token,
+        token: token2,
         cancel
       };
     }
@@ -28228,9 +28228,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     });
     instance.interceptors.request.use(
       (config) => {
-        const token = localStorage.getItem("token");
-        if (token) {
-          config.headers["Authorization"] = token;
+        const token2 = localStorage.getItem("token");
+        if (token2) {
+          config.headers["Authorization"] = token2;
           config.headers["Accept"] = "application/json";
           config.headers["Content-Type"] = "application/json";
         }
@@ -28268,9 +28268,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           agent: { email, password }
         });
         console.log("Login response data:", response.data);
-        const token = response.data.token;
-        if (token) {
-          const cleanToken = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
+        const token2 = response.data.token;
+        if (token2) {
+          const cleanToken = token2.startsWith("Bearer ") ? token2 : `Bearer ${token2}`;
           localStorage.setItem("token", cleanToken);
           let agent = response.data.data || response.data.agent || response.data.user;
           if (!agent) {
@@ -28324,8 +28324,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react2 = __toESM(require_react());
   var ProtectedRoute_default = ProtectedRoute = ({ children }) => {
     const location = useLocation();
-    const token = localStorage.getItem("token");
-    if (!token) {
+    const token2 = localStorage.getItem("token");
+    if (!token2) {
       return /* @__PURE__ */ import_react2.default.createElement(Navigate, { to: "/login", state: { from: location }, replace: true });
     }
     return children;
@@ -38251,7 +38251,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // src/Services/InventoyListingsServices.js
   var getInventories = async () => {
-    return axios_default.get("http://localhost:3000/inventories");
+    return axios_default.get("http://localhost:3000/inventories"), {
+      headers: {
+        "Authorization": `Bearer ${token}`
+        // Add token here
+      }
+    };
   };
   var getItems4 = (args) => {
     return axios_default.get(`http://localhost:3000/inventories`, {
@@ -38393,6 +38398,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ))), /* @__PURE__ */ import_react65.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react65.default.createElement(
       import_react_data_table_component11.default,
       {
+        columns,
+        data: data2,
         pagination: true,
         responsive: true,
         striped: true,
