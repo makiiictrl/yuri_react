@@ -157,10 +157,10 @@ export default Sidebar = () => {
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>
-                <a className="sidebar-link sidebar-title link-nav" href="/">
+                <Link className="sidebar-link sidebar-title link-nav" to="/inventories/new">
                 <i className="icofont icofont-mail me-2 text-white"></i>
                   <span>Inventory Entry</span>
-                </a>
+                </Link>
               </li>
               <li className="sidebar-list">
                 <i className="fa fa-thumb-tack"></i>

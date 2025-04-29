@@ -1,6 +1,10 @@
 import React from "react";
+
 import { Link, useLocation } from "react-router-dom";
 import UseCurrentAgent from "../Login/UseCurrentAgent";
+
+import { useNavigate } from "react-router-dom";
+import axiosInstance from "../Login/ApiLogin"; // adjust the path as needed
 
 function toProperCase(str) {
   return str
@@ -32,7 +36,19 @@ export default function Header() {
       ? breadcrumbNameMap[pathnames[pathnames.length - 1]] ||
         toProperCase(pathnames[pathnames.length - 1])
       : "Home";
+  const navigate = useNavigate();
 
+  const logout = async (e) => {
+    e.preventDefault();
+    try {
+      await axiosInstance().delete("/agent/sign_out"); // Devise JWT logout endpoint
+    } catch (err) {
+      console.warn("Logout error, likely already logged out:", err);
+    } finally {
+      localStorage.removeItem("token");
+      navigate("/#/login");
+    }
+  };
   return (
     <div className="page-header row">
       {/* <!-- Page Header Start--> */}
@@ -50,7 +66,7 @@ export default function Header() {
       </div>
       <div className="col-auto header-right-wrapper page-title">
         <div>
-        <h2>{pageTitle}</h2>
+          <h2>{pageTitle}</h2>
           <nav>
             <ol className="breadcrumb justify-content-sm-start align-items-center mb-0">
               {/* Always render “Home” */}
@@ -80,6 +96,7 @@ export default function Header() {
           </nav>
         </div>
       </div>
+      
       <div className="col header-wrapper m-0 header-right-wrapper">
         <div className="row m-0">
           <form className="form-inline search-full col" action="#" method="get">
@@ -154,48 +171,10 @@ export default function Header() {
                   </div>
                 </div>
                 <ul className="profile-dropdown onhover-show-div">
+                  
                   <li>
-                    <a href="sign-up.html">
-                      <div className="profile-icon">
-                        <svg>
-                          <use href="../assets/svg/icon-sprite.svg#user"></use>
-                        </svg>
-                      </div>
-                      <span>Account </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="letter-box.html">
-                      <div className="profile-icon">
-                        <svg>
-                          <use href="../assets/svg/icon-sprite.svg#stroke-email"></use>
-                        </svg>
-                      </div>
-                      <span>Inbox</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="task.html">
-                      <div className="profile-icon">
-                        <svg>
-                          <use href="../assets/svg/icon-sprite.svg#notepad"></use>
-                        </svg>
-                      </div>
-                      <span>Taskboard</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="edit-profile.html">
-                      <div className="profile-icon">
-                        <svg>
-                          <use href="../assets/svg/icon-sprite.svg#settings"></use>
-                        </svg>
-                      </div>
-                      <span>Settings</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="login.html">
+                    {/* < href="login.html"> */}
+                    <a href="#" onClick={logout}>
                       <div className="profile-icon">
                         <svg>
                           <use href="../assets/svg/icon-sprite.svg#login"></use>
@@ -254,3 +233,4 @@ export default function Header() {
     </div>
   );
 }
+
