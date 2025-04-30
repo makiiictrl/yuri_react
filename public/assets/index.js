@@ -35170,12 +35170,20 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           {
             to: `/request_slips/edit/${row.id}`
           },
-          /* @__PURE__ */ import_react49.default.createElement("i", { className: "icon-pencil-alt text-info" })
+          /* @__PURE__ */ import_react49.default.createElement("i", { className: "icon-pencil-alt text-info me-1" })
+        ), /* @__PURE__ */ import_react49.default.createElement(
+          Link,
+          {
+            to: `${"http://localhost:3000"}/request_slips/${row.id}/print_slip_request`,
+            target: "_blank",
+            rel: "noopener noreferrer"
+          },
+          /* @__PURE__ */ import_react49.default.createElement("i", { className: "icon-printer text-primary ms-1" })
         ), /* @__PURE__ */ import_react49.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.id),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer", margin: "1 0px" }
           },
           /* @__PURE__ */ import_react49.default.createElement("i", { className: "icon-trash text-danger" })
         )),
