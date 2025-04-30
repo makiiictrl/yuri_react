@@ -126,7 +126,7 @@ export default Index = () => {
           width: "5%",
           cell: (row) => (
             <div className="action">
-              <Link to={`/issue_slips/edit/${row.id}`} className="d-inline-block" title="Edit">
+              <Link to={`/inventories/edit/${row.id}`} className="d-inline-block" title="Edit">
                 <i className="icon-pencil-alt text-info"></i>
               </Link>
               <button
@@ -149,7 +149,7 @@ export default Index = () => {
         <div className="card title-line">
           <div className="card-header d-flex justify-content-between align-items-center">
             <h2 className="mb-0">
-              <i className="icofont icofont-paper me-2 text-dark"></i>
+              <i className="icofont icofont-list me-2 text-dark"></i>
               Inventory Listing
             </h2>
             <div className="d-flex align-items-center">
@@ -172,7 +172,7 @@ export default Index = () => {
               </div>
               <Link
                 className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
-                to="/issue_slips/new"
+                to="/inventories/new"
               >
                 New Inventory Listing
               </Link>

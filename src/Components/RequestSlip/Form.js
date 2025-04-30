@@ -105,7 +105,6 @@ export default Form = () => {
 
     const body = {
       ...data,
-      prepared_by: prepared_by,
       sample_slip_request_details_attributes: details,
     };
 
