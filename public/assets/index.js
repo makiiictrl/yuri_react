@@ -35233,6 +35233,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react50 = __toESM(require_react());
   var import_react_data_table_component8 = __toESM(require_index_cjs());
   var Form_default2 = Form = () => {
+    const { agent, loading } = UseCurrentAgent();
     const [data2, setData] = (0, import_react50.useState)({});
     const navigate = useNavigate();
     const [customerOptions, setcustomerOptions] = (0, import_react50.useState)([]);
@@ -35241,6 +35242,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     const [recommendedByOptions, setRecommendedByOptions] = (0, import_react50.useState)([]);
     const [showOtherOption, setOtherOption] = (0, import_react50.useState)(false);
     const [productSampleDescription, setSampleProductDescription] = (0, import_react50.useState)([]);
+    const prepared_by = agent?.email?.split("@")[0] || "";
     const [productPromatsDescription, setPromatsProductDescription] = (0, import_react50.useState)(
       []
     );
@@ -35300,6 +35302,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       ];
       const body = {
         ...data2,
+        prepared_by,
         sample_slip_request_details_attributes: details
       };
       if (window.location.hash.includes(`request_slips/edit`)) {
@@ -35972,14 +35975,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         className: "form-control",
         type: "name",
         readOnly: true,
-        value: data2.prepared_by,
-        onBlur: (selected) => {
-          const prepared_by = selected.target.value;
-          setData({
-            ...data2,
-            prepared_by
-          });
-        }
+        value: loading ? "" : prepared_by
       }
     ))))), /* @__PURE__ */ import_react50.default.createElement("h5", { className: "mb-3 border-bottom pb-2 mt-4" }, "Contact Details"), /* @__PURE__ */ import_react50.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react50.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react50.default.createElement("label", null, "Contact Person ", /* @__PURE__ */ import_react50.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react50.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react50.default.createElement(
       "input",

@@ -5,6 +5,7 @@ import ErrorBoundary from "../ErrorBoundary";
 import DataTable from "react-data-table-component";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import UseCurrentAgent from "../../Login/UseCurrentAgent";
 
 import {
   employeeNameLookUp,
@@ -19,6 +20,7 @@ import {
 } from "../../Services/RequestSlipsServices";
 
 export default Form = () => {
+  const { agent, loading } = UseCurrentAgent();
   const [data, setData] = useState({});
   const navigate = useNavigate();
   const [customerOptions, setcustomerOptions] = useState([]);
@@ -27,6 +29,7 @@ export default Form = () => {
   const [recommendedByOptions, setRecommendedByOptions] = useState([]);
   const [showOtherOption, setOtherOption] = useState(false);
   const [productSampleDescription, setSampleProductDescription] = useState([]);
+  const prepared_by = agent?.email?.split('@')[0] || '';
   const [productPromatsDescription, setPromatsProductDescription] = useState(
     []
   );
@@ -102,6 +105,7 @@ export default Form = () => {
 
     const body = {
       ...data,
+      prepared_by: prepared_by,
       sample_slip_request_details_attributes: details,
     };
 
@@ -241,7 +245,6 @@ export default Form = () => {
         console.error("Error fetching data", err);
       });
   }, [id]);
-
   // For existing data fetching for edit
   useEffect(() => {
     productDescriptionLookUp()
@@ -1075,14 +1078,7 @@ export default Form = () => {
                     className="form-control"
                     type="name"
                     readOnly
-                    value={data.prepared_by}
-                    onBlur={(selected) => {
-                      const prepared_by = selected.target.value;
-                      setData({
-                        ...data,
-                        prepared_by: prepared_by,
-                      });
-                    }}
+                    value={loading ? '' : prepared_by}
                   />
                 </div>
               </div>
