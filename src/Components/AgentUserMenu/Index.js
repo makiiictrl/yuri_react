@@ -112,12 +112,15 @@ export default Index = () => {
         <div className="action">
           <Link
             to={`/agent_user_menus/edit/${row.agent_user_menus_id}`}
+            title="Edit"
+            className="d-inline-block"
           >
           <i className="icon-pencil-alt text-info"></i>
           </Link>
           <button
             onClick={() => handleDelete(row.agent_user_menus_id)}
             style={{ background: "none", border: "none", cursor: "pointer" }}
+            title="Delete"
           >
             <i className="icon-trash text-danger"></i>
           </button>

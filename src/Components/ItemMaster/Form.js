@@ -93,7 +93,7 @@ export default New = () => {
       <div className="card title-line">
         <div className="card-header d-flex justify-content-between align-items-center">
           <h2 className="mb-0">
-            <i className="icofont icofont-document-folder me-2 text-dark"></i>
+            <i className="icofont icofont-papers me-2 text-dark"></i>
             Item Master
           </h2>
         </div>

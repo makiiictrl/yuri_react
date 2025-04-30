@@ -22,7 +22,7 @@ import RequestSlipForm from "./Components/RequestSlip/Form"
 import IssueSlipIndex from "./Components/IssueSlip/Index";
 import IssueSlipForm from "./Components/IssueSlip/Form";
 
-import InventoriesForm from "./Components/InventoryEntries/Form"
+import InventoriesForm from "./Components/InventoryEntry/Form"
 
 // import AgentUserMenuShow from "./Components/AgentUserMenu/";
 

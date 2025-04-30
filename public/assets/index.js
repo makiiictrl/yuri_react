@@ -28801,13 +28801,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             "data-bs-toggle": "modal",
             "data-bs-target": "#editModal",
             onClick: () => setCurrentAgent(row),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Edit",
+            className: "d-inline-block"
           },
           /* @__PURE__ */ import_react7.default.createElement("i", { className: "icon-pencil-alt text-info" })
         ), /* @__PURE__ */ import_react7.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.id),
+            title: "Delete",
             style: { background: "none", border: "none", cursor: "pointer" }
           },
           /* @__PURE__ */ import_react7.default.createElement("i", { className: "icon-trash text-danger" })
@@ -28876,7 +28879,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         responsive: true,
         striped: true,
         bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
+        noDataComponent: "No Records of Admin Dashboard",
         highlightOnHover: true,
         paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
       }
@@ -29223,14 +29226,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         cell: (row) => /* @__PURE__ */ import_react14.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react14.default.createElement(
           Link,
           {
-            to: `/agent_user_menus/edit/${row.agent_user_menus_id}`
+            to: `/agent_user_menus/edit/${row.agent_user_menus_id}`,
+            title: "Edit",
+            className: "d-inline-block"
           },
           /* @__PURE__ */ import_react14.default.createElement("i", { className: "icon-pencil-alt text-info" })
         ), /* @__PURE__ */ import_react14.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.agent_user_menus_id),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
           },
           /* @__PURE__ */ import_react14.default.createElement("i", { className: "icon-trash text-danger" })
         )),
@@ -34548,7 +34554,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       { name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Received Date"), selector: (r3) => r3.received_by_date },
       {
         name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Actions"),
-        cell: (row) => /* @__PURE__ */ import_react56.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react56.default.createElement(Link, { to: `/transfer_slips/${row.id}`, title: "View" }, /* @__PURE__ */ import_react56.default.createElement("i", { className: "icon-eye text-primary me-1" })), /* @__PURE__ */ import_react56.default.createElement(
+        cell: (row) => /* @__PURE__ */ import_react56.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react56.default.createElement(Link, { to: `/transfer_slips/${row.id}`, title: "View", className: "d-inline-block" }, /* @__PURE__ */ import_react56.default.createElement("i", { className: "icon-eye text-primary me-1" })), /* @__PURE__ */ import_react56.default.createElement(
           Link,
           {
             to: `/transfer_slips/edit/${row.id}`,
@@ -34615,7 +34621,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         striped: true,
         bordered: true,
         highlightOnHover: true,
-        noDataComponent: "No Transfer Slips"
+        noDataComponent: "No Record of Transfer Slips"
       }
     )))), printModalOpen && /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal show d-block", tabIndex: -1 }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal-dialog" }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal-content" }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal-header" }, /* @__PURE__ */ import_react56.default.createElement("h5", { className: "modal-title" }, printType === "blank" ? "Select Company for Blank Slip" : `Print Slip #${selectedSlipId}`), /* @__PURE__ */ import_react56.default.createElement(
       "button",
@@ -35723,14 +35729,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         cell: (row) => /* @__PURE__ */ import_react60.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react60.default.createElement(
           Link,
           {
-            to: `/request_slips/edit/${row.id}`
+            to: `/request_slips/edit/${row.id}`,
+            title: "Edit",
+            className: "d-inline-block"
           },
           /* @__PURE__ */ import_react60.default.createElement("i", { className: "icon-pencil-alt text-info" })
         ), /* @__PURE__ */ import_react60.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.id),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
           },
           /* @__PURE__ */ import_react60.default.createElement("i", { className: "icon-trash text-danger" })
         )),
@@ -35777,7 +35786,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         responsive: true,
         striped: true,
         bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
+        noDataComponent: "No Records of Request Slip",
         highlightOnHover: true,
         paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
       }
@@ -36880,11 +36889,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       },
       {
         name: /* @__PURE__ */ import_react62.default.createElement("b", null, "Actions"),
-        cell: (row) => /* @__PURE__ */ import_react62.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react62.default.createElement(Link, { to: `/issue_slips/edit/${row.id}` }, /* @__PURE__ */ import_react62.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react62.default.createElement(
+        cell: (row) => /* @__PURE__ */ import_react62.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react62.default.createElement(Link, { to: `/issue_slips/edit/${row.id}`, className: "d-inline-block", title: "Edit" }, /* @__PURE__ */ import_react62.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react62.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.id),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
           },
           /* @__PURE__ */ import_react62.default.createElement("i", { className: "icon-trash text-danger" })
         )),
@@ -36926,7 +36936,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         responsive: true,
         striped: true,
         bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
+        noDataComponent: "No Records of Issue Slip",
         highlightOnHover: true,
         paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
       }
@@ -38195,7 +38205,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ));
   };
 
-  // src/Components/InventoryEntries/Form.js
+  // src/Components/InventoryEntry/Form.js
   var import_react64 = __toESM(require_react());
   function InventoryForm() {
     const navigate = useNavigate();
@@ -38436,59 +38446,69 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         // this hides the column from the table view
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Company"),
-        selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC",
-        width: "125px",
+        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Inventory Type"),
+        selector: (row) => row.inventory_type,
+        width: "10%",
         whiteSpace: "nowrap",
         center: true
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Issuance No."),
-        selector: (row) => row.issuance_number,
-        width: "150px",
+        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Lot No."),
+        selector: (row) => row.lot_number,
+        width: "10%",
         whiteSpace: "nowrap",
         // center: true,
         sortable: true
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Request Number"),
-        selector: (row) => row.request_number,
-        width: "170px",
-        whiteSpace: "nowrap",
-        // center: true,
-        sortable: true
-      },
-      {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Issuance Date"),
+        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Product Code"),
         selector: (row) => row.issuance_date,
-        width: "150px",
+        width: "10%",
         whiteSpace: "nowrap",
         // center: true,
         sortable: true
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Employee Name"),
-        selector: (row) => row.employee_name,
-        width: "200px",
+        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Product Description"),
+        selector: (row) => row.item_description,
+        width: "30%",
         whiteSpace: "nowrap",
         // center: true,
         sortable: true
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Address"),
-        selector: (row) => row.address,
-        width: "270px",
+        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Expiry Date"),
+        selector: (row) => row.expiry_date,
+        width: "10%",
+        whiteSpace: "nowrap",
+        // center: true,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Balance"),
+        selector: (row) => row.id,
+        width: "10%",
+        whiteSpace: "nowrap",
+        // center: true,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Remarks"),
+        selector: (row) => row.remarks,
+        width: "10%",
         whiteSpace: "nowrap",
         // center: true,
         sortable: true
       },
       {
         name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Actions"),
-        cell: (row) => /* @__PURE__ */ import_react65.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react65.default.createElement(Link, { to: `/issue_slips/edit/${row.id}` }, /* @__PURE__ */ import_react65.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react65.default.createElement(
+        width: "5%",
+        cell: (row) => /* @__PURE__ */ import_react65.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react65.default.createElement(Link, { to: `/issue_slips/edit/${row.id}`, className: "d-inline-block", title: "Edit" }, /* @__PURE__ */ import_react65.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react65.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.id),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
           },
           /* @__PURE__ */ import_react65.default.createElement("i", { className: "icon-trash text-danger" })
         )),
@@ -38527,7 +38547,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         responsive: true,
         striped: true,
         bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
+        noDataComponent: "No Records of Inventory Listing",
         highlightOnHover: true,
         paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
       }
@@ -38674,11 +38694,20 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       {
         name: /* @__PURE__ */ import_react66.default.createElement("b", null, "Actions"),
         width: "5%",
-        cell: (row) => /* @__PURE__ */ import_react66.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react66.default.createElement(Link, { to: `/item_masters/edit/${row.id}` }, /* @__PURE__ */ import_react66.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react66.default.createElement(
+        cell: (row) => /* @__PURE__ */ import_react66.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react66.default.createElement(
+          Link,
+          {
+            to: `/item_masters/edit/${row.id}`,
+            className: "d-inline-block",
+            title: "Edit"
+          },
+          /* @__PURE__ */ import_react66.default.createElement("i", { className: "icon-pencil-alt text-info" })
+        ), /* @__PURE__ */ import_react66.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.id),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
           },
           /* @__PURE__ */ import_react66.default.createElement("i", { className: "icon-trash text-danger" })
         )),
@@ -38686,7 +38715,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         button: true
       }
     ];
-    return /* @__PURE__ */ import_react66.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react66.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react66.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-dark" }), "Item Masters"), /* @__PURE__ */ import_react66.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react66.default.createElement(
+    return /* @__PURE__ */ import_react66.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react66.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react66.default.createElement("i", { className: "icofont icofont-papers me-2 text-dark" }), "Item Masters"), /* @__PURE__ */ import_react66.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react66.default.createElement(
       "input",
       {
         className: "form-control form-control-sm",
@@ -38694,10 +38723,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         placeholder: "Search...",
         "aria-label": "Request Number",
         onInput: (e3) => {
-          setArgs({
-            ...args,
-            search: e3.target.value
-          });
+          setArgs({ ...args, search: e3.target.value });
         }
       }
     ), /* @__PURE__ */ import_react66.default.createElement(
@@ -38723,7 +38749,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         responsive: true,
         striped: true,
         bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
+        noDataComponent: "No Records of Item Master",
         highlightOnHover: true,
         paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
       }
@@ -38801,7 +38827,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         });
       }
     }, [id]);
-    return /* @__PURE__ */ import_react67.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react67.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react67.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react67.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react67.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-dark" }), "Item Master")), /* @__PURE__ */ import_react67.default.createElement("div", { className: "card-body" }, showItemMasterAlert && /* @__PURE__ */ import_react67.default.createElement(
+    return /* @__PURE__ */ import_react67.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react67.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react67.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react67.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react67.default.createElement("i", { className: "icofont icofont-papers me-2 text-dark" }), "Item Master")), /* @__PURE__ */ import_react67.default.createElement("div", { className: "card-body" }, showItemMasterAlert && /* @__PURE__ */ import_react67.default.createElement(
       "div",
       {
         ref: alertRef,
