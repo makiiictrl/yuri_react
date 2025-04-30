@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import DataTable from 'react-data-table-component';
 import axios from "axios";
 import { getRequestSlips, getItems, deleteRequestSlip } from "../../Services/RequestSlipsServices";
@@ -115,17 +114,28 @@ export default Index = () => {
             title="Edit"
             className="d-inline-block"
           >
-          <i className="icon-pencil-alt text-info"></i>
+          <i className="icon-pencil-alt text-info me-1"></i>
           </Link>
+          <Link
+        to={`${API_BASE_URL}/request_slips/${row.id}/print_slip_request`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="icon-printer text-primary ms-1"></i>
+      </Link>
           <button
             onClick={() => handleDelete(row.id)}
+<<<<<<< HEAD
             style={{ background: "none", border: "none", cursor: "pointer" }}
             title="Delete"
+=======
+            style={{ background: "none", border: "none", cursor: "pointer", margin: '1 0px' }}
+>>>>>>> e76abe5079e096106bd4b3f9a8416819aa58bf5f
           >
             <i className="icon-trash text-danger"></i>
           </button>
-        </div>
-      ),
+      </div>
+    ),
       ignoreRowClick: true,
       button: true,
     }
