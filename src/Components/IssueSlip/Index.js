@@ -126,7 +126,7 @@ export default Index = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="icon-printer text-primary ms-2"></i>
+                  <i className="icon-printer text-secondary ms-2"></i>
                 </Link>
           <button
             onClick={() => handleDelete(row.id)}
