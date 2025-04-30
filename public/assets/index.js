@@ -35172,7 +35172,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             target: "_blank",
             rel: "noopener noreferrer"
           },
-          /* @__PURE__ */ import_react49.default.createElement("i", { className: "icon-printer text-primary ms-1" })
+          /* @__PURE__ */ import_react49.default.createElement("i", { className: "icon-printer text-secondary ms-1" })
         ), /* @__PURE__ */ import_react49.default.createElement(
           "button",
           {
@@ -36332,7 +36332,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             target: "_blank",
             rel: "noopener noreferrer"
           },
-          /* @__PURE__ */ import_react51.default.createElement("i", { className: "icon-printer text-primary ms-2" })
+          /* @__PURE__ */ import_react51.default.createElement("i", { className: "icon-printer text-secondary ms-2" })
         ), /* @__PURE__ */ import_react51.default.createElement(
           "button",
           {
