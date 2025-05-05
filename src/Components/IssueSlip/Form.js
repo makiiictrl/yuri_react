@@ -213,6 +213,8 @@ export default New = () => {
       })),
     ];
 
+    
+
     const body = {
       ...data,
       sample_slip_issuance_details_attributes: details,
