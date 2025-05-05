@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import { getIssueSlips, getItems, deleteIssueSlip} from "../../Services/IssueSlipsServices";
+import axiosInstance from "../../Login/ApiLogin";
 
 export default Index = () => {
   const [data, setData] = useState([]);
@@ -20,6 +21,21 @@ export default Index = () => {
         alert("Error in fetching data.");
         console.log(response);
       });
+  };
+
+  const fetchAndOpenPdf = async (path) => {
+    try {
+      const response = await axiosInstance().get(path, {
+        responseType: "blob",
+      });
+      const blobUrl = URL.createObjectURL(
+        new Blob([response.data], { type: "application/pdf" })
+      );
+      window.open(blobUrl, "_blank");
+    } catch (err) {
+      console.error("Error fetching PDF:", err);
+      alert("Unable to generate PDF. Please try again.");
+    }
   };
 
   const handleDelete = (id) => {
@@ -121,13 +137,16 @@ export default Index = () => {
           <Link to={`/issue_slips/edit/${row.id}`} className="d-inline-block" title="Edit">
             <i className="icon-pencil-alt text-info"></i>
           </Link>
-          <Link
-                  to={`${API_BASE_URL}/issue_slips/${row.id}/print_issue_slip`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="icon-printer text-secondary ms-2"></i>
-                </Link>
+          <span
+            title="Print Issue Slip"
+            className="text-secondary ms-2"
+            style={{ cursor: "pointer" }}
+            onClick={() =>
+              fetchAndOpenPdf(`/issue_slips/${row.id}/print_issue_slip`)
+            }
+          >
+            <i className="icon-printer"></i>
+          </span>
           <button
             onClick={() => handleDelete(row.id)}
             style={{ background: "none", border: "none", cursor: "pointer" }}

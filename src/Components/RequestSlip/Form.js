@@ -66,6 +66,13 @@ export default Form = () => {
   }, []);
 
   useEffect(() => {
+    if (!loading) {
+      console.log("Prepared by is now:", prepared_by);
+    }
+  }, [loading, prepared_by]);
+
+
+  useEffect(() => {
     if (window.location.hash.includes(`request_slips/edit`)) {
       axios
         .get(`http://localhost:3000/request_slips/edit/${id}.json`)

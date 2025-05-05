@@ -1,6 +1,6 @@
 // File: src/components/TransferSlipEditForm.jsx
 import React, { useState, useEffect, useMemo } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import {
   fetchTransferSlip,
@@ -19,6 +19,7 @@ import "react-bootstrap-typeahead/css/Typeahead.css";
 export default function TransferSlipEditForm() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   // header
   const [header, setHeader] = useState({
@@ -347,6 +348,7 @@ export default function TransferSlipEditForm() {
                     <label>Company</label>
                     <Typeahead
                       id="companyCode"
+                      disabled
                       labelKey="label"
                       options={companyOptions}
                       selected={header.companyCode ? [companyOptions.find(o => o.value === header.companyCode)] : []}
@@ -368,6 +370,7 @@ export default function TransferSlipEditForm() {
                       className="form-control"
                       value={header.transferSlipNumber}
                       onChange={e => setHeader(h => ({ ...h, transferSlipNumber: e.target.value }))}
+                      disabled
                     />
                   </div>
                   <div className="mb-3">
@@ -379,6 +382,7 @@ export default function TransferSlipEditForm() {
                       selected={header.transferTo ? [transferToOptions.find(o => o.value === header.transferTo)] : []}
                       onChange={sel => setHeader(h => ({ ...h, transferTo: sel[0]?.value || "" }))}
                       placeholder="Select destination..."
+                      disabled
                     />
                     
                   </div>
@@ -389,6 +393,7 @@ export default function TransferSlipEditForm() {
                       className="form-control"
                       value={header.receivedBy}
                       onChange={e => setHeader(h => ({ ...h, receivedBy: e.target.value }))}
+                      disabled
                     />
                   </div>
                 </div>
@@ -410,6 +415,7 @@ export default function TransferSlipEditForm() {
                       }
                       onChange={sel => setHeader(h => ({ ...h, transferSlipType: sel[0]?.value || "" }))}
                       placeholder="Select slip type..."
+                      disabled
                     />
                     {header.transferSlipType === "Other" && (
                       <input
@@ -418,6 +424,7 @@ export default function TransferSlipEditForm() {
                         placeholder="Specify other type"
                         value={header.transferSlipTypeOther}
                         onChange={e => setHeader(h => ({ ...h, transferSlipTypeOther: e.target.value }))}
+                        
                       />
                     )}
                   </div>
@@ -430,6 +437,7 @@ export default function TransferSlipEditForm() {
                       selected={header.transferredBy ? [personnelOptions.find(o => o.value === header.transferredBy)] : []}
                       onChange={sel => setHeader(h => ({ ...h, transferredBy: sel[0]?.value || "" }))}
                       placeholder="Select person..."
+                      disabled
                     />
                   </div>
                   <div className="mb-3">
@@ -439,6 +447,7 @@ export default function TransferSlipEditForm() {
                       className="form-control"
                       value={header.transferredByDate}
                       onChange={e => setHeader(h => ({ ...h, transferredByDate: e.target.value }))}
+                      disabled
                     />
                   </div>
                   <div className="mb-3">
@@ -448,6 +457,7 @@ export default function TransferSlipEditForm() {
                       className="form-control"
                       value={header.receivedDate}
                       onChange={e => setHeader(h => ({ ...h, receivedDate: e.target.value }))}
+                      disabled
                     />
                   </div>
                 </div>

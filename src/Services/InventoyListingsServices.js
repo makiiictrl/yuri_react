@@ -1,18 +1,10 @@
-import axios from "axios";
+// src/Services/InventoryServices.js
+import axiosInstance from "../Login/ApiLogin";
 
-//For Index
-export const getInventories = async () => {
-  return axios.get("http://localhost:3000/inventories"), {
-  headers: {
-    'Authorization': `Bearer ${token}`  // Add token here
-  }
-};
-};
+// Fetch all inventories
+export const getInventories = () =>
+  axiosInstance().get("/inventories");
 
-// For Search in Index
-export const getItems = (args) => {
-  return axios.get(`http://localhost:3000/inventories`, {
-    params: args,
-  });
-};
-
+// Fetch inventories with search params
+export const getItems = (args) =>
+  axiosInstance().get("/inventories", { params: args });
