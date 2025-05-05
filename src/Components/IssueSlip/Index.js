@@ -121,6 +121,13 @@ export default Index = () => {
           <Link to={`/issue_slips/edit/${row.id}`} className="d-inline-block" title="Edit">
             <i className="icon-pencil-alt text-info"></i>
           </Link>
+          <Link
+                  to={`${API_BASE_URL}/issue_slips/${row.id}/print_issue_slip`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="icon-printer text-secondary ms-2"></i>
+                </Link>
           <button
             onClick={() => handleDelete(row.id)}
             style={{ background: "none", border: "none", cursor: "pointer" }}
