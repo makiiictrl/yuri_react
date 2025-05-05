@@ -1,7 +1,14 @@
 import axios from "axios";
 
-export const saveTransferSlips = (data) => {
-  return axios.post(`${API_BASE_URL}/inventories`, data);
+export const saveItem = (payload) => {
+  if (payload.id) {
+    return axios.put(
+      `http://localhost:3000/inventories/${payload.id}`,
+      payload
+    );
+  } else {
+    return axios.post("http://localhost:3000/inventories", payload);
+  }
 };
 
 export const documentNumberLookUp = async (document_type) => {

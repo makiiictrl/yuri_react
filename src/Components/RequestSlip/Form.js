@@ -29,7 +29,7 @@ export default Form = () => {
   const [recommendedByOptions, setRecommendedByOptions] = useState([]);
   const [showOtherOption, setOtherOption] = useState(false);
   const [productSampleDescription, setSampleProductDescription] = useState([]);
-  const prepared_by = agent?.email?.split('@')[0] || '';
+  const prepared_by = agent?.email?.split("@")[0] || "";
   const [productPromatsDescription, setPromatsProductDescription] = useState(
     []
   );
@@ -82,21 +82,29 @@ export default Form = () => {
   const handleSave = () => {
     const details = [
       ...sampleRows.map((r) => ({
+        id: r.detailId,
+        product_code: r.product_code,
         product_description: r.product_description,
         request_quantity: r.request_quantity,
         issue_slip_type: "Sample",
       })),
       ...promatsRows.map((r) => ({
+        id: r.detailId,
+        product_code: r.product_code,
         product_description: r.product_description,
         request_quantity: r.request_quantity,
         issue_slip_type: "Promats",
       })),
       ...packmatsRows.map((r) => ({
+        id: r.detailId,
+        product_code: r.product_code,
         product_description: r.product_description,
         request_quantity: r.request_quantity,
         issue_slip_type: "Packmats",
       })),
       ...commercialRows.map((r) => ({
+        id: r.detailId,
+        product_code: r.product_code,
         product_description: r.product_description,
         request_quantity: r.request_quantity,
         issue_slip_type: "Commercial",
@@ -108,12 +116,13 @@ export default Form = () => {
       sample_slip_request_details_attributes: details,
     };
 
-    if (window.location.hash.includes(`request_slips/edit`)) {
-    } else {
-      const noRows = details.length === 0;
+    var noRows = false;
+
+    if (details.length === 0) {
+      noRows = true;
     }
 
-    const isEditMode = window.location.hash.includes('issue_slips/edit');
+    const isEditMode = window.location.hash.includes("issue_slips/edit");
     const badDetail = details.find(
       (d) => !d.product_description || !d.request_quantity
     );
@@ -128,6 +137,7 @@ export default Form = () => {
       !data.endorsed_by ||
       !data.contact_no ||
       (isEditMode && noRows) ||
+      (!isEditMode && noRows) ||
       badDetail // <-- or when any row is incomplete
     ) {
       setShowAlert(true);
@@ -189,6 +199,7 @@ export default Form = () => {
     showRequestSlip(id)
       .then((response) => {
         const requestSlip = response.data;
+        console.log(response.data);
         setData(requestSlip);
 
         if (requestSlip.type_of_request === "Others") {
@@ -205,6 +216,8 @@ export default Form = () => {
             .filter((d) => d.issue_slip_type === "Sample")
             .map((d) => ({
               id: Date.now() + Math.random(), // unique id for DataTable row
+              detailId: d.id,
+              product_code: d.product_code,
               product_description: d.product_description,
               request_quantity: d.request_quantity || d.quantity,
             }))
@@ -215,6 +228,8 @@ export default Form = () => {
             .filter((d) => d.issue_slip_type === "Promats")
             .map((d) => ({
               id: Date.now() + Math.random(),
+              detailId: d.id,
+              product_code: d.product_code,
               product_description: d.product_description,
               request_quantity: d.request_quantity || d.quantity,
             }))
@@ -225,6 +240,8 @@ export default Form = () => {
             .filter((d) => d.issue_slip_type === "Packmats")
             .map((d) => ({
               id: Date.now() + Math.random(),
+              detailId: d.id,
+              product_code: d.product_code,
               product_description: d.product_description,
               request_quantity: d.request_quantity || d.quantity,
             }))
@@ -235,6 +252,8 @@ export default Form = () => {
             .filter((d) => d.issue_slip_type === "Commercial")
             .map((d) => ({
               id: Date.now() + Math.random(),
+              detailId: d.id,
+              product_code: d.product_code,
               product_description: d.product_description,
               request_quantity: d.request_quantity || d.quantity,
             }))
@@ -265,28 +284,48 @@ export default Form = () => {
   const handleSampleAddRow = () => {
     setSampleRows((prev) => [
       ...prev,
-      { id: Date.now(), product_description: "", request_quantity: "" },
+      {
+        id: Date.now(),
+        product_description: "",
+        request_quantity: "",
+        product_code: "",
+      },
     ]);
   };
 
   const handlePromatsAddRow = () => {
     setPromatsRows((prev) => [
       ...prev,
-      { id: Date.now(), product_description: "", request_quantity: "" },
+      {
+        id: Date.now(),
+        product_description: "",
+        request_quantity: "",
+        product_code: "",
+      },
     ]);
   };
 
   const handlePackmatsAddRow = () => {
     setPackmatsRows((prev) => [
       ...prev,
-      { id: Date.now(), product_description: "", request_quantity: "" },
+      {
+        id: Date.now(),
+        product_description: "",
+        request_quantity: "",
+        product_code: "",
+      },
     ]);
   };
 
   const handleCommercialAddRow = () => {
     setCommercialRows((prev) => [
       ...prev,
-      { id: Date.now(), product_description: "", request_quantity: "" },
+      {
+        id: Date.now(),
+        product_description: "",
+        request_quantity: "",
+        product_code: "",
+      },
     ]);
   };
 
@@ -375,7 +414,7 @@ export default Form = () => {
           positionFixed
           options={productSampleDescription}
           placeholder="Product Description"
-          // show the current value as a single-item array
+          inputValue={row.product_description || ""}
           selected={row.product_description ? [row.product_description] : []}
           onChange={(selected) =>
             handleSampleRowChange(
@@ -384,9 +423,22 @@ export default Form = () => {
               selected[0] || ""
             )
           }
+          onInputChange={(text) =>
+            handleSampleRowChange(row.id, "product_description", text)
+          }
         />
       ),
     },
+
+    {
+      name: <b>Product Code*</b>,
+      width: "10%",
+      omit: true,
+      cell: (row) => (
+        <input className="w-100" type="text" value={row.product_code || ""} />
+      ),
+    },
+
     {
       name: (
         <b>
@@ -446,6 +498,16 @@ export default Form = () => {
         />
       ),
     },
+
+    {
+      name: <b>Product Code*</b>,
+      width: "10%",
+      omit: true,
+      cell: (row) => (
+        <input className="w-100" type="text" value={row.product_code || ""} />
+      ),
+    },
+
     {
       name: (
         <b>
@@ -506,6 +568,14 @@ export default Form = () => {
       ),
     },
     {
+      name: <b>Product Code*</b>,
+      width: "10%",
+      omit: true,
+      cell: (row) => (
+        <input className="w-100" type="text" value={row.product_code || ""} />
+      ),
+    },
+    {
       name: (
         <b>
           Quantity <span className="text-danger">*</span>
@@ -562,6 +632,14 @@ export default Form = () => {
             )
           }
         />
+      ),
+    },
+    {
+      name: <b>Product Code*</b>,
+      width: "10%",
+      omit: true,
+      cell: (row) => (
+        <input className="w-100" type="text" value={row.product_code || ""} />
       ),
     },
     {
@@ -686,6 +764,10 @@ export default Form = () => {
                         setOtherOption(true);
                       } else {
                         setOtherOption(false);
+                        setData((prevData) => ({
+                          ...prevData,
+                          sub_type_of_request: "",
+                        }));
                       }
                     }}
                     value={data.type_of_request}
@@ -1077,7 +1159,7 @@ export default Form = () => {
                     className="form-control"
                     type="name"
                     readOnly
-                    value={loading ? '' : prepared_by}
+                    value={loading ? "" : prepared_by}
                   />
                 </div>
               </div>

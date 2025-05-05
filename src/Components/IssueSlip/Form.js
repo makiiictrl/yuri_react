@@ -222,7 +222,7 @@ export default New = () => {
       (d) => !d.approved_quantity || !d.expiry_date || !d.lot_number
     );
 
-    if (!data.request_number || badDetail ) {
+    if (!data.request_number || badDetail) {
       // always show the alert…
       setShowRequestNumberAlert(true);
       // …and immediately focus it, even if already visible
@@ -289,28 +289,56 @@ export default New = () => {
   const handleSampleAddRow = () => {
     setSampleRows((prev) => [
       ...prev,
-      { id: Date.now(), product_description: "", request_quantity: "", lot_number: "", expiry_date: "", approved_quantity: "" },
+      {
+        id: Date.now(),
+        product_description: "",
+        request_quantity: "",
+        lot_number: "",
+        expiry_date: "",
+        approved_quantity: "",
+      },
     ]);
   };
 
   const handlePromatsAddRow = () => {
     setPromatsRows((prev) => [
       ...prev,
-      { id: Date.now(), product_description: "", request_quantity: "", lot_number: "", expiry_date: "", approved_quantity: "" },
+      {
+        id: Date.now(),
+        product_description: "",
+        request_quantity: "",
+        lot_number: "",
+        expiry_date: "",
+        approved_quantity: "",
+      },
     ]);
   };
 
   const handlePackmatsAddRow = () => {
     setPackmatsRows((prev) => [
       ...prev,
-      { id: Date.now(), product_description: "", request_quantity: "", lot_number: "", expiry_date: "", approved_quantity: "" },
+      {
+        id: Date.now(),
+        product_description: "",
+        request_quantity: "",
+        lot_number: "",
+        expiry_date: "",
+        approved_quantity: "",
+      },
     ]);
   };
 
   const handleCommercialAddRow = () => {
     setCommercialRows((prev) => [
       ...prev,
-      { id: Date.now(), product_description: "", request_quantity: "", lot_number: "", expiry_date: "", approved_quantity: "" },
+      {
+        id: Date.now(),
+        product_description: "",
+        request_quantity: "",
+        lot_number: "",
+        expiry_date: "",
+        approved_quantity: "",
+      },
     ]);
   };
 
@@ -438,7 +466,11 @@ export default New = () => {
       ),
     },
     {
-      name: <b>Lot Number <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Lot Number <span className="text-danger">*</span>
+        </b>
+      ),
       width: "15%",
       cell: (row) => (
         <input
@@ -446,14 +478,18 @@ export default New = () => {
           className="form-control"
           placeholder="Lot Number"
           value={row.lot_number || ""}
-            onChange={(e) =>
-              handleSampleRowChange(row.id, "lot_number", e.target.value)
-            }
+          onChange={(e) =>
+            handleSampleRowChange(row.id, "lot_number", e.target.value)
+          }
         />
       ),
     },
     {
-      name: <b>Expiry Date <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Expiry Date <span className="text-danger">*</span>
+        </b>
+      ),
       width: "15%",
       cell: (row) => (
         <input
@@ -461,15 +497,18 @@ export default New = () => {
           className="form-control"
           placeholder="Expiry Date"
           value={row.expiry_date || ""}
-            onChange={(e) =>
-              handleSampleRowChange(row.id, "expiry_date", e.target.value)
-            }
-          
+          onChange={(e) =>
+            handleSampleRowChange(row.id, "expiry_date", e.target.value)
+          }
         />
       ),
     },
     {
-      name: <b>Approved Quantity <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Approved Quantity <span className="text-danger">*</span>
+        </b>
+      ),
       width: "20%",
       cell: (row) => (
         <input
@@ -477,10 +516,9 @@ export default New = () => {
           className="form-control"
           placeholder="Approved Quantity"
           value={row.approved_quantity || ""}
-            onChange={(e) =>
-              handleSampleRowChange(row.id, "approved_quantity", e.target.value)
-            }
-        
+          onChange={(e) =>
+            handleSampleRowChange(row.id, "approved_quantity", e.target.value)
+          }
         />
       ),
     },
@@ -551,7 +589,11 @@ export default New = () => {
       ),
     },
     {
-      name: <b>Lot Number <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Lot Number <span className="text-danger">*</span>
+        </b>
+      ),
       width: "15%",
       cell: (row) => (
         <input
@@ -559,14 +601,18 @@ export default New = () => {
           className="form-control"
           placeholder="Lot Number"
           value={row.lot_number || ""}
-            onChange={(e) =>
-              handlePromatsRowChange(row.id, "lot_number", e.target.value)
-            }
+          onChange={(e) =>
+            handlePromatsRowChange(row.id, "lot_number", e.target.value)
+          }
         />
       ),
     },
     {
-      name: <b>Expiry Date <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Expiry Date <span className="text-danger">*</span>
+        </b>
+      ),
       width: "15%",
       cell: (row) => (
         <input
@@ -574,15 +620,18 @@ export default New = () => {
           className="form-control"
           placeholder="Expiry Date"
           value={row.expiry_date || ""}
-            onChange={(e) =>
-              handlePromatsRowChange(row.id, "expiry_date", e.target.value)
-            }
-          
+          onChange={(e) =>
+            handlePromatsRowChange(row.id, "expiry_date", e.target.value)
+          }
         />
       ),
     },
     {
-      name: <b>Approved Quantity <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Approved Quantity <span className="text-danger">*</span>
+        </b>
+      ),
       width: "20%",
       cell: (row) => (
         <input
@@ -590,10 +639,9 @@ export default New = () => {
           className="form-control"
           placeholder="Approved Quantity"
           value={row.approved_quantity || ""}
-            onChange={(e) =>
-              handlePromatsRowChange(row.id, "approved_quantity", e.target.value)
-            }
-        
+          onChange={(e) =>
+            handlePromatsRowChange(row.id, "approved_quantity", e.target.value)
+          }
         />
       ),
     },
@@ -665,7 +713,11 @@ export default New = () => {
       ),
     },
     {
-      name: <b>Lot Number <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Lot Number <span className="text-danger">*</span>
+        </b>
+      ),
       width: "15%",
       cell: (row) => (
         <input
@@ -673,14 +725,18 @@ export default New = () => {
           className="form-control"
           placeholder="Lot Number"
           value={row.lot_number || ""}
-            onChange={(e) =>
-              handlePackmatsRowChange(row.id, "lot_number", e.target.value)
-            }
+          onChange={(e) =>
+            handlePackmatsRowChange(row.id, "lot_number", e.target.value)
+          }
         />
       ),
     },
     {
-      name: <b>Expiry Date <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Expiry Date <span className="text-danger">*</span>
+        </b>
+      ),
       width: "15%",
       cell: (row) => (
         <input
@@ -688,15 +744,18 @@ export default New = () => {
           className="form-control"
           placeholder="Expiry Date"
           value={row.expiry_date || ""}
-            onChange={(e) =>
-              handlePackmatsRowChange(row.id, "expiry_date", e.target.value)
-            }
-          
+          onChange={(e) =>
+            handlePackmatsRowChange(row.id, "expiry_date", e.target.value)
+          }
         />
       ),
     },
     {
-      name: <b>Approved Quantity <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Approved Quantity <span className="text-danger">*</span>
+        </b>
+      ),
       width: "20%",
       cell: (row) => (
         <input
@@ -704,10 +763,9 @@ export default New = () => {
           className="form-control"
           placeholder="Approved Quantity"
           value={row.approved_quantity || ""}
-            onChange={(e) =>
-              handlePackmatsRowChange(row.id, "approved_quantity", e.target.value)
-            }
-        
+          onChange={(e) =>
+            handlePackmatsRowChange(row.id, "approved_quantity", e.target.value)
+          }
         />
       ),
     },
@@ -767,7 +825,11 @@ export default New = () => {
       ),
     },
     {
-      name: <b>Lot Number <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Lot Number <span className="text-danger">*</span>
+        </b>
+      ),
       width: "15%",
       cell: (row) => (
         <input
@@ -775,14 +837,18 @@ export default New = () => {
           className="form-control"
           placeholder="Lot Number"
           value={row.lot_number || ""}
-            onChange={(e) =>
-              handleCommercialRowChange(row.id, "lot_number", e.target.value)
-            }
+          onChange={(e) =>
+            handleCommercialRowChange(row.id, "lot_number", e.target.value)
+          }
         />
       ),
     },
     {
-      name: <b>Expiry Date <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Expiry Date <span className="text-danger">*</span>
+        </b>
+      ),
       width: "15%",
       cell: (row) => (
         <input
@@ -790,15 +856,18 @@ export default New = () => {
           className="form-control"
           placeholder="Expiry Date"
           value={row.expiry_date || ""}
-            onChange={(e) =>
-              handleCommercialRowChange(row.id, "expiry_date", e.target.value)
-            }
-          
+          onChange={(e) =>
+            handleCommercialRowChange(row.id, "expiry_date", e.target.value)
+          }
         />
       ),
     },
     {
-      name: <b>Approved Quantity <span className="text-danger">*</span></b>,
+      name: (
+        <b>
+          Approved Quantity <span className="text-danger">*</span>
+        </b>
+      ),
       width: "20%",
       cell: (row) => (
         <input
@@ -806,10 +875,13 @@ export default New = () => {
           className="form-control"
           placeholder="Approved Quantity"
           value={row.approved_quantity || ""}
-            onChange={(e) =>
-              handleCommercialRowChange(row.id, "approved_quantity", e.target.value)
-            }
-        
+          onChange={(e) =>
+            handleCommercialRowChange(
+              row.id,
+              "approved_quantity",
+              e.target.value
+            )
+          }
         />
       ),
     },
@@ -885,6 +957,7 @@ export default New = () => {
                           .then((response) => {
                             console.log("Success! wow");
                             console.log(response.data);
+
                             setData((prevData) => ({
                               ...prevData,
                               request_id: response.data.id,
@@ -920,8 +993,12 @@ export default New = () => {
                                 console.log(response.data);
 
                                 // Populate each row array based on issue_slip_type
-                                const details =
+                                var details =
                                   response.data.request_details || [];
+
+                                if (selected.length === 0) {
+                                  details = [];
+                                }
 
                                 console.log(details);
 
@@ -948,7 +1025,7 @@ export default New = () => {
                                       id: Date.now() + Math.random(),
                                       product_description:
                                         d.product_description,
-                                        ordered_quantity:
+                                      ordered_quantity:
                                         d.request_quantity || d.quantity,
                                     }))
                                 );
@@ -962,7 +1039,7 @@ export default New = () => {
                                       id: Date.now() + Math.random(),
                                       product_description:
                                         d.product_description,
-                                        ordered_quantity:
+                                      ordered_quantity:
                                         d.request_quantity || d.quantity,
                                     }))
                                 );
@@ -994,7 +1071,44 @@ export default New = () => {
                           .catch((err) => {
                             console.error("Error fetching data", err);
                           });
+
+                          if (selected.length === 0) {
+                            setData((prev) => ({
+                              ...prev,
+                              request_id: "",
+                              slip_request_id: "",
+                              request_number: "",
+                              request_slip_description:
+                                "",
+                              customer_number: "",
+                              customer_name: "",
+                              deliver_to: "",
+                              company_code: "",
+                              type_of_request: "",
+                              sub_type_of_request:
+                                "",
+                              address: "",
+                              contact_person: "",
+                              contact_no: "",
+                              employee_number: "",
+                              employee_name: "",
+                              prepared_by: "",
+                              prepared_date: "",
+                              recommended_by: "",
+                              approved_by: "",
+                              endorsed_by: "",
+                              designation: "",
+                              territory_code: "",
+                              team: "",
+                            }));
+                            setSampleRows([]);
+                            setPromatsRows([]);
+                            setPackmatsRows([]);
+                            setCommercialRows([]);
+                            return;
+                          }
                       }}
+
                     />
                   ) : (
                     <input

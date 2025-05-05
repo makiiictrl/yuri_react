@@ -125,12 +125,8 @@ export default Index = () => {
       </Link>
           <button
             onClick={() => handleDelete(row.id)}
-<<<<<<< HEAD
-            style={{ background: "none", border: "none", cursor: "pointer" }}
-            title="Delete"
-=======
+
             style={{ background: "none", border: "none", cursor: "pointer", margin: '1 0px' }}
->>>>>>> e76abe5079e096106bd4b3f9a8416819aa58bf5f
           >
             <i className="icon-trash text-danger"></i>
           </button>

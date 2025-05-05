@@ -7,13 +7,16 @@ import DataTable from "react-data-table-component";
 
 import { LOAD_COMPANY_CODE_SELECT } from "../../Config/CompanyCodes";
 import {
-  saveTransferSlips,
+  saveItem,
   documentNumberLookUp,
   inventoryDetailsLookUp,
   documentDateLookUp,
   inventoryItemDetailsLookup,
 } from "../../Services/InventoriesServices";
 import {} from "../../Services/InventoyListingsServices";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function InventoryForm() {
   const [data, setData] = useState({});
@@ -108,14 +111,50 @@ export default function InventoryForm() {
   }, []);
 
   const handleSave = () => {
-    // const body = {
-    //   ...data,
-    //   inventory_details: details,
-    // };
+    const payload = {
+      // header goes under :inventory
+      inventory: {
+        document_number: data.document_number,
+        inventory_type: data.inventory_type,
+        // you could add other permitted header fields here
+      },
+      // these top-level keys get merged in create:
+      document_type:       data.document_type,
+      document_number:     data.document_number,
+      inventory_document_date:  data.document_date,
+      inventory_company_code:   data.company_code,
+  
+      // Rails create action reads params[:inventory_details]
+      inventory_details: inventoryDetails.map(item => ({
+        item_code:        item.product_code,
+        item_description: item.product_description,
+        lot_number:       item.lot_number,
+        expiry_date:      item.expiry_date,
+        quantity:         item.received_quantity,
+        quantity_free:    item.quantity_free || 0,
+        principal:        item.principal,
+        unit_of_measure:  item.unit_of_measure,
+        pack_size:        item.pack_size,
+        item_id:          item.item_id,
+      })),
+    };
+  
 
-    saveTransferSlips(data)
+    if (!data.company_code || !data.document_number || !data.document_type || !data.document_date || !data.inventory_type) { 
+      // always show the alert…
+      setShowInventoryAlert(true);
+      // …and immediately focus it, even if already visible
+      if (alertRef.current) {
+        alertRef.current.focus();
+      }
+      return;
+    }
+
+    setShowInventoryAlert(false);
+
+    saveItem(payload)
       .then((response) => {
-        toast.success("Issue slip stored successfully.", {
+        toast.success("Inventory stored successfully.", {
           // you can tweak these options
           position: "top-right",
           autoClose: 3000,
@@ -142,16 +181,16 @@ export default function InventoryForm() {
           ),
         });
         setTimeout(() => navigate("/inventory_listings"), 3000);
-        console.log("Saving:", body);
+        console.log("Saving:", payload);
       })
       .catch((response) => {
         alert("Error");
         console.log(response);
       });
 
-    console.log("Saving:", body);
+    console.log("Saving:", payload);
   };
-  
+
   return (
     <div className="page-body">
       <div className="col-sm-12">
@@ -179,7 +218,7 @@ export default function InventoryForm() {
                   className="btn-close"
                   type="button"
                   aria-label="Close"
-                  onClick={() => setShowRequestNumberAlert(false)}
+                  onClick={() => setShowInventoryAlert(false)}
                 />
               </div>
             )}
@@ -227,7 +266,14 @@ export default function InventoryForm() {
                       className="form-select"
                       // value={documentType}
                       // onChange={(e) => setDocumentType(e.target.value)}
-                      required
+                      onChange={(selected) => {
+                        const warehouse_location = selected.target.value;
+                        setData({
+                          ...data,
+                          inventory_type: warehouse_location,
+                        });
+                      }}
+                      value={data.inventory_type || ""}
                     >
                       <option value="">Please select...</option>
                       <option value="IN-PROGRESS">IN-PROGRESS</option>
@@ -384,6 +430,14 @@ export default function InventoryForm() {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+      />
     </div>
   );
 }
