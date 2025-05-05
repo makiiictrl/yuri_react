@@ -211,6 +211,7 @@ export default New = () => {
         lot_number: r.lot_number,
         expiry_date: r.expiry_date,
         approved_quantity: r.approved_quantity,
+        request_id: data.request_id,
         request_number: data.request_number,
         issue_slip_type: "Promats",
       })),
@@ -223,6 +224,7 @@ export default New = () => {
         lot_number: r.lot_number,
         expiry_date: r.expiry_date,
         approved_quantity: r.approved_quantity,
+        request_id: data.request_id,
         request_number: data.request_number,
         issue_slip_type: "Packmats",
       })),
@@ -235,6 +237,7 @@ export default New = () => {
         lot_number: r.lot_number,
         expiry_date: r.expiry_date,
         approved_quantity: r.approved_quantity,
+        request_id: data.request_id,
         request_number: data.request_number,
         issue_slip_type: "Commercial",
       })),
@@ -833,20 +836,34 @@ export default New = () => {
       name: <b>Product Description</b>,
       width: "30%",
       cell: (row) => (
-        <Typeahead
-          className="w-100"
-          positionFixed
-          options={productSampleDescription}
+        // <Typeahead
+        //   className="w-100"
+        //   positionFixed
+        //   options={productSampleDescription}
+        //   placeholder="Product Description"
+        //   // show the current value as a single-item array
+        //   selected={row.product_description ? [row.product_description] : []}
+        //   onChange={(selected) =>
+        //     handleCommercialRowChange(
+        //       row.id,
+        //       "product_description",
+        //       selected[0] || ""
+        //     )
+        //   }
+        // />
+        <input
+          type="text"
+          className="form-control"
           placeholder="Product Description"
-          // show the current value as a single-item array
-          selected={row.product_description ? [row.product_description] : []}
-          onChange={(selected) =>
-            handleCommercialRowChange(
-              row.id,
-              "product_description",
-              selected[0] || ""
-            )
-          }
+          value={row.product_description || ""}
+          //   onChange={(e) =>
+          //     handlePromatsRowChange(
+          //       row.id,
+          //       "product_description",
+          //       e.target.value
+          //     )
+          //   }
+          readOnly
         />
       ),
     },
@@ -866,6 +883,7 @@ export default New = () => {
               e.target.value
             )
           }
+          readOnly
         />
       ),
     },

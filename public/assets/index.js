@@ -37281,6 +37281,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           lot_number: r3.lot_number,
           expiry_date: r3.expiry_date,
           approved_quantity: r3.approved_quantity,
+          request_id: data2.request_id,
           request_number: data2.request_number,
           issue_slip_type: "Promats"
         })),
@@ -37293,6 +37294,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           lot_number: r3.lot_number,
           expiry_date: r3.expiry_date,
           approved_quantity: r3.approved_quantity,
+          request_id: data2.request_id,
           request_number: data2.request_number,
           issue_slip_type: "Packmats"
         })),
@@ -37305,6 +37307,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           lot_number: r3.lot_number,
           expiry_date: r3.expiry_date,
           approved_quantity: r3.approved_quantity,
+          request_id: data2.request_id,
           request_number: data2.request_number,
           issue_slip_type: "Commercial"
         }))
@@ -37806,20 +37809,32 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       {
         name: /* @__PURE__ */ import_react63.default.createElement("b", null, "Product Description"),
         width: "30%",
-        cell: (row) => /* @__PURE__ */ import_react63.default.createElement(
-          Typeahead_default2,
-          {
-            className: "w-100",
-            positionFixed: true,
-            options: productSampleDescription,
-            placeholder: "Product Description",
-            selected: row.product_description ? [row.product_description] : [],
-            onChange: (selected) => handleCommercialRowChange(
-              row.id,
-              "product_description",
-              selected[0] || ""
-            )
-          }
+        cell: (row) => (
+          // <Typeahead
+          //   className="w-100"
+          //   positionFixed
+          //   options={productSampleDescription}
+          //   placeholder="Product Description"
+          //   // show the current value as a single-item array
+          //   selected={row.product_description ? [row.product_description] : []}
+          //   onChange={(selected) =>
+          //     handleCommercialRowChange(
+          //       row.id,
+          //       "product_description",
+          //       selected[0] || ""
+          //     )
+          //   }
+          // />
+          /* @__PURE__ */ import_react63.default.createElement(
+            "input",
+            {
+              type: "text",
+              className: "form-control",
+              placeholder: "Product Description",
+              value: row.product_description || "",
+              readOnly: true
+            }
+          )
         )
       },
       {
@@ -37836,7 +37851,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
               row.id,
               "ordered_quantity",
               e3.target.value
-            )
+            ),
+            readOnly: true
           }
         )
       },
