@@ -46,6 +46,10 @@ export default New = () => {
   const [showRequestNumberAlert, setShowRequestNumberAlert] = useState(false);
   const alertRef = useRef(null);
 
+  const headerTitle = window.location.hash.includes("edit")
+    ? "Edit Issue Slip"
+    : "New Issue Slip";
+
   const [sampleRows, setSampleRows] = useState([]);
   const [promatsRows, setPromatsRows] = useState([]);
   const [packmatsRows, setPackmatsRows] = useState([]);
@@ -98,6 +102,9 @@ export default New = () => {
           setSampleRows(
             sample.map((d) => ({
               id: Date.now() + Math.random(),
+              product_code: d.product_code,
+              request_details_id: d.id,
+              request_number: d.request_number,
               product_description: d.product_description,
               ordered_quantity: d.ordered_quantity,
               lot_number: d.lot_number,
@@ -109,6 +116,9 @@ export default New = () => {
             promats.map((d) => ({
               id: Date.now() + Math.random(),
               product_description: d.product_description,
+              product_code: d.product_code,
+              request_details_id: d.id,
+              request_number: d.request_number,
               ordered_quantity: d.ordered_quantity,
               lot_number: d.lot_number,
               expiry_date: d.expiry_date,
@@ -119,6 +129,9 @@ export default New = () => {
             packmats.map((d) => ({
               id: Date.now() + Math.random(),
               product_description: d.product_description,
+              product_code: d.product_code,
+              request_details_id: d.id,
+              request_number: d.request_number,
               ordered_quantity: d.ordered_quantity,
               lot_number: d.lot_number,
               expiry_date: d.expiry_date,
@@ -129,6 +142,9 @@ export default New = () => {
             clinic.map((d) => ({
               id: Date.now() + Math.random(),
               product_description: d.product_description,
+              product_code: d.product_code,
+              request_details_id: d.id,
+              request_number: d.request_number,
               ordered_quantity: d.ordered_quantity,
               lot_number: d.lot_number,
               expiry_date: d.expiry_date,
@@ -175,17 +191,22 @@ export default New = () => {
     const details = [
       ...sampleRows.map((r) => ({
         product_description: r.product_description,
+        product_code: r.product_code,
+        request_details_id: r.request_details_id,
+        request_number: r.request_number,
         ordered_quantity: r.ordered_quantity,
         lot_number: r.lot_number,
         expiry_date: r.expiry_date,
         approved_quantity: r.approved_quantity,
-        request_number: data.request_number,
         request_id: data.request_id,
         issuance_number: data.issuance_number,
         issue_slip_type: "Sample",
       })),
       ...promatsRows.map((r) => ({
         product_description: r.product_description,
+        product_code: r.product_code,
+        request_details_id: r.request_details_id,
+        request_number: r.request_number,
         ordered_quantity: r.ordered_quantity,
         lot_number: r.lot_number,
         expiry_date: r.expiry_date,
@@ -195,6 +216,9 @@ export default New = () => {
       })),
       ...packmatsRows.map((r) => ({
         product_description: r.product_description,
+        product_code: r.product_code,
+        request_details_id: r.request_details_id,
+        request_number: r.request_number,
         ordered_quantity: r.ordered_quantity,
         lot_number: r.lot_number,
         expiry_date: r.expiry_date,
@@ -204,6 +228,9 @@ export default New = () => {
       })),
       ...commercialRows.map((r) => ({
         product_description: r.product_description,
+        product_code: r.product_code,
+        request_details_id: r.request_details_id,
+        request_number: r.request_number,
         ordered_quantity: r.ordered_quantity,
         lot_number: r.lot_number,
         expiry_date: r.expiry_date,
@@ -212,8 +239,6 @@ export default New = () => {
         issue_slip_type: "Commercial",
       })),
     ];
-
-    
 
     const body = {
       ...data,
@@ -525,14 +550,20 @@ export default New = () => {
       ),
     },
     {
-      name: <b>Actions</b>,
+      name: <b></b>,
       width: "10%",
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            margin: "1 0px",
+          }}
           onClick={() => handleSampleDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white icon-xl"></i>
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
     },
@@ -648,14 +679,20 @@ export default New = () => {
       ),
     },
     {
-      name: <b>Actions</b>,
+      name: <b></b>,
       width: "10%",
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            margin: "1 0px",
+          }}
           onClick={() => handlePromatsDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white icon-xl"></i>
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
     },
@@ -772,14 +809,20 @@ export default New = () => {
       ),
     },
     {
-      name: <b>Actions</b>,
+      name: <b></b>,
       width: "10%",
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            margin: "1 0px",
+          }}
           onClick={() => handlePackmatsDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white icon-xl"></i>
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
     },
@@ -888,14 +931,20 @@ export default New = () => {
       ),
     },
     {
-      name: <b>Actions</b>,
+      name: <b></b>,
       width: "10%",
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            margin: "1 0px",
+          }}
           onClick={() => handleCommercialDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white icon-xl"></i>
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
     },
@@ -907,7 +956,7 @@ export default New = () => {
         <div className="card-header d-flex justify-content-between align-items-center">
           <h2 className="mb-0">
             <i className="icofont icofont-paper me-2 text-dark"></i>
-            Issue Slip
+            {headerTitle}
           </h2>
         </div>
         <div className="card-body">
@@ -1002,6 +1051,8 @@ export default New = () => {
                                   details = [];
                                 }
 
+                                console.log("Details");
+                                console.log(request_number);
                                 console.log(details);
 
                                 setSampleRows(
@@ -1011,6 +1062,10 @@ export default New = () => {
                                     )
                                     .map((d) => ({
                                       id: Date.now() + Math.random(), // unique id for DataTable row
+                                      request_details_id: d.id,
+                                      issuance_number: request_number,
+                                      product_code: d.product_code,
+                                      request_number: d.request_number,
                                       product_description:
                                         d.product_description,
                                       ordered_quantity:
@@ -1025,6 +1080,10 @@ export default New = () => {
                                     )
                                     .map((d) => ({
                                       id: Date.now() + Math.random(),
+                                      request_details_id: d.id,
+                                      issuance_number: request_number,
+                                      product_code: d.product_code,
+                                      request_number: d.request_number,
                                       product_description:
                                         d.product_description,
                                       ordered_quantity:
@@ -1039,6 +1098,10 @@ export default New = () => {
                                     )
                                     .map((d) => ({
                                       id: Date.now() + Math.random(),
+                                      request_details_id: d.id,
+                                      issuance_number: request_number,
+                                      product_code: d.product_code,
+                                      request_number: d.request_number,
                                       product_description:
                                         d.product_description,
                                       ordered_quantity:
@@ -1053,6 +1116,10 @@ export default New = () => {
                                     )
                                     .map((d) => ({
                                       id: Date.now() + Math.random(),
+                                      request_details_id: d.id,
+                                      issuance_number: request_number,
+                                      product_code: d.product_code,
+                                      request_number: d.request_number,
                                       product_description:
                                         d.product_description,
                                       ordered_quantity:
@@ -1074,43 +1141,40 @@ export default New = () => {
                             console.error("Error fetching data", err);
                           });
 
-                          if (selected.length === 0) {
-                            setData((prev) => ({
-                              ...prev,
-                              request_id: "",
-                              slip_request_id: "",
-                              request_number: "",
-                              request_slip_description:
-                                "",
-                              customer_number: "",
-                              customer_name: "",
-                              deliver_to: "",
-                              company_code: "",
-                              type_of_request: "",
-                              sub_type_of_request:
-                                "",
-                              address: "",
-                              contact_person: "",
-                              contact_no: "",
-                              employee_number: "",
-                              employee_name: "",
-                              prepared_by: "",
-                              prepared_date: "",
-                              recommended_by: "",
-                              approved_by: "",
-                              endorsed_by: "",
-                              designation: "",
-                              territory_code: "",
-                              team: "",
-                            }));
-                            setSampleRows([]);
-                            setPromatsRows([]);
-                            setPackmatsRows([]);
-                            setCommercialRows([]);
-                            return;
-                          }
+                        if (selected.length === 0) {
+                          setData((prev) => ({
+                            ...prev,
+                            request_id: "",
+                            slip_request_id: "",
+                            request_number: "",
+                            request_slip_description: "",
+                            customer_number: "",
+                            customer_name: "",
+                            deliver_to: "",
+                            company_code: "",
+                            type_of_request: "",
+                            sub_type_of_request: "",
+                            address: "",
+                            contact_person: "",
+                            contact_no: "",
+                            employee_number: "",
+                            employee_name: "",
+                            prepared_by: "",
+                            prepared_date: "",
+                            recommended_by: "",
+                            approved_by: "",
+                            endorsed_by: "",
+                            designation: "",
+                            territory_code: "",
+                            team: "",
+                          }));
+                          setSampleRows([]);
+                          setPromatsRows([]);
+                          setPackmatsRows([]);
+                          setCommercialRows([]);
+                          return;
+                        }
                       }}
-
                     />
                   ) : (
                     <input

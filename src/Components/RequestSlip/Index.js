@@ -98,7 +98,7 @@ export default function Index() {
           </span>
           <button
             onClick={() => handleDelete(row.id)}
-            style={{ background: "none", border: "none", cursor: "pointer" }}
+            style={{ background: "none", border: "none", cursor: "pointer", margin: '1 0px' }}
           >
             <i className="icon-trash text-danger"></i>
           </button>
@@ -121,15 +121,26 @@ export default function Index() {
               <i className="icofont icofont-document-folder me-2" />
               Request Slips
             </h2>
-            <div className="d-flex">
-              <input
-                className="form-control form-control-sm me-2"
-                type="text"
-                placeholder="Search…"
-                onInput={e => setArgs({ ...args, request_number: e.target.value })}
-              />
+            <div className="d-flex align-items-center">
+              <div className="input-group me-2">
+                <input
+                  className="form-control form-control-sm"
+                  type="text"
+                  placeholder="Search..."
+                  aria-label="Request Number"
+                  onInput={(e) => {
+                    setArgs({ ...args, request_number: e.target.value });
+                  }}
+                />
+                <button
+                  className="btn btn-outline-primary btn-sm"
+                  type="button"
+                >
+                  <i className="icofont icofont-search-alt-1"></i>
+                </button>
+              </div>
               <Link
-                className="btn btn-outline-primary btn-sm"
+                className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
                 to="/request_slips/new"
               >
                 New Request Slip

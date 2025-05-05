@@ -11,6 +11,9 @@ export default New = () => {
   const navigate = useNavigate();
   const [showItemMasterAlert, setShowItemMasterAlert] = useState(false);
   const alertRef = useRef(null);
+  const headerTitle = window.location.hash.includes("edit")
+    ? "Edit Item Master"
+    : "New Item Master";
 
   useEffect(() => {
     if (showItemMasterAlert && alertRef.current) {
@@ -94,7 +97,7 @@ export default New = () => {
         <div className="card-header d-flex justify-content-between align-items-center">
           <h2 className="mb-0">
             <i className="icofont icofont-papers me-2 text-dark"></i>
-            Item Master
+            {headerTitle}
           </h2>
         </div>
         <div className="card-body">

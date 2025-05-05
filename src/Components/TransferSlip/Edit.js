@@ -39,7 +39,9 @@ export default function TransferSlipEditForm() {
 
   // lookups
   const [lotNumberOptions, setLotNumberOptions] = useState([]);
-  const [productDescriptionOptions, setProductDescriptionOptions] = useState([]);
+  const [productDescriptionOptions, setProductDescriptionOptions] = useState(
+    []
+  );
   const [personnels, setPersonnels] = useState({});
   const [nextSlipNumbers, setNextSlipNumbers] = useState({});
   const [message, setMessage] = useState("");
@@ -56,7 +58,8 @@ export default function TransferSlipEditForm() {
   );
   const transferToOptions = companyOptions;
   const personnelOptions = useMemo(
-    () => Object.entries(personnels).map(([value, label]) => ({ value, label })),
+    () =>
+      Object.entries(personnels).map(([value, label]) => ({ value, label })),
     [personnels]
   );
 
@@ -66,7 +69,9 @@ export default function TransferSlipEditForm() {
   useEffect(() => {
     fetchWarehousePersonnels().then(setPersonnels).catch(console.error);
     fetchLotNumberOptions().then(setLotNumberOptions).catch(console.error);
-    fetchProductDescriptionOptions().then(setProductDescriptionOptions).catch(console.error);
+    fetchProductDescriptionOptions()
+      .then(setProductDescriptionOptions)
+      .catch(console.error);
     fetchNextSlipNumbers().then(setNextSlipNumbers).catch(console.error);
 
     if (id) {
@@ -189,6 +194,7 @@ export default function TransferSlipEditForm() {
           placeholder="LOT NO."
           onChange={(sel) => handleDetailLotChange(row.id, sel[0] || "")}
           inputProps={{ className: "form-control-sm" }}
+          positionFixed
         />
       ),
     },
@@ -204,6 +210,7 @@ export default function TransferSlipEditForm() {
             handleDetailFieldChange(row.id, "product_description", sel[0] || "")
           }
           inputProps={{ className: "form-control-sm" }}
+          positionFixed
         />
       ),
     },
@@ -215,7 +222,11 @@ export default function TransferSlipEditForm() {
           className="form-control form-control-sm text-center"
           value={row.manufacturing_date}
           onChange={(e) =>
-            handleDetailFieldChange(row.id, "manufacturing_date", e.target.value)
+            handleDetailFieldChange(
+              row.id,
+              "manufacturing_date",
+              e.target.value
+            )
           }
         />
       ),
@@ -273,13 +284,19 @@ export default function TransferSlipEditForm() {
       ),
     },
     {
-      name: <b>ACTIONS</b>,
+      name: <b></b>,
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            margin: "1 0px",
+          }}
           onClick={() => handleDetailDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white" />
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
       ignoreRowClick: true,
@@ -333,13 +350,15 @@ export default function TransferSlipEditForm() {
         <div className="card title-line">
           <div className="card-header d-flex justify-content-between">
             <h2>
-            <i className="icofont icofont-paper-plane me-2 text-dark"></i>
+              <i className="icofont icofont-paper-plane me-2 text-dark"></i>
               Edit Transfer Slip
             </h2>
           </div>
           <div className="card-body">
             {message && <div className="alert alert-success">{message}</div>}
-            {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+            {errorMessage && (
+              <div className="alert alert-danger">{errorMessage}</div>
+            )}
 
             <form onSubmit={handleSubmit}>
               <div className="row">
@@ -351,13 +370,22 @@ export default function TransferSlipEditForm() {
                       disabled
                       labelKey="label"
                       options={companyOptions}
-                      selected={header.companyCode ? [companyOptions.find(o => o.value === header.companyCode)] : []}
-                      onChange={sel => {
+                      selected={
+                        header.companyCode
+                          ? [
+                              companyOptions.find(
+                                (o) => o.value === header.companyCode
+                              ),
+                            ]
+                          : []
+                      }
+                      onChange={(sel) => {
                         const code = sel[0]?.value || "";
-                        setHeader(h => ({
+                        setHeader((h) => ({
                           ...h,
                           companyCode: code,
-                          transferSlipNumber: nextSlipNumbers[code] || h.transferSlipNumber
+                          transferSlipNumber:
+                            nextSlipNumbers[code] || h.transferSlipNumber,
                         }));
                       }}
                       placeholder="Select company..."
@@ -369,8 +397,12 @@ export default function TransferSlipEditForm() {
                       type="text"
                       className="form-control"
                       value={header.transferSlipNumber}
-                      onChange={e => setHeader(h => ({ ...h, transferSlipNumber: e.target.value }))}
-                      disabled
+                      onChange={(e) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferSlipNumber: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                   <div className="mb-3">
@@ -379,12 +411,24 @@ export default function TransferSlipEditForm() {
                       id="transferTo"
                       labelKey="label"
                       options={transferToOptions}
-                      selected={header.transferTo ? [transferToOptions.find(o => o.value === header.transferTo)] : []}
-                      onChange={sel => setHeader(h => ({ ...h, transferTo: sel[0]?.value || "" }))}
+                      selected={
+                        header.transferTo
+                          ? [
+                              transferToOptions.find(
+                                (o) => o.value === header.transferTo
+                              ),
+                            ]
+                          : []
+                      }
+                      onChange={(sel) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferTo: sel[0]?.value || "",
+                        }))
+                      }
                       placeholder="Select destination..."
                       disabled
                     />
-                    
                   </div>
                   <div className="mb-3">
                     <label>Received By</label>
@@ -392,8 +436,9 @@ export default function TransferSlipEditForm() {
                       type="text"
                       className="form-control"
                       value={header.receivedBy}
-                      onChange={e => setHeader(h => ({ ...h, receivedBy: e.target.value }))}
-                      disabled
+                      onChange={(e) =>
+                        setHeader((h) => ({ ...h, receivedBy: e.target.value }))
+                      }
                     />
                   </div>
                 </div>
@@ -405,15 +450,25 @@ export default function TransferSlipEditForm() {
                       labelKey="label"
                       options={[
                         { value: "Commercial", label: "Commercial" },
-                        { value: "Sample",       label: "Sample" },
-                        { value: "Other",        label: "Other" }
+                        { value: "Sample", label: "Sample" },
+                        { value: "Other", label: "Other" },
                       ]}
                       selected={
                         header.transferSlipType
-                          ? [{ value: header.transferSlipType, label: header.transferSlipType }]
+                          ? [
+                              {
+                                value: header.transferSlipType,
+                                label: header.transferSlipType,
+                              },
+                            ]
                           : []
                       }
-                      onChange={sel => setHeader(h => ({ ...h, transferSlipType: sel[0]?.value || "" }))}
+                      onChange={(sel) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferSlipType: sel[0]?.value || "",
+                        }))
+                      }
                       placeholder="Select slip type..."
                       disabled
                     />
@@ -423,8 +478,12 @@ export default function TransferSlipEditForm() {
                         className="form-control mt-2"
                         placeholder="Specify other type"
                         value={header.transferSlipTypeOther}
-                        onChange={e => setHeader(h => ({ ...h, transferSlipTypeOther: e.target.value }))}
-                        
+                        onChange={(e) =>
+                          setHeader((h) => ({
+                            ...h,
+                            transferSlipTypeOther: e.target.value,
+                          }))
+                        }
                       />
                     )}
                   </div>
@@ -434,8 +493,21 @@ export default function TransferSlipEditForm() {
                       id="transferredBy"
                       labelKey="label"
                       options={personnelOptions}
-                      selected={header.transferredBy ? [personnelOptions.find(o => o.value === header.transferredBy)] : []}
-                      onChange={sel => setHeader(h => ({ ...h, transferredBy: sel[0]?.value || "" }))}
+                      selected={
+                        header.transferredBy
+                          ? [
+                              personnelOptions.find(
+                                (o) => o.value === header.transferredBy
+                              ),
+                            ]
+                          : []
+                      }
+                      onChange={(sel) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferredBy: sel[0]?.value || "",
+                        }))
+                      }
                       placeholder="Select person..."
                       disabled
                     />
@@ -446,8 +518,12 @@ export default function TransferSlipEditForm() {
                       type="date"
                       className="form-control"
                       value={header.transferredByDate}
-                      onChange={e => setHeader(h => ({ ...h, transferredByDate: e.target.value }))}
-                      disabled
+                      onChange={(e) =>
+                        setHeader((h) => ({
+                          ...h,
+                          transferredByDate: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                   <div className="mb-3">
@@ -456,8 +532,12 @@ export default function TransferSlipEditForm() {
                       type="date"
                       className="form-control"
                       value={header.receivedDate}
-                      onChange={e => setHeader(h => ({ ...h, receivedDate: e.target.value }))}
-                      disabled
+                      onChange={(e) =>
+                        setHeader((h) => ({
+                          ...h,
+                          receivedDate: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                 </div>
@@ -476,14 +556,22 @@ export default function TransferSlipEditForm() {
                   customStyles={detailTableStyles}
                   noDataComponent="No details added yet"
                 />
-                <button type="button" className="btn btn-info btn-sm mt-3" onClick={handleDetailAddRow}>
+                <button
+                  type="button"
+                  className="btn btn-info btn-sm mt-3"
+                  onClick={handleDetailAddRow}
+                >
                   Add Row
                 </button>
               </div>
 
               <div className="d-flex justify-content-between">
-                <Link to="/transfer_slips" className="btn btn-secondary btn-sm">Back</Link>
-                <button type="submit" className="btn btn-success btn-sm">Update</button>
+                <Link to="/transfer_slips" className="btn btn-secondary btn-sm">
+                  Back
+                </Link>
+                <button type="submit" className="btn btn-success btn-sm">
+                  Update
+                </button>
               </div>
             </form>
           </div>

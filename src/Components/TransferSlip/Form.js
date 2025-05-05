@@ -161,13 +161,13 @@ export default function TransferSlipForm() {
   };
 
   // Add vertical spacing between DataTable rows
-  const detailTableStyles = {
-    rows: {
-      style: {
-        marginBottom: "12px",
-      },
-    },
-  };
+  // const detailTableStyles = {
+  //   rows: {
+  //     style: {
+  //       marginBottom: "30px",
+  //     },
+  //   },
+  // };
 
   // DataTable column definitions
   const detailColumns = [
@@ -181,8 +181,10 @@ export default function TransferSlipForm() {
           placeholder="LOT NO."
           onChange={(sel) => handleDetailLotChange(row.id, sel[0] || "")}
           className="w-100"
+          positionFixed
         />
       ),
+      width: "10%",
     },
     {
       name: <b>ITEMS</b>,
@@ -196,8 +198,10 @@ export default function TransferSlipForm() {
             handleDetailFieldChange(row.id, "product_description", sel[0] || "")
           }
           className="w-100"
+          positionFixed
         />
       ),
+      width: "35%",
     },
     {
       name: <b>MFG. DATE</b>,
@@ -215,6 +219,7 @@ export default function TransferSlipForm() {
           }
         />
       ),
+      width: "14%",
     },
     {
       name: <b>EXP DATE</b>,
@@ -228,6 +233,7 @@ export default function TransferSlipForm() {
           }
         />
       ),
+      width: "14%",
     },
     {
       name: <b>QUANTITY</b>,
@@ -241,6 +247,7 @@ export default function TransferSlipForm() {
           }
         />
       ),
+      width: "7.5%",
     },
     {
       name: <b>J.O. NO.</b>,
@@ -254,6 +261,7 @@ export default function TransferSlipForm() {
           }
         />
       ),
+      width: "8%",
     },
     {
       name: <b>REMARKS</b>,
@@ -267,17 +275,20 @@ export default function TransferSlipForm() {
           }
         />
       ),
+      width: "8%",
     },
     {
-      name: <b>ACTIONS</b>,
+      name: <b></b>,
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{ background: "none", border: "none", cursor: "pointer", margin: '1 0px'}}
           onClick={() => handleDetailDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white"></i>
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
+      width: "5%",
       ignoreRowClick: true,
       button: true,
     },
@@ -330,7 +341,6 @@ export default function TransferSlipForm() {
       });
 
       if (
-        
         !header.companyCode ||
         !header.transferSlipNumber ||
         !header.transferTo ||
@@ -596,8 +606,9 @@ export default function TransferSlipForm() {
               </div>
 
               {/* Items Details DataTable */}
-              <div className="mb-4">
-                <h5 className="mb-3 border-bottom pb-2">Items Details</h5>
+
+              <h5 className="mb-3 pb-2">Items Details</h5>
+              <div className="row">
                 <DataTable
                   columns={detailColumns}
                   data={detailRows}
@@ -606,17 +617,17 @@ export default function TransferSlipForm() {
                   bordered
                   noDataComponent="No details added yet"
                   highlightOnHover
-                  dense
-                  customStyles={detailTableStyles}
+                  // dense
+                  // customStyles={detailTableStyles}
                 />
-                <button
-                  type="button"
-                  className="btn btn-info btn-sm mt-3"
-                  onClick={handleDetailAddRow}
-                >
-                  Add Row
-                </button>
               </div>
+              <button
+                type="button"
+                className="btn btn-info btn-sm mb-3 mt-3"
+                onClick={handleDetailAddRow}
+              >
+                Add Row
+              </button>
 
               {/* Actions */}
               <div className="d-flex justify-content-between">
