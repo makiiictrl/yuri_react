@@ -16,7 +16,10 @@ import {
   fetchTeam,
   saveItem,
   showRequestSlip,
-  productDescriptionLookUp,
+  productSampleDescriptionLookUp,
+  productPromatsDescriptionLookUp,
+  productPackmatsDescriptionLookUp,
+  productCommercialDescriptionLookUp,
 } from "../../Services/RequestSlipsServices";
 
 export default Form = () => {
@@ -29,7 +32,7 @@ export default Form = () => {
   const [recommendedByOptions, setRecommendedByOptions] = useState([]);
   const [showOtherOption, setOtherOption] = useState(false);
   const [productSampleDescription, setSampleProductDescription] = useState([]);
-  const prepared_by = agent?.email?.split("@")[0] || "";
+
   const [productPromatsDescription, setPromatsProductDescription] = useState(
     []
   );
@@ -38,10 +41,13 @@ export default Form = () => {
   );
   const [productCommercialDescription, setCommercialProductDescription] =
     useState([]);
-
+  const prepared_by = agent?.email?.split("@")[0] || "";
   const [showAlert, setShowAlert] = useState(false);
   const alertRef = useRef(null);
-
+  const headerTitle = window.location.hash.includes("edit")
+    ? "Edit Request Slip"
+    : "New Request Slip";
+    
   useEffect(() => {
     if (showAlert && alertRef.current) {
       alertRef.current.focus();
@@ -263,11 +269,38 @@ export default Form = () => {
         console.error("Error fetching data", err);
       });
   }, [id]);
-  // For existing data fetching for edit
+  // For product description look up
   useEffect(() => {
-    productDescriptionLookUp()
+    productSampleDescriptionLookUp()
       .then((response) => {
         setSampleProductDescription(response.data);
+        console.log("Data fetched successfully", response.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching data", err);
+      });
+
+    productPromatsDescriptionLookUp()
+      .then((response) => {
+        setPromatsProductDescription(response.data);
+        console.log("Data fetched successfully", response.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching data", err);
+      });
+
+    productPackmatsDescriptionLookUp()
+      .then((response) => {
+        setPackmatsProductDescription(response.data);
+        console.log("Data fetched successfully", response.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching data", err);
+      });
+
+    productCommercialDescriptionLookUp()
+      .then((response) => {
+        setCommercialProductDescription(response.data);
         console.log("Data fetched successfully", response.data);
       })
       .catch((err) => {
@@ -459,14 +492,20 @@ export default Form = () => {
       ),
     },
     {
-      name: <b>Actions</b>,
+      name: <b></b>,
       width: "10%",
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            margin: "1 0px",
+          }}
           onClick={() => handleSampleDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white icon-xl"></i>
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
     },
@@ -484,7 +523,7 @@ export default Form = () => {
         <Typeahead
           className="w-100"
           positionFixed
-          options={productSampleDescription}
+          options={productPromatsDescription}
           placeholder="Product Description"
           // show the current value as a single-item array
           selected={row.product_description ? [row.product_description] : []}
@@ -528,14 +567,20 @@ export default Form = () => {
       ),
     },
     {
-      name: <b>Actions</b>,
+      name: <b></b>,
       width: "10%",
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            margin: "1 0px",
+          }}
           onClick={() => handlePromatsDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white icon-xl"></i>
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
     },
@@ -553,7 +598,7 @@ export default Form = () => {
         <Typeahead
           className="w-100"
           positionFixed
-          options={productSampleDescription}
+          options={productPackmatsDescription}
           placeholder="Product Description"
           // show the current value as a single-item array
           selected={row.product_description ? [row.product_description] : []}
@@ -595,14 +640,20 @@ export default Form = () => {
       ),
     },
     {
-      name: <b>Actions</b>,
+      name: <b></b>,
       width: "10%",
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            margin: "1 0px",
+          }}
           onClick={() => handlePackmatsDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white icon-xl"></i>
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
     },
@@ -620,7 +671,7 @@ export default Form = () => {
         <Typeahead
           className="w-100"
           positionFixed
-          options={productSampleDescription}
+          options={productCommercialDescription}
           placeholder="Product Description"
           // show the current value as a single-item array
           selected={row.product_description ? [row.product_description] : []}
@@ -670,10 +721,16 @@ export default Form = () => {
       width: "10%",
       cell: (row) => (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn-lg"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            margin: "1 0px",
+          }}
           onClick={() => handleCommercialDeleteRow(row.id)}
         >
-          <i className="icon-trash text-white icon-xl"></i>
+          <i className="icofont icofont-close text-secondary"></i>
         </button>
       ),
     },
@@ -685,7 +742,7 @@ export default Form = () => {
         <div className="card-header d-flex justify-content-between align-items-center">
           <h2 className="mb-0">
             <i className="icofont icofont-document-folder me-2 text-dark"></i>
-            Request Slip
+            {headerTitle}
           </h2>
         </div>
         <div className="card-body">
@@ -1312,7 +1369,7 @@ export default Form = () => {
                         responsive
                         striped
                         bordered
-                        noDataComponent="No Records of Agent User Menu"
+                        noDataComponent="No Records of Sample Request Slip"
                         highlightOnHover
                       />
                     </div>
@@ -1338,7 +1395,7 @@ export default Form = () => {
                         responsive
                         striped
                         bordered
-                        noDataComponent="No Records of Agent User Menu"
+                        noDataComponent="No Records of Promats Request Slip"
                         highlightOnHover
                       />
                     </div>
@@ -1364,7 +1421,7 @@ export default Form = () => {
                         responsive
                         striped
                         bordered
-                        noDataComponent="No Records of Agent User Menu"
+                        noDataComponent="No Records of Packmats Request Slip"
                         highlightOnHover
                       />
                     </div>
@@ -1390,7 +1447,7 @@ export default Form = () => {
                         responsive
                         striped
                         bordered
-                        noDataComponent="No Records of Agent User Menu"
+                        noDataComponent="No Records of Commercial Request Slip"
                         highlightOnHover
                       />
                     </div>

@@ -110,7 +110,7 @@ export default Sidebar = () => {
                   className="sidebar-link sidebar-title link-nav"
                   to="/dashboard"
                 >
-                  <i className="icofont icofont-user-alt-7 me-2 text-white"></i>
+                  <i className="icofont icofont-home me-2 text-white"></i>
                   <span>Dashboard</span>
                 </Link>
               </li>
