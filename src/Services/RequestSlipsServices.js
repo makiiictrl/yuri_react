@@ -25,9 +25,24 @@ export const customerNameLookUp = () => {
     return axios.get("http://localhost:3000/request_slips/customer_name_look_up");
 };
 
-// For Product Description Look up
-export const productDescriptionLookUp = () => {
+// For Product Sample Description Look up
+export const productSampleDescriptionLookUp = () => {
   return axios.get("http://localhost:3000/api/sample_inventory_lookup_sample_item_master");
+};
+
+// For Product Promats Description Look up
+export const productPromatsDescriptionLookUp = () => {
+  return axios.get("http://localhost:3000/api/sample_inventory_lookup_promats_item_master");
+};
+
+// For Product Packmats Description Look up
+export const productPackmatsDescriptionLookUp = () => {
+  return axios.get("http://localhost:3000/api/sample_inventory_lookup_packmats_item_master");
+};
+
+// For Product Commercial Description Look up
+export const productCommercialDescriptionLookUp = () => {
+  return axios.get("http://localhost:3000/api/sample_inventory_lookup_commercial_item_master");
 };
 
 // For employee autofilled

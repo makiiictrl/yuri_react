@@ -28,33 +28,37 @@ export default function InventoryForm() {
   const [documentNumbers, setDocumentNumber] = useState(false);
   const [inventoryDetails, setInventoryDetails] = useState([]);
 
+  const headerTitle = window.location.hash.includes("edit")
+    ? "Edit Inventory"
+    : "New Inventory Slip";
+
   const columns = [
     {
-      name: "Product Code",
+      name: <b>Product Code</b>,
       selector: (row) => row.product_code,
       sortable: true,
       width: "15%",
     },
     {
-      name: "Product Description",
+      name: <b>Product Description</b>,
       selector: (row) => row.product_description,
       sortable: true,
       width: "50%",
     },
     {
-      name: "Lot No.",
+      name: <b>Lot No.</b>,
       selector: (row) => row.lot_number,
       sortable: true,
       width: "10%",
     },
     {
-      name: "Expiry Date",
+      name: <b>Expiry Date</b>,
       selector: (row) => row.expiry_date,
       sortable: true,
       width: "15%",
     },
     {
-      name: "Quantity",
+      name: <b>Quantity</b>,
       selector: (row) => row.received_quantity,
       sortable: true,
       width: "10%",
@@ -198,7 +202,7 @@ export default function InventoryForm() {
           <div className="card-header d-flex justify-content-between align-items-center">
             <h2 className="mb-0">
               <i className="icofont icofont-mail me-2 text-dark"></i>
-              Inventory
+              {headerTitle}
             </h2>
           </div>
           <div className="card-body">
@@ -260,7 +264,7 @@ export default function InventoryForm() {
 
                 <div className="col-md-6">
                   <div className="form-group mb-3">
-                    <label>Warehouse Location:</label>
+                    <label>Warehouse Location <span className="text-danger">*</span></label>
                     <select
                       id="inventory_type"
                       className="form-select"
@@ -288,7 +292,7 @@ export default function InventoryForm() {
               <div className="row">
                 <div className="col-md-4">
                   <div className="form-group mb-3">
-                    <label>Document No.</label>
+                    <label>Document No. <span className="text-danger">*</span></label>
                     <Typeahead
                       allowNew={false}
                       className="w-100"
@@ -369,7 +373,7 @@ export default function InventoryForm() {
                 </div>
                 <div className="col-md-4">
                   <div className="form-group mb-3">
-                    <label>Document Type:</label>
+                    <label>Document Type <span className="text-danger">*</span></label>
                     <div className="input-group">
                       <span className="input-group-text">
                         <i className="icofont icofont-document-folder"></i>
@@ -389,7 +393,7 @@ export default function InventoryForm() {
                 </div>
                 <div className="col-md-4">
                   <div className="form-group mb-3">
-                    <label>Document Date:</label>
+                    <label>Document Date</label>
                     <input
                       className="form-control"
                       type="date"

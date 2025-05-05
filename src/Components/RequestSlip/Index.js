@@ -112,17 +112,10 @@ export default Index = () => {
       name: <b>Actions</b>,
       cell: (row) => (
         <div className="action">
-<<<<<<< HEAD
-          <Link
-            to={`/request_slips/edit/${row.id}`}
-            title="Edit"
-            className="d-inline-block"
-          >
-          <i className="icon-pencil-alt text-info me-1"></i>
-=======
+
+
           <Link to={`/request_slips/edit/${row.id}`}>
             <i className="icon-pencil-alt text-info me-1"></i>
->>>>>>> 12a516c9ece1bdfeed1bb7a15d5ce372988fdd8f
           </Link>
           <Link
             to={`${API_BASE_URL}/request_slips/${row.id}/print_slip_request`}
@@ -133,17 +126,8 @@ export default Index = () => {
           </Link>
           <button
             onClick={() => handleDelete(row.id)}
-<<<<<<< HEAD
-
             style={{ background: "none", border: "none", cursor: "pointer", margin: '1 0px' }}
-=======
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              margin: "1 0px",
-            }}
->>>>>>> 12a516c9ece1bdfeed1bb7a15d5ce372988fdd8f
+
           >
             <i className="icon-trash text-danger"></i>
           </button>
