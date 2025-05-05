@@ -62,53 +62,60 @@ export default Index = () => {
           omit: true, // this hides the column from the table view
         },
         {
-          name: <b>Company</b>,
-          selector: (row) => (row.company_code === 1 ? "CDCI" : "CYDC"),
-          width: "125px",
+          name: <b>Inventory Type</b>,
+          selector: (row) => row.inventory_type,
+          width: "10%",
           whiteSpace: "nowrap",
           center: true,
         },
     
         {
-          name: <b>Issuance No.</b>,
-          selector: (row) => row.issuance_number,
-          width: "150px",
+          name: <b>Lot No.</b>,
+          selector: (row) => row.lot_number,
+          width: "10%",
           whiteSpace: "nowrap",
           // center: true,
           sortable: true,
         },
     
         {
-          name: <b>Request Number</b>,
-          selector: (row) => row.request_number,
-          width: "170px",
-          whiteSpace: "nowrap",
-          // center: true,
-          sortable: true,
-        },
-    
-        {
-          name: <b>Issuance Date</b>,
+          name: <b>Product Code</b>,
           selector: (row) => row.issuance_date,
-          width: "150px",
+          width: "10%",
           whiteSpace: "nowrap",
           // center: true,
           sortable: true,
         },
     
         {
-          name: <b>Employee Name</b>,
-          selector: (row) => row.employee_name,
-          width: "200px",
+          name: <b>Product Description</b>,
+          selector: (row) => row.item_description,
+          width: "30%",
           whiteSpace: "nowrap",
           // center: true,
           sortable: true,
         },
     
         {
-          name: <b>Address</b>,
-          selector: (row) => row.address,
-          width: "270px",
+          name: <b>Expiry Date</b>,
+          selector: (row) => row.expiry_date,
+          width: "10%",
+          whiteSpace: "nowrap",
+          // center: true,
+          sortable: true,
+        },
+        {
+          name: <b>Balance</b>,
+          selector: (row) => row.id,
+          width: "10%",
+          whiteSpace: "nowrap",
+          // center: true,
+          sortable: true,
+        },
+        {
+          name: <b>Remarks</b>,
+          selector: (row) => row.remarks,
+          width: "10%",
           whiteSpace: "nowrap",
           // center: true,
           sortable: true,
@@ -116,14 +123,16 @@ export default Index = () => {
     
         {
           name: <b>Actions</b>,
+          width: "5%",
           cell: (row) => (
             <div className="action">
-              <Link to={`/issue_slips/edit/${row.id}`}>
+              <Link to={`/inventories/edit/${row.id}`} className="d-inline-block" title="Edit">
                 <i className="icon-pencil-alt text-info"></i>
               </Link>
               <button
                 onClick={() => handleDelete(row.id)}
                 style={{ background: "none", border: "none", cursor: "pointer" }}
+                title="Delete"
               >
                 <i className="icon-trash text-danger"></i>
               </button>
@@ -140,7 +149,7 @@ export default Index = () => {
         <div className="card title-line">
           <div className="card-header d-flex justify-content-between align-items-center">
             <h2 className="mb-0">
-              <i className="icofont icofont-paper me-2 text-dark"></i>
+              <i className="icofont icofont-list me-2 text-dark"></i>
               Inventory Listing
             </h2>
             <div className="d-flex align-items-center">
@@ -163,7 +172,7 @@ export default Index = () => {
               </div>
               <Link
                 className="btn btn-outline-primary btn-sm flex-shrink-0 w-auto"
-                to="/issue_slips/new"
+                to="/inventories/new"
               >
                 New Inventory Listing
               </Link>
@@ -177,7 +186,7 @@ export default Index = () => {
               responsive
               striped
               bordered
-              noDataComponent="No Records of Agent User Menu"
+              noDataComponent="No Records of Inventory Listing"
               highlightOnHover
               paginationRowsPerPageOptions={[10, 50, 100, 500, 1000]}
             />

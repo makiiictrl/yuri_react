@@ -132,11 +132,14 @@ export default AdminDashboard = () => {
             data-bs-target="#editModal"
             onClick={() => setCurrentAgent(row)}
             style={{ background: "none", border: "none", cursor: "pointer" }}
+            title="Edit"
+            className="d-inline-block"
           >
             <i className="icon-pencil-alt text-info"></i>
           </button>
           <button
             onClick={() => handleDelete(row.id)}
+            title="Delete"
             style={{ background: "none", border: "none", cursor: "pointer" }}
           >
             <i className="icon-trash text-danger"></i>
@@ -248,7 +251,7 @@ export default AdminDashboard = () => {
                     responsive
                     striped
                     bordered
-                    noDataComponent="No Records of Agent User Menu"
+                    noDataComponent="No Records of Admin Dashboard"
                     highlightOnHover
                     paginationRowsPerPageOptions={[10, 50, 100, 500, 1000]}
                   />

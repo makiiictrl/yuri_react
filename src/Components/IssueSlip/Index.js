@@ -118,7 +118,7 @@ export default Index = () => {
       name: <b>Actions</b>,
       cell: (row) => (
         <div className="action">
-          <Link to={`/issue_slips/edit/${row.id}`}>
+          <Link to={`/issue_slips/edit/${row.id}`} className="d-inline-block" title="Edit">
             <i className="icon-pencil-alt text-info"></i>
           </Link>
           <Link
@@ -131,6 +131,7 @@ export default Index = () => {
           <button
             onClick={() => handleDelete(row.id)}
             style={{ background: "none", border: "none", cursor: "pointer" }}
+            title="Delete"
           >
             <i className="icon-trash text-danger"></i>
           </button>
@@ -183,7 +184,7 @@ export default Index = () => {
               responsive
               striped
               bordered
-              noDataComponent="No Records of Agent User Menu"
+              noDataComponent="No Records of Issue Slip"
               highlightOnHover
               paginationRowsPerPageOptions={[10, 50, 100, 500, 1000]}
             />

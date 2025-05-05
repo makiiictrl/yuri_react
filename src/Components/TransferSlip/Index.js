@@ -67,7 +67,7 @@ export default function Index() {
       name: <b>Actions</b>,
       cell: row => (
         <div className="action">
-          <Link to={`/transfer_slips/${row.id}`} title="View">
+          <Link to={`/transfer_slips/${row.id}`} title="View" className="d-inline-block">
             <i className="icon-eye text-primary me-1"></i>
           </Link>
           <Link
@@ -150,7 +150,7 @@ export default function Index() {
               striped
               bordered
               highlightOnHover
-              noDataComponent="No Transfer Slips"
+              noDataComponent="No Record of Transfer Slips"
             />
           </div>
         </div>

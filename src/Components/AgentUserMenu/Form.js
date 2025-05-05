@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { newAgentUserMenus } from "../../Helpers/Models";
 import { Typeahead } from "react-bootstrap-typeahead";
 import ErrorBoundary from "../ErrorBoundary";
@@ -10,12 +10,16 @@ import {
 } from "../../Services/AgentUserMenusServices";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default Form = ({ ModalId }) => {
   const [data, setData] = useState([newAgentUserMenus]);
   const navigate = useNavigate();
   const [menuOptions, setMenuOptions] = useState([]);
   const [agentOptions, setAgentOptions] = useState([]);
+  const [showAgentUserMenuAlert, setShowAgentUserMenuAlert] = useState(false);
+  const alertRef = useRef(null);
 
   useEffect(() => {
     menuIdLookUp()
@@ -43,15 +47,49 @@ export default Form = ({ ModalId }) => {
       });
   }, []);
 
-
-
   const { id } = useParams();
 
   // For saving
   const handleSave = () => {
+    if (!data.agent_menu_id || !data.agent_id) {
+      // always show the alert…
+      setShowAgentUserMenuAlert(true);
+      // …and immediately focus it, even if already visible
+      if (alertRef.current) {
+        alertRef.current.focus();
+      }
+      return;
+    }
+
+    setShowAgentUserMenuAlert(false);
+
     saveItem(data)
       .then((response) => {
-        navigate("/agent_user_menus");
+        toast.success("Agent User Menu stored successfully.", {
+          position: "top-right",
+          autoClose: 3000,
+          icon: (
+            <svg
+              className="checkmark"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48 48"
+            >
+              <circle
+                className="checkmark__circle"
+                cx="24"
+                cy="24"
+                r="22"
+                fill="none"
+              />
+              <path
+                className="checkmark__check"
+                fill="none"
+                d="M14 25l7 7 13-13"
+              />
+            </svg>
+          ),
+        });
+        setTimeout(() => navigate("/agent_user_menus"), 3000);
       })
       .catch((response) => {
         alert("Error");
@@ -75,6 +113,26 @@ export default Form = ({ ModalId }) => {
     <div className="page-body">
       <div className="row justify-content-center">
         <div className="col-md-4">
+          {showAgentUserMenuAlert && (
+            <div
+              ref={alertRef}
+              tabIndex="-1"
+              className="alert alert-light-secondary light alert-dismissible text-dark border-left-wrapper"
+              role="alert"
+            >
+              <i data-feather="help-circle"></i>
+              <p>
+                Make sure to complete filling up the required (
+                <span className="text-danger">*</span>) inputs.
+              </p>
+              <button
+                className="btn-close"
+                type="button"
+                aria-label="Close"
+                onClick={() => setShowAgentUserMenuAlert(false)}
+              />
+            </div>
+          )}
           <div className="card title-line">
             <div className="card-header d-flex align-items-center">
               <i className="icofont icofont-users me-2 text-dark"></i>
@@ -160,9 +218,7 @@ export default Form = ({ ModalId }) => {
                           });
                         }
                       }}
-                      selected={
-                        data.agent_id ? [`${data.agent_id}`] : []
-                      }
+                      selected={data.agent_id ? [`${data.agent_id}`] : []}
                       onInputChange={(input) => {
                         const parts = input.split(" - ");
                         const agentId = parts[0];
@@ -292,6 +348,14 @@ export default Form = ({ ModalId }) => {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+      />
     </div>
   );
 };

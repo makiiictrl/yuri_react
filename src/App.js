@@ -22,12 +22,8 @@ import RequestSlipForm from "./Components/RequestSlip/Form"
 import IssueSlipIndex from "./Components/IssueSlip/Index";
 import IssueSlipForm from "./Components/IssueSlip/Form";
 
-import InventoriesForm from "./Components/InventoryEntries/Form"
-
-// import AgentUserMenuShow from "./Components/AgentUserMenu/";
-
 import InventoriesIndex from "./Components/InventoryListing/Index";
-// import InventoriesForm from "./Components/InventoryListing/Form";
+import InventoriesForm from "./Components/InventoryListing/Form";
 
 import ItemMasterIndex from "./Components/ItemMaster/Index";
 import ItemMasterForm from "./Components/ItemMaster/Form";
@@ -78,8 +74,12 @@ const App = () => {
         <Route path="item_masters" element={<ItemMasterIndex/>}/>
         <Route path="item_masters/new" element={<ItemMasterForm/>}/>
         <Route path="item_masters/edit/:id" element={<ItemMasterForm/>}/>
+        
         {/* Inventories */}
+        <Route path="inventory_listings" element={<InventoriesIndex/>}/>
         <Route path="inventories/new" element={<InventoriesForm/>}/>
+        <Route path="inventories/edit/:id" element={<InventoriesForm/>}/>
+        
       
       </Route>
     </Routes>

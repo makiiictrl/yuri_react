@@ -28801,13 +28801,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             "data-bs-toggle": "modal",
             "data-bs-target": "#editModal",
             onClick: () => setCurrentAgent(row),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Edit",
+            className: "d-inline-block"
           },
           /* @__PURE__ */ import_react7.default.createElement("i", { className: "icon-pencil-alt text-info" })
         ), /* @__PURE__ */ import_react7.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.id),
+            title: "Delete",
             style: { background: "none", border: "none", cursor: "pointer" }
           },
           /* @__PURE__ */ import_react7.default.createElement("i", { className: "icon-trash text-danger" })
@@ -28876,7 +28879,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         responsive: true,
         striped: true,
         bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
+        noDataComponent: "No Records of Admin Dashboard",
         highlightOnHover: true,
         paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
       }
@@ -29223,14 +29226,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         cell: (row) => /* @__PURE__ */ import_react14.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react14.default.createElement(
           Link,
           {
-            to: `/agent_user_menus/edit/${row.agent_user_menus_id}`
+            to: `/agent_user_menus/edit/${row.agent_user_menus_id}`,
+            title: "Edit",
+            className: "d-inline-block"
           },
           /* @__PURE__ */ import_react14.default.createElement("i", { className: "icon-pencil-alt text-info" })
         ), /* @__PURE__ */ import_react14.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.agent_user_menus_id),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
           },
           /* @__PURE__ */ import_react14.default.createElement("i", { className: "icon-trash text-danger" })
         )),
@@ -29285,7 +29291,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
 
   // src/Components/AgentUserMenu/Form.js
-  var import_react44 = __toESM(require_react());
+  var import_react55 = __toESM(require_react());
 
   // node_modules/@babel/runtime/helpers/esm/extends.js
   function _extends() {
@@ -33727,6 +33733,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
   var ErrorBoundary_default = ErrorBoundary;
 
+<<<<<<< HEAD
+=======
   // src/Components/AgentUserMenu/Form.js
   var Form_default = Form = ({ ModalId }) => {
     const [data2, setData] = (0, import_react44.useState)([newAgentUserMenus]);
@@ -36390,12 +36398,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react63 = __toESM(require_react());
   var import_react_data_table_component10 = __toESM(require_index_cjs());
 
+>>>>>>> 12a516c9ece1bdfeed1bb7a15d5ce372988fdd8f
   // node_modules/react-toastify/dist/index.mjs
-  var import_react52 = __toESM(require_react(), 1);
-  var import_react53 = __toESM(require_react(), 1);
-  var import_react54 = __toESM(require_react(), 1);
-  var import_react55 = __toESM(require_react(), 1);
-  var import_react56 = __toESM(require_react(), 1);
+  var import_react44 = __toESM(require_react(), 1);
+  var import_react45 = __toESM(require_react(), 1);
+  var import_react46 = __toESM(require_react(), 1);
+  var import_react47 = __toESM(require_react(), 1);
+  var import_react48 = __toESM(require_react(), 1);
 
   // node_modules/clsx/dist/clsx.mjs
   function r2(e3) {
@@ -36414,12 +36423,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var clsx_default = clsx;
 
   // node_modules/react-toastify/dist/index.mjs
-  var import_react57 = __toESM(require_react(), 1);
-  var import_react58 = __toESM(require_react(), 1);
-  var import_react59 = __toESM(require_react(), 1);
-  var import_react60 = __toESM(require_react(), 1);
-  var import_react61 = __toESM(require_react(), 1);
-  var import_react62 = __toESM(require_react(), 1);
+  var import_react49 = __toESM(require_react(), 1);
+  var import_react50 = __toESM(require_react(), 1);
+  var import_react51 = __toESM(require_react(), 1);
+  var import_react52 = __toESM(require_react(), 1);
+  var import_react53 = __toESM(require_react(), 1);
+  var import_react54 = __toESM(require_react(), 1);
   function Mt(t2) {
     if (!t2 || typeof document == "undefined") return;
     let o3 = document.head || document.getElementsByTagName("head")[0], e3 = document.createElement("style");
@@ -36433,7 +36442,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var mt = (t2) => N(t2) || L(t2);
   var B = (t2) => N(t2) || P(t2) ? t2 : null;
   var pt = (t2, o3) => t2 === false || L(t2) && t2 > 0 ? t2 : o3;
-  var z = (t2) => (0, import_react52.isValidElement)(t2) || N(t2) || P(t2) || L(t2);
+  var z = (t2) => (0, import_react44.isValidElement)(t2) || N(t2) || P(t2) || L(t2);
   function Z(t2, o3, e3 = 300) {
     let { scrollHeight: r3, style: s } = t2;
     requestAnimationFrame(() => {
@@ -36444,34 +36453,34 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
   function $({ enter: t2, exit: o3, appendPosition: e3 = false, collapse: r3 = true, collapseDuration: s = 300 }) {
     return function({ children: a, position: d, preventExitTransition: c, done: T, nodeRef: g, isIn: v, playToast: x }) {
-      let C = e3 ? `${t2}--${d}` : t2, S = e3 ? `${o3}--${d}` : o3, E = (0, import_react53.useRef)(0);
-      return (0, import_react53.useLayoutEffect)(() => {
+      let C = e3 ? `${t2}--${d}` : t2, S = e3 ? `${o3}--${d}` : o3, E = (0, import_react45.useRef)(0);
+      return (0, import_react45.useLayoutEffect)(() => {
         let f = g.current, p = C.split(" "), b = (n2) => {
           n2.target === g.current && (x(), f.removeEventListener("animationend", b), f.removeEventListener("animationcancel", b), E.current === 0 && n2.type !== "animationcancel" && f.classList.remove(...p));
         };
         (() => {
           f.classList.add(...p), f.addEventListener("animationend", b), f.addEventListener("animationcancel", b);
         })();
-      }, []), (0, import_react53.useEffect)(() => {
+      }, []), (0, import_react45.useEffect)(() => {
         let f = g.current, p = () => {
           f.removeEventListener("animationend", p), r3 ? Z(f, T, s) : T();
         };
         v || (c ? p() : (() => {
           E.current = 1, f.className += ` ${S}`, f.addEventListener("animationend", p);
         })());
-      }, [v]), import_react53.default.createElement(import_react53.default.Fragment, null, a);
+      }, [v]), import_react45.default.createElement(import_react45.default.Fragment, null, a);
     };
   }
   function J(t2, o3) {
     return { content: tt(t2.content, t2.props), containerId: t2.props.containerId, id: t2.props.toastId, theme: t2.props.theme, type: t2.props.type, data: t2.props.data || {}, isLoading: t2.props.isLoading, icon: t2.props.icon, reason: t2.removalReason, status: o3 };
   }
   function tt(t2, o3, e3 = false) {
-    return (0, import_react54.isValidElement)(t2) && !N(t2.type) ? (0, import_react54.cloneElement)(t2, { closeToast: o3.closeToast, toastProps: o3, data: o3.data, isPaused: e3 }) : P(t2) ? t2({ closeToast: o3.closeToast, toastProps: o3, data: o3.data, isPaused: e3 }) : t2;
+    return (0, import_react46.isValidElement)(t2) && !N(t2.type) ? (0, import_react46.cloneElement)(t2, { closeToast: o3.closeToast, toastProps: o3, data: o3.data, isPaused: e3 }) : P(t2) ? t2({ closeToast: o3.closeToast, toastProps: o3, data: o3.data, isPaused: e3 }) : t2;
   }
   function yt({ closeToast: t2, theme: o3, ariaLabel: e3 = "close" }) {
-    return import_react55.default.createElement("button", { className: `Toastify__close-button Toastify__close-button--${o3}`, type: "button", onClick: (r3) => {
+    return import_react47.default.createElement("button", { className: `Toastify__close-button Toastify__close-button--${o3}`, type: "button", onClick: (r3) => {
       r3.stopPropagation(), t2(true);
-    }, "aria-label": e3 }, import_react55.default.createElement("svg", { "aria-hidden": "true", viewBox: "0 0 14 16" }, import_react55.default.createElement("path", { fillRule: "evenodd", d: "M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z" })));
+    }, "aria-label": e3 }, import_react47.default.createElement("svg", { "aria-hidden": "true", viewBox: "0 0 14 16" }, import_react47.default.createElement("path", { fillRule: "evenodd", d: "M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z" })));
   }
   function gt({ delay: t2, isRunning: o3, closeToast: e3, type: r3 = "default", hide: s, className: l2, controlledProgress: a, progress: d, rtl: c, isIn: T, theme: g }) {
     let v = s || a && d === 0, x = { animationDuration: `${t2}ms`, animationPlayState: o3 ? "running" : "paused" };
@@ -36479,7 +36488,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     let C = clsx_default("Toastify__progress-bar", a ? "Toastify__progress-bar--controlled" : "Toastify__progress-bar--animated", `Toastify__progress-bar-theme--${g}`, `Toastify__progress-bar--${r3}`, { ["Toastify__progress-bar--rtl"]: c }), S = P(l2) ? l2({ rtl: c, type: r3, defaultClassName: C }) : clsx_default(C, l2), E = { [a && d >= 1 ? "onTransitionEnd" : "onAnimationEnd"]: a && d < 1 ? null : () => {
       T && e3();
     } };
-    return import_react56.default.createElement("div", { className: "Toastify__progress-bar--wrp", "data-hidden": v }, import_react56.default.createElement("div", { className: `Toastify__progress-bar--bg Toastify__progress-bar-theme--${g} Toastify__progress-bar--${r3}` }), import_react56.default.createElement("div", { role: "progressbar", "aria-hidden": v ? "true" : "false", "aria-label": "notification timer", className: S, style: x, ...E }));
+    return import_react48.default.createElement("div", { className: "Toastify__progress-bar--wrp", "data-hidden": v }, import_react48.default.createElement("div", { className: `Toastify__progress-bar--bg Toastify__progress-bar-theme--${g} Toastify__progress-bar--${r3}` }), import_react48.default.createElement("div", { role: "progressbar", "aria-hidden": v ? "true" : "false", "aria-label": "notification timer", className: S, style: x, ...E }));
   }
   var Xt = 1;
   var at = () => `${Xt++}`;
@@ -36677,9 +36686,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   y.pause = (t2) => rt(false, t2);
   function It(t2) {
     var a;
-    let { subscribe: o3, getSnapshot: e3, setProps: r3 } = (0, import_react58.useRef)(Et(t2)).current;
+    let { subscribe: o3, getSnapshot: e3, setProps: r3 } = (0, import_react50.useRef)(Et(t2)).current;
     r3(t2);
-    let s = (a = (0, import_react58.useSyncExternalStore)(o3, e3, e3)) == null ? void 0 : a.slice();
+    let s = (a = (0, import_react50.useSyncExternalStore)(o3, e3, e3)) == null ? void 0 : a.slice();
     function l2(d) {
       if (!s) return [];
       let c = /* @__PURE__ */ new Map();
@@ -36691,8 +36700,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     return { getToastToRender: l2, isToastActive: X, count: s == null ? void 0 : s.length };
   }
   function At(t2) {
-    let [o3, e3] = (0, import_react59.useState)(false), [r3, s] = (0, import_react59.useState)(false), l2 = (0, import_react59.useRef)(null), a = (0, import_react59.useRef)({ start: 0, delta: 0, removalDistance: 0, canCloseOnClick: true, canDrag: false, didMove: false }).current, { autoClose: d, pauseOnHover: c, closeToast: T, onClick: g, closeOnClick: v } = t2;
-    xt({ id: t2.toastId, containerId: t2.containerId, fn: e3 }), (0, import_react59.useEffect)(() => {
+    let [o3, e3] = (0, import_react51.useState)(false), [r3, s] = (0, import_react51.useState)(false), l2 = (0, import_react51.useRef)(null), a = (0, import_react51.useRef)({ start: 0, delta: 0, removalDistance: 0, canCloseOnClick: true, canDrag: false, didMove: false }).current, { autoClose: d, pauseOnHover: c, closeToast: T, onClick: g, closeOnClick: v } = t2;
+    xt({ id: t2.toastId, containerId: t2.containerId, fn: e3 }), (0, import_react51.useEffect)(() => {
       if (t2.pauseOnFocusLoss) return x(), () => {
         C();
       };
@@ -36750,32 +36759,32 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       g && g(m), a.canCloseOnClick && T(true);
     }), { playToast: f, pauseToast: p, isRunning: o3, preventExitTransition: r3, toastRef: l2, eventHandlers: h };
   }
-  var Ot = typeof window != "undefined" ? import_react60.useLayoutEffect : import_react60.useEffect;
-  var G = ({ theme: t2, type: o3, isLoading: e3, ...r3 }) => import_react62.default.createElement("svg", { viewBox: "0 0 24 24", width: "100%", height: "100%", fill: t2 === "colored" ? "currentColor" : `var(--toastify-icon-color-${o3})`, ...r3 });
+  var Ot = typeof window != "undefined" ? import_react52.useLayoutEffect : import_react52.useEffect;
+  var G = ({ theme: t2, type: o3, isLoading: e3, ...r3 }) => import_react54.default.createElement("svg", { viewBox: "0 0 24 24", width: "100%", height: "100%", fill: t2 === "colored" ? "currentColor" : `var(--toastify-icon-color-${o3})`, ...r3 });
   function ao(t2) {
-    return import_react62.default.createElement(G, { ...t2 }, import_react62.default.createElement("path", { d: "M23.32 17.191L15.438 2.184C14.728.833 13.416 0 11.996 0c-1.42 0-2.733.833-3.443 2.184L.533 17.448a4.744 4.744 0 000 4.368C1.243 23.167 2.555 24 3.975 24h16.05C22.22 24 24 22.044 24 19.632c0-.904-.251-1.746-.68-2.44zm-9.622 1.46c0 1.033-.724 1.823-1.698 1.823s-1.698-.79-1.698-1.822v-.043c0-1.028.724-1.822 1.698-1.822s1.698.79 1.698 1.822v.043zm.039-12.285l-.84 8.06c-.057.581-.408.943-.897.943-.49 0-.84-.367-.896-.942l-.84-8.065c-.057-.624.25-1.095.779-1.095h1.91c.528.005.84.476.784 1.1z" }));
+    return import_react54.default.createElement(G, { ...t2 }, import_react54.default.createElement("path", { d: "M23.32 17.191L15.438 2.184C14.728.833 13.416 0 11.996 0c-1.42 0-2.733.833-3.443 2.184L.533 17.448a4.744 4.744 0 000 4.368C1.243 23.167 2.555 24 3.975 24h16.05C22.22 24 24 22.044 24 19.632c0-.904-.251-1.746-.68-2.44zm-9.622 1.46c0 1.033-.724 1.823-1.698 1.823s-1.698-.79-1.698-1.822v-.043c0-1.028.724-1.822 1.698-1.822s1.698.79 1.698 1.822v.043zm.039-12.285l-.84 8.06c-.057.581-.408.943-.897.943-.49 0-.84-.367-.896-.942l-.84-8.065c-.057-.624.25-1.095.779-1.095h1.91c.528.005.84.476.784 1.1z" }));
   }
   function so(t2) {
-    return import_react62.default.createElement(G, { ...t2 }, import_react62.default.createElement("path", { d: "M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0zm.25 5a1.5 1.5 0 11-1.5 1.5 1.5 1.5 0 011.5-1.5zm2.25 13.5h-4a1 1 0 010-2h.75a.25.25 0 00.25-.25v-4.5a.25.25 0 00-.25-.25h-.75a1 1 0 010-2h1a2 2 0 012 2v4.75a.25.25 0 00.25.25h.75a1 1 0 110 2z" }));
+    return import_react54.default.createElement(G, { ...t2 }, import_react54.default.createElement("path", { d: "M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0zm.25 5a1.5 1.5 0 11-1.5 1.5 1.5 1.5 0 011.5-1.5zm2.25 13.5h-4a1 1 0 010-2h.75a.25.25 0 00.25-.25v-4.5a.25.25 0 00-.25-.25h-.75a1 1 0 010-2h1a2 2 0 012 2v4.75a.25.25 0 00.25.25h.75a1 1 0 110 2z" }));
   }
   function no(t2) {
-    return import_react62.default.createElement(G, { ...t2 }, import_react62.default.createElement("path", { d: "M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm6.927 8.2l-6.845 9.289a1.011 1.011 0 01-1.43.188l-4.888-3.908a1 1 0 111.25-1.562l4.076 3.261 6.227-8.451a1 1 0 111.61 1.183z" }));
+    return import_react54.default.createElement(G, { ...t2 }, import_react54.default.createElement("path", { d: "M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm6.927 8.2l-6.845 9.289a1.011 1.011 0 01-1.43.188l-4.888-3.908a1 1 0 111.25-1.562l4.076 3.261 6.227-8.451a1 1 0 111.61 1.183z" }));
   }
   function ro(t2) {
-    return import_react62.default.createElement(G, { ...t2 }, import_react62.default.createElement("path", { d: "M11.983 0a12.206 12.206 0 00-8.51 3.653A11.8 11.8 0 000 12.207 11.779 11.779 0 0011.8 24h.214A12.111 12.111 0 0024 11.791 11.766 11.766 0 0011.983 0zM10.5 16.542a1.476 1.476 0 011.449-1.53h.027a1.527 1.527 0 011.523 1.47 1.475 1.475 0 01-1.449 1.53h-.027a1.529 1.529 0 01-1.523-1.47zM11 12.5v-6a1 1 0 012 0v6a1 1 0 11-2 0z" }));
+    return import_react54.default.createElement(G, { ...t2 }, import_react54.default.createElement("path", { d: "M11.983 0a12.206 12.206 0 00-8.51 3.653A11.8 11.8 0 000 12.207 11.779 11.779 0 0011.8 24h.214A12.111 12.111 0 0024 11.791 11.766 11.766 0 0011.983 0zM10.5 16.542a1.476 1.476 0 011.449-1.53h.027a1.527 1.527 0 011.523 1.47 1.475 1.475 0 01-1.449 1.53h-.027a1.529 1.529 0 01-1.523-1.47zM11 12.5v-6a1 1 0 012 0v6a1 1 0 11-2 0z" }));
   }
   function io() {
-    return import_react62.default.createElement("div", { className: "Toastify__spinner" });
+    return import_react54.default.createElement("div", { className: "Toastify__spinner" });
   }
   var W = { info: so, warning: ao, success: no, error: ro, spinner: io };
   var lo = (t2) => t2 in W;
   function Nt({ theme: t2, type: o3, isLoading: e3, icon: r3 }) {
     let s = null, l2 = { theme: t2, type: o3 };
-    return r3 === false || (P(r3) ? s = r3({ ...l2, isLoading: e3 }) : (0, import_react62.isValidElement)(r3) ? s = (0, import_react62.cloneElement)(r3, l2) : e3 ? s = W.spinner() : lo(o3) && (s = W[o3](l2))), s;
+    return r3 === false || (P(r3) ? s = r3({ ...l2, isLoading: e3 }) : (0, import_react54.isValidElement)(r3) ? s = (0, import_react54.cloneElement)(r3, l2) : e3 ? s = W.spinner() : lo(o3) && (s = W[o3](l2))), s;
   }
   var wt = (t2) => {
     let { isRunning: o3, preventExitTransition: e3, toastRef: r3, eventHandlers: s, playToast: l2 } = At(t2), { closeButton: a, children: d, autoClose: c, onClick: T, type: g, hideProgressBar: v, closeToast: x, transition: C, position: S, className: E, style: f, progressClassName: p, updateId: b, role: i, progress: n2, rtl: u, toastId: h, deleteToast: m, isIn: _, isLoading: k, closeOnClick: M, theme: A, ariaLabel: R } = t2, D = clsx_default("Toastify__toast", `Toastify__toast-theme--${A}`, `Toastify__toast--${g}`, { ["Toastify__toast--rtl"]: u }, { ["Toastify__toast--close-on-click"]: M }), Y = P(E) ? E({ rtl: u, position: S, type: g, defaultClassName: D }) : clsx_default(D, E), ft = Nt(t2), dt = !!n2 || !c, j = { closeToast: x, type: g, theme: A }, H = null;
-    return a === false || (P(a) ? H = a(j) : (0, import_react61.isValidElement)(a) ? H = (0, import_react61.cloneElement)(a, j) : H = yt(j)), import_react61.default.createElement(C, { isIn: _, done: m, position: S, preventExitTransition: e3, nodeRef: r3, playToast: l2 }, import_react61.default.createElement("div", { id: h, tabIndex: 0, onClick: T, "data-in": _, className: Y, ...s, style: f, ref: r3, ..._ && { role: i, "aria-label": R } }, ft != null && import_react61.default.createElement("div", { className: clsx_default("Toastify__toast-icon", { ["Toastify--animate-icon Toastify__zoom-enter"]: !k }) }, ft), tt(d, t2, !o3), H, !t2.customProgressBar && import_react61.default.createElement(gt, { ...b && !dt ? { key: `p-${b}` } : {}, rtl: u, theme: A, delay: c, isRunning: o3, isIn: _, closeToast: x, hide: v, type: g, className: p, controlledProgress: dt, progress: n2 || 0 })));
+    return a === false || (P(a) ? H = a(j) : (0, import_react53.isValidElement)(a) ? H = (0, import_react53.cloneElement)(a, j) : H = yt(j)), import_react53.default.createElement(C, { isIn: _, done: m, position: S, preventExitTransition: e3, nodeRef: r3, playToast: l2 }, import_react53.default.createElement("div", { id: h, tabIndex: 0, onClick: T, "data-in": _, className: Y, ...s, style: f, ref: r3, ..._ && { role: i, "aria-label": R } }, ft != null && import_react53.default.createElement("div", { className: clsx_default("Toastify__toast-icon", { ["Toastify--animate-icon Toastify__zoom-enter"]: !k }) }, ft), tt(d, t2, !o3), H, !t2.customProgressBar && import_react53.default.createElement(gt, { ...b && !dt ? { key: `p-${b}` } : {}, rtl: u, theme: A, delay: c, isRunning: o3, isIn: _, closeToast: x, hide: v, type: g, className: p, controlledProgress: dt, progress: n2 || 0 })));
   };
   var K = (t2, o3 = false) => ({ enter: `Toastify--animate Toastify__${t2}-enter`, exit: `Toastify--animate Toastify__${t2}-exit`, appendPosition: o3 });
   var lt = $(K("bounce", true));
@@ -36784,7 +36793,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var uo = $(K("flip"));
   var _o = { position: "top-right", transition: lt, autoClose: 5e3, closeButton: true, pauseOnHover: true, pauseOnFocusLoss: true, draggable: "touch", draggablePercent: 80, draggableDirection: "x", role: "alert", theme: "light", "aria-label": "Notifications Alt+T", hotKeys: (t2) => t2.altKey && t2.code === "KeyT" };
   function Lt(t2) {
-    let o3 = { ..._o, ...t2 }, e3 = t2.stacked, [r3, s] = (0, import_react57.useState)(true), l2 = (0, import_react57.useRef)(null), { getToastToRender: a, isToastActive: d, count: c } = It(o3), { className: T, style: g, rtl: v, containerId: x, hotKeys: C } = o3;
+    let o3 = { ..._o, ...t2 }, e3 = t2.stacked, [r3, s] = (0, import_react49.useState)(true), l2 = (0, import_react49.useRef)(null), { getToastToRender: a, isToastActive: d, count: c } = It(o3), { className: T, style: g, rtl: v, containerId: x, hotKeys: C } = o3;
     function S(f) {
       let p = clsx_default("Toastify__toast-container", `Toastify__toast-container--${f}`, { ["Toastify__toast-container--rtl"]: v });
       return P(T) ? T({ position: f, rtl: v, defaultClassName: p }) : clsx_default(p, B(T));
@@ -36803,7 +36812,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           _.style.setProperty("--y", `${i ? k : k * -1}px`), _.style.setProperty("--g", `${b}`), _.style.setProperty("--s", `${1 - (r3 ? u : 0)}`), n2 += _.offsetHeight, u += 0.025;
         });
       }
-    }, [r3, c, e3]), (0, import_react57.useEffect)(() => {
+    }, [r3, c, e3]), (0, import_react49.useEffect)(() => {
       function f(p) {
         var i;
         let b = l2.current;
@@ -36812,15 +36821,2866 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       return document.addEventListener("keydown", f), () => {
         document.removeEventListener("keydown", f);
       };
-    }, [C]), import_react57.default.createElement("section", { ref: l2, className: "Toastify", id: x, onMouseEnter: () => {
+    }, [C]), import_react49.default.createElement("section", { ref: l2, className: "Toastify", id: x, onMouseEnter: () => {
       e3 && (s(false), y.pause());
     }, onMouseLeave: E, "aria-live": "polite", "aria-atomic": "false", "aria-relevant": "additions text", "aria-label": o3["aria-label"] }, a((f, p) => {
       let b = p.length ? { ...g } : { ...g, pointerEvents: "none" };
-      return import_react57.default.createElement("div", { tabIndex: -1, className: S(f), "data-stacked": e3, style: b, key: `c-${f}` }, p.map(({ content: i, props: n2 }) => import_react57.default.createElement(wt, { ...n2, stacked: e3, collapseAll: E, isIn: d(n2.toastId, n2.containerId), key: `t-${n2.key}` }, i)));
+      return import_react49.default.createElement("div", { tabIndex: -1, className: S(f), "data-stacked": e3, style: b, key: `c-${f}` }, p.map(({ content: i, props: n2 }) => import_react49.default.createElement(wt, { ...n2, stacked: e3, collapseAll: E, isIn: d(n2.toastId, n2.containerId), key: `t-${n2.key}` }, i)));
     }));
   }
 
+  // src/Components/AgentUserMenu/Form.js
+  var Form_default = Form = ({ ModalId }) => {
+    const [data2, setData] = (0, import_react55.useState)([newAgentUserMenus]);
+    const navigate = useNavigate();
+    const [menuOptions, setMenuOptions] = (0, import_react55.useState)([]);
+    const [agentOptions, setAgentOptions] = (0, import_react55.useState)([]);
+    const [showAgentUserMenuAlert, setShowAgentUserMenuAlert] = (0, import_react55.useState)(false);
+    const alertRef = (0, import_react55.useRef)(null);
+    (0, import_react55.useEffect)(() => {
+      menuIdLookUp().then((response) => {
+        console.log("Success!");
+        console.log(response.data);
+        setMenuOptions(response.data);
+      }).catch((error) => {
+        console.log("Error fetching!");
+        console.error(error);
+      });
+    }, []);
+    (0, import_react55.useEffect)(() => {
+      agentIdLookUp().then((response) => {
+        console.log("Success! agents");
+        console.log(response.data);
+        setAgentOptions(response.data);
+      }).catch((error) => {
+        console.log("Error fetching!");
+        console.error(error);
+      });
+    }, []);
+    const { id } = useParams();
+    const handleSave = () => {
+      if (!data2.agent_menu_id || !data2.agent_id) {
+        setShowAgentUserMenuAlert(true);
+        if (alertRef.current) {
+          alertRef.current.focus();
+        }
+        return;
+      }
+      setShowAgentUserMenuAlert(false);
+      saveItem(data2).then((response) => {
+        y.success("Agent User Menu stored successfully.", {
+          position: "top-right",
+          autoClose: 3e3,
+          icon: /* @__PURE__ */ import_react55.default.createElement(
+            "svg",
+            {
+              className: "checkmark",
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 48 48"
+            },
+            /* @__PURE__ */ import_react55.default.createElement(
+              "circle",
+              {
+                className: "checkmark__circle",
+                cx: "24",
+                cy: "24",
+                r: "22",
+                fill: "none"
+              }
+            ),
+            /* @__PURE__ */ import_react55.default.createElement(
+              "path",
+              {
+                className: "checkmark__check",
+                fill: "none",
+                d: "M14 25l7 7 13-13"
+              }
+            )
+          )
+        });
+        setTimeout(() => navigate("/agent_user_menus"), 3e3);
+      }).catch((response) => {
+        alert("Error");
+        console.log(response);
+      });
+    };
+    (0, import_react55.useEffect)(() => {
+      showAgentUserMenus(id).then((response) => {
+        setData(response.data);
+        console.log("Data fetched successfully", response.data);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+      });
+    }, [id]);
+    return /* @__PURE__ */ import_react55.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react55.default.createElement("div", { className: "row justify-content-center" }, /* @__PURE__ */ import_react55.default.createElement("div", { className: "col-md-4" }, showAgentUserMenuAlert && /* @__PURE__ */ import_react55.default.createElement(
+      "div",
+      {
+        ref: alertRef,
+        tabIndex: "-1",
+        className: "alert alert-light-secondary light alert-dismissible text-dark border-left-wrapper",
+        role: "alert"
+      },
+      /* @__PURE__ */ import_react55.default.createElement("i", { "data-feather": "help-circle" }),
+      /* @__PURE__ */ import_react55.default.createElement("p", null, "Make sure to complete filling up the required (", /* @__PURE__ */ import_react55.default.createElement("span", { className: "text-danger" }, "*"), ") inputs."),
+      /* @__PURE__ */ import_react55.default.createElement(
+        "button",
+        {
+          className: "btn-close",
+          type: "button",
+          "aria-label": "Close",
+          onClick: () => setShowAgentUserMenuAlert(false)
+        }
+      )
+    ), /* @__PURE__ */ import_react55.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react55.default.createElement("div", { className: "card-header d-flex align-items-center" }, /* @__PURE__ */ import_react55.default.createElement("i", { className: "icofont icofont-users me-2 text-dark" }), /* @__PURE__ */ import_react55.default.createElement("h4", { className: "mb-0" }, "Agent User Menu Details")), /* @__PURE__ */ import_react55.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react55.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react55.default.createElement("label", null, "Menu ID ", /* @__PURE__ */ import_react55.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react55.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react55.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react55.default.createElement("i", { className: "icofont icofont-license" })), /* @__PURE__ */ import_react55.default.createElement("div", { style: { flex: "1 1 auto" } }, /* @__PURE__ */ import_react55.default.createElement(ErrorBoundary_default, null, menuOptions.length > 0 && /* @__PURE__ */ import_react55.default.createElement(
+      Typeahead_default2,
+      {
+        inputProps: { className: "form-control" },
+        placeholder: "Menu ID",
+        onChange: (selected) => {
+          if (selected.length > 0) {
+            const selectedValue = selected[0].split(" - ");
+            const agentMenuId = selectedValue[0];
+            const menu = selectedValue.slice(1).join(" - ");
+            setData({
+              ...data2,
+              agent_menu_id: agentMenuId,
+              menu
+            });
+          }
+        },
+        options: menuOptions,
+        selected: data2.agent_menu_id ? [`${data2.agent_menu_id}`] : [],
+        onInputChange: (input) => {
+          const parts = input.split(" - ");
+          const agentMenuId = parts[0];
+          const menu = parts.slice(1).join(" - ") || "";
+          setData({
+            ...data2,
+            agent_menu_id: agentMenuId,
+            menu
+          });
+        }
+      }
+    ))))), /* @__PURE__ */ import_react55.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react55.default.createElement("label", null, "Agent ID ", /* @__PURE__ */ import_react55.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react55.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react55.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react55.default.createElement("i", { className: "icofont icofont-users me-2 text-dark" })), /* @__PURE__ */ import_react55.default.createElement("div", { style: { flex: "1 1 auto" } }, /* @__PURE__ */ import_react55.default.createElement(
+      Typeahead_default2,
+      {
+        inputProps: { className: "form-control" },
+        type: "number",
+        options: agentOptions,
+        placeholder: "Agent ID",
+        required: true,
+        onChange: (selected) => {
+          if (selected.length > 0) {
+            const selectedValue = selected[0].split(" - ");
+            const agentId = selectedValue[0];
+            setData({
+              ...data2,
+              agent_id: agentId
+              // agent_name: meagentNamenu,
+            });
+          }
+        },
+        selected: data2.agent_id ? [`${data2.agent_id}`] : [],
+        onInputChange: (input) => {
+          const parts = input.split(" - ");
+          const agentId = parts[0];
+          setData({
+            ...data2,
+            agent_id: agentId
+            // menu: menu,
+          });
+        }
+      }
+    )))), /* @__PURE__ */ import_react55.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react55.default.createElement("label", null, "Grant Access"), /* @__PURE__ */ import_react55.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react55.default.createElement("div", { className: "col-sm-9 py-2 ms-2" }, /* @__PURE__ */ import_react55.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react55.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userCreate",
+        type: "checkbox",
+        checked: data2.user_create === 1,
+        onChange: (e3) => setData({
+          ...data2,
+          user_create: e3.target.checked ? 1 : 0
+        })
+      }
+    ), /* @__PURE__ */ import_react55.default.createElement("label", { className: "form-check-label", htmlFor: "userCreate" }, "User Create")), /* @__PURE__ */ import_react55.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react55.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userRead",
+        type: "checkbox",
+        checked: data2.user_read === 1,
+        onChange: (e3) => setData({
+          ...data2,
+          user_read: e3.target.checked ? 1 : 0
+        })
+      }
+    ), /* @__PURE__ */ import_react55.default.createElement("label", { className: "form-check-label", htmlFor: "userRead" }, "User Read")), /* @__PURE__ */ import_react55.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react55.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userUpdate",
+        type: "checkbox",
+        checked: data2.user_update === 1,
+        onChange: (e3) => setData({
+          ...data2,
+          user_update: e3.target.checked ? 1 : 0
+        })
+      }
+    ), /* @__PURE__ */ import_react55.default.createElement("label", { className: "form-check-label", htmlFor: "userUpdate" }, "User Update")), /* @__PURE__ */ import_react55.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react55.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userDelete",
+        type: "checkbox",
+        checked: data2.user_delete === 1,
+        onChange: (e3) => setData({
+          ...data2,
+          user_delete: e3.target.checked ? 1 : 0
+        })
+      }
+    ), /* @__PURE__ */ import_react55.default.createElement("label", { className: "form-check-label", htmlFor: "userDelete" }, "User Delete")), /* @__PURE__ */ import_react55.default.createElement("div", { className: "form-check mb-1" }, /* @__PURE__ */ import_react55.default.createElement(
+      "input",
+      {
+        className: "form-check-input",
+        id: "userPrint",
+        type: "checkbox",
+        checked: data2.user_print === 1,
+        onChange: (e3) => setData({
+          ...data2,
+          user_print: e3.target.checked ? 1 : 0
+        })
+      }
+    ), /* @__PURE__ */ import_react55.default.createElement("label", { className: "form-check-label", htmlFor: "userPrint" }, "User Print")))))), /* @__PURE__ */ import_react55.default.createElement("div", { className: "card-footer" }, /* @__PURE__ */ import_react55.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react55.default.createElement(
+      Link,
+      {
+        className: "btn btn-secondary btn-sm",
+        to: "/agent_user_menus"
+      },
+      "Back"
+    ), /* @__PURE__ */ import_react55.default.createElement(
+      "button",
+      {
+        className: "btn btn-primary btn-sm",
+        type: "button",
+        onClick: handleSave
+      },
+      "Save"
+    )))))), /* @__PURE__ */ import_react55.default.createElement(
+      Lt,
+      {
+        position: "top-right",
+        autoClose: 3e3,
+        hideProgressBar: false,
+        newestOnTop: true,
+        closeOnClick: true,
+        pauseOnHover: true
+      }
+    ));
+  };
+
+  // src/Components/TransferSlip/Index.js
+  var import_react56 = __toESM(require_react());
+  var import_react_data_table_component3 = __toESM(require_index_cjs());
+
+  // src/Services/TransferSlipsServices.js
+  var getTransferSlips = (args) => {
+    return axios_default.get(
+      `${"http://localhost:3000"}/transfer_slips`,
+      {
+        params: args
+      }
+    );
+  };
+  var updateTransferSlip = (id, data2) => {
+    return axios_default.put(
+      `${"http://localhost:3000"}/transfer_slips/${id}`,
+      data2
+    );
+  };
+  var showTransferSlip = (id) => {
+    return axios_default.get(
+      `${"http://localhost:3000"}/transfer_slips/${id}`
+    );
+  };
+  var saveTransferSlips = (data2) => {
+    return axios_default.post(
+      `${"http://localhost:3000"}/transfer_slips`,
+      data2
+    );
+  };
+  async function fetchWarehousePersonnels() {
+    const res = await axios_default.get(
+      `${"http://localhost:3000"}/api/warehouse_personnels`,
+      { params: { format: "json" } }
+    );
+    return res.data;
+  }
+  async function fetchLotNumberOptions() {
+    const res = await axios_default.get(
+      `${"http://localhost:3000"}/api/lookups_inventorytransaction`,
+      { params: { format: "json" } }
+    );
+    return res.data;
+  }
+  async function fetchProductDescriptionOptions() {
+    const res = await axios_default.get(
+      `${"http://localhost:3000"}/api/products`,
+      { params: { format: "json", company_filter: false } }
+    );
+    return res.data;
+  }
+  async function fetchProductByLot(lotNumber) {
+    const res = await axios_default.get(
+      `${"http://localhost:3000"}/api/lookups_inventorytransaction`,
+      { params: { lot_number: lotNumber } }
+    );
+    return res.data;
+  }
+  async function fetchDatesByLotAndSku(lotNumber, productSku) {
+    const res = await axios_default.get(
+      `${"http://localhost:3000"}/api/lookups_inventorytransaction`,
+      { params: { lot_number: lotNumber, product_sku: productSku } }
+    );
+    return res.data;
+  }
+  async function fetchNextSlipNumbers() {
+    const res = await axios_default.get(
+      `${"http://localhost:3000"}/api/lookups_next_slip_numbers`,
+      { params: { format: "json" } }
+    );
+    return res.data.next_slip_numbers;
+  }
+  function fetchTransferSlip(id) {
+    return axios_default.get(`${"http://localhost:3000"}/transfer_slips/${id}`, {
+      params: { format: "json" }
+    });
+  }
+
+  // src/Config/CompanyCodes.js
+  var LOAD_COMPANY_CODE_SELECT = {
+    "1": "CDCI",
+    "2": "YSS",
+    "5": "CYDC"
+  };
+
+  // src/Components/TransferSlip/Index.js
+  function Index2() {
+    const [args, setArgs] = (0, import_react56.useState)({});
+    const [data2, setData] = (0, import_react56.useState)([]);
+    const [loading, setLoading] = (0, import_react56.useState)(true);
+    const [error, setError] = (0, import_react56.useState)(null);
+    const [printModalOpen, setPrintModalOpen] = (0, import_react56.useState)(false);
+    const [printType, setPrintType] = (0, import_react56.useState)("blank");
+    const [selectedSlipId, setSelectedSlipId] = (0, import_react56.useState)(null);
+    const [companyCode, setCompanyCode] = (0, import_react56.useState)(
+      Object.keys(LOAD_COMPANY_CODE_SELECT)[0]
+    );
+    (0, import_react56.useEffect)(() => {
+      getTransferSlips().then((res) => {
+        setData(res.data);
+        setLoading(false);
+      }).catch((err) => {
+        console.error(err);
+        setError(err);
+        setLoading(false);
+      });
+    }, []);
+    (0, import_react56.useEffect)(() => {
+      if (!args.transfer_slip_number) return;
+      getTransferSlips(args).then((res) => setData(res.data)).catch(() => alert("Error fetching data."));
+    }, [args]);
+    const openPrint = (type, slipId = null) => {
+      setPrintType(type);
+      setSelectedSlipId(slipId);
+      if (type === "blank") {
+        setCompanyCode(Object.keys(LOAD_COMPANY_CODE_SELECT)[0]);
+      }
+      setPrintModalOpen(true);
+    };
+    const handlePrintConfirm = () => {
+      const params = new URLSearchParams();
+      params.set("transfer_slips_type", printType);
+      if (printType === "blank") {
+        params.set("choose_company_code", companyCode);
+      } else {
+        params.set("transfer_slip_id", selectedSlipId);
+      }
+      window.open(`${"http://localhost:3000"}/transfer_slips/print.pdf?${params}`, "_blank");
+      setPrintModalOpen(false);
+    };
+    const columns = [
+      { name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Company"), selector: (r3) => LOAD_COMPANY_CODE_SELECT[r3.company_code] || r3.company_code, sortable: true },
+      { name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Transfer Slip No."), selector: (r3) => r3.transfer_slip_number, sortable: true },
+      { name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Type"), selector: (r3) => r3.transfer_slip_type },
+      { name: /* @__PURE__ */ import_react56.default.createElement("b", null, "To"), selector: (r3) => LOAD_COMPANY_CODE_SELECT[r3.transfer_to] || r3.transfer_to },
+      { name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Transferred By"), selector: (r3) => r3.transferred_by },
+      { name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Transferred Date"), selector: (r3) => r3.transferred_by_date },
+      { name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Received"), selector: (r3) => r3.received_by },
+      { name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Received Date"), selector: (r3) => r3.received_by_date },
+      {
+        name: /* @__PURE__ */ import_react56.default.createElement("b", null, "Actions"),
+        cell: (row) => /* @__PURE__ */ import_react56.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react56.default.createElement(Link, { to: `/transfer_slips/${row.id}`, title: "View", className: "d-inline-block" }, /* @__PURE__ */ import_react56.default.createElement("i", { className: "icon-eye text-primary me-1" })), /* @__PURE__ */ import_react56.default.createElement(
+          Link,
+          {
+            to: `/transfer_slips/edit/${row.id}`,
+            title: "Edit",
+            className: "text-info me-1"
+          },
+          /* @__PURE__ */ import_react56.default.createElement("i", { className: "icon-pencil-alt" })
+        ), /* @__PURE__ */ import_react56.default.createElement(
+          Link,
+          {
+            title: "Print Filled Slip",
+            className: "text-secondary me-1",
+            onClick: () => openPrint("full", row.id),
+            style: { cursor: "pointer" }
+          },
+          /* @__PURE__ */ import_react56.default.createElement("i", { className: "icon-printer" })
+        ), /* @__PURE__ */ import_react56.default.createElement(
+          Link,
+          {
+            title: "Delete",
+            "data-bs-toggle": "modal",
+            "data-bs-target": "#deleteModal"
+          },
+          /* @__PURE__ */ import_react56.default.createElement("i", { className: "icon-trash text-danger" })
+        )),
+        ignoreRowClick: true,
+        button: true
+      }
+    ];
+    if (loading) return /* @__PURE__ */ import_react56.default.createElement("p", null, "Loading\u2026");
+    if (error) return /* @__PURE__ */ import_react56.default.createElement("p", null, "Error loading data.");
+    return /* @__PURE__ */ import_react56.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react56.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react56.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-dark" }), "Transfer Slips"), /* @__PURE__ */ import_react56.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react56.default.createElement(
+      "input",
+      {
+        className: "form-control form-control-sm",
+        type: "text",
+        placeholder: "Search...",
+        onInput: (e3) => setArgs({ ...args, transfer_slip_number: e3.target.value })
+      }
+    ), /* @__PURE__ */ import_react56.default.createElement("button", { className: "btn btn-outline-primary btn-sm" }, /* @__PURE__ */ import_react56.default.createElement("i", { className: "icofont icofont-search-alt-1" }))), /* @__PURE__ */ import_react56.default.createElement(
+      Link,
+      {
+        title: "Print Blank Slip",
+        className: "btn btn-outline-primary btn-sm me-2",
+        onClick: () => openPrint("blank"),
+        style: { display: "flex", alignItems: "center", gap: "4px" }
+      },
+      /* @__PURE__ */ import_react56.default.createElement("i", { className: "icofont icofont-printer" }),
+      " Blank"
+    ), /* @__PURE__ */ import_react56.default.createElement(
+      Link,
+      {
+        className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
+        to: "/transfer_slips/new"
+      },
+      "New Transfer Slip"
+    ))), /* @__PURE__ */ import_react56.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react56.default.createElement(
+      import_react_data_table_component3.default,
+      {
+        columns,
+        data: data2,
+        pagination: true,
+        responsive: true,
+        striped: true,
+        bordered: true,
+        highlightOnHover: true,
+        noDataComponent: "No Record of Transfer Slips"
+      }
+    )))), printModalOpen && /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal show d-block", tabIndex: -1 }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal-dialog" }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal-content" }, /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal-header" }, /* @__PURE__ */ import_react56.default.createElement("h5", { className: "modal-title" }, printType === "blank" ? "Select Company for Blank Slip" : `Print Slip #${selectedSlipId}`), /* @__PURE__ */ import_react56.default.createElement(
+      "button",
+      {
+        type: "button",
+        className: "btn-close",
+        onClick: () => setPrintModalOpen(false)
+      }
+    )), /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal-body" }, printType === "blank" ? /* @__PURE__ */ import_react56.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        value: companyCode,
+        onChange: (e3) => setCompanyCode(e3.target.value)
+      },
+      Object.entries(LOAD_COMPANY_CODE_SELECT).map(
+        ([code, name]) => /* @__PURE__ */ import_react56.default.createElement("option", { key: code, value: code }, name)
+      )
+    ) : /* @__PURE__ */ import_react56.default.createElement("p", null, "About to print transfer slip", " ", /* @__PURE__ */ import_react56.default.createElement("strong", null, "#", selectedSlipId), ".")), /* @__PURE__ */ import_react56.default.createElement("div", { className: "modal-footer" }, /* @__PURE__ */ import_react56.default.createElement(
+      "button",
+      {
+        className: "btn btn-secondary",
+        onClick: () => setPrintModalOpen(false)
+      },
+      "Cancel"
+    ), /* @__PURE__ */ import_react56.default.createElement(
+      "button",
+      {
+        className: "btn btn-primary",
+        onClick: handlePrintConfirm
+      },
+      "Print"
+    ))))));
+  }
+
+  // src/Components/TransferSlip/Show.js
+  var import_react57 = __toESM(require_react());
+  var import_react_data_table_component4 = __toESM(require_index_cjs());
+  var formatDate = (dateStr) => {
+    if (!dateStr) return "";
+    const d = new Date(dateStr);
+    return isNaN(d) ? "" : d.toLocaleDateString("en-US");
+  };
+  var formatNumber = (num) => {
+    if (num == null) return "";
+    return Number(num).toLocaleString(void 0, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  };
+  function TransferSlipInfo() {
+    const { id } = useParams();
+    const [transferSlip, setTransferSlip] = (0, import_react57.useState)(null);
+    const [details, setDetails] = (0, import_react57.useState)([]);
+    const [loading, setLoading] = (0, import_react57.useState)(true);
+    const [error, setError] = (0, import_react57.useState)("");
+    (0, import_react57.useEffect)(() => {
+      if (!id) {
+        setError("No Transfer Slip ID provided");
+        setLoading(false);
+        return;
+      }
+      showTransferSlip(id).then((response) => {
+        const data2 = response.data;
+        setTransferSlip(data2.transfer_slip);
+        setDetails(data2.details || []);
+        setLoading(false);
+      }).catch((err) => {
+        console.error("Error:", err);
+        setError("Failed to load transfer slip");
+        setLoading(false);
+      });
+    }, [id]);
+    if (loading) return /* @__PURE__ */ import_react57.default.createElement("div", null, "Loading...");
+    if (error) return /* @__PURE__ */ import_react57.default.createElement("div", null, error);
+    if (!transferSlip) return /* @__PURE__ */ import_react57.default.createElement("div", null, "No transfer slip found");
+    const infoData = [
+      { field: "Company", value: LOAD_COMPANY_CODE_SELECT[transferSlip.company_code?.toString()] },
+      { field: "TS Number", value: transferSlip.transfer_slip_number },
+      { field: "TS Type", value: transferSlip.transfer_slip_type },
+      { field: "TO", value: LOAD_COMPANY_CODE_SELECT[transferSlip.transfer_to?.toString()] },
+      { field: "Transferred", value: `${transferSlip.transferred_by} : ${formatDate(transferSlip.transferred_by_date)}` },
+      { field: "Received", value: `${transferSlip.received_by} : ${formatDate(transferSlip.received_by_date)}` }
+    ];
+    const infoColumns = [
+      { name: "Field", selector: (row) => row.field, sortable: false },
+      { name: "Value", selector: (row) => row.value, sortable: false }
+    ];
+    const detailColumns = [
+      { name: "ITEMS", selector: (row) => row.product_description, sortable: true },
+      { name: "LOT NUMBER", selector: (row) => row.lot_number, sortable: true },
+      { name: "MFG. DATE", selector: (row) => formatDate(row.manufacturing_date), sortable: true },
+      { name: "EXP DATE", selector: (row) => formatDate(row.expiry_date), sortable: true },
+      { name: "QUANTITY", selector: (row) => formatNumber(row.quantity), right: true, sortable: true },
+      { name: "J.O. NO.", selector: (row) => row.job_order_number, sortable: true },
+      { name: "REMARKS", selector: (row) => row.remarks, sortable: false }
+    ];
+    const infoStyles = {
+      headRow: {
+        style: {
+          display: "none"
+        }
+      }
+    };
+    return /* @__PURE__ */ import_react57.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react57.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react57.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react57.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react57.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react57.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-dark" }), "Transfer Slip Information")), /* @__PURE__ */ import_react57.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react57.default.createElement(
+      import_react_data_table_component4.default,
+      {
+        columns: infoColumns,
+        data: infoData,
+        noHeader: true,
+        pagination: false,
+        highlightOnHover: true,
+        dense: true,
+        customStyles: infoStyles
+      }
+    ), /* @__PURE__ */ import_react57.default.createElement("h5", { className: "mt-4" }, "Details"), /* @__PURE__ */ import_react57.default.createElement(
+      import_react_data_table_component4.default,
+      {
+        columns: detailColumns,
+        data: details,
+        defaultSortField: "product_description",
+        pagination: false,
+        highlightOnHover: true,
+        dense: true
+      }
+    ), /* @__PURE__ */ import_react57.default.createElement("div", { className: "d-flex justify-content-between mt-3" }, /* @__PURE__ */ import_react57.default.createElement(Link, { to: "/transfer_slips", className: "btn btn-secondary btn-sm" }, "Back"), /* @__PURE__ */ import_react57.default.createElement(Link, { to: `/transfer_slips/edit/${id}`, className: "btn btn-warning btn-sm" }, "Edit"))))));
+  }
+
+  // src/Components/TransferSlip/Form.js
+  var import_react58 = __toESM(require_react());
+  var import_react_data_table_component5 = __toESM(require_index_cjs());
+  function TransferSlipForm() {
+    const navigate = useNavigate();
+    const [header, setHeader] = (0, import_react58.useState)({
+      companyCode: "",
+      transferSlipNumber: "",
+      transferTo: "",
+      receivedBy: "",
+      transferSlipType: "",
+      transferSlipTypeOther: "",
+      transferredBy: "",
+      transferredByDate: "",
+      receivedDate: ""
+    });
+    const [detailRows, setDetailRows] = (0, import_react58.useState)([]);
+    const [lotNumberOptions, setLotNumberOptions] = (0, import_react58.useState)([]);
+    const [productDescriptionOptions, setProductDescriptionOptions] = (0, import_react58.useState)(
+      []
+    );
+    const [personnels, setPersonnels] = (0, import_react58.useState)({});
+    const [nextSlipNumbers, setNextSlipNumbers] = (0, import_react58.useState)({});
+    const [showTransferSlipAlert, setShowTransferSlipAlert] = (0, import_react58.useState)(false);
+    const alertRef = (0, import_react58.useRef)(null);
+    (0, import_react58.useEffect)(() => {
+      if (showTransferSlipAlert && alertRef.current) {
+        alertRef.current.focus();
+      }
+    }, [showTransferSlipAlert]);
+    const companyOptions = (0, import_react58.useMemo)(
+      () => Object.entries(LOAD_COMPANY_CODE_SELECT).map(([value, label]) => ({
+        label,
+        value
+      })),
+      []
+    );
+    const transferToOptions = companyOptions;
+    const personnelOptions = (0, import_react58.useMemo)(
+      () => Object.entries(personnels).map(([value, label]) => ({ label, value })),
+      [personnels]
+    );
+    const isValidDate = (dateStr) => /^\d{4}-\d{2}-\d{2}$/.test(dateStr);
+    (0, import_react58.useEffect)(() => {
+      fetchWarehousePersonnels().then(setPersonnels).catch(console.error);
+      fetchLotNumberOptions().then(setLotNumberOptions).catch(console.error);
+      fetchProductDescriptionOptions().then(setProductDescriptionOptions).catch(console.error);
+      fetchNextSlipNumbers().then(setNextSlipNumbers).catch(console.error);
+    }, []);
+    const handleDetailAddRow = () => {
+      setDetailRows((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          lot_number: "",
+          product_description: "",
+          manufacturing_date: "",
+          expiry_date: "",
+          quantity: "",
+          job_order_number: "",
+          remarks: ""
+        }
+      ]);
+    };
+    const handleDetailDeleteRow = (id) => {
+      setDetailRows((prev) => prev.filter((r3) => r3.id !== id));
+    };
+    const handleDetailLotChange = async (id, value) => {
+      setDetailRows(
+        (prev) => prev.map(
+          (r3) => r3.id === id ? {
+            ...r3,
+            lot_number: value,
+            product_description: "",
+            manufacturing_date: "",
+            expiry_date: ""
+          } : r3
+        )
+      );
+      if (!value) return;
+      try {
+        const prodVal = await fetchProductByLot(value);
+        if (prodVal) {
+          setDetailRows(
+            (prev) => prev.map(
+              (r3) => r3.id === id ? { ...r3, product_description: String(prodVal) } : r3
+            )
+          );
+        }
+        const prodKey = String(prodVal).split(" ")[0] || "";
+        const dates = await fetchDatesByLotAndSku(value, prodKey);
+        if (dates?.[0]) {
+          const [mfg, exp] = String(dates[0]).split(" ");
+          setDetailRows(
+            (prev) => prev.map(
+              (r3) => r3.id === id ? {
+                ...r3,
+                manufacturing_date: isValidDate(mfg) ? mfg : "",
+                expiry_date: isValidDate(exp) ? exp : ""
+              } : r3
+            )
+          );
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    const handleDetailFieldChange = (id, field, value) => {
+      setDetailRows(
+        (prev) => prev.map((r3) => r3.id === id ? { ...r3, [field]: value } : r3)
+      );
+    };
+    const detailTableStyles = {
+      rows: {
+        style: {
+          marginBottom: "12px"
+        }
+      }
+    };
+    const detailColumns = [
+      {
+        name: /* @__PURE__ */ import_react58.default.createElement("b", null, "LOT NO."),
+        cell: (row) => /* @__PURE__ */ import_react58.default.createElement(
+          Typeahead_default2,
+          {
+            id: `lot-${row.id}`,
+            options: lotNumberOptions,
+            selected: row.lot_number ? [row.lot_number] : [],
+            placeholder: "LOT NO.",
+            onChange: (sel) => handleDetailLotChange(row.id, sel[0] || ""),
+            className: "w-100"
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react58.default.createElement("b", null, "ITEMS"),
+        cell: (row) => /* @__PURE__ */ import_react58.default.createElement(
+          Typeahead_default2,
+          {
+            id: `item-${row.id}`,
+            options: productDescriptionOptions,
+            selected: row.product_description ? [row.product_description] : [],
+            placeholder: "ITEMS",
+            onChange: (sel) => handleDetailFieldChange(row.id, "product_description", sel[0] || ""),
+            className: "w-100"
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react58.default.createElement("b", null, "MFG. DATE"),
+        cell: (row) => /* @__PURE__ */ import_react58.default.createElement(
+          "input",
+          {
+            type: "date",
+            className: "form-control",
+            value: row.manufacturing_date,
+            onChange: (e3) => handleDetailFieldChange(
+              row.id,
+              "manufacturing_date",
+              e3.target.value
+            )
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react58.default.createElement("b", null, "EXP DATE"),
+        cell: (row) => /* @__PURE__ */ import_react58.default.createElement(
+          "input",
+          {
+            type: "date",
+            className: "form-control",
+            value: row.expiry_date,
+            onChange: (e3) => handleDetailFieldChange(row.id, "expiry_date", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react58.default.createElement("b", null, "QUANTITY"),
+        cell: (row) => /* @__PURE__ */ import_react58.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control",
+            value: row.quantity,
+            onChange: (e3) => handleDetailFieldChange(row.id, "quantity", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react58.default.createElement("b", null, "J.O. NO."),
+        cell: (row) => /* @__PURE__ */ import_react58.default.createElement(
+          "input",
+          {
+            type: "text",
+            className: "form-control",
+            value: row.job_order_number,
+            onChange: (e3) => handleDetailFieldChange(row.id, "job_order_number", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react58.default.createElement("b", null, "REMARKS"),
+        cell: (row) => /* @__PURE__ */ import_react58.default.createElement(
+          "input",
+          {
+            type: "text",
+            className: "form-control",
+            value: row.remarks,
+            onChange: (e3) => handleDetailFieldChange(row.id, "remarks", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react58.default.createElement("b", null, "ACTIONS"),
+        cell: (row) => /* @__PURE__ */ import_react58.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handleDetailDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react58.default.createElement("i", { className: "icon-trash text-white" })
+        ),
+        ignoreRowClick: true,
+        button: true
+      }
+    ];
+    const handleSubmit = async (e3) => {
+      e3.preventDefault();
+      const payload = {
+        transfer_slip: {
+          company_code: header.companyCode,
+          transfer_slip_number: header.transferSlipNumber,
+          transfer_to: header.transferTo,
+          received_by: header.receivedBy,
+          transfer_slip_type: header.transferSlipType,
+          transfer_slip_type_other: header.transferSlipTypeOther,
+          transferred_by: header.transferredBy,
+          transferred_by_date: header.transferredByDate,
+          received_by_date: header.receivedDate
+        },
+        transfer_slip_detail: detailRows.map((d) => ({
+          lot_number: d.lot_number,
+          product_description: d.product_description,
+          manufacturing_date: d.manufacturing_date,
+          expiry_date: d.expiry_date,
+          quantity: d.quantity,
+          job_order_number: d.job_order_number,
+          remarks: d.remarks
+        }))
+      };
+      try {
+        const noRows = detailRows.length === 0;
+        console.log(noRows);
+        const badDetail = payload.transfer_slip_detail.find(
+          (d) => !d.lot_number || !d.product_description || !d.manufacturing_date || !d.expiry_date || !d.quantity || !d.job_order_number || !d.remarks
+        );
+        console.log({
+          noRows,
+          badDetail,
+          header
+        });
+        if (!header.companyCode || !header.transferSlipNumber || !header.transferTo || !header.receivedBy || !header.transferSlipType || !header.transferredBy || !header.transferredByDate || !header.receivedDate || noRows || badDetail) {
+          setShowTransferSlipAlert(true);
+          if (alertRef.current) {
+            alertRef.current.focus();
+          }
+          return;
+        }
+        setShowTransferSlipAlert(false);
+        const response = await saveTransferSlips(payload);
+        navigate(`/transfer_slips/${response.data.id}`);
+      } catch (err) {
+        console.error("Error saving transfer slip:", err);
+      }
+    };
+    return /* @__PURE__ */ import_react58.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react58.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react58.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react58.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react58.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react58.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-dark" }), "Transfer Slip")), /* @__PURE__ */ import_react58.default.createElement("div", { className: "card-body" }, showTransferSlipAlert && /* @__PURE__ */ import_react58.default.createElement(
+      "div",
+      {
+        ref: alertRef,
+        tabIndex: "-1",
+        className: "alert alert-light-secondary light alert-dismissible text-dark border-left-wrapper",
+        role: "alert"
+      },
+      /* @__PURE__ */ import_react58.default.createElement("i", { "data-feather": "help-circle" }),
+      /* @__PURE__ */ import_react58.default.createElement("p", null, "Make sure to complete filling up the required (", /* @__PURE__ */ import_react58.default.createElement("span", { className: "text-danger" }, "*"), ") inputs."),
+      /* @__PURE__ */ import_react58.default.createElement(
+        "button",
+        {
+          className: "btn-close",
+          type: "button",
+          "aria-label": "Close",
+          onClick: () => setShowTransferSlipAlert(false)
+        }
+      )
+    ), /* @__PURE__ */ import_react58.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react58.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react58.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react58.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react58.default.createElement("label", null, "Company ", /* @__PURE__ */ import_react58.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react58.default.createElement(
+      Typeahead_default2,
+      {
+        id: "companyCode",
+        labelKey: "label",
+        options: companyOptions,
+        selected: header.companyCode ? [
+          companyOptions.find(
+            (o3) => o3.value === header.companyCode
+          )
+        ] : [],
+        onChange: (sel) => {
+          const code = sel[0]?.value || "";
+          setHeader((h) => ({
+            ...h,
+            companyCode: code,
+            transferSlipNumber: nextSlipNumbers[code] || ""
+          }));
+        },
+        placeholder: "Select company..."
+      }
+    )), /* @__PURE__ */ import_react58.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react58.default.createElement("label", null, "Transfer Slip Number", " ", /* @__PURE__ */ import_react58.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react58.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control",
+        value: header.transferSlipNumber,
+        onChange: (e3) => setHeader((h) => ({
+          ...h,
+          transferSlipNumber: e3.target.value
+        }))
+      }
+    )), /* @__PURE__ */ import_react58.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react58.default.createElement("label", null, "To ", /* @__PURE__ */ import_react58.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react58.default.createElement(
+      Typeahead_default2,
+      {
+        id: "transferTo",
+        labelKey: "label",
+        options: transferToOptions,
+        selected: header.transferTo ? [
+          transferToOptions.find(
+            (o3) => o3.value === header.transferTo
+          )
+        ] : [],
+        onChange: (sel) => setHeader((h) => ({
+          ...h,
+          transferTo: sel[0]?.value || ""
+        })),
+        placeholder: "Select destination..."
+      }
+    )), /* @__PURE__ */ import_react58.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react58.default.createElement("label", null, "Received By ", /* @__PURE__ */ import_react58.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react58.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control",
+        value: header.receivedBy,
+        onChange: (e3) => setHeader((h) => ({ ...h, receivedBy: e3.target.value }))
+      }
+    ))), /* @__PURE__ */ import_react58.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react58.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react58.default.createElement("label", null, "Transfer Slip Type ", /* @__PURE__ */ import_react58.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react58.default.createElement(
+      Typeahead_default2,
+      {
+        id: "transferSlipType",
+        labelKey: "label",
+        options: [
+          { label: "Commercial", value: "Commercial" },
+          { label: "Sample", value: "Sample" },
+          { label: "Other", value: "Other" }
+        ],
+        selected: header.transferSlipType ? [
+          {
+            label: header.transferSlipType,
+            value: header.transferSlipType
+          }
+        ] : [],
+        onChange: (sel) => setHeader((h) => ({
+          ...h,
+          transferSlipType: sel[0]?.value || ""
+        })),
+        placeholder: "Select slip type..."
+      }
+    ), header.transferSlipType === "Other" && /* @__PURE__ */ import_react58.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control mt-2",
+        placeholder: "Specify other type",
+        value: header.transferSlipTypeOther,
+        onChange: (e3) => setHeader((h) => ({
+          ...h,
+          transferSlipTypeOther: e3.target.value
+        }))
+      }
+    )), /* @__PURE__ */ import_react58.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react58.default.createElement("label", null, "Transferred By ", /* @__PURE__ */ import_react58.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react58.default.createElement(
+      Typeahead_default2,
+      {
+        id: "transferredBy",
+        labelKey: "label",
+        options: personnelOptions,
+        selected: header.transferredBy ? [
+          {
+            label: header.transferredBy,
+            value: header.transferredBy
+          }
+        ] : [],
+        onChange: (sel) => setHeader((h) => ({
+          ...h,
+          transferredBy: sel[0]?.value || ""
+        })),
+        placeholder: "Select person..."
+      }
+    )), /* @__PURE__ */ import_react58.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react58.default.createElement("label", null, "Transferred By Date ", /* @__PURE__ */ import_react58.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react58.default.createElement(
+      "input",
+      {
+        type: "date",
+        className: "form-control",
+        value: header.transferredByDate,
+        onChange: (e3) => setHeader((h) => ({
+          ...h,
+          transferredByDate: e3.target.value
+        }))
+      }
+    )), /* @__PURE__ */ import_react58.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react58.default.createElement("label", null, "Received Date ", /* @__PURE__ */ import_react58.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react58.default.createElement(
+      "input",
+      {
+        type: "date",
+        className: "form-control",
+        value: header.receivedDate,
+        onChange: (e3) => setHeader((h) => ({
+          ...h,
+          receivedDate: e3.target.value
+        }))
+      }
+    )))), /* @__PURE__ */ import_react58.default.createElement("div", { className: "mb-4" }, /* @__PURE__ */ import_react58.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Items Details"), /* @__PURE__ */ import_react58.default.createElement(
+      import_react_data_table_component5.default,
+      {
+        columns: detailColumns,
+        data: detailRows,
+        responsive: true,
+        striped: true,
+        bordered: true,
+        noDataComponent: "No details added yet",
+        highlightOnHover: true,
+        dense: true,
+        customStyles: detailTableStyles
+      }
+    ), /* @__PURE__ */ import_react58.default.createElement(
+      "button",
+      {
+        type: "button",
+        className: "btn btn-info btn-sm mt-3",
+        onClick: handleDetailAddRow
+      },
+      "Add Row"
+    )), /* @__PURE__ */ import_react58.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react58.default.createElement(Link, { to: "/transfer_slips", className: "btn btn-secondary btn-sm" }, "Back"), /* @__PURE__ */ import_react58.default.createElement("button", { type: "submit", className: "btn btn-success btn-sm" }, "Save")))))));
+  }
+
+  // src/Components/TransferSlip/Edit.js
+  var import_react59 = __toESM(require_react());
+  var import_react_data_table_component6 = __toESM(require_index_cjs());
+  function TransferSlipEditForm() {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [header, setHeader] = (0, import_react59.useState)({
+      companyCode: "",
+      transferSlipNumber: "",
+      transferTo: "",
+      receivedBy: "",
+      transferSlipType: "",
+      transferSlipTypeOther: "",
+      transferredBy: "",
+      transferredByDate: "",
+      receivedDate: ""
+    });
+    const [detailRows, setDetailRows] = (0, import_react59.useState)([]);
+    const [lotNumberOptions, setLotNumberOptions] = (0, import_react59.useState)([]);
+    const [productDescriptionOptions, setProductDescriptionOptions] = (0, import_react59.useState)([]);
+    const [personnels, setPersonnels] = (0, import_react59.useState)({});
+    const [nextSlipNumbers, setNextSlipNumbers] = (0, import_react59.useState)({});
+    const [message, setMessage] = (0, import_react59.useState)("");
+    const [errorMessage, setErrorMessage] = (0, import_react59.useState)("");
+    const companyOptions = (0, import_react59.useMemo)(
+      () => Object.entries(LOAD_COMPANY_CODE_SELECT).map(([value, label]) => ({
+        value,
+        label
+      })),
+      []
+    );
+    const transferToOptions = companyOptions;
+    const personnelOptions = (0, import_react59.useMemo)(
+      () => Object.entries(personnels).map(([value, label]) => ({ value, label })),
+      [personnels]
+    );
+    const isValidDate = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d);
+    (0, import_react59.useEffect)(() => {
+      fetchWarehousePersonnels().then(setPersonnels).catch(console.error);
+      fetchLotNumberOptions().then(setLotNumberOptions).catch(console.error);
+      fetchProductDescriptionOptions().then(setProductDescriptionOptions).catch(console.error);
+      fetchNextSlipNumbers().then(setNextSlipNumbers).catch(console.error);
+      if (id) {
+        fetchTransferSlip(id).then(({ data: data2 }) => {
+          const slip = data2.transfer_slip;
+          const details = data2.details || [];
+          setHeader({
+            companyCode: slip.company_code?.toString() || "",
+            transferSlipNumber: slip.transfer_slip_number || "",
+            transferTo: slip.transfer_to?.toString() || "",
+            receivedBy: slip.received_by || "",
+            transferSlipType: slip.transfer_slip_type || "",
+            transferSlipTypeOther: slip.transfer_slip_type_other || "",
+            transferredBy: slip.transferred_by?.toString() || "",
+            transferredByDate: slip.transferred_by_date || "",
+            receivedDate: slip.received_by_date || ""
+          });
+          setDetailRows(
+            details.map((d, i) => ({
+              id: Date.now() + i,
+              lot_number: d.lot_number,
+              product_description: d.product_description,
+              manufacturing_date: d.manufacturing_date,
+              expiry_date: d.expiry_date,
+              quantity: d.quantity,
+              job_order_number: d.job_order_number,
+              remarks: d.remarks
+            }))
+          );
+        }).catch((err) => {
+          console.error("Failed to load slip:", err);
+          setErrorMessage("Could not load transfer slip for editing.");
+        });
+      }
+    }, [id]);
+    const handleDetailAddRow = () => {
+      setDetailRows((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          lot_number: "",
+          product_description: "",
+          manufacturing_date: "",
+          expiry_date: "",
+          quantity: "",
+          job_order_number: "",
+          remarks: ""
+        }
+      ]);
+    };
+    const handleDetailDeleteRow = (rid) => setDetailRows((prev) => prev.filter((r3) => r3.id !== rid));
+    const handleDetailLotChange = async (rid, value) => {
+      setDetailRows(
+        (prev) => prev.map(
+          (r3) => r3.id === rid ? {
+            ...r3,
+            lot_number: value,
+            product_description: "",
+            manufacturing_date: "",
+            expiry_date: ""
+          } : r3
+        )
+      );
+      if (!value) return;
+      try {
+        const prodVal = await fetchProductByLot(value);
+        if (prodVal) {
+          setDetailRows(
+            (prev) => prev.map(
+              (r3) => r3.id === rid ? { ...r3, product_description: String(prodVal) } : r3
+            )
+          );
+        }
+        const sku = String(prodVal).split(" ")[0] || "";
+        const dates = await fetchDatesByLotAndSku(value, sku);
+        if (dates?.[0]) {
+          const [mfg, exp] = String(dates[0]).split(" ");
+          setDetailRows(
+            (prev) => prev.map(
+              (r3) => r3.id === rid ? {
+                ...r3,
+                manufacturing_date: isValidDate(mfg) ? mfg : "",
+                expiry_date: isValidDate(exp) ? exp : ""
+              } : r3
+            )
+          );
+        }
+      } catch (e3) {
+        console.error(e3);
+      }
+    };
+    const handleDetailFieldChange = (rid, field, v) => setDetailRows(
+      (prev) => prev.map((r3) => r3.id === rid ? { ...r3, [field]: v } : r3)
+    );
+    const detailTableStyles = {
+      rows: { style: { marginBottom: "12px" } }
+    };
+    const detailColumns = [
+      {
+        name: /* @__PURE__ */ import_react59.default.createElement("b", null, "LOT NO."),
+        cell: (row) => /* @__PURE__ */ import_react59.default.createElement(
+          Typeahead_default2,
+          {
+            id: `lot-${row.id}`,
+            options: lotNumberOptions,
+            selected: row.lot_number ? [row.lot_number] : [],
+            placeholder: "LOT NO.",
+            onChange: (sel) => handleDetailLotChange(row.id, sel[0] || ""),
+            inputProps: { className: "form-control-sm" }
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react59.default.createElement("b", null, "ITEMS"),
+        cell: (row) => /* @__PURE__ */ import_react59.default.createElement(
+          Typeahead_default2,
+          {
+            id: `item-${row.id}`,
+            options: productDescriptionOptions,
+            selected: row.product_description ? [row.product_description] : [],
+            placeholder: "ITEMS",
+            onChange: (sel) => handleDetailFieldChange(row.id, "product_description", sel[0] || ""),
+            inputProps: { className: "form-control-sm" }
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react59.default.createElement("b", null, "MFG. DATE"),
+        cell: (row) => /* @__PURE__ */ import_react59.default.createElement(
+          "input",
+          {
+            type: "date",
+            className: "form-control form-control-sm text-center",
+            value: row.manufacturing_date,
+            onChange: (e3) => handleDetailFieldChange(row.id, "manufacturing_date", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react59.default.createElement("b", null, "EXP DATE"),
+        cell: (row) => /* @__PURE__ */ import_react59.default.createElement(
+          "input",
+          {
+            type: "date",
+            className: "form-control form-control-sm text-center",
+            value: row.expiry_date,
+            onChange: (e3) => handleDetailFieldChange(row.id, "expiry_date", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react59.default.createElement("b", null, "QUANTITY"),
+        cell: (row) => /* @__PURE__ */ import_react59.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control form-control-sm",
+            value: row.quantity,
+            onChange: (e3) => handleDetailFieldChange(row.id, "quantity", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react59.default.createElement("b", null, "J.O. NO."),
+        cell: (row) => /* @__PURE__ */ import_react59.default.createElement(
+          "input",
+          {
+            type: "text",
+            className: "form-control form-control-sm",
+            value: row.job_order_number,
+            onChange: (e3) => handleDetailFieldChange(row.id, "job_order_number", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react59.default.createElement("b", null, "REMARKS"),
+        cell: (row) => /* @__PURE__ */ import_react59.default.createElement(
+          "input",
+          {
+            type: "text",
+            className: "form-control form-control-sm",
+            value: row.remarks,
+            onChange: (e3) => handleDetailFieldChange(row.id, "remarks", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react59.default.createElement("b", null, "ACTIONS"),
+        cell: (row) => /* @__PURE__ */ import_react59.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handleDetailDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react59.default.createElement("i", { className: "icon-trash text-white" })
+        ),
+        ignoreRowClick: true,
+        button: true
+      }
+    ];
+    const handleSubmit = async (e3) => {
+      e3.preventDefault();
+      setMessage("");
+      setErrorMessage("");
+      const payload = {
+        transfer_slip: {
+          company_code: header.companyCode,
+          transfer_slip_number: header.transferSlipNumber,
+          transfer_to: header.transferTo,
+          received_by: header.receivedBy,
+          transfer_slip_type: header.transferSlipType,
+          transfer_slip_type_other: header.transferSlipTypeOther,
+          transferred_by: header.transferredBy,
+          transferred_by_date: header.transferredByDate,
+          received_by_date: header.receivedDate
+        },
+        transfer_slip_detail: detailRows.map((d) => ({
+          lot_number: d.lot_number,
+          product_description: d.product_description,
+          manufacturing_date: d.manufacturing_date,
+          expiry_date: d.expiry_date,
+          quantity: d.quantity,
+          job_order_number: d.job_order_number,
+          remarks: d.remarks
+        }))
+      };
+      try {
+        const res = await updateTransferSlip(id, payload);
+        navigate(`/transfer_slips/${res.data.transfer_slip.id}`);
+      } catch (err) {
+        console.error(err);
+        setErrorMessage(
+          err.response?.data?.errors?.join(", ") || "An error occurred while updating."
+        );
+      }
+    };
+    return /* @__PURE__ */ import_react59.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react59.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react59.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react59.default.createElement("div", { className: "card-header d-flex justify-content-between" }, /* @__PURE__ */ import_react59.default.createElement("h2", null, /* @__PURE__ */ import_react59.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-dark" }), "Edit Transfer Slip")), /* @__PURE__ */ import_react59.default.createElement("div", { className: "card-body" }, message && /* @__PURE__ */ import_react59.default.createElement("div", { className: "alert alert-success" }, message), errorMessage && /* @__PURE__ */ import_react59.default.createElement("div", { className: "alert alert-danger" }, errorMessage), /* @__PURE__ */ import_react59.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react59.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react59.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "Company"), /* @__PURE__ */ import_react59.default.createElement(
+      Typeahead_default2,
+      {
+        id: "companyCode",
+        labelKey: "label",
+        options: companyOptions,
+        selected: header.companyCode ? [companyOptions.find((o3) => o3.value === header.companyCode)] : [],
+        onChange: (sel) => {
+          const code = sel[0]?.value || "";
+          setHeader((h) => ({
+            ...h,
+            companyCode: code,
+            transferSlipNumber: nextSlipNumbers[code] || h.transferSlipNumber
+          }));
+        },
+        placeholder: "Select company..."
+      }
+    )), /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "TS Number"), /* @__PURE__ */ import_react59.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control",
+        value: header.transferSlipNumber,
+        onChange: (e3) => setHeader((h) => ({ ...h, transferSlipNumber: e3.target.value }))
+      }
+    )), /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "To"), /* @__PURE__ */ import_react59.default.createElement(
+      Typeahead_default2,
+      {
+        id: "transferTo",
+        labelKey: "label",
+        options: transferToOptions,
+        selected: header.transferTo ? [transferToOptions.find((o3) => o3.value === header.transferTo)] : [],
+        onChange: (sel) => setHeader((h) => ({ ...h, transferTo: sel[0]?.value || "" })),
+        placeholder: "Select destination..."
+      }
+    )), /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "Received By"), /* @__PURE__ */ import_react59.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control",
+        value: header.receivedBy,
+        onChange: (e3) => setHeader((h) => ({ ...h, receivedBy: e3.target.value }))
+      }
+    ))), /* @__PURE__ */ import_react59.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "Transfer Slip Type"), /* @__PURE__ */ import_react59.default.createElement(
+      Typeahead_default2,
+      {
+        id: "transferSlipType",
+        labelKey: "label",
+        options: [
+          { value: "Commercial", label: "Commercial" },
+          { value: "Sample", label: "Sample" },
+          { value: "Other", label: "Other" }
+        ],
+        selected: header.transferSlipType ? [{ value: header.transferSlipType, label: header.transferSlipType }] : [],
+        onChange: (sel) => setHeader((h) => ({ ...h, transferSlipType: sel[0]?.value || "" })),
+        placeholder: "Select slip type..."
+      }
+    ), header.transferSlipType === "Other" && /* @__PURE__ */ import_react59.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control mt-2",
+        placeholder: "Specify other type",
+        value: header.transferSlipTypeOther,
+        onChange: (e3) => setHeader((h) => ({ ...h, transferSlipTypeOther: e3.target.value }))
+      }
+    )), /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "Transferred By"), /* @__PURE__ */ import_react59.default.createElement(
+      Typeahead_default2,
+      {
+        id: "transferredBy",
+        labelKey: "label",
+        options: personnelOptions,
+        selected: header.transferredBy ? [personnelOptions.find((o3) => o3.value === header.transferredBy)] : [],
+        onChange: (sel) => setHeader((h) => ({ ...h, transferredBy: sel[0]?.value || "" })),
+        placeholder: "Select person..."
+      }
+    )), /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "Transferred By Date"), /* @__PURE__ */ import_react59.default.createElement(
+      "input",
+      {
+        type: "date",
+        className: "form-control",
+        value: header.transferredByDate,
+        onChange: (e3) => setHeader((h) => ({ ...h, transferredByDate: e3.target.value }))
+      }
+    )), /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "Received Date"), /* @__PURE__ */ import_react59.default.createElement(
+      "input",
+      {
+        type: "date",
+        className: "form-control",
+        value: header.receivedDate,
+        onChange: (e3) => setHeader((h) => ({ ...h, receivedDate: e3.target.value }))
+      }
+    )))), /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-4" }, /* @__PURE__ */ import_react59.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Items Details"), /* @__PURE__ */ import_react59.default.createElement(
+      import_react_data_table_component6.default,
+      {
+        columns: detailColumns,
+        data: detailRows,
+        responsive: true,
+        striped: true,
+        bordered: true,
+        highlightOnHover: true,
+        dense: true,
+        customStyles: detailTableStyles,
+        noDataComponent: "No details added yet"
+      }
+    ), /* @__PURE__ */ import_react59.default.createElement("button", { type: "button", className: "btn btn-info btn-sm mt-3", onClick: handleDetailAddRow }, "Add Row")), /* @__PURE__ */ import_react59.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react59.default.createElement(Link, { to: "/transfer_slips", className: "btn btn-secondary btn-sm" }, "Back"), /* @__PURE__ */ import_react59.default.createElement("button", { type: "submit", className: "btn btn-success btn-sm" }, "Update")))))));
+  }
+
+  // src/Components/RequestSlip/Index.js
+  var import_react60 = __toESM(require_react());
+  var import_react_data_table_component7 = __toESM(require_index_cjs());
+
+  // src/Services/RequestSlipsServices.js
+  var getRequestSlips = async () => {
+    return axios_default.get("http://localhost:3000/request_slips");
+  };
+  var getItems2 = (args) => {
+    return axios_default.get(
+      `http://localhost:3000/request_slips`,
+      {
+        params: args
+      }
+    );
+  };
+  var employeeNameLookUp = () => {
+    return axios_default.get("http://localhost:3000/request_slips/employee_name_look_up");
+  };
+  var customerNameLookUp = () => {
+    return axios_default.get("http://localhost:3000/request_slips/customer_name_look_up");
+  };
+  var productDescriptionLookUp = () => {
+    return axios_default.get("http://localhost:3000/api/sample_inventory_lookup_sample_item_master");
+  };
+  var employeeAutoFilled = async (id) => {
+    return axios_default.get("http://localhost:3000/request_slips/employee_auto_filled?", { params: { id } });
+  };
+  var customerAutoFilled = async (customer_code) => {
+    return axios_default.get(`http://localhost:3000/api/customers_index/${customer_code}`);
+  };
+  var fetchTerritories = (employeeNumber) => {
+    return axios_default.get(`http://localhost:3000/api/sarf_details_territory_code/${employeeNumber}`);
+  };
+  var fetchTeam = (employeeNumber) => {
+    return axios_default.get(`http://localhost:3000/api/sarf_details_employee_team/${employeeNumber}`);
+  };
+  var saveItem2 = (data2) => {
+    if (data2.id) {
+      return axios_default.put(
+        `http://localhost:3000/request_slips/${data2.id}`,
+        data2
+      );
+    } else {
+      return axios_default.post(`http://localhost:3000/request_slips`, data2);
+    }
+  };
+  var deleteRequestSlip = async (id) => {
+    return axios_default.delete(`http://localhost:3000/request_slips/${id}`);
+  };
+  var showRequestSlip = (id) => {
+    return axios_default.get(`http://localhost:3000/request_slips/${id}`);
+  };
+
+  // src/Components/RequestSlip/Index.js
+  var Index_default3 = Index = () => {
+    const [data2, setData] = (0, import_react60.useState)([]);
+    const [loading, setLoading] = (0, import_react60.useState)(true);
+    const [error, setError] = (0, import_react60.useState)(null);
+    const [args, setArgs] = (0, import_react60.useState)({});
+    const refreshItems = () => {
+      getItems2(args).then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      }).catch((response) => {
+        alert("Error in fetching data.");
+        console.log(response);
+      });
+    };
+    (0, import_react60.useEffect)(() => {
+      refreshItems();
+    }, [args]);
+    (0, import_react60.useEffect)(() => {
+      getRequestSlips().then((response) => {
+        console.log(response.data);
+        setData(response.data);
+        setLoading(false);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+        setError(err);
+        setLoading(false);
+      });
+    }, []);
+    const handleDelete = (id) => {
+      if (window.confirm("Are you sure you want to delete this record?")) {
+        deleteRequestSlip(id).then(() => {
+          alert("Record deleted successfully");
+          window.location.reload();
+        }).catch((err) => {
+          console.error("Error deleting record", err);
+        });
+      }
+    };
+    const columns = [
+      {
+        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "ID"),
+        selector: (row) => row.id,
+        omit: true
+        // this hides the column from the table view
+      },
+      {
+        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Company"),
+        selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC",
+        width: "125px",
+        whiteSpace: "nowrap",
+        sortable: true,
+        center: true
+      },
+      {
+        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Request Number"),
+        selector: (row) => row.request_number,
+        sortable: true,
+        width: "160px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Request Date"),
+        selector: (row) => row.request_date,
+        sortable: true,
+        width: "140px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Employee Name"),
+        selector: (row) => row.employee_name,
+        sortable: true,
+        width: "250px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Address"),
+        selector: (row) => row.address,
+        width: "175px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Purpose of Request"),
+        selector: (row) => row.type_of_request === "Others" ? `${row.type_of_request} (${row.sub_type_of_request})` : row.type_of_request,
+        width: "225px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Actions"),
+        cell: (row) => /* @__PURE__ */ import_react60.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react60.default.createElement(
+          Link,
+          {
+            to: `/request_slips/edit/${row.id}`,
+            title: "Edit",
+            className: "d-inline-block"
+          },
+          /* @__PURE__ */ import_react60.default.createElement("i", { className: "icon-pencil-alt text-info me-1" })
+        ), /* @__PURE__ */ import_react60.default.createElement(
+          Link,
+          {
+            to: `${"http://localhost:3000"}/request_slips/${row.id}/print_slip_request`,
+            target: "_blank",
+            rel: "noopener noreferrer"
+          },
+          /* @__PURE__ */ import_react60.default.createElement("i", { className: "icon-printer text-primary ms-1" })
+        ), /* @__PURE__ */ import_react60.default.createElement(
+          "button",
+          {
+            onClick: () => handleDelete(row.id),
+            style: { background: "none", border: "none", cursor: "pointer", margin: "1 0px" }
+          },
+          /* @__PURE__ */ import_react60.default.createElement("i", { className: "icon-trash text-danger" })
+        )),
+        ignoreRowClick: true,
+        button: true
+      }
+    ];
+    if (loading) return /* @__PURE__ */ import_react60.default.createElement("p", null, "Loading...");
+    if (error) return /* @__PURE__ */ import_react60.default.createElement("p", null, "Error loading data");
+    return /* @__PURE__ */ import_react60.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react60.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react60.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-dark" }), "Request Slips"), /* @__PURE__ */ import_react60.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react60.default.createElement(
+      "input",
+      {
+        className: "form-control form-control-sm",
+        type: "text",
+        placeholder: "Search...",
+        "aria-label": "Request Number",
+        onInput: (e3) => {
+          setArgs({
+            ...args,
+            request_number: e3.target.value
+          });
+        }
+      }
+    ), /* @__PURE__ */ import_react60.default.createElement(
+      "button",
+      {
+        className: "btn btn-outline-primary btn-sm",
+        type: "button"
+      },
+      /* @__PURE__ */ import_react60.default.createElement("i", { className: "icofont icofont-search-alt-1" })
+    )), /* @__PURE__ */ import_react60.default.createElement(
+      Link,
+      {
+        className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
+        to: "/request_slips/new"
+      },
+      "New Request Slip"
+    ))), /* @__PURE__ */ import_react60.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react60.default.createElement(
+      import_react_data_table_component7.default,
+      {
+        columns,
+        data: data2,
+        pagination: true,
+        responsive: true,
+        striped: true,
+        bordered: true,
+        noDataComponent: "No Records of Request Slip",
+        highlightOnHover: true,
+        paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
+      }
+    )))));
+  };
+
+  // src/Components/RequestSlip/Form.js
+  var import_react61 = __toESM(require_react());
+  var import_react_data_table_component8 = __toESM(require_index_cjs());
+  var Form_default2 = Form = () => {
+    const { agent, loading } = UseCurrentAgent();
+    const [data2, setData] = (0, import_react61.useState)({});
+    const navigate = useNavigate();
+    const [customerOptions, setcustomerOptions] = (0, import_react61.useState)([]);
+    const [employeeOptions, setemployeeOptions] = (0, import_react61.useState)([]);
+    const [formData, setFormData] = (0, import_react61.useState)({});
+    const [recommendedByOptions, setRecommendedByOptions] = (0, import_react61.useState)([]);
+    const [showOtherOption, setOtherOption] = (0, import_react61.useState)(false);
+    const [productSampleDescription, setSampleProductDescription] = (0, import_react61.useState)([]);
+    const prepared_by = agent?.email?.split("@")[0] || "";
+    const [productPromatsDescription, setPromatsProductDescription] = (0, import_react61.useState)(
+      []
+    );
+    const [productPackmatsDescription, setPackmatsProductDescription] = (0, import_react61.useState)(
+      []
+    );
+    const [productCommercialDescription, setCommercialProductDescription] = (0, import_react61.useState)([]);
+    const [showAlert, setShowAlert] = (0, import_react61.useState)(false);
+    const alertRef = (0, import_react61.useRef)(null);
+    (0, import_react61.useEffect)(() => {
+      if (showAlert && alertRef.current) {
+        alertRef.current.focus();
+      }
+    }, [showAlert]);
+    const { id } = useParams();
+    (0, import_react61.useEffect)(() => {
+      if (window.location.hash.includes("request_slips/new")) {
+        axios_default.get("http://localhost:3000/request_slips/new.json").then((response) => {
+          setFormData(response.data);
+          setRecommendedByOptions(response.data.recommended_by || {});
+        }).catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+      }
+    }, []);
+    (0, import_react61.useEffect)(() => {
+      if (window.location.hash.includes(`request_slips/edit`)) {
+        axios_default.get(`http://localhost:3000/request_slips/edit/${id}.json`).then((response) => {
+          setRecommendedByOptions(response.data || {});
+        }).catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+      }
+    }, []);
+    const handleSave = () => {
+      const details = [
+        ...sampleRows.map((r3) => ({
+          id: r3.detailId,
+          product_code: r3.product_code,
+          product_description: r3.product_description,
+          request_quantity: r3.request_quantity,
+          issue_slip_type: "Sample"
+        })),
+        ...promatsRows.map((r3) => ({
+          id: r3.detailId,
+          product_code: r3.product_code,
+          product_description: r3.product_description,
+          request_quantity: r3.request_quantity,
+          issue_slip_type: "Promats"
+        })),
+        ...packmatsRows.map((r3) => ({
+          id: r3.detailId,
+          product_code: r3.product_code,
+          product_description: r3.product_description,
+          request_quantity: r3.request_quantity,
+          issue_slip_type: "Packmats"
+        })),
+        ...commercialRows.map((r3) => ({
+          id: r3.detailId,
+          product_code: r3.product_code,
+          product_description: r3.product_description,
+          request_quantity: r3.request_quantity,
+          issue_slip_type: "Commercial"
+        }))
+      ];
+      const body = {
+        ...data2,
+        sample_slip_request_details_attributes: details
+      };
+      var noRows = false;
+      if (details.length === 0) {
+        noRows = true;
+      }
+      const isEditMode = window.location.hash.includes("issue_slips/edit");
+      const badDetail = details.find(
+        (d) => !d.product_description || !d.request_quantity
+      );
+      if (!data2.company_code || !data2.type_of_request || !data2.customer_name || !data2.employee_number || !data2.recommended_by || !data2.approved_by || !data2.endorsed_by || !data2.contact_no || isEditMode && noRows || !isEditMode && noRows || badDetail) {
+        setShowAlert(true);
+        if (alertRef.current) {
+          alertRef.current.focus();
+        }
+        return;
+      }
+      setShowAlert(false);
+      saveItem2(body).then((response) => {
+        navigate("/request_slips");
+        console.log("saved!");
+      }).catch((response) => {
+        alert("Error");
+        console.log(response);
+      });
+      console.log("Saving:", body);
+    };
+    (0, import_react61.useEffect)(() => {
+      employeeNameLookUp().then((response) => {
+        console.log("Success!");
+        console.log(response.data);
+        setemployeeOptions(response.data);
+      }).catch((error) => {
+        console.log("Error fetching!");
+        console.error(error);
+      });
+    }, []);
+    (0, import_react61.useEffect)(() => {
+      customerNameLookUp().then((response) => {
+        console.log("Success!");
+        console.log(response.data);
+        setcustomerOptions(response.data);
+      }).catch((error) => {
+        console.log("Error fetching!");
+        console.error(error);
+      });
+    }, []);
+    (0, import_react61.useEffect)(() => {
+      if (!id) return;
+      showRequestSlip(id).then((response) => {
+        const requestSlip = response.data;
+        console.log(response.data);
+        setData(requestSlip);
+        if (requestSlip.type_of_request === "Others") {
+          setOtherOption(true);
+        }
+        const details = requestSlip.sample_slip_request_details || [];
+        console.log(details);
+        setSampleRows(
+          details.filter((d) => d.issue_slip_type === "Sample").map((d) => ({
+            id: Date.now() + Math.random(),
+            // unique id for DataTable row
+            detailId: d.id,
+            product_code: d.product_code,
+            product_description: d.product_description,
+            request_quantity: d.request_quantity || d.quantity
+          }))
+        );
+        setPromatsRows(
+          details.filter((d) => d.issue_slip_type === "Promats").map((d) => ({
+            id: Date.now() + Math.random(),
+            detailId: d.id,
+            product_code: d.product_code,
+            product_description: d.product_description,
+            request_quantity: d.request_quantity || d.quantity
+          }))
+        );
+        setPackmatsRows(
+          details.filter((d) => d.issue_slip_type === "Packmats").map((d) => ({
+            id: Date.now() + Math.random(),
+            detailId: d.id,
+            product_code: d.product_code,
+            product_description: d.product_description,
+            request_quantity: d.request_quantity || d.quantity
+          }))
+        );
+        setCommercialRows(
+          details.filter((d) => d.issue_slip_type === "Commercial").map((d) => ({
+            id: Date.now() + Math.random(),
+            detailId: d.id,
+            product_code: d.product_code,
+            product_description: d.product_description,
+            request_quantity: d.request_quantity || d.quantity
+          }))
+        );
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+      });
+    }, [id]);
+    (0, import_react61.useEffect)(() => {
+      productDescriptionLookUp().then((response) => {
+        setSampleProductDescription(response.data);
+        console.log("Data fetched successfully", response.data);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+      });
+    }, []);
+    const [sampleRows, setSampleRows] = (0, import_react61.useState)([]);
+    const [promatsRows, setPromatsRows] = (0, import_react61.useState)([]);
+    const [packmatsRows, setPackmatsRows] = (0, import_react61.useState)([]);
+    const [commercialRows, setCommercialRows] = (0, import_react61.useState)([]);
+    const handleSampleAddRow = () => {
+      setSampleRows((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          product_description: "",
+          request_quantity: "",
+          product_code: ""
+        }
+      ]);
+    };
+    const handlePromatsAddRow = () => {
+      setPromatsRows((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          product_description: "",
+          request_quantity: "",
+          product_code: ""
+        }
+      ]);
+    };
+    const handlePackmatsAddRow = () => {
+      setPackmatsRows((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          product_description: "",
+          request_quantity: "",
+          product_code: ""
+        }
+      ]);
+    };
+    const handleCommercialAddRow = () => {
+      setCommercialRows((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          product_description: "",
+          request_quantity: "",
+          product_code: ""
+        }
+      ]);
+    };
+    const handleSampleRowChange = (id2, field, value) => {
+      setSampleRows(
+        (prev) => prev.map(
+          (r3) => r3.id === id2 ? {
+            ...r3,
+            [field]: value
+          } : r3
+        )
+      );
+    };
+    const handlePromatsRowChange = (id2, field, value) => {
+      setPromatsRows(
+        (prev) => prev.map(
+          (r3) => r3.id === id2 ? {
+            ...r3,
+            [field]: value
+          } : r3
+        )
+      );
+    };
+    const handlePackmatsRowChange = (id2, field, value) => {
+      setPackmatsRows(
+        (prev) => prev.map(
+          (r3) => r3.id === id2 ? {
+            ...r3,
+            [field]: value
+          } : r3
+        )
+      );
+    };
+    const handleCommercialRowChange = (id2, field, value) => {
+      setCommercialRows(
+        (prev) => prev.map(
+          (r3) => r3.id === id2 ? {
+            ...r3,
+            [field]: value
+          } : r3
+        )
+      );
+    };
+    const handleSampleDeleteRow = (id2) => {
+      setSampleRows((prev) => prev.filter((r3) => r3.id !== id2));
+    };
+    const handlePromatsDeleteRow = (id2) => {
+      setPromatsRows((prev) => prev.filter((r3) => r3.id !== id2));
+    };
+    const handlePackmatsDeleteRow = (id2) => {
+      setPackmatsRows((prev) => prev.filter((r3) => r3.id !== id2));
+    };
+    const handleCommercialDeleteRow = (id2) => {
+      setCommercialRows((prev) => prev.filter((r3) => r3.id !== id2));
+    };
+    const sampleColumns = [
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Product Description ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")),
+        width: "50%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          Typeahead_default2,
+          {
+            className: "w-100",
+            positionFixed: true,
+            options: productSampleDescription,
+            placeholder: "Product Description",
+            inputValue: row.product_description || "",
+            selected: row.product_description ? [row.product_description] : [],
+            onChange: (selected) => handleSampleRowChange(
+              row.id,
+              "product_description",
+              selected[0] || ""
+            ),
+            onInputChange: (text) => handleSampleRowChange(row.id, "product_description", text)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Product Code*"),
+        width: "10%",
+        omit: true,
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement("input", { className: "w-100", type: "text", value: row.product_code || "" })
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Quantity ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")),
+        width: "30%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control",
+            placeholder: "Quantity",
+            value: row.request_quantity || "",
+            onChange: (e3) => handleSampleRowChange(row.id, "request_quantity", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Actions"),
+        width: "10%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handleSampleDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react61.default.createElement("i", { className: "icon-trash text-white icon-xl" })
+        )
+      }
+    ];
+    const promatsColumns = [
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Product Description ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")),
+        width: "50%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          Typeahead_default2,
+          {
+            className: "w-100",
+            positionFixed: true,
+            options: productSampleDescription,
+            placeholder: "Product Description",
+            selected: row.product_description ? [row.product_description] : [],
+            onChange: (selected) => handlePromatsRowChange(
+              row.id,
+              "product_description",
+              selected[0] || ""
+            )
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Product Code*"),
+        width: "10%",
+        omit: true,
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement("input", { className: "w-100", type: "text", value: row.product_code || "" })
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Quantity ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")),
+        width: "30%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control",
+            placeholder: "Quantity",
+            value: row.request_quantity || "",
+            onChange: (e3) => handlePromatsRowChange(row.id, "request_quantity", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Actions"),
+        width: "10%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handlePromatsDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react61.default.createElement("i", { className: "icon-trash text-white icon-xl" })
+        )
+      }
+    ];
+    const packmatsColumns = [
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Product Description ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")),
+        width: "50%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          Typeahead_default2,
+          {
+            className: "w-100",
+            positionFixed: true,
+            options: productSampleDescription,
+            placeholder: "Product Description",
+            selected: row.product_description ? [row.product_description] : [],
+            onChange: (selected) => handlePackmatsRowChange(
+              row.id,
+              "product_description",
+              selected[0] || ""
+            )
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Product Code*"),
+        width: "10%",
+        omit: true,
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement("input", { className: "w-100", type: "text", value: row.product_code || "" })
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Quantity ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")),
+        width: "30%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control",
+            placeholder: "Quantity",
+            value: row.request_quantity || "",
+            onChange: (e3) => handlePackmatsRowChange(row.id, "request_quantity", e3.target.value)
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Actions"),
+        width: "10%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handlePackmatsDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react61.default.createElement("i", { className: "icon-trash text-white icon-xl" })
+        )
+      }
+    ];
+    const commercialColumns = [
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Product Description ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")),
+        width: "50%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          Typeahead_default2,
+          {
+            className: "w-100",
+            positionFixed: true,
+            options: productSampleDescription,
+            placeholder: "Product Description",
+            selected: row.product_description ? [row.product_description] : [],
+            onChange: (selected) => handleCommercialRowChange(
+              row.id,
+              "product_description",
+              selected[0] || ""
+            )
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Product Code*"),
+        width: "10%",
+        omit: true,
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement("input", { className: "w-100", type: "text", value: row.product_code || "" })
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Quantity ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")),
+        width: "30%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          "input",
+          {
+            type: "number",
+            className: "form-control",
+            placeholder: "Quantity",
+            value: row.request_quantity || "",
+            onChange: (e3) => handleCommercialRowChange(
+              row.id,
+              "request_quantity",
+              e3.target.value
+            )
+          }
+        )
+      },
+      {
+        name: /* @__PURE__ */ import_react61.default.createElement("b", null, "Actions"),
+        width: "10%",
+        cell: (row) => /* @__PURE__ */ import_react61.default.createElement(
+          "button",
+          {
+            className: "btn btn-danger btn-sm",
+            onClick: () => handleCommercialDeleteRow(row.id)
+          },
+          /* @__PURE__ */ import_react61.default.createElement("i", { className: "icon-trash text-white icon-xl" })
+        )
+      }
+    ];
+    return /* @__PURE__ */ import_react61.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react61.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react61.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-dark" }), "Request Slip")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "card-body" }, showAlert && /* @__PURE__ */ import_react61.default.createElement(
+      "div",
+      {
+        ref: alertRef,
+        tabIndex: "-1",
+        className: "alert alert-light-secondary light alert-dismissible text-dark border-left-wrapper",
+        role: "alert"
+      },
+      /* @__PURE__ */ import_react61.default.createElement("i", { "data-feather": "help-circle" }),
+      /* @__PURE__ */ import_react61.default.createElement("p", null, "Make sure to complete filling up the required (", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*"), ") inputs."),
+      /* @__PURE__ */ import_react61.default.createElement(
+        "button",
+        {
+          className: "btn-close",
+          type: "button",
+          "aria-label": "Close",
+          onClick: () => setShowAlert(false)
+        }
+      )
+    ), /* @__PURE__ */ import_react61.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Request Details"), /* @__PURE__ */ import_react61.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Company Code ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react61.default.createElement("i", { className: "icofont icofont-building-alt" })), /* @__PURE__ */ import_react61.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        onChange: (selected) => {
+          const company_code = selected.target.value;
+          setData({
+            ...data2,
+            company_code
+          });
+        },
+        value: data2.company_code
+      },
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "" }, "Please select..."),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "1" }, "CDCI"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "2" }, "YSS"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "5" }, "CYDC")
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Purpose of Request ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react61.default.createElement("i", { className: "icofont icofont-document-folder" })), /* @__PURE__ */ import_react61.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        onChange: (selected) => {
+          const type_of_request = selected.target.value;
+          setData({
+            ...data2,
+            type_of_request
+          });
+          if (selected.target.value == "Others") {
+            setOtherOption(true);
+          } else {
+            setOtherOption(false);
+            setData((prevData) => ({
+              ...prevData,
+              sub_type_of_request: ""
+            }));
+          }
+        },
+        value: data2.type_of_request
+      },
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "", selected: true }, "Please select..."),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Stock for Accreditation" }, "Stock for Accreditation"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "MD Starter Dose/Sampling" }, "MD Starter Dose/Sampling"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Free Clinic" }, "Free Clinic"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Medical Mission" }, "Medical Mission"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Booth Convention/Post Grad" }, "Booth Convention/Post Grad"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Additional Sample Allocation" }, "Additional Sample Allocation"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "MD Personal Use" }, "MD Personal Use"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Others" }, "Others")
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, showOtherOption == true && /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Others ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react61.default.createElement("i", { className: "icofont icofont-ebook" })), /* @__PURE__ */ import_react61.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        onChange: (selected) => {
+          const sub_type_of_request = selected.target.value;
+          setData({
+            ...data2,
+            sub_type_of_request
+          });
+        },
+        value: data2.sub_type_of_request,
+        required: showOtherOption ? true : false
+      },
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "", selected: true }, "Please select..."),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Personal Use" }, "Personal Use"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Clinic Office Use" }, "Clinic Office Use"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Monthly Sample Allocation Use" }, "Monthly Sample Allocation Use"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "FDA Compliance" }, "FDA Compliance"),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "Replacement" }, "Replacement")
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Customer ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      Typeahead_default2,
+      {
+        options: customerOptions,
+        className: "w-100",
+        placeholder: "Customer Name",
+        selected: data2.customer_name ? [`${data2.customer_name}`] : [],
+        onChange: (selected) => {
+          `    `;
+          if (selected.length > 0) {
+            const parts = selected[0].split(" - ");
+            const customerId = parts[0];
+            const customerName = parts[1];
+            setData((prevData) => ({
+              ...prevData,
+              customer_code: customerId,
+              customer_name: customerName
+            }));
+            console.log(customerName);
+            customerAutoFilled(customerId).then((response) => {
+              console.log("API call successful");
+              console.log(response.data);
+              const { billing_address } = response.data;
+              const fullAddress = [
+                billing_address.address_1,
+                billing_address.address_2,
+                billing_address.address_3,
+                billing_address.address_4,
+                billing_address.address_5
+              ].filter((part) => part && part.trim() !== "").join(", ");
+              setData((prevData) => ({
+                ...prevData,
+                address: fullAddress
+              }));
+            }).catch((error) => {
+              alert(
+                "Error occurred while autofilling customer data"
+              );
+              console.error(error);
+            });
+          }
+        },
+        onInputChange: (input) => {
+          const parts = input.split(" - ");
+          const customer_code = parts[0];
+          const customer_name = parts.slice(1).join(" - ") || "";
+          setData({
+            ...data2,
+            customer_code,
+            customer_name
+          });
+        }
+      }
+    ))))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Employee Name ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      Typeahead_default2,
+      {
+        allowNew: false,
+        options: employeeOptions,
+        className: "w-100",
+        placeholder: "Employee Name",
+        selected: data2.employee_name ? [`${data2.employee_name}`] : [],
+        onChange: (selected) => {
+          if (selected.length > 0) {
+            const selectedValue = selected[0].split(" - ");
+            const employeeId = selectedValue[0];
+            const employeeName = selectedValue[1];
+            console.log(employeeName);
+            console.log(employeeId);
+            employeeAutoFilled(employeeId).then((response) => {
+              console.log("success! wow");
+              console.log(response.data.infotxt_mpn);
+              console.log(response.data);
+              setData((prevData) => ({
+                ...prevData,
+                contact_no: response.data.infotxt_mpn,
+                contact_person: response.data.employee_name,
+                designation: response.data.position,
+                employee_number: response.data.employee_number,
+                employee_name: response.data.employee_name
+              }));
+              fetchTerritories(response.data.employee_number).then((result) => {
+                console.log("success! wow1111");
+                setData((prevData) => ({
+                  ...prevData,
+                  territory_code: result.data
+                }));
+                fetchTeam(response.data.employee_number).then((output) => {
+                  console.log("success! wow1111222");
+                  console.log(output.data);
+                  setData((prevData) => ({
+                    ...prevData,
+                    team: output.data
+                  }));
+                }).catch((error) => {
+                  alert("Error fetching territories");
+                  console.log(error);
+                });
+              }).catch((error) => {
+                alert("Error fetching territories");
+                console.log(error);
+              });
+            }).catch((error) => {
+              alert("Error fetching employee details");
+              console.log(error);
+            });
+          }
+        },
+        onInputChange: (input) => {
+          const parts = input.split(" - ");
+          const customer_code = parts[0];
+          const customer_name = parts.slice(1).join(" - ") || "";
+          setData({
+            ...data2,
+            employee_number: customer_code,
+            employee_name: customer_name
+          });
+        }
+      }
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Contact No."), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "number",
+        placeholder: "Contact No.",
+        onChange: (selected) => {
+          setData((prevData) => ({
+            ...prevData,
+            contact_no: selected.target.value
+          }));
+        },
+        value: data2.contact_no
+      }
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Request Description"), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      "textarea",
+      {
+        className: "form-control",
+        type: "text",
+        placeholder: "Request Description",
+        rows: 1,
+        onChange: (selected) => {
+          const request_slip_description = selected.target.value;
+          setData({
+            ...data2,
+            request_slip_description
+          });
+        },
+        value: data2.request_slip_description
+      }
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Address"), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "text",
+        placeholder: "Address",
+        onChange: (selected) => {
+          setData((prevData) => ({
+            ...prevData,
+            address: selected.target.value
+          }));
+        },
+        value: data2.address
+      }
+    ))))), /* @__PURE__ */ import_react61.default.createElement("h5", { className: "mb-3 border-bottom pb-2 mt-4" }, "Approval Details"), /* @__PURE__ */ import_react61.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Recommended by ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        value: data2.recommended_by,
+        onChange: (selected) => {
+          const recommended_by = selected.target.value;
+          setData({
+            ...data2,
+            recommended_by
+          });
+        }
+      },
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "" }, "Please select..."),
+      Object.entries(recommendedByOptions).map(([name, id2]) => /* @__PURE__ */ import_react61.default.createElement("option", { key: id2, value: id2 }, name))
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Approved by ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        value: data2.approved_by,
+        onChange: (selected) => {
+          const approved_by = selected.target.value;
+          setData({
+            ...data2,
+            approved_by
+          });
+        }
+      },
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "" }, "Please select..."),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "GAN, STEPHEN Y." }, "GAN, STEPHEN Y.")
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Endorsed by ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        value: data2.endorsed_by,
+        onChange: (selected) => {
+          const endorsed_by = selected.target.value;
+          console.log(endorsed_by);
+          setData((prevData) => ({
+            ...prevData,
+            endorsed_by
+          }));
+        }
+      },
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "" }, "Please select..."),
+      /* @__PURE__ */ import_react61.default.createElement("option", { value: "GARCIA, ROGELIO JR. MD" }, "GARCIA, ROGELIO JR. MD")
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Prepared by"), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "name",
+        readOnly: true,
+        value: loading ? "" : prepared_by
+      }
+    ))))), /* @__PURE__ */ import_react61.default.createElement("h5", { className: "mb-3 border-bottom pb-2 mt-4" }, "Contact Details"), /* @__PURE__ */ import_react61.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Contact Person ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control",
+        placeholder: "Contact Person",
+        value: data2.contact_person
+      }
+    )))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Designation"), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
+      "input",
+      {
+        type: "text",
+        className: "form-control",
+        placeholder: "Designation",
+        value: data2.designation
+      }
+    ))))), /* @__PURE__ */ import_react61.default.createElement("h5", { className: "mb-4 border-bottom pb-2 mt-4" }, "Product Details"), /* @__PURE__ */ import_react61.default.createElement("div", { className: "horizontal-wizard-wrapper" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "row g-3" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-12 main-horizontal-header" }, /* @__PURE__ */ import_react61.default.createElement(
+      "div",
+      {
+        className: "nav nav-pills horizontal-options",
+        id: "horizontal-wizard-tab",
+        role: "tablist",
+        "aria-orientation": "vertical"
+      },
+      /* @__PURE__ */ import_react61.default.createElement(
+        "a",
+        {
+          className: "nav-link active",
+          id: "sample-tab",
+          "data-bs-toggle": "pill",
+          href: "#sample-info",
+          role: "tab",
+          "aria-controls": "sample-info",
+          "aria-selected": "true"
+        },
+        /* @__PURE__ */ import_react61.default.createElement("div", { className: "horizontal-wizard" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "stroke-icon-wizard" }, /* @__PURE__ */ import_react61.default.createElement("i", { className: "icofont icofont-pills" })), /* @__PURE__ */ import_react61.default.createElement("div", { className: "horizontal-wizard-content" }, /* @__PURE__ */ import_react61.default.createElement("h6", null, "Sample")))
+      ),
+      /* @__PURE__ */ import_react61.default.createElement(
+        "a",
+        {
+          className: "nav-link",
+          id: "promats-tab",
+          "data-bs-toggle": "pill",
+          href: "#promats-info",
+          role: "tab",
+          "aria-controls": "promats-info",
+          "aria-selected": "false"
+        },
+        /* @__PURE__ */ import_react61.default.createElement("div", { className: "horizontal-wizard" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "stroke-icon-wizard" }, /* @__PURE__ */ import_react61.default.createElement("i", { className: "icofont icofont-clip" })), /* @__PURE__ */ import_react61.default.createElement("div", { className: "horizontal-wizard-content" }, /* @__PURE__ */ import_react61.default.createElement("h6", null, "Promats")))
+      ),
+      /* @__PURE__ */ import_react61.default.createElement(
+        "a",
+        {
+          className: "nav-link",
+          id: "packmats-tab",
+          "data-bs-toggle": "pill",
+          href: "#packmats-info",
+          role: "tab",
+          "aria-controls": "packmats-info",
+          "aria-selected": "false"
+        },
+        /* @__PURE__ */ import_react61.default.createElement("div", { className: "horizontal-wizard" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "stroke-icon-wizard" }, /* @__PURE__ */ import_react61.default.createElement("i", { className: "icofont icofont-package" })), /* @__PURE__ */ import_react61.default.createElement("div", { className: "horizontal-wizard-content" }, /* @__PURE__ */ import_react61.default.createElement("h6", null, "Packmats")))
+      ),
+      /* @__PURE__ */ import_react61.default.createElement(
+        "a",
+        {
+          className: "nav-link",
+          id: "commercial-tab",
+          "data-bs-toggle": "pill",
+          href: "#commercial-info",
+          role: "tab",
+          "aria-controls": "commercial-info",
+          "aria-selected": "false"
+        },
+        /* @__PURE__ */ import_react61.default.createElement("div", { className: "horizontal-wizard" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "stroke-icon-wizard" }, /* @__PURE__ */ import_react61.default.createElement("i", { className: "icofont icofont-medical-sign-alt" })), /* @__PURE__ */ import_react61.default.createElement("div", { className: "horizontal-wizard-content" }, /* @__PURE__ */ import_react61.default.createElement("h6", null, "Commercial")))
+      )
+    )), /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-12" }, /* @__PURE__ */ import_react61.default.createElement(
+      "div",
+      {
+        className: "tab-content dark-field",
+        id: "horizontal-wizard-tabContent"
+      },
+      /* @__PURE__ */ import_react61.default.createElement(
+        "div",
+        {
+          className: "tab-pane fade show active",
+          id: "sample-info",
+          role: "tabpanel",
+          "aria-labelledby": "sample-tab"
+        },
+        /* @__PURE__ */ import_react61.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react61.default.createElement(
+          import_react_data_table_component8.default,
+          {
+            columns: sampleColumns,
+            data: sampleRows,
+            responsive: true,
+            striped: true,
+            bordered: true,
+            noDataComponent: "No Records of Agent User Menu",
+            highlightOnHover: true
+          }
+        )),
+        /* @__PURE__ */ import_react61.default.createElement(
+          "button",
+          {
+            className: "btn btn-primary btn-sm mt-3",
+            onClick: handleSampleAddRow
+          },
+          "Add Row"
+        )
+      ),
+      /* @__PURE__ */ import_react61.default.createElement(
+        "div",
+        {
+          className: "tab-pane fade",
+          id: "promats-info",
+          role: "tabpanel",
+          "aria-labelledby": "promats-tab"
+        },
+        /* @__PURE__ */ import_react61.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react61.default.createElement(
+          import_react_data_table_component8.default,
+          {
+            columns: promatsColumns,
+            data: promatsRows,
+            responsive: true,
+            striped: true,
+            bordered: true,
+            noDataComponent: "No Records of Agent User Menu",
+            highlightOnHover: true
+          }
+        )),
+        /* @__PURE__ */ import_react61.default.createElement(
+          "button",
+          {
+            className: "btn btn-primary btn-sm mt-3",
+            onClick: handlePromatsAddRow
+          },
+          "Add Row"
+        )
+      ),
+      /* @__PURE__ */ import_react61.default.createElement(
+        "div",
+        {
+          className: "tab-pane fade",
+          id: "packmats-info",
+          role: "tabpanel",
+          "aria-labelledby": "packmats-tab"
+        },
+        /* @__PURE__ */ import_react61.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react61.default.createElement(
+          import_react_data_table_component8.default,
+          {
+            columns: packmatsColumns,
+            data: packmatsRows,
+            responsive: true,
+            striped: true,
+            bordered: true,
+            noDataComponent: "No Records of Agent User Menu",
+            highlightOnHover: true
+          }
+        )),
+        /* @__PURE__ */ import_react61.default.createElement(
+          "button",
+          {
+            className: "btn btn-primary btn-sm mt-3",
+            onClick: handlePackmatsAddRow
+          },
+          "Add Row"
+        )
+      ),
+      /* @__PURE__ */ import_react61.default.createElement(
+        "div",
+        {
+          className: "tab-pane fade",
+          id: "commercial-info",
+          role: "tabpanel",
+          "aria-labelledby": "commercial-tab"
+        },
+        /* @__PURE__ */ import_react61.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react61.default.createElement(
+          import_react_data_table_component8.default,
+          {
+            columns: commercialColumns,
+            data: commercialRows,
+            responsive: true,
+            striped: true,
+            bordered: true,
+            noDataComponent: "No Records of Agent User Menu",
+            highlightOnHover: true
+          }
+        )),
+        /* @__PURE__ */ import_react61.default.createElement(
+          "button",
+          {
+            className: "btn btn-primary btn-sm mt-3",
+            onClick: handleCommercialAddRow
+          },
+          "Add Row"
+        )
+      )
+    ))))), /* @__PURE__ */ import_react61.default.createElement("div", { className: "card-footer" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react61.default.createElement(Link, { to: "/request_slips", className: "btn btn-secondary btn-sm" }, "Back"), /* @__PURE__ */ import_react61.default.createElement("button", { className: "btn btn-primary btn-sm", onClick: handleSave }, "Save")))));
+  };
+
+  // src/Components/IssueSlip/Index.js
+  var import_react62 = __toESM(require_react());
+  var import_react_data_table_component9 = __toESM(require_index_cjs());
+
+  // src/Services/IssueSlipsServices.js
+  var getIssueSlips = async () => {
+    return axios_default.get("http://localhost:3000/issue_slips");
+  };
+  var getItems3 = (args) => {
+    return axios_default.get(`http://localhost:3000/issue_slips`, {
+      params: args
+    });
+  };
+  var requestNumberLookUp = () => {
+    return axios_default.get(
+      "http://localhost:3000/api/sample_slip_issuances_request_number_list"
+    );
+  };
+  var requestNumberDetailsLookUp = async (request_number) => {
+    return axios_default.get(
+      `http://localhost:3000/api/sample_slip_issuances_load_request/${request_number}`
+    );
+  };
+  var requestSlipDetails = async (slip_request_id) => {
+    return axios_default.get(
+      `http://localhost:3000/api/sample_slip_issuances_load_request_details/${slip_request_id}`
+    );
+  };
+  var saveItem3 = (data2) => {
+    const { issue_slip } = data2;
+    if (issue_slip && issue_slip.id) {
+      return axios_default.put(
+        `http://localhost:3000/issue_slips/${issue_slip.id}`,
+        data2
+      );
+    } else {
+      return axios_default.post(
+        `http://localhost:3000/issue_slips`,
+        data2
+      );
+    }
+  };
+  var deleteIssueSlip = async (id) => {
+    return axios_default.delete(`${"http://localhost:3000"}/issue_slips/${id}`);
+  };
+
+  // src/Components/IssueSlip/Index.js
+  var Index_default4 = Index = () => {
+    const [data2, setData] = (0, import_react62.useState)([]);
+    const [args, setArgs] = (0, import_react62.useState)({});
+    const [loading, setLoading] = (0, import_react62.useState)(true);
+    ``;
+    const [error, setError] = (0, import_react62.useState)(null);
+    const refreshItems = () => {
+      getItems3(args).then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      }).catch((response) => {
+        alert("Error in fetching data.");
+        console.log(response);
+      });
+    };
+    const handleDelete = (id) => {
+      if (window.confirm("Are you sure you want to delete this record?")) {
+        deleteIssueSlip(id).then(() => {
+          window.location.reload();
+          alert("Record deleted successfully");
+        }).catch((err) => {
+          console.error("Error deleting record", err);
+        });
+      }
+    };
+    (0, import_react62.useEffect)(() => {
+      refreshItems();
+    }, [args]);
+    (0, import_react62.useEffect)(() => {
+      getIssueSlips().then((response) => {
+        console.log("Response from API:", response);
+        console.log(response.data);
+        setData(response.data);
+        setLoading(false);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+        setError(err);
+        setLoading(false);
+      });
+    }, []);
+    const columns = [
+      {
+        name: /* @__PURE__ */ import_react62.default.createElement("b", null, "ID"),
+        selector: (row) => row.id,
+        omit: true
+        // this hides the column from the table view
+      },
+      {
+        name: /* @__PURE__ */ import_react62.default.createElement("b", null, "Company"),
+        selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC",
+        width: "125px",
+        whiteSpace: "nowrap",
+        center: true
+      },
+      {
+        name: /* @__PURE__ */ import_react62.default.createElement("b", null, "Issuance No."),
+        selector: (row) => row.issuance_number,
+        width: "150px",
+        whiteSpace: "nowrap",
+        // center: true,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react62.default.createElement("b", null, "Request Number"),
+        selector: (row) => row.request_number,
+        width: "170px",
+        whiteSpace: "nowrap",
+        // center: true,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react62.default.createElement("b", null, "Issuance Date"),
+        selector: (row) => row.issuance_date,
+        width: "150px",
+        whiteSpace: "nowrap",
+        // center: true,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react62.default.createElement("b", null, "Employee Name"),
+        selector: (row) => row.employee_name,
+        width: "200px",
+        whiteSpace: "nowrap",
+        // center: true,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react62.default.createElement("b", null, "Address"),
+        selector: (row) => row.address,
+        width: "270px",
+        whiteSpace: "nowrap",
+        // center: true,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react62.default.createElement("b", null, "Actions"),
+        cell: (row) => /* @__PURE__ */ import_react62.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react62.default.createElement(Link, { to: `/issue_slips/edit/${row.id}`, className: "d-inline-block", title: "Edit" }, /* @__PURE__ */ import_react62.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react62.default.createElement(
+          "button",
+          {
+            onClick: () => handleDelete(row.id),
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
+          },
+          /* @__PURE__ */ import_react62.default.createElement("i", { className: "icon-trash text-danger" })
+        )),
+        ignoreRowClick: true,
+        button: true
+      }
+    ];
+    return /* @__PURE__ */ import_react62.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react62.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react62.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react62.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react62.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react62.default.createElement("i", { className: "icofont icofont-paper me-2 text-dark" }), "Issue Slips"), /* @__PURE__ */ import_react62.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react62.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react62.default.createElement(
+      "input",
+      {
+        className: "form-control form-control-sm",
+        type: "text",
+        placeholder: "Search...",
+        "aria-label": "Search",
+        onInput: (e3) => {
+          setArgs({ ...args, search: e3.target.value });
+        }
+      }
+    ), /* @__PURE__ */ import_react62.default.createElement(
+      "button",
+      {
+        className: "btn btn-outline-primary btn-sm",
+        type: "button"
+      },
+      /* @__PURE__ */ import_react62.default.createElement("i", { className: "icofont icofont-search-alt-1" })
+    )), /* @__PURE__ */ import_react62.default.createElement(
+      Link,
+      {
+        className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
+        to: "/issue_slips/new"
+      },
+      "New Issue Slip"
+    ))), /* @__PURE__ */ import_react62.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react62.default.createElement(
+      import_react_data_table_component9.default,
+      {
+        columns,
+        data: data2,
+        pagination: true,
+        responsive: true,
+        striped: true,
+        bordered: true,
+        noDataComponent: "No Records of Issue Slip",
+        highlightOnHover: true,
+        paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
+      }
+    )))));
+  };
+
   // src/Components/IssueSlip/Form.js
+  var import_react63 = __toESM(require_react());
+  var import_react_data_table_component10 = __toESM(require_index_cjs());
   var Form_default3 = New = () => {
     const [data2, setData] = (0, import_react63.useState)([]);
     const navigate = useNavigate();
@@ -37050,25 +39910,53 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     const handleSampleAddRow = () => {
       setSampleRows((prev) => [
         ...prev,
-        { id: Date.now(), product_description: "", request_quantity: "", lot_number: "", expiry_date: "", approved_quantity: "" }
+        {
+          id: Date.now(),
+          product_description: "",
+          request_quantity: "",
+          lot_number: "",
+          expiry_date: "",
+          approved_quantity: ""
+        }
       ]);
     };
     const handlePromatsAddRow = () => {
       setPromatsRows((prev) => [
         ...prev,
-        { id: Date.now(), product_description: "", request_quantity: "", lot_number: "", expiry_date: "", approved_quantity: "" }
+        {
+          id: Date.now(),
+          product_description: "",
+          request_quantity: "",
+          lot_number: "",
+          expiry_date: "",
+          approved_quantity: ""
+        }
       ]);
     };
     const handlePackmatsAddRow = () => {
       setPackmatsRows((prev) => [
         ...prev,
-        { id: Date.now(), product_description: "", request_quantity: "", lot_number: "", expiry_date: "", approved_quantity: "" }
+        {
+          id: Date.now(),
+          product_description: "",
+          request_quantity: "",
+          lot_number: "",
+          expiry_date: "",
+          approved_quantity: ""
+        }
       ]);
     };
     const handleCommercialAddRow = () => {
       setCommercialRows((prev) => [
         ...prev,
-        { id: Date.now(), product_description: "", request_quantity: "", lot_number: "", expiry_date: "", approved_quantity: "" }
+        {
+          id: Date.now(),
+          product_description: "",
+          request_quantity: "",
+          lot_number: "",
+          expiry_date: "",
+          approved_quantity: ""
+        }
       ]);
     };
     const handleSampleRowChange = (id2, field, value) => {
@@ -37503,7 +40391,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             className: "form-control",
             placeholder: "Approved Quantity",
             value: row.approved_quantity || "",
-            onChange: (e3) => handleCommercialRowChange(row.id, "approved_quantity", e3.target.value)
+            onChange: (e3) => handleCommercialRowChange(
+              row.id,
+              "approved_quantity",
+              e3.target.value
+            )
           }
         )
       },
@@ -37585,7 +40477,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             requestSlipDetails(response.data.id).then((response2) => {
               console.log("Success! wow details yarn");
               console.log(response2.data);
-              const details = response2.data.request_details || [];
+              var details = response2.data.request_details || [];
+              if (selected.length === 0) {
+                details = [];
+              }
               console.log(details);
               setSampleRows(
                 details.filter(
@@ -37635,6 +40530,39 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           }).catch((err) => {
             console.error("Error fetching data", err);
           });
+          if (selected.length === 0) {
+            setData((prev) => ({
+              ...prev,
+              request_id: "",
+              slip_request_id: "",
+              request_number: "",
+              request_slip_description: "",
+              customer_number: "",
+              customer_name: "",
+              deliver_to: "",
+              company_code: "",
+              type_of_request: "",
+              sub_type_of_request: "",
+              address: "",
+              contact_person: "",
+              contact_no: "",
+              employee_number: "",
+              employee_name: "",
+              prepared_by: "",
+              prepared_date: "",
+              recommended_by: "",
+              approved_by: "",
+              endorsed_by: "",
+              designation: "",
+              territory_code: "",
+              team: ""
+            }));
+            setSampleRows([]);
+            setPromatsRows([]);
+            setPackmatsRows([]);
+            setCommercialRows([]);
+            return;
+          }
         }
       }
     ) : /* @__PURE__ */ import_react63.default.createElement(
@@ -38080,181 +41008,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ));
   };
 
-  // src/Components/InventoryEntries/Form.js
-  var import_react64 = __toESM(require_react());
-  function InventoryForm() {
-    const navigate = useNavigate();
-    const [companyCode, setCompanyCode] = (0, import_react64.useState)("");
-    const [companyOptions, setCompanyOptions] = (0, import_react64.useState)([]);
-    const [documentNumber, setDocumentNumber] = (0, import_react64.useState)("");
-    const [documentType, setDocumentType] = (0, import_react64.useState)("");
-    const [documentDate, setDocumentDate] = (0, import_react64.useState)("");
-    const [inventoryDetails, setInventoryDetails] = (0, import_react64.useState)([]);
-    const [documentNumbers, setDocumentNumbers] = (0, import_react64.useState)([]);
-    const [statusMessage, setStatusMessage] = (0, import_react64.useState)("");
-    (0, import_react64.useEffect)(() => {
-      if (Array.isArray(LOAD_COMPANY_CODE_SELECT)) {
-        setCompanyOptions(LOAD_COMPANY_CODE_SELECT);
-      } else {
-        console.error("LOAD_COMPANY_CODE_SELECT is not an array");
-      }
-    }, []);
-    (0, import_react64.useEffect)(() => {
-      if (companyCode && documentType) {
-        fetchDocumentNumbers();
-      }
-    }, [companyCode, documentType]);
-    const fetchDocumentNumbers = async () => {
-      try {
-        const response = await axios_default.get("/api/inventories_lookup_document_number", {
-          params: { document_type: documentType, company_code: companyCode }
-        });
-        setDocumentNumbers(response.data);
-      } catch (error) {
-        console.error("Error fetching document numbers:", error);
-      }
-    };
-    const handleDocumentNumberChange = async (number) => {
-      setDocumentNumber(number);
-      try {
-        const response = await axios_default.get("/api/inventories_lookup_document_date", {
-          params: { document_number: number, document_type: documentType, company_code: companyCode }
-        });
-        setDocumentDate(response.data.document_date || "");
-        fetchInventoryItems(number);
-      } catch (error) {
-        console.error("Error fetching document details:", error);
-        setStatusMessage("Error fetching document details.");
-      }
-    };
-    const fetchInventoryItems = async (number) => {
-      try {
-        const response = await axios_default.get("/api/inventories_lookup_inventory_items", {
-          params: { document_number: number, document_type: documentType, company_code: companyCode }
-        });
-        setInventoryDetails(response.data);
-      } catch (error) {
-        console.error("Error fetching inventory items:", error);
-        setStatusMessage("Error loading inventory items.");
-      }
-    };
-    const handleSubmit = (e3) => {
-      e3.preventDefault();
-      console.log("Form submitted with values:", {
-        companyCode,
-        documentNumber,
-        documentType,
-        documentDate,
-        inventoryDetails
-      });
-      navigate("/inventories");
-    };
-    return /* @__PURE__ */ import_react64.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react64.default.createElement("h4", { className: "mb-0" }, "Inventory")), /* @__PURE__ */ import_react64.default.createElement("div", { className: "card-body" }, statusMessage && /* @__PURE__ */ import_react64.default.createElement("div", { className: "alert alert-danger" }, statusMessage), /* @__PURE__ */ import_react64.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "mb-4" }, /* @__PURE__ */ import_react64.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Inventory Header"), /* @__PURE__ */ import_react64.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react64.default.createElement("label", null, "Company:"), /* @__PURE__ */ import_react64.default.createElement(
-      "select",
-      {
-        id: "inventory_company_code",
-        className: "form-select",
-        value: companyCode,
-        onChange: (e3) => setCompanyCode(e3.target.value),
-        required: true
-      },
-      /* @__PURE__ */ import_react64.default.createElement("option", { value: "" }, "Please select..."),
-      companyOptions.map((option) => /* @__PURE__ */ import_react64.default.createElement("option", { key: option.value, value: option.value }, option.label))
-    ))), /* @__PURE__ */ import_react64.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react64.default.createElement("label", null, "Warehouse Location:"), /* @__PURE__ */ import_react64.default.createElement(
-      "select",
-      {
-        id: "inventory_type",
-        className: "form-select",
-        value: documentType,
-        onChange: (e3) => setDocumentType(e3.target.value),
-        required: true
-      },
-      /* @__PURE__ */ import_react64.default.createElement("option", { value: "" }, "Please select..."),
-      /* @__PURE__ */ import_react64.default.createElement("option", { value: "COMMERCIAL" }, "Commercial"),
-      /* @__PURE__ */ import_react64.default.createElement("option", { value: "SAMPLE" }, "Sample")
-    )))), /* @__PURE__ */ import_react64.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react64.default.createElement("label", null, "Document No.:"), /* @__PURE__ */ import_react64.default.createElement(
-      "input",
-      {
-        type: "text",
-        className: "form-control",
-        value: documentNumber,
-        onChange: (e3) => handleDocumentNumberChange(e3.target.value),
-        required: true,
-        list: "document_numbers_list"
-      }
-    ), /* @__PURE__ */ import_react64.default.createElement("datalist", { id: "document_numbers_list" }, documentNumbers.map((number, idx) => /* @__PURE__ */ import_react64.default.createElement("option", { key: idx, value: number }))), /* @__PURE__ */ import_react64.default.createElement("span", { id: "documentStatus", className: "text-danger" }))), /* @__PURE__ */ import_react64.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react64.default.createElement("label", null, "Document Type:"), /* @__PURE__ */ import_react64.default.createElement(
-      "select",
-      {
-        id: "document_type",
-        className: "form-select",
-        value: documentType,
-        onChange: (e3) => setDocumentType(e3.target.value),
-        required: true
-      },
-      /* @__PURE__ */ import_react64.default.createElement("option", { value: "" }, "Please select..."),
-      /* @__PURE__ */ import_react64.default.createElement("option", { value: "3" }, "Issue Slip"),
-      /* @__PURE__ */ import_react64.default.createElement("option", { value: "4" }, "Delivery Receipt")
-    ))), /* @__PURE__ */ import_react64.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react64.default.createElement("label", null, "Document Date:"), /* @__PURE__ */ import_react64.default.createElement(
-      "input",
-      {
-        type: "date",
-        className: "form-control",
-        value: documentDate,
-        onChange: (e3) => setDocumentDate(e3.target.value)
-      }
-    ))))), /* @__PURE__ */ import_react64.default.createElement("div", { className: "mb-4" }, /* @__PURE__ */ import_react64.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Inventory Items"), /* @__PURE__ */ import_react64.default.createElement("div", { className: "table-responsive" }, /* @__PURE__ */ import_react64.default.createElement("table", { className: "table table-bordered table-hover" }, /* @__PURE__ */ import_react64.default.createElement("thead", null, /* @__PURE__ */ import_react64.default.createElement("tr", null, /* @__PURE__ */ import_react64.default.createElement("th", null, "Product Code"), /* @__PURE__ */ import_react64.default.createElement("th", null, "Product Description"), /* @__PURE__ */ import_react64.default.createElement("th", null, "Lot No."), /* @__PURE__ */ import_react64.default.createElement("th", null, "Expiry Date"), /* @__PURE__ */ import_react64.default.createElement("th", null, "Quantity"))), /* @__PURE__ */ import_react64.default.createElement("tbody", null, inventoryDetails.map((item, idx) => /* @__PURE__ */ import_react64.default.createElement("tr", { key: idx }, /* @__PURE__ */ import_react64.default.createElement("td", null, /* @__PURE__ */ import_react64.default.createElement(
-      "input",
-      {
-        type: "text",
-        className: "form-control",
-        value: item.product_code,
-        readOnly: true
-      }
-    )), /* @__PURE__ */ import_react64.default.createElement("td", null, /* @__PURE__ */ import_react64.default.createElement(
-      "input",
-      {
-        type: "text",
-        className: "form-control",
-        value: item.product_description,
-        readOnly: true
-      }
-    )), /* @__PURE__ */ import_react64.default.createElement("td", null, /* @__PURE__ */ import_react64.default.createElement(
-      "input",
-      {
-        type: "text",
-        className: "form-control",
-        value: item.lot_number,
-        readOnly: true
-      }
-    )), /* @__PURE__ */ import_react64.default.createElement("td", null, /* @__PURE__ */ import_react64.default.createElement(
-      "input",
-      {
-        type: "date",
-        className: "form-control",
-        value: item.expiry_date,
-        readOnly: true
-      }
-    )), /* @__PURE__ */ import_react64.default.createElement("td", null, /* @__PURE__ */ import_react64.default.createElement(
-      "input",
-      {
-        type: "text",
-        className: "form-control",
-        value: item.quantity,
-        readOnly: true
-      }
-    )))))))), /* @__PURE__ */ import_react64.default.createElement("div", { className: "d-flex justify-content-between" }, /* @__PURE__ */ import_react64.default.createElement(
-      "button",
-      {
-        type: "button",
-        className: "btn btn-secondary",
-        onClick: () => navigate("/inventories")
-      },
-      "Back"
-    ), /* @__PURE__ */ import_react64.default.createElement("button", { type: "submit", className: "btn btn-success" }, "Save Inventory")))))));
-  }
-
   // src/Components/InventoryListing/Index.js
-  var import_react65 = __toESM(require_react());
+  var import_react64 = __toESM(require_react());
   var import_react_data_table_component11 = __toESM(require_index_cjs());
 
   // src/Services/InventoyListingsServices.js
@@ -38274,11 +41029,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // src/Components/InventoryListing/Index.js
   var Index_default5 = Index = () => {
-    const [data2, setData] = (0, import_react65.useState)([]);
-    const [args, setArgs] = (0, import_react65.useState)({});
-    const [loading, setLoading] = (0, import_react65.useState)(true);
+    const [data2, setData] = (0, import_react64.useState)([]);
+    const [args, setArgs] = (0, import_react64.useState)({});
+    const [loading, setLoading] = (0, import_react64.useState)(true);
     ``;
-    const [error, setError] = (0, import_react65.useState)(null);
+    const [error, setError] = (0, import_react64.useState)(null);
     const refreshItems = () => {
       getItems4(args).then((response) => {
         console.log(response.data);
@@ -38298,10 +41053,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         });
       }
     };
-    (0, import_react65.useEffect)(() => {
+    (0, import_react64.useEffect)(() => {
       refreshItems();
     }, [args]);
-    (0, import_react65.useEffect)(() => {
+    (0, import_react64.useEffect)(() => {
       getInventories().then((response) => {
         console.log("Response from API:", response);
         console.log(response.data);
@@ -38315,73 +41070,83 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }, []);
     const columns = [
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "ID"),
+        name: /* @__PURE__ */ import_react64.default.createElement("b", null, "ID"),
         selector: (row) => row.id,
         omit: true
         // this hides the column from the table view
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Company"),
-        selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC",
-        width: "125px",
+        name: /* @__PURE__ */ import_react64.default.createElement("b", null, "Inventory Type"),
+        selector: (row) => row.inventory_type,
+        width: "10%",
         whiteSpace: "nowrap",
         center: true
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Issuance No."),
-        selector: (row) => row.issuance_number,
-        width: "150px",
+        name: /* @__PURE__ */ import_react64.default.createElement("b", null, "Lot No."),
+        selector: (row) => row.lot_number,
+        width: "10%",
         whiteSpace: "nowrap",
         // center: true,
         sortable: true
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Request Number"),
-        selector: (row) => row.request_number,
-        width: "170px",
-        whiteSpace: "nowrap",
-        // center: true,
-        sortable: true
-      },
-      {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Issuance Date"),
+        name: /* @__PURE__ */ import_react64.default.createElement("b", null, "Product Code"),
         selector: (row) => row.issuance_date,
-        width: "150px",
+        width: "10%",
         whiteSpace: "nowrap",
         // center: true,
         sortable: true
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Employee Name"),
-        selector: (row) => row.employee_name,
-        width: "200px",
+        name: /* @__PURE__ */ import_react64.default.createElement("b", null, "Product Description"),
+        selector: (row) => row.item_description,
+        width: "30%",
         whiteSpace: "nowrap",
         // center: true,
         sortable: true
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Address"),
-        selector: (row) => row.address,
-        width: "270px",
+        name: /* @__PURE__ */ import_react64.default.createElement("b", null, "Expiry Date"),
+        selector: (row) => row.expiry_date,
+        width: "10%",
         whiteSpace: "nowrap",
         // center: true,
         sortable: true
       },
       {
-        name: /* @__PURE__ */ import_react65.default.createElement("b", null, "Actions"),
-        cell: (row) => /* @__PURE__ */ import_react65.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react65.default.createElement(Link, { to: `/issue_slips/edit/${row.id}` }, /* @__PURE__ */ import_react65.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react65.default.createElement(
+        name: /* @__PURE__ */ import_react64.default.createElement("b", null, "Balance"),
+        selector: (row) => row.id,
+        width: "10%",
+        whiteSpace: "nowrap",
+        // center: true,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react64.default.createElement("b", null, "Remarks"),
+        selector: (row) => row.remarks,
+        width: "10%",
+        whiteSpace: "nowrap",
+        // center: true,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react64.default.createElement("b", null, "Actions"),
+        width: "5%",
+        cell: (row) => /* @__PURE__ */ import_react64.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react64.default.createElement(Link, { to: `/inventories/edit/${row.id}`, className: "d-inline-block", title: "Edit" }, /* @__PURE__ */ import_react64.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react64.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.id),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
           },
-          /* @__PURE__ */ import_react65.default.createElement("i", { className: "icon-trash text-danger" })
+          /* @__PURE__ */ import_react64.default.createElement("i", { className: "icon-trash text-danger" })
         )),
         ignoreRowClick: true,
         button: true
       }
     ];
-    return /* @__PURE__ */ import_react65.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react65.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react65.default.createElement("i", { className: "icofont icofont-paper me-2 text-dark" }), "Inventory Listing"), /* @__PURE__ */ import_react65.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react65.default.createElement(
+    return /* @__PURE__ */ import_react64.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react64.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react64.default.createElement("i", { className: "icofont icofont-list me-2 text-dark" }), "Inventory Listing"), /* @__PURE__ */ import_react64.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react64.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react64.default.createElement(
       "input",
       {
         className: "form-control form-control-sm",
@@ -38389,21 +41154,21 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         placeholder: "Search...",
         "aria-label": "Search"
       }
-    ), /* @__PURE__ */ import_react65.default.createElement(
+    ), /* @__PURE__ */ import_react64.default.createElement(
       "button",
       {
         className: "btn btn-outline-primary btn-sm",
         type: "button"
       },
-      /* @__PURE__ */ import_react65.default.createElement("i", { className: "icofont icofont-search-alt-1" })
-    )), /* @__PURE__ */ import_react65.default.createElement(
+      /* @__PURE__ */ import_react64.default.createElement("i", { className: "icofont icofont-search-alt-1" })
+    )), /* @__PURE__ */ import_react64.default.createElement(
       Link,
       {
         className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
-        to: "/issue_slips/new"
+        to: "/inventories/new"
       },
       "New Inventory Listing"
-    ))), /* @__PURE__ */ import_react65.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react65.default.createElement(
+    ))), /* @__PURE__ */ import_react64.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react64.default.createElement(
       import_react_data_table_component11.default,
       {
         columns,
@@ -38412,16 +41177,362 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         responsive: true,
         striped: true,
         bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
+        noDataComponent: "No Records of Inventory Listing",
         highlightOnHover: true,
         paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
       }
     )))));
   };
 
+  // src/Components/InventoryListing/Form.js
+  var import_react65 = __toESM(require_react());
+  var import_react_data_table_component12 = __toESM(require_index_cjs());
+
+  // src/Services/InventoriesServices.js
+  var saveItem4 = (payload) => {
+    if (payload.id) {
+      return axios_default.put(
+        `http://localhost:3000/inventories/${payload.id}`,
+        payload
+      );
+    } else {
+      return axios_default.post("http://localhost:3000/inventories", payload);
+    }
+  };
+  var documentNumberLookUp = async (document_type) => {
+    const baseUrl = "http://localhost:3000/api/inventories_lookup_document_number";
+    const url = document_type && document_type.toString().trim() !== "" ? `${baseUrl}/${document_type}` : baseUrl;
+    return axios_default.get(url);
+  };
+  var inventoryDetailsLookUp = async (document_number) => {
+    return axios_default.get(
+      `http://localhost:3000/api/inventories_lookup_document_details/${document_number}`
+    );
+  };
+  var documentDateLookUp = async (document_type, document_number, company_code) => {
+    return axios_default.get(
+      `http://localhost:3000/api/inventories_lookup_document_date/${document_type}/${document_number}/${company_code}`
+    );
+  };
+  var inventoryItemDetailsLookup = async (document_type, document_number, company_code) => {
+    return axios_default.get(
+      `http://localhost:3000/api/inventories_lookup_inventory_items/${document_type}/${document_number}/${company_code}`
+    );
+  };
+
+  // src/Components/InventoryListing/Form.js
+  function InventoryForm() {
+    const [data2, setData] = (0, import_react65.useState)({});
+    const navigate = useNavigate();
+    const [showInventoryAlert, setShowInventoryAlert] = (0, import_react65.useState)(false);
+    const alertRef = (0, import_react65.useRef)(null);
+    const [isDisabled, setIsDisabled] = (0, import_react65.useState)(false);
+    const [documentNumbers, setDocumentNumber] = (0, import_react65.useState)(false);
+    const [inventoryDetails, setInventoryDetails] = (0, import_react65.useState)([]);
+    const columns = [
+      {
+        name: "Product Code",
+        selector: (row) => row.product_code,
+        sortable: true,
+        width: "15%"
+      },
+      {
+        name: "Product Description",
+        selector: (row) => row.product_description,
+        sortable: true,
+        width: "50%"
+      },
+      {
+        name: "Lot No.",
+        selector: (row) => row.lot_number,
+        sortable: true,
+        width: "10%"
+      },
+      {
+        name: "Expiry Date",
+        selector: (row) => row.expiry_date,
+        sortable: true,
+        width: "15%"
+      },
+      {
+        name: "Quantity",
+        selector: (row) => row.received_quantity,
+        sortable: true,
+        width: "10%"
+      }
+    ];
+    (0, import_react65.useEffect)(() => {
+      if (showInventoryAlert && alertRef.current) {
+        alertRef.current.focus();
+      }
+    }, [showInventoryAlert]);
+    (0, import_react65.useEffect)(() => {
+      documentNumberLookUp().then((response) => {
+        console.log("Success! wow");
+        console.log(response.data);
+        setDocumentNumber(response.data);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+      });
+    }, []);
+    const handleSave = () => {
+      const payload = {
+        // header goes under :inventory
+        inventory: {
+          document_number: data2.document_number,
+          inventory_type: data2.inventory_type
+          // you could add other permitted header fields here
+        },
+        // these top-level keys get merged in create:
+        document_type: data2.document_type,
+        document_number: data2.document_number,
+        inventory_document_date: data2.document_date,
+        inventory_company_code: data2.company_code,
+        // Rails create action reads params[:inventory_details]
+        inventory_details: inventoryDetails.map((item) => ({
+          item_code: item.product_code,
+          item_description: item.product_description,
+          lot_number: item.lot_number,
+          expiry_date: item.expiry_date,
+          quantity: item.received_quantity,
+          quantity_free: item.quantity_free || 0,
+          principal: item.principal,
+          unit_of_measure: item.unit_of_measure,
+          pack_size: item.pack_size,
+          item_id: item.item_id
+        }))
+      };
+      if (!data2.company_code || !data2.document_number || !data2.document_type || !data2.document_date || !data2.inventory_type) {
+        setShowInventoryAlert(true);
+        if (alertRef.current) {
+          alertRef.current.focus();
+        }
+        return;
+      }
+      setShowInventoryAlert(false);
+      saveItem4(payload).then((response) => {
+        y.success("Inventory stored successfully.", {
+          // you can tweak these options
+          position: "top-right",
+          autoClose: 3e3,
+          icon: (
+            // any JSX goes here!
+            /* @__PURE__ */ import_react65.default.createElement(
+              "svg",
+              {
+                className: "checkmark",
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 48 48"
+              },
+              /* @__PURE__ */ import_react65.default.createElement(
+                "circle",
+                {
+                  className: "checkmark__circle",
+                  cx: "24",
+                  cy: "24",
+                  r: "22",
+                  fill: "none"
+                }
+              ),
+              /* @__PURE__ */ import_react65.default.createElement(
+                "path",
+                {
+                  className: "checkmark__check",
+                  fill: "none",
+                  d: "M14 25l7 7 13-13"
+                }
+              )
+            )
+          )
+        });
+        setTimeout(() => navigate("/inventory_listings"), 3e3);
+        console.log("Saving:", payload);
+      }).catch((response) => {
+        alert("Error");
+        console.log(response);
+      });
+      console.log("Saving:", payload);
+    };
+    return /* @__PURE__ */ import_react65.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react65.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react65.default.createElement("i", { className: "icofont icofont-mail me-2 text-dark" }), "Inventory")), /* @__PURE__ */ import_react65.default.createElement("div", { className: "card-body" }, showInventoryAlert && /* @__PURE__ */ import_react65.default.createElement(
+      "div",
+      {
+        ref: alertRef,
+        tabIndex: "-1",
+        className: "alert alert-light-secondary light alert-dismissible text-dark border-left-wrapper",
+        role: "alert"
+      },
+      /* @__PURE__ */ import_react65.default.createElement("i", { "data-feather": "help-circle" }),
+      /* @__PURE__ */ import_react65.default.createElement("p", null, "Make sure to complete filling up the required (", /* @__PURE__ */ import_react65.default.createElement("span", { className: "text-danger" }, "*"), ") inputs."),
+      /* @__PURE__ */ import_react65.default.createElement(
+        "button",
+        {
+          className: "btn-close",
+          type: "button",
+          "aria-label": "Close",
+          onClick: () => setShowInventoryAlert(false)
+        }
+      )
+    ), /* @__PURE__ */ import_react65.default.createElement("div", { className: "mb-4" }, /* @__PURE__ */ import_react65.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Inventory Details"), /* @__PURE__ */ import_react65.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react65.default.createElement("label", null, "Company Code ", /* @__PURE__ */ import_react65.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react65.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react65.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react65.default.createElement("i", { className: "icofont icofont-building-alt" })), /* @__PURE__ */ import_react65.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        required: true,
+        onChange: (selected) => {
+          const company_code = selected.target.value;
+          setData({
+            ...data2,
+            company_code
+          });
+        },
+        value: data2.company_code,
+        disabled: isDisabled
+      },
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "" }, "Please select..."),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "1" }, "CDCI"),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "2" }, "YSS"),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "5" }, "CYDC")
+    )))), /* @__PURE__ */ import_react65.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react65.default.createElement("label", null, "Warehouse Location:"), /* @__PURE__ */ import_react65.default.createElement(
+      "select",
+      {
+        id: "inventory_type",
+        className: "form-select",
+        onChange: (selected) => {
+          const warehouse_location = selected.target.value;
+          setData({
+            ...data2,
+            inventory_type: warehouse_location
+          });
+        },
+        value: data2.inventory_type || ""
+      },
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "" }, "Please select..."),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "IN-PROGRESS" }, "IN-PROGRESS"),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "QUARANTINE" }, "QUARANTINE"),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "COMMERCIAL" }, "COMMERCIAL"),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "SAMPLE" }, "SAMPLE"),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "SUB WAREHOUSE" }, "SUB WARHOUSE")
+    )))), /* @__PURE__ */ import_react65.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react65.default.createElement("label", null, "Document No."), /* @__PURE__ */ import_react65.default.createElement(
+      Typeahead_default2,
+      {
+        allowNew: false,
+        className: "w-100",
+        placeholder: "Document No.",
+        options: documentNumbers,
+        onChange: (selected) => {
+          if (selected.length === 0) {
+            setIsDisabled(false);
+            setData((prev) => ({
+              ...prev,
+              document_number: "",
+              document_type: "",
+              document_date: "",
+              company_code: ""
+            }));
+            setInventoryDetails([]);
+            return;
+          }
+          const documentNumber = selected[0];
+          setData((prevData) => ({
+            ...prevData,
+            document_number: documentNumber
+          }));
+          inventoryDetailsLookUp(documentNumber).then(({ data: data3 }) => {
+            console.log(data3);
+            setData((prevData) => ({
+              ...prevData,
+              company_code: data3.company_code,
+              document_type: data3.document_type
+            }));
+            documentDateLookUp(
+              data3.document_type,
+              documentNumber,
+              data3.company_code
+            ).then((response) => {
+              console.log(response.data);
+              console.log(response.data.document_date);
+              setData((prev) => ({
+                ...prev,
+                document_date: response.data.document_date
+              }));
+            });
+            inventoryItemDetailsLookup(
+              data3.document_type,
+              documentNumber,
+              data3.company_code
+            ).then((response) => {
+              console.log("sumakses");
+              console.log(response.data);
+              setInventoryDetails(response.data);
+              console.log(inventoryDetails);
+            }).catch((error) => {
+              console.error(
+                "Error fetching inventory details:",
+                error
+              );
+            });
+            setIsDisabled(true);
+          }).catch((error) => {
+            console.error(
+              "Error fetching inventory details:",
+              error
+            );
+          });
+        }
+      }
+    ))), /* @__PURE__ */ import_react65.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react65.default.createElement("label", null, "Document Type:"), /* @__PURE__ */ import_react65.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react65.default.createElement("span", { className: "input-group-text" }, /* @__PURE__ */ import_react65.default.createElement("i", { className: "icofont icofont-document-folder" })), /* @__PURE__ */ import_react65.default.createElement(
+      "select",
+      {
+        className: "form-select",
+        value: data2.document_type,
+        disabled: isDisabled
+      },
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "" }, "Please select..."),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "3" }, "Issue Slip"),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "6" }, "Transfer Slip"),
+      /* @__PURE__ */ import_react65.default.createElement("option", { value: "7" }, "WRR")
+    )))), /* @__PURE__ */ import_react65.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react65.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react65.default.createElement("label", null, "Document Date:"), /* @__PURE__ */ import_react65.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "date",
+        value: data2.document_date,
+        disabled: isDisabled
+      }
+    ))))), /* @__PURE__ */ import_react65.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react65.default.createElement("h5", { className: "mb-3 border-bottom pb-2" }, "Item Details"), /* @__PURE__ */ import_react65.default.createElement(
+      import_react_data_table_component12.default,
+      {
+        columns,
+        data: inventoryDetails,
+        responsive: true,
+        striped: true,
+        bordered: true,
+        noDataComponent: "No Records of Agent User Menu",
+        highlightOnHover: true
+      }
+    )), /* @__PURE__ */ import_react65.default.createElement("div", { className: "d-flex justify-content-between mt-4" }, /* @__PURE__ */ import_react65.default.createElement(
+      "button",
+      {
+        type: "button",
+        className: "btn btn-secondary btn-sm",
+        onClick: () => navigate("/inventory_listings")
+      },
+      "Back"
+    ), /* @__PURE__ */ import_react65.default.createElement("button", { className: "btn btn-primary btn-sm", onClick: handleSave }, "Save"))))), /* @__PURE__ */ import_react65.default.createElement(
+      Lt,
+      {
+        position: "top-right",
+        autoClose: 3e3,
+        hideProgressBar: false,
+        newestOnTop: true,
+        closeOnClick: true,
+        pauseOnHover: true
+      }
+    ));
+  }
+
   // src/Components/ItemMaster/Index.js
   var import_react66 = __toESM(require_react());
-  var import_react_data_table_component12 = __toESM(require_index_cjs());
+  var import_react_data_table_component13 = __toESM(require_index_cjs());
 
   // src/Services/ItemMastersServices.js
   var getItemMasters = async () => {
@@ -38438,7 +41549,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var deleteItemMaster = async (id) => {
     return axios_default.delete(`${"http://localhost:3000"}/item_masters/${id}`);
   };
-  var saveItem4 = (data2) => {
+  var saveItem5 = (data2) => {
     const payload = { item_master: data2 };
     if (data2.id) {
       return axios_default.put(
@@ -38559,11 +41670,20 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       {
         name: /* @__PURE__ */ import_react66.default.createElement("b", null, "Actions"),
         width: "5%",
-        cell: (row) => /* @__PURE__ */ import_react66.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react66.default.createElement(Link, { to: `/item_masters/edit/${row.id}` }, /* @__PURE__ */ import_react66.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react66.default.createElement(
+        cell: (row) => /* @__PURE__ */ import_react66.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react66.default.createElement(
+          Link,
+          {
+            to: `/item_masters/edit/${row.id}`,
+            className: "d-inline-block",
+            title: "Edit"
+          },
+          /* @__PURE__ */ import_react66.default.createElement("i", { className: "icon-pencil-alt text-info" })
+        ), /* @__PURE__ */ import_react66.default.createElement(
           "button",
           {
             onClick: () => handleDelete(row.id),
-            style: { background: "none", border: "none", cursor: "pointer" }
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
           },
           /* @__PURE__ */ import_react66.default.createElement("i", { className: "icon-trash text-danger" })
         )),
@@ -38571,7 +41691,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         button: true
       }
     ];
-    return /* @__PURE__ */ import_react66.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react66.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react66.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-dark" }), "Item Masters"), /* @__PURE__ */ import_react66.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react66.default.createElement(
+    return /* @__PURE__ */ import_react66.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react66.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react66.default.createElement("i", { className: "icofont icofont-papers me-2 text-dark" }), "Item Masters"), /* @__PURE__ */ import_react66.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react66.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react66.default.createElement(
       "input",
       {
         className: "form-control form-control-sm",
@@ -38579,10 +41699,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         placeholder: "Search...",
         "aria-label": "Request Number",
         onInput: (e3) => {
-          setArgs({
-            ...args,
-            search: e3.target.value
-          });
+          setArgs({ ...args, search: e3.target.value });
         }
       }
     ), /* @__PURE__ */ import_react66.default.createElement(
@@ -38600,7 +41717,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       },
       "New Item Master"
     ))), /* @__PURE__ */ import_react66.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react66.default.createElement(
-      import_react_data_table_component12.default,
+      import_react_data_table_component13.default,
       {
         columns,
         data: data2,
@@ -38608,7 +41725,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         responsive: true,
         striped: true,
         bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
+        noDataComponent: "No Records of Item Master",
         highlightOnHover: true,
         paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
       }
@@ -38637,7 +41754,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         return;
       }
       setShowItemMasterAlert(false);
-      saveItem4(data2).then((response) => {
+      saveItem5(data2).then((response) => {
         y.success("Item Master stored successfully.", {
           position: "top-right",
           autoClose: 3e3,
@@ -38686,7 +41803,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         });
       }
     }, [id]);
-    return /* @__PURE__ */ import_react67.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react67.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react67.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react67.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react67.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-dark" }), "Item Master")), /* @__PURE__ */ import_react67.default.createElement("div", { className: "card-body" }, showItemMasterAlert && /* @__PURE__ */ import_react67.default.createElement(
+    return /* @__PURE__ */ import_react67.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react67.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react67.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react67.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react67.default.createElement("i", { className: "icofont icofont-papers me-2 text-dark" }), "Item Master")), /* @__PURE__ */ import_react67.default.createElement("div", { className: "card-body" }, showItemMasterAlert && /* @__PURE__ */ import_react67.default.createElement(
       "div",
       {
         ref: alertRef,
@@ -38879,7 +41996,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "item_masters", element: /* @__PURE__ */ import_react68.default.createElement(Index_default6, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "item_masters/new", element: /* @__PURE__ */ import_react68.default.createElement(Form_default4, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "item_masters/edit/:id", element: /* @__PURE__ */ import_react68.default.createElement(Form_default4, null) }),
-      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventories/new", element: /* @__PURE__ */ import_react68.default.createElement(InventoryForm, null) })
+      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventory_listings", element: /* @__PURE__ */ import_react68.default.createElement(Index_default5, null) }),
+      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventories/new", element: /* @__PURE__ */ import_react68.default.createElement(InventoryForm, null) }),
+      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventories/edit/:id", element: /* @__PURE__ */ import_react68.default.createElement(InventoryForm, null) })
     ));
   };
   var App_default = App;

@@ -1,5 +1,5 @@
 // File: src/components/TransferSlipForm.jsx
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import { saveTransferSlips } from "../../Services/TransferSlipsServices";
@@ -14,6 +14,9 @@ import {
 import { LOAD_COMPANY_CODE_SELECT } from "../../Config/CompanyCodes";
 import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function TransferSlipForm() {
   const navigate = useNavigate();
@@ -36,11 +39,19 @@ export default function TransferSlipForm() {
 
   // Lookup options & next‑slip numbers
   const [lotNumberOptions, setLotNumberOptions] = useState([]);
-  const [productDescriptionOptions, setProductDescriptionOptions] = useState([]);
+  const [productDescriptionOptions, setProductDescriptionOptions] = useState(
+    []
+  );
   const [personnels, setPersonnels] = useState({});
   const [nextSlipNumbers, setNextSlipNumbers] = useState({});
-  const [message, setMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [showTransferSlipAlert, setShowTransferSlipAlert] = useState(false);
+  const alertRef = useRef(null);
+
+  useEffect(() => {
+    if (showTransferSlipAlert && alertRef.current) {
+      alertRef.current.focus();
+    }
+  }, [showTransferSlipAlert]);
 
   // Build Typeahead lists
   const companyOptions = useMemo(
@@ -64,7 +75,9 @@ export default function TransferSlipForm() {
   useEffect(() => {
     fetchWarehousePersonnels().then(setPersonnels).catch(console.error);
     fetchLotNumberOptions().then(setLotNumberOptions).catch(console.error);
-    fetchProductDescriptionOptions().then(setProductDescriptionOptions).catch(console.error);
+    fetchProductDescriptionOptions()
+      .then(setProductDescriptionOptions)
+      .catch(console.error);
     fetchNextSlipNumbers().then(setNextSlipNumbers).catch(console.error);
   }, []);
 
@@ -114,9 +127,7 @@ export default function TransferSlipForm() {
       if (prodVal) {
         setDetailRows((prev) =>
           prev.map((r) =>
-            r.id === id
-              ? { ...r, product_description: String(prodVal) }
-              : r
+            r.id === id ? { ...r, product_description: String(prodVal) } : r
           )
         );
       }
@@ -145,9 +156,7 @@ export default function TransferSlipForm() {
   // Generic field change for detail rows
   const handleDetailFieldChange = (id, field, value) => {
     setDetailRows((prev) =>
-      prev.map((r) =>
-        r.id === id ? { ...r, [field]: value } : r
-      )
+      prev.map((r) => (r.id === id ? { ...r, [field]: value } : r))
     );
   };
 
@@ -198,7 +207,11 @@ export default function TransferSlipForm() {
           className="form-control"
           value={row.manufacturing_date}
           onChange={(e) =>
-            handleDetailFieldChange(row.id, "manufacturing_date", e.target.value)
+            handleDetailFieldChange(
+              row.id,
+              "manufacturing_date",
+              e.target.value
+            )
           }
         />
       ),
@@ -273,8 +286,7 @@ export default function TransferSlipForm() {
   // Form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage("");
-    setErrorMessage("");
+
     const payload = {
       transfer_slip: {
         company_code: header.companyCode,
@@ -298,11 +310,54 @@ export default function TransferSlipForm() {
       })),
     };
     try {
+      const noRows = detailRows.length === 0;
+      console.log(noRows);
+
+      const badDetail = payload.transfer_slip_detail.find(
+        (d) =>
+          !d.lot_number ||
+          !d.product_description ||
+          !d.manufacturing_date ||
+          !d.expiry_date ||
+          !d.quantity ||
+          !d.job_order_number ||
+          !d.remarks
+      );
+
+      console.log({
+        noRows,
+        badDetail,
+        header,
+      });
+
+      if (
+        
+        !header.companyCode ||
+        !header.transferSlipNumber ||
+        !header.transferTo ||
+        !header.receivedBy ||
+        !header.transferSlipType ||
+        !header.transferredBy ||
+        !header.transferredByDate ||
+        !header.receivedDate ||
+        noRows ||
+        badDetail
+      ) {
+        // always show the alert…
+        setShowTransferSlipAlert(true);
+        // …and immediately focus it, even if already visible
+        if (alertRef.current) {
+          alertRef.current.focus();
+        }
+        return;
+      }
+
+      setShowTransferSlipAlert(false);
+
       const response = await saveTransferSlips(payload);
       navigate(`/transfer_slips/${response.data.id}`);
     } catch (err) {
       console.error("Error saving transfer slip:", err);
-      setErrorMessage("An error occurred while saving the transfer slip.");
     }
   };
 
@@ -317,9 +372,25 @@ export default function TransferSlipForm() {
             </h2>
           </div>
           <div className="card-body">
-            {message && <div className="alert alert-success">{message}</div>}
-            {errorMessage && (
-              <div className="alert alert-danger">{errorMessage}</div>
+            {showTransferSlipAlert && (
+              <div
+                ref={alertRef}
+                tabIndex="-1"
+                className="alert alert-light-secondary light alert-dismissible text-dark border-left-wrapper"
+                role="alert"
+              >
+                <i data-feather="help-circle"></i>
+                <p>
+                  Make sure to complete filling up the required (
+                  <span className="text-danger">*</span>) inputs.
+                </p>
+                <button
+                  className="btn-close"
+                  type="button"
+                  aria-label="Close"
+                  onClick={() => setShowTransferSlipAlert(false)}
+                />
+              </div>
             )}
 
             <form onSubmit={handleSubmit}>
@@ -328,7 +399,9 @@ export default function TransferSlipForm() {
                 <div className="col-md-6">
                   {/* Company & TS Number */}
                   <div className="mb-3">
-                    <label>Company</label>
+                    <label>
+                      Company <span className="text-danger">*</span>
+                    </label>
                     <Typeahead
                       id="companyCode"
                       labelKey="label"
@@ -354,7 +427,10 @@ export default function TransferSlipForm() {
                     />
                   </div>
                   <div className="mb-3">
-                    <label>Transfer Slip Number</label>
+                    <label>
+                      Transfer Slip Number{" "}
+                      <span className="text-danger">*</span>
+                    </label>
                     <input
                       type="text"
                       className="form-control"
@@ -370,7 +446,9 @@ export default function TransferSlipForm() {
 
                   {/* Transfer To & Received By */}
                   <div className="mb-3">
-                    <label>To</label>
+                    <label>
+                      To <span className="text-danger">*</span>
+                    </label>
                     <Typeahead
                       id="transferTo"
                       labelKey="label"
@@ -394,7 +472,9 @@ export default function TransferSlipForm() {
                     />
                   </div>
                   <div className="mb-3">
-                    <label>Received By</label>
+                    <label>
+                      Received By <span className="text-danger">*</span>
+                    </label>
                     <input
                       type="text"
                       className="form-control"
@@ -408,7 +488,9 @@ export default function TransferSlipForm() {
                 <div className="col-md-6">
                   {/* Slip Type */}
                   <div className="mb-3">
-                    <label>Transfer Slip Type</label>
+                    <label>
+                      Transfer Slip Type <span className="text-danger">*</span>
+                    </label>
                     <Typeahead
                       id="transferSlipType"
                       labelKey="label"
@@ -419,7 +501,12 @@ export default function TransferSlipForm() {
                       ]}
                       selected={
                         header.transferSlipType
-                          ? [{ label: header.transferSlipType, value: header.transferSlipType }]
+                          ? [
+                              {
+                                label: header.transferSlipType,
+                                value: header.transferSlipType,
+                              },
+                            ]
                           : []
                       }
                       onChange={(sel) =>
@@ -448,14 +535,21 @@ export default function TransferSlipForm() {
 
                   {/* Transferred By & Dates */}
                   <div className="mb-3">
-                    <label>Transferred By</label>
+                    <label>
+                      Transferred By <span className="text-danger">*</span>
+                    </label>
                     <Typeahead
                       id="transferredBy"
                       labelKey="label"
                       options={personnelOptions}
                       selected={
                         header.transferredBy
-                          ? [{ label: header.transferredBy, value: header.transferredBy }]
+                          ? [
+                              {
+                                label: header.transferredBy,
+                                value: header.transferredBy,
+                              },
+                            ]
                           : []
                       }
                       onChange={(sel) =>
@@ -468,7 +562,9 @@ export default function TransferSlipForm() {
                     />
                   </div>
                   <div className="mb-3">
-                    <label>Transferred By Date</label>
+                    <label>
+                      Transferred By Date <span className="text-danger">*</span>
+                    </label>
                     <input
                       type="date"
                       className="form-control"
@@ -482,13 +578,18 @@ export default function TransferSlipForm() {
                     />
                   </div>
                   <div className="mb-3">
-                    <label>Received Date</label>
+                    <label>
+                      Received Date <span className="text-danger">*</span>
+                    </label>
                     <input
                       type="date"
                       className="form-control"
                       value={header.receivedDate}
                       onChange={(e) =>
-                        setHeader((h) => ({ ...h, receivedDate: e.target.value }))
+                        setHeader((h) => ({
+                          ...h,
+                          receivedDate: e.target.value,
+                        }))
                       }
                     />
                   </div>
