@@ -1,39 +1,23 @@
-import axios from "axios";
+// src/Services/ItemMasterServices.js
+import axiosInstance from "../Login/ApiLogin";
 
-//For Index
-export const getItemMasters = async () => {
-    return axios.get("http://localhost:3000/item_masters");
+// Fetch all item masters
+export const getItemMasters = () =>
+  axiosInstance().get("/item_masters");
+
+// Fetch item masters with search params
+export const getItems = (args) =>
+  axiosInstance().get("/item_masters", { params: args });
+
+// Delete an item master by ID
+export const deleteItemMaster = (id) =>
+  axiosInstance().delete(`/item_masters/${id}`);
+
+// Create or update an item master
+export const saveItem = (data) => {
+  const payload = { item_master: data };
+
+  return data.id
+    ? axiosInstance().put(`/item_masters/${data.id}`, payload)
+    : axiosInstance().post("/item_masters", payload);
 };
-
-// For Search in Index
-export const getItems = (args) => {
-    return axios.get(
-    `http://localhost:3000/item_masters`,
-    {
-        params: args
-    }
-);
-}
-
-export const deleteItemMaster = async (id) => {
-    return axios.delete(`${API_BASE_URL}/item_masters/${id}`);
-  };
-
-  //form
-
-  export const saveItem = (data) => {
-    const payload = { item_master: data };
-  
-    if (data.id) {
-      return axios.put(
-        `http://localhost:3000/item_masters/${data.id}`,
-        payload
-      );
-    } else {
-      return axios.post(
-        `http://localhost:3000/item_masters`,
-        payload
-      );
-    }
-  };
-  

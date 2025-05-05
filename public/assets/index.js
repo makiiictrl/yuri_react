@@ -26029,15 +26029,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     if (setImmediateSupported) {
       return setImmediate;
     }
-    return postMessageSupported ? ((token2, callbacks) => {
+    return postMessageSupported ? ((token, callbacks) => {
       _global.addEventListener("message", ({ source, data: data2 }) => {
-        if (source === _global && data2 === token2) {
+        if (source === _global && data2 === token) {
           callbacks.length && callbacks.shift()();
         }
       }, false);
       return (cb) => {
         callbacks.push(cb);
-        _global.postMessage(token2, "*");
+        _global.postMessage(token, "*");
       };
     })(`axios@${Math.random()}`, []) : (cb) => setTimeout(cb);
   })(
@@ -26191,9 +26191,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
   function renderKey(path, key, dots) {
     if (!path) return key;
-    return path.concat(key).map(function each(token2, i) {
-      token2 = removeBrackets(token2);
-      return !dots && i ? "[" + token2 + "]" : token2;
+    return path.concat(key).map(function each(token, i) {
+      token = removeBrackets(token);
+      return !dots && i ? "[" + token + "]" : token;
     }).join(dots ? "." : "");
   }
   function isFlatArray(arr) {
@@ -27228,7 +27228,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       if (platform_default.hasStandardBrowserEnv || platform_default.hasStandardBrowserWebWorkerEnv) {
         headers.setContentType(void 0);
       } else if ((contentType = headers.getContentType()) !== false) {
-        const [type, ...tokens] = contentType ? contentType.split(";").map((token2) => token2.trim()).filter(Boolean) : [];
+        const [type, ...tokens] = contentType ? contentType.split(";").map((token) => token.trim()).filter(Boolean) : [];
         headers.setContentType([type || "multipart/form-data", ...tokens].join("; "));
       }
     }
@@ -27997,32 +27997,32 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       this.promise = new Promise(function promiseExecutor(resolve) {
         resolvePromise = resolve;
       });
-      const token2 = this;
+      const token = this;
       this.promise.then((cancel) => {
-        if (!token2._listeners) return;
-        let i = token2._listeners.length;
+        if (!token._listeners) return;
+        let i = token._listeners.length;
         while (i-- > 0) {
-          token2._listeners[i](cancel);
+          token._listeners[i](cancel);
         }
-        token2._listeners = null;
+        token._listeners = null;
       });
       this.promise.then = (onfulfilled) => {
         let _resolve;
         const promise = new Promise((resolve) => {
-          token2.subscribe(resolve);
+          token.subscribe(resolve);
           _resolve = resolve;
         }).then(onfulfilled);
         promise.cancel = function reject() {
-          token2.unsubscribe(_resolve);
+          token.unsubscribe(_resolve);
         };
         return promise;
       };
       executor(function cancel(message, config, request) {
-        if (token2.reason) {
+        if (token.reason) {
           return;
         }
-        token2.reason = new CanceledError_default(message, config, request);
-        resolvePromise(token2.reason);
+        token.reason = new CanceledError_default(message, config, request);
+        resolvePromise(token.reason);
       });
     }
     /**
@@ -28074,11 +28074,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
      */
     static source() {
       let cancel;
-      const token2 = new _CancelToken(function executor(c) {
+      const token = new _CancelToken(function executor(c) {
         cancel = c;
       });
       return {
-        token: token2,
+        token,
         cancel
       };
     }
@@ -28228,11 +28228,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     });
     instance.interceptors.request.use(
       (config) => {
-        const token2 = localStorage.getItem("token");
-        if (token2) {
-          config.headers["Authorization"] = token2;
-          config.headers["Accept"] = "application/json";
-          config.headers["Content-Type"] = "application/json";
+        config.headers["Accept"] = "application/json";
+        config.headers["Content-Type"] = "application/json";
+        const token = localStorage.getItem("token");
+        if (token) {
+          config.headers["Authorization"] = token;
         }
         return config;
       },
@@ -28268,9 +28268,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           agent: { email, password }
         });
         console.log("Login response data:", response.data);
-        const token2 = response.data.token;
-        if (token2) {
-          const cleanToken = token2.startsWith("Bearer ") ? token2 : `Bearer ${token2}`;
+        const token = response.data.token;
+        if (token) {
+          const cleanToken = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
           localStorage.setItem("token", cleanToken);
           let agent = response.data.data || response.data.agent || response.data.user;
           if (!agent) {
@@ -28324,8 +28324,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react2 = __toESM(require_react());
   var ProtectedRoute_default = ProtectedRoute = ({ children }) => {
     const location = useLocation();
-    const token2 = localStorage.getItem("token");
-    if (!token2) {
+    const token = localStorage.getItem("token");
+    if (!token) {
       return /* @__PURE__ */ import_react2.default.createElement(Navigate, { to: "/login", state: { from: location }, replace: true });
     }
     return children;
@@ -28405,23 +28405,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
 
   // src/Services/DashboardServices.js
-  var getAgents = (args) => {
-    return axios_default.get(
-      `${"http://localhost:3000"}/agents`,
-      {
-        params: args
-      }
-    );
-  };
-  var saveAgent = (agent) => {
-    return axios_default.post(`${"http://localhost:3000"}/agents`, { agent });
-  };
-  var deleteAgent = (id) => {
-    return axios_default.delete(`${"http://localhost:3000"}/agents/${id}`);
-  };
-  var updateAgent = (id, agentData) => {
-    return axios_default.patch(`${"http://localhost:3000"}/agents/${id}`, { agent: agentData });
-  };
+  var getAgents = (args) => ApiLogin_default().get("/agents", { params: args });
+  var saveAgent = (agent) => ApiLogin_default().post("/agents", { agent });
+  var deleteAgent = (id) => ApiLogin_default().delete(`/agents/${id}`);
+  var updateAgent = (id, agentData) => ApiLogin_default().patch(`/agents/${id}`, { agent: agentData });
 
   // src/Components/AdminDashboard/NewAgentModal.js
   var NewAgentModal = () => {
@@ -28819,17 +28806,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         button: "true"
       }
     ];
-    return /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "container-fluid default-dashboard" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "col-12" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "card title-line upgrade-card overflow-hidden w-100" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "d-flex justify-content-between align-items-start" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "text-section" }, /* @__PURE__ */ import_react7.default.createElement("h1", { className: "text-nowrap" }, "Hi, Welcome back", " ", /* @__PURE__ */ import_react7.default.createElement("span", { className: "txt-primary" }, formatName(fullName)), /* @__PURE__ */ import_react7.default.createElement(
-      "button",
-      {
-        className: "btn btn-outline-primary btn-sm ms-2",
-        type: "button",
-        "data-bs-toggle": "modal",
-        "data-bs-target": "#editAccountModal"
-      },
-      /* @__PURE__ */ import_react7.default.createElement("i", { className: "icofont icofont-ui-edit" }),
-      " Edit"
-    ), /* @__PURE__ */ import_react7.default.createElement(EditAccount_default, null))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "image-section" }, /* @__PURE__ */ import_react7.default.createElement(
+    return /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "container-fluid default-dashboard" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "col-12" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "card title-line upgrade-card overflow-hidden w-100" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "d-flex justify-content-between align-items-start" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "text-section" }, /* @__PURE__ */ import_react7.default.createElement("h1", { className: "text-nowrap" }, "Hi, Welcome back", " ", /* @__PURE__ */ import_react7.default.createElement("span", { className: "txt-primary" }, formatName(fullName)))), /* @__PURE__ */ import_react7.default.createElement("div", { className: "image-section" }, /* @__PURE__ */ import_react7.default.createElement(
       "img",
       {
         className: "img-fluid pt-2",
@@ -29095,39 +29072,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react_data_table_component2 = __toESM(require_index_cjs());
 
   // src/Services/AgentUserMenusServices.js
-  var getAgentUserMenus = async () => {
-    return axios_default.get(`${"http://localhost:3000"}/agent_user_menus`);
-  };
-  var getItems = (args) => {
-    return axios_default.get(
-      `${"http://localhost:3000"}/agent_user_menus`,
-      {
-        params: args
-      }
-    );
-  };
-  var menuIdLookUp = () => {
-    return axios_default.get(`${"http://localhost:3000"}/agent_user_menus/menu_id_lookup`);
-  };
-  var agentIdLookUp = () => {
-    return axios_default.get(`${"http://localhost:3000"}/agent_user_menus/agent_id_lookup`);
-  };
-  var showAgentUserMenus = (id) => {
-    return axios_default.get(`${"http://localhost:3000"}/agent_user_menus/${id}`);
-  };
-  var deleteAgentUserMenu = async (id) => {
-    return axios_default.delete(`${"http://localhost:3000"}/agent_user_menus/${id}`);
-  };
-  var saveItem = (data2) => {
-    if (data2.id) {
-      return axios_default.put(
-        `${"http://localhost:3000"}/agent_user_menus/${data2.id}`,
-        data2
-      );
-    } else {
-      return axios_default.post(`${"http://localhost:3000"}/agent_user_menus`, data2);
-    }
-  };
+  var getAgentUserMenus = () => ApiLogin_default().get("/agent_user_menus");
+  var getItems = (args) => ApiLogin_default().get("/agent_user_menus", { params: args });
+  var menuIdLookUp = () => ApiLogin_default().get("/agent_user_menus/menu_id_lookup");
+  var agentIdLookUp = () => ApiLogin_default().get("/agent_user_menus/agent_id_lookup");
+  var showAgentUserMenus = (id) => ApiLogin_default().get(`/agent_user_menus/${id}`);
+  var deleteAgentUserMenu = (id) => ApiLogin_default().delete(`/agent_user_menus/${id}`);
+  var saveItem = (data2) => data2.id ? ApiLogin_default().put(`/agent_user_menus/${data2.id}`, data2) : ApiLogin_default().post("/agent_user_menus", data2);
 
   // src/Components/AgentUserMenu/Index.js
   var Index_default2 = Index = () => {
@@ -34418,75 +34369,48 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react_data_table_component3 = __toESM(require_index_cjs());
 
   // src/Services/TransferSlipsServices.js
-  var getTransferSlips = (args) => {
-    return axios_default.get(
-      `${"http://localhost:3000"}/transfer_slips`,
-      {
-        params: args
-      }
-    );
-  };
-  var updateTransferSlip = (id, data2) => {
-    return axios_default.put(
-      `${"http://localhost:3000"}/transfer_slips/${id}`,
-      data2
-    );
-  };
-  var showTransferSlip = (id) => {
-    return axios_default.get(
-      `${"http://localhost:3000"}/transfer_slips/${id}`
-    );
-  };
-  var saveTransferSlips = (data2) => {
-    return axios_default.post(
-      `${"http://localhost:3000"}/transfer_slips`,
-      data2
-    );
-  };
+  var getTransferSlips = (args) => ApiLogin_default().get("/transfer_slips", { params: args });
+  var updateTransferSlip = (id, data2) => ApiLogin_default().put(`/transfer_slips/${id}`, data2);
+  var showTransferSlip = (id) => ApiLogin_default().get(`/transfer_slips/${id}`);
+  var saveTransferSlips = (data2) => ApiLogin_default().post("/transfer_slips", data2);
   async function fetchWarehousePersonnels() {
-    const res = await axios_default.get(
-      `${"http://localhost:3000"}/api/warehouse_personnels`,
-      { params: { format: "json" } }
-    );
+    const res = await ApiLogin_default().get("/api/warehouse_personnels", {
+      params: { format: "json" }
+    });
     return res.data;
   }
   async function fetchLotNumberOptions() {
-    const res = await axios_default.get(
-      `${"http://localhost:3000"}/api/lookups_inventorytransaction`,
-      { params: { format: "json" } }
-    );
+    const res = await ApiLogin_default().get("/api/lookups_inventorytransaction", {
+      params: { format: "json" }
+    });
     return res.data;
   }
   async function fetchProductDescriptionOptions() {
-    const res = await axios_default.get(
-      `${"http://localhost:3000"}/api/products`,
-      { params: { format: "json", company_filter: false } }
-    );
+    const res = await ApiLogin_default().get("/api/products", {
+      params: { format: "json", company_filter: false }
+    });
     return res.data;
   }
   async function fetchProductByLot(lotNumber) {
-    const res = await axios_default.get(
-      `${"http://localhost:3000"}/api/lookups_inventorytransaction`,
-      { params: { lot_number: lotNumber } }
-    );
+    const res = await ApiLogin_default().get("/api/lookups_inventorytransaction", {
+      params: { lot_number: lotNumber }
+    });
     return res.data;
   }
   async function fetchDatesByLotAndSku(lotNumber, productSku) {
-    const res = await axios_default.get(
-      `${"http://localhost:3000"}/api/lookups_inventorytransaction`,
-      { params: { lot_number: lotNumber, product_sku: productSku } }
-    );
+    const res = await ApiLogin_default().get("/api/lookups_inventorytransaction", {
+      params: { lot_number: lotNumber, product_sku: productSku }
+    });
     return res.data;
   }
   async function fetchNextSlipNumbers() {
-    const res = await axios_default.get(
-      `${"http://localhost:3000"}/api/lookups_next_slip_numbers`,
-      { params: { format: "json" } }
-    );
+    const res = await ApiLogin_default().get("/api/lookups_next_slip_numbers", {
+      params: { format: "json" }
+    });
     return res.data.next_slip_numbers;
   }
   function fetchTransferSlip(id) {
-    return axios_default.get(`${"http://localhost:3000"}/transfer_slips/${id}`, {
+    return ApiLogin_default().get(`/transfer_slips/${id}`, {
       params: { format: "json" }
     });
   }
@@ -34524,13 +34448,32 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       if (!args.transfer_slip_number) return;
       getTransferSlips(args).then((res) => setData(res.data)).catch(() => alert("Error fetching data."));
     }, [args]);
-    const openPrint = (type, slipId = null) => {
-      setPrintType(type);
-      setSelectedSlipId(slipId);
-      if (type === "blank") {
-        setCompanyCode(Object.keys(LOAD_COMPANY_CODE_SELECT)[0]);
+    const fetchAndOpenPdf = async (params) => {
+      try {
+        const response = await ApiLogin_default().get(
+          `/transfer_slips/print.pdf?${params.toString()}`,
+          { responseType: "blob" }
+        );
+        const blob = new Blob([response.data], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
+        window.open(url, "_blank");
+      } catch (err) {
+        console.error("Error fetching PDF:", err);
+        alert("Unable to generate PDF. Please try again.");
       }
-      setPrintModalOpen(true);
+    };
+    const openPrint = (type, slipId = null) => {
+      if (type === "blank") {
+        setPrintType(type);
+        setSelectedSlipId(slipId);
+        setCompanyCode(Object.keys(LOAD_COMPANY_CODE_SELECT)[0]);
+        setPrintModalOpen(true);
+      } else {
+        const params = new URLSearchParams();
+        params.set("transfer_slips_type", type);
+        params.set("transfer_slip_id", slipId);
+        fetchAndOpenPdf(params);
+      }
     };
     const handlePrintConfirm = () => {
       const params = new URLSearchParams();
@@ -34540,7 +34483,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       } else {
         params.set("transfer_slip_id", selectedSlipId);
       }
-      window.open(`${"http://localhost:3000"}/transfer_slips/print.pdf?${params}`, "_blank");
+      fetchAndOpenPdf(params);
       setPrintModalOpen(false);
     };
     const columns = [
@@ -34699,12 +34642,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     if (error) return /* @__PURE__ */ import_react57.default.createElement("div", null, error);
     if (!transferSlip) return /* @__PURE__ */ import_react57.default.createElement("div", null, "No transfer slip found");
     const infoData = [
-      { field: "Company", value: LOAD_COMPANY_CODE_SELECT[transferSlip.company_code?.toString()] },
-      { field: "TS Number", value: transferSlip.transfer_slip_number },
-      { field: "TS Type", value: transferSlip.transfer_slip_type },
-      { field: "TO", value: LOAD_COMPANY_CODE_SELECT[transferSlip.transfer_to?.toString()] },
-      { field: "Transferred", value: `${transferSlip.transferred_by} : ${formatDate(transferSlip.transferred_by_date)}` },
-      { field: "Received", value: `${transferSlip.received_by} : ${formatDate(transferSlip.received_by_date)}` }
+      { field: "Company:", value: LOAD_COMPANY_CODE_SELECT[transferSlip.company_code?.toString()] },
+      { field: "TS Number:", value: transferSlip.transfer_slip_number },
+      { field: "TS Type:", value: transferSlip.transfer_slip_type },
+      { field: "TO:", value: LOAD_COMPANY_CODE_SELECT[transferSlip.transfer_to?.toString()] },
+      { field: "Transferred:", value: `${transferSlip.transferred_by} : ${formatDate(transferSlip.transferred_by_date)}` },
+      { field: "Received:", value: `${transferSlip.received_by} : ${formatDate(transferSlip.received_by_date)}` }
     ];
     const infoColumns = [
       { name: "Field", selector: (row) => row.field, sortable: false },
@@ -35008,7 +34951,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         const noRows = detailRows.length === 0;
         console.log(noRows);
         const badDetail = payload.transfer_slip_detail.find(
-          (d) => !d.lot_number || !d.product_description || !d.manufacturing_date || !d.expiry_date || !d.quantity || !d.job_order_number || !d.remarks
+          (d) => !d.lot_number || !d.product_description || !d.manufacturing_date || !d.expiry_date || !d.quantity || !d.job_order_number
         );
         console.log({
           noRows,
@@ -35207,6 +35150,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   function TransferSlipEditForm() {
     const { id } = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
     const [header, setHeader] = (0, import_react59.useState)({
       companyCode: "",
       transferSlipNumber: "",
@@ -35495,6 +35439,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       Typeahead_default2,
       {
         id: "companyCode",
+        disabled: true,
         labelKey: "label",
         options: companyOptions,
         selected: header.companyCode ? [
@@ -35538,7 +35483,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           ...h,
           transferTo: sel[0]?.value || ""
         })),
-        placeholder: "Select destination..."
+        placeholder: "Select destination...",
+        disabled: true
       }
     )), /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "Received By"), /* @__PURE__ */ import_react59.default.createElement(
       "input",
@@ -35568,7 +35514,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           ...h,
           transferSlipType: sel[0]?.value || ""
         })),
-        placeholder: "Select slip type..."
+        placeholder: "Select slip type...",
+        disabled: true
       }
     ), header.transferSlipType === "Other" && /* @__PURE__ */ import_react59.default.createElement(
       "input",
@@ -35597,7 +35544,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           ...h,
           transferredBy: sel[0]?.value || ""
         })),
-        placeholder: "Select person..."
+        placeholder: "Select person...",
+        disabled: true
       }
     )), /* @__PURE__ */ import_react59.default.createElement("div", { className: "mb-3" }, /* @__PURE__ */ import_react59.default.createElement("label", null, "Transferred By Date"), /* @__PURE__ */ import_react59.default.createElement(
       "input",
@@ -35650,86 +35598,43 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react_data_table_component7 = __toESM(require_index_cjs());
 
   // src/Services/RequestSlipsServices.js
-  var getRequestSlips = async () => {
-    return axios_default.get("http://localhost:3000/request_slips");
-  };
-  var getItems2 = (args) => {
-    return axios_default.get(
-      `http://localhost:3000/request_slips`,
-      {
-        params: args
-      }
-    );
-  };
-  var employeeNameLookUp = () => {
-    return axios_default.get("http://localhost:3000/request_slips/employee_name_look_up");
-  };
-  var customerNameLookUp = () => {
-    return axios_default.get("http://localhost:3000/request_slips/customer_name_look_up");
-  };
-  var productSampleDescriptionLookUp = () => {
-    return axios_default.get("http://localhost:3000/api/sample_inventory_lookup_sample_item_master");
-  };
-  var productPromatsDescriptionLookUp = () => {
-    return axios_default.get("http://localhost:3000/api/sample_inventory_lookup_promats_item_master");
-  };
-  var productPackmatsDescriptionLookUp = () => {
-    return axios_default.get("http://localhost:3000/api/sample_inventory_lookup_packmats_item_master");
-  };
-  var productCommercialDescriptionLookUp = () => {
-    return axios_default.get("http://localhost:3000/api/sample_inventory_lookup_commercial_item_master");
-  };
-  var employeeAutoFilled = async (id) => {
-    return axios_default.get("http://localhost:3000/request_slips/employee_auto_filled?", { params: { id } });
-  };
-  var customerAutoFilled = async (customer_code) => {
-    return axios_default.get(`http://localhost:3000/api/customers_index/${customer_code}`);
-  };
-  var fetchTerritories = (employeeNumber) => {
-    return axios_default.get(`http://localhost:3000/api/sarf_details_territory_code/${employeeNumber}`);
-  };
-  var fetchTeam = (employeeNumber) => {
-    return axios_default.get(`http://localhost:3000/api/sarf_details_employee_team/${employeeNumber}`);
-  };
+  var getRequestSlips = () => ApiLogin_default().get("/request_slips");
+  var getItems2 = (args) => ApiLogin_default().get("/request_slips", { params: args });
+  var employeeNameLookUp = () => ApiLogin_default().get("/request_slips/employee_name_look_up");
+  var customerNameLookUp = () => ApiLogin_default().get("/request_slips/customer_name_look_up");
+  var productSampleDescriptionLookUp = () => ApiLogin_default().get("/api/sample_inventory_lookup_sample_item_master");
+  var productPromatsDescriptionLookUp = () => ApiLogin_default().get("/api/sample_inventory_lookup_promats_item_master");
+  var productPackmatsDescriptionLookUp = () => ApiLogin_default().get("/api/sample_inventory_lookup_packmats_item_master");
+  var productCommercialDescriptionLookUp = () => ApiLogin_default().get("/api/sample_inventory_lookup_commercial_item_master");
+  var employeeAutoFilled = (id) => ApiLogin_default().get("/request_slips/employee_auto_filled", { params: { id } });
+  var customerAutoFilled = (customer_code) => ApiLogin_default().get(`/api/customers_index/${customer_code}`);
+  var fetchTerritories = (employeeNumber) => ApiLogin_default().get(`/api/sarf_details_territory_code/${employeeNumber}`);
+  var fetchTeam = (employeeNumber) => ApiLogin_default().get(`/api/sarf_details_employee_team/${employeeNumber}`);
   var saveItem2 = (data2) => {
-    if (data2.id) {
-      return axios_default.put(
-        `http://localhost:3000/request_slips/${data2.id}`,
-        data2
-      );
-    } else {
-      return axios_default.post(`http://localhost:3000/request_slips`, data2);
-    }
+    const payload = { request_slip: data2 };
+    return data2.id ? ApiLogin_default().put(`/request_slips/${data2.id}`, payload) : ApiLogin_default().post("/request_slips", payload);
   };
-  var deleteRequestSlip = async (id) => {
-    return axios_default.delete(`http://localhost:3000/request_slips/${id}`);
-  };
-  var showRequestSlip = (id) => {
-    return axios_default.get(`http://localhost:3000/request_slips/${id}`);
-  };
+  var deleteRequestSlip = (id) => ApiLogin_default().delete(`/request_slips/${id}`);
+  var showRequestSlip = (id) => ApiLogin_default().get(`/request_slips/${id}`);
 
   // src/Components/RequestSlip/Index.js
-  var Index_default3 = Index = () => {
+  function Index3() {
     const [data2, setData] = (0, import_react60.useState)([]);
     const [loading, setLoading] = (0, import_react60.useState)(true);
     const [error, setError] = (0, import_react60.useState)(null);
     const [args, setArgs] = (0, import_react60.useState)({});
     const refreshItems = () => {
-      getItems2(args).then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      }).catch((response) => {
-        alert("Error in fetching data.");
-        console.log(response);
+      getItems2(args).then((res) => setData(res.data)).catch((err) => {
+        console.error("Error fetching data", err);
+        alert("Error fetching data.");
       });
     };
     (0, import_react60.useEffect)(() => {
       refreshItems();
     }, [args]);
     (0, import_react60.useEffect)(() => {
-      getRequestSlips().then((response) => {
-        console.log(response.data);
-        setData(response.data);
+      getRequestSlips().then((res) => {
+        setData(res.data);
         setLoading(false);
       }).catch((err) => {
         console.error("Error fetching data", err);
@@ -35737,72 +35642,46 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         setLoading(false);
       });
     }, []);
-    const handleDelete = (id) => {
-      if (window.confirm("Are you sure you want to delete this record?")) {
-        deleteRequestSlip(id).then(() => {
-          alert("Record deleted successfully");
-          window.location.reload();
-        }).catch((err) => {
-          console.error("Error deleting record", err);
+    const fetchAndOpenPdf = async (path) => {
+      try {
+        const response = await ApiLogin_default().get(path, {
+          responseType: "blob"
         });
+        const blobUrl = URL.createObjectURL(
+          new Blob([response.data], { type: "application/pdf" })
+        );
+        window.open(blobUrl, "_blank");
+      } catch (err) {
+        console.error("Error fetching PDF:", err);
+        alert("Unable to generate PDF. Please try again.");
       }
     };
+    const handleDelete = (id) => {
+      if (!window.confirm("Are you sure?")) return;
+      deleteRequestSlip(id).then(() => {
+        alert("Deleted");
+        refreshItems();
+      }).catch((err) => console.error("Error deleting record", err));
+    };
     const columns = [
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "ID"), selector: (row) => row.id, omit: true },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Company"), selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC", sortable: true },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Request #"), selector: (row) => row.request_number, sortable: true },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Date"), selector: (row) => row.request_date, sortable: true },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Employee"), selector: (row) => row.employee_name, sortable: true },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Address"), selector: (row) => row.address },
       {
-        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "ID"),
-        selector: (row) => row.id,
-        omit: true
-        // this hides the column from the table view
-      },
-      {
-        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Company"),
-        selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC",
-        width: "125px",
-        whiteSpace: "nowrap",
-        sortable: true,
-        center: true
-      },
-      {
-        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Request Number"),
-        selector: (row) => row.request_number,
-        sortable: true,
-        width: "160px",
-        whiteSpace: "nowrap"
-      },
-      {
-        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Request Date"),
-        selector: (row) => row.request_date,
-        sortable: true,
-        width: "140px",
-        whiteSpace: "nowrap"
-      },
-      {
-        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Employee Name"),
-        selector: (row) => row.employee_name,
-        sortable: true,
-        width: "250px",
-        whiteSpace: "nowrap"
-      },
-      {
-        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Address"),
-        selector: (row) => row.address,
-        width: "175px",
-        whiteSpace: "nowrap"
-      },
-      {
-        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Purpose of Request"),
-        selector: (row) => row.type_of_request === "Others" ? `${row.type_of_request} (${row.sub_type_of_request})` : row.type_of_request,
-        width: "225px",
-        whiteSpace: "nowrap"
+        name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Purpose"),
+        selector: (row) => row.type_of_request === "Others" ? `${row.type_of_request} (${row.sub_type_of_request})` : row.type_of_request
       },
       {
         name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Actions"),
         cell: (row) => /* @__PURE__ */ import_react60.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react60.default.createElement(Link, { to: `/request_slips/edit/${row.id}` }, /* @__PURE__ */ import_react60.default.createElement("i", { className: "icon-pencil-alt text-info me-1" })), /* @__PURE__ */ import_react60.default.createElement(
-          Link,
+          "span",
           {
-            to: `${"http://localhost:3000"}/request_slips/${row.id}/print_slip_request`,
-            target: "_blank",
-            rel: "noopener noreferrer"
+            onClick: () => fetchAndOpenPdf(`/request_slips/${row.id}/print_slip_request`),
+            style: { cursor: "pointer" },
+            title: "Print"
           },
           /* @__PURE__ */ import_react60.default.createElement("i", { className: "icon-printer text-secondary ms-1" })
         ), /* @__PURE__ */ import_react60.default.createElement(
@@ -35817,9 +35696,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         button: true
       }
     ];
-    if (loading) return /* @__PURE__ */ import_react60.default.createElement("p", null, "Loading...");
+    if (loading) return /* @__PURE__ */ import_react60.default.createElement("p", null, "Loading\u2026");
     if (error) return /* @__PURE__ */ import_react60.default.createElement("p", null, "Error loading data");
-    return /* @__PURE__ */ import_react60.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react60.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react60.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-dark" }), "Request Slips"), /* @__PURE__ */ import_react60.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react60.default.createElement(
+    return /* @__PURE__ */ import_react60.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "card-header d-flex justify-content-between" }, /* @__PURE__ */ import_react60.default.createElement("h2", null, /* @__PURE__ */ import_react60.default.createElement("i", { className: "icofont icofont-document-folder me-2" }), "Request Slips"), /* @__PURE__ */ import_react60.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react60.default.createElement(
       "input",
       {
         className: "form-control form-control-sm",
@@ -35853,12 +35732,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         responsive: true,
         striped: true,
         bordered: true,
-        noDataComponent: "No Records of Request Slip",
         highlightOnHover: true,
-        paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
+        noDataComponent: "No Records of Request Slip"
       }
     )))));
-  };
+  }
 
   // src/Components/RequestSlip/Form.js
   var import_react61 = __toESM(require_react());
@@ -35900,6 +35778,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         });
       }
     }, []);
+    (0, import_react61.useEffect)(() => {
+      if (!loading) {
+        console.log("Prepared by is now:", prepared_by);
+      }
+    }, [loading, prepared_by]);
     (0, import_react61.useEffect)(() => {
       if (window.location.hash.includes(`request_slips/edit`)) {
         axios_default.get(`http://localhost:3000/request_slips/edit/${id}.json`).then((response) => {
@@ -36923,49 +36806,23 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react_data_table_component9 = __toESM(require_index_cjs());
 
   // src/Services/IssueSlipsServices.js
-  var getIssueSlips = async () => {
-    return axios_default.get("http://localhost:3000/issue_slips");
-  };
-  var getItems3 = (args) => {
-    return axios_default.get(`http://localhost:3000/issue_slips`, {
-      params: args
-    });
-  };
-  var requestNumberLookUp = () => {
-    return axios_default.get(
-      "http://localhost:3000/api/sample_slip_issuances_request_number_list"
-    );
-  };
-  var requestNumberDetailsLookUp = async (request_number) => {
-    return axios_default.get(
-      `http://localhost:3000/api/sample_slip_issuances_load_request/${request_number}`
-    );
-  };
-  var requestSlipDetails = async (slip_request_id) => {
-    return axios_default.get(
-      `http://localhost:3000/api/sample_slip_issuances_load_request_details/${slip_request_id}`
-    );
-  };
+  var getIssueSlips = () => ApiLogin_default().get("/issue_slips");
+  var getItems3 = (args) => ApiLogin_default().get("/issue_slips", { params: args });
+  var requestNumberLookUp = () => ApiLogin_default().get("/api/sample_slip_issuances_request_number_list");
+  var requestNumberDetailsLookUp = (request_number) => ApiLogin_default().get(
+    `/api/sample_slip_issuances_load_request/${request_number}`
+  );
+  var requestSlipDetails = (slip_request_id) => ApiLogin_default().get(
+    `/api/sample_slip_issuances_load_request_details/${slip_request_id}`
+  );
   var saveItem3 = (data2) => {
     const { issue_slip } = data2;
-    if (issue_slip && issue_slip.id) {
-      return axios_default.put(
-        `http://localhost:3000/issue_slips/${issue_slip.id}`,
-        data2
-      );
-    } else {
-      return axios_default.post(
-        `http://localhost:3000/issue_slips`,
-        data2
-      );
-    }
+    return issue_slip && issue_slip.id ? ApiLogin_default().put(`/issue_slips/${issue_slip.id}`, data2) : ApiLogin_default().post("/issue_slips", data2);
   };
-  var deleteIssueSlip = async (id) => {
-    return axios_default.delete(`${"http://localhost:3000"}/issue_slips/${id}`);
-  };
+  var deleteIssueSlip = (id) => ApiLogin_default().delete(`/issue_slips/${id}`);
 
   // src/Components/IssueSlip/Index.js
-  var Index_default4 = Index = () => {
+  var Index_default3 = Index = () => {
     const [data2, setData] = (0, import_react62.useState)([]);
     const [args, setArgs] = (0, import_react62.useState)({});
     const [loading, setLoading] = (0, import_react62.useState)(true);
@@ -36979,6 +36836,20 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         alert("Error in fetching data.");
         console.log(response);
       });
+    };
+    const fetchAndOpenPdf = async (path) => {
+      try {
+        const response = await ApiLogin_default().get(path, {
+          responseType: "blob"
+        });
+        const blobUrl = URL.createObjectURL(
+          new Blob([response.data], { type: "application/pdf" })
+        );
+        window.open(blobUrl, "_blank");
+      } catch (err) {
+        console.error("Error fetching PDF:", err);
+        alert("Unable to generate PDF. Please try again.");
+      }
     };
     const handleDelete = (id) => {
       if (window.confirm("Are you sure you want to delete this record?")) {
@@ -37062,13 +36933,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       {
         name: /* @__PURE__ */ import_react62.default.createElement("b", null, "Actions"),
         cell: (row) => /* @__PURE__ */ import_react62.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react62.default.createElement(Link, { to: `/issue_slips/edit/${row.id}`, className: "d-inline-block", title: "Edit" }, /* @__PURE__ */ import_react62.default.createElement("i", { className: "icon-pencil-alt text-info" })), /* @__PURE__ */ import_react62.default.createElement(
-          Link,
+          "span",
           {
-            to: `${"http://localhost:3000"}/issue_slips/${row.id}/print_issue_slip`,
-            target: "_blank",
-            rel: "noopener noreferrer"
+            title: "Print Issue Slip",
+            className: "text-secondary ms-2",
+            style: { cursor: "pointer" },
+            onClick: () => fetchAndOpenPdf(`/issue_slips/${row.id}/print_issue_slip`)
           },
-          /* @__PURE__ */ import_react62.default.createElement("i", { className: "icon-printer text-secondary ms-2" })
+          /* @__PURE__ */ import_react62.default.createElement("i", { className: "icon-printer" })
         ), /* @__PURE__ */ import_react62.default.createElement(
           "button",
           {
@@ -38524,22 +38396,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react_data_table_component11 = __toESM(require_index_cjs());
 
   // src/Services/InventoyListingsServices.js
-  var getInventories = async () => {
-    return axios_default.get("http://localhost:3000/inventories"), {
-      headers: {
-        "Authorization": `Bearer ${token}`
-        // Add token here
-      }
-    };
-  };
-  var getItems4 = (args) => {
-    return axios_default.get(`http://localhost:3000/inventories`, {
-      params: args
-    });
-  };
+  var getInventories = () => ApiLogin_default().get("/inventories");
+  var getItems4 = (args) => ApiLogin_default().get("/inventories", { params: args });
 
   // src/Components/InventoryListing/Index.js
-  var Index_default5 = Index = () => {
+  var Index_default4 = Index = () => {
     const [data2, setData] = (0, import_react64.useState)([]);
     const [args, setArgs] = (0, import_react64.useState)({});
     const [loading, setLoading] = (0, import_react64.useState)(true);
@@ -38700,36 +38561,21 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react_data_table_component12 = __toESM(require_index_cjs());
 
   // src/Services/InventoriesServices.js
-  var saveItem4 = (payload) => {
-    if (payload.id) {
-      return axios_default.put(
-        `http://localhost:3000/inventories/${payload.id}`,
-        payload
-      );
-    } else {
-      return axios_default.post("http://localhost:3000/inventories", payload);
-    }
+  var saveItem4 = (payload) => payload.id ? ApiLogin_default().put(`/inventories/${payload.id}`, payload) : ApiLogin_default().post("/inventories", payload);
+  var documentNumberLookUp = (document_type) => {
+    const basePath = "/api/inventories_lookup_document_number";
+    const url = document_type && document_type.toString().trim() !== "" ? `${basePath}/${document_type}` : basePath;
+    return ApiLogin_default().get(url);
   };
-  var documentNumberLookUp = async (document_type) => {
-    const baseUrl = "http://localhost:3000/api/inventories_lookup_document_number";
-    const url = document_type && document_type.toString().trim() !== "" ? `${baseUrl}/${document_type}` : baseUrl;
-    return axios_default.get(url);
-  };
-  var inventoryDetailsLookUp = async (document_number) => {
-    return axios_default.get(
-      `http://localhost:3000/api/inventories_lookup_document_details/${document_number}`
-    );
-  };
-  var documentDateLookUp = async (document_type, document_number, company_code) => {
-    return axios_default.get(
-      `http://localhost:3000/api/inventories_lookup_document_date/${document_type}/${document_number}/${company_code}`
-    );
-  };
-  var inventoryItemDetailsLookup = async (document_type, document_number, company_code) => {
-    return axios_default.get(
-      `http://localhost:3000/api/inventories_lookup_inventory_items/${document_type}/${document_number}/${company_code}`
-    );
-  };
+  var inventoryDetailsLookUp = (document_number) => ApiLogin_default().get(
+    `/api/inventories_lookup_document_details/${document_number}`
+  );
+  var documentDateLookUp = (document_type, document_number, company_code) => ApiLogin_default().get(
+    `/api/inventories_lookup_document_date/${document_type}/${document_number}/${company_code}`
+  );
+  var inventoryItemDetailsLookup = (document_type, document_number, company_code) => ApiLogin_default().get(
+    `/api/inventories_lookup_inventory_items/${document_type}/${document_number}/${company_code}`
+  );
 
   // src/Components/InventoryListing/Form.js
   function InventoryForm() {
@@ -39047,37 +38893,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_react_data_table_component13 = __toESM(require_index_cjs());
 
   // src/Services/ItemMastersServices.js
-  var getItemMasters = async () => {
-    return axios_default.get("http://localhost:3000/item_masters");
-  };
-  var getItems5 = (args) => {
-    return axios_default.get(
-      `http://localhost:3000/item_masters`,
-      {
-        params: args
-      }
-    );
-  };
-  var deleteItemMaster = async (id) => {
-    return axios_default.delete(`${"http://localhost:3000"}/item_masters/${id}`);
-  };
+  var getItemMasters = () => ApiLogin_default().get("/item_masters");
+  var getItems5 = (args) => ApiLogin_default().get("/item_masters", { params: args });
+  var deleteItemMaster = (id) => ApiLogin_default().delete(`/item_masters/${id}`);
   var saveItem5 = (data2) => {
     const payload = { item_master: data2 };
-    if (data2.id) {
-      return axios_default.put(
-        `http://localhost:3000/item_masters/${data2.id}`,
-        payload
-      );
-    } else {
-      return axios_default.post(
-        `http://localhost:3000/item_masters`,
-        payload
-      );
-    }
+    return data2.id ? ApiLogin_default().put(`/item_masters/${data2.id}`, payload) : ApiLogin_default().post("/item_masters", payload);
   };
 
   // src/Components/ItemMaster/Index.js
-  var Index_default6 = Index = () => {
+  var Index_default5 = Index = () => {
     const [data2, setData] = (0, import_react66.useState)([]);
     const [args, setArgs] = (0, import_react66.useState)({});
     const [loading, setLoading] = (0, import_react66.useState)(true);
@@ -39499,17 +39324,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "transfer_slips/:id", element: /* @__PURE__ */ import_react68.default.createElement(TransferSlipInfo, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "transfer_slips/new", element: /* @__PURE__ */ import_react68.default.createElement(TransferSlipForm, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "transfer_slips/edit/:id", element: /* @__PURE__ */ import_react68.default.createElement(TransferSlipEditForm, null) }),
-      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "request_slips", element: /* @__PURE__ */ import_react68.default.createElement(Index_default3, null) }),
+      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "request_slips", element: /* @__PURE__ */ import_react68.default.createElement(Index3, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "request_slips/new", element: /* @__PURE__ */ import_react68.default.createElement(Form_default2, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "request_slips/edit/:id", element: /* @__PURE__ */ import_react68.default.createElement(Form_default2, null) }),
-      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "issue_slips", element: /* @__PURE__ */ import_react68.default.createElement(Index_default4, null) }),
+      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "issue_slips", element: /* @__PURE__ */ import_react68.default.createElement(Index_default3, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "issue_slips/new", element: /* @__PURE__ */ import_react68.default.createElement(Form_default3, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "issue_slips/edit/:id", element: /* @__PURE__ */ import_react68.default.createElement(Form_default3, null) }),
-      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventories", element: /* @__PURE__ */ import_react68.default.createElement(Index_default5, null) }),
-      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "item_masters", element: /* @__PURE__ */ import_react68.default.createElement(Index_default6, null) }),
+      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventories", element: /* @__PURE__ */ import_react68.default.createElement(Index_default4, null) }),
+      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "item_masters", element: /* @__PURE__ */ import_react68.default.createElement(Index_default5, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "item_masters/new", element: /* @__PURE__ */ import_react68.default.createElement(Form_default4, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "item_masters/edit/:id", element: /* @__PURE__ */ import_react68.default.createElement(Form_default4, null) }),
-      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventory_listings", element: /* @__PURE__ */ import_react68.default.createElement(Index_default5, null) }),
+      /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventory_listings", element: /* @__PURE__ */ import_react68.default.createElement(Index_default4, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventories/new", element: /* @__PURE__ */ import_react68.default.createElement(InventoryForm, null) }),
       /* @__PURE__ */ import_react68.default.createElement(Route, { path: "inventories/edit/:id", element: /* @__PURE__ */ import_react68.default.createElement(InventoryForm, null) })
     ));

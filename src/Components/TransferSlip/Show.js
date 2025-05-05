@@ -51,12 +51,12 @@ export default function TransferSlipInfo() {
   if (!transferSlip) return <div>No transfer slip found</div>;
 
   const infoData = [
-    { field: 'Company', value: LOAD_COMPANY_CODE_SELECT[transferSlip.company_code?.toString()] },
-    { field: 'TS Number', value: transferSlip.transfer_slip_number },
-    { field: 'TS Type', value: transferSlip.transfer_slip_type },
-    { field: 'TO', value: LOAD_COMPANY_CODE_SELECT[transferSlip.transfer_to?.toString()] },
-    { field: 'Transferred', value: `${transferSlip.transferred_by} : ${formatDate(transferSlip.transferred_by_date)}` },
-    { field: 'Received', value: `${transferSlip.received_by} : ${formatDate(transferSlip.received_by_date)}` },
+    { field: 'Company:', value: LOAD_COMPANY_CODE_SELECT[transferSlip.company_code?.toString()] },
+    { field: 'TS Number:', value: transferSlip.transfer_slip_number },
+    { field: 'TS Type:', value: transferSlip.transfer_slip_type },
+    { field: 'TO:', value: LOAD_COMPANY_CODE_SELECT[transferSlip.transfer_to?.toString()] },
+    { field: 'Transferred:', value: `${transferSlip.transferred_by} : ${formatDate(transferSlip.transferred_by_date)}` },
+    { field: 'Received:', value: `${transferSlip.received_by} : ${formatDate(transferSlip.received_by_date)}` },
   ];
 
   const infoColumns = [

@@ -331,8 +331,7 @@ export default function TransferSlipForm() {
           !d.manufacturing_date ||
           !d.expiry_date ||
           !d.quantity ||
-          !d.job_order_number ||
-          !d.remarks
+          !d.job_order_number 
       );
 
       console.log({

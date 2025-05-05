@@ -1,6 +1,6 @@
 // File: src/components/TransferSlipEditForm.jsx
 import React, { useState, useEffect, useMemo } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import {
   fetchTransferSlip,
@@ -19,6 +19,7 @@ import "react-bootstrap-typeahead/css/Typeahead.css";
 export default function TransferSlipEditForm() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   // header
   const [header, setHeader] = useState({
@@ -366,6 +367,7 @@ export default function TransferSlipEditForm() {
                     <label>Company</label>
                     <Typeahead
                       id="companyCode"
+                      disabled
                       labelKey="label"
                       options={companyOptions}
                       selected={
@@ -425,6 +427,7 @@ export default function TransferSlipEditForm() {
                         }))
                       }
                       placeholder="Select destination..."
+                      disabled
                     />
                   </div>
                   <div className="mb-3">
@@ -467,6 +470,7 @@ export default function TransferSlipEditForm() {
                         }))
                       }
                       placeholder="Select slip type..."
+                      disabled
                     />
                     {header.transferSlipType === "Other" && (
                       <input
@@ -505,6 +509,7 @@ export default function TransferSlipEditForm() {
                         }))
                       }
                       placeholder="Select person..."
+                      disabled
                     />
                   </div>
                   <div className="mb-3">

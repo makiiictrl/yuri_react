@@ -1,54 +1,40 @@
-import axios from `axios`;
+// src/Services/AgentUserMenusServices.js
+import axiosInstance from "../Login/ApiLogin";
 
+// Fetch all menus
+export const getAgentUserMenus = () =>
+  axiosInstance().get("/agent_user_menus");
 
+// Fetch with search params
+export const getItems = (args) =>
+  axiosInstance().get("/agent_user_menus", { params: args });
 
-//For Index
-export const getAgentUserMenus = async () => {
-  return axios.get(`${API_BASE_URL}/agent_user_menus`);
-};
+// Lookup available menu IDs
+export const menuIdLookUp = () =>
+  axiosInstance().get("/agent_user_menus/menu_id_lookup");
 
-// For Search in Index
-export const getItems = (args) => {
-    return axios.get(
-    `${API_BASE_URL}/agent_user_menus`,
-    {
-        params: args
-    }
-);
-}
+// Lookup available agent IDs
+export const agentIdLookUp = () =>
+  axiosInstance().get("/agent_user_menus/agent_id_lookup");
 
-export const menuIdLookUp = () => {
-  return axios.get(`${API_BASE_URL}/agent_user_menus/menu_id_lookup`);
-};
+// Show a single menu by ID
+export const showAgentUserMenus = (id) =>
+  axiosInstance().get(`/agent_user_menus/${id}`);
 
-export const agentIdLookUp = () => {
-  return axios.get(`${API_BASE_URL}/agent_user_menus/agent_id_lookup`);
-};
+// Edit (replace) a menu
+export const editAgentUserMenu = (id, data) =>
+  axiosInstance().put(`/agent_user_menus/edit/${id}`, data);
 
-// For Edit
-export const showAgentUserMenus = (id) => {
-  return axios.get(`${API_BASE_URL}/agent_user_menus/${id}`);
-};
+// Delete a menu
+export const deleteAgentUserMenu = (id) =>
+  axiosInstance().delete(`/agent_user_menus/${id}`);
 
-export const editAgentUserMenu = async (id, data) => {
-  return axios.put(`/agent_user_menus/edit/${id}`, data);
-};
+// Create a new menu
+export const createAgentUserMenu = (data) =>
+  axiosInstance().post("/agent_user_menus", data);
 
-export const deleteAgentUserMenu = async (id) => {
-  return axios.delete(`${API_BASE_URL}/agent_user_menus/${id}`);
-};
-
-export const createAgentUserMenu = async (data) => {
-  return axios.post(`/agent_user_menus`, data);
-};
-
-export const saveItem = (data) => {
-  if (data.id) {
-    return axios.put(
-      `${API_BASE_URL}/agent_user_menus/${data.id}`,
-      data
-    );
-  } else {
-    return axios.post(`${API_BASE_URL}/agent_user_menus`, data);
-  }
-}
+// Save (create or update) a menu record
+export const saveItem = (data) =>
+  data.id
+    ? axiosInstance().put(`/agent_user_menus/${data.id}`, data)
+    : axiosInstance().post("/agent_user_menus", data);

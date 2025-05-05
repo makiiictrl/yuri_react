@@ -167,7 +167,7 @@ export default AdminDashboard = () => {
                         <span className="txt-primary">
                           {formatName(fullName)}
                         </span>
-                        <button
+                        {/* <button
                           className="btn btn-outline-primary btn-sm ms-2"
                           type="button"
                           data-bs-toggle="modal"
@@ -175,7 +175,7 @@ export default AdminDashboard = () => {
                         >
                           <i className="icofont icofont-ui-edit"></i> Edit
                         </button>
-                        <EditAccount />
+                        <EditAccount /> */}
                       </h1>
                     </div>
                     <div className="image-section">
