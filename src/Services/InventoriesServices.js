@@ -1,45 +1,36 @@
-import axios from "axios";
+// src/Services/InventoryServices.js
+import axiosInstance from "../Login/ApiLogin";
 
-export const saveItem = (payload) => {
-  if (payload.id) {
-    return axios.put(
-      `http://localhost:3000/inventories/${payload.id}`,
-      payload
-    );
-  } else {
-    return axios.post("http://localhost:3000/inventories", payload);
-  }
-};
+// Create or update an inventory record
+export const saveItem = (payload) =>
+  payload.id
+    ? axiosInstance().put(`/inventories/${payload.id}`, payload)
+    : axiosInstance().post("/inventories", payload);
 
-export const documentNumberLookUp = async (document_type) => {
-  const baseUrl =
-    "http://localhost:3000/api/inventories_lookup_document_number";
-  // if document_type is null, undefined, or an empty string, omit the segment
+// Lookup document numbers (optionally filtered by type)
+export const documentNumberLookUp = (document_type) => {
+  const basePath = "/api/inventories_lookup_document_number";
   const url =
     document_type && document_type.toString().trim() !== ""
-      ? `${baseUrl}/${document_type}`
-      : baseUrl;
-
-  return axios.get(url);
+      ? `${basePath}/${document_type}`
+      : basePath;
+  return axiosInstance().get(url);
 };
 
-// For Request Number Details Look up
-export const inventoryDetailsLookUp = async (document_number) => {
-  return axios.get(
-    `http://localhost:3000/api/inventories_lookup_document_details/${document_number}`
+// Lookup document details by document number
+export const inventoryDetailsLookUp = (document_number) =>
+  axiosInstance().get(
+    `/api/inventories_lookup_document_details/${document_number}`
   );
-};
 
-// For Request Number Details Look up
-export const documentDateLookUp = async (document_type, document_number, company_code ) => {
-  return axios.get(
-    `http://localhost:3000/api/inventories_lookup_document_date/${document_type}/${document_number}/${company_code}`
+// Lookup document dates by type, number, and company code
+export const documentDateLookUp = (document_type, document_number, company_code) =>
+  axiosInstance().get(
+    `/api/inventories_lookup_document_date/${document_type}/${document_number}/${company_code}`
   );
-};
 
-// For Request Number Details Look up
-export const inventoryItemDetailsLookup = async (document_type, document_number, company_code ) => {
-  return axios.get(
-    `http://localhost:3000/api/inventories_lookup_inventory_items/${document_type}/${document_number}/${company_code}`
+// Lookup inventory items by document type, number, and company code
+export const inventoryItemDetailsLookup = (document_type, document_number, company_code) =>
+  axiosInstance().get(
+    `/api/inventories_lookup_inventory_items/${document_type}/${document_number}/${company_code}`
   );
-};

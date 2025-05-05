@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import { getTransferSlips } from "../../Services/TransferSlipsServices";
 import { LOAD_COMPANY_CODE_SELECT } from "../../Config/CompanyCodes";
-
+import axiosInstance from "../../Login/ApiLogin";
 export default function Index() {
   const [args, setArgs]           = useState({});
   const [data, setData]           = useState([]);
@@ -33,15 +33,37 @@ export default function Index() {
       .catch(() => alert("Error fetching data."));
   }, [args]);
 
-  const openPrint = (type, slipId = null) => {
-    setPrintType(type);
-    setSelectedSlipId(slipId);
-    if (type === "blank") {
-      setCompanyCode(Object.keys(LOAD_COMPANY_CODE_SELECT)[0]);
+  const fetchAndOpenPdf = async (params) => {
+    try {
+      const response = await axiosInstance().get(
+        `/transfer_slips/print.pdf?${params.toString()}`,
+        { responseType: "blob" }
+      );
+      const blob = new Blob([response.data], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+      window.open(url, "_blank");
+    } catch (err) {
+      console.error("Error fetching PDF:", err);
+      alert("Unable to generate PDF. Please try again.");
     }
-    setPrintModalOpen(true);
   };
 
+  // handle clicking the print icon or Blank button
+  const openPrint = (type, slipId = null) => {
+    if (type === "blank") {
+      setPrintType(type);
+      setSelectedSlipId(slipId);
+      setCompanyCode(Object.keys(LOAD_COMPANY_CODE_SELECT)[0]);
+      setPrintModalOpen(true);
+    } else {
+      const params = new URLSearchParams();
+      params.set("transfer_slips_type", type);
+      params.set("transfer_slip_id", slipId);
+      fetchAndOpenPdf(params);
+    }
+  };
+
+  // handle confirming Blank Slip print
   const handlePrintConfirm = () => {
     const params = new URLSearchParams();
     params.set("transfer_slips_type", printType);
@@ -50,9 +72,10 @@ export default function Index() {
     } else {
       params.set("transfer_slip_id", selectedSlipId);
     }
-    window.open(`${API_BASE_URL}/transfer_slips/print.pdf?${params}`, "_blank");
+    fetchAndOpenPdf(params);
     setPrintModalOpen(false);
   };
+
 
   const columns = [
     { name: <b>Company</b>,         selector: r => LOAD_COMPANY_CODE_SELECT[r.company_code] || r.company_code, sortable: true },
