@@ -4,7 +4,7 @@ import { Typeahead } from "react-bootstrap-typeahead";
 import ErrorBoundary from "../ErrorBoundary";
 import DataTable from "react-data-table-component";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "../../Login/ApiLogin";
 import UseCurrentAgent from "../../Login/UseCurrentAgent";
 
 import {
@@ -41,13 +41,13 @@ export default Form = () => {
   );
   const [productCommercialDescription, setCommercialProductDescription] =
     useState([]);
-  const prepared_by = agent?.email?.split("@")[0] || "";
+  const [preparedBy, setPreparedBy] = useState();
   const [showAlert, setShowAlert] = useState(false);
   const alertRef = useRef(null);
   const headerTitle = window.location.hash.includes("edit")
     ? "Edit Request Slip"
     : "New Request Slip";
-    
+
   useEffect(() => {
     if (showAlert && alertRef.current) {
       alertRef.current.focus();
@@ -59,29 +59,37 @@ export default Form = () => {
   // To automatically set the routes in rails
   useEffect(() => {
     if (window.location.hash.includes("request_slips/new")) {
-      axios
-        .get("http://localhost:3000/request_slips/new.json")
+      axiosInstance()
+        .get("request_slips/new.json")
         .then((response) => {
           setFormData(response.data);
           setRecommendedByOptions(response.data.recommended_by || {});
+          var prepared_by = agent?.email?.split("@")[0] || "";
+
+          console.log("1231231231312", prepared_by)
+          
+          const fixed = prepared_by.split(".") // ["michael", "medina"]
+          .map(
+            (seg) =>
+              seg.charAt(0).toUpperCase() + // "M"
+              seg.slice(1).toLowerCase() // "ichael"
+          )
+          .join(" "); // "Michael Medina"
+          
+          console.log("Formatted prepared_by:", fixed);
+          
+          setPreparedBy(fixed);
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
         });
     }
-  }, []);
-
-  useEffect(() => {
-    if (!loading) {
-      console.log("Prepared by is now:", prepared_by);
-    }
-  }, [loading, prepared_by]);
-
+  }, [loading]);
 
   useEffect(() => {
     if (window.location.hash.includes(`request_slips/edit`)) {
-      axios
-        .get(`http://localhost:3000/request_slips/edit/${id}.json`)
+      axiosInstance()
+        .get(`request_slips/edit/${id}.json`)
         .then((response) => {
           setRecommendedByOptions(response.data || {});
         })
@@ -124,8 +132,11 @@ export default Form = () => {
       })),
     ];
 
+    const isEditMode = window.location.hash.includes("issue_slips/edit");
+
     const body = {
       ...data,
+      ...( !isEditMode && { prepared_by: preparedBy } ),
       sample_slip_request_details_attributes: details,
     };
 
@@ -135,7 +146,8 @@ export default Form = () => {
       noRows = true;
     }
 
-    const isEditMode = window.location.hash.includes("issue_slips/edit");
+    
+
     const badDetail = details.find(
       (d) => !d.product_description || !d.request_quantity
     );
@@ -1223,7 +1235,7 @@ export default Form = () => {
                     className="form-control"
                     type="name"
                     readOnly
-                    value={loading ? "" : prepared_by}
+                    value={preparedBy ? preparedBy : data.prepared_by}
                   />
                 </div>
               </div>

@@ -35665,14 +35665,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     };
     const columns = [
       { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "ID"), selector: (row) => row.id, omit: true },
-      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Company"), selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC", sortable: true },
-      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Request #"), selector: (row) => row.request_number, sortable: true },
-      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Date"), selector: (row) => row.request_date, sortable: true },
-      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Employee"), selector: (row) => row.employee_name, sortable: true },
-      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Address"), selector: (row) => row.address },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Company"), selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC", sortable: true, width: "100px" },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Request #"), selector: (row) => row.request_number, sortable: true, width: "120px" },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Date"), selector: (row) => row.request_date, sortable: true, width: "120px" },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Employee"), selector: (row) => row.employee_name, sortable: true, width: "280px" },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Address"), selector: (row) => row.address, width: "280px" },
       {
         name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Purpose"),
-        selector: (row) => row.type_of_request === "Others" ? `${row.type_of_request} (${row.sub_type_of_request})` : row.type_of_request
+        selector: (row) => row.type_of_request === "Others" ? `${row.type_of_request} (${row.sub_type_of_request})` : row.type_of_request,
+        width: "200px"
       },
       {
         name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Actions"),
@@ -35693,11 +35694,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           /* @__PURE__ */ import_react60.default.createElement("i", { className: "icon-trash text-danger" })
         )),
         ignoreRowClick: true,
-        button: true
+        button: true,
+        width: "5%"
       }
     ];
-    if (loading) return /* @__PURE__ */ import_react60.default.createElement("p", null, "Loading\u2026");
-    if (error) return /* @__PURE__ */ import_react60.default.createElement("p", null, "Error loading data");
     return /* @__PURE__ */ import_react60.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "card-header d-flex justify-content-between" }, /* @__PURE__ */ import_react60.default.createElement("h2", null, /* @__PURE__ */ import_react60.default.createElement("i", { className: "icofont icofont-document-folder me-2" }), "Request Slips"), /* @__PURE__ */ import_react60.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react60.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react60.default.createElement(
       "input",
       {
@@ -35758,7 +35758,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       []
     );
     const [productCommercialDescription, setCommercialProductDescription] = (0, import_react61.useState)([]);
-    const prepared_by = agent?.email?.split("@")[0] || "";
+    const [preparedBy, setPreparedBy] = (0, import_react61.useState)();
     const [showAlert, setShowAlert] = (0, import_react61.useState)(false);
     const alertRef = (0, import_react61.useRef)(null);
     const headerTitle = window.location.hash.includes("edit") ? "Edit Request Slip" : "New Request Slip";
@@ -35770,22 +35770,26 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     const { id } = useParams();
     (0, import_react61.useEffect)(() => {
       if (window.location.hash.includes("request_slips/new")) {
-        axios_default.get("http://localhost:3000/request_slips/new.json").then((response) => {
+        ApiLogin_default().get("request_slips/new.json").then((response) => {
           setFormData(response.data);
           setRecommendedByOptions(response.data.recommended_by || {});
+          var prepared_by = agent?.email?.split("@")[0] || "";
+          console.log("1231231231312", prepared_by);
+          const fixed = prepared_by.split(".").map(
+            (seg) => seg.charAt(0).toUpperCase() + // "M"
+            seg.slice(1).toLowerCase()
+            // "ichael"
+          ).join(" ");
+          console.log("Formatted prepared_by:", fixed);
+          setPreparedBy(fixed);
         }).catch((error) => {
           console.error("Error fetching data:", error);
         });
       }
-    }, []);
-    (0, import_react61.useEffect)(() => {
-      if (!loading) {
-        console.log("Prepared by is now:", prepared_by);
-      }
-    }, [loading, prepared_by]);
+    }, [loading]);
     (0, import_react61.useEffect)(() => {
       if (window.location.hash.includes(`request_slips/edit`)) {
-        axios_default.get(`http://localhost:3000/request_slips/edit/${id}.json`).then((response) => {
+        ApiLogin_default().get(`request_slips/edit/${id}.json`).then((response) => {
           setRecommendedByOptions(response.data || {});
         }).catch((error) => {
           console.error("Error fetching data:", error);
@@ -35823,15 +35827,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           issue_slip_type: "Commercial"
         }))
       ];
+      const isEditMode = window.location.hash.includes("issue_slips/edit");
       const body = {
         ...data2,
+        ...!isEditMode && { prepared_by: preparedBy },
         sample_slip_request_details_attributes: details
       };
       var noRows = false;
       if (details.length === 0) {
         noRows = true;
       }
-      const isEditMode = window.location.hash.includes("issue_slips/edit");
       const badDetail = details.find(
         (d) => !d.product_description || !d.request_quantity
       );
@@ -36598,7 +36603,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         className: "form-control",
         type: "name",
         readOnly: true,
-        value: loading ? "" : prepared_by
+        value: preparedBy ? preparedBy : data2.prepared_by
       }
     ))))), /* @__PURE__ */ import_react61.default.createElement("h5", { className: "mb-3 border-bottom pb-2 mt-4" }, "Contact Details"), /* @__PURE__ */ import_react61.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "col-md-6" }, /* @__PURE__ */ import_react61.default.createElement("div", { className: "form-group mb-3" }, /* @__PURE__ */ import_react61.default.createElement("label", null, "Contact Person ", /* @__PURE__ */ import_react61.default.createElement("span", { className: "text-danger" }, "*")), /* @__PURE__ */ import_react61.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react61.default.createElement(
       "input",
@@ -37031,7 +37036,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }, [showRequestNumberAlert]);
     (0, import_react63.useEffect)(() => {
       if (window.location.hash.includes("issue_slips/new")) {
-        axios_default.get("http://localhost:3000/issue_slips/new.json").then((response) => {
+        ApiLogin_default().get("issue_slips/new.json").then((response) => {
           setFormData(response.data);
           setRecommendedByOptions(response.data.recommended_by || {});
           console.log("IS NEW");
@@ -37043,7 +37048,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }, []);
     (0, import_react63.useEffect)(() => {
       if (window.location.hash.includes(`issue_slips/edit`)) {
-        axios_default.get(`http://localhost:3000/issue_slips/edit/${id}`).then((response) => {
+        ApiLogin_default().get(`issue_slips/edit/${id}`).then((response) => {
           const payload = response.data;
           setData(payload.issue_slip);
           setOnEdit(true);
@@ -37153,6 +37158,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           lot_number: r3.lot_number,
           expiry_date: r3.expiry_date,
           approved_quantity: r3.approved_quantity,
+          request_id: data2.request_id,
           request_number: data2.request_number,
           issue_slip_type: "Promats"
         })),
@@ -37165,6 +37171,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           lot_number: r3.lot_number,
           expiry_date: r3.expiry_date,
           approved_quantity: r3.approved_quantity,
+          request_id: data2.request_id,
           request_number: data2.request_number,
           issue_slip_type: "Packmats"
         })),
@@ -37177,6 +37184,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           lot_number: r3.lot_number,
           expiry_date: r3.expiry_date,
           approved_quantity: r3.approved_quantity,
+          request_id: data2.request_id,
           request_number: data2.request_number,
           issue_slip_type: "Commercial"
         }))
@@ -37678,20 +37686,32 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       {
         name: /* @__PURE__ */ import_react63.default.createElement("b", null, "Product Description"),
         width: "30%",
-        cell: (row) => /* @__PURE__ */ import_react63.default.createElement(
-          Typeahead_default2,
-          {
-            className: "w-100",
-            positionFixed: true,
-            options: productSampleDescription,
-            placeholder: "Product Description",
-            selected: row.product_description ? [row.product_description] : [],
-            onChange: (selected) => handleCommercialRowChange(
-              row.id,
-              "product_description",
-              selected[0] || ""
-            )
-          }
+        cell: (row) => (
+          // <Typeahead
+          //   className="w-100"
+          //   positionFixed
+          //   options={productSampleDescription}
+          //   placeholder="Product Description"
+          //   // show the current value as a single-item array
+          //   selected={row.product_description ? [row.product_description] : []}
+          //   onChange={(selected) =>
+          //     handleCommercialRowChange(
+          //       row.id,
+          //       "product_description",
+          //       selected[0] || ""
+          //     )
+          //   }
+          // />
+          /* @__PURE__ */ import_react63.default.createElement(
+            "input",
+            {
+              type: "text",
+              className: "form-control",
+              placeholder: "Product Description",
+              value: row.product_description || "",
+              readOnly: true
+            }
+          )
         )
       },
       {
@@ -37708,7 +37728,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
               row.id,
               "ordered_quantity",
               e3.target.value
-            )
+            ),
+            readOnly: true
           }
         )
       },

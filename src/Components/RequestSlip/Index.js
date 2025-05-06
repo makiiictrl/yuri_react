@@ -70,15 +70,16 @@ export default function Index() {
 
   const columns = [
     { name: <b>ID</b>, selector: row => row.id, omit: true },
-    { name: <b>Company</b>, selector: row => row.company_code === 1 ? "CDCI" : "CYDC", sortable: true },
-    { name: <b>Request #</b>, selector: row => row.request_number, sortable: true },
-    { name: <b>Date</b>, selector: row => row.request_date, sortable: true },
-    { name: <b>Employee</b>, selector: row => row.employee_name, sortable: true },
-    { name: <b>Address</b>, selector: row => row.address },
+    { name: <b>Company</b>, selector: row => row.company_code === 1 ? "CDCI" : "CYDC", sortable: true , width: "100px"},
+    { name: <b>Request #</b>, selector: row => row.request_number, sortable: true, width: "120px"},
+    { name: <b>Date</b>, selector: row => row.request_date, sortable: true, width: "120px" },
+    { name: <b>Employee</b>, selector: row => row.employee_name, sortable: true, width: "280px" },
+    { name: <b>Address</b>, selector: row => row.address, width: "280px"},
     { name: <b>Purpose</b>, selector: row =>
         row.type_of_request === "Others"
           ? `${row.type_of_request} (${row.sub_type_of_request})`
-          : row.type_of_request
+          : row.type_of_request,
+          width: "200px"
     },
     {
       name: <b>Actions</b>,
@@ -106,11 +107,12 @@ export default function Index() {
       ),
       ignoreRowClick: true,
       button: true,
+      width: "5%"
     },
   ];
 
-  if (loading) return <p>Loading…</p>;
-  if (error)   return <p>Error loading data</p>;
+  // if (loading) return <p>Loading…</p>;
+  // if (error)   return <p>Error loading data</p>;
 
   return (
     <div className="page-body">
