@@ -3,7 +3,7 @@ import { Typeahead } from "react-bootstrap-typeahead";
 import ErrorBoundary from "../ErrorBoundary";
 import DataTable from "react-data-table-component";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "../../Login/ApiLogin";
 import {
   requestNumberLookUp,
   requestNumberDetailsLookUp,
@@ -66,8 +66,8 @@ export default New = () => {
   // To automatically set the routes in rails
   useEffect(() => {
     if (window.location.hash.includes("issue_slips/new")) {
-      axios
-        .get("http://localhost:3000/issue_slips/new.json")
+      axiosInstance()
+        .get("issue_slips/new.json")
         .then((response) => {
           setFormData(response.data);
           setRecommendedByOptions(response.data.recommended_by || {});
@@ -82,8 +82,8 @@ export default New = () => {
 
   useEffect(() => {
     if (window.location.hash.includes(`issue_slips/edit`)) {
-      axios
-        .get(`http://localhost:3000/issue_slips/edit/${id}`)
+      axiosInstance()
+        .get(`issue_slips/edit/${id}`)
         .then((response) => {
           const payload = response.data;
           // 1) set the "issue_slip" object in state
