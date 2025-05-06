@@ -4,7 +4,7 @@ import ErrorBoundary from "../ErrorBoundary";
 import DataTable from "react-data-table-component";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../../Login/ApiLogin";
-import axios from "axios";
+// import axios from "axios";
 import {
   requestNumberLookUp,
   requestNumberDetailsLookUp,
@@ -83,7 +83,7 @@ export default New = () => {
 
   useEffect(() => {
     if (window.location.hash.includes(`issue_slips/edit`)) {
-      axios
+      axiosInstance()
         .get(`http://localhost:3000/issue_slips/edit/${id}`)
         .then((response) => {
           const payload = response.data;
@@ -1840,7 +1840,7 @@ export default New = () => {
                         responsive
                         striped
                         bordered
-                        noDataComponent="No Records of Agent User Menu"
+                        noDataComponent="No Records of Sample for this Issue Slip"
                         highlightOnHover
                       />
                     </div>
@@ -1866,7 +1866,7 @@ export default New = () => {
                         responsive
                         striped
                         bordered
-                        noDataComponent="No Records of Agent User Menu"
+                        noDataComponent="No Records of Promats for this Issue Slip"
                         highlightOnHover
                       />
                     </div>
@@ -1892,7 +1892,7 @@ export default New = () => {
                         responsive
                         striped
                         bordered
-                        noDataComponent="No Records of Agent User Menu"
+                        noDataComponent="No Records of Packmats for this Issue Slip"
                         highlightOnHover
                       />
                     </div>
@@ -1918,7 +1918,7 @@ export default New = () => {
                         responsive
                         striped
                         bordered
-                        noDataComponent="No Records of Agent User Menu"
+                        noDataComponent="No Records of Commercial for this Issue Slip"
                         highlightOnHover
                       />
                     </div>

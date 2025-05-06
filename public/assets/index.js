@@ -37066,7 +37066,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }, []);
     (0, import_react63.useEffect)(() => {
       if (window.location.hash.includes(`issue_slips/edit`)) {
-        axios_default.get(`http://localhost:3000/issue_slips/edit/${id}`).then((response) => {
+        ApiLogin_default().get(`http://localhost:3000/issue_slips/edit/${id}`).then((response) => {
           const payload = response.data;
           setData(payload.issue_slip);
           setOnEdit(true);
@@ -38349,7 +38349,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             responsive: true,
             striped: true,
             bordered: true,
-            noDataComponent: "No Records of Agent User Menu",
+            noDataComponent: "No Records of Sample for this Issue Slip",
             highlightOnHover: true
           }
         ))
@@ -38370,7 +38370,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             responsive: true,
             striped: true,
             bordered: true,
-            noDataComponent: "No Records of Agent User Menu",
+            noDataComponent: "No Records of Promats for this Issue Slip",
             highlightOnHover: true
           }
         ))
@@ -38391,7 +38391,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             responsive: true,
             striped: true,
             bordered: true,
-            noDataComponent: "No Records of Agent User Menu",
+            noDataComponent: "No Records of Packmats for this Issue Slip",
             highlightOnHover: true
           }
         ))
@@ -38412,7 +38412,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             responsive: true,
             striped: true,
             bordered: true,
-            noDataComponent: "No Records of Agent User Menu",
+            noDataComponent: "No Records of Commercial for this Issue Slip",
             highlightOnHover: true
           }
         ))
@@ -39171,7 +39171,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     };
     (0, import_react67.useEffect)(() => {
       if (window.location.hash.includes("item_masters/edit")) {
-        axios_default.get(`http://localhost:3000/item_masters/edit/${id}`).then((response) => {
+        ApiLogin_default().get(`item_masters/edit/${id}`).then((response) => {
           setData(response.data.item_master);
           console.log("Loaded Item Master:", response.data.item_master);
         }).catch((error) => {

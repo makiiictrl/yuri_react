@@ -5,6 +5,8 @@ import { saveItem } from "../../Services/ItemMastersServices";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axiosInstance from "../../Login/ApiLogin";
+
 
 export default New = () => {
   const [data, setData] = useState({});
@@ -77,8 +79,8 @@ export default New = () => {
 
   useEffect(() => {
     if (window.location.hash.includes("item_masters/edit")) {
-      axios
-        .get(`http://localhost:3000/item_masters/edit/${id}`)
+      axiosInstance()
+        .get(`item_masters/edit/${id}`)
         .then((response) => {
           // TODO: do something with response.data
           setData(response.data.item_master);
