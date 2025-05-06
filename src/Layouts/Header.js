@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link, useLocation } from "react-router-dom";
 import UseCurrentAgent from "../Login/UseCurrentAgent";
 
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../Login/ApiLogin"; // adjust the path as needed
+import axiosInstance from "../Login/ApiLogin";
+import { Typeahead } from "react-bootstrap-typeahead";
+
+import { documentNumberLookUp } from "../Services/ApplicationsServices";
 
 function toProperCase(str) {
   return str
@@ -14,6 +17,22 @@ function toProperCase(str) {
 }
 
 export default function Header() {
+  const [documentNumbers, setDocumentNumbers] = useState([]);
+
+  useEffect(() => {
+    documentNumberLookUp()
+      .then((res) => setDocumentNumbers(res.data || []))
+      .catch((e) => console.error("Error fetching doc numbers:", e));
+  }, []);
+
+
+  const handleDocSelect = (selected) => {
+    if (!selected.length) return;
+    const { id, type } = selected[0];
+    // navigate to e.g. /request_slips/edit/42
+    navigate(`/${type}/edit/${id}`);
+  };
+
   const { agent, loading } = UseCurrentAgent();
   const location = useLocation();
 
@@ -75,42 +94,57 @@ export default function Header() {
               </li>
 
               {pathnames.map((segment, idx) => {
-              const to = "/" + pathnames.slice(0, idx + 1).join("/");
-              const isLast = idx === pathnames.length - 1;
-              const name =
-                breadcrumbNameMap[segment] || toProperCase(segment);
+                const to = "/" + pathnames.slice(0, idx + 1).join("/");
+                const isLast = idx === pathnames.length - 1;
+                const name =
+                  breadcrumbNameMap[segment] || toProperCase(segment);
 
-              return (
-                <li
-                  key={to}
-                  className={
-                    "breadcrumb-item f-w-500" + (isLast ? " active" : "")
-                  }
-                  aria-current={isLast ? "page" : undefined}
-                >
-                  {isLast ? name : <Link to={to}>{name}</Link>}
-                </li>
-              );
-            })}
+                return (
+                  <li
+                    key={to}
+                    className={
+                      "breadcrumb-item f-w-500" + (isLast ? " active" : "")
+                    }
+                    aria-current={isLast ? "page" : undefined}
+                  >
+                    {isLast ? name : <Link to={to}>{name}</Link>}
+                  </li>
+                );
+              })}
             </ol>
           </nav>
         </div>
       </div>
-      
+
       <div className="col header-wrapper m-0 header-right-wrapper">
         <div className="row m-0">
           <form className="form-inline search-full col" action="#" method="get">
             <div className="form-group w-100">
               <div className="Typeahead Typeahead--twitterUsers">
                 <div className="u-posRelative">
-                  <input
+                  {/* <input
                     className="demo-input Typeahead-input form-control-plaintext w-100"
                     type="text"
                     placeholder="Search anything .."
                     name="q"
                     title=""
                     autoFocus
+                  /> */}
+
+                  <Typeahead
+                    options={documentNumbers}
+                    placeholder="Search anything .."
+                    labelKey="document_number"
+                    autoFocus
+                    name="q"
+                    positionFixed
+                    inputProps={{
+                      className:
+                        "demo-input Typeahead-input form-control-plaintext w-100 border-0",
+                    }}
+                    onChange={handleDocSelect}
                   />
+
                   <div
                     className="spinner-border Typeahead-spinner"
                     role="status"
@@ -171,7 +205,6 @@ export default function Header() {
                   </div>
                 </div>
                 <ul className="profile-dropdown onhover-show-div">
-                  
                   <li>
                     {/* < href="login.html"> */}
                     <a href="#" onClick={logout}>
@@ -233,4 +266,3 @@ export default function Header() {
     </div>
   );
 }
-
