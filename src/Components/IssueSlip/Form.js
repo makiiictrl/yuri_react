@@ -4,6 +4,7 @@ import ErrorBoundary from "../ErrorBoundary";
 import DataTable from "react-data-table-component";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../../Login/ApiLogin";
+import axios from "axios";
 import {
   requestNumberLookUp,
   requestNumberDetailsLookUp,
@@ -67,7 +68,7 @@ export default New = () => {
   useEffect(() => {
     if (window.location.hash.includes("issue_slips/new")) {
       axiosInstance()
-        .get("issue_slips/new.json")
+        .get("http://localhost:3000/issue_slips/new.json")
         .then((response) => {
           setFormData(response.data);
           setRecommendedByOptions(response.data.recommended_by || {});
@@ -82,8 +83,8 @@ export default New = () => {
 
   useEffect(() => {
     if (window.location.hash.includes(`issue_slips/edit`)) {
-      axiosInstance()
-        .get(`issue_slips/edit/${id}`)
+      axios
+        .get(`http://localhost:3000/issue_slips/edit/${id}`)
         .then((response) => {
           const payload = response.data;
           // 1) set the "issue_slip" object in state

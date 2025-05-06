@@ -28900,349 +28900,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var DefaultDashboard_default = DefaultDashboard;
 
   // src/Layouts/MainLayout.js
-  var import_react13 = __toESM(require_react());
+  var import_react41 = __toESM(require_react());
 
   // src/Layouts/Header.js
-  var import_react10 = __toESM(require_react());
-  function toProperCase(str) {
-    return str.split("_").map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(" ");
-  }
-  function Header() {
-    const { agent, loading } = UseCurrentAgent();
-    const location = useLocation();
-    const pathnames = location.pathname.split("/").filter((segment) => segment !== "");
-    const breadcrumbNameMap = {
-      dashboard: "Dashboard",
-      users: "Users",
-      settings: "Settings"
-      // add custom mappings here...
-    };
-    const pageTitle = pathnames.length > 0 ? breadcrumbNameMap[pathnames[pathnames.length - 1]] || toProperCase(pathnames[pathnames.length - 1]) : "Home";
-    const navigate = useNavigate();
-    const logout = async (e3) => {
-      e3.preventDefault();
-      try {
-        await ApiLogin_default().delete("/agent/sign_out");
-      } catch (err) {
-        console.warn("Logout error, likely already logged out:", err);
-      } finally {
-        localStorage.removeItem("token");
-        navigate("/#/login");
-      }
-    };
-    return /* @__PURE__ */ import_react10.default.createElement("div", { className: "page-header row" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "col-auto header-left-wrapper" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "header-logo-wrapper p-0 left-header" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react10.default.createElement("a", { href: "/" }))), /* @__PURE__ */ import_react10.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react10.default.createElement("svg", { className: "status_toggle sidebar-toggle" }, /* @__PURE__ */ import_react10.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#collapse-sidebar" })))), /* @__PURE__ */ import_react10.default.createElement("div", { className: "col-auto header-right-wrapper page-title" }, /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement("h2", null, pageTitle), /* @__PURE__ */ import_react10.default.createElement("nav", null, /* @__PURE__ */ import_react10.default.createElement("ol", { className: "breadcrumb justify-content-sm-start align-items-center mb-0" }, /* @__PURE__ */ import_react10.default.createElement("li", { className: "breadcrumb-item" }, /* @__PURE__ */ import_react10.default.createElement(Link, { to: "/" }, "Home")), pathnames.map((segment, idx) => {
-      const to2 = "/" + pathnames.slice(0, idx + 1).join("/");
-      const isLast = idx === pathnames.length - 1;
-      const name = breadcrumbNameMap[segment] || toProperCase(segment);
-      return /* @__PURE__ */ import_react10.default.createElement(
-        "li",
-        {
-          key: to2,
-          className: "breadcrumb-item f-w-500" + (isLast ? " active" : ""),
-          "aria-current": isLast ? "page" : void 0
-        },
-        isLast ? name : /* @__PURE__ */ import_react10.default.createElement(Link, { to: to2 }, name)
-      );
-    }))))), /* @__PURE__ */ import_react10.default.createElement("div", { className: "col header-wrapper m-0 header-right-wrapper" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "row m-0" }, /* @__PURE__ */ import_react10.default.createElement("form", { className: "form-inline search-full col", action: "#", method: "get" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "form-group w-100" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "Typeahead Typeahead--twitterUsers" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "u-posRelative" }, /* @__PURE__ */ import_react10.default.createElement(
-      "input",
-      {
-        className: "demo-input Typeahead-input form-control-plaintext w-100",
-        type: "text",
-        placeholder: "Search anything ..",
-        name: "q",
-        title: "",
-        autoFocus: true
-      }
-    ), /* @__PURE__ */ import_react10.default.createElement(
-      "div",
-      {
-        className: "spinner-border Typeahead-spinner",
-        role: "status"
-      },
-      /* @__PURE__ */ import_react10.default.createElement("span", { className: "sr-only" }, "Loading...")
-    ), /* @__PURE__ */ import_react10.default.createElement("i", { className: "close-search", "data-feather": "x" })), /* @__PURE__ */ import_react10.default.createElement("div", { className: "Typeahead-menu" })))), /* @__PURE__ */ import_react10.default.createElement("div", { className: "header-logo-wrapper col-auto p-0 left-header" }), /* @__PURE__ */ import_react10.default.createElement("div", { className: "nav-right col-auto pull-right right-header p-0 ms-auto" }, /* @__PURE__ */ import_react10.default.createElement("ul", { className: "nav-menus" }, /* @__PURE__ */ import_react10.default.createElement("li", null, " ", /* @__PURE__ */ import_react10.default.createElement("span", { className: "header-search" }, /* @__PURE__ */ import_react10.default.createElement("i", { className: "icofont icofont-search" }))), /* @__PURE__ */ import_react10.default.createElement("li", null, /* @__PURE__ */ import_react10.default.createElement("div", { className: "mode" }, /* @__PURE__ */ import_react10.default.createElement("svg", { className: "moon-icon" }, /* @__PURE__ */ import_react10.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#moon" })), /* @__PURE__ */ import_react10.default.createElement("svg", { className: "sun-icon" }, /* @__PURE__ */ import_react10.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#sun" })))), /* @__PURE__ */ import_react10.default.createElement("li", { className: "profile-nav onhover-dropdown" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "onhover-click" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "sidebar-image" }, " ", /* @__PURE__ */ import_react10.default.createElement("img", { src: "../assets/images/user.png", alt: "profile" }), /* @__PURE__ */ import_react10.default.createElement("span", { className: "status status-success" })), /* @__PURE__ */ import_react10.default.createElement("div", { className: "sidebar-content" }, /* @__PURE__ */ import_react10.default.createElement("h4", null, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Sign In"), /* @__PURE__ */ import_react10.default.createElement("span", { className: "f-12 f-w-600 f-light" }, "Junior Web and SQL Developer"))), /* @__PURE__ */ import_react10.default.createElement("ul", { className: "profile-dropdown onhover-show-div" }, /* @__PURE__ */ import_react10.default.createElement("li", null, /* @__PURE__ */ import_react10.default.createElement("a", { href: "#", onClick: logout }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react10.default.createElement("svg", null, /* @__PURE__ */ import_react10.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#login" }))), /* @__PURE__ */ import_react10.default.createElement("span", null, "Log out"))))))), /* @__PURE__ */ import_react10.default.createElement("script", { className: "result-template", type: "text/x-handlebars-template" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "ProfileCard u-cf" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "ProfileCard-avatar" }, /* @__PURE__ */ import_react10.default.createElement(
-      "svg",
-      {
-        xmlns: "http://www.w3.org/2000/svg",
-        width: "24",
-        height: "24",
-        viewBox: "0 0 24 24",
-        fill: "none",
-        stroke: "currentColor",
-        strokeWidth: "2",
-        strokeLinecap: "round",
-        strokeLinejoin: "round",
-        className: "feather feather-airplay m-0"
-      },
-      /* @__PURE__ */ import_react10.default.createElement("path", { d: "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" }),
-      /* @__PURE__ */ import_react10.default.createElement("polygon", { points: "12 15 17 21 7 21 12 15" })
-    )), /* @__PURE__ */ import_react10.default.createElement("div", { className: "ProfileCard-details" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "ProfileCard-realName" }, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Guest")))), /* @__PURE__ */ import_react10.default.createElement("script", { className: "empty-template", type: "text/x-handlebars-template" }, /* @__PURE__ */ import_react10.default.createElement("div", { className: "EmptyMessage" }, "Your search turned up 0 results. This most likely means the backend is down, yikes!")))));
-  }
-
-  // src/Layouts/Sidebar.js
-  var import_react11 = __toESM(require_react());
-  var Sidebar_default = Sidebar = () => {
-    const { agent, loading } = UseCurrentAgent();
-    return /* @__PURE__ */ import_react11.default.createElement("div", { className: "sidebar-wrapper", "data-sidebar-layout": "stroke-svg" }, /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react11.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react11.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/logo/cathay-wh.png",
-        alt: ""
-      }
-    )), /* @__PURE__ */ import_react11.default.createElement("div", { className: "back-btn" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-angle-left" })), /* @__PURE__ */ import_react11.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react11.default.createElement(
-      "i",
-      {
-        className: "status_toggle middle sidebar-toggle",
-        "data-feather": "grid"
-      },
-      " "
-    ))), /* @__PURE__ */ import_react11.default.createElement("div", { className: "logo-icon-wrapper" }, /* @__PURE__ */ import_react11.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react11.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/logo/cathay-wh.png",
-        alt: "",
-        style: { width: "30px" }
-      }
-    ))), /* @__PURE__ */ import_react11.default.createElement("div", { className: "profile-section sidebar-search" }, /* @__PURE__ */ import_react11.default.createElement("div", { className: "profile-wrapper" }, /* @__PURE__ */ import_react11.default.createElement("div", { className: "active-profile" }, " ", /* @__PURE__ */ import_react11.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/user.png",
-        alt: "user"
-      }
-    ), /* @__PURE__ */ import_react11.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("h4", null, agent?.first_name, " ", agent?.last_name), /* @__PURE__ */ import_react11.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react11.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react11.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react11.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react11.default.createElement("svg", null, /* @__PURE__ */ import_react11.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react11.default.createElement(
-      "input",
-      {
-        className: "form-control",
-        type: "text",
-        placeholder: "Quick search",
-        "aria-label": "Username",
-        "aria-describedby": "sidebar-search"
-      }
-    ))), /* @__PURE__ */ import_react11.default.createElement("nav", { className: "sidebar-main" }, /* @__PURE__ */ import_react11.default.createElement("div", { className: "left-arrow", id: "left-arrow" }, /* @__PURE__ */ import_react11.default.createElement("i", { "data-feather": "arrow-left" })), /* @__PURE__ */ import_react11.default.createElement("div", { id: "sidebar-menu" }, /* @__PURE__ */ import_react11.default.createElement("ul", { className: "sidebar-links", id: "simple-bar" }, /* @__PURE__ */ import_react11.default.createElement("li", { className: "back-btn" }, /* @__PURE__ */ import_react11.default.createElement(Link, { to: "/" }, /* @__PURE__ */ import_react11.default.createElement(
-      "img",
-      {
-        className: "img-fluid",
-        src: "../assets/images/logo/logo-icon.png",
-        alt: ""
-      }
-    )), /* @__PURE__ */ import_react11.default.createElement("div", { className: "mobile-back text-end" }, /* @__PURE__ */ import_react11.default.createElement("span", null, "Back"), /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-angle-right ps-2", "aria-hidden": "true" }))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "pin-title sidebar-main-title" }, /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("h6", null, "- Pinned"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-main-title" }, /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("h6", { className: "lan-1" }, "- Navigation"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement(
-      Link,
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        to: "/dashboard"
-      },
-      /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-home me-2 text-white" }),
-      /* @__PURE__ */ import_react11.default.createElement("span", null, "Dashboard")
-    )), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement(
-      Link,
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        to: "/agent_user_menus"
-      },
-      /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-users me-2 text-white" }),
-      /* @__PURE__ */ import_react11.default.createElement("span", null, "Agent User Menus")
-    )), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-growth me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Marketing"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement(
-      Link,
-      {
-        className: "sidebar-link sidebar-title link-nav",
-        to: "/transfer_slips"
-      },
-      /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-white" }),
-      /* @__PURE__ */ import_react11.default.createElement("span", null, "Transfer Slip")
-    )), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/request_slips" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Request Slip"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/issue_slips" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-paper me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Issue Slip"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/inventories/new" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-mail me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Inventory Entry"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/inventories" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-list me-3 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Inventory Listing"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/item_masters" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-papers me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Item Master"))), /* @__PURE__ */ import_react11.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react11.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react11.default.createElement("i", { className: "icofont icofont-package me-2 text-white" }), /* @__PURE__ */ import_react11.default.createElement("span", null, "Packing List"))))), /* @__PURE__ */ import_react11.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react11.default.createElement("i", { "data-feather": "arrow-right" })))));
-  };
-
-  // src/Layouts/Footer.js
-  var import_react12 = __toESM(require_react());
-  var Footer_default = Footer = () => {
-    return /* @__PURE__ */ import_react12.default.createElement("footer", { className: "footer" }, /* @__PURE__ */ import_react12.default.createElement("div", { className: "container-fluid" }, /* @__PURE__ */ import_react12.default.createElement("div", { className: "row gy-1 justify-content-center text-center" }, /* @__PURE__ */ import_react12.default.createElement("div", { className: "col-lg-6 col-md-7 footer-copyright" }, /* @__PURE__ */ import_react12.default.createElement("p", { className: "mb-0 f-light f-w-500" }, "Copyright 2024 \xA9 The Cathay Drug Company Inc.")))));
-  };
-
-  // src/Layouts/MainLayout.js
-  var MainLayout = () => {
-    return /* @__PURE__ */ import_react13.default.createElement("div", { className: "page-wrapper compact-wrapper", id: "pageWrapper" }, /* @__PURE__ */ import_react13.default.createElement(Header, null), /* @__PURE__ */ import_react13.default.createElement("div", { className: "page-body-wrapper" }, /* @__PURE__ */ import_react13.default.createElement(Sidebar_default, null), /* @__PURE__ */ import_react13.default.createElement(Outlet, null), /* @__PURE__ */ import_react13.default.createElement(Footer_default, null)));
-  };
-  var MainLayout_default = MainLayout;
-
-  // src/Components/AgentUserMenu/Index.js
-  var import_react14 = __toESM(require_react());
-  var import_react_data_table_component2 = __toESM(require_index_cjs());
-
-  // src/Services/AgentUserMenusServices.js
-  var getAgentUserMenus = () => ApiLogin_default().get("/agent_user_menus");
-  var getItems = (args) => ApiLogin_default().get("/agent_user_menus", { params: args });
-  var menuIdLookUp = () => ApiLogin_default().get("/agent_user_menus/menu_id_lookup");
-  var agentIdLookUp = () => ApiLogin_default().get("/agent_user_menus/agent_id_lookup");
-  var showAgentUserMenus = (id) => ApiLogin_default().get(`/agent_user_menus/${id}`);
-  var deleteAgentUserMenu = (id) => ApiLogin_default().delete(`/agent_user_menus/${id}`);
-  var saveItem = (data2) => data2.id ? ApiLogin_default().put(`/agent_user_menus/${data2.id}`, data2) : ApiLogin_default().post("/agent_user_menus", data2);
-
-  // src/Components/AgentUserMenu/Index.js
-  var Index_default2 = Index = () => {
-    const [data2, setData] = (0, import_react14.useState)([]);
-    const [loading, setLoading] = (0, import_react14.useState)(true);
-    ``;
-    const [error, setError] = (0, import_react14.useState)(null);
-    const [args, setArgs] = (0, import_react14.useState)({});
-    const refreshItems = () => {
-      getItems(args).then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      }).catch((response) => {
-        alert("Error in fetching data.");
-        console.log(response);
-      });
-    };
-    (0, import_react14.useEffect)(() => {
-      refreshItems();
-    }, [args]);
-    (0, import_react14.useEffect)(() => {
-      getAgentUserMenus().then((response) => {
-        setData(response.data);
-        setLoading(false);
-      }).catch((err) => {
-        console.error("Error fetching data", err);
-        setError(err);
-        setLoading(false);
-      });
-    }, []);
-    const handleDelete = (id) => {
-      if (window.confirm("Are you sure you want to delete this record?")) {
-        deleteAgentUserMenu(id).then(() => {
-          window.location.reload();
-          alert("Record deleted successfully");
-        }).catch((err) => {
-          console.error("Error deleting record", err);
-        });
-      }
-    };
-    const columns = [
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "ID"),
-        selector: (row) => row.agent_user_menus_id,
-        omit: true
-        // this hides the column from the table view
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Agent ID"),
-        selector: (row) => row.agent_id,
-        sortable: true
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Agent Name"),
-        selector: (row) => row.first_name + " " + row.last_name,
-        sortable: true,
-        minWidth: "250px",
-        whiteSpace: "nowrap"
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Menu ID"),
-        selector: (row) => row.agent_menu_id,
-        sortable: true
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Menu Description"),
-        selector: (row) => row.menu
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Create"),
-        selector: (row) => row.user_create === 1 ? /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
-        center: true
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Read"),
-        selector: (row) => row.user_read === 1 ? /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
-        center: true
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Update"),
-        selector: (row) => row.user_update === 1 ? /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
-        center: true
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Delete"),
-        selector: (row) => row.user_delete === 1 ? /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
-        center: true
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Print"),
-        selector: (row) => row.user_print === 1 ? /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
-        center: true
-      },
-      {
-        name: /* @__PURE__ */ import_react14.default.createElement("b", null, "Actions"),
-        cell: (row) => /* @__PURE__ */ import_react14.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react14.default.createElement(
-          Link,
-          {
-            to: `/agent_user_menus/edit/${row.agent_user_menus_id}`,
-            title: "Edit",
-            className: "d-inline-block"
-          },
-          /* @__PURE__ */ import_react14.default.createElement("i", { className: "icon-pencil-alt text-info" })
-        ), /* @__PURE__ */ import_react14.default.createElement(
-          "button",
-          {
-            onClick: () => handleDelete(row.agent_user_menus_id),
-            style: { background: "none", border: "none", cursor: "pointer" },
-            title: "Delete"
-          },
-          /* @__PURE__ */ import_react14.default.createElement("i", { className: "icon-trash text-danger" })
-        )),
-        ignoreRowClick: true,
-        button: true
-      }
-    ];
-    if (loading) return /* @__PURE__ */ import_react14.default.createElement("p", null, "Loading...");
-    if (error) return /* @__PURE__ */ import_react14.default.createElement("p", null, "Error loading data");
-    return /* @__PURE__ */ import_react14.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react14.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react14.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react14.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react14.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-users me-2 text-dark" }), "Agent User Menus"), /* @__PURE__ */ import_react14.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react14.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react14.default.createElement(
-      "input",
-      {
-        className: "form-control form-control-sm",
-        type: "number",
-        placeholder: "Agent ID",
-        "aria-label": "Agent ID",
-        onInput: (e3) => {
-          setArgs({
-            ...args,
-            agent_id: e3.target.value
-          });
-        }
-      }
-    ), /* @__PURE__ */ import_react14.default.createElement(
-      "button",
-      {
-        className: "btn btn-outline-primary btn-sm",
-        type: "button"
-      },
-      /* @__PURE__ */ import_react14.default.createElement("i", { className: "icofont icofont-search-alt-1" })
-    )), /* @__PURE__ */ import_react14.default.createElement(
-      Link,
-      {
-        className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
-        to: "/agent_user_menus/new"
-      },
-      "New Agent User Menu"
-    ))), /* @__PURE__ */ import_react14.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react14.default.createElement(
-      import_react_data_table_component2.default,
-      {
-        columns,
-        data: data2,
-        pagination: true,
-        responsive: true,
-        striped: true,
-        bordered: true,
-        noDataComponent: "No Records of Agent User Menu",
-        highlightOnHover: true,
-        paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
-      }
-    )))));
-  };
-
-  // src/Components/AgentUserMenu/Form.js
-  var import_react55 = __toESM(require_react());
+  var import_react38 = __toESM(require_react());
 
   // node_modules/@babel/runtime/helpers/esm/extends.js
   function _extends() {
@@ -29256,7 +28917,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
 
   // node_modules/react-bootstrap-typeahead/es/components/AsyncTypeahead/AsyncTypeahead.js
-  var import_react42 = __toESM(require_react());
+  var import_react37 = __toESM(require_react());
 
   // node_modules/@babel/runtime/helpers/esm/typeof.js
   function _typeof(o3) {
@@ -29321,13 +28982,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // node_modules/react-bootstrap-typeahead/es/behaviors/async.js
   var import_lodash = __toESM(require_lodash());
   var import_prop_types2 = __toESM(require_prop_types());
-  var import_react17 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
 
   // node_modules/@restart/hooks/esm/useForceUpdate.js
-  var import_react15 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
 
   // node_modules/@restart/hooks/esm/usePrevious.js
-  var import_react16 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
 
   // node_modules/react-bootstrap-typeahead/es/propTypes.js
   var import_prop_types = __toESM(require_prop_types());
@@ -30195,18 +29856,18 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // node_modules/react-bootstrap-typeahead/es/components/Typeahead/Typeahead.js
   var import_classnames9 = __toESM(require_classnames());
   var import_prop_types12 = __toESM(require_prop_types());
-  var import_react41 = __toESM(require_react());
+  var import_react36 = __toESM(require_react());
 
   // node_modules/react-bootstrap-typeahead/es/core/Typeahead.js
   var import_fast_deep_equal2 = __toESM(require_fast_deep_equal());
   var import_prop_types3 = __toESM(require_prop_types());
-  var import_react20 = __toESM(require_react());
+  var import_react15 = __toESM(require_react());
 
   // node_modules/react-bootstrap-typeahead/es/core/TypeaheadManager.js
-  var import_react19 = __toESM(require_react());
+  var import_react14 = __toESM(require_react());
 
   // node_modules/react-bootstrap-typeahead/es/core/Context.js
-  var import_react18 = __toESM(require_react());
+  var import_react13 = __toESM(require_react());
   var defaultContext = {
     activeIndex: -1,
     hintText: "",
@@ -30220,9 +29881,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     onMenuItemClick: noop2,
     setItem: noop2
   };
-  var TypeaheadContext = /* @__PURE__ */ (0, import_react18.createContext)(defaultContext);
+  var TypeaheadContext = /* @__PURE__ */ (0, import_react13.createContext)(defaultContext);
   var useTypeaheadContext = function useTypeaheadContext2() {
-    return (0, import_react18.useContext)(TypeaheadContext);
+    return (0, import_react13.useContext)(TypeaheadContext);
   };
 
   // node_modules/react-bootstrap-typeahead/es/core/TypeaheadManager.js
@@ -30253,13 +29914,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var TypeaheadManager = function TypeaheadManager2(props) {
     var allowNew = props.allowNew, children = props.children, initialItem = props.initialItem, isMenuShown = props.isMenuShown, onAdd = props.onAdd, onInitialItemChange = props.onInitialItemChange, onKeyDown = props.onKeyDown, onMenuToggle = props.onMenuToggle, results = props.results, selectHint = props.selectHint;
     var hintText = getHintText_default(props);
-    (0, import_react19.useEffect)(function() {
+    (0, import_react14.useEffect)(function() {
       if (!(allowNew || results.length)) {
         onInitialItemChange();
       }
     });
-    var isInitialRender = (0, import_react19.useRef)(true);
-    (0, import_react19.useEffect)(function() {
+    var isInitialRender = (0, import_react14.useRef)(true);
+    (0, import_react14.useEffect)(function() {
       if (isInitialRender.current) {
         isInitialRender.current = false;
         return;
@@ -30287,7 +29948,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       hintText,
       isOnlyResult: getIsOnlyResult_default(props)
     });
-    return /* @__PURE__ */ import_react19.default.createElement(TypeaheadContext.Provider, {
+    return /* @__PURE__ */ import_react14.default.createElement(TypeaheadContext.Provider, {
       value: contextValue
     }, isFunction2(children) ? children(childProps) : children);
   };
@@ -30814,7 +30475,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             results.push((_results$push2 = {}, _defineProperty(_results$push2, getStringLabelKey(labelKey), ""), _defineProperty(_results$push2, "paginationOption", true), _results$push2));
           }
         }
-        return /* @__PURE__ */ import_react20.default.createElement(TypeaheadManager_default, _extends({}, mergedPropsAndState, {
+        return /* @__PURE__ */ import_react15.default.createElement(TypeaheadManager_default, _extends({}, mergedPropsAndState, {
           hideMenu: this.hideMenu,
           inputNode: this.inputNode,
           inputRef: this.inputRef,
@@ -30838,7 +30499,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       }
     }]);
     return Typeahead2;
-  }(import_react20.default.Component);
+  }(import_react15.default.Component);
   _defineProperty(Typeahead, "propTypes", propTypes2);
   _defineProperty(Typeahead, "defaultProps", defaultProps);
   var Typeahead_default = Typeahead;
@@ -30846,7 +30507,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // node_modules/react-bootstrap-typeahead/es/components/ClearButton/ClearButton.js
   var import_classnames3 = __toESM(require_classnames());
   var import_prop_types4 = __toESM(require_prop_types());
-  var import_react21 = __toESM(require_react());
+  var import_react16 = __toESM(require_react());
   var _excluded4 = ["className", "label", "onClick", "onKeyDown", "size"];
   var propTypes3 = {
     label: import_prop_types4.default.string,
@@ -30856,7 +30517,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
   var ClearButton = function ClearButton2(_ref) {
     var className = _ref.className, _ref$label = _ref.label, label = _ref$label === void 0 ? "Clear" : _ref$label, _onClick = _ref.onClick, _onKeyDown = _ref.onKeyDown, size4 = _ref.size, props = _objectWithoutProperties(_ref, _excluded4);
-    return /* @__PURE__ */ import_react21.default.createElement("button", _extends({}, props, {
+    return /* @__PURE__ */ import_react16.default.createElement("button", _extends({}, props, {
       "aria-label": label,
       className: (0, import_classnames3.default)("close", "btn-close", "rbt-close", {
         "rbt-close-lg": isSizeLarge(size4),
@@ -30873,10 +30534,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         _onKeyDown && _onKeyDown(e3);
       },
       type: "button"
-    }), /* @__PURE__ */ import_react21.default.createElement("span", {
+    }), /* @__PURE__ */ import_react16.default.createElement("span", {
       "aria-hidden": "true",
       className: "rbt-close-content"
-    }, "\xD7"), /* @__PURE__ */ import_react21.default.createElement("span", {
+    }, "\xD7"), /* @__PURE__ */ import_react16.default.createElement("span", {
       className: "sr-only visually-hidden"
     }, label));
   };
@@ -30885,16 +30546,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // node_modules/react-bootstrap-typeahead/es/components/Loader/Loader.js
   var import_prop_types5 = __toESM(require_prop_types());
-  var import_react22 = __toESM(require_react());
+  var import_react17 = __toESM(require_react());
   var propTypes4 = {
     label: import_prop_types5.default.string
   };
   var Loader = function Loader2(_ref) {
     var _ref$label = _ref.label, label = _ref$label === void 0 ? "Loading..." : _ref$label;
-    return /* @__PURE__ */ import_react22.default.createElement("div", {
+    return /* @__PURE__ */ import_react17.default.createElement("div", {
       className: "rbt-loader spinner-border spinner-border-sm",
       role: "status"
-    }, /* @__PURE__ */ import_react22.default.createElement("span", {
+    }, /* @__PURE__ */ import_react17.default.createElement("span", {
       className: "sr-only visually-hidden"
     }, label));
   };
@@ -32201,10 +31862,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
 
   // node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.mjs
-  var React32 = __toESM(require_react(), 1);
-  var import_react23 = __toESM(require_react(), 1);
+  var React27 = __toESM(require_react(), 1);
+  var import_react18 = __toESM(require_react(), 1);
   var ReactDOM = __toESM(require_react_dom(), 1);
-  var index = typeof document !== "undefined" ? import_react23.useLayoutEffect : import_react23.useEffect;
+  var index = typeof document !== "undefined" ? import_react18.useLayoutEffect : import_react18.useEffect;
   function deepEqual(a, b) {
     if (a === b) {
       return true;
@@ -32264,7 +31925,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     return Math.round(value * dpr) / dpr;
   }
   function useLatestRef(value) {
-    const ref = React32.useRef(value);
+    const ref = React27.useRef(value);
     index(() => {
       ref.current = value;
     });
@@ -32287,7 +31948,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       whileElementsMounted,
       open
     } = options;
-    const [data2, setData] = React32.useState({
+    const [data2, setData] = React27.useState({
       x: 0,
       y: 0,
       strategy,
@@ -32295,19 +31956,19 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       middlewareData: {},
       isPositioned: false
     });
-    const [latestMiddleware, setLatestMiddleware] = React32.useState(middleware);
+    const [latestMiddleware, setLatestMiddleware] = React27.useState(middleware);
     if (!deepEqual(latestMiddleware, middleware)) {
       setLatestMiddleware(middleware);
     }
-    const [_reference, _setReference] = React32.useState(null);
-    const [_floating, _setFloating] = React32.useState(null);
-    const setReference = React32.useCallback((node) => {
+    const [_reference, _setReference] = React27.useState(null);
+    const [_floating, _setFloating] = React27.useState(null);
+    const setReference = React27.useCallback((node) => {
       if (node !== referenceRef.current) {
         referenceRef.current = node;
         _setReference(node);
       }
     }, []);
-    const setFloating = React32.useCallback((node) => {
+    const setFloating = React27.useCallback((node) => {
       if (node !== floatingRef.current) {
         floatingRef.current = node;
         _setFloating(node);
@@ -32315,14 +31976,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }, []);
     const referenceEl = externalReference || _reference;
     const floatingEl = externalFloating || _floating;
-    const referenceRef = React32.useRef(null);
-    const floatingRef = React32.useRef(null);
-    const dataRef = React32.useRef(data2);
+    const referenceRef = React27.useRef(null);
+    const floatingRef = React27.useRef(null);
+    const dataRef = React27.useRef(data2);
     const hasWhileElementsMounted = whileElementsMounted != null;
     const whileElementsMountedRef = useLatestRef(whileElementsMounted);
     const platformRef = useLatestRef(platform2);
     const openRef = useLatestRef(open);
-    const update = React32.useCallback(() => {
+    const update = React27.useCallback(() => {
       if (!referenceRef.current || !floatingRef.current) {
         return;
       }
@@ -32360,7 +32021,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         }));
       }
     }, [open]);
-    const isMountedRef = React32.useRef(false);
+    const isMountedRef = React27.useRef(false);
     index(() => {
       isMountedRef.current = true;
       return () => {
@@ -32377,17 +32038,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         update();
       }
     }, [referenceEl, floatingEl, update, whileElementsMountedRef, hasWhileElementsMounted]);
-    const refs = React32.useMemo(() => ({
+    const refs = React27.useMemo(() => ({
       reference: referenceRef,
       floating: floatingRef,
       setReference,
       setFloating
     }), [setReference, setFloating]);
-    const elements = React32.useMemo(() => ({
+    const elements = React27.useMemo(() => ({
       reference: referenceEl,
       floating: floatingEl
     }), [referenceEl, floatingEl]);
-    const floatingStyles = React32.useMemo(() => {
+    const floatingStyles = React27.useMemo(() => {
       const initialStyles = {
         position: strategy,
         left: 0,
@@ -32413,7 +32074,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         top: y2
       };
     }, [strategy, transform, elements.floating, data2.x, data2.y]);
-    return React32.useMemo(() => ({
+    return React27.useMemo(() => ({
       ...data2,
       update,
       refs,
@@ -32431,7 +32092,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   });
 
   // node_modules/react-bootstrap-typeahead/es/components/Overlay/useOverlay.js
-  var import_react24 = __toESM(require_react());
+  var import_react19 = __toESM(require_react());
   function getMiddleware(props) {
     var middleware = [];
     if (props.flip) {
@@ -32455,7 +32116,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     return "".concat(y2, "-").concat(x);
   }
   function useOverlay(referenceElement, options) {
-    var _useState = (0, import_react24.useState)(null), _useState2 = _slicedToArray(_useState, 2), floatingElement = _useState2[0], attachRef = _useState2[1];
+    var _useState = (0, import_react19.useState)(null), _useState2 = _slicedToArray(_useState, 2), floatingElement = _useState2[0], attachRef = _useState2[1];
     var _useFloating = useFloating({
       elements: {
         floating: floatingElement,
@@ -32511,7 +32172,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var Overlay_default = Overlay;
 
   // node_modules/react-bootstrap-typeahead/es/components/RootClose/useRootClose.js
-  var import_react29 = __toESM(require_react());
+  var import_react24 = __toESM(require_react());
 
   // node_modules/dom-helpers/esm/canUseDOM.js
   var canUseDOM_default = !!(typeof window !== "undefined" && window.document && window.document.createElement);
@@ -32577,16 +32238,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
 
   // node_modules/@restart/ui/esm/useRootClose.js
-  var import_react28 = __toESM(require_react());
+  var import_react23 = __toESM(require_react());
 
   // node_modules/@restart/ui/node_modules/@restart/hooks/esm/useEventCallback.js
-  var import_react26 = __toESM(require_react());
+  var import_react21 = __toESM(require_react());
 
   // node_modules/@restart/ui/node_modules/@restart/hooks/esm/useCommittedRef.js
-  var import_react25 = __toESM(require_react());
+  var import_react20 = __toESM(require_react());
   function useCommittedRef(value) {
-    const ref = (0, import_react25.useRef)(value);
-    (0, import_react25.useEffect)(() => {
+    const ref = (0, import_react20.useRef)(value);
+    (0, import_react20.useEffect)(() => {
       ref.current = value;
     }, [value]);
     return ref;
@@ -32596,7 +32257,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // node_modules/@restart/ui/node_modules/@restart/hooks/esm/useEventCallback.js
   function useEventCallback(fn) {
     const ref = useCommittedRef_default(fn);
-    return (0, import_react26.useCallback)(function(...args) {
+    return (0, import_react21.useCallback)(function(...args) {
       return ref.current && ref.current(...args);
     }, [ref]);
   }
@@ -32608,7 +32269,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
 
   // node_modules/@restart/ui/esm/useClickOutside.js
-  var import_react27 = __toESM(require_react());
+  var import_react22 = __toESM(require_react());
   var import_warning2 = __toESM(require_warning());
   var noop3 = () => {
   };
@@ -32628,9 +32289,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     disabled,
     clickTrigger = "click"
   } = {}) {
-    const preventMouseClickOutsideRef = (0, import_react27.useRef)(false);
-    const waitingForTrigger = (0, import_react27.useRef)(false);
-    const handleMouseCapture = (0, import_react27.useCallback)((e3) => {
+    const preventMouseClickOutsideRef = (0, import_react22.useRef)(false);
+    const waitingForTrigger = (0, import_react22.useRef)(false);
+    const handleMouseCapture = (0, import_react22.useCallback)((e3) => {
       const currentTarget = getRefTarget(ref);
       (0, import_warning2.default)(!!currentTarget, "ClickOutside captured a close event but does not have a ref to compare it to. useClickOutside(), should be passed a ref that resolves to a DOM node");
       preventMouseClickOutsideRef.current = !currentTarget || isModifiedEvent2(e3) || !isLeftClickEvent(e3) || !!contains(currentTarget, e3.target) || waitingForTrigger.current;
@@ -32649,7 +32310,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         onClickOutside(e3);
       }
     });
-    (0, import_react27.useEffect)(() => {
+    (0, import_react22.useEffect)(() => {
       var _ownerWindow$event, _ownerWindow$parent;
       if (disabled || ref == null) return void 0;
       const doc = ownerDocument(getRefTarget(ref));
@@ -32682,7 +32343,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var useClickOutside_default = useClickOutside;
 
   // node_modules/@restart/ui/esm/utils.js
-  var React33 = __toESM(require_react());
+  var React28 = __toESM(require_react());
   function isEscKey(e3) {
     return e3.code === "Escape" || e3.keyCode === 27;
   }
@@ -32704,7 +32365,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         onClose(e3);
       }
     });
-    (0, import_react28.useEffect)(() => {
+    (0, import_react23.useEffect)(() => {
       if (disabled || ref == null) return void 0;
       const doc = ownerDocument(getRefTarget(ref));
       let currentEvent = (doc.defaultView || window).event;
@@ -32724,7 +32385,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // node_modules/react-bootstrap-typeahead/es/components/RootClose/useRootClose.js
   function useRootClose2(onRootClose, options) {
-    var ref = (0, import_react29.useRef)(null);
+    var ref = (0, import_react24.useRef)(null);
     useRootClose_default(ref, onRootClose, options);
     return ref;
   }
@@ -32741,11 +32402,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // node_modules/react-bootstrap-typeahead/es/components/Token/Token.js
   var import_classnames4 = __toESM(require_classnames());
-  var import_react31 = __toESM(require_react());
+  var import_react26 = __toESM(require_react());
 
   // node_modules/react-bootstrap-typeahead/es/behaviors/token.js
   var import_prop_types7 = __toESM(require_prop_types());
-  var import_react30 = __toESM(require_react());
+  var import_react25 = __toESM(require_react());
   var _excluded7 = ["onBlur", "onClick", "onFocus", "onRemove", "option"];
   function ownKeys6(e3, r3) {
     var t2 = Object.keys(e3);
@@ -32777,7 +32438,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
   function useToken(_ref) {
     var onBlur = _ref.onBlur, onClick = _ref.onClick, onFocus = _ref.onFocus, onRemove = _ref.onRemove, option = _ref.option, props = _objectWithoutProperties(_ref, _excluded7);
-    var _useState = (0, import_react30.useState)(false), _useState2 = _slicedToArray(_useState, 2), active = _useState2[0], setActive = _useState2[1];
+    var _useState = (0, import_react25.useState)(false), _useState2 = _slicedToArray(_useState, 2), active = _useState2[0], setActive = _useState2[1];
     var handleBlur = function handleBlur2(e3) {
       setActive(false);
       onBlur && onBlur(e3);
@@ -32838,15 +32499,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }
     return e3;
   }
-  var InteractiveToken = /* @__PURE__ */ (0, import_react31.forwardRef)(function(_ref, ref) {
+  var InteractiveToken = /* @__PURE__ */ (0, import_react26.forwardRef)(function(_ref, ref) {
     var active = _ref.active, children = _ref.children, className = _ref.className, onRemove = _ref.onRemove, tabIndex = _ref.tabIndex, props = _objectWithoutProperties(_ref, _excluded8);
-    return /* @__PURE__ */ import_react31.default.createElement("div", _extends({}, props, {
+    return /* @__PURE__ */ import_react26.default.createElement("div", _extends({}, props, {
       className: (0, import_classnames4.default)("rbt-token", "rbt-token-removeable", {
         "rbt-token-active": !!active
       }, className),
       ref,
       tabIndex: tabIndex || 0
-    }), children, /* @__PURE__ */ import_react31.default.createElement(ClearButton_default, {
+    }), children, /* @__PURE__ */ import_react26.default.createElement(ClearButton_default, {
       className: "rbt-token-remove-button",
       label: "Remove",
       onClick: onRemove,
@@ -32859,12 +32520,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       "rbt-token-disabled": disabled
     }, className);
     if (href2 && !disabled) {
-      return /* @__PURE__ */ import_react31.default.createElement("a", {
+      return /* @__PURE__ */ import_react26.default.createElement("a", {
         className: classnames,
         href: href2
       }, children);
     }
-    return /* @__PURE__ */ import_react31.default.createElement("div", {
+    return /* @__PURE__ */ import_react26.default.createElement("div", {
       className: classnames
     }, children);
   };
@@ -32873,21 +32534,21 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     var _useToken = useToken(_objectSpread7(_objectSpread7({}, props), {}, {
       option
     })), ref = _useToken.ref, tokenProps = _objectWithoutProperties(_useToken, _excluded32);
-    var child = /* @__PURE__ */ import_react31.default.createElement("div", {
+    var child = /* @__PURE__ */ import_react26.default.createElement("div", {
       className: "rbt-token-label"
     }, children);
-    return !props.disabled && !readOnly && isFunction2(tokenProps.onRemove) ? /* @__PURE__ */ import_react31.default.createElement(InteractiveToken, _extends({}, props, tokenProps, {
+    return !props.disabled && !readOnly && isFunction2(tokenProps.onRemove) ? /* @__PURE__ */ import_react26.default.createElement(InteractiveToken, _extends({}, props, tokenProps, {
       ref
-    }), child) : /* @__PURE__ */ import_react31.default.createElement(StaticToken, props, child);
+    }), child) : /* @__PURE__ */ import_react26.default.createElement(StaticToken, props, child);
   };
   var Token_default = Token;
 
   // node_modules/react-bootstrap-typeahead/es/components/TypeaheadInputMulti/TypeaheadInputMulti.js
   var import_classnames6 = __toESM(require_classnames());
-  var import_react34 = __toESM(require_react());
+  var import_react29 = __toESM(require_react());
 
   // node_modules/react-bootstrap-typeahead/es/components/Hint/Hint.js
-  var import_react32 = __toESM(require_react());
+  var import_react27 = __toESM(require_react());
   function interpolateStyle(styles, attr) {
     var subattr = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : "";
     if (subattr) {
@@ -32910,8 +32571,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
   var useHint = function useHint2() {
     var _useTypeaheadContext = useTypeaheadContext(), hintText = _useTypeaheadContext.hintText, inputNode = _useTypeaheadContext.inputNode;
-    var hintRef = (0, import_react32.useRef)(null);
-    (0, import_react32.useEffect)(function() {
+    var hintRef = (0, import_react27.useRef)(null);
+    (0, import_react27.useEffect)(function() {
       var handleInputScroll = function handleInputScroll2() {
         if (hintRef.current && inputNode) {
           hintRef.current.scrollLeft = inputNode.scrollLeft;
@@ -32922,7 +32583,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         inputNode === null || inputNode === void 0 || inputNode.removeEventListener("scroll", handleInputScroll);
       };
     }, [inputNode]);
-    (0, import_react32.useEffect)(function() {
+    (0, import_react27.useEffect)(function() {
       if (inputNode && hintRef.current) {
         copyStyles(inputNode, hintRef.current);
       }
@@ -32935,7 +32596,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var Hint = function Hint2(_ref) {
     var children = _ref.children, className = _ref.className;
     var _useHint = useHint(), hintRef = _useHint.hintRef, hintText = _useHint.hintText;
-    return /* @__PURE__ */ import_react32.default.createElement("div", {
+    return /* @__PURE__ */ import_react27.default.createElement("div", {
       className,
       style: {
         display: "flex",
@@ -32943,7 +32604,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         height: "100%",
         position: "relative"
       }
-    }, children, /* @__PURE__ */ import_react32.default.createElement("input", {
+    }, children, /* @__PURE__ */ import_react27.default.createElement("input", {
       "aria-hidden": true,
       className: "rbt-input-hint",
       ref: hintRef,
@@ -32967,9 +32628,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // node_modules/react-bootstrap-typeahead/es/components/Input/Input.js
   var import_classnames5 = __toESM(require_classnames());
-  var import_react33 = __toESM(require_react());
-  var Input = /* @__PURE__ */ (0, import_react33.forwardRef)(function(props, ref) {
-    return /* @__PURE__ */ import_react33.default.createElement("input", _extends({}, props, {
+  var import_react28 = __toESM(require_react());
+  var Input = /* @__PURE__ */ (0, import_react28.forwardRef)(function(props, ref) {
+    return /* @__PURE__ */ import_react28.default.createElement("input", _extends({}, props, {
       className: (0, import_classnames5.default)("rbt-input-main", props.className),
       ref
     }));
@@ -32979,8 +32640,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // node_modules/react-bootstrap-typeahead/es/components/TypeaheadInputMulti/TypeaheadInputMulti.js
   var _excluded9 = ["children", "className", "inputClassName", "inputRef", "referenceElementRef", "selected"];
   function TypeaheadInputMulti(props) {
-    var wrapperRef = import_react34.default.useRef(null);
-    var inputElem = import_react34.default.useRef(null);
+    var wrapperRef = import_react29.default.useRef(null);
+    var inputElem = import_react29.default.useRef(null);
     var _propsWithBsClassName = propsWithBsClassName(props), children = _propsWithBsClassName.children, className = _propsWithBsClassName.className, inputClassName = _propsWithBsClassName.inputClassName, inputRef = _propsWithBsClassName.inputRef, referenceElementRef = _propsWithBsClassName.referenceElementRef, selected = _propsWithBsClassName.selected, rest = _objectWithoutProperties(_propsWithBsClassName, _excluded9);
     function getInputRef(input) {
       inputElem.current = input;
@@ -33014,7 +32675,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       }
       props.onKeyDown && props.onKeyDown(e3);
     }
-    return /* @__PURE__ */ import_react34.default.createElement("div", {
+    return /* @__PURE__ */ import_react29.default.createElement("div", {
       className: (0, import_classnames6.default)("rbt-input-multi", {
         disabled: props.disabled
       }, className),
@@ -33022,10 +32683,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       onFocus: handleContainerClickOrFocus,
       ref: referenceElementRef,
       tabIndex: -1
-    }, /* @__PURE__ */ import_react34.default.createElement("div", {
+    }, /* @__PURE__ */ import_react29.default.createElement("div", {
       className: "rbt-input-wrapper",
       ref: wrapperRef
-    }, children, /* @__PURE__ */ import_react34.default.createElement(Hint_default, null, /* @__PURE__ */ import_react34.default.createElement(Input_default, _extends({}, rest, {
+    }, children, /* @__PURE__ */ import_react29.default.createElement(Hint_default, null, /* @__PURE__ */ import_react29.default.createElement(Input_default, _extends({}, rest, {
       className: inputClassName,
       onKeyDown: handleKeyDown,
       ref: getInputRef,
@@ -33044,11 +32705,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var TypeaheadInputMulti_default = TypeaheadInputMulti;
 
   // node_modules/react-bootstrap-typeahead/es/components/TypeaheadInputSingle/TypeaheadInputSingle.js
-  var import_react35 = __toESM(require_react());
+  var import_react30 = __toESM(require_react());
   var _excluded10 = ["inputRef", "referenceElementRef"];
   var TypeaheadInputSingle = function TypeaheadInputSingle2(_ref) {
     var inputRef = _ref.inputRef, referenceElementRef = _ref.referenceElementRef, props = _objectWithoutProperties(_ref, _excluded10);
-    return /* @__PURE__ */ import_react35.default.createElement(Hint_default, null, /* @__PURE__ */ import_react35.default.createElement(Input_default, _extends({}, propsWithBsClassName(props), {
+    return /* @__PURE__ */ import_react30.default.createElement(Hint_default, null, /* @__PURE__ */ import_react30.default.createElement(Input_default, _extends({}, propsWithBsClassName(props), {
       ref: function ref(node) {
         inputRef(node);
         referenceElementRef(node);
@@ -33059,11 +32720,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // node_modules/react-bootstrap-typeahead/es/components/TypeaheadMenu/TypeaheadMenu.js
   var import_prop_types11 = __toESM(require_prop_types());
-  var import_react40 = __toESM(require_react());
+  var import_react35 = __toESM(require_react());
 
   // node_modules/react-bootstrap-typeahead/es/components/Highlighter/Highlighter.js
   var import_prop_types8 = __toESM(require_prop_types());
-  var import_react36 = __toESM(require_react());
+  var import_react31 = __toESM(require_react());
   var propTypes7 = {
     children: import_prop_types8.default.string.isRequired,
     highlightClassName: import_prop_types8.default.string,
@@ -33072,7 +32733,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var Highlighter = function Highlighter2(_ref) {
     var children = _ref.children, _ref$highlightClassNa = _ref.highlightClassName, highlightClassName = _ref$highlightClassNa === void 0 ? "rbt-highlight-text" : _ref$highlightClassNa, search = _ref.search;
     if (!search || !children) {
-      return /* @__PURE__ */ import_react36.default.createElement(import_react36.default.Fragment, null, children);
+      return /* @__PURE__ */ import_react31.default.createElement(import_react31.default.Fragment, null, children);
     }
     var matchCount = 0;
     var remaining = children;
@@ -33088,14 +32749,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         highlighterChildren.push(nonMatch);
       }
       var match = remaining.slice(bounds.start, bounds.end);
-      highlighterChildren.push(/* @__PURE__ */ import_react36.default.createElement("mark", {
+      highlighterChildren.push(/* @__PURE__ */ import_react31.default.createElement("mark", {
         className: highlightClassName,
         key: matchCount
       }, match));
       matchCount += 1;
       remaining = remaining.slice(bounds.end);
     }
-    return /* @__PURE__ */ import_react36.default.createElement(import_react36.default.Fragment, null, highlighterChildren);
+    return /* @__PURE__ */ import_react31.default.createElement(import_react31.default.Fragment, null, highlighterChildren);
   };
   Highlighter.propTypes = propTypes7;
   var Highlighter_default = Highlighter;
@@ -33103,15 +32764,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // node_modules/react-bootstrap-typeahead/es/components/Menu/Menu.js
   var import_classnames8 = __toESM(require_classnames());
   var import_prop_types10 = __toESM(require_prop_types());
-  var import_react39 = __toESM(require_react());
+  var import_react34 = __toESM(require_react());
 
   // node_modules/react-bootstrap-typeahead/es/components/MenuItem/MenuItem.js
   var import_classnames7 = __toESM(require_classnames());
-  var import_react38 = __toESM(require_react());
+  var import_react33 = __toESM(require_react());
 
   // node_modules/react-bootstrap-typeahead/es/behaviors/item.js
   var import_prop_types9 = __toESM(require_prop_types());
-  var import_react37 = __toESM(require_react());
+  var import_react32 = __toESM(require_react());
 
   // node_modules/compute-scroll-into-view/dist/index.js
   var t = (t2) => "object" == typeof t2 && null != t2 && 1 === t2.nodeType;
@@ -33228,13 +32889,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   function useItem(_ref) {
     var label = _ref.label, onClick = _ref.onClick, option = _ref.option, position = _ref.position, props = _objectWithoutProperties(_ref, _excluded11);
     var _useTypeaheadContext = useTypeaheadContext(), activeIndex = _useTypeaheadContext.activeIndex, id = _useTypeaheadContext.id, isOnlyResult = _useTypeaheadContext.isOnlyResult, onActiveItemChange = _useTypeaheadContext.onActiveItemChange, onInitialItemChange = _useTypeaheadContext.onInitialItemChange, onMenuItemClick = _useTypeaheadContext.onMenuItemClick, setItem = _useTypeaheadContext.setItem;
-    var itemRef = (0, import_react37.useRef)(null);
-    (0, import_react37.useEffect)(function() {
+    var itemRef = (0, import_react32.useRef)(null);
+    (0, import_react32.useEffect)(function() {
       if (position === 0) {
         onInitialItemChange(option);
       }
     });
-    (0, import_react37.useEffect)(function() {
+    (0, import_react32.useEffect)(function() {
       if (position === activeIndex) {
         onActiveItemChange(option);
         var node = itemRef.current;
@@ -33244,7 +32905,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         });
       }
     }, [activeIndex, onActiveItemChange, option, position]);
-    var handleClick = (0, import_react37.useCallback)(function(e3) {
+    var handleClick = (0, import_react32.useCallback)(function(e3) {
       onMenuItemClick(option, e3);
       onClick && onClick(e3);
     }, [onClick, onMenuItemClick, option]);
@@ -33264,9 +32925,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // node_modules/react-bootstrap-typeahead/es/components/MenuItem/MenuItem.js
   var _excluded12 = ["active", "children", "className", "disabled", "onClick"];
-  var BaseMenuItem = /* @__PURE__ */ (0, import_react38.forwardRef)(function(_ref, ref) {
+  var BaseMenuItem = /* @__PURE__ */ (0, import_react33.forwardRef)(function(_ref, ref) {
     var active = _ref.active, children = _ref.children, className = _ref.className, disabled = _ref.disabled, _onClick = _ref.onClick, props = _objectWithoutProperties(_ref, _excluded12);
-    return /* @__PURE__ */ import_react38.default.createElement("a", _extends({}, props, {
+    return /* @__PURE__ */ import_react33.default.createElement("a", _extends({}, props, {
       className: (0, import_classnames7.default)("dropdown-item", {
         active,
         disabled
@@ -33280,7 +32941,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }), children);
   });
   function MenuItem(props) {
-    return /* @__PURE__ */ import_react38.default.createElement(BaseMenuItem, useItem(props));
+    return /* @__PURE__ */ import_react33.default.createElement(BaseMenuItem, useItem(props));
   }
 
   // node_modules/react-bootstrap-typeahead/es/components/Menu/Menu.js
@@ -33307,7 +32968,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     return e3;
   }
   var MenuDivider = function MenuDivider2() {
-    return /* @__PURE__ */ import_react39.default.createElement("div", {
+    return /* @__PURE__ */ import_react34.default.createElement("div", {
       className: "dropdown-divider",
       role: "separator"
     });
@@ -33315,7 +32976,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var MenuHeader = function MenuHeader2(props) {
     return (
       // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-      /* @__PURE__ */ import_react39.default.createElement("div", _extends({}, props, {
+      /* @__PURE__ */ import_react34.default.createElement("div", _extends({}, props, {
         className: "dropdown-header",
         role: "heading"
       }))
@@ -33338,13 +32999,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
   var Menu = function Menu2(_ref) {
     var _ref$emptyLabel = _ref.emptyLabel, emptyLabel = _ref$emptyLabel === void 0 ? "No matches found." : _ref$emptyLabel, innerRef = _ref.innerRef, _ref$maxHeight = _ref.maxHeight, maxHeight = _ref$maxHeight === void 0 ? "300px" : _ref$maxHeight, style = _ref.style, props = _objectWithoutProperties(_ref, _excluded13);
-    var children = import_react39.Children.count(props.children) === 0 ? /* @__PURE__ */ import_react39.default.createElement(BaseMenuItem, {
+    var children = import_react34.Children.count(props.children) === 0 ? /* @__PURE__ */ import_react34.default.createElement(BaseMenuItem, {
       disabled: true,
       role: "option"
     }, emptyLabel) : props.children;
     return (
       /* eslint-disable jsx-a11y/interactive-supports-focus */
-      /* @__PURE__ */ import_react39.default.createElement("div", _extends({}, props, {
+      /* @__PURE__ */ import_react34.default.createElement("div", _extends({}, props, {
         "aria-label": props["aria-label"] || "menu-options",
         className: (0, import_classnames8.default)("rbt-menu", "dropdown-menu", "show", props.className),
         onMouseDown: (
@@ -33384,7 +33045,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     renderMenuItemChildren: import_prop_types11.default.func
   };
   function renderMenuItemChildrenFn(option, props) {
-    return /* @__PURE__ */ import_react40.default.createElement(Highlighter_default, {
+    return /* @__PURE__ */ import_react35.default.createElement(Highlighter_default, {
       search: props.text
     }, getOptionLabel_default(option, props.labelKey));
   }
@@ -33399,18 +33060,18 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         position
       };
       if (getOptionProperty(option, "customOption")) {
-        return /* @__PURE__ */ import_react40.default.createElement(MenuItem, _extends({}, menuItemProps, {
+        return /* @__PURE__ */ import_react35.default.createElement(MenuItem, _extends({}, menuItemProps, {
           className: "rbt-menu-custom-option",
           key: position,
           label
-        }), newSelectionPrefix, /* @__PURE__ */ import_react40.default.createElement(Highlighter_default, {
+        }), newSelectionPrefix, /* @__PURE__ */ import_react35.default.createElement(Highlighter_default, {
           search: text
         }, label));
       }
       if (getOptionProperty(option, "paginationOption")) {
-        return /* @__PURE__ */ import_react40.default.createElement(import_react40.default.Fragment, {
+        return /* @__PURE__ */ import_react35.default.createElement(import_react35.default.Fragment, {
           key: "pagination-option-divider"
-        }, /* @__PURE__ */ import_react40.default.createElement(Menu_default.Divider, null), /* @__PURE__ */ import_react40.default.createElement(MenuItem, _extends({}, menuItemProps, {
+        }, /* @__PURE__ */ import_react35.default.createElement(Menu_default.Divider, null), /* @__PURE__ */ import_react35.default.createElement(MenuItem, _extends({}, menuItemProps, {
           className: "rbt-menu-pagination-option",
           label: (
             // TODO: Fix how (aria-)labels are passed to `MenuItem`.
@@ -33419,11 +33080,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           )
         }), paginationText));
       }
-      return /* @__PURE__ */ import_react40.default.createElement(MenuItem, _extends({}, menuItemProps, {
+      return /* @__PURE__ */ import_react35.default.createElement(MenuItem, _extends({}, menuItemProps, {
         key: position
       }), renderMenuItemChildren(option, props, position));
     };
-    return /* @__PURE__ */ import_react40.default.createElement(Menu_default, _extends({}, menuProps, {
+    return /* @__PURE__ */ import_react35.default.createElement(Menu_default, _extends({}, menuProps, {
       key: (
         // Force a re-render if the text changes to ensure that menu
         // positioning updates correctly.
@@ -33524,14 +33185,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     isLoading: false
   };
   var defaultRenderMenu = function defaultRenderMenu2(results, menuProps, props) {
-    return /* @__PURE__ */ import_react41.default.createElement(TypeaheadMenu_default, _extends({}, menuProps, {
+    return /* @__PURE__ */ import_react36.default.createElement(TypeaheadMenu_default, _extends({}, menuProps, {
       labelKey: props.labelKey,
       options: results,
       text: props.text
     }));
   };
   var defaultRenderToken = function defaultRenderToken2(option, props, idx) {
-    return /* @__PURE__ */ import_react41.default.createElement(Token_default, {
+    return /* @__PURE__ */ import_react36.default.createElement(Token_default, {
       disabled: props.disabled,
       key: idx,
       onRemove: props.onRemove,
@@ -33568,10 +33229,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           size: size4
         });
         if (!multiple) {
-          return /* @__PURE__ */ import_react41.default.createElement(TypeaheadInputSingle_default, commonProps);
+          return /* @__PURE__ */ import_react36.default.createElement(TypeaheadInputSingle_default, commonProps);
         }
         var labelKey = props.labelKey, onRemove = props.onRemove, selected = props.selected;
-        return /* @__PURE__ */ import_react41.default.createElement(TypeaheadInputMulti_default, _extends({}, commonProps, {
+        return /* @__PURE__ */ import_react36.default.createElement(TypeaheadInputMulti_default, _extends({}, commonProps, {
           placeholder: selected.length ? "" : inputProps.placeholder,
           selected
         }), selected.map(function(option, idx) {
@@ -33597,15 +33258,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         var _this$props3 = _this.props, clearButton = _this$props3.clearButton, disabled = _this$props3.disabled, isLoading = _this$props3.isLoading, size4 = _this$props3.size;
         var content;
         if (isLoading) {
-          content = /* @__PURE__ */ import_react41.default.createElement(Loader_default, null);
+          content = /* @__PURE__ */ import_react36.default.createElement(Loader_default, null);
         } else if (clearButton && !disabled && selected.length) {
-          content = /* @__PURE__ */ import_react41.default.createElement(ClearButton_default, {
+          content = /* @__PURE__ */ import_react36.default.createElement(ClearButton_default, {
             onClick: onClear,
             onMouseDown: preventInputBlur,
             size: size4
           });
         }
-        return content ? /* @__PURE__ */ import_react41.default.createElement("div", {
+        return content ? /* @__PURE__ */ import_react36.default.createElement("div", {
           className: (0, import_classnames9.default)("rbt-aux", {
             "rbt-aux-lg": isSizeLarge(size4)
           })
@@ -33618,17 +33279,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       value: function render() {
         var _this2 = this;
         var _this$props4 = this.props, children = _this$props4.children, className = _this$props4.className, instanceRef = _this$props4.instanceRef, open = _this$props4.open, options = _this$props4.options, style = _this$props4.style;
-        return /* @__PURE__ */ import_react41.default.createElement(Typeahead_default, _extends({}, this.props, {
+        return /* @__PURE__ */ import_react36.default.createElement(Typeahead_default, _extends({}, this.props, {
           options,
           ref: instanceRef
         }), function(props) {
           var hideMenu2 = props.hideMenu, isMenuShown = props.isMenuShown, results = props.results;
           var auxContent = _this2._renderAux(props);
-          return /* @__PURE__ */ import_react41.default.createElement(RootClose_default, {
+          return /* @__PURE__ */ import_react36.default.createElement(RootClose_default, {
             disabled: open || !isMenuShown,
             onRootClose: hideMenu2
           }, function(ref) {
-            return /* @__PURE__ */ import_react41.default.createElement("div", {
+            return /* @__PURE__ */ import_react36.default.createElement("div", {
               className: (0, import_classnames9.default)("rbt", {
                 "has-aux": !!auxContent,
                 "is-invalid": _this2.props.isInvalid,
@@ -33642,7 +33303,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
               tabIndex: -1
             }, _this2._renderInput(_objectSpread10(_objectSpread10({}, props.getInputProps(_this2.props.inputProps)), {}, {
               referenceElementRef: _this2.referenceElementRef
-            }), props), /* @__PURE__ */ import_react41.default.createElement(Overlay_default, _extends({}, getOverlayProps(_this2.props), {
+            }), props), /* @__PURE__ */ import_react36.default.createElement(Overlay_default, _extends({}, getOverlayProps(_this2.props), {
               isMenuShown,
               referenceElement: _this2._referenceElement
             }), function(menuProps) {
@@ -33653,14 +33314,371 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       }
     }]);
     return TypeaheadComponent2;
-  }(import_react41.default.Component);
+  }(import_react36.default.Component);
   _defineProperty(TypeaheadComponent, "propTypes", propTypes11);
   _defineProperty(TypeaheadComponent, "defaultProps", defaultProps2);
-  var Typeahead_default2 = /* @__PURE__ */ (0, import_react41.forwardRef)(function(props, ref) {
-    return /* @__PURE__ */ import_react41.default.createElement(TypeaheadComponent, _extends({}, props, {
+  var Typeahead_default2 = /* @__PURE__ */ (0, import_react36.forwardRef)(function(props, ref) {
+    return /* @__PURE__ */ import_react36.default.createElement(TypeaheadComponent, _extends({}, props, {
       instanceRef: ref
     }));
   });
+
+  // src/Services/ApplicationsServices.js
+  var documentNumberLookUp = () => ApiLogin_default().get("/application_document_number_lookup");
+
+  // src/Layouts/Header.js
+  function toProperCase(str) {
+    return str.split("_").map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(" ");
+  }
+  function Header() {
+    const [documentNumbers, setDocumentNumbers] = (0, import_react38.useState)([]);
+    (0, import_react38.useEffect)(() => {
+      documentNumberLookUp().then((res) => setDocumentNumbers(res.data || [])).catch((e3) => console.error("Error fetching doc numbers:", e3));
+    }, []);
+    const handleDocSelect = (selected) => {
+      if (!selected.length) return;
+      const { id, type } = selected[0];
+      navigate(`/${type}/edit/${id}`);
+    };
+    const { agent, loading } = UseCurrentAgent();
+    const location = useLocation();
+    const pathnames = location.pathname.split("/").filter((segment) => segment !== "");
+    const breadcrumbNameMap = {
+      dashboard: "Dashboard",
+      users: "Users",
+      settings: "Settings"
+      // add custom mappings here...
+    };
+    const pageTitle = pathnames.length > 0 ? breadcrumbNameMap[pathnames[pathnames.length - 1]] || toProperCase(pathnames[pathnames.length - 1]) : "Home";
+    const navigate = useNavigate();
+    const logout = async (e3) => {
+      e3.preventDefault();
+      try {
+        await ApiLogin_default().delete("/agent/sign_out");
+      } catch (err) {
+        console.warn("Logout error, likely already logged out:", err);
+      } finally {
+        localStorage.removeItem("token");
+        navigate("/#/login");
+      }
+    };
+    return /* @__PURE__ */ import_react38.default.createElement("div", { className: "page-header row" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "col-auto header-left-wrapper" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "header-logo-wrapper p-0 left-header" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react38.default.createElement("a", { href: "/" }))), /* @__PURE__ */ import_react38.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react38.default.createElement("svg", { className: "status_toggle sidebar-toggle" }, /* @__PURE__ */ import_react38.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#collapse-sidebar" })))), /* @__PURE__ */ import_react38.default.createElement("div", { className: "col-auto header-right-wrapper page-title" }, /* @__PURE__ */ import_react38.default.createElement("div", null, /* @__PURE__ */ import_react38.default.createElement("h2", null, pageTitle), /* @__PURE__ */ import_react38.default.createElement("nav", null, /* @__PURE__ */ import_react38.default.createElement("ol", { className: "breadcrumb justify-content-sm-start align-items-center mb-0" }, /* @__PURE__ */ import_react38.default.createElement("li", { className: "breadcrumb-item" }, /* @__PURE__ */ import_react38.default.createElement(Link, { to: "/" }, "Home")), pathnames.map((segment, idx) => {
+      const to2 = "/" + pathnames.slice(0, idx + 1).join("/");
+      const isLast = idx === pathnames.length - 1;
+      const name = breadcrumbNameMap[segment] || toProperCase(segment);
+      return /* @__PURE__ */ import_react38.default.createElement(
+        "li",
+        {
+          key: to2,
+          className: "breadcrumb-item f-w-500" + (isLast ? " active" : ""),
+          "aria-current": isLast ? "page" : void 0
+        },
+        isLast ? name : /* @__PURE__ */ import_react38.default.createElement(Link, { to: to2 }, name)
+      );
+    }))))), /* @__PURE__ */ import_react38.default.createElement("div", { className: "col header-wrapper m-0 header-right-wrapper" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "row m-0" }, /* @__PURE__ */ import_react38.default.createElement("form", { className: "form-inline search-full col", action: "#", method: "get" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "form-group w-100" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "Typeahead Typeahead--twitterUsers" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "u-posRelative" }, /* @__PURE__ */ import_react38.default.createElement(
+      Typeahead_default2,
+      {
+        options: documentNumbers,
+        placeholder: "Search anything ..",
+        labelKey: "document_number",
+        autoFocus: true,
+        name: "q",
+        positionFixed: true,
+        inputProps: {
+          className: "demo-input Typeahead-input form-control-plaintext w-100 border-0"
+        },
+        onChange: handleDocSelect
+      }
+    ), /* @__PURE__ */ import_react38.default.createElement(
+      "div",
+      {
+        className: "spinner-border Typeahead-spinner",
+        role: "status"
+      },
+      /* @__PURE__ */ import_react38.default.createElement("span", { className: "sr-only" }, "Loading...")
+    ), /* @__PURE__ */ import_react38.default.createElement("i", { className: "close-search", "data-feather": "x" })), /* @__PURE__ */ import_react38.default.createElement("div", { className: "Typeahead-menu" })))), /* @__PURE__ */ import_react38.default.createElement("div", { className: "header-logo-wrapper col-auto p-0 left-header" }), /* @__PURE__ */ import_react38.default.createElement("div", { className: "nav-right col-auto pull-right right-header p-0 ms-auto" }, /* @__PURE__ */ import_react38.default.createElement("ul", { className: "nav-menus" }, /* @__PURE__ */ import_react38.default.createElement("li", null, " ", /* @__PURE__ */ import_react38.default.createElement("span", { className: "header-search" }, /* @__PURE__ */ import_react38.default.createElement("i", { className: "icofont icofont-search" }))), /* @__PURE__ */ import_react38.default.createElement("li", null, /* @__PURE__ */ import_react38.default.createElement("div", { className: "mode" }, /* @__PURE__ */ import_react38.default.createElement("svg", { className: "moon-icon" }, /* @__PURE__ */ import_react38.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#moon" })), /* @__PURE__ */ import_react38.default.createElement("svg", { className: "sun-icon" }, /* @__PURE__ */ import_react38.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#sun" })))), /* @__PURE__ */ import_react38.default.createElement("li", { className: "profile-nav onhover-dropdown" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "onhover-click" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "sidebar-image" }, " ", /* @__PURE__ */ import_react38.default.createElement("img", { src: "../assets/images/user.png", alt: "profile" }), /* @__PURE__ */ import_react38.default.createElement("span", { className: "status status-success" })), /* @__PURE__ */ import_react38.default.createElement("div", { className: "sidebar-content" }, /* @__PURE__ */ import_react38.default.createElement("h4", null, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react38.default.createElement(import_react38.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Sign In"), /* @__PURE__ */ import_react38.default.createElement("span", { className: "f-12 f-w-600 f-light" }, "Junior Web and SQL Developer"))), /* @__PURE__ */ import_react38.default.createElement("ul", { className: "profile-dropdown onhover-show-div" }, /* @__PURE__ */ import_react38.default.createElement("li", null, /* @__PURE__ */ import_react38.default.createElement("a", { href: "#", onClick: logout }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "profile-icon" }, /* @__PURE__ */ import_react38.default.createElement("svg", null, /* @__PURE__ */ import_react38.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#login" }))), /* @__PURE__ */ import_react38.default.createElement("span", null, "Log out"))))))), /* @__PURE__ */ import_react38.default.createElement("script", { className: "result-template", type: "text/x-handlebars-template" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "ProfileCard u-cf" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "ProfileCard-avatar" }, /* @__PURE__ */ import_react38.default.createElement(
+      "svg",
+      {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "24",
+        height: "24",
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: "2",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        className: "feather feather-airplay m-0"
+      },
+      /* @__PURE__ */ import_react38.default.createElement("path", { d: "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" }),
+      /* @__PURE__ */ import_react38.default.createElement("polygon", { points: "12 15 17 21 7 21 12 15" })
+    )), /* @__PURE__ */ import_react38.default.createElement("div", { className: "ProfileCard-details" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "ProfileCard-realName" }, loading ? "Loading..." : agent ? /* @__PURE__ */ import_react38.default.createElement(import_react38.default.Fragment, null, agent?.first_name, " ", agent?.last_name) : "Guest")))), /* @__PURE__ */ import_react38.default.createElement("script", { className: "empty-template", type: "text/x-handlebars-template" }, /* @__PURE__ */ import_react38.default.createElement("div", { className: "EmptyMessage" }, "Your search turned up 0 results. This most likely means the backend is down, yikes!")))));
+  }
+
+  // src/Layouts/Sidebar.js
+  var import_react39 = __toESM(require_react());
+  var Sidebar_default = Sidebar = () => {
+    const { agent, loading } = UseCurrentAgent();
+    return /* @__PURE__ */ import_react39.default.createElement("div", { className: "sidebar-wrapper", "data-sidebar-layout": "stroke-svg" }, /* @__PURE__ */ import_react39.default.createElement("div", null, /* @__PURE__ */ import_react39.default.createElement("div", { className: "logo-wrapper" }, /* @__PURE__ */ import_react39.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react39.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/logo/cathay-wh.png",
+        alt: ""
+      }
+    )), /* @__PURE__ */ import_react39.default.createElement("div", { className: "back-btn" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-angle-left" })), /* @__PURE__ */ import_react39.default.createElement("div", { className: "toggle-sidebar" }, /* @__PURE__ */ import_react39.default.createElement(
+      "i",
+      {
+        className: "status_toggle middle sidebar-toggle",
+        "data-feather": "grid"
+      },
+      " "
+    ))), /* @__PURE__ */ import_react39.default.createElement("div", { className: "logo-icon-wrapper" }, /* @__PURE__ */ import_react39.default.createElement(Link, { to: "/dashboard" }, /* @__PURE__ */ import_react39.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/logo/cathay-wh.png",
+        alt: "",
+        style: { width: "30px" }
+      }
+    ))), /* @__PURE__ */ import_react39.default.createElement("div", { className: "profile-section sidebar-search" }, /* @__PURE__ */ import_react39.default.createElement("div", { className: "profile-wrapper" }, /* @__PURE__ */ import_react39.default.createElement("div", { className: "active-profile" }, " ", /* @__PURE__ */ import_react39.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/user.png",
+        alt: "user"
+      }
+    ), /* @__PURE__ */ import_react39.default.createElement("div", { className: "status bg-success" }, " ")), /* @__PURE__ */ import_react39.default.createElement("div", null, /* @__PURE__ */ import_react39.default.createElement("h4", null, agent?.first_name, " ", agent?.last_name), /* @__PURE__ */ import_react39.default.createElement("span", null, "Junior Web and SQL Developer")))), /* @__PURE__ */ import_react39.default.createElement("div", { className: "sidebar-search" }, /* @__PURE__ */ import_react39.default.createElement("div", { className: "input-group" }, /* @__PURE__ */ import_react39.default.createElement("span", { className: "input-group-text", id: "sidebar-search" }, /* @__PURE__ */ import_react39.default.createElement("svg", null, /* @__PURE__ */ import_react39.default.createElement("use", { href: "../assets/svg/icon-sprite.svg#search" }))), /* @__PURE__ */ import_react39.default.createElement(
+      "input",
+      {
+        className: "form-control",
+        type: "text",
+        placeholder: "Quick search",
+        "aria-label": "Username",
+        "aria-describedby": "sidebar-search"
+      }
+    ))), /* @__PURE__ */ import_react39.default.createElement("nav", { className: "sidebar-main" }, /* @__PURE__ */ import_react39.default.createElement("div", { className: "left-arrow", id: "left-arrow" }, /* @__PURE__ */ import_react39.default.createElement("i", { "data-feather": "arrow-left" })), /* @__PURE__ */ import_react39.default.createElement("div", { id: "sidebar-menu" }, /* @__PURE__ */ import_react39.default.createElement("ul", { className: "sidebar-links", id: "simple-bar" }, /* @__PURE__ */ import_react39.default.createElement("li", { className: "back-btn" }, /* @__PURE__ */ import_react39.default.createElement(Link, { to: "/" }, /* @__PURE__ */ import_react39.default.createElement(
+      "img",
+      {
+        className: "img-fluid",
+        src: "../assets/images/logo/logo-icon.png",
+        alt: ""
+      }
+    )), /* @__PURE__ */ import_react39.default.createElement("div", { className: "mobile-back text-end" }, /* @__PURE__ */ import_react39.default.createElement("span", null, "Back"), /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-angle-right ps-2", "aria-hidden": "true" }))), /* @__PURE__ */ import_react39.default.createElement("li", { className: "pin-title sidebar-main-title" }, /* @__PURE__ */ import_react39.default.createElement("div", null, /* @__PURE__ */ import_react39.default.createElement("h6", null, "- Pinned"))), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-main-title" }, /* @__PURE__ */ import_react39.default.createElement("div", null, /* @__PURE__ */ import_react39.default.createElement("h6", { className: "lan-1" }, "- Navigation"))), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement(
+      Link,
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        to: "/dashboard"
+      },
+      /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-home me-2 text-white" }),
+      /* @__PURE__ */ import_react39.default.createElement("span", null, "Dashboard")
+    )), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement(
+      Link,
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        to: "/agent_user_menus"
+      },
+      /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-users me-2 text-white" }),
+      /* @__PURE__ */ import_react39.default.createElement("span", null, "Agent User Menus")
+    )), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-growth me-2 text-white" }), /* @__PURE__ */ import_react39.default.createElement("span", null, "Marketing"))), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement(
+      Link,
+      {
+        className: "sidebar-link sidebar-title link-nav",
+        to: "/transfer_slips"
+      },
+      /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-paper-plane me-2 text-white" }),
+      /* @__PURE__ */ import_react39.default.createElement("span", null, "Transfer Slip")
+    )), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/request_slips" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-document-folder me-2 text-white" }), /* @__PURE__ */ import_react39.default.createElement("span", null, "Request Slip"))), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/issue_slips" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-paper me-2 text-white" }), /* @__PURE__ */ import_react39.default.createElement("span", null, "Issue Slip"))), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/inventories/new" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-mail me-2 text-white" }), /* @__PURE__ */ import_react39.default.createElement("span", null, "Inventory Entry"))), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/inventories" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-list me-3 text-white" }), /* @__PURE__ */ import_react39.default.createElement("span", null, "Inventory Listing"))), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement(Link, { className: "sidebar-link sidebar-title link-nav", to: "/item_masters" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-papers me-2 text-white" }), /* @__PURE__ */ import_react39.default.createElement("span", null, "Item Master"))), /* @__PURE__ */ import_react39.default.createElement("li", { className: "sidebar-list" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "fa fa-thumb-tack" }), /* @__PURE__ */ import_react39.default.createElement("a", { className: "sidebar-link sidebar-title link-nav", href: "/" }, /* @__PURE__ */ import_react39.default.createElement("i", { className: "icofont icofont-package me-2 text-white" }), /* @__PURE__ */ import_react39.default.createElement("span", null, "Packing List"))))), /* @__PURE__ */ import_react39.default.createElement("div", { className: "right-arrow", id: "right-arrow" }, /* @__PURE__ */ import_react39.default.createElement("i", { "data-feather": "arrow-right" })))));
+  };
+
+  // src/Layouts/Footer.js
+  var import_react40 = __toESM(require_react());
+  var Footer_default = Footer = () => {
+    return /* @__PURE__ */ import_react40.default.createElement("footer", { className: "footer" }, /* @__PURE__ */ import_react40.default.createElement("div", { className: "container-fluid" }, /* @__PURE__ */ import_react40.default.createElement("div", { className: "row gy-1 justify-content-center text-center" }, /* @__PURE__ */ import_react40.default.createElement("div", { className: "col-lg-6 col-md-7 footer-copyright" }, /* @__PURE__ */ import_react40.default.createElement("p", { className: "mb-0 f-light f-w-500" }, "Copyright 2024 \xA9 The Cathay Drug Company Inc.")))));
+  };
+
+  // src/Layouts/MainLayout.js
+  var MainLayout = () => {
+    return /* @__PURE__ */ import_react41.default.createElement("div", { className: "page-wrapper compact-wrapper", id: "pageWrapper" }, /* @__PURE__ */ import_react41.default.createElement(Header, null), /* @__PURE__ */ import_react41.default.createElement("div", { className: "page-body-wrapper" }, /* @__PURE__ */ import_react41.default.createElement(Sidebar_default, null), /* @__PURE__ */ import_react41.default.createElement(Outlet, null), /* @__PURE__ */ import_react41.default.createElement(Footer_default, null)));
+  };
+  var MainLayout_default = MainLayout;
+
+  // src/Components/AgentUserMenu/Index.js
+  var import_react42 = __toESM(require_react());
+  var import_react_data_table_component2 = __toESM(require_index_cjs());
+
+  // src/Services/AgentUserMenusServices.js
+  var getAgentUserMenus = () => ApiLogin_default().get("/agent_user_menus");
+  var getItems = (args) => ApiLogin_default().get("/agent_user_menus", { params: args });
+  var menuIdLookUp = () => ApiLogin_default().get("/agent_user_menus/menu_id_lookup");
+  var agentIdLookUp = () => ApiLogin_default().get("/agent_user_menus/agent_id_lookup");
+  var showAgentUserMenus = (id) => ApiLogin_default().get(`/agent_user_menus/${id}`);
+  var deleteAgentUserMenu = (id) => ApiLogin_default().delete(`/agent_user_menus/${id}`);
+  var saveItem = (data2) => data2.id ? ApiLogin_default().put(`/agent_user_menus/${data2.id}`, data2) : ApiLogin_default().post("/agent_user_menus", data2);
+
+  // src/Components/AgentUserMenu/Index.js
+  var Index_default2 = Index = () => {
+    const [data2, setData] = (0, import_react42.useState)([]);
+    const [loading, setLoading] = (0, import_react42.useState)(true);
+    ``;
+    const [error, setError] = (0, import_react42.useState)(null);
+    const [args, setArgs] = (0, import_react42.useState)({});
+    const refreshItems = () => {
+      getItems(args).then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      }).catch((response) => {
+        alert("Error in fetching data.");
+        console.log(response);
+      });
+    };
+    (0, import_react42.useEffect)(() => {
+      refreshItems();
+    }, [args]);
+    (0, import_react42.useEffect)(() => {
+      getAgentUserMenus().then((response) => {
+        setData(response.data);
+        setLoading(false);
+      }).catch((err) => {
+        console.error("Error fetching data", err);
+        setError(err);
+        setLoading(false);
+      });
+    }, []);
+    const handleDelete = (id) => {
+      if (window.confirm("Are you sure you want to delete this record?")) {
+        deleteAgentUserMenu(id).then(() => {
+          window.location.reload();
+          alert("Record deleted successfully");
+        }).catch((err) => {
+          console.error("Error deleting record", err);
+        });
+      }
+    };
+    const columns = [
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "ID"),
+        selector: (row) => row.agent_user_menus_id,
+        omit: true
+        // this hides the column from the table view
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Agent ID"),
+        selector: (row) => row.agent_id,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Agent Name"),
+        selector: (row) => row.first_name + " " + row.last_name,
+        sortable: true,
+        minWidth: "250px",
+        whiteSpace: "nowrap"
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Menu ID"),
+        selector: (row) => row.agent_menu_id,
+        sortable: true
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Menu Description"),
+        selector: (row) => row.menu
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Create"),
+        selector: (row) => row.user_create === 1 ? /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
+        center: true
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Read"),
+        selector: (row) => row.user_read === 1 ? /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
+        center: true
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Update"),
+        selector: (row) => row.user_update === 1 ? /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
+        center: true
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Delete"),
+        selector: (row) => row.user_delete === 1 ? /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
+        center: true
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Print"),
+        selector: (row) => row.user_print === 1 ? /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-check text-success" }) : /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-ui-close text-danger" }),
+        center: true
+      },
+      {
+        name: /* @__PURE__ */ import_react42.default.createElement("b", null, "Actions"),
+        cell: (row) => /* @__PURE__ */ import_react42.default.createElement("div", { className: "action" }, /* @__PURE__ */ import_react42.default.createElement(
+          Link,
+          {
+            to: `/agent_user_menus/edit/${row.agent_user_menus_id}`,
+            title: "Edit",
+            className: "d-inline-block"
+          },
+          /* @__PURE__ */ import_react42.default.createElement("i", { className: "icon-pencil-alt text-info" })
+        ), /* @__PURE__ */ import_react42.default.createElement(
+          "button",
+          {
+            onClick: () => handleDelete(row.agent_user_menus_id),
+            style: { background: "none", border: "none", cursor: "pointer" },
+            title: "Delete"
+          },
+          /* @__PURE__ */ import_react42.default.createElement("i", { className: "icon-trash text-danger" })
+        )),
+        ignoreRowClick: true,
+        button: true
+      }
+    ];
+    if (loading) return /* @__PURE__ */ import_react42.default.createElement("p", null, "Loading...");
+    if (error) return /* @__PURE__ */ import_react42.default.createElement("p", null, "Error loading data");
+    return /* @__PURE__ */ import_react42.default.createElement("div", { className: "page-body" }, /* @__PURE__ */ import_react42.default.createElement("div", { className: "col-sm-12" }, /* @__PURE__ */ import_react42.default.createElement("div", { className: "card title-line" }, /* @__PURE__ */ import_react42.default.createElement("div", { className: "card-header d-flex justify-content-between align-items-center" }, /* @__PURE__ */ import_react42.default.createElement("h2", { className: "mb-0" }, /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-users me-2 text-dark" }), "Agent User Menus"), /* @__PURE__ */ import_react42.default.createElement("div", { className: "d-flex align-items-center" }, /* @__PURE__ */ import_react42.default.createElement("div", { className: "input-group me-2" }, /* @__PURE__ */ import_react42.default.createElement(
+      "input",
+      {
+        className: "form-control form-control-sm",
+        type: "number",
+        placeholder: "Agent ID",
+        "aria-label": "Agent ID",
+        onInput: (e3) => {
+          setArgs({
+            ...args,
+            agent_id: e3.target.value
+          });
+        }
+      }
+    ), /* @__PURE__ */ import_react42.default.createElement(
+      "button",
+      {
+        className: "btn btn-outline-primary btn-sm",
+        type: "button"
+      },
+      /* @__PURE__ */ import_react42.default.createElement("i", { className: "icofont icofont-search-alt-1" })
+    )), /* @__PURE__ */ import_react42.default.createElement(
+      Link,
+      {
+        className: "btn btn-outline-primary btn-sm flex-shrink-0 w-auto",
+        to: "/agent_user_menus/new"
+      },
+      "New Agent User Menu"
+    ))), /* @__PURE__ */ import_react42.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react42.default.createElement(
+      import_react_data_table_component2.default,
+      {
+        columns,
+        data: data2,
+        pagination: true,
+        responsive: true,
+        striped: true,
+        bordered: true,
+        noDataComponent: "No Records of Agent User Menu",
+        highlightOnHover: true,
+        paginationRowsPerPageOptions: [10, 50, 100, 500, 1e3]
+      }
+    )))));
+  };
+
+  // src/Components/AgentUserMenu/Form.js
+  var import_react55 = __toESM(require_react());
 
   // src/Components/ErrorBoundary.js
   var import_react43 = __toESM(require_react());
@@ -37036,7 +37054,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }, [showRequestNumberAlert]);
     (0, import_react63.useEffect)(() => {
       if (window.location.hash.includes("issue_slips/new")) {
-        ApiLogin_default().get("issue_slips/new.json").then((response) => {
+        ApiLogin_default().get("http://localhost:3000/issue_slips/new.json").then((response) => {
           setFormData(response.data);
           setRecommendedByOptions(response.data.recommended_by || {});
           console.log("IS NEW");
@@ -37048,7 +37066,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }, []);
     (0, import_react63.useEffect)(() => {
       if (window.location.hash.includes(`issue_slips/edit`)) {
-        ApiLogin_default().get(`issue_slips/edit/${id}`).then((response) => {
+        axios_default.get(`http://localhost:3000/issue_slips/edit/${id}`).then((response) => {
           const payload = response.data;
           setData(payload.issue_slip);
           setOnEdit(true);
@@ -38583,7 +38601,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // src/Services/InventoriesServices.js
   var saveItem4 = (payload) => payload.id ? ApiLogin_default().put(`/inventories/${payload.id}`, payload) : ApiLogin_default().post("/inventories", payload);
-  var documentNumberLookUp = (document_type) => {
+  var documentNumberLookUp2 = (document_type) => {
     const basePath = "/api/inventories_lookup_document_number";
     const url = document_type && document_type.toString().trim() !== "" ? `${basePath}/${document_type}` : basePath;
     return ApiLogin_default().get(url);
@@ -38646,7 +38664,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       }
     }, [showInventoryAlert]);
     (0, import_react65.useEffect)(() => {
-      documentNumberLookUp().then((response) => {
+      documentNumberLookUp2().then((response) => {
         console.log("Success! wow");
         console.log(response.data);
         setDocumentNumber(response.data);
