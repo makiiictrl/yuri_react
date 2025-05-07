@@ -35683,7 +35683,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     };
     const columns = [
       { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "ID"), selector: (row) => row.id, omit: true },
-      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Company"), selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC", sortable: true, width: "100px" },
+      { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Company"), selector: (row) => row.company_code === 1 ? "CDCI" : "CYDC", sortable: true, width: "110px" },
       { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Request #"), selector: (row) => row.request_number, sortable: true, width: "120px" },
       { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Date"), selector: (row) => row.request_date, sortable: true, width: "120px" },
       { name: /* @__PURE__ */ import_react60.default.createElement("b", null, "Employee"), selector: (row) => row.employee_name, sortable: true, width: "280px" },

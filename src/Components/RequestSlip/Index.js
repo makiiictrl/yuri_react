@@ -70,7 +70,7 @@ export default function Index() {
 
   const columns = [
     { name: <b>ID</b>, selector: row => row.id, omit: true },
-    { name: <b>Company</b>, selector: row => row.company_code === 1 ? "CDCI" : "CYDC", sortable: true , width: "100px"},
+    { name: <b>Company</b>, selector: row => row.company_code === 1 ? "CDCI" : "CYDC", sortable: true , width: "110px"},
     { name: <b>Request #</b>, selector: row => row.request_number, sortable: true, width: "120px"},
     { name: <b>Date</b>, selector: row => row.request_date, sortable: true, width: "120px" },
     { name: <b>Employee</b>, selector: row => row.employee_name, sortable: true, width: "280px" },
